@@ -2,8 +2,8 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- <Import Project="deploy.user.props" Condition="Exists('deploy.user.props')"/> -->
   <PropertyGroup>
-    <DeployXConnectTarget Condition="'$(DeployXConnectTarget)' == ''">C:\inetpub\wwwroot\sitelify901\sitelify901_xconnect\Website</DeployXConnectTarget>
-    <DeployIndexingTarget Condition="'$(DeployIndexingTarget)' == ''">C:\inetpub\wwwroot\sitelify901\sitelify901_xconnect_indexing</DeployIndexingTarget>
-    <DeployWebApiTarget Condition="'$(DeployWebApiTarget)' == ''">C:\inetpub\wwwroot\sitelify901\sitelify901\Website\</DeployWebApiTarget>
+    <DeployXConnectTarget Condition="'$(DeployXConnectTarget)' == ''">c:\your-sitecore-instance\Website</DeployXConnectTarget>
+    <DeployIndexingTarget Condition="'$(DeployIndexingTarget)' == ''">c:\your-sitecore-instance\xconnect_indexing</DeployIndexingTarget>
+    <DeployWebApiTarget Condition="'$(DeployWebApiTarget)' == ''">c:\your-sitecore-instance\Website\</DeployWebApiTarget>
   </PropertyGroup>
 </Project>

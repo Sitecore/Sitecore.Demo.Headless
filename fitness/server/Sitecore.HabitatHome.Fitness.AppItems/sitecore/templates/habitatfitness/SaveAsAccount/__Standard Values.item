@@ -8,7 +8,7 @@ name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
 template: {72B91AFC-EEC3-5D20-AF5B-B152F6811656}
 templatekey: SaveAsAccount
-created: 20181017T205232Z
+created: 20181023T181932Z
 
 ----field----
 field: {CA9B9F52-4FB0-4F87-A79F-24DEA62CDA65}
@@ -20,7 +20,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 170314d1-2e4c-4f8e-a94c-247392b61514
+revision: a9555d97-529c-43ac-b347-b58ba5d4fbc0
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -35,7 +35,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181017T205232Z
+20181023T181932Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -49,14 +49,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-170314d1-2e4c-4f8e-a94c-247392b61514
+a9555d97-529c-43ac-b347-b58ba5d4fbc0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181017T205232Z
+20181023T181932Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

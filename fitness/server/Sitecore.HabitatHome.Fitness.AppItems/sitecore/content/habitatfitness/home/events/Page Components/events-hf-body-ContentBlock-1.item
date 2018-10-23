@@ -8,7 +8,7 @@ name: events-hf-body-ContentBlock-1
 master: {00000000-0000-0000-0000-000000000000}
 template: {1AD110A9-3CBC-5818-B339-D6F685A8473C}
 templatekey: ContentBlock
-created: 20181017T205235Z
+created: 20181023T181935Z
 
 ----field----
 field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
@@ -20,7 +20,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: beed1a80-c779-4375-99b1-297651b5975c
+revision: 12571d90-3d7a-4d1a-93b4-bd8fbd6bcd64
 
 ----field----
 field: {42989D60-44A3-5241-BB3C-4D40348836DB}
@@ -49,7 +49,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181017T205235Z
+20181023T181935Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -63,14 +63,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-beed1a80-c779-4375-99b1-297651b5975c
+12571d90-3d7a-4d1a-93b4-bd8fbd6bcd64
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181017T205235Z
+20181023T181935Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

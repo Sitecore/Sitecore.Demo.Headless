@@ -1,37 +1,22 @@
 ----item----
 version: 1
-id: {AC698793-1FC5-5AC7-9C3B-E2A61D484B63}
+id: {019C3E6A-3255-5104-9B8C-A24EE02880E2}
 database: master
-path: /sitecore/content/habitatfitness/Content/Products/Hydration Belt with Two 10-Ounce Water Bottles
-parent: {7BF50FDA-9FAA-4D05-AF56-127E9F8B08EA}
+path: /sitecore/content/habitatfitness/Content/products/Hydration Belt with Two 10-Ounce Water Bottles
+parent: {12676F34-9F75-534C-99CD-77A295D3B75B}
 name: Hydration Belt with Two 10-Ounce Water Bottles
 master: {00000000-0000-0000-0000-000000000000}
-template: {5147001C-995C-5C3E-969F-2262CFA54E3F}
-templatekey: product-item
-created: 20181017T205235Z
+template: {F7CFB991-FDCD-5036-A021-29E58A67DA4B}
+templatekey: product
+created: 20181023T181934Z
 
 ----field----
-field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
-name: __Tracking
-key: __tracking
-content-length: 605
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
 
-<tracking>
-  <profile id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf" name="Sports">
-    <key name="Basketball" value="0" />
-    <key name="Cycling" value="0" />
-    <key name="Hiking" value="0" />
-    <key name="Kayaking" value="0" />
-    <key name="Rock Climbing" value="0" />
-    <key name="Running" value="10" />
-  </profile>
-  <profile id="ad17d2b4-4904-467e-82fe-1cfbfeca2ba5" name="Age Group">
-    <key name="from 18 to 34" value="2" />
-    <key name="from 35 to 50" value="4" />
-    <key name="from 50 to 70" value="2" />
-    <key name="less than 18" value="0" />
-  </profile>
-</tracking>
+{F7CFB991-FDCD-5036-A021-29E58A67DA4B}
 ----field----
 field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
 name: __Workflow
@@ -42,31 +27,31 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 0630be0a-b8e0-49d3-83fe-282f0b996c40
+revision: 6712cf9e-62d7-4213-bf14-0408da62ed3b
 
 ----field----
-field: {77EC68E5-61DA-54CF-A771-DA5CBF743177}
+field: {2FA17014-B3B5-5966-8EE0-F3116C4313C2}
 name: title
 key: title
 content-length: 46
 
 Hydration Belt with Two 10-Ounce Water Bottles
 ----field----
-field: {5A71A624-1338-515B-A077-0B291CBA5A9B}
+field: {97F252DE-EFDA-5ED7-A61C-0A2673A7C26B}
 name: description
 key: description
 content-length: 82
 
 Water, rain and sweat-resistant* pouch with separate inner pockets for keys/cards.
 ----field----
-field: {8ADAD576-1C61-56BE-AFED-21A8366DCBCD}
+field: {4D7CC259-2D5C-59D5-A4DC-974A35BF0847}
 name: image
 key: image
 content-length: 58
 
 <image mediaid="{7DAC5410-FEC1-503A-9244-782466BC37BC}" />
 ----field----
-field: {2B54C89B-4DEA-50ED-9C24-3836022D21EE}
+field: {45799A8F-A01C-500D-8F1E-2558501ED660}
 name: link
 key: link
 content-length: 139
@@ -76,62 +61,41 @@ content-length: 139
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
-content-length: 0
+content-length: 46
 
-
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 22
-
-sitecore\virtualssuser
+Hydration Belt with Two 10-Ounce Water Bottles
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181017T205235Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 22
-
-sitecore\virtualssuser
+20181023T181934Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-0630be0a-b8e0-49d3-83fe-282f0b996c40
+6712cf9e-62d7-4213-bf14-0408da62ed3b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181020T173512Z
+20181023T181938Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 18
 
-sitecore\admin
+sitecore\JssImport
 ----field----
 field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
 name: __Workflow state
 key: __workflow state
 content-length: 38
 
-{AF32C98B-C828-42AF-A649-74C1DE3303FB}
-----field----
-field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
-name: __Lock
-key: __lock
-content-length: 5
-
-<r />
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}

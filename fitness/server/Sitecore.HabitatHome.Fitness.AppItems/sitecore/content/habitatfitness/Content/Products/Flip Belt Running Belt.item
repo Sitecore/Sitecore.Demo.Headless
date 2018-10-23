@@ -1,14 +1,14 @@
 ----item----
 version: 1
-id: {61706CE1-C5E1-5C3C-9B7F-1111EA7A677A}
+id: {69147F2C-D278-5D7A-AE06-9AF94CEA26FB}
 database: master
-path: /sitecore/content/habitatfitness/Content/Products/Flip Belt Running Belt
-parent: {7BF50FDA-9FAA-4D05-AF56-127E9F8B08EA}
+path: /sitecore/content/habitatfitness/Content/products/Flip Belt Running Belt
+parent: {12676F34-9F75-534C-99CD-77A295D3B75B}
 name: Flip Belt Running Belt
 master: {00000000-0000-0000-0000-000000000000}
-template: {5147001C-995C-5C3E-969F-2262CFA54E3F}
-templatekey: product-item
-created: 20181017T205235Z
+template: {F7CFB991-FDCD-5036-A021-29E58A67DA4B}
+templatekey: product
+created: 20181023T181934Z
 
 ----field----
 field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
@@ -27,6 +27,13 @@ content-length: 344
   </profile>
 </tracking>
 ----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{F7CFB991-FDCD-5036-A021-29E58A67DA4B}
+----field----
 field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
 name: __Workflow
 key: __workflow
@@ -36,31 +43,31 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: ebd7fccb-bf92-493e-81cc-74f449876a24
+revision: 059f2bb4-3963-4119-b45b-f8e68fde3ad0
 
 ----field----
-field: {77EC68E5-61DA-54CF-A771-DA5CBF743177}
+field: {2FA17014-B3B5-5966-8EE0-F3116C4313C2}
 name: title
 key: title
 content-length: 22
 
 Flip Belt Running Belt
 ----field----
-field: {5A71A624-1338-515B-A077-0B291CBA5A9B}
+field: {97F252DE-EFDA-5ED7-A61C-0A2673A7C26B}
 name: description
 key: description
 content-length: 50
 
 The world’s best running and fitness workout belt.
 ----field----
-field: {8ADAD576-1C61-56BE-AFED-21A8366DCBCD}
+field: {4D7CC259-2D5C-59D5-A4DC-974A35BF0847}
 name: image
 key: image
 content-length: 58
 
 <image mediaid="{54CB28E2-4355-5D24-899F-4BA560A7131F}" />
 ----field----
-field: {2B54C89B-4DEA-50ED-9C24-3836022D21EE}
+field: {45799A8F-A01C-500D-8F1E-2558501ED660}
 name: link
 key: link
 content-length: 99
@@ -70,44 +77,30 @@ content-length: 99
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
 name: __Display name
 key: __display name
-content-length: 0
-
-
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
 content-length: 22
 
-sitecore\virtualssuser
+Flip Belt Running Belt
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181017T205235Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 22
-
-sitecore\virtualssuser
+20181023T181934Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-ebd7fccb-bf92-493e-81cc-74f449876a24
+059f2bb4-3963-4119-b45b-f8e68fde3ad0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181020T173438Z
+20181023T182133Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -121,4 +114,11 @@ name: __Workflow state
 key: __workflow state
 content-length: 38
 
-{FCFDBB96-946A-4D2F-BCCD-5573073FC176}
+{AF32C98B-C828-42AF-A649-74C1DE3303FB}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

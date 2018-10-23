@@ -1,6 +1,6 @@
 ----item----
 version: 1
-id: {8B494DC2-DD71-4C44-8FE4-C1D040065038}
+id: {25198681-AD84-5125-9CCA-F71F84542464}
 database: master
 path: /sitecore/content/habitatfitness/habitatfitness Dictionary/validation link sent
 parent: {BDC067AB-8ACA-559B-BD2E-D1C566214A0E}
@@ -8,7 +8,7 @@ name: validation link sent
 master: {00000000-0000-0000-0000-000000000000}
 template: {6D1CD897-1936-4A3A-A511-289A94C2A7B1}
 templatekey: Dictionary entry
-created: 20181020T224355Z
+created: 20181023T181936Z
 
 ----field----
 field: {580C75A8-C01A-4580-83CB-987776CEB3AF}
@@ -20,7 +20,7 @@ validation link sent
 ----version----
 language: en
 version: 1
-revision: 5e90abb7-bfef-4c89-883f-405c36afc897
+revision: 29eb7e4b-ab29-4e92-8eff-a1ad9c6f32d2
 
 ----field----
 field: {2BA3454A-9A9C-4CDF-A9F8-107FD484EB6E}
@@ -42,7 +42,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181017T205236Z
+20181023T181936Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -56,18 +56,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5e90abb7-bfef-4c89-883f-405c36afc897
+29eb7e4b-ab29-4e92-8eff-a1ad9c6f32d2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181020T224404Z
+20181023T181936Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 22
 
-sitecore\admin
+sitecore\virtualssuser

@@ -1,14 +1,14 @@
 ----item----
 version: 1
-id: {7BF50FDA-9FAA-4D05-AF56-127E9F8B08EA}
+id: {12676F34-9F75-534C-99CD-77A295D3B75B}
 database: master
-path: /sitecore/content/habitatfitness/Content/Products
-parent: {CA5C4525-44FC-4E91-B1EA-96F435116B4C}
-name: Products
+path: /sitecore/content/habitatfitness/Content/products
+parent: {87248997-C213-56D2-9028-6C5E89D198A0}
+name: products
 master: {00000000-0000-0000-0000-000000000000}
-template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
-templatekey: Folder
-created: 20181019T214551Z
+template: {61708D94-E161-503B-BFB0-1AFBDE303D10}
+templatekey: product-folder
+created: 20181023T181934Z
 
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
@@ -16,44 +16,58 @@ name: __Masters
 key: __masters
 content-length: 38
 
-{5147001C-995C-5C3E-969F-2262CFA54E3F}
+{61708D94-E161-503B-BFB0-1AFBDE303D10}
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
 ----version----
 language: en
 version: 1
-revision: e187d93b-a8d6-4578-8f33-7c829c8c53d3
+revision: f1148f3c-fdff-4df4-839b-c8267a5b0bcc
 
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 8
+
+Products
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181019T214551Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20181023T181934Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-e187d93b-a8d6-4578-8f33-7c829c8c53d3
+f1148f3c-fdff-4df4-839b-c8267a5b0bcc
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181020T174539Z
+20181023T181934Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 18
 
-sitecore\admin
+sitecore\JssImport
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}

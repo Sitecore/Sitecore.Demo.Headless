@@ -8,7 +8,7 @@ name: name
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
-created: 20181017T205230Z
+created: 20181023T181929Z
 
 ----field----
 field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
@@ -32,6 +32,34 @@ content-length: 1
 
 0
 ----field----
+field: {337E20E1-999A-4EEA-85AD-B58A03AE75CC}
+name: Quick Action Bar
+key: quick action bar
+content-length: 38
+
+{59D4EE10-627C-4FD3-A964-61A88B092CBC}
+----field----
+field: {21828437-EA4B-40A1-8C61-4CE60EA41DB6}
+name: Validate Button
+key: validate button
+content-length: 38
+
+{59D4EE10-627C-4FD3-A964-61A88B092CBC}
+----field----
+field: {9C903E29-650D-4AF2-B9BD-526D5C14A1A5}
+name: Validator Bar
+key: validator bar
+content-length: 38
+
+{59D4EE10-627C-4FD3-A964-61A88B092CBC}
+----field----
+field: {53C432C4-7122-4E2D-8296-DB4184FD1735}
+name: Workflow
+key: workflow
+content-length: 38
+
+{59D4EE10-627C-4FD3-A964-61A88B092CBC}
+----field----
 field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
 name: __Read Only
 key: __read only
@@ -48,8 +76,22 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 0441f11b-2981-49c8-89b4-cdf798ce82e1
+revision: 7c83ec0a-2986-42f1-b4ab-a37accc5c4d8
 
+----field----
+field: {19A69332-A23E-4E70-8D16-B2640CB24CC8}
+name: Title
+key: title
+content-length: 10
+
+Event Name
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 10
+
+Event Name
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -63,7 +105,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181017T205230Z
+20181023T181929Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -77,14 +119,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-0441f11b-2981-49c8-89b4-cdf798ce82e1
+7c83ec0a-2986-42f1-b4ab-a37accc5c4d8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181017T205236Z
+20181023T181937Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

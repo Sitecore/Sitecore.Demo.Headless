@@ -8,7 +8,7 @@ name: home
 master: {00000000-0000-0000-0000-000000000000}
 template: {295AAE2B-4B5B-59E5-A898-C093C24313B4}
 templatekey: App Route
-created: 20181017T205234Z
+created: 20181023T181934Z
 
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
@@ -27,7 +27,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: eb20c42f-3a3e-4ef1-aeeb-aa1dc71d190f
+revision: 967d9551-5b49-4810-98cd-30c5f9e599c7
 
 ----field----
 field: {27B7F43B-2A75-57B4-A651-789409564CE2}
@@ -40,48 +40,41 @@ Home
 field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
 name: __Final Renderings
 key: __final renderings
-content-length: 2387
+content-length: 1060
 
-<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{C99E8F8D-E409-57CE-B088-912F2636A08E}" p:after="p[@uid='{BD1E7498-7C10-55AD-AECC-7675ED701A82}']" s:rname="FeaturedEvent" s:ds="{0383DB3B-4BF6-54DD-974F-47856C4BEEED}" s:id="{A3948268-0B8E-5A8F-9D04-F6ABCDE04774}" s:par="" s:ph="/hf-body"><rls><ruleset><rule uid="{3B2EE704-C82C-400F-A63F-58566F0D996F}" s:name="WNBA"><conditions><and uid="D4AF43F3C4544BD7992601191A698F4E"><condition uid="9C61C8E2DFFB4E9CA1632DB3948DEF55" s:id="{588D877E-D7AD-4E3C-A2D0-73ADABE3B428}" s:SportProfileKeyId="{5FAADDBB-E478-49CB-A461-FAB0731D2A63}" /><condition uid="828F49A9E4F74E61B1027C15CB551A04" s:id="{D4AE72F6-1BA4-4F17-A9B3-71B76BCA72BC}" s:GenderProfileKeyId="{B7574236-2C5B-4B52-BC15-9AA739158C8F}" /></and></conditions><actions><action uid="E260BDA215B84BB3ABA14A06860DF24F" s:id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}" s:DataSource="{111294A4-B528-4C72-990C-CCABAF2E1D0A}" /></actions></rule><rule uid="{DCAC99D4-85CA-4006-A158-4BFA85F02CA4}" s:name="bball"><conditions><and uid="4FF9353E95BD4ADBB827A9D5D4CBA4E6"><condition uid="82146DCD158841BC91146F8C4E62A33F" s:id="{0148A61F-061A-4B75-9E3C-DB6E67F03E6A}" s:SportProfileKeyId="{5FAADDBB-E478-49CB-A461-FAB0731D2A63}" s:OperatorId="{B88CD556-082E-4385-BB76-E4D1B565F290}" s:SkillLevel="6" /><condition uid="D7AA17BBFAE247E6A323E5C226C0EE07" s:id="{D4AE72F6-1BA4-4F17-A9B3-71B76BCA72BC}" s:GenderProfileKeyId="{9627F625-DA43-42EA-8E80-D5B74914467C}" /></and></conditions><actions><action uid="56D385510F94463789FAEEFA60203CEE" s:id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}" s:DataSource="{8BEDF06E-A555-4891-89F7-7D900ED1D853}" /></actions></rule><rule uid="{00000000-0000-0000-0000-000000000000}" s:name="Default"><conditions><condition uid="4DB4A172EDE144EFB355904CC8F1C392" s:id="{4888ABBB-F17D-4485-B14B-842413F88732}" /></conditions><actions /></rule></ruleset></rls></r><r uid="{E1375B21-A3E2-5D8E-B0D9-43821AE1BC5E}" p:after="r[@uid='{C99E8F8D-E409-57CE-B088-912F2636A08E}']" s:rname="EventList" s:ds="{3D04C8BF-D533-5B48-AAEB-FE48DC7A33A9}" s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}" s:par="" s:ph="/hf-body" /><r uid="{A90AE08E-CABF-5B67-8DCA-82541730F22D}" p:after="*[1=2]" s:rname="ProductRecommendationList" s:ds="{EE038851-A7F6-57C3-B4CA-75A2367A894E}" s:id="{9E75D093-FB12-5018-96A0-0D76F6A96ECC}" s:par="" s:ph="/hf-body" /></d></r>
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{9D6FEA4F-9878-5B56-A88B-7FC9310B6770}" p:after="p[@uid='{BD1E7498-7C10-55AD-AECC-7675ED701A82}']" s:rname="PersonalizePrompt" s:ds="{BEF1FFAF-7AD6-5031-8124-E63ABCDD3A5B}" s:id="{C3433D20-9FDE-511C-9C1F-35C061E19ACE}" s:par="" s:ph="/hf-body" /><r uid="{45B7B8B1-C68C-5F1B-B97F-1D09373DA10E}" p:after="r[@uid='{9D6FEA4F-9878-5B56-A88B-7FC9310B6770}']" s:rname="FeaturedEvent" s:ds="{FA49E09A-F217-5DAA-810E-6C9FC3BB9B23}" s:id="{A3948268-0B8E-5A8F-9D04-F6ABCDE04774}" s:par="" s:ph="/hf-body" /><r uid="{BEEA8C4A-17DF-510E-9508-9983E0269659}" p:after="r[@uid='{45B7B8B1-C68C-5F1B-B97F-1D09373DA10E}']" s:rname="EventList" s:ds="{AE4F2E87-DDA9-525E-916E-5B51C7B46F46}" s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}" s:par="" s:ph="/hf-body" /><r uid="{B5156FA2-8867-5EB2-89B7-8D9ECAFD090A}" p:after="*[1=2]" s:rname="ProductRecommendationList" s:ds="{A4FC3033-BA90-53E7-B557-F9BE6187A3C1}" s:id="{9E75D093-FB12-5018-96A0-0D76F6A96ECC}" s:par="" s:ph="/hf-body" /></d></r>
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181017T205234Z
+20181023T181934Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-eb20c42f-3a3e-4ef1-aeeb-aa1dc71d190f
+967d9551-5b49-4810-98cd-30c5f9e599c7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181020T214508Z
+20181023T181938Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 18
 
-sitecore\admin
+sitecore\JssImport
 ----field----
 field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
 name: __Workflow state
 key: __workflow state
 content-length: 38
 
-{AF32C98B-C828-42AF-A649-74C1DE3303FB}
-----field----
-field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
-name: __Lock
-key: __lock
-content-length: 5
-
-<r />
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}

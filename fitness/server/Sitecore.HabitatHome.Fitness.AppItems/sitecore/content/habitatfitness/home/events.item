@@ -8,7 +8,7 @@ name: events
 master: {00000000-0000-0000-0000-000000000000}
 template: {9F2F1E35-62EF-5618-AD2B-3C2988389F89}
 templatekey: event-page
-created: 20181017T205235Z
+created: 20181023T181934Z
 
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
@@ -27,8 +27,22 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: c923ee18-a36c-4182-8f31-b08bb586ec17
+revision: 197e3dfa-6a8b-4e44-bc52-0aad5bb00bc9
 
+----field----
+field: {1AB79054-D1DD-59C2-BD3F-BB1CD4F1CE92}
+name: name
+key: name
+content-length: 6
+
+events
+----field----
+field: {1A0B22B8-AC4C-59FC-BC97-2133AE8E82D9}
+name: date
+key: date
+content-length: 16
+
+20181023T181934Z
 ----field----
 field: {27B7F43B-2A75-57B4-A651-789409564CE2}
 name: pageTitle
@@ -56,7 +70,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181017T205235Z
+20181023T181934Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -70,14 +84,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c923ee18-a36c-4182-8f31-b08bb586ec17
+197e3dfa-6a8b-4e44-bc52-0aad5bb00bc9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181017T205238Z
+20181023T181938Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

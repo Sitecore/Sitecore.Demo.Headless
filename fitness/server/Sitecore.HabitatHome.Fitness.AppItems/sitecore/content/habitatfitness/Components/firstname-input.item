@@ -1,6 +1,6 @@
 ----item----
 version: 1
-id: {A1A8552C-9680-5C7F-B9E5-CBCB5813359D}
+id: {EE6520F0-EFB3-57C3-9BE1-E75125FAC26C}
 database: master
 path: /sitecore/content/habitatfitness/Components/firstname-input
 parent: {7BE9DF13-C3D0-5B82-B766-B831850764E4}
@@ -8,7 +8,7 @@ name: firstname-input
 master: {00000000-0000-0000-0000-000000000000}
 template: {FB829E4D-4E54-515E-995C-D03553228EB7}
 templatekey: InputFormField
-created: 20181017T205234Z
+created: 20181023T181933Z
 
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
@@ -27,7 +27,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: cf3cee69-3e4c-4a0a-a9c6-d22a817f9453
+revision: b3bb6727-1e2b-428f-91df-90932e41ebfc
 
 ----field----
 field: {DD3FD23C-97D4-5714-9CB3-7C0E227A00E9}
@@ -61,48 +61,41 @@ First Name
 field: {C32498B8-DA94-5BB5-B56A-AA8E7FC36A31}
 name: required
 key: required
-content-length: 0
+content-length: 1
 
-
+0
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181017T205234Z
+20181023T181933Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-cf3cee69-3e4c-4a0a-a9c6-d22a817f9453
+b3bb6727-1e2b-428f-91df-90932e41ebfc
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181020T224118Z
+20181023T181933Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 18
 
-sitecore\admin
+sitecore\JssImport
 ----field----
 field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
 name: __Workflow state
 key: __workflow state
 content-length: 38
 
-{AF32C98B-C828-42AF-A649-74C1DE3303FB}
-----field----
-field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
-name: __Lock
-key: __lock
-content-length: 5
-
-<r />
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}

@@ -8,7 +8,7 @@ name: product2
 master: {00000000-0000-0000-0000-000000000000}
 template: {F1828A2C-7E5D-4BBD-98CA-320474871548}
 templatekey: Image
-created: 20181017T205235Z
+created: 20181023T181934Z
 
 ----field----
 field: {40E50ED9-BA07-4702-992E-A912738D32DC}
@@ -739,43 +739,43 @@ content-length: 61
 ----version----
 language: en
 version: 1
-revision: 32cc32cb-57d1-43c2-94c4-999bffd8bcda
+revision: b23fa097-790d-4593-85c4-2c47d4c7ad6f
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
 key: __owner
-content-length: 22
+content-length: 18
 
-sitecore\virtualssuser
+sitecore\JssImport
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181017T205235Z
+20181023T181934Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
 key: __created by
-content-length: 22
+content-length: 18
 
-sitecore\virtualssuser
+sitecore\JssImport
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-32cc32cb-57d1-43c2-94c4-999bffd8bcda
+b23fa097-790d-4593-85c4-2c47d4c7ad6f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181017T205238Z
+20181023T181938Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
