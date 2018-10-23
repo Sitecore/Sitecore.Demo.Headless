@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Text, RichText, DateField } from "@sitecore-jss/sitecore-jss-react";
+import dayjs from 'dayjs';
 import { NavLink } from "react-router-dom";
 import { translate } from "react-i18next";
 import EventLabels from '../EventLabels';
@@ -40,7 +41,7 @@ const EventListItem = ({ label, fields, url, featured, t }) => {
             <NavLink to={`${url}`} className="events-item-name-link">
               <Text field={fields.name} tag="h5" className="events-item-name" />
             </NavLink>
-            <DateField field={fields.date} tag="p" className="events-item-date" render={(date) => date.toLocaleString()} />
+            <DateField field={fields.date} tag="p" className="events-item-date" render={(date) => dayjs(date).format('MMM D YYYY')} />
             <RichText
               field={fields.description}
               tag="p"

@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Text, RichText, DateField } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
+import dayjs from 'dayjs';
 import { translate } from "react-i18next";
 import { promptToReceiveNotifications } from "../../utils";
 import EventMap from "../EventMap";
@@ -21,7 +22,7 @@ const EventDetail = props => {
         <div className="eventDetail-image-overlay">
           <div className="eventDetail-image-overlay-content">
             <Text field={fields.name} tag="h1" className="eventDetail-title" />
-            <DateField field={fields.date} tag="p" className="eventDetail-date" render={(date) => date.toLocaleString()} />
+            <DateField field={fields.date} tag="p" className="eventDetail-date" render={(date) => dayjs(date).format('MMM D YYYY')} />
             <NavLink to={`/create-account`} className="btn btn-primary">
               {t("register-to-signup")}
             </NavLink>
