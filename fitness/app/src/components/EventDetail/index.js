@@ -1,13 +1,16 @@
 import React from "react";
 import { Image, Text, RichText, DateField } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
+import { translate } from "react-i18next";
 import { promptToReceiveNotifications } from "../../utils";
 import EventMap from "../EventMap";
 import EventLabels from '../EventLabels';
 
 const EventDetail = props => {
-  const { fields } = props.routeData;
+  const { t, routeData } = props;
+  const { fields } = routeData;
   const eventName = fields.name.value;
+
   return (
     <div className="eventDetail">
       <div className="eventDetail-image-container">
@@ -20,7 +23,7 @@ const EventDetail = props => {
             <Text field={fields.name} tag="h1" className="eventDetail-title" />
             <DateField field={fields.date} tag="p" className="eventDetail-date" render={(date) => date.toLocaleString()} />
             <NavLink to={`/create-account`} className="btn btn-primary">
-              Register to signup
+              {t("register-to-signup")}
             </NavLink>
           </div>
           <div className="eventDetail-image-overlay-metas">
@@ -57,4 +60,4 @@ const EventDetail = props => {
   );
 };
 
-export default EventDetail;
+export default translate()(EventDetail);
