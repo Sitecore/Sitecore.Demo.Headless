@@ -1,0 +1,11 @@
+id: hydration-belt
+name: Hydration Belt with Two 10-Ounce Water Bottles
+displayName: Hydration Belt with Two 10-Ounce Water Bottles
+template: product
+fields:
+  title: Hydration Belt with Two 10-Ounce Water Bottles
+  description: Water, rain and sweat-resistant* pouch with separate inner pockets for keys/cards.
+  image:
+    src: /assets/products/product3.png
+  link:
+    href: https://adalidgear.com/products/sports/hydration-belt-fuel-running-gear-water-bottles-royal-blue-medium/

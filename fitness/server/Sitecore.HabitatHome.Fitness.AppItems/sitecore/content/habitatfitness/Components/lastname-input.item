@@ -1,0 +1,108 @@
+----item----
+version: 1
+id: {1F01217F-6C7B-4707-9A08-F11CD619B1E3}
+database: master
+path: /sitecore/content/habitatfitness/Components/lastname-input
+parent: {7BE9DF13-C3D0-5B82-B766-B831850764E4}
+name: lastname-input
+master: {00000000-0000-0000-0000-000000000000}
+template: {FB829E4D-4E54-515E-995C-D03553228EB7}
+templatekey: InputFormField
+created: 20181020T223048Z
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{FB829E4D-4E54-515E-995C-D03553228EB7}
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: 4c6d1e7c-c033-4a17-a5bf-c771d780fece
+
+----field----
+field: {DD3FD23C-97D4-5714-9CB3-7C0E227A00E9}
+name: type
+key: type
+content-length: 4
+
+text
+----field----
+field: {6EFE96C9-A18A-58A4-BE35-408CB0BB94C4}
+name: id
+key: id
+content-length: 8
+
+lastname
+----field----
+field: {261F512A-CC06-5248-A344-C64DEF6AD55F}
+name: name
+key: name
+content-length: 8
+
+lastname
+----field----
+field: {F383A636-818B-5FBF-A00F-F6A06FCDEF61}
+name: placeholder
+key: placeholder
+content-length: 9
+
+Last Name
+----field----
+field: {C32498B8-DA94-5BB5-B56A-AA8E7FC36A31}
+name: required
+key: required
+content-length: 0
+
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181017T205234Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4c6d1e7c-c033-4a17-a5bf-c771d780fece
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181020T224115Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{AF32C98B-C828-42AF-A649-74C1DE3303FB}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

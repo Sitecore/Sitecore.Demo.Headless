@@ -1,0 +1,26 @@
+id: home-page
+fields:
+  pageTitle: Home
+placeholders:
+  hf-body:
+  - componentName: PersonalizePrompt
+    fields:
+      headerText: Personalize your experience!
+      bodyText: explore events and gear based on your favorite sports and fitness level
+  - componentName: FeaturedEvent
+    fields:
+      event:
+        id: tiburon-half-marathon
+      label: Recommended for you
+  - componentName: EventList
+    fields:
+      title: Events near you
+      items:
+      - id: oakland-marathon
+  - componentName: ProductRecommendationList
+    fields:
+      title: Gear just for you
+      items:
+      - id: flip-belt
+      - id: camelbak-arc
+      - id: hydration-belt

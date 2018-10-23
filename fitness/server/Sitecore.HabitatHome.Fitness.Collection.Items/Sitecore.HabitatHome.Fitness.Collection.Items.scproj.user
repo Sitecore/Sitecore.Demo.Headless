@@ -1,0 +1,41 @@
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!-- 
+	Use this file to add Per user settings to your project. 
+
+	NOTE: For changes to this file to be picked up, you must unload and re-load your project by
+	right-clicking on the project and selecting "Unload Project" / "Reload Project"
+	-->
+
+	<!--
+	Place any one of these properties in one of the configurations below, or create your own configuration:
+	  
+    <SitecoreDeployFolder>[Per user path to deploy files to]</SitecoreDeployFolder>
+    <SitecoreWebUrl>[Per user sitecore url]</SitecoreWebUrl>
+	<InstallSitecoreConnector>[True | False. If true, the sitecore connector is installed on the deployed application]</InstallSitecoreConnector>
+    <SitecoreAccessGuid>[Guid with dashes, without the braces. i.e. xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</SitecoreAccessGuid>
+    <RecursiveDeployAction>[Ignore | Delete | SitecoreRecycle]</RecursiveDeployAction>	
+	  -->
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+	</PropertyGroup>
+
+	<!--
+	Create per user file replacements by constructing replacement nodes in the item groups below.
+	
+	<ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<Replacement Include="[Source path relative to the project sepcified in Source Web Project property, or absolute path]">
+			<TargetPath>[Local absolute path for the item(s) specified above]</TargetPath>
+			<IsFolder>[True | False. If True, the Include is treated as a folder and all context of the folder are copied]</IsFolder>
+			<IsRelative>[True | False. Must be True if the path specified above is relative to the Source Web Project]</IsRelative>
+		</Replacement>
+	</ItemGroup>
+	<ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+		<Replacement Include="[Source path relative to the project sepcified in Source Web Project property, or absolute path]">
+			<TargetPath>[Local absolute path for the item(s) specified above]</TargetPath>
+			<IsFolder>[True | False. If True, the Include is treated as a folder and all context of the folder are copied]</IsFolder>
+			<IsRelative>[True | False. Must be True if the path specified above is relative to the Source Web Project]</IsRelative>
+		</Replacement>
+	</ItemGroup>
+	-->
+</Project>

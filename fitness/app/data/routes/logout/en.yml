@@ -1,0 +1,7 @@
+fields:
+  pageTitle: Log out
+placeholders:
+  hf-body:
+  - componentName: ContentBlock
+    fields:
+      heading: Log out

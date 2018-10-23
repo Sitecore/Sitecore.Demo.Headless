@@ -1,0 +1,140 @@
+----item----
+version: 1
+id: {4B534C1F-A5AD-5BBE-AE57-9AA942AACE0B}
+database: master
+path: /sitecore/media library/habitatfitness/assets/icons/cycling
+parent: {C64075B8-4790-5F7E-9061-8F534E0D1B3D}
+name: cycling
+master: {00000000-0000-0000-0000-000000000000}
+template: {F1828A2C-7E5D-4BBD-98CA-320474871548}
+templatekey: Image
+created: 20181017T205234Z
+
+----field----
+field: {40E50ED9-BA07-4702-992E-A912738D32DC}
+name: Blob
+key: blob
+content-length: 2002
+
+iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB1FBMVEUAAAD/3UX/2kT/2kP/
+2kT/2Dv/20D/2kT/2kX/2UL/30D/2UP/2kT/2UX/20P/2kX/2kT/2kT/2kT/20n/2kT/20T/4Uv/
+2kT/2kT/2kT/2EX/2kT/20L/20P/2kT/3Eb/zDP/2UX/2kT/2UL/20T/2kP/2kT/3UT/2UT/2kT/
+3Eb/1VX/2kT/2kT/20T/2UX/2kT/2kT/10T/2kT/20P/2kT/2kX/1kf/20T/2kb/20T/2Eb//1X/
+1Uf/20T/2kT/2kP/v0D/2kP/20X/2kT/2kT/2kT/2kT/3kP/20T/2UX/2kT/2kT/2EX/4zn/2kT/
+2kT/20T/2kT/2kT/2UT/20P/2kT/2kP/2kT/2kT/2kT/2kT/2kT/2kT/2kT/20T/2kT/2Eb/2kT/
+0Ub/2kT/2kT/2kX/3Ef/2kT/2kT/2kX/2UT/20X/20P/2kT/2kT/2kT/2kT/20L/2kT/3UT/2UT/
+2UP/2kX/2kT/2UX/2kT/2kT/2kX/2kX/20T/2UT/10P//4D/30D/3EL/2kP/20n/2UT/2kT/2kT/
+3kL/2kT/2kP/20T/3Eb/2kP/30D/2UP/2kT/20X//wD/2kT/2kT/2kb/20T/2UX/20P/2kQAAABz
+ejyeAAAAmnRSTlMAJcfQpg0c8qdJEFfsQ5uCtf58B57LEWaLSxrIMjnmHQVk+RtPrukelfMzBr/0
+qHNa3i31jG1gGcQ3MUIDEpNT3wSfjczdrPYXocXh4jQJzu3S64/natxFtPjk6nXu+nCSIdELIv2g
+JIPYMF5GY5m72s8jrQ9lWMnVSvezkWhpqSYCGDp2FTyxyh/TkK8WwQijxncB+6U+2ZwqHz7PdwAA
+AAFiS0dEAIgFHUgAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfiCQgVAC/uwAZ1AAACAUlE
+QVQ4y7WS6VsSURTGX2eyyRZsiooWyaaMzFAUadUKLXEpcMkFrWnAqKA9bcNIUtMszZJwOX9tZ7iR
+PRP4rfM8995zzu+dc+4ywH+xEkneUroJ36oQ0bZNBGVk2vbigh0m31mM7rKVl+4mUvcUxnvt/PG+
+/QccBwvzQ4dz7Y8UK1/hzHE6yqUqC/BjmuB0/ESVdtJlxZWnKG/V5nTawmvOCOiuFWudtYBH5Osb
+XF5yNvrorIWfOy8EXvuFi5ea0EyXLYIrfzZAcgnHVyWLwN9CrXXXhOI6x20B/wZs93V01nbd4MxN
+m5sFXUCwjUIdvvbf2+umQI9CvQ1moR4W9KHsFpEzQN0ek/fTwKAfQ+HhEVbcNlvc6dOVu2T4Bweo
+H4i4o6PAvdj9B8MjQZfZ4WGcyIP6TmA06o7AUBNcxsEP9IgetzAfwhPS1afPvE1AQjUgxZmXa88T
+iYqw4wVRIAKb9rKKla0M4hKUMWA8Js4nvaLe18Cbt8C7ZO6nG1MQDbFwQn+fSn1ITiI9ztFk9Ueg
+UZ1gNxSFXZ9ip5nHNM2Ic8/QNM+feEzpdszG5kQ6+FmZF9688qVGeHOxWeArLSyyn/5GqfzVpkhK
+87K4wHcGLBlqUvr+QwsvZ/KCzHL4p5yVkqqxlItXsquavLb+99utr8naanZlI5HBP1YgVdB+AROJ
+rZTRr6ZfAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTA5LTA4VDIxOjAwOjQ3KzAyOjAwuXaeigAA
+ACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wOS0wOFQyMTowMDo0NyswMjowMMgrJjYAAAAZdEVYdFNv
+ZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC
+----field----
+field: {22EAC599-F13B-4607-A89D-C091763A467D}
+name: Width
+key: width
+content-length: 2
+
+32
+----field----
+field: {DE2CA9E4-C117-4C8A-A139-1FF4B199D15A}
+name: Height
+key: height
+content-length: 2
+
+32
+----field----
+field: {C06867FE-9A43-4C7D-B739-48780492D06F}
+name: Extension
+key: extension
+content-length: 3
+
+png
+----field----
+field: {6F47A0A5-9C94-4B48-ABEB-42D38DEF6054}
+name: Mime Type
+key: mime type
+content-length: 9
+
+image/png
+----field----
+field: {6954B7C7-2487-423F-8600-436CB3B6DC0E}
+name: Size
+key: size
+content-length: 4
+
+1464
+----field----
+field: {CB09946F-3218-4823-87D2-D5007C199A96}
+name: Dimensions
+key: dimensions
+content-length: 7
+
+32 x 32
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 61
+
+-/media/4B534C1FA5AD5BBEAE579AA942AACE0B.ashx?h=16&thn=1&w=16
+----version----
+language: en
+version: 1
+revision: c5760267-313a-4cd8-888b-43ebcea43f21
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 18
+
+sitecore\JssImport
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181017T205234Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\JssImport
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c5760267-313a-4cd8-888b-43ebcea43f21
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181017T205238Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\JssImport

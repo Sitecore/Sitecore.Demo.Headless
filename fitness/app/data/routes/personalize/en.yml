@@ -1,0 +1,41 @@
+fields:
+  pageTitle: Personalize
+placeholders:
+  hf-body:
+  - componentName: PersonalizationWizard
+    fields:
+      title: Personalize
+    placeholders:
+      hf-personalization-wizard:
+      - componentName: SportsPicker
+        fields:
+          title: Pick your favorite sports
+          selectSkillTitle: What's your skill level in $selected-sport?
+          sports:
+            - id: basketball
+            - id: running
+            - id: cycling
+            - id: kayaking
+            - id: hiking
+            - id: rock-climbing
+      - componentName: PersonalDataForm
+        fields:
+          title: Let's refine it a bit
+          skipLink:
+              href: /
+              text: Skip this
+        placeholders:
+          hf-createaccount-form:
+          - id: gender-selector
+          - id: age-group-selector
+      - componentName: SaveAsAccount
+        fields:
+          title: Want to save it as account?
+          skipLink:
+            href: /
+            text: Skip this
+        placeholders:
+          hf-createaccount-form:
+            - id: email-input
+            - id: firstname-input
+            - id: lastname-input

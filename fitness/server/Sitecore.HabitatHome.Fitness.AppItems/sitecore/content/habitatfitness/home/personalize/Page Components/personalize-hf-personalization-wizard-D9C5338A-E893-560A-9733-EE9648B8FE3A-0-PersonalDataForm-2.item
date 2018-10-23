@@ -1,0 +1,94 @@
+----item----
+version: 1
+id: {EA822593-D307-555B-9DE3-EB80367A52B3}
+database: master
+path: /sitecore/content/habitatfitness/home/personalize/Page Components/personalize-hf-personalization-wizard-D9C5338A-E893-560A-9733-EE9648B8FE3A-0-PersonalDataForm-2
+parent: {6BD43080-C3BF-5F66-82E1-2F4F7A7FA67C}
+name: personalize-hf-personalization-wizard-D9C5338A-E893-560A-9733-EE9648B8FE3A-0-PersonalDataForm-2
+master: {00000000-0000-0000-0000-000000000000}
+template: {0B05FDDE-E167-55D2-B5AD-8CF27A627A0C}
+templatekey: PersonalDataForm
+created: 20181017T205236Z
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: 17e48293-bb0a-48a1-acd7-dd2002b87fd4
+
+----field----
+field: {29E513B9-AD78-5AE6-BDF9-E868CE032EE4}
+name: title
+key: title
+content-length: 21
+
+Let's refine it a bit
+----field----
+field: {B500A9FD-7630-56BD-81F8-834D497A7C23}
+name: skipLink
+key: skiplink
+content-length: 89
+
+<link text="Skip this" linktype="internal" id="{82BBADAF-BD4A-5FCE-9E12-EAA858EE8E94}" />
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 18
+
+PersonalDataForm-2
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 22
+
+sitecore\virtualssuser
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181017T205236Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 22
+
+sitecore\virtualssuser
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+17e48293-bb0a-48a1-acd7-dd2002b87fd4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181017T205239Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 22
+
+sitecore\virtualssuser
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}

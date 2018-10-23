@@ -1,0 +1,37 @@
+id: oakland-marathon
+template: event-page
+url: /events/oakland-marathon
+fields:
+  pageTitle: Oakland Marathon
+  name: Oakland Marathon
+  description: Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party.
+  date: '2018-11-08T08:00:00.000Z'
+  latitude: 37.796610
+  longitude: -122.277422
+  image:
+    src: /assets/events/oakland_marathon.jpg
+  labels:
+    - name: Type
+      displayName: Type
+      template: event-label
+      fields:
+        name: Type
+        value: road
+        icon: ico-road
+    - name: Parcicipants
+      displayName: Number of Participants
+      template: event-label
+      fields:
+        name: Parcicipants
+        value: 500-1K
+        icon: ico-participants
+    - name: Distance
+      displayName: Distance
+      template: event-label
+      fields:
+        name: Distance
+        value: 13mi
+        icon: ico-distance
+placeholders:
+  hf-body:
+    - componentName: EventDetail

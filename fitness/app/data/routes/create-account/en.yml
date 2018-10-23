@@ -1,0 +1,17 @@
+fields:
+  pageTitle: Create Account
+placeholders:
+  hf-body:
+    - componentName: CreateAccount
+      fields:
+        heading: Create Account
+      placeholders:
+        hf-createaccount-form:
+          - id: firstname-input
+          - id: lastname-input
+          - id: email-input
+          - componentName: FieldGroup
+            placeholders:
+              hf-createaccount-form-group:
+              - id: gender-selector
+              - id: age-group-selector

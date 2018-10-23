@@ -1,0 +1,94 @@
+----item----
+version: 1
+id: {FDA4B79D-D71C-59E6-92AA-6F3919C408C6}
+database: master
+path: /sitecore/content/habitatfitness/Components/age-group-selector
+parent: {7BE9DF13-C3D0-5B82-B766-B831850764E4}
+name: age-group-selector
+master: {00000000-0000-0000-0000-000000000000}
+template: {C67155F2-9B0D-495C-B230-00F6C7860B7D}
+templatekey: AgeGroupSelectorField
+created: 20181017T205234Z
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{40A63E80-390D-5C17-869F-7EB9B5BFD2D7}
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: 7fa9afa0-4f46-4d78-9aee-adcfb5ef86ad
+
+----field----
+field: {8250A462-1ADD-48BF-B623-4D07A9EB638F}
+name: selectName
+key: selectname
+content-length: 3
+
+age
+----field----
+field: {A52C5CFF-4B43-4066-94E1-DAF6EFFD1952}
+name: selectTitle
+key: selecttitle
+content-length: 14
+
+Your age group
+----field----
+field: {655D4CCB-198D-44E7-B11F-428C9DF27272}
+name: options
+key: options
+content-length: 194
+
+{A52D47FC-CD77-4038-9E9F-C114A621B757}|{10FBC1D1-A171-41DE-B026-C78B86315371}|{F7A544ED-B12D-45A9-B75F-DD7DE4FF39F1}|{9EE1245F-BD08-4558-AC7D-4083E21B7F0B}|{D891C86C-190B-4BE5-84FA-00644CC0EFEE}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181017T205234Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7fa9afa0-4f46-4d78-9aee-adcfb5ef86ad
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181020T203209Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{AF32C98B-C828-42AF-A649-74C1DE3303FB}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

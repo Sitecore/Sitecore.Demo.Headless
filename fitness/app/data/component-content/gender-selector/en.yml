@@ -1,0 +1,16 @@
+id: gender-selector
+componentName: SelectFormField
+fields:
+  selectName: gender
+  selectTitle: Your gender
+  options:
+    - template: Profile Key
+      name: Female
+      displayName: Female
+      fields:
+        Name: Female
+    - template: Profile Key
+      name: Male
+      displayName: Male
+      fields:
+        Name: Male
