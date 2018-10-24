@@ -1,0 +1,173 @@
+----item----
+version: 1
+id: {069B4C2E-3920-426D-B327-9F546E050A48}
+database: master
+path: /sitecore/content/habitatfitness/home/events/street-basketball-santa-monica
+parent: {DEEB4737-CF04-5EC9-82A1-40C214E25813}
+name: street-basketball-santa-monica
+master: {98791841-696B-429A-8593-49F3188306B5}
+template: {9F2F1E35-62EF-5618-AD2B-3C2988389F89}
+templatekey: event-page
+created: 20181024T225335Z
+
+----field----
+field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
+name: __Tracking
+key: __tracking
+content-length: 346
+
+<tracking>
+  <profile id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf" name="Sports">
+    <key name="Basketball" value="10" />
+    <key name="Cycling" value="0" />
+    <key name="Kayaking" value="0" />
+    <key name="Rock Climbing" value="0" />
+    <key name="Running" value="0" />
+    <key name="Swimming" value="0" />
+  </profile>
+</tracking>
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 39
+
+/~/icon/applications/32x32/star_red.png
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{F4671616-58FF-4621-A2D6-BBCF51C91F6B}
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: 9a634cab-911c-4140-bb28-c28dc1d60ff7
+
+----field----
+field: {1AB79054-D1DD-59C2-BD3F-BB1CD4F1CE92}
+name: name
+key: name
+content-length: 17
+
+Street Basketball
+----field----
+field: {6248B2DC-F9EF-548B-9D73-084135226AD7}
+name: description
+key: description
+content-length: 26
+
+Show off your hoops skills
+----field----
+field: {99784E81-863A-5D39-AE05-562AE7B586C9}
+name: image
+key: image
+content-length: 58
+
+<image mediaid="{FAF9DC90-52F6-435F-953D-FCD0259924DE}" />
+----field----
+field: {1A0B22B8-AC4C-59FC-BC97-2133AE8E82D9}
+name: date
+key: date
+content-length: 16
+
+20181219T212900Z
+----field----
+field: {330BAD8C-8319-5A15-8FD8-164B8C7021FD}
+name: latitude
+key: latitude
+content-length: 9
+
+34.001235
+----field----
+field: {8D5D5171-6372-5791-8954-969D52F5BA8A}
+name: longitude
+key: longitude
+content-length: 11
+
+-118.484089
+----field----
+field: {56702BFC-558A-556F-9CA7-85F6491D9778}
+name: labels
+key: labels
+content-length: 0
+
+
+----field----
+field: {27B7F43B-2A75-57B4-A651-789409564CE2}
+name: pageTitle
+key: pagetitle
+content-length: 30
+
+Street Basketball Santa Monica
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 30
+
+Street Basketball Santa Monica
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181024T225335Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9a634cab-911c-4140-bb28-c28dc1d60ff7
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181024T230339Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{AF32C98B-C828-42AF-A649-74C1DE3303FB}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

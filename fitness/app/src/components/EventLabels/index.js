@@ -7,11 +7,13 @@ const EventLabel = ({ label, className }) => {
   if (fields.fields) {
     fields = label.fields.fields;
   }
+
+  const labelImage = fields.image && fields.image.value ? fields.image.value.src : '';
   return (
     <p className={`${className}`}>
       <img
         style={{
-          backgroundImage: `url(${fields.image.value.src})`,
+          backgroundImage: `url(${labelImage})`,
           backgroundSize: "15px 15px",
           marginRight: "5px",
           width: "15px",

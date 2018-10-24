@@ -1,14 +1,14 @@
 ----item----
 version: 1
-id: {0EB0F71A-8404-5097-98A5-21F5E8DB5EDE}
+id: {2D942BFA-4364-54C4-BD65-404A15C54E4B}
 database: master
 path: /sitecore/content/habitatfitness/Components/EventList
-parent: {7BE9DF13-C3D0-5B82-B766-B831850764E4}
+parent: {0CBD6A9F-4E26-546B-8891-14156C1CFDC5}
 name: EventList
 master: {00000000-0000-0000-0000-000000000000}
 template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
 templatekey: Folder
-created: 20181023T181933Z
+created: 20181024T200344Z
 
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
@@ -27,7 +27,7 @@ content-length: 77
 ----version----
 language: en
 version: 1
-revision: 69e64ed5-e846-4a49-9591-1c12f72fce57
+revision: 70ecbde0-c631-49d0-b47b-180d1784876c
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -42,7 +42,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181023T181933Z
+20181024T200344Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-69e64ed5-e846-4a49-9591-1c12f72fce57
+70ecbde0-c631-49d0-b47b-180d1784876c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181023T181937Z
+20181024T200344Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

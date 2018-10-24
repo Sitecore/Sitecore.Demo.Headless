@@ -1,0 +1,80 @@
+----item----
+version: 1
+id: {1BDA6387-2F81-5BEB-8FA4-960368445B63}
+database: master
+path: /sitecore/content/habitatfitness/home/Data/home-hf-body-PersonalizePrompt-1
+parent: {14C76265-DDFA-5B50-8712-4E9E7BF8C3D2}
+name: home-hf-body-PersonalizePrompt-1
+master: {00000000-0000-0000-0000-000000000000}
+template: {9419C0D3-8D5A-58FC-AF00-83D8E8D412E7}
+templatekey: PersonalizePrompt
+created: 20181024T200345Z
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: b6ff1d00-eae7-4983-9613-6ceacbbb86fe
+
+----field----
+field: {92F6273B-E80E-5DF2-8585-CED42AAAB38E}
+name: headerText
+key: headertext
+content-length: 28
+
+Personalize your experience!
+----field----
+field: {0A85C343-34E7-509A-97DB-8CBEC744A47C}
+name: bodyText
+key: bodytext
+content-length: 71
+
+explore events and gear based on your favorite sports and fitness level
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 19
+
+PersonalizePrompt-1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181024T200345Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b6ff1d00-eae7-4983-9613-6ceacbbb86fe
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181024T200345Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\JssImport
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}

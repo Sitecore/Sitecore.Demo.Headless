@@ -8,7 +8,7 @@ name: oakland_marathon
 master: {00000000-0000-0000-0000-000000000000}
 template: {DAF085E8-602E-43A6-8299-038FF171349F}
 templatekey: Jpeg
-created: 20181023T181935Z
+created: 20181024T200346Z
 
 ----field----
 field: {40E50ED9-BA07-4702-992E-A912738D32DC}
@@ -8968,20 +8968,6 @@ AqMjGR8rfM3faOK53FJq6Ta626eWra6rR7drmnM7NXdnuumm39W18rla9gF3a5kCgnaQR1U9OG2g
 Wj+NdV8CT2XjXVfF9lq0up6PpGgazPdRQ6H4L8QWZsZLbxFZxQu98lw00NyJLdEWKSWkrJL8hOOu
 r202X6xl+f36M//Z
 ----field----
-field: {22EAC599-F13B-4607-A89D-C091763A467D}
-name: Width
-key: width
-content-length: 3
-
-756
-----field----
-field: {DE2CA9E4-C117-4C8A-A139-1FF4B199D15A}
-name: Height
-key: height
-content-length: 3
-
-454
-----field----
 field: {C06867FE-9A43-4C7D-B739-48780492D06F}
 name: Extension
 key: extension
@@ -9003,13 +8989,6 @@ content-length: 6
 
 510162
 ----field----
-field: {CB09946F-3218-4823-87D2-D5007C199A96}
-name: Dimensions
-key: dimensions
-content-length: 9
-
-756 x 454
-----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
@@ -9019,47 +8998,47 @@ content-length: 61
 ----version----
 language: en
 version: 1
-revision: 07b6de85-1ea2-4dfe-9a8c-81c74d81a5bb
+revision: 5306ac91-2e3c-4073-9058-351554bf33ec
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
 key: __owner
-content-length: 22
+content-length: 18
 
-sitecore\virtualssuser
+sitecore\JssImport
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181023T181935Z
+20181024T200346Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
 key: __created by
-content-length: 22
+content-length: 18
 
-sitecore\virtualssuser
+sitecore\JssImport
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-07b6de85-1ea2-4dfe-9a8c-81c74d81a5bb
+5306ac91-2e3c-4073-9058-351554bf33ec
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181023T181938Z
+20181024T200346Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 22
+content-length: 18
 
-sitecore\virtualssuser
+sitecore\JssImport

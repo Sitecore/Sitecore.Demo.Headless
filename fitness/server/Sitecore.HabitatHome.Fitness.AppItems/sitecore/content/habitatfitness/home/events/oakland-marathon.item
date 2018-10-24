@@ -8,15 +8,24 @@ name: oakland-marathon
 master: {00000000-0000-0000-0000-000000000000}
 template: {9F2F1E35-62EF-5618-AD2B-3C2988389F89}
 templatekey: event-page
-created: 20181023T181935Z
+created: 20181024T200346Z
 
 ----field----
-field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
-name: __Masters
-key: __masters
-content-length: 38
+field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
+name: __Tracking
+key: __tracking
+content-length: 346
 
-{9F2F1E35-62EF-5618-AD2B-3C2988389F89}
+<tracking>
+  <profile id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf" name="Sports">
+    <key name="Basketball" value="0" />
+    <key name="Cycling" value="0" />
+    <key name="Kayaking" value="0" />
+    <key name="Rock Climbing" value="0" />
+    <key name="Running" value="10" />
+    <key name="Swimming" value="0" />
+  </profile>
+</tracking>
 ----field----
 field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
 name: __Workflow
@@ -27,7 +36,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: e8174afe-b177-46b8-a1dd-e9fdfdbccdad
+revision: cbc0827a-0ea8-4b58-b478-c9fd36485557
 
 ----field----
 field: {1AB79054-D1DD-59C2-BD3F-BB1CD4F1CE92}
@@ -77,7 +86,7 @@ name: labels
 key: labels
 content-length: 116
 
-{FFAC5EF6-8CDE-5AEF-8CAA-8B4329E9B6B7}|{E0508FD9-E542-5A30-928A-2DE3C63A9416}|{9DBACAAD-F270-51A8-9DAE-08930C6A6EC0}
+{9DBACAAD-F270-51A8-9DAE-08930C6A6EC0}|{E0508FD9-E542-5A30-928A-2DE3C63A9416}|{FFAC5EF6-8CDE-5AEF-8CAA-8B4329E9B6B7}
 ----field----
 field: {27B7F43B-2A75-57B4-A651-789409564CE2}
 name: pageTitle
@@ -86,58 +95,51 @@ content-length: 16
 
 Oakland Marathon
 ----field----
-field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
-name: __Final Renderings
-key: __final renderings
-content-length: 250
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 16
 
-<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{C5B59ECE-A13F-551D-9F73-804458B74F55}" p:after="*[1=2]" s:rname="EventDetail" s:id="{D7E453AA-A4A1-56D7-B0B1-E84AF7C71D69}" s:par="" s:ph="/hf-body" /></d></r>
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 22
-
-sitecore\virtualssuser
+Oakland Marathon
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181023T181935Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 22
-
-sitecore\virtualssuser
+20181024T200346Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-e8174afe-b177-46b8-a1dd-e9fdfdbccdad
+cbc0827a-0ea8-4b58-b478-c9fd36485557
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181023T181938Z
+20181024T230231Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 22
+content-length: 14
 
-sitecore\virtualssuser
+sitecore\admin
 ----field----
 field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
 name: __Workflow state
 key: __workflow state
 content-length: 38
 
-{FCFDBB96-946A-4D2F-BCCD-5573073FC176}
+{AF32C98B-C828-42AF-A649-74C1DE3303FB}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

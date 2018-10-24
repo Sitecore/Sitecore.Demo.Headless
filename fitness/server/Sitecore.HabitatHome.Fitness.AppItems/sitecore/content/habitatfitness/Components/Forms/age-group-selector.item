@@ -1,0 +1,80 @@
+----item----
+version: 1
+id: {FDA4B79D-D71C-59E6-92AA-6F3919C408C6}
+database: master
+path: /sitecore/content/habitatfitness/Components/Forms/age-group-selector
+parent: {AE80B3EA-01B4-46EF-A42A-C0C5966A6E36}
+name: age-group-selector
+master: {00000000-0000-0000-0000-000000000000}
+template: {40A63E80-390D-5C17-869F-7EB9B5BFD2D7}
+templatekey: SelectFormField
+created: 20181024T200344Z
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: 6d257b17-705d-431b-af01-072ccb746cf2
+
+----field----
+field: {D04B729A-39AB-5129-B4F8-2A64717E2E34}
+name: selectName
+key: selectname
+content-length: 3
+
+age
+----field----
+field: {CF45ABA9-AA4E-5DF2-8CAB-3530AF93176A}
+name: selectTitle
+key: selecttitle
+content-length: 14
+
+Your age group
+----field----
+field: {6BBA236A-7395-5094-8C5D-F0C27FF1994B}
+name: options
+key: options
+content-length: 194
+
+{18C8CF93-41B4-5BD0-A5F5-099EE19ACB4A}|{6925B531-E2DA-5256-9C37-FECD0665CBFF}|{06D71280-2627-590E-BC0B-BC4B323B9BB5}|{4DAAC541-A608-54C4-AEFE-8C4BCB3762E7}|{42449147-730E-55E0-A24F-BE75C41E573D}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181024T200344Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6d257b17-705d-431b-af01-072ccb746cf2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181024T211254Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}
