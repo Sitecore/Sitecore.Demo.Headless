@@ -3,4 +3,5 @@ obj
 packages
 .vs
 .user
+*.bak
 TdsGlobal.config.user
