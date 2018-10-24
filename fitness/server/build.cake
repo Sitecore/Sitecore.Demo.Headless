@@ -30,8 +30,6 @@ Setup(context =>
 
 Task("Default")
 .WithCriteria(configuration != null)
-.IsDependentOn("Clean")
-.IsDependentOn("Copy-Sitecore-Lib")
 .IsDependentOn("Modify-PublishSettings")
 .IsDependentOn("Publish-All-Projects")
 .IsDependentOn("Apply-Xml-Transform")
@@ -41,16 +39,10 @@ Task("Default")
 
 Task("Post-Deploy")
 .IsDependentOn("Sync-Unicorn")
-.IsDependentOn("Publish-xConnect-Project")
-.IsDependentOn("Deploy-EXM-Campaigns")
-.IsDependentOn("Deploy-Marketing-Definitions")
-.IsDependentOn("Rebuild-Core-Index")
-.IsDependentOn("Rebuild-Master-Index")
-.IsDependentOn("Rebuild-Web-Index");
+.IsDependentOn("Publish-xConnect-Project");
 
 Task("Quick-Deploy")
 .WithCriteria(configuration != null)
-.IsDependentOn("Clean")
 .IsDependentOn("Copy-Sitecore-Lib")
 .IsDependentOn("Modify-PublishSettings")
 .IsDependentOn("Publish-All-Projects")
@@ -63,48 +55,25 @@ Task("Quick-Deploy")
 ================= SUB TASKS =====================
 ===============================================*/
 
-Task("Clean").Does(() => {
-    CleanDirectories($"{configuration.SourceFolder}/**/obj");
-    CleanDirectories($"{configuration.SourceFolder}/**/bin");
-});
-
 Task("Copy-Sitecore-Lib")
     .WithCriteria(()=>(configuration.BuildConfiguration == "preview"))
     .Does(()=> {
-        var files = GetFiles($"{configuration.WebsiteRoot}/bin/Sitecore*.dll");
-        var destination = "./lib/Sitecore";
+        var files = GetFiles($"{configuration.WebsiteRoot}/bin/Sitecore.LayoutService*.dll");
+        var destination = "./sc.lib";
         EnsureDirectoryExists(destination);
         CopyFiles(files, destination);
 }); 
 Task("Publish-All-Projects")
 .IsDependentOn("Build-Solution")
-.IsDependentOn("Publish-Foundation-Projects")
-.IsDependentOn("Publish-Feature-Projects")
-.IsDependentOn("Publish-Project-Projects");
+.IsDependentOn("Publish-Projects");
 
 
 Task("Build-Solution").Does(() => {
     MSBuild(configuration.SolutionFile, cfg => InitializeMSBuildSettings(cfg));
 });
 
-Task("Publish-Foundation-Projects").Does(() => {
-    PublishProjects(configuration.FoundationSrcFolder, configuration.WebsiteRoot);
-});
-
-Task("Publish-Feature-Projects").Does(() => {
-    PublishProjects(configuration.FeatureSrcFolder, configuration.WebsiteRoot);
-});
-
-Task("Publish-Project-Projects").Does(() => {
-    var common = $"{configuration.ProjectSrcFolder}\\Common";
-    var habitat = $"{configuration.ProjectSrcFolder}\\Habitat";
-    var habitatHome = $"{configuration.ProjectSrcFolder}\\HabitatHome";
-    var habitatHomeBasic = $"{configuration.ProjectSrcFolder}\\HabitatHomeBasic";
-
-    PublishProjects(common, configuration.WebsiteRoot);
-    PublishProjects(habitat, configuration.WebsiteRoot);
-    PublishProjects(habitatHome, configuration.WebsiteRoot);
-    PublishProjects(habitatHomeBasic, configuration.WebsiteRoot);
+Task("Publish-Projects").Does(() => {
+    PublishProjects(configuration.ProjectSrcFolder, configuration.WebsiteRoot);
 });
 
 Task("Publish-xConnect-Project").Does(() => {
@@ -114,7 +83,7 @@ Task("Publish-xConnect-Project").Does(() => {
 });
 
 Task("Apply-Xml-Transform").Does(() => {
-    var layers = new string[] { configuration.FoundationSrcFolder, configuration.FeatureSrcFolder, configuration.ProjectSrcFolder};
+    var layers = new string[] {  configuration.ProjectSrcFolder};
 
     foreach(var layer in layers)
     {
@@ -123,7 +92,7 @@ Task("Apply-Xml-Transform").Does(() => {
 });
 
 Task("Publish-Transforms").Does(() => {
-    var layers = new string[] { configuration.FoundationSrcFolder, configuration.FeatureSrcFolder, configuration.ProjectSrcFolder};
+    var layers = new string[] { configuration.ProjectSrcFolder};
     var destination = $@"{configuration.WebsiteRoot}\temp\transforms";
 
     CreateFolder(destination);

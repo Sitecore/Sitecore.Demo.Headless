@@ -30,9 +30,7 @@ public class Configuration
     }
 
     public string SourceFolder => $"{ProjectFolder}\\src";
-    public string FoundationSrcFolder => $"{SourceFolder}\\Foundation";
-    public string FeatureSrcFolder => $"{SourceFolder}\\Feature";
-    public string ProjectSrcFolder => $"{SourceFolder}\\Project";
+    public string ProjectSrcFolder => $"{SourceFolder}";
 
     public string SolutionFile => $"{ProjectFolder}\\{SolutionName}";
     public MSBuildToolVersion MSBuildToolVersion => this._msBuildToolVersion;
