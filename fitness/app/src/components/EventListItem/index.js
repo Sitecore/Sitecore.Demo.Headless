@@ -54,4 +54,8 @@ const EventListItem = ({ label, fields, url, featured, t }) => {
   );
 };
 
+EventListItem.defaultProps = {
+  fields: {}
+}
+
 export default translate()(EventListItem);
