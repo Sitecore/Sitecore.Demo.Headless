@@ -1,5 +1,6 @@
 id: oakland-marathon
 template: event-page
+displayName: Oakland Marathon
 url: /events/oakland-marathon
 fields:
   pageTitle: Oakland Marathon
@@ -11,27 +12,12 @@ fields:
   image:
     src: /assets/events/oakland_marathon.jpg
   labels:
-    - name: Type
-      displayName: Type
-      template: event-label
-      fields:
-        name: Type
-        value: road
-        icon: ico-road
-    - name: Parcicipants
-      displayName: Number of Participants
-      template: event-label
-      fields:
-        name: Parcicipants
-        value: 500-1K
-        icon: ico-participants
-    - name: Distance
-      displayName: Distance
-      template: event-label
-      fields:
-        name: Distance
-        value: 13mi
-        icon: ico-distance
+    - id: road-type-label
+      copy: true
+    - id: participants-label
+      copy: true
+    - id: distance-label
+      copy: true
 placeholders:
   hf-body:
     - componentName: EventDetail

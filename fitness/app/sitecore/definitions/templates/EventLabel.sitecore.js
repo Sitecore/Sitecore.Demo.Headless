@@ -3,7 +3,6 @@ import {
   Manifest,
   SitecoreIcon
 } from "@sitecore-jss/sitecore-jss-manifest";
-import { RichText } from "@sitecore-jss/sitecore-jss-react";
 
 /**
  * Adds the EventList component to the disconnected manifest.
@@ -16,9 +15,9 @@ export default function(manifest) {
     displayName: "Event Label",
     icon: SitecoreIcon.Tag,
     fields: [
-      { name: "name", type: CommonFieldTypes.SingleLineText },
-      { name: "value", type: CommonFieldTypes.SingleLineText },
-      { name: "icon", type: CommonFieldTypes.SingleLineText },
+      { name: "name", type: CommonFieldTypes.SingleLineText, displayName: "Label Name", required: true, standardValue: "$name" },
+      { name: "value", type: CommonFieldTypes.SingleLineText, displayName: "Label Value", required: true },
+      { name: "image", type: CommonFieldTypes.Image, displayName: "Label Image", required: true, source: "/sitecore/media library/habitatfitness/assets/icons" },
     ]
   });
 }

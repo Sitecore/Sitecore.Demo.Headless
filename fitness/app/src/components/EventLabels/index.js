@@ -3,15 +3,23 @@ import { Text } from "@sitecore-jss/sitecore-jss-react";
 
 const EventLabel = ({ label, className }) => {
   let fields = label.fields;
-  if (!fields.value || !fields.icon) {
+  // TODO: workaround for a serialization issue in connected
+  if (fields.fields) {
     fields = label.fields.fields;
   }
   return (
-    <Text
-      field={fields.value}
-      tag="p"
-      className={`${className} ${fields.icon.value}`}
-    />
+    <p className={`${className}`}>
+      <img
+        style={{
+          backgroundImage: `url(${label.fields.image.value.src})`,
+          backgroundSize: "15px 15px",
+          marginRight: "5px",
+          width: "15px",
+          height: "15px",
+        }}
+      />
+      <Text field={fields.value} />
+    </p>
   );
 };
 
@@ -23,6 +31,6 @@ const EventLabels = ({ labels, className }) => {
 
 EventLabels.defaultProps = {
   labels: []
-}
+};
 
 export default EventLabels;
