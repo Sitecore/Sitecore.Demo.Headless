@@ -16,7 +16,7 @@ placeholders:
             - id: running
             - id: cycling
             - id: kayaking
-            - id: hiking
+            - id: swimming
             - id: rock-climbing
       - componentName: PersonalDataForm
         fields:
