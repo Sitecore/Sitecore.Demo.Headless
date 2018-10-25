@@ -12,13 +12,8 @@ const EventLabel = ({ label, className }) => {
   return (
     <p className={`${className}`}>
       <img
-        style={{
-          backgroundImage: `url(${labelImage})`,
-          backgroundSize: "15px 15px",
-          marginRight: "5px",
-          width: "15px",
-          height: "15px",
-        }}
+        className="event-icon"
+        src={labelImage}
       />
       <Text field={fields.value} />
     </p>

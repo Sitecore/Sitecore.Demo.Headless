@@ -31,7 +31,7 @@ const EventListItem = ({ label, fields, url, featured, t }) => {
                     className="events-item-meta events-item-meta_recommended"
                   />
                 )}
-                <EventLabels labels={fields.labels} className="events-item-meta events-item-meta_type ico" />
+                <EventLabels labels={fields.labels} className="events-item-meta events-item-meta_type" />
               </div>
             </div>
           </div>

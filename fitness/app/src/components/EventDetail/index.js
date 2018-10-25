@@ -28,7 +28,7 @@ const EventDetail = props => {
             </NavLink>
           </div>
           <div className="eventDetail-image-overlay-metas">
-            <EventLabels labels={fields.labels} className="eventDetail-image-overlay-meta eventDetail-image-overlay-meta_type ico" />
+            <EventLabels labels={fields.labels} className="eventDetail-image-overlay-meta eventDetail-image-overlay-meta_type" />
           </div>
           
           <div className="eventDetail-image-overlay-badges">
