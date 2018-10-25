@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     <PackageReference Include="Sitecore.XConnect.Collection.Model.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.XConnect.NoReferences" Version="9.0.180604" />
+    <PackageReference Include="Sitecore.XConnect.Search.NoReferences" Version="9.0.180604" />
+    <PackageReference Include="System.Interactive.Async" Version="3.1.1" />
+    <PackageReference Include="System.Interactive.Async.Providers" Version="3.1.1" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

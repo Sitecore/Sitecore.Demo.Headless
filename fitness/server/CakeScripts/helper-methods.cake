@@ -10,6 +10,7 @@ public class Configuration
 
     public string WebsiteRoot {get;set;}
     public string XConnectRoot {get;set;}
+    public string XConnectIndexerRoot {get;set;}
     public string InstanceUrl {get;set;}
     public string SolutionName {get;set;}
     public string ProjectFolder {get;set;}
@@ -82,7 +83,9 @@ public void PublishProjects(string rootFolder, string websiteRoot)
                                    .WithProperty("WebPublishMethod", "FileSystem")
                                    .WithProperty("DeleteExistingFiles", "false")
                                    .WithProperty("publishUrl", websiteRoot)
-                                   .WithProperty("BuildProjectReferences", "false"));
+                                   .WithProperty("BuildProjectReferences", "false")
+								   .WithProperty("DeployXConnectTarget", configuration.XConnectRoot)
+								   .WithProperty("DeployIndexingTarget", configuration.XConnectIndexerRoot));
     }
 }
 

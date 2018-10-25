@@ -32,24 +32,18 @@ Task("Default")
 .WithCriteria(configuration != null)
 .IsDependentOn("Modify-PublishSettings")
 .IsDependentOn("Publish-All-Projects")
-.IsDependentOn("Apply-Xml-Transform")
 .IsDependentOn("Modify-Unicorn-Source-Folder")
-.IsDependentOn("Publish-Transforms")
 .IsDependentOn("Post-Deploy");
 
 Task("Post-Deploy")
-.IsDependentOn("Sync-Unicorn")
-.IsDependentOn("Publish-xConnect-Project");
+.IsDependentOn("Sync-Unicorn");
 
 Task("Quick-Deploy")
 .WithCriteria(configuration != null)
 .IsDependentOn("Copy-Sitecore-Lib")
 .IsDependentOn("Modify-PublishSettings")
 .IsDependentOn("Publish-All-Projects")
-.IsDependentOn("Apply-Xml-Transform")
-.IsDependentOn("Modify-Unicorn-Source-Folder")
-.IsDependentOn("Publish-Transforms")
-.IsDependentOn("Publish-xConnect-Project");
+.IsDependentOn("Modify-Unicorn-Source-Folder");
 
 /*===============================================
 ================= SUB TASKS =====================
@@ -63,6 +57,7 @@ Task("Copy-Sitecore-Lib")
         EnsureDirectoryExists(destination);
         CopyFiles(files, destination);
 }); 
+
 Task("Publish-All-Projects")
 .IsDependentOn("Build-Solution")
 .IsDependentOn("Publish-Projects");
@@ -74,44 +69,6 @@ Task("Build-Solution").Does(() => {
 
 Task("Publish-Projects").Does(() => {
     PublishProjects(configuration.ProjectSrcFolder, configuration.WebsiteRoot);
-});
-
-Task("Publish-xConnect-Project").Does(() => {
-    var xConnectProject = $"{configuration.ProjectSrcFolder}\\xConnect";
-
-    PublishProjects(xConnectProject, configuration.XConnectRoot);
-});
-
-Task("Apply-Xml-Transform").Does(() => {
-    var layers = new string[] {  configuration.ProjectSrcFolder};
-
-    foreach(var layer in layers)
-    {
-        Transform(layer);
-    }
-});
-
-Task("Publish-Transforms").Does(() => {
-    var layers = new string[] { configuration.ProjectSrcFolder};
-    var destination = $@"{configuration.WebsiteRoot}\temp\transforms";
-
-    CreateFolder(destination);
-
-    try
-    {
-        var files = new List<string>();
-        foreach(var layer in layers)
-        {
-            var xdtFiles = GetTransformFiles(layer).Select(x => x.FullPath).ToList();
-            files.AddRange(xdtFiles);
-        }   
-
-        CopyFiles(files, destination, preserveFolderStructure: true);
-    }
-    catch (System.Exception ex)
-    {
-        WriteError(ex.Message);
-    }
 });
 
 Task("Modify-Unicorn-Source-Folder").Does(() => {
@@ -147,6 +104,7 @@ Task("Modify-PublishSettings").Does(() => {
     XmlPoke(destination,importXPath,null,xmlSetting);
     XmlPoke(destination,publishUrlPath,$"{configuration.InstanceUrl}",xmlSetting);
 });
+
 Task("Sync-Unicorn").Does(() => {
     var unicornUrl = configuration.InstanceUrl + "unicorn.aspx";
     Information("Sync Unicorn items from url: " + unicornUrl);
