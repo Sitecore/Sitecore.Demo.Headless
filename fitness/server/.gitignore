@@ -4,4 +4,5 @@ packages
 .vs
 .user
 *.bak
+*.dll
 TdsGlobal.config.user
