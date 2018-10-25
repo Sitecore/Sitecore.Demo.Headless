@@ -1,0 +1,42 @@
+﻿---
+ID: "bb10c5bd-59dc-523b-bc25-cef0059fbcce"
+Parent: "82bbadaf-bd4a-5fce-9e12-eaa858ee8e94"
+Template: "295aae2b-4b5b-59e5-a898-c093c24313b4"
+Path: /sitecore/content/habitatfitness/home/logout
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{B098F890-D73B-5D76-842D-880455AB773F}"
+              p:after="*[1=2]"
+              s:rname="ContentBlock"
+              s:ds="{E35A8CCC-DF4F-5E72-9C92-B4AF075AC17D}"
+              s:id="{725C0864-75AE-5DF8-AAE2-7486FF940BEB}"
+              s:par=""
+              s:ph="/hf-body" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T200347Z
+    - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
+      Hint: pageTitle
+      Value: Log out
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"

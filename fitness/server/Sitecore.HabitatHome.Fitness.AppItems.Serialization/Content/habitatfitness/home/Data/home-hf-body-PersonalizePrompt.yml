@@ -1,0 +1,31 @@
+﻿---
+ID: "1bda6387-2f81-5beb-8fa4-960368445b63"
+Parent: "14c76265-ddfa-5b50-8712-4e9e7bf8c3d2"
+Template: "9419c0d3-8d5a-58fc-af00-83d8e8d412e7"
+Path: "/sitecore/content/habitatfitness/home/Data/home-hf-body-PersonalizePrompt-1"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "PersonalizePrompt-1"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0a85c343-34e7-509a-97db-8cbec744a47c"
+      Hint: bodyText
+      Value: explore events and gear based on your favorite sports and fitness level
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T200345Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"
+    - ID: "92f6273b-e80e-5df2-8585-ced42aaab38e"
+      Hint: headerText
+      Value: "Personalize your experience!"

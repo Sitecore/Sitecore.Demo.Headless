@@ -1,0 +1,35 @@
+﻿---
+ID: "dbf0b23d-cdab-533a-a7e4-c9f894ce46bc"
+Parent: "91eddb32-d015-5c5d-846e-ce6eb3c92cd7"
+Template: "0b05fdde-e167-55d2-b5ad-8cf27a627a0c"
+Path: /sitecore/content/habitatfitness/home/personalize/Data/Step2
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T200347Z
+    - ID: "29e513b9-ad78-5ae6-bdf9-e868ce032ee4"
+      Hint: title
+      Value: Let's refine it a bit
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"
+    - ID: "b500a9fd-7630-56bd-81f8-834d497a7c23"
+      Hint: skipLink
+      Value: |
+        <link text="Skip this" linktype="internal" id="{82BBADAF-BD4A-5FCE-9E12-EAA858EE8E94}" url="/habitatfitness/home" />

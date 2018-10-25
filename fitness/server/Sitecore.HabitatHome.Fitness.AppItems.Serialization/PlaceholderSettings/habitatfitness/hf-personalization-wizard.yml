@@ -1,0 +1,37 @@
+﻿---
+ID: "7a650cc4-e487-59ac-ba55-aecd5f63bcf3"
+Parent: "0f13bd98-5bbd-5c8f-b295-22c8ada5dd5b"
+Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
+Path: "/sitecore/layout/Placeholder Settings/Project/habitatfitness/hf-personalization-wizard"
+DB: master
+SharedFields:
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
+  Hint: Placeholder Key
+  Value: "hf-personalization-wizard"
+- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
+  Hint: __Read Only
+  Type: Checkbox
+  Value: 1
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
+  Hint: Allowed Controls
+  Type: TreelistEx
+  Value: |
+    {E75252D3-7D9F-5F37-84C3-AB629DAFB2D1}
+    {77CE8087-CDE5-50FD-BB70-9D88C6D1C1E6}
+    {805A1847-367E-5E95-A541-257F7F82824D}
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Personalization Wizard
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T200343Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport

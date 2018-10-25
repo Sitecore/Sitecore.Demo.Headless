@@ -1,0 +1,48 @@
+﻿---
+ID: "eb57767e-7f8e-5405-ba77-758e64ba2f57"
+Parent: "295aae2b-4b5b-59e5-a898-c093c24313b4"
+Template: "295aae2b-4b5b-59e5-a898-c093c24313b4"
+Path: /sitecore/templates/Project/habitatfitness/App Route/__Standard Values
+DB: master
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{2C211D0C-8DAE-587E-ACCD-DA500C88C3AF}">
+        <p
+          uid="{B7B75125-02C9-5AC2-B119-1C27802A0788}"
+          key="hf-body"
+          md="{27E71AA5-BB6A-58D8-AAE2-914BE0CDE164}" />
+        <p
+          uid="{A6FC32B3-6FC1-5193-A8BD-B7861D63653A}"
+          key="hf-personalization-wizard"
+          md="{7A650CC4-E487-59AC-BA55-AECD5F63BCF3}" />
+        <p
+          uid="{79AD51E3-16A8-58E0-8876-7573B90332E8}"
+          key="hf-createaccount-form"
+          md="{F68972B1-1308-5D11-8316-1AFEECB1BF25}" />
+        <p
+          uid="{BD1E7498-7C10-55AD-AECC-7675ED701A82}"
+          key="hf-createaccount-form-group"
+          md="{1B45C243-9663-5D83-9129-A40725AD8785}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T200340Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport

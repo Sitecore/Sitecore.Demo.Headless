@@ -1,0 +1,106 @@
+﻿---
+ID: "18f85dab-a1c0-5126-95ef-eca8b7cd0004"
+Parent: "82bbadaf-bd4a-5fce-9e12-eaa858ee8e94"
+Template: "295aae2b-4b5b-59e5-a898-c093c24313b4"
+Path: /sitecore/content/habitatfitness/home/personalize
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{D9C5338A-E893-560A-9733-EE9648B8FE3A}"
+              p:after="p[@uid='{BD1E7498-7C10-55AD-AECC-7675ED701A82}']"
+              s:rname="PersonalizationWizard"
+              s:ds="{71E8F208-DBD0-5733-AF38-7F1519228FAD}"
+              s:id="{FAFEEBBD-39BB-5801-9CF5-5164CAF00580}"
+              s:par=""
+              s:ph="/hf-body" />
+            <r
+              uid="{A38B325E-82A2-5A24-A2FD-C18600D81724}"
+              p:after="r[@uid='{D9C5338A-E893-560A-9733-EE9648B8FE3A}']"
+              s:rname="SportsPicker"
+              s:ds="{C481686A-2C3E-5BAF-BF3D-7FF3FF17175B}"
+              s:id="{E75252D3-7D9F-5F37-84C3-AB629DAFB2D1}"
+              s:par=""
+              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0" />
+            <r
+              uid="{04EBF20F-6B5A-53A8-89D3-38A53BEDDD55}"
+              p:after="r[@uid='{A38B325E-82A2-5A24-A2FD-C18600D81724}']"
+              s:rname="PersonalDataForm"
+              s:ds="{DBF0B23D-CDAB-533A-A7E4-C9F894CE46BC}"
+              s:id="{77CE8087-CDE5-50FD-BB70-9D88C6D1C1E6}"
+              s:par=""
+              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0" />
+            <r
+              uid="{D46880DB-0FB3-5799-B660-5097F331846C}"
+              p:after="r[@uid='{04EBF20F-6B5A-53A8-89D3-38A53BEDDD55}']"
+              s:rname="SelectFormField"
+              s:ds="{DDDF7944-90FF-5D1E-BBCF-A7187CF23735}"
+              s:id="{841E8E2B-8BCD-53C6-9C41-2CF5F8BD4E3A}"
+              s:par=""
+              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0/hf-createaccount-form-{04EBF20F-6B5A-53A8-89D3-38A53BEDDD55}-0" />
+            <r
+              uid="{138BA820-4FF5-58D7-9AF1-5B33F0CFE3C5}"
+              p:after="r[@uid='{D46880DB-0FB3-5799-B660-5097F331846C}']"
+              s:rname="SelectFormField"
+              s:ds="{FDA4B79D-D71C-59E6-92AA-6F3919C408C6}"
+              s:id="{841E8E2B-8BCD-53C6-9C41-2CF5F8BD4E3A}"
+              s:par=""
+              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0/hf-createaccount-form-{04EBF20F-6B5A-53A8-89D3-38A53BEDDD55}-0" />
+            <r
+              uid="{E543C704-8CE1-5BA0-992D-641749941891}"
+              p:after="r[@uid='{138BA820-4FF5-58D7-9AF1-5B33F0CFE3C5}']"
+              s:rname="SaveAsAccount"
+              s:ds="{53B81C3E-9933-5CB1-A3F9-DCB48207A5A3}"
+              s:id="{805A1847-367E-5E95-A541-257F7F82824D}"
+              s:par=""
+              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0" />
+            <r
+              uid="{87B9B19A-C2AE-5358-9EA7-BE4AC8F54F24}"
+              p:after="r[@uid='{E543C704-8CE1-5BA0-992D-641749941891}']"
+              s:rname="InputFormField"
+              s:ds="{A13BACF2-7EC0-57EC-ABF8-39847F876990}"
+              s:id="{95593F0E-7640-5488-93C1-2AB61E9BA751}"
+              s:par=""
+              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0/hf-createaccount-form-{E543C704-8CE1-5BA0-992D-641749941891}-0" />
+            <r
+              uid="{5C0E1FD0-E939-5583-929D-58288D84FD9D}"
+              p:after="r[@uid='{87B9B19A-C2AE-5358-9EA7-BE4AC8F54F24}']"
+              s:rname="InputFormField"
+              s:ds="{EE6520F0-EFB3-57C3-9BE1-E75125FAC26C}"
+              s:id="{95593F0E-7640-5488-93C1-2AB61E9BA751}"
+              s:par=""
+              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0/hf-createaccount-form-{E543C704-8CE1-5BA0-992D-641749941891}-0" />
+            <r
+              uid="{036B6E8C-615F-5039-8F2E-2CFE3EDF1DA2}"
+              p:after="*[1=2]"
+              s:rname="InputFormField"
+              s:ds="{86BDD0C7-9B1E-5674-BE30-389864D3BFCE}"
+              s:id="{95593F0E-7640-5488-93C1-2AB61E9BA751}"
+              s:par=""
+              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0/hf-createaccount-form-{E543C704-8CE1-5BA0-992D-641749941891}-0" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T200347Z
+    - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
+      Hint: pageTitle
+      Value: Personalize
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"

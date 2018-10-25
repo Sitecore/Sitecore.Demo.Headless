@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitnes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection.Model", "Sitecore.HabitatHome.Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj", "{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}"
 EndProject
-Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.HabitatHome.Fitness.Collection.Items", "Sitecore.HabitatHome.Fitness.Collection.Items\Sitecore.HabitatHome.Fitness.Collection.Items.scproj", "{76482257-013A-455F-8690-308B9BE10CD7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".tds", ".tds", "{AFE259C7-B09B-43E5-B940-79F80548DFF8}"
 	ProjectSection(SolutionItems) = preProject
 		TdsGlobal.config = TdsGlobal.config
@@ -18,13 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{A9B69A5C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection.Model.Deploy", "Sitecore.HabitatHome.Fitness.Collection.Model.Deploy\Sitecore.HabitatHome.Fitness.Collection.Model.Deploy.csproj", "{310540F3-8784-47B0-B29E-2BACEEAC7A8C}"
 EndProject
-Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.HabitatHome.Fitness.AppItems", "Sitecore.HabitatHome.Fitness.AppItems\Sitecore.HabitatHome.Fitness.AppItems.scproj", "{428F7224-C541-4D94-B2C4-C2D6873C9A55}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Personalization", "Sitecore.HabitatHome.Fitness.Personalization\Sitecore.HabitatHome.Fitness.Personalization.csproj", "{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}"
 EndProject
-Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "Sitecore.HabitatHome.Fitness.Personalization.Items", "Sitecore.HabitatHome.Fitness.Personalization.Items\Sitecore.HabitatHome.Fitness.Personalization.Items.scproj", "{DB3E530C-5BB0-48DD-A31B-2381F8DAA131}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.AppItems.Unicorn", "Sitecore.HabitatHome.Fitness.AppItems.Unicorn\Sitecore.HabitatHome.Fitness.AppItems.Unicorn.csproj", "{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.AppItems", "Sitecore.HabitatHome.Fitness.AppItems\Sitecore.HabitatHome.Fitness.AppItems.csproj", "{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,32 +34,14 @@ Global
 		{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76482257-013A-455F-8690-308B9BE10CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76482257-013A-455F-8690-308B9BE10CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76482257-013A-455F-8690-308B9BE10CD7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{76482257-013A-455F-8690-308B9BE10CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76482257-013A-455F-8690-308B9BE10CD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76482257-013A-455F-8690-308B9BE10CD7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{310540F3-8784-47B0-B29E-2BACEEAC7A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{310540F3-8784-47B0-B29E-2BACEEAC7A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310540F3-8784-47B0-B29E-2BACEEAC7A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310540F3-8784-47B0-B29E-2BACEEAC7A8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{428F7224-C541-4D94-B2C4-C2D6873C9A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{428F7224-C541-4D94-B2C4-C2D6873C9A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{428F7224-C541-4D94-B2C4-C2D6873C9A55}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{428F7224-C541-4D94-B2C4-C2D6873C9A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{428F7224-C541-4D94-B2C4-C2D6873C9A55}.Release|Any CPU.Build.0 = Release|Any CPU
-		{428F7224-C541-4D94-B2C4-C2D6873C9A55}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB3E530C-5BB0-48DD-A31B-2381F8DAA131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB3E530C-5BB0-48DD-A31B-2381F8DAA131}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB3E530C-5BB0-48DD-A31B-2381F8DAA131}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{DB3E530C-5BB0-48DD-A31B-2381F8DAA131}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB3E530C-5BB0-48DD-A31B-2381F8DAA131}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB3E530C-5BB0-48DD-A31B-2381F8DAA131}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU

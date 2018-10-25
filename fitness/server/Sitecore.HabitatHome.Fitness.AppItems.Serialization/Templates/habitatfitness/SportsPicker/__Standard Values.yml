@@ -1,0 +1,22 @@
+﻿---
+ID: "135d51a8-e357-5ded-b5cf-a68d2ddac3bd"
+Parent: "6824f683-f340-5cf9-b30d-eadc6c0fef40"
+Template: "6824f683-f340-5cf9-b30d-eadc6c0fef40"
+Path: /sitecore/templates/Project/habitatfitness/SportsPicker/__Standard Values
+DB: master
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T200343Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport

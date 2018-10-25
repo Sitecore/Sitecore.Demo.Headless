@@ -1,0 +1,31 @@
+﻿---
+ID: "71e8f208-dbd0-5733-af38-7f1519228fad"
+Parent: "91eddb32-d015-5c5d-846e-ce6eb3c92cd7"
+Template: "c504c5a0-16d5-51ce-a4a3-2b0b7c06d68d"
+Path: /sitecore/content/habitatfitness/home/personalize/Data/PersonalizationWizard
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Personalization Wizard
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "061ea671-e342-546c-8d95-ee43426706b1"
+      Hint: title
+      Value: Personalize
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T200347Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"

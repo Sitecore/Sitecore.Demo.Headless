@@ -1,0 +1,28 @@
+﻿---
+ID: "e5d7fae5-4dcf-51fc-a55a-2df1f7934350"
+Parent: "5b75610b-d8f9-5623-8283-4a0377a47554"
+Template: "d15d628f-1285-5965-8aba-43b0e6e4522c"
+Path: "/sitecore/content/habitatfitness/home/create-account/Data/create-account-hf-body-CreateAccount-1"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "CreateAccount-1"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T200346Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"
+    - ID: "b99d40de-bdb1-5d91-9d9b-7bc3031815c5"
+      Hint: heading
+      Value: Create Account
