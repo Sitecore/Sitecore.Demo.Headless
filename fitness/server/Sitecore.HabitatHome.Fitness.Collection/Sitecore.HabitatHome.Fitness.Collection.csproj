@@ -238,6 +238,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Collection.Serialization.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

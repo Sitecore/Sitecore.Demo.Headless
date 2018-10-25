@@ -19,12 +19,15 @@
     <ManageRoles>False</ManageRoles>
     <SitecoreDatabase>master</SitecoreDatabase>
     <AssemblyStatus>Exclude</AssemblyStatus>
+    <SourceWebVirtualPath>/Sitecore.HabitatHome.Fitness.AppItems.Unicorn.csproj</SourceWebVirtualPath>
+    <SourceWebProject>{e5b68690-9a50-49d8-9b1a-e8c5da181adc}|Sitecore.HabitatHome.Fitness.AppItems.Unicorn\Sitecore.HabitatHome.Fitness.AppItems.Unicorn.csproj</SourceWebProject>
+    <SourceWebPhysicalPath>..\Sitecore.HabitatHome.Fitness.AppItems.Unicorn</SourceWebPhysicalPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>.\bin\Debug\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
-    <DisableFileDeployment>True</DisableFileDeployment>
+    <DisableFileDeployment>False</DisableFileDeployment>
     <LightningDeployMode>False</LightningDeployMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -1541,6 +1544,12 @@
       </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.HabitatHome.Fitness.AppItems.Unicorn\Sitecore.HabitatHome.Fitness.AppItems.Unicorn.csproj">
+      <Project>{e5b68690-9a50-49d8-9b1a-e8c5da181adc}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.AppItems.Unicorn</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
 </Project>

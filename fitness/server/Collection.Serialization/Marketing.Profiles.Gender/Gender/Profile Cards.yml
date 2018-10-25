@@ -1,0 +1,19 @@
+﻿---
+ID: "0e08e85e-945c-4d99-b972-8838a7e42688"
+Parent: "ea255590-37ec-4a05-a12f-015f66be470b"
+Template: "1ad02405-7207-4962-ba96-6d6c3ba30ba7"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Gender/Profile Cards
+DB: master
+BranchID: "07624a03-bb2f-45d8-abe1-15e2b1705ff3"
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{8F66D1E0-DEBA-4D68-8713-DD982C1ABDE4}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181020T185508Z

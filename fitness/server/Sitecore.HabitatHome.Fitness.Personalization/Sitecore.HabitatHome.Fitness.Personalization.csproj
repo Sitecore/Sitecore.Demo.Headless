@@ -137,6 +137,7 @@
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Personalization.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Personalization.Serialization.config" />
     <None Include="packages.config" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
