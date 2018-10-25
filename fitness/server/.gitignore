@@ -3,6 +3,8 @@ obj
 packages
 .vs
 *.user
+*.bak
+*.dll
 TdsGlobal.config.user
 *.dll
 *.bak
