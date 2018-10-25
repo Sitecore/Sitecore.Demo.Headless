@@ -19,15 +19,15 @@ content-length: 140
 Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolvers.RecommendedItemResolver,Sitecore.HabitatHome.Fitness.Personalization
 ----field----
 field: {9EDD2FCC-04AE-4230-84B4-C46C963F2284}
-name: Parameters
-key: parameters
+name: Rendering Contents Resolver Parameters
+key: rendering contents resolver parameters
 content-length: 135
 
-take=5&templateid=%7B5147001C-995C-5C3E-969F-2262CFA54E3F%7D&rootid=%7B12676F34-9F75-534C-99CD-77A295D3B75B%7D&showAllIfNoProfile=false
+take=5&templateid=%7BF7CFB991-FDCD-5036-A021-29E58A67DA4B%7D&rootid=%7B12676F34-9F75-534C-99CD-77A295D3B75B%7D&showAllIfNoProfile=false
 ----version----
 language: en
 version: 1
-revision: 6ef8a878-a8be-4d75-997b-f9f2aaf5bdb8
+revision: 56b0f95a-5e37-45a1-9e03-3a444a9e608e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -42,14 +42,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-6ef8a878-a8be-4d75-997b-f9f2aaf5bdb8
+56b0f95a-5e37-45a1-9e03-3a444a9e608e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181023T181917Z
+20181025T000757Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
