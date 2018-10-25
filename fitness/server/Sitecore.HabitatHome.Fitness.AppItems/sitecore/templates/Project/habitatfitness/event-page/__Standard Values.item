@@ -1,0 +1,87 @@
+----item----
+version: 1
+id: {D70B5F02-9434-5AF5-8E13-A30B4540233E}
+database: master
+path: /sitecore/templates/Project/habitatfitness/event-page/__Standard Values
+parent: {9F2F1E35-62EF-5618-AD2B-3C2988389F89}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {9F2F1E35-62EF-5618-AD2B-3C2988389F89}
+templatekey: event-page
+created: 20181024T200340Z
+
+----field----
+field: {CA9B9F52-4FB0-4F87-A79F-24DEA62CDA65}
+name: __Default workflow
+key: __default workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: a4eda6e8-1dc6-48c5-9e0a-0d1764d83935
+
+----field----
+field: {1AB79054-D1DD-59C2-BD3F-BB1CD4F1CE92}
+name: name
+key: name
+content-length: 5
+
+$name
+----field----
+field: {1A0B22B8-AC4C-59FC-BC97-2133AE8E82D9}
+name: date
+key: date
+content-length: 4
+
+$now
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 765
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{2C211D0C-8DAE-587E-ACCD-DA500C88C3AF}"><p uid="{B7B75125-02C9-5AC2-B119-1C27802A0788}" key="hf-body" md="{27E71AA5-BB6A-58D8-AAE2-914BE0CDE164}" /><p uid="{A6FC32B3-6FC1-5193-A8BD-B7861D63653A}" key="hf-personalization-wizard" md="{7A650CC4-E487-59AC-BA55-AECD5F63BCF3}" /><p uid="{79AD51E3-16A8-58E0-8876-7573B90332E8}" key="hf-createaccount-form" md="{F68972B1-1308-5D11-8316-1AFEECB1BF25}" /><p uid="{BD1E7498-7C10-55AD-AECC-7675ED701A82}" key="hf-createaccount-form-group" md="{1B45C243-9663-5D83-9129-A40725AD8785}" /><r uid="{5E2CEFF3-80FB-50B5-AFF1-A78414874C25}" rname="EventDetail" id="{D7E453AA-A4A1-56D7-B0B1-E84AF7C71D69}" par="" ph="/hf-body" /></d></r>
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 18
+
+sitecore\JssImport
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181024T200340Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 18
+
+sitecore\JssImport
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a4eda6e8-1dc6-48c5-9e0a-0d1764d83935
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181024T230146Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

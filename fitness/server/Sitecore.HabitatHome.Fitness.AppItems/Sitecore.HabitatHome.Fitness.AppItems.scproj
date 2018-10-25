@@ -54,355 +54,371 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\age-group-selector.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\age-group-selector\from 18 to 34.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\age-group-selector\from 35 to 50.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\age-group-selector\from 50 to 70.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\age-group-selector\Less than 18.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\age-group-selector\More than 70.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\ContentBlock.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\CreateAccount.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\email-input.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\EventList.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\FeaturedEvent.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\FieldGroup.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\firstname-input.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\gender-selector.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\age-group-selector.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\gender-selector\Female.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\age-group-selector\from 18 to 34.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\gender-selector\Male.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\age-group-selector\from 35 to 50.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\age-group-selector\from 50 to 70.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\age-group-selector\Less than 18.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\age-group-selector\More than 70.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\email-input.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\firstname-input.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\gender-selector.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\gender-selector\Female.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\gender-selector\Male.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Components\Forms\lastname-input.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\InputFormField.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Components\lastname-input.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\Login.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\PersonalDataForm.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\PersonalizationWizard.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\PersonalizePrompt.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\ProductRecommendationList.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\SaveAsAccount.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\SelectFormField.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Components\SportsPicker.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Content.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Content\products.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Content\products\Basketball Socks.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Content\products\CamelBak Arc 2 Belt.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Content\products\Flip Belt Running Belt.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\Content\products\Hanks Basketball.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\Content\products\Hydration Belt with Two 10-Ounce Water Bottles.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Content\sports.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Content\sports\Basketball.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Content\sports\Cycling.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Content\sports\Hiking.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Content\sports\Kayaking.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Content\sports\Rock Climbing.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\Content\sports\Running.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\beginner.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\continue.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\create-account.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\expert.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\get-started.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\login.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\logout.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\my-events.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\no-thanks.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\ok.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\personalize.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\register-to-signup.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\skip this.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\habitatfitness Dictionary\validation link sent.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\home.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\home\create-account.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\create-account\Page Components.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\create-account\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\create-account\Page Components\create-account-hf-body-CreateAccount-1.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\create-account\Data\create-account-hf-body-CreateAccount-1.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\Data.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\Data\home-hf-body-EventList-3.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\Data\home-hf-body-FeaturedEvent-2.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\Data\home-hf-body-PersonalizePrompt-1.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\Data\home-hf-body-ProductRecommendationList-4.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\home\events.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\Data.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\Data\events-hf-body-ContentBlock-1.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\home\events\oakland-marathon.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\oakland-marathon\Distance.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\oakland-marathon\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\oakland-marathon\Parcicipants.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\oakland-marathon\Data\Labels.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\oakland-marathon\Type.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\oakland-marathon\Data\Labels\Distance.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\Page Components.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\oakland-marathon\Data\Labels\Parcicipants.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\Page Components\events-hf-body-ContentBlock-1.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\oakland-marathon\Data\Labels\Type.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\street-basketball-santa-monica.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\street-basketball-santa-monica\Data.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\street-basketball-santa-monica\Data\Labels.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\home\events\tiburon-half-marathon.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\tiburon-half-marathon\Distance.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\tiburon-half-marathon\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\tiburon-half-marathon\Parcicipants.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\tiburon-half-marathon\Data\Labels.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\tiburon-half-marathon\Type.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\tiburon-half-marathon\Data\Labels\Distance.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\tiburon-half-marathon\Data\Labels\Parcicipants.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\events\tiburon-half-marathon\Data\Labels\Type.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\home\login.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\login\Page Components.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\login\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\login\Page Components\login-hf-body-ContentBlock-1.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\login\Data\login-hf-body-ContentBlock-1.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\home\logout.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\logout\Page Components.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\logout\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\logout\Page Components\logout-hf-body-ContentBlock-1.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\logout\Data\logout-hf-body-ContentBlock-1.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\home\my-events.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\my-events\Page Components.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\my-events\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\my-events\Page Components\my-events-hf-body-ContentBlock-1.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\my-events\Data\my-events-hf-body-ContentBlock-1.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\Page Components.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\Page Components\home-hf-body-EventList-3.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\Page Components\home-hf-body-FeaturedEvent-2.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\Page Components\home-hf-body-PersonalizePrompt-1.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\Page Components\home-hf-body-ProductRecommendationList-4.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Page Components.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Page Components\personalize-hf-body-PersonalizationWizard-1.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Data\PersonalizationWizard.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Page Components\personalize-hf-personalization-wizard-D9C5338A-E893-560A-9733-EE9648B8FE3A-0-PersonalDataForm-2.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Data\Step1.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Page Components\personalize-hf-personalization-wizard-D9C5338A-E893-560A-9733-EE9648B8FE3A-0-SaveAsAccount-3.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Data\Step2.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Page Components\personalize-hf-personalization-wizard-D9C5338A-E893-560A-9733-EE9648B8FE3A-0-SportsPicker-1.item">
+    <SitecoreItem Include="sitecore\content\habitatfitness\home\personalize\Data\Step3.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
@@ -411,1137 +427,637 @@
     <SitecoreItem Include="sitecore\layout\Layouts.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Layouts\JavaScriptServices.item">
+    <SitecoreItem Include="sitecore\layout\Layouts\Project.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Layouts\JavaScriptServices\habitatfitness.item">
+    <SitecoreItem Include="sitecore\layout\Layouts\Project\habitatfitness.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Layouts\Project\habitatfitness\habitatfitness Layout.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Placeholder Settings.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Placeholder Settings\habitatfitness.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    <SitecoreItem Include="sitecore\layout\Placeholder Settings\Project.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Placeholder Settings\habitatfitness\hf-body.item">
+    <SitecoreItem Include="sitecore\layout\Placeholder Settings\Project\habitatfitness.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Placeholder Settings\habitatfitness\hf-createaccount-form.item">
+    <SitecoreItem Include="sitecore\layout\Placeholder Settings\Project\habitatfitness\hf-body.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Placeholder Settings\habitatfitness\hf-createaccount-form-group.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Placeholder Settings\habitatfitness\hf-personalization-wizard.item">
+    <SitecoreItem Include="sitecore\layout\Placeholder Settings\Project\habitatfitness\hf-createaccount-form.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Placeholder Settings\Project\habitatfitness\hf-createaccount-form-group.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Placeholder Settings\Project\habitatfitness\hf-personalization-wizard.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\layout\Renderings.item">
       <ItemDeployment>DeployOnce</ItemDeployment>
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\ContentBlock.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\ContentBlock.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\CreateAccount.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\CreateAccount.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\EventDetail.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\EventDetail.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\EventList.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\EventList.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\EventMap.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\EventMap.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\FeaturedEvent.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\FeaturedEvent.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\FieldGroup.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\FieldGroup.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\InputFormField.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\InputFormField.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\Login.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\Login.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\PersonalDataForm.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\PersonalDataForm.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\PersonalizationWizard.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\PersonalizationWizard.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\PersonalizePrompt.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\PersonalizePrompt.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\ProductRecommendationList.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\ProductRecommendationList.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\SaveAsAccount.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\SaveAsAccount.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\SelectFormField.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\SelectFormField.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\layout\Renderings\habitatfitness\SportsPicker.item">
+    <SitecoreItem Include="sitecore\layout\Renderings\Project\habitatfitness\SportsPicker.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness.item">
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets\events.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets\events\basketball.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\events\basketball\kayaking.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets\events\oakland_marathon.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets\events\tiburon-half-marathon.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons\basketball.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons\map.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons\cycling.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons\person.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons\hiking.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons\kayaking.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons\rock-climbing.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons\running.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\icons\road.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets\products.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\products\170px-Basketball.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\products\basketball socks.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\products\170px-Basketball\basketball socks.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    <SitecoreItem Include="sitecore\media library\habitatfitness\assets\products\orange-basketball.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets\products\product1.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets\products\product2.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\media library\habitatfitness\assets\products\product3.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\media library\wnba.item">
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel.item">
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles.item">
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Age Group.item">
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Age Group\from 18 to 34.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Age Group\from 35 to 50.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Age Group\from 50 to 70.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Age Group\Less than 18.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Age Group\More than 70.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Age Group\Pattern Cards.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Age Group\Profile Cards.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Gender.item">
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Gender\Female.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Gender\Male.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Gender\Pattern Cards.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Gender\Profile Cards.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Sports.item">
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Sports\Basketball.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Sports\Cycling.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Sports\Hiking.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Sports\Kayaking.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Sports\Pattern Cards.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Sports\Profile Cards.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Sports\Rock Climbing.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\system\Marketing Control Panel\Profiles\Sports\Running.item">
-      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
-      <ItemDeployment>DeployOnce</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
       <ItemDeployment>DeployOnce</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\AgeGroupSelectorField.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\AgeGroupSelectorField\__Standard Values.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\AgeGroupSelectorField\Data.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\AgeGroupSelectorField\Data\options.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\AgeGroupSelectorField\Data\selectName.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\AgeGroupSelectorField\Data\selectTitle.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\App Route.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\App Route\__Standard Values.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\App Route\Page Metadata.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\App Route\Page Metadata\pageTitle.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ContentBlock.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
+    <SitecoreItem Include="sitecore\templates\Project.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ContentBlock\__Standard Values.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ContentBlock\Data.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ContentBlock\Data\content.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ContentBlock\Data\heading.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\CreateAccount.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\CreateAccount\__Standard Values.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\CreateAccount\Data.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\CreateAccount\Data\heading.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-label.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-label\__Standard Values.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-label\Data.item">
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-label\Data\icon.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-label\Data\name.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\App Route.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-label\Data\value.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\App Route\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\EventList.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\App Route\Page Metadata.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\EventList\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\App Route\Page Metadata\pageTitle.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\EventList\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Branches.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\EventList\Data\events.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Branches\event-page.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\EventList\Data\items.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Branches\event-page\%2524name.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\EventList\Data\title.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Branches\event-page\%2524name\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Branches\event-page\%2524name\Data\Labels.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ContentBlock.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ContentBlock\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\date.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ContentBlock\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\description.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ContentBlock\Data\content.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\distance.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ContentBlock\Data\heading.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\image.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\CreateAccount.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\labels.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\CreateAccount\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\latitude.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\CreateAccount\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\location.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\CreateAccount\Data\heading.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\longitude.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-label.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\name.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-label\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\participants.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-label\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\event-page\Data\type.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-label\Data\image.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\FeaturedEvent.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-label\Data\name.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\FeaturedEvent\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-label\Data\value.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\FeaturedEvent\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\EventList.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\FeaturedEvent\Data\event.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\EventList\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\FeaturedEvent\Data\label.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\EventList\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\FieldGroup.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\EventList\Data\items.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\FieldGroup\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\EventList\Data\title.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\FieldGroup\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\FieldGroup\Data\heading.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\InputFormField.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\InputFormField\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page\Data\date.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\InputFormField\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page\Data\description.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\InputFormField\Data\id.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page\Data\image.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\InputFormField\Data\name.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page\Data\labels.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\InputFormField\Data\placeholder.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page\Data\latitude.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\InputFormField\Data\required.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page\Data\longitude.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\InputFormField\Data\type.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\event-page\Data\name.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\Login.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\FeaturedEvent.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\Login\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\FeaturedEvent\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\Login\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\FeaturedEvent\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\Login\Data\heading.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\FeaturedEvent\Data\event.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalDataForm.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\FeaturedEvent\Data\label.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalDataForm\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\FieldGroup.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalDataForm\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\FieldGroup\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalDataForm\Data\skipLink.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\FieldGroup\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalDataForm\Data\title.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\FieldGroup\Data\heading.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalizationWizard.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\InputFormField.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalizationWizard\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\InputFormField\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalizationWizard\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\InputFormField\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalizationWizard\Data\title.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\InputFormField\Data\id.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalizePrompt.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\InputFormField\Data\name.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalizePrompt\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\InputFormField\Data\placeholder.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalizePrompt\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\InputFormField\Data\required.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalizePrompt\Data\bodyText.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\InputFormField\Data\type.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\PersonalizePrompt\Data\headerText.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Login.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Login\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Login\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Login\Data\heading.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product\Data\description.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalDataForm.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product\Data\image.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalDataForm\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product\Data\link.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalDataForm\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product\Data\title.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalDataForm\Data\skipLink.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product-folder.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalDataForm\Data\title.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product-folder\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalizationWizard.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product-item.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalizationWizard\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product-item\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalizationWizard\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product-item\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalizationWizard\Data\title.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product-item\Data\description.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalizePrompt.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product-item\Data\image.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalizePrompt\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product-item\Data\link.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalizePrompt\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\product-item\Data\title.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalizePrompt\Data\bodyText.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ProductRecommendationList.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\PersonalizePrompt\Data\headerText.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ProductRecommendationList\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\product.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ProductRecommendationList\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\product\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ProductRecommendationList\Data\items.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\product\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ProductRecommendationList\Data\products.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\product\Data\description.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\ProductRecommendationList\Data\title.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\product\Data\image.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\Profile Key.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\product\Data\link.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\Profile Key\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\product\Data\title.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\Profile Key\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\product-folder.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\Profile Key\Data\Name.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\product-folder\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SaveAsAccount.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ProductRecommendationList.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SaveAsAccount\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ProductRecommendationList\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SaveAsAccount\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ProductRecommendationList\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SaveAsAccount\Data\skipLink.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ProductRecommendationList\Data\items.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SaveAsAccount\Data\title.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\ProductRecommendationList\Data\title.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SelectFormField.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Profile Key.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-    </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SelectFormField\__Standard Values.item">
-      <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SelectFormField\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Profile Key\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SelectFormField\Data\options.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Profile Key\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SelectFormField\Data\selectName.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\Profile Key\Data\Name.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SelectFormField\Data\selectTitle.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SaveAsAccount.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\select-option.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SaveAsAccount\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\select-option\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SaveAsAccount\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\select-option\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SaveAsAccount\Data\skipLink.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\select-option\Data\optionName.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SaveAsAccount\Data\title.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\select-option\Data\optionValue.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SelectFormField.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\sport-item.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SelectFormField\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\sport-item\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SelectFormField\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\sport-item\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SelectFormField\Data\options.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\sport-item\Data\icon.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SelectFormField\Data\selectName.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\sport-item\Data\title.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SelectFormField\Data\selectTitle.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SportsPicker.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SportsPicker.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SportsPicker\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SportsPicker\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SportsPicker\Data.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SportsPicker\Data.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SportsPicker\Data\selectSkillTitle.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SportsPicker\Data\selectSkillTitle.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SportsPicker\Data\sports.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SportsPicker\Data\sports.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\habitatfitness\SportsPicker\Data\title.item">
+    <SitecoreItem Include="sitecore\templates\Project\habitatfitness\SportsPicker\Data\title.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
-      <ExcludeItemFrom>
-      </ExcludeItemFrom>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
   </ItemGroup>

@@ -1,0 +1,110 @@
+----item----
+version: 1
+id: {824E5407-B767-56F5-9A0F-5AC04BAF82D5}
+database: master
+path: /sitecore/content/habitatfitness/Content/products/CamelBak Arc 2 Belt
+parent: {12676F34-9F75-534C-99CD-77A295D3B75B}
+name: CamelBak Arc 2 Belt
+master: {00000000-0000-0000-0000-000000000000}
+template: {F7CFB991-FDCD-5036-A021-29E58A67DA4B}
+templatekey: product
+created: 20181024T200345Z
+
+----field----
+field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
+name: __Tracking
+key: __tracking
+content-length: 346
+
+<tracking>
+  <profile id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf" name="Sports">
+    <key name="Basketball" value="0" />
+    <key name="Cycling" value="0" />
+    <key name="Kayaking" value="0" />
+    <key name="Rock Climbing" value="0" />
+    <key name="Running" value="10" />
+    <key name="Swimming" value="0" />
+  </profile>
+</tracking>
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: 64c886f9-f4e0-4fc7-a37b-af52c06ad892
+
+----field----
+field: {2FA17014-B3B5-5966-8EE0-F3116C4313C2}
+name: title
+key: title
+content-length: 19
+
+CamelBak Arc 2 Belt
+----field----
+field: {97F252DE-EFDA-5ED7-A61C-0A2673A7C26B}
+name: description
+key: description
+content-length: 81
+
+This hydration belt keeps your water, gummies, and keys all within an arms reach.
+----field----
+field: {4D7CC259-2D5C-59D5-A4DC-974A35BF0847}
+name: image
+key: image
+content-length: 58
+
+<image mediaid="{369CFC27-5B3E-50F2-9CF4-BAEA602EC6B7}" />
+----field----
+field: {45799A8F-A01C-500D-8F1E-2558501ED660}
+name: link
+key: link
+content-length: 120
+
+<link linktype="external" url="https://express.google.com/u/0/product/1666205335111892153_974748790307604846_1699011" />
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 19
+
+CamelBak Arc 2 Belt
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181024T200345Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+64c886f9-f4e0-4fc7-a37b-af52c06ad892
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181024T205537Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}

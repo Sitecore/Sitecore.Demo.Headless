@@ -10,6 +10,7 @@ import config from "./temp/config";
 import Layout from "./Layout";
 import NotFound from "./NotFound";
 import { flush } from "./utils/XConnectProxy";
+import { dataFetcher } from './utils/dataFetcher';
 
 // Dynamic route handler for Sitecore items.
 // Because JSS app routes are defined in Sitecore, traditional static React routing isn't enough -
@@ -233,7 +234,8 @@ function getRouteData(route, language, options = {}) {
   const fetchOptions = {
     layoutServiceConfig: { host: config.sitecoreApiHost },
     querystringParams: { sc_lang: language, sc_apikey: config.sitecoreApiKey },
-    requestConfig: options
+    requestConfig: options,
+    fetcher: dataFetcher,
   };
 
   return dataApi.fetchRouteData(route, fetchOptions).catch(error => {

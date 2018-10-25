@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {E35A8CCC-DF4F-5E72-9C92-B4AF075AC17D}
+database: master
+path: /sitecore/content/habitatfitness/home/logout/Data/logout-hf-body-ContentBlock-1
+parent: {D7814359-A34D-5429-BAD7-622009F70A98}
+name: logout-hf-body-ContentBlock-1
+master: {00000000-0000-0000-0000-000000000000}
+template: {1AD110A9-3CBC-5818-B339-D6F685A8473C}
+templatekey: ContentBlock
+created: 20181024T200347Z
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: f820a6e3-73c6-415a-82d4-587a3702a4fe
+
+----field----
+field: {42989D60-44A3-5241-BB3C-4D40348836DB}
+name: heading
+key: heading
+content-length: 7
+
+Log out
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 14
+
+ContentBlock-1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181024T200347Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f820a6e3-73c6-415a-82d4-587a3702a4fe
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181024T200347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\JssImport
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}
