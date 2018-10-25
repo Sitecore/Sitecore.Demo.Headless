@@ -2677,3 +2677,7 @@ a[target="_blank"]:after {
   color: #fff;
   margin: 0;
 }
+
+a.product-link, a.product-link:hover{
+  text-decoration: none;
+}
