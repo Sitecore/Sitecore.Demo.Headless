@@ -115,10 +115,10 @@ Task("Publish-Transforms").Does(() => {
 });
 
 Task("Modify-Unicorn-Source-Folder").Does(() => {
-    var zzzDevSettingsFile = File($"{configuration.WebsiteRoot}/App_config/Include/Project/z.Common.Website.DevSettings.config");
+    var zzzDevSettingsFile = File($"{configuration.WebsiteRoot}/App_config/Include/Sitecore.HabitatHome.Fitness/z.Sitecore.HabitatHome.Fitness.DevSettings.config");
     
 	var rootXPath = "configuration/sitecore/sc.variable[@name='{0}']/@value";
-    var sourceFolderXPath = string.Format(rootXPath, "sourceFolder");
+    var sourceFolderXPath = string.Format(rootXPath, "fitnessSourceFolder");
     var directoryPath = MakeAbsolute(new DirectoryPath(configuration.SourceFolder)).FullPath;
 
     var xmlSetting = new XmlPokeSettings {
@@ -165,33 +165,5 @@ Task("Sync-Unicorn").Does(() => {
                                                                 .Append("url", unicornUrl);
                                                         }));
 });
-
-Task("Deploy-EXM-Campaigns").Does(() => {
-	Spam(() => DeployExmCampaigns(), configuration.DeployExmTimeout);
-});
-
-Task("Deploy-Marketing-Definitions").Does(() => {
-    var url = $"{configuration.InstanceUrl}utilities/deploymarketingdefinitions.aspx?apiKey={configuration.MarketingDefinitionsApiKey}";
-    var responseBody = HttpGet(url, settings =>
-	{
-		settings.AppendHeader("Connection", "keep-alive");
-	});
-
-    Information(responseBody);
-});
-
-Task("Rebuild-Core-Index").Does(() => {
-    RebuildIndex("sitecore_core_index");
-});
-
-Task("Rebuild-Master-Index").Does(() => {
-    RebuildIndex("sitecore_master_index");
-});
-
-Task("Rebuild-Web-Index").Does(() => {
-    RebuildIndex("sitecore_web_index");
-});
-
-
 
 RunTarget(target);

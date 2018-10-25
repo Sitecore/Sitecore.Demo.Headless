@@ -29,7 +29,7 @@ public class Configuration
         }
     }
 
-    public string SourceFolder => $"{ProjectFolder}\\src";
+    public string SourceFolder => $"{ProjectFolder}";
     public string ProjectSrcFolder => $"{SourceFolder}";
 
     public string SolutionFile => $"{ProjectFolder}\\{SolutionName}";
@@ -69,7 +69,9 @@ public void PrintHeader(ConsoleColor foregroundColor)
 
 public void PublishProjects(string rootFolder, string websiteRoot)
 {
-    var projects = GetFiles($"{rootFolder}\\**\\code\\*.csproj");
+	cakeConsole.WriteLine(rootFolder);
+
+    var projects = GetFiles($"{rootFolder}\\**\\*.csproj");
 
     foreach (var project in projects)
     {
