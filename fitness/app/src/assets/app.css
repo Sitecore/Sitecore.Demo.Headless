@@ -112,14 +112,16 @@ a:hover {
   color: #f6c23e;
 }
 
-.ico:before {
-  content: "";
-  display: inline-block;
-  background-position: 50% 50%;
+.event-icon {
+  width: 15px;
+  height: 15px;
+  background-image: none;
+  background-size: 15px 15px;
   background-repeat: no-repeat;
-  vertical-align: middle;
-  margin-right: 3px;
-  margin-bottom: 3px;
+  background-position: 50% 50%;
+  margin: 0 5px;
+  border: 0;
+  display: inline-block;
 }
 
 .btn {
@@ -1442,6 +1444,14 @@ a[target="_blank"]:after {
 }
 .events-item-image-overlay-content .events-item-meta {
   margin: 0 0 0 0.83333em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .events-item-image-overlay-content .events-item-meta_recommended {
   position: absolute;
@@ -1655,6 +1665,14 @@ a[target="_blank"]:after {
   line-height: 1.21429;
   color: rgba(255, 255, 255, 0.85098);
   margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .eventDetail-image-overlay-badges {
@@ -2660,7 +2678,6 @@ a[target="_blank"]:after {
   margin: 0;
 }
 
-a.product-link {
+a.product-link, a.product-link:hover{
   text-decoration: none;
 }
-

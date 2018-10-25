@@ -118,11 +118,7 @@ export default class RouteHandler extends React.Component {
    * Loads route data from Sitecore Layout Service into state.routeData
    */
   updateRouteData() {
-    let sitecoreRoutePath = this.props.route.match.params.sitecoreRoute || "/";
-    if (!sitecoreRoutePath.startsWith("/")) {
-      sitecoreRoutePath = `/${sitecoreRoutePath}`;
-    }
-
+    const sitecoreRoutePath = this.props.route.match.params.sitecoreRoute || "/";
     const language =
       this.props.route.match.params.lang || this.state.defaultLanguage;
 
