@@ -15,13 +15,14 @@ export default function(manifest) {
     name: "SportsPicker",
     icon: SitecoreIcon.DocumentTag,
     fields: [
-      { name: "title", type: CommonFieldTypes.SingleLineText },
+      { name: "title", displayName: "Step Title", type: CommonFieldTypes.SingleLineText },
+      { name: "stepName", displayName: "Step Name", type: CommonFieldTypes.SingleLineText },
       {
         name: "selectSkillTitle",
         displayName: "Selected Skill Title",
         type: CommonFieldTypes.SingleLineText,
       },
-      { name: "sports", type: CommonFieldTypes.ContentList }
+      { name: "sports", displayName: "Sports", type: CommonFieldTypes.ContentList }
     ]
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,

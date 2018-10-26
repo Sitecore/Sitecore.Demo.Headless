@@ -1,6 +1,10 @@
+name: register
+displayName: Registration
 fields:
   pageTitle: Create Account
 placeholders:
+  hf-nav:
+  - componentName: BreadcrumbNavigation
   hf-body:
     - componentName: CreateAccount
       fields:

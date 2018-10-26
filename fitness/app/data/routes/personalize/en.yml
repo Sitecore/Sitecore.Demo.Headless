@@ -1,6 +1,10 @@
+name: personalize
+displayName: Personalize
 fields:
   pageTitle: Personalize
 placeholders:
+  hf-nav:
+  - componentName: BreadcrumbNavigation
   hf-body:
   - componentName: PersonalizationWizard
     fields:
@@ -10,6 +14,7 @@ placeholders:
       - componentName: SportsPicker
         fields:
           title: Pick your favorite sports
+          stepName: Sports & Skills
           selectSkillTitle: What's your skill level in $selected-sport?
           sports:
             - id: running
@@ -24,6 +29,7 @@ placeholders:
       - componentName: PersonalDataForm
         fields:
           title: Let's refine it a bit
+          stepName: Demographics
           skipLink:
               href: /
               text: Skip this
@@ -34,6 +40,7 @@ placeholders:
       - componentName: SaveAsAccount
         fields:
           title: Want to save it as account?
+          stepName: Personal
           skipLink:
             href: /
             text: Skip this

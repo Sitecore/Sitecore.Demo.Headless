@@ -15,8 +15,9 @@ export default function(manifest) {
     name: "PersonalDataForm",
     icon: SitecoreIcon.DocumentTag,
     fields: [
-      { name: "title", type: CommonFieldTypes.SingleLineText },
-      { name: "skipLink", type: CommonFieldTypes.GeneralLink }
+      { name: "title", displayName: "Step Title", type: CommonFieldTypes.SingleLineText },
+      { name: "stepName", displayName: "Step Name", type: CommonFieldTypes.SingleLineText },
+      { name: "skipLink", displayName: "Skip Link", type: CommonFieldTypes.GeneralLink }
     ],
     placeholders: ["hf-createaccount-form"]
     /*

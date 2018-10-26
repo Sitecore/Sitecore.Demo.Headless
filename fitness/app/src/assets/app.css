@@ -31,8 +31,7 @@
   text-indent: -9999px;
 }
 
-.steppedProgressBar-progress .progress-legends,
-.personalizationWizard .progress-legends {
+.progress-legends {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -52,8 +51,7 @@
   align-items: center;
   margin-top: 8px;
 }
-.steppedProgressBar-progress .progress-legends span,
-.personalizationWizard .progress-legends span {
+.progress-legends span {
   font-size: 0.6875em;
   line-height: 1.18182;
   text-transform: uppercase;

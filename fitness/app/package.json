@@ -6,6 +6,7 @@
   "config": {
     "appName": "habitatfitness",
     "rootPlaceholders": [
+      "hf-nav",
       "hf-body"
     ],
     "sitecoreDistPath": "/dist/habitatfitness",

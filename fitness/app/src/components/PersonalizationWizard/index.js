@@ -27,13 +27,23 @@ class PersonalizationWizard extends Component {
     return index === length - 1 ? 100 : Math.round(100 / length) * (index + 1);
   }
 
+  getStepNames(placeholder) {
+    return placeholder.filter(e => e.type !== "code").map((element, i) => {
+      return <Text field={element.props.fields.stepName} />
+    });
+  }
+
   render() {
     const { fields, wizardPlaceholder } = this.props;
     return (
       <PersonalizationWizardWrap>
         <div className="personalizationWizard">
           <div className="personalizationWizard-header">
-            <Text tag='h3' field={fields.title} className='personalizationWizard-title' />
+            <Text
+              tag="h3"
+              field={fields.title}
+              className="personalizationWizard-title"
+            />
             <PersonalizationWizardContext.Consumer>
               {context => (
                 <React.Fragment>
@@ -42,6 +52,7 @@ class PersonalizationWizard extends Component {
                       context.activeStepIndex,
                       wizardPlaceholder.length
                     )}
+                    steps={this.getStepNames(wizardPlaceholder)}
                   />
                 </React.Fragment>
               )}
@@ -51,7 +62,11 @@ class PersonalizationWizard extends Component {
             <PersonalizationWizardContext.Consumer>
               {context => (
                 <React.Fragment>
-                  {wizardPlaceholder.filter(e => e.type !== "code")[context.activeStepIndex]}
+                  {
+                    wizardPlaceholder.filter(e => e.type !== "code")[
+                      context.activeStepIndex
+                    ]
+                  }
                 </React.Fragment>
               )}
             </PersonalizationWizardContext.Consumer>
@@ -62,21 +77,28 @@ class PersonalizationWizard extends Component {
   }
 }
 
-const ProgressBar = ({ percentage, max }) => (
-  <div className="progress">
-    <div
-      className="progress-bar"
-      role="progressbar"
-      style={{
-        width: `${percentage}%`,
-        ariaValueNow: percentage,
-        ariaValueMin: 0,
-        ariaValueMax: max
-      }}
-    >
-      {percentage}%
+const ProgressBar = ({ percentage, max, steps }) => (
+  <span className="steppedProgressBar-progress">
+    <div className="progress">
+      <div
+        className="progress-bar"
+        role="progressbar"
+        style={{
+          width: `${percentage}%`,
+          ariaValueNow: percentage,
+          ariaValueMin: 0,
+          ariaValueMax: max
+        }}
+      >
+        {percentage}%
+      </div>
     </div>
-  </div>
+    <div className="progress-legends">
+      {steps.map((step, index) => (
+        <span key={index}>{step}</span>
+      ))}
+    </div>
+  </span>
 );
 
 export default withPlaceholder({

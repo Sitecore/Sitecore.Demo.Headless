@@ -3,6 +3,7 @@ import { Placeholder } from "@sitecore-jss/sitecore-jss-react";
 import Helmet from "react-helmet";
 import Navigation from "./components/Navigation";
 import { initializeFirebase } from "./utils";
+import { translate } from "react-i18next";
 
 import { ToastContainer, toast } from "react-toastify";
 
@@ -37,8 +38,8 @@ class Layout extends Component {
   }
 
   render() {
-    const { route, context } = this.props;
-    const navItems = context.navigation ? context.navigation[0].children : [];
+    const { t, route, context } = this.props;
+
     const pageTitle =
       (route.fields &&
         route.fields.pageTitle &&
@@ -49,10 +50,10 @@ class Layout extends Component {
       <React.Fragment>
         {/* react-helmet enables setting <head> contents, like title and OG meta tags */}
         <Helmet>
-          <title>Habitat Fitness | {pageTitle}</title>
+          <title>{`${t('habitat-fitness')} | ${pageTitle}`}</title>
         </Helmet>
 
-        <Navigation navItems={navItems} />
+        <Placeholder name="hf-nav" rendering={route} routeData={route} context={context} />
 
         {/* root placeholder for the app, which we add components to using route data */}
         <main role="main">
@@ -64,4 +65,4 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+export default translate()(Layout);

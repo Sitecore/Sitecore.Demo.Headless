@@ -36,17 +36,18 @@ class Navigation extends React.Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { context, t } = this.props;
+    const navItems = context.navigation ? context.navigation[0].children : [];
 
     return (
       <div className="nav-container">
         <Navbar light>
           <NavbarBrand tag={Link} to={"/"}>
-            <img src={logo} alt="Habitat Fitness" />
+            <img src={logo} alt={("habitat-fitness")} />
           </NavbarBrand>
-          <NavLink tag={Link} to={"/"} className="header-account-link">
+          {/* <NavLink tag={Link} to={"/"} className="header-account-link">
             Login
-          </NavLink>
+          </NavLink> */}
           <NavbarToggler
             onClick={this.toggle}
             className={this.state.isOpen ? "active" : ""}

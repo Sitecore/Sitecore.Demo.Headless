@@ -67,16 +67,6 @@ class CreateAccount extends React.Component {
     return (
       <span className="createAccount">
         <span className="createAccount-fixedHeader steppedProgressBar">
-          <nav aria-label="breadcrumb">
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <NavLink to={"/"}>Habitat Fitness</NavLink>
-              </li>
-              <li className="breadcrumb-item">
-                <Text field={fields.heading} />
-              </li>
-            </ol>
-          </nav>
           <span className="steppedProgressBar-progress">
             <div className="progress">
               <div

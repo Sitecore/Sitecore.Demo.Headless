@@ -19,5 +19,7 @@ fields:
     - id: distance-label
       copy: true
 placeholders:
+  hf-nav:
+  - componentName: EventDetailsNavigation
   hf-body:
     - componentName: EventDetail
