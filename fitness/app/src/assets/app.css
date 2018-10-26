@@ -1880,6 +1880,14 @@ a[target="_blank"]:after {
   background: #46bef4;
 }
 
+.sportPicker-option .icon-mask {
+  fill: #f7c51e;
+}
+
+.sportPicker-option.selected .icon-mask {
+  fill: #fff;
+}
+
 .sportPicker-option-inner {
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
@@ -2678,6 +2686,12 @@ a[target="_blank"]:after {
   margin: 0;
 }
 
-a.product-link, a.product-link:hover{
+a.product-link,
+a.product-link:hover {
   text-decoration: none;
+}
+
+.icon-svg {
+  margin: auto;
+  display: block;
 }

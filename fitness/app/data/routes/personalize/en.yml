@@ -12,12 +12,15 @@ placeholders:
           title: Pick your favorite sports
           selectSkillTitle: What's your skill level in $selected-sport?
           sports:
-            - id: basketball
             - id: running
             - id: cycling
             - id: kayaking
-            - id: swimming
             - id: rock-climbing
+            - id: swimming
+            - id: basketball
+            - id: bowling
+            - id: golf
+            - id: volleyball
       - componentName: PersonalDataForm
         fields:
           title: Let's refine it a bit
