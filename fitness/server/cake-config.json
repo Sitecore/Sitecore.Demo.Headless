@@ -1,6 +1,6 @@
 {
-  "WebsiteRoot": "C:\\Inetpub\\wwwroot\\fitnessapp.dev.local",
-  "XConnectRoot": "C:\\Inetpub\\wwwroot\\fitnessapp_xconnect.dev.local\\",
+  "WebsiteRoot": "C:\\inetpub\\wwwroot\\habitathome.dev.local",
+  "XConnectRoot": "C:\\inetpub\\wwwroot\\habitathome_xconnect.dev.local\\",
   "XConnectIndexerRoot": "C:\\inetpub\\wwwroot\\fitnessapp_xconnect.dev.local\\App_data\\jobs\\continuous\\IndexWorker",
   "InstanceUrl": "https://habitathome.dev.local/",
   "SolutionName": "Sitecore.HabitatHome.Fitness.sln",
