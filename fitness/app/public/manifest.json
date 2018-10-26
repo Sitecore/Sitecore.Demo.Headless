@@ -1,11 +1,11 @@
 {
   "name": "Habitat Fitness",
-  "short_name": "Habitat Fitness",
-  "theme_color": "#ffa500",
-  "background_color": "#2196f3",
+  "short_name": "HF",
+  "theme_color": "#f7c51e",
+  "background_color": "#201f21",
   "display": "fullscreen",
-  "start_url": "/",
   "Scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "icons/icon-72x72.png",

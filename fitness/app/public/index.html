@@ -7,6 +7,11 @@
   <meta name="theme-color" content="#000000">
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="application-name" content="Habitat Fitness"/>
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -22,7 +27,10 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-  <div id="root"></div>
+    <div id="root">
+      <svg style="position: absolute;margin: auto;top: 0;right: 0;bottom: 0;left: 0;width: 200px;height: 200px;" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-basketball" style="background: none;"><circle cx="50" cy="50" ng-attr-r="{{config.radius}}" fill="#f7c51e" stroke="#201f21" stroke-width="2" r="40"></circle><path ng-attr-d="{{config.dLine}}" ng-attr-stroke="{{config.c2}}" ng-attr-stroke-width="{{config.width}}" d="M50 10L50 90" stroke="#201f21" stroke-width="2"></path><path ng-attr-d="{{config.dCurve1}}" fill="none" ng-attr-stroke="{{config.c2}}" ng-attr-stroke-width="{{config.width}}" d="M21.715728752538098 21.7157287525381 A40 40 0 0 1 21.715728752538098 78.2842712474619" stroke="#201f21" stroke-width="2"></path><path ng-attr-d="{{config.dCurve2}}" fill="none" ng-attr-stroke="{{config.c2}}" ng-attr-stroke-width="{{config.width}}" d="M78.2842712474619 21.7157287525381 A40 40 0 0 0 78.2842712474619 78.2842712474619" stroke="#201f21" stroke-width="2"></path><g transform="translate(0 50)"><g><path ng-attr-d="{{config.dRoundStatic}}" fill="none" ng-attr-stroke="{{config.c2}}" ng-attr-stroke-width="{{config.width}}" d="M 10 0 A 40 35.6272 0 0 1 90 0" stroke="#201f21" stroke-width="2"><animate attributeName="d" calcMode="spline" values="M10 0A40 40 0 0 1 90 0;M10 0A40 0 0 0 1 90 0;M10 0A40 0 0 0 0 90 0;M10 0A40 40 0 0 0 90 0" keyTimes="0;0.499999;0.5;1" dur="1" keySplines="0.1 0 1 0.9;0.5 0.5 0.5 0.5;0 0.1 0.9 1" begin="0s" repeatCount="indefinite"></animate></path><path ng-attr-d="{{config.dRoundStatic}}" fill="none" ng-attr-stroke="{{config.c2}}" ng-attr-stroke-width="{{config.width}}" d="M 10 0 A 40 8.79325 0 0 0 90 0" stroke="#201f21" stroke-width="2"><animate attributeName="d" calcMode="spline" values="M10 0A40 40 0 0 1 90 0;M10 0A40 0 0 0 1 90 0;M10 0A40 0 0 0 0 90 0;M10 0A40 40 0 0 0 90 0" keyTimes="0;0.499999;0.5;1" dur="1" keySplines="0.1 0 1 0.9;0.5 0.5 0.5 0.5;0 0.1 0.9 1" begin="-0.5s" repeatCount="indefinite"></animate></path></g></g></svg>
+    </div>
+  </div>
 
   <script>
     window.__JSS_STATE__ = null;

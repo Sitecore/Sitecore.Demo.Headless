@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
-import { images } from "../../Resources";
+import { iconPaths } from "../../Resources";
+import Icon from '../Icon';
 
 class SportOption extends Component {
   state = {
@@ -31,7 +32,7 @@ class SportOption extends Component {
       >
         <div className="sportPicker-option-inner">
           <div className="sportPicker-option-icon">
-            <img src={images[imageName]} alt={imageName} />
+            <Icon name={imageName} path={iconPaths[imageName]} />
           </div>
           <div className="sportPicker-option-content">
             <Text

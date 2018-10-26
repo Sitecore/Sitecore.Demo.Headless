@@ -1,7 +1,7 @@
 {
   "name": "habitatfitness",
   "description": "Habitat demo for Sitecore JSS",
-  "version": "9.0.6",
+  "version": "0.0.1",
   "private": true,
   "config": {
     "appName": "habitatfitness",
@@ -44,7 +44,8 @@
     "react-scripts": "2.0.0-next.3e165448",
     "react-toastify": "^4.3.1",
     "reactstrap": "^6.4.0",
-    "serialize-javascript": "^1.5.0"
+    "serialize-javascript": "^1.5.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@sitecore-jss/sitecore-jss-cli": "^10.0.0-preview.1",
