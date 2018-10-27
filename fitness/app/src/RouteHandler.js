@@ -11,6 +11,7 @@ import Layout from "./Layout";
 import NotFound from "./NotFound";
 import { flush } from "./utils/XConnectProxy";
 import { dataFetcher } from './utils/dataFetcher';
+import Loading from './components/Loading';
 
 // Dynamic route handler for Sitecore items.
 // Because JSS app routes are defined in Sitecore, traditional static React routing isn't enough -
@@ -203,7 +204,7 @@ export default class RouteHandler extends React.Component {
     // Don't render anything if the route data or dictionary data is not fully loaded yet.
     // This is a good place for a "Loading" component, if one is needed.
     if (!routeData || this.languageIsChanging) {
-      return null;
+      return <Loading />;
     }
 
     // Render the app's root structural layout

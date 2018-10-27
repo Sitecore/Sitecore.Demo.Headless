@@ -4,9 +4,9 @@ import {
   Placeholder,
   withPlaceholder
 } from "@sitecore-jss/sitecore-jss-react";
-import { PersonalizationWizardContext } from "../../contexts/PersonalizationWizardContext";
+import { RegistrationWizardContext } from "../../contexts/RegistrationWizardContext";
 
-class PersonalizationWizardWrap extends Component {
+class RegistrationWizardWrap extends Component {
   state = {
     activeStepIndex: 0,
     next: () => {
@@ -19,14 +19,14 @@ class PersonalizationWizardWrap extends Component {
 
   render() {
     return (
-      <PersonalizationWizardContext.Provider value={this.state}>
+      <RegistrationWizardContext.Provider value={this.state}>
         {this.props.children}
-      </PersonalizationWizardContext.Provider>
+      </RegistrationWizardContext.Provider>
     );
   }
 }
 
-class PersonalizationWizard extends Component {
+class RegistrationWizard extends Component {
   getPercentage(index, length) {
     return index === length - 1 ? 100 : Math.round(100 / length) * (index + 1);
   }
@@ -40,15 +40,18 @@ class PersonalizationWizard extends Component {
   render() {
     const { fields, wizardPlaceholder, rendering } = this.props;
     return (
-      <PersonalizationWizardWrap>
+      <RegistrationWizardWrap>
         <div className="personalizationWizard">
           <div className="personalizationWizard-header">
-            <Text
-              tag="h3"
-              field={fields.title}
-              className="personalizationWizard-title"
-            />
-            <PersonalizationWizardContext.Consumer>
+            {fields &&
+              fields.title && (
+                <Text
+                  tag="h3"
+                  field={fields.title}
+                  className="personalizationWizard-title"
+                />
+              )}
+            <RegistrationWizardContext.Consumer>
               {context => (
                 <Fragment>
                   <ProgressBar
@@ -60,7 +63,7 @@ class PersonalizationWizard extends Component {
                   />
                   <div className="personalizationWizard-body">
                     <Placeholder
-                      name="hf-personalization-wizard"
+                      name="hf-registration-wizard"
                       rendering={rendering}
                       currentContext={context}
                       render={(components, placeholderData, props) => (
@@ -72,10 +75,10 @@ class PersonalizationWizard extends Component {
                   </div>
                 </Fragment>
               )}
-            </PersonalizationWizardContext.Consumer>
+            </RegistrationWizardContext.Consumer>
           </div>
         </div>
-      </PersonalizationWizardWrap>
+      </RegistrationWizardWrap>
     );
   }
 }
@@ -105,6 +108,6 @@ const ProgressBar = ({ percentage, max, steps }) => (
 );
 
 export default withPlaceholder({
-  placeholder: "hf-personalization-wizard",
+  placeholder: "hf-registration-wizard",
   prop: "wizardPlaceholder"
-})(PersonalizationWizard);
+})(RegistrationWizard);

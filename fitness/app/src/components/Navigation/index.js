@@ -36,9 +36,7 @@ class Navigation extends React.Component {
   }
 
   render() {
-    const { context, t } = this.props;
-    const navItems = context.navigation ? context.navigation[0].children : [];
-
+    const { t } = this.props;
     return (
       <div className="nav-container">
         <Navbar light>
@@ -57,11 +55,21 @@ class Navigation extends React.Component {
               <NavItem>
                 <NavLink
                   tag={Link}
-                  to={"/Personalize"}
+                  to={"/personalize"}
                   onClick={() => this.nav("/personalize")}
                   className="nav-link"
                 >
                   {t("personalize")}
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  tag={Link}
+                  to={"/register"}
+                  onClick={() => this.nav("/register")}
+                  className="nav-link"
+                >
+                  {t("register")}
                 </NavLink>
               </NavItem>
             </Nav>

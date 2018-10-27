@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Placeholder } from "@sitecore-jss/sitecore-jss-react";
 import Helmet from "react-helmet";
-import Navigation from "./components/Navigation";
 import { initializeFirebase } from "./utils";
 import { translate } from "react-i18next";
 
@@ -12,12 +11,14 @@ import "./assets/app.css";
 import "react-toastify/dist/ReactToastify.min.css";
 
 const ToastBody = ({ title, body, link, icon, click_action }) => (
-  <React.Fragment>
+  <Fragment>
     {/* <img src={icon} /> */}
     <h5>{title}</h5>
     <p>{body}</p>
-    <a className="btn btn-danger" href={click_action}>See more</a>
-  </React.Fragment>
+    <a className="btn btn-danger" href={click_action}>
+      See more
+    </a>
+  </Fragment>
 );
 
 class Layout extends Component {
@@ -47,20 +48,30 @@ class Layout extends Component {
       "Page";
 
     return (
-      <React.Fragment>
+      <Fragment>
         {/* react-helmet enables setting <head> contents, like title and OG meta tags */}
         <Helmet>
-          <title>{`${t('habitat-fitness')} | ${pageTitle}`}</title>
+          <title>{`${t("habitat-fitness")} | ${pageTitle}`}</title>
         </Helmet>
 
-        <Placeholder name="hf-nav" rendering={route} routeData={route} context={context} />
+        <Placeholder
+          name="hf-nav"
+          rendering={route}
+          routeData={route}
+          context={context}
+        />
 
         {/* root placeholder for the app, which we add components to using route data */}
         <main role="main">
           <ToastContainer />
-          <Placeholder name="hf-body" rendering={route} routeData={route} context={context} />
+          <Placeholder
+            name="hf-body"
+            rendering={route}
+            routeData={route}
+            context={context}
+          />
         </main>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

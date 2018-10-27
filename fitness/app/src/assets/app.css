@@ -70,7 +70,7 @@
 .sportPicker-options,
 .sportSkill,
 .sportPicker-actions,
-.personalizationWizardForm-form-actions,
+.wizardStep-form-actions,
 .productRecommendationList {
   max-width: 800px;
   margin-left: auto;
@@ -2057,7 +2057,7 @@ a[target="_blank"]:after {
   justify-content: flex-end;
 }
 
-.personalizationWizardForm {
+.wizardStep {
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
@@ -2073,7 +2073,7 @@ a[target="_blank"]:after {
   flex-direction: column;
 }
 
-.personalizationWizardForm-content {
+.wizardStep-content {
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
@@ -2100,12 +2100,12 @@ a[target="_blank"]:after {
   justify-content: center;
 }
 
-.personalizationWizardForm-header {
+.wizardStep-header {
   text-align: center;
   margin: 0 0 1.5625em;
 }
 
-.personalizationWizardForm-title {
+.wizardStep-title {
   font-size: 1.5em;
   line-height: 1.20833;
   font-weight: 400;
@@ -2113,7 +2113,7 @@ a[target="_blank"]:after {
   margin: 0;
 }
 
-.personalizationWizardForm-form-container {
+.wizardStep-form-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2133,22 +2133,22 @@ a[target="_blank"]:after {
   align-items: center;
 }
 
-.personalizationWizardForm-form {
+.wizardStep-form {
   width: 100%;
   max-width: 19.375em;
   margin: 0 auto;
 }
-.personalizationWizardForm-form .fieldset,
-.personalizationWizardForm-form fieldset {
+.wizardStep-form .fieldset,
+.wizardStep-form fieldset {
   display: block;
   margin: 0;
   padding: 0;
   border: 0;
 }
-.personalizationWizardForm-form .field {
+.wizardStep-form .field {
   margin: 0 0 10px 0;
 }
-.personalizationWizardForm-form .fields {
+.wizardStep-form .fields {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2160,29 +2160,29 @@ a[target="_blank"]:after {
   flex-direction: row;
   margin: 0 -5px;
 }
-.personalizationWizardForm-form .fields .field {
+.wizardStep-form .fields .field {
   width: 50%;
   padding: 0 5px;
 }
-.personalizationWizardForm-form select,
-.personalizationWizardForm-form input,
-.personalizationWizardForm-form textarea {
+.wizardStep-form select,
+.wizardStep-form input,
+.wizardStep-form textarea {
   width: 100%;
 }
 
-.personalizationWizardForm-skip {
+.wizardStep-skip {
   font-size: 0.875em;
   line-height: 1.21429;
   font-weight: 300;
   margin: 1.78571em 0 0 0;
   text-align: center;
 }
-.personalizationWizardForm-skip a {
+.wizardStep-skip a {
   opacity: 0.7;
   text-decoration: none;
 }
 
-.personalizationWizardForm-form-actions {
+.wizardStep-form-actions {
   width: 100%;
   padding: 14px 15px;
   display: -webkit-box;
@@ -2199,14 +2199,14 @@ a[target="_blank"]:after {
   -ms-flex-align: end;
   align-items: flex-end;
 }
-.personalizationWizardForm-form-actions .consent {
+.wizardStep-form-actions .consent {
   font-size: 0.75em;
   line-height: 1.5;
   color: inherit;
   text-align: center;
   margin: 1em 0 0;
 }
-.personalizationWizardForm-form-actions .consent p {
+.wizardStep-form-actions .consent p {
   margin: 0;
 }
 
@@ -2692,4 +2692,8 @@ a.product-link:hover {
 .icon-svg {
   margin: auto;
   display: block;
+}
+
+.registration-success-actions {
+  align-items: center;
 }

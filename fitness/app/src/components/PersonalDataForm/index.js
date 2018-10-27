@@ -45,17 +45,17 @@ class PersonalDataForm extends Component {
     const canContinue = this.state.age && this.state.gender;
 
     return (
-      <div className="personalizationWizardForm personalizationWizardForm_personalInfo">
-        <div className="personalizationWizardForm-content">
-          <div className="personalizationWizardForm-header">
+      <div className="wizardStep wizardStep_personalInfo">
+        <div className="wizardStep-content">
+          <div className="wizardStep-header">
             <Text
               field={fields.title}
               tag="h4"
-              className="personalizationWizardForm-title"
+              className="wizardStep-title"
             />
           </div>
-          <div className="personalizationWizardForm-form-container">
-            <div className="personalizationWizardForm-form">
+          <div className="wizardStep-form-container">
+            <div className="wizardStep-form">
               <div className="fieldset">
                 <div className="fields">
                   <Placeholder
@@ -65,7 +65,7 @@ class PersonalDataForm extends Component {
                   />
                 </div>
               </div>
-              <div className="personalizationWizardForm-skip">
+              <div className="wizardStep-skip">
                 <NavLink to="/" className="">
                   {t("skip this")}
                 </NavLink>
@@ -73,8 +73,9 @@ class PersonalDataForm extends Component {
             </div>
           </div>
         </div>
-        <div className="personalizationWizardForm-form-actions align-items-end">
+        <div className="wizardStep-form-actions align-items-center">
           <ContinueButton
+            currentContext={this.props.currentContext}
             disabled={!canContinue}
             onContinue={this.handleContinueClick}
           />

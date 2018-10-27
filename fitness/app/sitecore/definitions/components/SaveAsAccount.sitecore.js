@@ -14,11 +14,7 @@ export default function(manifest) {
   manifest.addComponent({
     name: "SaveAsAccount",
     icon: SitecoreIcon.DocumentTag,
-    fields: [
-      { name: "title", displayName: "Step Title", type: CommonFieldTypes.SingleLineText },
-      { name: "stepName", displayName: "Step Name", type: CommonFieldTypes.SingleLineText },
-      { name: "skipLink", displayName: "Skip Link", type: CommonFieldTypes.GeneralLink }
-    ],
+    inherits: ["wizard-step-component"],
     placeholders: ["hf-createaccount-form"]
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,

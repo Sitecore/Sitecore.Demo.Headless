@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
 import SportOption from "../SportOption";
@@ -76,7 +76,7 @@ class SportsPicker extends Component {
     const canContinue = Object.keys(selectedSports).length > 0;
 
     return (
-      <React.Fragment>
+      <Fragment>
         <div className="sportPicker">
           <div className="sportPicker-header">
             <Text field={fields.title} tag="h4" className="sportPicker-title" />
@@ -127,13 +127,14 @@ class SportsPicker extends Component {
           </div>
         ) : null}
 
-        <div className="sportPicker-actions">
+        <div className="sportPicker-actions align-items-center">
           <ContinueButton
+            currentContext={this.props.currentContext}
             disabled={!canContinue}
             onContinue={this.handleContinueClick}
           />
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

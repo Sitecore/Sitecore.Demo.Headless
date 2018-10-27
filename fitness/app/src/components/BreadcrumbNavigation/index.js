@@ -5,8 +5,7 @@ import { translate } from "react-i18next";
 
 class BreadcrumbNavigation extends React.Component {
   render() {
-    const { context, t, routeData } = this.props;
-    const navItems = context.navigation ? context.navigation[0].children : [];
+    const { t, routeData } = this.props;
     const currentPageName = routeData.displayName
       ? routeData.displayName
       : routeData.name;

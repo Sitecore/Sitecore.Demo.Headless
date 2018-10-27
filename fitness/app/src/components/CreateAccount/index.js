@@ -1,12 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { withRouter } from "react-router";
 import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
 import { canUseDOM } from "../../utils";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import icoCheck from "../../assets/img/check-blue.svg";
 import { translate } from "react-i18next";
-import { setIdentifiers } from "../../utils/XConnectProxy";
+import {
+  setIdentifiers,
+  setDemographicsPreferences
+} from "../../utils/XConnectProxy";
+import ContinueButton from "../ContinueButton";
+import Consent from "../Consent";
 
 class CreateAccount extends React.Component {
   state = {
@@ -14,15 +16,13 @@ class CreateAccount extends React.Component {
     age: "",
     firstname: "",
     lastname: "",
-    email: "",
-    modal: false
+    email: ""
   };
 
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.toggle = this.toggle.bind(this);
-    this.onCreateClick = this.onCreateClick.bind(this);
+    this.onContinueClick = this.onContinueClick.bind(this);
   }
 
   handleChange(event) {
@@ -37,25 +37,22 @@ class CreateAccount extends React.Component {
     }
   }
 
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
-
   isValid() {
-    return (
-      this.state.email &&
-      this.state.gender &&
-      this.state.age
-    );
+    return this.state.email && this.state.gender && this.state.age;
   }
 
-  onCreateClick() {
+  onContinueClick() {
     setIdentifiers()
       .then(response => {
         console.log(response.data);
-        this.setState({ modal: true });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    setDemographicsPreferences()
+      .then(response => {
+        console.log(response.data);
       })
       .catch(err => {
         console.log(err);
@@ -63,30 +60,14 @@ class CreateAccount extends React.Component {
   }
 
   render() {
-    const { fields, rendering, t } = this.props;
+    const { fields, rendering } = this.props;
     return (
       <span className="createAccount">
-        <span className="createAccount-fixedHeader steppedProgressBar">
-          <span className="steppedProgressBar-progress">
-            <div className="progress">
-              <div
-                className="progress-bar"
-                role="progressbar"
-                style={{ width: "66%" }}
-              />
-            </div>
-            <span className="progress-legends">
-              <span>Your info</span>
-              <span>Confirmation</span>
-              <span>Complete</span>
-            </span>
-          </span>
-        </span>
         <div className="createAccount-body">
           <form className="createAccount-form">
             <div className="createAccount-form-body">
               <Text
-                field={fields.heading}
+                field={fields.title}
                 tag="h2"
                 className="createAccount-form-title"
               />
@@ -106,44 +87,16 @@ class CreateAccount extends React.Component {
               </fieldset>
             </div>
             <div className="createAccount-form-footer">
-              <div className="createAccount-form-actions">
-                <button
-                  type="button"
-                  className="btn btn-primary"
+              <div className="createAccount-form-actions align-items-center">
+                <ContinueButton
+                  currentContext={this.props.currentContext}
                   disabled={!this.isValid()}
-                  onClick={this.onCreateClick}
-                >
-                  {t("create-account")}
-                </button>
+                  onContinue={this.onContinueClick}
+                />
               </div>
-              <div className="consent">
-                <p>
-                  By creating an account you agree to our{" "}
-                  <a href="/">Terms of Service</a> and{" "}
-                  <a href="/">Privacy Policy</a>
-                </p>
-              </div>
+              <Consent />
             </div>
           </form>
-
-          <Modal
-            isOpen={this.state.modal}
-            toggle={this.toggle}
-            className={`${
-              this.props.className ? this.props.className : ""
-            } confirmPopup`}
-          >
-            <img src={icoCheck} width="55" alt="check" />
-            <ModalHeader toggle={this.toggle}>
-              {t("validation link sent")}
-            </ModalHeader>
-            <ModalBody />
-            <ModalFooter>
-              <NavLink to="/" className="btn btn-primary btn-sm">
-                {t("ok")}
-              </NavLink>
-            </ModalFooter>
-          </Modal>
         </div>
       </span>
     );

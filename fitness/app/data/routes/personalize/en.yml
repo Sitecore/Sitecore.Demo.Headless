@@ -11,21 +11,7 @@ placeholders:
       title: Personalize
     placeholders:
       hf-personalization-wizard:
-      - componentName: SportsPicker
-        fields:
-          title: Pick your favorite sports
-          stepName: Sports & Skills
-          selectSkillTitle: What's your skill level in $selected-sport?
-          sports:
-            - id: running
-            - id: cycling
-            - id: kayaking
-            - id: rock-climbing
-            - id: swimming
-            - id: basketball
-            - id: bowling
-            - id: golf
-            - id: volleyball
+      - id: sports-picker
       - componentName: PersonalDataForm
         fields:
           title: Let's refine it a bit
@@ -49,3 +35,4 @@ placeholders:
             - id: email-input
             - id: firstname-input
             - id: lastname-input
+      - id: registration-success

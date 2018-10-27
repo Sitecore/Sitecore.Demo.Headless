@@ -14,6 +14,7 @@ export default function(manifest) {
   manifest.addComponent({
     name: "CreateAccount",
     displayName: "Create Account",
-    fields: [{ name: "heading", type: CommonFieldTypes.SingleLineText }]
+    inherits: ["wizard-step-component"],
+    placeholders: ["hf-createaccount-form", "hf-createaccount-form-group"]
   });
 }
