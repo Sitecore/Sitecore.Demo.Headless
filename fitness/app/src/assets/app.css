@@ -175,7 +175,7 @@ a:hover {
   width: 6px;
   height: 2px;
   position: absolute;
-  right: -2px;
+  right: 1px;
   top: 0;
   -webkit-transform: rotate(50deg);
   transform: rotate(50deg);
@@ -1663,14 +1663,6 @@ a[target="_blank"]:after {
   line-height: 1.21429;
   color: rgba(255, 255, 255, 0.85098);
   margin: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .eventDetail-image-overlay-badges {
@@ -2445,7 +2437,7 @@ a[target="_blank"]:after {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .createAccount-form {
