@@ -2,21 +2,14 @@
 version: 1
 id: {A13BACF2-7EC0-57EC-ABF8-39847F876990}
 database: master
-path: /sitecore/content/habitatfitness/Components/Forms/email-input
-parent: {AE80B3EA-01B4-46EF-A42A-C0C5966A6E36}
+path: /sitecore/content/habitatfitness/Components/forms/email-input
+parent: {6374A178-DF61-5AD2-A20D-B0258CF3D7F5}
 name: email-input
 master: {00000000-0000-0000-0000-000000000000}
 template: {FB829E4D-4E54-515E-995C-D03553228EB7}
 templatekey: InputFormField
-created: 20181024T200344Z
+created: 20181027T234952Z
 
-----field----
-field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
-name: __Sortorder
-key: __sortorder
-content-length: 3
-
--50
 ----field----
 field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
 name: __Workflow
@@ -27,7 +20,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 780ec68f-ecee-4723-9847-b26cdec173a0
+revision: e371ed3c-19e9-4d27-89e0-00d1d576c5a0
 
 ----field----
 field: {DD3FD23C-97D4-5714-9CB3-7C0E227A00E9}
@@ -70,28 +63,28 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T200344Z
+20181027T234952Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-780ec68f-ecee-4723-9847-b26cdec173a0
+e371ed3c-19e9-4d27-89e0-00d1d576c5a0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T211318Z
+20181027T234952Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 18
 
-sitecore\admin
+sitecore\JssImport
 ----field----
 field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
 name: __Workflow state

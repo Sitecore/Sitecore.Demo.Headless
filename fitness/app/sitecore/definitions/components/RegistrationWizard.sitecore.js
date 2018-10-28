@@ -9,6 +9,8 @@ import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore
 export default function(manifest) {
   manifest.addComponent({
     name: 'RegistrationWizard',
+    displayName: 'Registration Wizard',
+    icon: SitecoreIcon.Magician,
     fields: [
       {name: 'title', type: CommonFieldTypes.SingleLineText}
     ],

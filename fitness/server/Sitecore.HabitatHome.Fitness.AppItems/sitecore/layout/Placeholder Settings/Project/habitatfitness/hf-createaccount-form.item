@@ -8,7 +8,7 @@ name: hf-createaccount-form
 master: {00000000-0000-0000-0000-000000000000}
 template: {5C547D4E-7111-4995-95B0-6B561751BF2E}
 templatekey: Placeholder
-created: 20181024T200343Z
+created: 20181027T230930Z
 
 ----field----
 field: {7256BDAB-1FD2-49DD-B205-CB4873D2917C}
@@ -23,7 +23,7 @@ name: Allowed Controls
 key: allowed controls
 content-length: 116
 
-{841E8E2B-8BCD-53C6-9C41-2CF5F8BD4E3A}|{95593F0E-7640-5488-93C1-2AB61E9BA751}|{64F87E0C-70A4-568D-8810-0B0B8949583F}
+{95593F0E-7640-5488-93C1-2AB61E9BA751}|{64F87E0C-70A4-568D-8810-0B0B8949583F}|{841E8E2B-8BCD-53C6-9C41-2CF5F8BD4E3A}
 ----field----
 field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
 name: __Read Only
@@ -34,8 +34,15 @@ content-length: 1
 ----version----
 language: en
 version: 1
-revision: 2c0f588e-16fd-478a-bd83-222b1b194ee4
+revision: 42a38177-6597-466e-b417-62d27bd812a3
 
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 19
+
+Create Account Form
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -49,7 +56,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T200343Z
+20181027T230930Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -63,18 +70,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2c0f588e-16fd-478a-bd83-222b1b194ee4
+42a38177-6597-466e-b417-62d27bd812a3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T200348Z
+20181027T230935Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 22
 
-sitecore\JssImport
+sitecore\virtualssuser

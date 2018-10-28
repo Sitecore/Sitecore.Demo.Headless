@@ -16,3 +16,9 @@ habitat-fitness: Habitat Fitness
 consent: By creating an account you agree to our <a href="/">Terms of Service</a> and <a href="/">Privacy Policy</a>
 register: Register
 home: Home
+days: days
+hours: hours
+day: day
+hour: hour
+countdown: countdown
+registration-confirmation: Are you sure you would like to register for this event?

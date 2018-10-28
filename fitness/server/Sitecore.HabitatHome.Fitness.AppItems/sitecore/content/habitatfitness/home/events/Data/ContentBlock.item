@@ -1,0 +1,87 @@
+----item----
+version: 1
+id: {74325EBD-0D44-5278-B727-39E6185BDF62}
+database: master
+path: /sitecore/content/habitatfitness/home/events/Data/ContentBlock
+parent: {AD9A4E44-2CA3-52DF-A5D3-D97144E66A6F}
+name: ContentBlock
+master: {00000000-0000-0000-0000-000000000000}
+template: {1AD110A9-3CBC-5818-B339-D6F685A8473C}
+templatekey: ContentBlock
+created: 20181027T234953Z
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: 55be015b-0af6-4c90-b287-3cdc68ba52c3
+
+----field----
+field: {42989D60-44A3-5241-BB3C-4D40348836DB}
+name: heading
+key: heading
+content-length: 6
+
+Events
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 12
+
+ContentBlock
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 22
+
+sitecore\virtualssuser
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181027T234953Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 22
+
+sitecore\virtualssuser
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+55be015b-0af6-4c90-b287-3cdc68ba52c3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181028T001216Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{FCFDBB96-946A-4D2F-BCCD-5573073FC176}

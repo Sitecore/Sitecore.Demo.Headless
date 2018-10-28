@@ -9,7 +9,8 @@ import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore
 export default function(manifest) {
   manifest.addComponent({
     name: 'FieldGroup',
-    icon: SitecoreIcon.DocumentTag,
+    displayName: 'Field Group',
+    icon: SitecoreIcon.RadioButton_group,
     fields: [
       { name: 'heading', type: CommonFieldTypes.SingleLineText },
     ],

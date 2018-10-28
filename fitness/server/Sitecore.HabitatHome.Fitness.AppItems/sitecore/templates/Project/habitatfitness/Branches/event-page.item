@@ -14,13 +14,13 @@ created: 20181024T202940Z
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 39
+content-length: 38
 
-/~/icon/applications/32x32/star_red.png
+Office/16x16/signal_flag_checkered.png
 ----version----
 language: en
 version: 1
-revision: 4b592e5b-2047-495f-ac13-ec6def60ca3e
+revision: b7d4d880-4fca-4610-b09f-2413b056d4e7
 
 ----field----
 field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4b592e5b-2047-495f-ac13-ec6def60ca3e
+b7d4d880-4fca-4610-b09f-2413b056d4e7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T203445Z
+20181027T235956Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -8,15 +8,15 @@ name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
 template: {295AAE2B-4B5B-59E5-A898-C093C24313B4}
 templatekey: App Route
-created: 20181024T200340Z
+created: 20181027T230927Z
 
 ----field----
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
 name: __Renderings
 key: __renderings
-content-length: 631
+content-length: 861
 
-<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{2C211D0C-8DAE-587E-ACCD-DA500C88C3AF}"><p uid="{B7B75125-02C9-5AC2-B119-1C27802A0788}" key="hf-body" md="{27E71AA5-BB6A-58D8-AAE2-914BE0CDE164}" /><p uid="{A6FC32B3-6FC1-5193-A8BD-B7861D63653A}" key="hf-personalization-wizard" md="{7A650CC4-E487-59AC-BA55-AECD5F63BCF3}" /><p uid="{79AD51E3-16A8-58E0-8876-7573B90332E8}" key="hf-createaccount-form" md="{F68972B1-1308-5D11-8316-1AFEECB1BF25}" /><p uid="{BD1E7498-7C10-55AD-AECC-7675ED701A82}" key="hf-createaccount-form-group" md="{1B45C243-9663-5D83-9129-A40725AD8785}" /></d></r>
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{2C211D0C-8DAE-587E-ACCD-DA500C88C3AF}"><p uid="{EEF24166-4D0F-54C4-8D2C-9CD69F811527}" key="hf-nav" md="{01038B98-8BBA-5008-AEFE-5E6E9AB8AAB2}" /><p uid="{B7B75125-02C9-5AC2-B119-1C27802A0788}" key="hf-body" md="{27E71AA5-BB6A-58D8-AAE2-914BE0CDE164}" /><p uid="{A6FC32B3-6FC1-5193-A8BD-B7861D63653A}" key="hf-personalization-wizard" md="{7A650CC4-E487-59AC-BA55-AECD5F63BCF3}" /><p uid="{11AB78B8-AF0C-5A37-BB7D-2A9676DAE1ED}" key="hf-registration-wizard" md="{B68F6852-A415-59D2-9009-69CF1ED0972B}" /><p uid="{79AD51E3-16A8-58E0-8876-7573B90332E8}" key="hf-createaccount-form" md="{F68972B1-1308-5D11-8316-1AFEECB1BF25}" /><p uid="{BD1E7498-7C10-55AD-AECC-7675ED701A82}" key="hf-createaccount-form-group" md="{1B45C243-9663-5D83-9129-A40725AD8785}" /></d></r>
 ----field----
 field: {CA9B9F52-4FB0-4F87-A79F-24DEA62CDA65}
 name: __Default workflow
@@ -27,7 +27,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 736ed81b-0893-436b-9fb1-82ea2a1ef2e2
+revision: e1b8fe87-cc67-428f-94fd-1db52b63cbe1
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -42,7 +42,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T200340Z
+20181027T230927Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-736ed81b-0893-436b-9fb1-82ea2a1ef2e2
+e1b8fe87-cc67-428f-94fd-1db52b63cbe1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T200344Z
+20181027T230931Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

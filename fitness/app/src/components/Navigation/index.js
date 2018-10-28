@@ -36,12 +36,14 @@ class Navigation extends React.Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, context } = this.props;
+    const identification = context.contact.identification;
+
     return (
       <div className="nav-container">
         <Navbar light>
           <NavbarBrand tag={Link} to={"/"}>
-            <img src={logo} alt={("habitat-fitness")} />
+            <img src={logo} alt={"habitat-fitness"} />
           </NavbarBrand>
           {/* <NavLink tag={Link} to={"/"} className="header-account-link">
             Login
@@ -62,16 +64,18 @@ class Navigation extends React.Component {
                   {t("personalize")}
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink
-                  tag={Link}
-                  to={"/register"}
-                  onClick={() => this.nav("/register")}
-                  className="nav-link"
-                >
-                  {t("register")}
-                </NavLink>
-              </NavItem>
+              {identification === "Known" ? null : (
+                <NavItem>
+                  <NavLink
+                    tag={Link}
+                    to={"/register"}
+                    onClick={() => this.nav("/register")}
+                    className="nav-link"
+                  >
+                    {t("register")}
+                  </NavLink>
+                </NavItem>
+              )}
             </Nav>
           </Collapse>
         </Navbar>

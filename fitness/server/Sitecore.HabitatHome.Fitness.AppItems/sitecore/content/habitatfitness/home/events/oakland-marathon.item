@@ -8,22 +8,25 @@ name: oakland-marathon
 master: {00000000-0000-0000-0000-000000000000}
 template: {9F2F1E35-62EF-5618-AD2B-3C2988389F89}
 templatekey: event-page
-created: 20181024T200346Z
+created: 20181027T234953Z
 
 ----field----
 field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
 name: __Tracking
 key: __tracking
-content-length: 346
+content-length: 460
 
 <tracking>
   <profile id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf" name="Sports">
     <key name="Basketball" value="0" />
+    <key name="Bowling" value="0" />
     <key name="Cycling" value="0" />
+    <key name="Golf" value="0" />
     <key name="Kayaking" value="0" />
     <key name="Rock Climbing" value="0" />
     <key name="Running" value="10" />
     <key name="Swimming" value="0" />
+    <key name="Volleyball" value="0" />
   </profile>
 </tracking>
 ----field----
@@ -36,7 +39,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: cbc0827a-0ea8-4b58-b478-c9fd36485557
+revision: b5711a7a-4340-4a1a-81ab-c468725f0355
 
 ----field----
 field: {1AB79054-D1DD-59C2-BD3F-BB1CD4F1CE92}
@@ -52,6 +55,13 @@ key: description
 content-length: 133
 
 Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party.
+----field----
+field: {8C133B65-BC5E-50DE-9553-0ECBB7D3534C}
+name: longDescription
+key: longdescription
+content-length: 151
+
+Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party.
 ----field----
 field: {99784E81-863A-5D39-AE05-562AE7B586C9}
 name: image
@@ -102,26 +112,40 @@ content-length: 16
 
 Oakland Marathon
 ----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 22
+
+sitecore\virtualssuser
+----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181024T200346Z
+20181027T234953Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 22
+
+sitecore\virtualssuser
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-cbc0827a-0ea8-4b58-b478-c9fd36485557
+b5711a7a-4340-4a1a-81ab-c468725f0355
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T230231Z
+20181028T000439Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

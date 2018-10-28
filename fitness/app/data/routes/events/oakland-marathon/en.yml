@@ -6,6 +6,7 @@ fields:
   pageTitle: Oakland Marathon
   name: Oakland Marathon
   description: Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party.
+  longDescription: Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party.
   date: '2018-11-08T08:00:00.000Z'
   latitude: 37.796610
   longitude: -122.277422
@@ -22,4 +23,4 @@ placeholders:
   hf-nav:
   - componentName: EventDetailsNavigation
   hf-body:
-    - componentName: EventDetail
+    - id: event-detail-loggedin

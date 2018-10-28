@@ -8,7 +8,7 @@ name: link
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
-created: 20181024T200341Z
+created: 20181027T230928Z
 
 ----field----
 field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
@@ -21,16 +21,16 @@ General Link
 field: {BE351A73-FCB0-4213-93FA-C302D8AB4F51}
 name: Shared
 key: shared
-content-length: 1
+content-length: 0
 
-0
+
 ----field----
 field: {39847666-389D-409B-95BD-F2016F11EED5}
 name: Unversioned
 key: unversioned
-content-length: 1
+content-length: 0
 
-0
+
 ----field----
 field: {337E20E1-999A-4EEA-85AD-B58A03AE75CC}
 name: Quick Action Bar
@@ -76,7 +76,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 5edc981a-3548-4854-93db-da670b795871
+revision: 6b720743-a3fa-4e29-8126-6284a4c32d98
 
 ----field----
 field: {19A69332-A23E-4E70-8D16-B2640CB24CC8}
@@ -105,7 +105,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T200341Z
+20181027T230928Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -119,18 +119,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5edc981a-3548-4854-93db-da670b795871
+6b720743-a3fa-4e29-8126-6284a4c32d98
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T200348Z
+20181027T235514Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 14
 
-sitecore\JssImport
+sitecore\admin

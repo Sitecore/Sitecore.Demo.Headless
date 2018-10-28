@@ -8,7 +8,7 @@ name: FeaturedEvent
 master: {00000000-0000-0000-0000-000000000000}
 template: {04646A89-996F-4EE7-878A-FFDBF1F0EF0D}
 templatekey: Json Rendering
-created: 20181024T200344Z
+created: 20181027T230930Z
 
 ----field----
 field: {037FE404-DD19-4BF7-8E30-4DADF68B27B0}
@@ -21,9 +21,9 @@ FeaturedEvent
 field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
 name: Datasource Location
 key: datasource location
-content-length: 57
+content-length: 64
 
-/sitecore/content/habitatfitness/Components/FeaturedEvent
+./Data|/sitecore/content/habitatfitness/Components/FeaturedEvent
 ----field----
 field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
 name: Datasource Template
@@ -35,9 +35,9 @@ content-length: 56
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 29
+content-length: 21
 
-Office/16x16/document_tag.png
+Office/16x16/star.png
 ----field----
 field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
 name: __Read Only
@@ -48,8 +48,15 @@ content-length: 1
 ----version----
 language: en
 version: 1
-revision: 27667580-0d91-4673-9014-d2754fbd49b4
+revision: 03707391-ea3e-4d37-9fe0-799899c08580
 
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 14
+
+Featured Event
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -63,7 +70,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T200344Z
+20181027T230930Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -77,18 +84,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-27667580-0d91-4673-9014-d2754fbd49b4
+03707391-ea3e-4d37-9fe0-799899c08580
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T212634Z
+20181027T230937Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 18
 
-sitecore\admin
+sitecore\JssImport

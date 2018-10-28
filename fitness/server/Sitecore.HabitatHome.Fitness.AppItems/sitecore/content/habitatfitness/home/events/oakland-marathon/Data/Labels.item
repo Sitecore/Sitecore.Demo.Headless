@@ -1,14 +1,14 @@
 ----item----
 version: 1
-id: {B16DDB6B-9BDA-4FFF-ACF0-CF98DACCDD92}
+id: {B1C0ADC1-014D-4245-9F28-808BE3735C6C}
 database: master
 path: /sitecore/content/habitatfitness/home/events/oakland-marathon/Data/Labels
-parent: {5D1A28C2-1409-4FF2-99BA-BB9E70F6C6A0}
+parent: {9E1F7D5B-3E66-5D9D-BADC-1907BB9322C4}
 name: Labels
-master: {00000000-0000-0000-0000-000000000000}
+master: {98791841-696B-429A-8593-49F3188306B5}
 template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
 templatekey: Folder
-created: 20181024T202715Z
+created: 20181028T000023Z
 
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
@@ -17,6 +17,13 @@ key: __icon
 content-length: 40
 
 /~/icon/office/32x32/magazine_folder.png
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{56AEC7BF-4441-4F04-8A57-9F4880CC0B6D}
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
@@ -27,7 +34,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 7f0f2d8e-69e6-4662-9525-f5ec60063073
+revision: 0dc68591-38a7-4f27-8959-cdf826b891fa
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -35,7 +42,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T202715Z
+20181028T000023Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -49,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7f0f2d8e-69e6-4662-9525-f5ec60063073
+0dc68591-38a7-4f27-8959-cdf826b891fa
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T203040Z
+20181028T000030Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

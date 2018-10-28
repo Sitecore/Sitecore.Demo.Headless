@@ -8,7 +8,7 @@ name: title
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
-created: 20181024T200343Z
+created: 20181027T230929Z
 
 ----field----
 field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
@@ -21,16 +21,16 @@ Single-Line Text
 field: {BE351A73-FCB0-4213-93FA-C302D8AB4F51}
 name: Shared
 key: shared
-content-length: 1
+content-length: 0
 
-0
+
 ----field----
 field: {39847666-389D-409B-95BD-F2016F11EED5}
 name: Unversioned
 key: unversioned
-content-length: 1
+content-length: 0
 
-0
+
 ----field----
 field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
 name: __Read Only
@@ -48,7 +48,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 38b8a1b4-113d-4a40-bec0-21d8a0598255
+revision: 0aad6bb4-03e3-48be-9778-6302cfef9ec8
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -63,7 +63,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T200343Z
+20181027T230929Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -77,18 +77,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-38b8a1b4-113d-4a40-bec0-21d8a0598255
+0aad6bb4-03e3-48be-9778-6302cfef9ec8
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T200348Z
+20181028T001340Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 14
 
-sitecore\JssImport
+sitecore\admin

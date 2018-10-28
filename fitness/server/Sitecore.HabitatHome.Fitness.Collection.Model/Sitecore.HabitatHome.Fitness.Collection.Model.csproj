@@ -38,10 +38,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Interactive.Async, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.0.0\lib\net45\System.Interactive.Async.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facets\DemographicsFacet.cs" />
+    <Compile Include="Facets\RegisteredEventsFacet.cs" />
     <Compile Include="Facets\NotificationSubscriptionsFacet.cs" />
+    <Compile Include="Facets\FavoriteEventsFacet.cs" />
     <Compile Include="Facets\NotificationTopicsFacet.cs" />
     <Compile Include="Facets\SportsFacet.cs" />
     <Compile Include="ModelFactory.cs" />

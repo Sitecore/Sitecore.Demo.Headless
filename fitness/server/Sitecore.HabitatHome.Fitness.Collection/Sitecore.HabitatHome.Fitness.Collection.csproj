@@ -243,6 +243,7 @@
   <ItemGroup>
     <Compile Include="Controllers\HabitatFitnessEventsController.cs" />
     <Compile Include="Filters\CancelCurrentPageAttribute.cs" />
+    <Compile Include="Model\EventPayload.cs" />
     <Compile Include="Model\IdentificationPayload.cs" />
     <Compile Include="Model\DemographicsPayload.cs" />
     <Compile Include="Model\StringArrayPayload.cs" />

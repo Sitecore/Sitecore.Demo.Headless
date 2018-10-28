@@ -1,6 +1,6 @@
 ----item----
 version: 1
-id: {069B4C2E-3920-426D-B327-9F546E050A48}
+id: {E8A83982-6924-4435-91D2-F9FFA706C1E6}
 database: master
 path: /sitecore/content/habitatfitness/home/events/street-basketball-santa-monica
 parent: {DEEB4737-CF04-5EC9-82A1-40C214E25813}
@@ -8,31 +8,34 @@ name: street-basketball-santa-monica
 master: {98791841-696B-429A-8593-49F3188306B5}
 template: {9F2F1E35-62EF-5618-AD2B-3C2988389F89}
 templatekey: event-page
-created: 20181024T225335Z
+created: 20181028T000508Z
 
 ----field----
 field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
 name: __Tracking
 key: __tracking
-content-length: 346
+content-length: 460
 
 <tracking>
   <profile id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf" name="Sports">
     <key name="Basketball" value="10" />
+    <key name="Bowling" value="0" />
     <key name="Cycling" value="0" />
+    <key name="Golf" value="0" />
     <key name="Kayaking" value="0" />
     <key name="Rock Climbing" value="0" />
     <key name="Running" value="0" />
     <key name="Swimming" value="0" />
+    <key name="Volleyball" value="0" />
   </profile>
 </tracking>
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
-content-length: 39
+content-length: 38
 
-/~/icon/applications/32x32/star_red.png
+Office/16x16/signal_flag_checkered.png
 ----field----
 field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
 name: __Originator
@@ -50,15 +53,15 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 9a634cab-911c-4140-bb28-c28dc1d60ff7
+revision: 6d2eab4f-5df3-433e-b582-74df7228bce4
 
 ----field----
 field: {1AB79054-D1DD-59C2-BD3F-BB1CD4F1CE92}
 name: name
 key: name
-content-length: 17
+content-length: 30
 
-Street Basketball
+Street Basketball Santa Monica
 ----field----
 field: {6248B2DC-F9EF-548B-9D73-084135226AD7}
 name: description
@@ -66,6 +69,13 @@ key: description
 content-length: 26
 
 Show off your hoops skills
+----field----
+field: {8C133B65-BC5E-50DE-9553-0ECBB7D3534C}
+name: longDescription
+key: longdescription
+content-length: 55
+
+Show off your hoops skills (long description goes here)
 ----field----
 field: {99784E81-863A-5D39-AE05-562AE7B586C9}
 name: image
@@ -79,7 +89,7 @@ name: date
 key: date
 content-length: 16
 
-20181219T212900Z
+20181115T040000Z
 ----field----
 field: {330BAD8C-8319-5A15-8FD8-164B8C7021FD}
 name: latitude
@@ -94,13 +104,6 @@ key: longitude
 content-length: 11
 
 -118.484089
-----field----
-field: {56702BFC-558A-556F-9CA7-85F6491D9778}
-name: labels
-key: labels
-content-length: 0
-
-
 ----field----
 field: {27B7F43B-2A75-57B4-A651-789409564CE2}
 name: pageTitle
@@ -128,7 +131,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T225335Z
+20181028T000508Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -142,14 +145,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9a634cab-911c-4140-bb28-c28dc1d60ff7
+6d2eab4f-5df3-433e-b582-74df7228bce4
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T230339Z
+20181028T000719Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

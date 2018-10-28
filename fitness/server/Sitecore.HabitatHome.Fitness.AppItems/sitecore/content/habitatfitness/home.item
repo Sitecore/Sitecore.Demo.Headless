@@ -8,7 +8,7 @@ name: home
 master: {00000000-0000-0000-0000-000000000000}
 template: {295AAE2B-4B5B-59E5-A898-C093C24313B4}
 templatekey: App Route
-created: 20181024T200345Z
+created: 20181027T234953Z
 
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
@@ -27,7 +27,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: d74947e4-421e-45ff-a57a-44c2de4678c6
+revision: d887525c-7256-4fe7-a364-f1582f6bea8e
 
 ----field----
 field: {27B7F43B-2A75-57B4-A651-789409564CE2}
@@ -47,30 +47,30 @@ Home
 field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
 name: __Final Renderings
 key: __final renderings
-content-length: 1882
+content-length: 2820
 
-<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{9D6FEA4F-9878-5B56-A88B-7FC9310B6770}" p:after="p[@uid='{BD1E7498-7C10-55AD-AECC-7675ED701A82}']" s:rname="PersonalizePrompt" s:ds="{1BDA6387-2F81-5BEB-8FA4-960368445B63}" s:id="{C3433D20-9FDE-511C-9C1F-35C061E19ACE}" s:par="" s:ph="/hf-body"><rls><ruleset><rule uid="{98DB21D2-762B-43AD-B3F6-AAD1C7547833}" s:name="engaged"><conditions><and uid="6371234FECB74531881747B85831A8BC"><condition uid="7954EFFAADDF46C7954349773C19DB12" s:id="{069B7761-A7E0-4533-B80A-980CA30385A2}" s:operatorid="{B88CD556-082E-4385-BB76-E4D1B565F290}" s:index="2" /><condition uid="251754684CD541F284FA6B7C01FFA576" s:id="{BE334DF8-9A0F-4FF3-A6D8-C396EC713809}" s:except="true" s:PageId="{18F85DAB-A1C0-5126-95EF-ECA8B7CD0004}" /></and></conditions></rule><rule uid="{00000000-0000-0000-0000-000000000000}" s:name="Default"><conditions><condition uid="FA538201169B4B5FB2BF8E5A9546D489" s:id="{4888ABBB-F17D-4485-B14B-842413F88732}" /></conditions><actions><action uid="2F0EE78527D148AEB6FEF138E6385942" s:id="{25F351A1-712D-45F8-857D-8AD95BB2ACE9}" /></actions></rule></ruleset></rls></r><r uid="{45B7B8B1-C68C-5F1B-B97F-1D09373DA10E}" p:after="r[@uid='{9D6FEA4F-9878-5B56-A88B-7FC9310B6770}']" s:rname="FeaturedEvent" s:ds="{92A03E9E-4C72-543B-A474-75B444B0BE3B}" s:id="{A3948268-0B8E-5A8F-9D04-F6ABCDE04774}" s:par="" s:ph="/hf-body" /><r uid="{BEEA8C4A-17DF-510E-9508-9983E0269659}" p:after="r[@uid='{45B7B8B1-C68C-5F1B-B97F-1D09373DA10E}']" s:rname="EventList" s:ds="{794ECAE4-7888-5B9A-BFC1-C8AAA0A69783}" s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}" s:par="" s:ph="/hf-body" /><r uid="{B5156FA2-8867-5EB2-89B7-8D9ECAFD090A}" p:after="*[1=2]" s:rname="ProductRecommendationList" s:ds="{7A4991FA-0B3C-5BF0-A534-408EB750B2B9}" s:id="{9E75D093-FB12-5018-96A0-0D76F6A96ECC}" s:par="" s:ph="/hf-body" /></d></r>
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{448061BD-5555-556C-B994-6DB0EEBFD7CD}" p:after="p[@uid='{BD1E7498-7C10-55AD-AECC-7675ED701A82}']" s:rname="Navigation" s:id="{9EF8ADBC-47C9-5B78-8C92-1D4188F3E7E8}" s:par="" s:ph="/hf-nav" /><r uid="{9D6FEA4F-9878-5B56-A88B-7FC9310B6770}" p:after="r[@uid='{448061BD-5555-556C-B994-6DB0EEBFD7CD}']" s:rname="PersonalizePrompt" s:ds="{1BDA6387-2F81-5BEB-8FA4-960368445B63}" s:id="{C3433D20-9FDE-511C-9C1F-35C061E19ACE}" s:par="" s:ph="/hf-body"><rls><ruleset><rule uid="{87098F66-8C3B-47B0-8E4A-0924E1EF8A11}" s:name="engaged"><conditions><and uid="3C3A41BE3292434D99BCFA90A1AD6595"><condition uid="DAE9F6430B0F4000AEBF5D97230955D4" s:id="{069B7761-A7E0-4533-B80A-980CA30385A2}" s:operatorid="{B88CD556-082E-4385-BB76-E4D1B565F290}" s:index="2" /><condition uid="370122FB70CA4E4EB6A0D50E9E028EFF" s:id="{BE334DF8-9A0F-4FF3-A6D8-C396EC713809}" s:PageId="{18F85DAB-A1C0-5126-95EF-ECA8B7CD0004}" s:except="true" /></and></conditions></rule><rule uid="{00000000-0000-0000-0000-000000000000}" s:name="Default"><conditions><condition uid="909FEB07782B4940BA72A4C79F68CC87" s:id="{4888ABBB-F17D-4485-B14B-842413F88732}" /></conditions><actions><action uid="758692C171A2415C9E820DAFB7B97155" s:id="{25F351A1-712D-45F8-857D-8AD95BB2ACE9}" /></actions></rule></ruleset></rls></r><r uid="{45B7B8B1-C68C-5F1B-B97F-1D09373DA10E}" p:after="r[@uid='{9D6FEA4F-9878-5B56-A88B-7FC9310B6770}']" s:rname="FeaturedEvent" s:ds="{92A03E9E-4C72-543B-A474-75B444B0BE3B}" s:id="{A3948268-0B8E-5A8F-9D04-F6ABCDE04774}" s:par="" s:ph="/hf-body"><rls><ruleset><rule uid="{84A50ED1-3D95-4D50-B2AD-B16A7F953C62}" s:name="baller"><conditions><condition uid="49847980754349D8BD3952E4AF294064" s:id="{0148A61F-061A-4B75-9E3C-DB6E67F03E6A}" s:SportProfileKeyId="{5FAADDBB-E478-49CB-A461-FAB0731D2A63}" s:OperatorId="{B88CD556-082E-4385-BB76-E4D1B565F290}" s:SkillLevel="6" /></conditions><actions><action uid="387BBFF8166A4A929C0606E6558C09B4" s:id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}" s:DataSource="{22BEB6A3-5432-4251-B513-BC5C45700D95}" /></actions></rule><rule uid="{00000000-0000-0000-0000-000000000000}" s:name="Default"><conditions><condition uid="665CD99B5B9345A5A170F0BF6643C26E" s:id="{4888ABBB-F17D-4485-B14B-842413F88732}" /></conditions><actions /></rule></ruleset></rls></r><r uid="{BEEA8C4A-17DF-510E-9508-9983E0269659}" p:after="r[@uid='{45B7B8B1-C68C-5F1B-B97F-1D09373DA10E}']" s:rname="EventList" s:ds="{794ECAE4-7888-5B9A-BFC1-C8AAA0A69783}" s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}" s:par="" s:ph="/hf-body" /><r uid="{B5156FA2-8867-5EB2-89B7-8D9ECAFD090A}" p:after="*[1=2]" s:rname="ProductRecommendationList" s:ds="{7A4991FA-0B3C-5BF0-A534-408EB750B2B9}" s:id="{9E75D093-FB12-5018-96A0-0D76F6A96ECC}" s:par="" s:ph="/hf-body" /></d></r>
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20181024T200345Z
+20181027T234953Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-d74947e4-421e-45ff-a57a-44c2de4678c6
+d887525c-7256-4fe7-a364-f1582f6bea8e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T220713Z
+20181028T000952Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

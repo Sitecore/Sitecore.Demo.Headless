@@ -8,6 +8,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Model.Facets
     public class SportsFacet : Facet
     {
         public static string DefaultKey = "Sports";
+
         public Dictionary<string, int> Ratings { get; set; }
     }
 }

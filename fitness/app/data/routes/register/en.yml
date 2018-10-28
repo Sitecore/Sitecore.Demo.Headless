@@ -1,3 +1,4 @@
+id: register-page
 name: register
 displayName: Registration
 fields:
@@ -9,7 +10,7 @@ placeholders:
     - componentName: RegistrationWizard
       placeholders:
         hf-registration-wizard:
-          - componentName: CreateAccount
+          - componentName: CreateAccountStep
             fields:
               title: Create Account
               stepName: Account Info

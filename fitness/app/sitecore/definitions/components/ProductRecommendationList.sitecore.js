@@ -13,6 +13,8 @@ import {
 export default function(manifest) {
   manifest.addComponent({
     name: "ProductRecommendationList",
+    displayName: 'Product Recommendation List',
+    icon: SitecoreIcon.LightbulbOn,
     fields: [
       { name: "title", type: CommonFieldTypes.SingleLineText },
       { name: "items", type: CommonFieldTypes.ContentList }

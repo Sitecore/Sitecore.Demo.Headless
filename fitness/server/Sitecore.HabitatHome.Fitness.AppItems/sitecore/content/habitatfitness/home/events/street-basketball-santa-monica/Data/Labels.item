@@ -1,14 +1,14 @@
 ----item----
 version: 1
-id: {D6651C3D-CE3C-434B-A9B6-CE662B960FC5}
+id: {AF69B43D-E83A-4567-8434-66A5C6FB9C33}
 database: master
 path: /sitecore/content/habitatfitness/home/events/street-basketball-santa-monica/Data/Labels
-parent: {E60F919E-D42A-4F4E-9AFD-121C42FC29C3}
+parent: {1B8E5A87-F958-4FA8-A9A2-808648E5E397}
 name: Labels
 master: {98791841-696B-429A-8593-49F3188306B5}
 template: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
 templatekey: Folder
-created: 20181024T225335Z
+created: 20181028T000508Z
 
 ----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
@@ -34,7 +34,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 5fe7b766-019f-4016-b0c7-cc66f5887be2
+revision: 1b78e8b1-badb-4e45-9752-323f257b8d32
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -42,7 +42,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T225335Z
+20181028T000508Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5fe7b766-019f-4016-b0c7-cc66f5887be2
+1b78e8b1-badb-4e45-9752-323f257b8d32
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T225335Z
+20181028T000508Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

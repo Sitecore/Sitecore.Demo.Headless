@@ -12,7 +12,7 @@ placeholders:
     placeholders:
       hf-personalization-wizard:
       - id: sports-picker
-      - componentName: PersonalDataForm
+      - componentName: PersonalDataStep
         fields:
           title: Let's refine it a bit
           stepName: Demographics
@@ -23,7 +23,7 @@ placeholders:
           hf-createaccount-form:
           - id: gender-selector
           - id: age-group-selector
-      - componentName: SaveAsAccount
+      - componentName: SaveAsAccountStep
         fields:
           title: Want to save it as account?
           stepName: Personal

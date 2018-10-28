@@ -1,0 +1,94 @@
+----item----
+version: 1
+id: {89D5DD57-6E02-5698-915E-4D875760EBEC}
+database: master
+path: /sitecore/content/habitatfitness/Components/wizard/sports-picker
+parent: {F8D8B1F9-69A0-59CA-BB51-5B06399B0715}
+name: sports-picker
+master: {00000000-0000-0000-0000-000000000000}
+template: {92C6B0A9-42EE-5884-BC16-057318857540}
+templatekey: SportsPickerStep
+created: 20181027T234952Z
+
+----field----
+field: {A4F985D9-98B3-4B52-AAAF-4344F6E747C6}
+name: __Workflow
+key: __workflow
+content-length: 38
+
+{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}
+----version----
+language: en
+version: 1
+revision: 535b5929-3993-4670-bcd6-1584dc9f1757
+
+----field----
+field: {52803CB0-7518-5CC5-9D39-962A52040110}
+name: selectSkillTitle
+key: selectskilltitle
+content-length: 43
+
+What's your skill level in $selected-sport?
+----field----
+field: {9EFE8415-6DC7-5031-8679-56EB6C3DB9B5}
+name: title
+key: title
+content-length: 25
+
+Pick your favorite sports
+----field----
+field: {385B40DE-D6A2-5A6A-9DB6-930782C36CE7}
+name: sports
+key: sports
+content-length: 350
+
+{5FAADDBB-E478-49CB-A461-FAB0731D2A63}|{FDFEE004-5411-42AF-A772-972A2596AE80}|{59D2B549-58B3-4156-BAA5-9210336B9E33}|{A11DB2F1-EDBA-420A-B9DA-E62ADD92261A}|{9E2FD4CD-D7D3-4BFF-965A-9A1B0DB1947A}|{926DB535-C654-4918-AAB8-DE581085748D}|{80935AF5-DAEB-41E6-AA8F-1F60F91ADFFE}|{7D4C48D7-D058-4443-B7A6-A51EABEEFD27}|{DFCA4453-6075-4172-9DE4-B1932CD43B22}
+----field----
+field: {E12D8770-1F35-56B5-8247-E53A6CEBF4DF}
+name: stepName
+key: stepname
+content-length: 6
+
+Sports
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20181027T234952Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+535b5929-3993-4670-bcd6-1584dc9f1757
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20181027T235200Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
+name: __Workflow state
+key: __workflow state
+content-length: 38
+
+{AF32C98B-C828-42AF-A649-74C1DE3303FB}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

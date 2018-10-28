@@ -72,6 +72,12 @@
     <Reference Include="Sitecore.Framework.Conditions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Framework.Conditions.1.1.12\lib\net462\Sitecore.Framework.Conditions.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.JavaScriptServices.Configuration">
+      <HintPath>..\sc.lib\Sitecore.JavaScriptServices.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.JavaScriptServices.ViewEngine">
+      <HintPath>..\sc.lib\Sitecore.JavaScriptServices.ViewEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Sitecore.Kernel.NoReferences.9.0.180604\lib\NET462\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -119,8 +125,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Rules\AgeGroupCondition.cs" />
+    <Compile Include="Rules\CurrentEventRegisteredCondition.cs" />
+    <Compile Include="Rules\IsContactKnownCondition.cs" />
     <Compile Include="Rules\GenderCondition.cs" />
     <Compile Include="Rules\NotificationSubscriptionCondition.cs" />
     <Compile Include="Rules\NotificationTopicCondition.cs" />

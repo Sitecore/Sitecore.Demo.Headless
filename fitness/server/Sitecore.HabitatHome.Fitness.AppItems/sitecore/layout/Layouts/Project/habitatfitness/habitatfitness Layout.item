@@ -8,15 +8,15 @@ name: habitatfitness Layout
 master: {00000000-0000-0000-0000-000000000000}
 template: {35C61E90-47DD-43DD-83A8-D1C4D5119720}
 templatekey: JSS Layout
-created: 20181024T200344Z
+created: 20181027T230931Z
 
 ----field----
 field: {80334869-86DC-4472-AA89-44CF1B2F6C9B}
 name: Placeholders
 key: placeholders
-content-length: 38
+content-length: 77
 
-{27E71AA5-BB6A-58D8-AAE2-914BE0CDE164}
+{01038B98-8BBA-5008-AEFE-5E6E9AB8AAB2}|{27E71AA5-BB6A-58D8-AAE2-914BE0CDE164}
 ----field----
 field: {9C6106EA-7A5A-48E2-8CAD-F0F693B1E2D4}
 name: __Read Only
@@ -27,7 +27,7 @@ content-length: 1
 ----version----
 language: en
 version: 1
-revision: bdec19ca-2d63-4887-ab11-d67f388fe6ba
+revision: 7711a9eb-dfb8-4c85-9cea-8f544a6408fe
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -42,7 +42,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T200344Z
+20181027T230931Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -56,18 +56,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-bdec19ca-2d63-4887-ab11-d67f388fe6ba
+7711a9eb-dfb8-4c85-9cea-8f544a6408fe
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T200348Z
+20181027T230935Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 22
 
-sitecore\JssImport
+sitecore\virtualssuser

@@ -35,6 +35,8 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
                     var sportsFacetSet = SetSportsFacet(facets, client, contact);
                     var personalFacetSet = SetPersonalFacet(facets, client, contact);
                     var emailFacetSet = SetEmailFacet(facets, client, contact);
+                    var favoriteEventFacetSet = SetFavoriteEventFacet(facets, client, contact);
+                    var eventRegistrationFacetSet = SetEventRegistrationFacet(facets, client, contact);
 
                     if (sportsFacetSet || personalFacetSet || emailFacetSet)
                     {
@@ -46,6 +48,50 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
                     Log.Error("UpdateFacetsFromTracker failed miserably.", ex, this);
                 }
             }
+        }
+
+        private bool SetFavoriteEventFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        {
+            Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Enter SetFavoriteEventFacet()", this);
+
+            if (facets.TryGetValue(FavoriteEventsFacet.DefaultKey, out Facet facet))
+            {
+                if (facet is FavoriteEventsFacet eventFacet)
+                {
+                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetFavoriteEventFacet()", this);
+                    client.SetFacet(contact, FavoriteEventsFacet.DefaultKey, eventFacet);
+                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Done SetFavoriteEventFacet()", this);
+                    return true;
+                }
+                else
+                {
+                    Log.Error($"{FavoriteEventsFacet.DefaultKey} facet is not of expected type. Expected {typeof(FavoriteEventsFacet).FullName}", this);
+                }
+            }
+
+            return false;
+        }
+
+        private bool SetEventRegistrationFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        {
+            Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Enter SetEventRegistrationFacet()", this);
+
+            if (facets.TryGetValue(RegisteredEventsFacet.DefaultKey, out Facet facet))
+            {
+                if (facet is RegisteredEventsFacet eventFacet)
+                {
+                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetEventRegistrationFacet()", this);
+                    client.SetFacet(contact, RegisteredEventsFacet.DefaultKey, eventFacet);
+                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Done SetEventRegistrationFacet()", this);
+                    return true;
+                }
+                else
+                {
+                    Log.Error($"{RegisteredEventsFacet.DefaultKey} facet is not of expected type. Expected {typeof(RegisteredEventsFacet).FullName}", this);
+                }
+            }
+
+            return false;
         }
 
         private bool SetDemographicsFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)

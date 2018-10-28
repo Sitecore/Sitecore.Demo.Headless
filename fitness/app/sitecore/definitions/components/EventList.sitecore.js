@@ -13,6 +13,8 @@ import {
 export default function(manifest) {
   manifest.addComponent({
     name: "EventList",
+    displayName: "Event List",
+    icon: SitecoreIcon.ListStyle_bullets,
     fields: [
       { name: "title", type: CommonFieldTypes.SingleLineText },
       { name: "items", type: CommonFieldTypes.ContentList }

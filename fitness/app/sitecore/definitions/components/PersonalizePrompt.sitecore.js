@@ -9,7 +9,8 @@ import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore
 export default function(manifest) {
   manifest.addComponent({
     name: 'PersonalizePrompt',
-    icon: SitecoreIcon.DocumentTag,
+    displayName: 'Personalize Prompt',
+    icon: SitecoreIcon.Question,
     fields: [
       { name: 'headerText', type: CommonFieldTypes.RichText },
       { name: 'bodyText', type: CommonFieldTypes.RichText },

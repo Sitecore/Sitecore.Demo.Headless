@@ -14,7 +14,7 @@ export default function(manifest) {
   manifest.addComponent({
     name: "RegistrationSuccessStep",
     displayName: "Registration Success Step",
-    icon: SitecoreIcon.SignalFlag_checkered,
+    icon: SitecoreIcon.Step,
     inherits: ["wizard-step-component"]
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,

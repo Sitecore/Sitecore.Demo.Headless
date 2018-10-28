@@ -8,7 +8,7 @@ name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
 template: {F7CFB991-FDCD-5036-A021-29E58A67DA4B}
 templatekey: product
-created: 20181024T200341Z
+created: 20181027T230928Z
 
 ----field----
 field: {CA9B9F52-4FB0-4F87-A79F-24DEA62CDA65}
@@ -20,7 +20,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 77ef204d-8e64-43f8-a58a-16548de4a92d
+revision: eaee8cf6-fd9f-4266-ab13-497847959c12
 
 ----field----
 field: {2FA17014-B3B5-5966-8EE0-F3116C4313C2}
@@ -42,7 +42,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20181024T200341Z
+20181027T230928Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-77ef204d-8e64-43f8-a58a-16548de4a92d
+eaee8cf6-fd9f-4266-ab13-497847959c12
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181024T200341Z
+20181027T230928Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
