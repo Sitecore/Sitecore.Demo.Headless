@@ -42,15 +42,16 @@ class PersonalizationWizard extends Component {
     return (
       <PersonalizationWizardWrap>
         <div className="personalizationWizard">
-          <div className="personalizationWizard-header">
-            <Text
-              tag="h3"
-              field={fields.title}
-              className="personalizationWizard-title"
-            />
-            <PersonalizationWizardContext.Consumer>
-              {context => (
-                <Fragment>
+          <PersonalizationWizardContext.Consumer>
+            {context => (
+              <Fragment>
+                <div className="personalizationWizard-header">
+                  <Text
+                    tag="h3"
+                    field={fields.title}
+                    className="personalizationWizard-title"
+                  />
+
                   <ProgressBar
                     percentage={this.getPercentage(
                       context.activeStepIndex,
@@ -58,22 +59,20 @@ class PersonalizationWizard extends Component {
                     )}
                     steps={this.getStepNames(wizardPlaceholder)}
                   />
-                  <div className="personalizationWizard-body">
-                    <Placeholder
-                      name="hf-personalization-wizard"
-                      rendering={rendering}
-                      currentContext={context}
-                      render={(components, placeholderData, props) => (
-                        <Fragment>
-                          {components[context.activeStepIndex]}
-                        </Fragment>
-                      )}
-                    />
-                  </div>
-                </Fragment>
-              )}
-            </PersonalizationWizardContext.Consumer>
-          </div>
+                </div>
+                <div className="personalizationWizard-body">
+                  <Placeholder
+                    name="hf-personalization-wizard"
+                    rendering={rendering}
+                    currentContext={context}
+                    render={(components, placeholderData, props) => (
+                      <Fragment>{components[context.activeStepIndex]}</Fragment>
+                    )}
+                  />
+                </div>
+              </Fragment>
+            )}
+          </PersonalizationWizardContext.Consumer>
         </div>
       </PersonalizationWizardWrap>
     );

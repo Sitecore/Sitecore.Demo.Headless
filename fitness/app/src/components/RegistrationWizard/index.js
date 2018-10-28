@@ -42,18 +42,18 @@ class RegistrationWizard extends Component {
     return (
       <RegistrationWizardWrap>
         <div className="personalizationWizard">
-          <div className="personalizationWizard-header">
-            {fields &&
-              fields.title && (
-                <Text
-                  tag="h3"
-                  field={fields.title}
-                  className="personalizationWizard-title"
-                />
-              )}
-            <RegistrationWizardContext.Consumer>
-              {context => (
-                <Fragment>
+          <RegistrationWizardContext.Consumer>
+            {context => (
+              <Fragment>
+                <div className="personalizationWizard-header">
+                  {fields &&
+                    fields.title && (
+                      <Text
+                        tag="h3"
+                        field={fields.title}
+                        className="personalizationWizard-title"
+                      />
+                    )}
                   <ProgressBar
                     percentage={this.getPercentage(
                       context.activeStepIndex,
@@ -61,22 +61,20 @@ class RegistrationWizard extends Component {
                     )}
                     steps={this.getStepNames(wizardPlaceholder)}
                   />
-                  <div className="personalizationWizard-body">
-                    <Placeholder
-                      name="hf-registration-wizard"
-                      rendering={rendering}
-                      currentContext={context}
-                      render={(components, placeholderData, props) => (
-                        <Fragment>
-                          {components[context.activeStepIndex]}
-                        </Fragment>
-                      )}
-                    />
-                  </div>
-                </Fragment>
-              )}
-            </RegistrationWizardContext.Consumer>
-          </div>
+                </div>
+                <div className="personalizationWizard-body">
+                  <Placeholder
+                    name="hf-registration-wizard"
+                    rendering={rendering}
+                    currentContext={context}
+                    render={(components, placeholderData, props) => (
+                      <Fragment>{components[context.activeStepIndex]}</Fragment>
+                    )}
+                  />
+                </div>
+              </Fragment>
+            )}
+          </RegistrationWizardContext.Consumer>
         </div>
       </RegistrationWizardWrap>
     );
