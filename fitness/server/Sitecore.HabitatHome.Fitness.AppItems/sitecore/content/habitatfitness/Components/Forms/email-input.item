@@ -20,7 +20,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: e371ed3c-19e9-4d27-89e0-00d1d576c5a0
+revision: 18ece584-ce79-4bf0-92a7-9b91c0acece5
 
 ----field----
 field: {DD3FD23C-97D4-5714-9CB3-7C0E227A00E9}
@@ -70,25 +70,32 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e371ed3c-19e9-4d27-89e0-00d1d576c5a0
+18ece584-ce79-4bf0-92a7-9b91c0acece5
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20181027T234952Z
+20181028T002521Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 14
 
-sitecore\JssImport
+sitecore\admin
 ----field----
 field: {3E431DE1-525E-47A3-B6B0-1CCBEC3A8C98}
 name: __Workflow state
 key: __workflow state
 content-length: 38
 
-{FCFDBB96-946A-4D2F-BCCD-5573073FC176}
+{C55B483C-EA7F-4E76-A066-985F7D9396CA}
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />
