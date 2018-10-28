@@ -37,7 +37,7 @@ class Navigation extends React.Component {
 
   render() {
     const { t, context } = this.props;
-    const identification = context.contact.identification;
+    const identification = context && context.contact ? context.contact.identification : null;
 
     return (
       <div className="nav-container">
