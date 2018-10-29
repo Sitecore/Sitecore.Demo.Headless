@@ -14,6 +14,7 @@ export default function(manifest) {
   manifest.addComponent({
     name: "SelectFormField",
     displayName: "Select Form Field",
+    icon: SitecoreIcon.DropDown_list,
     fields: [
       { name: "selectName", type: CommonFieldTypes.SingleLineText },
       { name: "selectTitle", type: CommonFieldTypes.SingleLineText },

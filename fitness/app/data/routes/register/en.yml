@@ -1,0 +1,28 @@
+id: register-page
+name: register
+displayName: Registration
+fields:
+  pageTitle: Registration
+placeholders:
+  hf-nav:
+    - componentName: BreadcrumbNavigation
+  hf-body:
+    - componentName: RegistrationWizard
+      placeholders:
+        hf-registration-wizard:
+          - componentName: CreateAccountStep
+            fields:
+              title: Create Account
+              stepName: Account Info
+            placeholders:
+              hf-createaccount-form:
+                - id: firstname-input
+                - id: lastname-input
+                - id: email-input
+                - componentName: FieldGroup
+                  placeholders:
+                    hf-createaccount-form-group:
+                    - id: gender-selector
+                    - id: age-group-selector
+          - id: sports-picker
+          - id: registration-success

@@ -13,6 +13,8 @@ import {
 export default function(manifest) {
   manifest.addComponent({
     name: "InputFormField",
+    displayName: 'Input Form Field',
+    icon: SitecoreIcon.NumbersField,
     fields: [
       { name: "type", type: CommonFieldTypes.SingleLineText },
       { name: "id", type: CommonFieldTypes.SingleLineText },

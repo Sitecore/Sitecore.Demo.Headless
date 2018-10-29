@@ -36,17 +36,18 @@ class Navigation extends React.Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, context } = this.props;
+    const identification = context && context.contact ? context.contact.identification : null;
 
     return (
       <div className="nav-container">
         <Navbar light>
           <NavbarBrand tag={Link} to={"/"}>
-            <img src={logo} alt="Habitat Fitness" />
+            <img src={logo} alt={"habitat-fitness"} />
           </NavbarBrand>
-          <NavLink tag={Link} to={"/"} className="header-account-link">
+          {/* <NavLink tag={Link} to={"/"} className="header-account-link">
             Login
-          </NavLink>
+          </NavLink> */}
           <NavbarToggler
             onClick={this.toggle}
             className={this.state.isOpen ? "active" : ""}
@@ -56,13 +57,25 @@ class Navigation extends React.Component {
               <NavItem>
                 <NavLink
                   tag={Link}
-                  to={"/Personalize"}
+                  to={"/personalize"}
                   onClick={() => this.nav("/personalize")}
                   className="nav-link"
                 >
                   {t("personalize")}
                 </NavLink>
               </NavItem>
+              {identification === "Known" ? null : (
+                <NavItem>
+                  <NavLink
+                    tag={Link}
+                    to={"/register"}
+                    onClick={() => this.nav("/register")}
+                    className="nav-link"
+                  >
+                    {t("register")}
+                  </NavLink>
+                </NavItem>
+              )}
             </Nav>
           </Collapse>
         </Navbar>

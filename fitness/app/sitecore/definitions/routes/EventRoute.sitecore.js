@@ -30,6 +30,12 @@ export default function(manifest) {
         required: true
       },
       {
+        name: "longDescription",
+        type: CommonFieldTypes.RichText,
+        displayName: "Long Event Description",
+        required: true
+      },
+      {
         name: "image",
         type: CommonFieldTypes.Image,
         displayName: "Event Image",

@@ -2,6 +2,8 @@ id: home-page
 fields:
   pageTitle: Home
 placeholders:
+  hf-nav:
+  - componentName: Navigation
   hf-body:
   - componentName: PersonalizePrompt
     fields:

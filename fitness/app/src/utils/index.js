@@ -1,3 +1,4 @@
+
 import { firebase } from "@firebase/app";
 import "@firebase/messaging";
 
@@ -21,8 +22,8 @@ export const initializeFirebase = callback => {
       console.log("Message received. ", payload);
       callback(payload);
     });
-  } catch(err) {
-    console.error('Unable to initialize firebase. ' + err);
+  } catch (err) {
+    console.error("Unable to initialize firebase. " + err);
   }
 };
 

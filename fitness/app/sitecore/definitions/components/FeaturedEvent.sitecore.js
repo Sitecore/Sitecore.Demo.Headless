@@ -9,7 +9,8 @@ import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore
 export default function(manifest) {
   manifest.addComponent({
     name: 'FeaturedEvent',
-    icon: SitecoreIcon.DocumentTag,
+    displayName: 'Featured Event',
+    icon: SitecoreIcon.Star,
     fields: [
       { name: 'event', type: CommonFieldTypes.ItemLink },
       { name: 'label', type: CommonFieldTypes.SingleLineText },

@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Controllers\HabitatFitnessEventsController.cs" />
     <Compile Include="Filters\CancelCurrentPageAttribute.cs" />
+    <Compile Include="Model\EventPayload.cs" />
     <Compile Include="Model\IdentificationPayload.cs" />
     <Compile Include="Model\DemographicsPayload.cs" />
     <Compile Include="Model\StringArrayPayload.cs" />
@@ -124,12 +125,6 @@
     </None>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\Sitecore.HabitatHome.Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj">
-      <Project>{8b8ef537-2e63-4cc5-93b0-7dfa3f784ec1}</Project>
-      <Name>Sitecore.HabitatHome.Fitness.Collection.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

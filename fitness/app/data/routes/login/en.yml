@@ -1,7 +1,0 @@
-fields:
-  pageTitle: Login
-placeholders:
-  hf-body:
-  - componentName: ContentBlock
-    fields:
-      heading: Login

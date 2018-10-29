@@ -9,17 +9,21 @@ import { Manifest } from '@sitecore-jss/sitecore-jss-manifest';
  */
 export default function addPlaceholdersToManifest(manifest) {
   manifest.addPlaceholder(
+    { name: 'hf-nav', displayName: 'Navigation' },
+  );
+  manifest.addPlaceholder(
     { name: 'hf-body', displayName: 'Body' },
-    // you can optionally pass a GUID or unique (app-wide) string as an ID
-    // this will inform the ID that is set when imported into Sitecore.
-    // If the ID is not set, an ID is created based on the placeholder name.
-    // { name: 'jss-tabs', displayName: 'Tabs', id: 'tabs-placeholder' }
   );
   manifest.addPlaceholder(
     { name: 'hf-personalization-wizard', displayName: 'Personalization Wizard' },
-    // you can optionally pass a GUID or unique (app-wide) string as an ID
-    // this will inform the ID that is set when imported into Sitecore.
-    // If the ID is not set, an ID is created based on the placeholder name.
-    // { name: 'jss-tabs', displayName: 'Tabs', id: 'tabs-placeholder' }
+  );
+  manifest.addPlaceholder(
+    { name: 'hf-registration-wizard', displayName: 'Registration Wizard' },
+  );
+  manifest.addPlaceholder(
+    { name: 'hf-createaccount-form', displayName: 'Create Account Form' },
+  );
+  manifest.addPlaceholder(
+    { name: 'hf-createaccount-form-group', displayName: 'Create Account Form Group' },
   );
 }

@@ -14,6 +14,7 @@ const EventLabel = ({ label, className }) => {
       <img
         className="event-icon"
         src={labelImage}
+        alt={fields.value}
       />
       <Text field={fields.value} />
     </p>

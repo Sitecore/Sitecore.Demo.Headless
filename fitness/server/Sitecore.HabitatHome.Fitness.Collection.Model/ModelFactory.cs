@@ -21,6 +21,8 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Model
             builder.DefineFacet<Contact, NotificationTopicsFacet>(NotificationTopicsFacet.DefaultKey);
             builder.DefineFacet<Contact, SportsFacet>(SportsFacet.DefaultKey);
             builder.DefineFacet<Contact, DemographicsFacet>(DemographicsFacet.DefaultKey);
+            builder.DefineFacet<Contact, RegisteredEventsFacet>(RegisteredEventsFacet.DefaultKey);
+            builder.DefineFacet<Contact, FavoriteEventsFacet>(FavoriteEventsFacet.DefaultKey);
 
             return builder.BuildModel();
         }

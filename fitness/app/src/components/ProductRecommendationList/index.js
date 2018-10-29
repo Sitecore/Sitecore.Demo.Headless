@@ -8,21 +8,23 @@ const ProductRecommendationList = ({ fields }) => {
   }
 
   return (
-    <React.Fragment>
-      <div className="productRecommendationList">
-        <div className="productRecommendationList-header">
-          <Text tag="h4" field={fields.title} className="productRecommendationList-title"  />
-        </div>
-        
-        <div className="productRecommendationList-content">
-          <div className="productRecommendationList-items">
-            {fields.items.map((productData, index) => (
-              <ProductRecommendationListItem key={index} {...productData} />
-            ))}
-          </div>
+    <div className="productRecommendationList">
+      <div className="productRecommendationList-header">
+        <Text
+          tag="h4"
+          field={fields.title}
+          className="productRecommendationList-title"
+        />
+      </div>
+
+      <div className="productRecommendationList-content">
+        <div className="productRecommendationList-items">
+          {fields.items.map((productData, index) => (
+            <ProductRecommendationListItem key={index} {...productData} />
+          ))}
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

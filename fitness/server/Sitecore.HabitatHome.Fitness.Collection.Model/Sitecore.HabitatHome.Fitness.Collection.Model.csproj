@@ -46,10 +46,13 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facets\DemographicsFacet.cs" />
+    <Compile Include="Facets\RegisteredEventsFacet.cs" />
     <Compile Include="Facets\NotificationSubscriptionsFacet.cs" />
+    <Compile Include="Facets\FavoriteEventsFacet.cs" />
     <Compile Include="Facets\NotificationTopicsFacet.cs" />
     <Compile Include="Facets\SportsFacet.cs" />
     <Compile Include="ModelFactory.cs" />
