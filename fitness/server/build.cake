@@ -3,7 +3,7 @@
 #addin "Cake.Http"
 #addin "Cake.Json"
 #addin "Newtonsoft.Json"
-
+#addin "Cake.Incubator"
 
 #load "local:?path=CakeScripts/helper-methods.cake"
 
@@ -54,9 +54,12 @@ Task("Quick-Deploy")
 ===============================================*/
 
 Task("Copy-Sitecore-Lib")
-    .WithCriteria(()=>(configuration.BuildConfiguration == "preview"))
     .Does(()=> {
-        var files = GetFiles($"{configuration.WebsiteRoot}/bin/Sitecore.LayoutService*.dll");
+		var sources = new string[] { 
+								$"{configuration.WebsiteRoot}/bin/Sitecore.JavaScriptServices*.dll",
+								$"{configuration.WebsiteRoot}/bin/Sitecore.LayoutService*.dll"
+								};
+        var files = GetFiles(sources);
         var destination = "./sc.lib";
         EnsureDirectoryExists(destination);
         CopyFiles(files, destination);
