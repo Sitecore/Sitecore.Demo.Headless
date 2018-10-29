@@ -1,6 +1,6 @@
 ﻿---
-ID: "d6651c3d-ce3c-434b-a9b6-ce662b960fc5"
-Parent: "e60f919e-d42a-4f4e-9afd-121c42fc29c3"
+ID: "af69b43d-e83a-4567-8434-66a5c6fb9c33"
+Parent: "1b8e5a87-f958-4fa8-a9a2-808648e5e397"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
 Path: "/sitecore/content/habitatfitness/home/events/street-basketball-santa-monica/Data/Labels"
 DB: master
@@ -23,7 +23,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181024T225335Z
+      Value: 20181028T000508Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

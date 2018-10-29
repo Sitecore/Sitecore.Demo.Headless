@@ -1,6 +1,6 @@
 ﻿---
-ID: "a1c869b3-07c0-4d37-b4ba-6506ed01c151"
-Parent: "54c84a32-b36f-49ed-bfe8-22a2475af59c"
+ID: "515e4572-4ff0-5e47-93be-d7cf40040ca0"
+Parent: "ffc4ea46-0108-4243-a56c-b43116b28d9b"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
 Path: "/sitecore/content/habitatfitness/home/events/tiburon-half-marathon/Data/Labels/Distance"
 DB: master
@@ -19,13 +19,17 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181024T200346Z
+      Value: 20181027T234954Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "59b299b1-bc62-56cc-b686-599aa0d8100b"
       Hint: value
       Value: 13mi
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\virtualssuser
     - ID: "741cd00c-93ab-5967-89a7-d2916c98c246"
       Hint: name
       Value: Distance

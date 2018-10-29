@@ -8,7 +8,9 @@ SharedFields:
 - ID: "80334869-86dc-4472-aa89-44cf1b2f6c9b"
   Hint: Placeholders
   Type: Treelist
-  Value: "{27E71AA5-BB6A-58D8-AAE2-914BE0CDE164}"
+  Value: |
+    {01038B98-8BBA-5008-AEFE-5E6E9AB8AAB2}
+    {27E71AA5-BB6A-58D8-AAE2-914BE0CDE164}
 - ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
   Hint: __Read Only
   Type: Checkbox
@@ -20,7 +22,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181024T200344Z
+      Value: 20181027T230931Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

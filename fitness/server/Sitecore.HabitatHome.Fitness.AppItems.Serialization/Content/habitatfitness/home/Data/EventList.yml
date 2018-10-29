@@ -1,0 +1,36 @@
+﻿---
+ID: "794ecae4-7888-5b9a-bfc1-c8aaa0a69783"
+Parent: "14c76265-ddfa-5b50-8712-4e9e7bf8c3d2"
+Template: "ce48435a-6961-5a66-938e-acb726cdc55e"
+Path: /sitecore/content/habitatfitness/home/Data/EventList
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Event List
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234953Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "47943c22-48b7-5c2b-9ed5-0fe9fc539e33"
+      Hint: items
+      Type: Treelist
+      Value: "{AD5BA40D-D329-5E5F-A425-55EB724BB125}"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\virtualssuser
+    - ID: "610840f3-9755-593c-9c1c-3b1bbe17dcfb"
+      Hint: title
+      Value: Events near you

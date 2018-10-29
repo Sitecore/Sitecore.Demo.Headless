@@ -16,17 +16,21 @@ SharedFields:
   Hint: Allowed Controls
   Type: TreelistEx
   Value: |
-    {841E8E2B-8BCD-53C6-9C41-2CF5F8BD4E3A}
     {95593F0E-7640-5488-93C1-2AB61E9BA751}
     {64F87E0C-70A4-568D-8810-0B0B8949583F}
+    {841E8E2B-8BCD-53C6-9C41-2CF5F8BD4E3A}
 Languages:
 - Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Create Account Form
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181024T200343Z
+      Value: 20181027T230930Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

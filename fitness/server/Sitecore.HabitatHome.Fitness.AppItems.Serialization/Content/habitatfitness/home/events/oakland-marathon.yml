@@ -20,7 +20,13 @@ SharedFields:
           name="Basketball"
           value="0" />
         <key
+          name="Bowling"
+          value="0" />
+        <key
           name="Cycling"
+          value="0" />
+        <key
+          name="Golf"
           value="0" />
         <key
           name="Kayaking"
@@ -33,6 +39,9 @@ SharedFields:
           value="10" />
         <key
           name="Swimming"
+          value="0" />
+        <key
+          name="Volleyball"
           value="0" />
       </profile>
     </tracking>
@@ -53,7 +62,7 @@ Languages:
       Value: Oakland Marathon
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181024T200346Z
+      Value: 20181027T234953Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Oakland Marathon
@@ -62,17 +71,24 @@ Languages:
       Value: 37.79661
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{AF32C98B-C828-42AF-A649-74C1DE3303FB}"
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
       Hint: labels
-      Type: Multilist
+      Type: multilist
       Value: |
         {9DBACAAD-F270-51A8-9DAE-08930C6A6EC0}
         {E0508FD9-E542-5A30-928A-2DE3C63A9416}
         {FFAC5EF6-8CDE-5AEF-8CAA-8B4329E9B6B7}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\virtualssuser
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
       Value: Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party.
+    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
+      Hint: longDescription
+      Value: Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-122.277422"

@@ -1,8 +1,8 @@
 ﻿---
 ID: "fda4b79d-d71c-59e6-92aa-6f3919c408c6"
-Parent: "ae80b3ea-01b4-46ef-a42a-c0c5966a6e36"
+Parent: "6374a178-df61-5ad2-a20d-b0258cf3d7f5"
 Template: "40a63e80-390d-5c17-869f-7eb9b5bfd2d7"
-Path: "/sitecore/content/habitatfitness/Components/Forms/age-group-selector"
+Path: "/sitecore/content/habitatfitness/Components/forms/age-group-selector"
 DB: master
 SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
@@ -15,10 +15,10 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181024T200344Z
+      Value: 20181027T234952Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "6bba236a-7395-5094-8c5d-f0c27ff1994b"
       Hint: options
       Type: Treelist
