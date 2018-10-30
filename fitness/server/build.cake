@@ -55,11 +55,10 @@ Task("Quick-Deploy")
 
 Task("Copy-Sitecore-Lib")
     .Does(()=> {
-		var sources = new string[] { 
-								$"{configuration.WebsiteRoot}/bin/Sitecore.JavaScriptServices*.dll",
-								$"{configuration.WebsiteRoot}/bin/Sitecore.LayoutService*.dll"
-								};
-        var files = GetFiles(sources);
+		
+        var files = GetFiles( 
+            $"{configuration.WebsiteRoot}/bin/Sitecore.JavaScriptServices*.dll",
+            $"{configuration.WebsiteRoot}/bin/Sitecore.LayoutService*.dll");
         var destination = "./sc.lib";
         EnsureDirectoryExists(destination);
         CopyFiles(files, destination);
