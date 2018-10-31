@@ -1,0 +1,29 @@
+﻿---
+ID: "ebf6d5c1-eb80-4b15-91ab-dd3845797774"
+Parent: "59b41b5f-e22e-460b-941e-fb64fe8da8fc"
+Template: "a6868d65-d612-401f-a40a-cd5ba0857b81"
+Path: /sitecore/system/Settings/Services/API Keys/Habitat Fitness API Key
+DB: core
+SharedFields:
+- ID: "1e7a5aa7-a27d-46fa-bd93-1bfe3c04efe2"
+  Hint: Impersonation User
+  Value: |
+    extranet\anonymous
+- ID: "780c8e48-fe03-4a73-90dc-9bb5296b95d7"
+  Hint: CORS Origins
+  Value: *
+- ID: "99ba91ec-f0d3-4372-b638-67c2402a2484"
+  Hint: AllowedControllers
+  Value: *
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181025T145634Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

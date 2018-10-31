@@ -1,0 +1,98 @@
+﻿---
+ID: "bdaa8c46-0810-544d-b99d-7c0dc0afd936"
+Parent: "deeb4737-cf04-5ec9-82a1-40c214e25813"
+Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Path: "/sitecore/content/habitatfitness/home/events/tiburon-half-marathon"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf"
+        name="Sports">
+        <key
+          name="Basketball"
+          value="0" />
+        <key
+          name="Bowling"
+          value="0" />
+        <key
+          name="Cycling"
+          value="0" />
+        <key
+          name="Golf"
+          value="0" />
+        <key
+          name="Kayaking"
+          value="0" />
+        <key
+          name="Rock Climbing"
+          value="0" />
+        <key
+          name="Running"
+          value="10" />
+        <key
+          name="Swimming"
+          value="0" />
+        <key
+          name="Volleyball"
+          value="0" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Tiburon Half Marathon
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
+      Hint: date
+      Value: 20181029T080000Z
+    - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
+      Hint: name
+      Value: Tiburon Half Marathon
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234953Z
+    - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
+      Hint: pageTitle
+      Value: Tiburon Half Marathon
+    - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
+      Hint: latitude
+      Value: 37.873221
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
+      Hint: labels
+      Type: multilist
+      Value: |
+        {515E4572-4FF0-5E47-93BE-D7CF40040CA0}
+        {C98B2B9E-0567-5442-AC88-AAACC59FFEFD}
+        {A47742FA-E541-508E-A58E-23F9BB55B477}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\virtualssuser
+    - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
+      Hint: description
+      Value: Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island.
+    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
+      Hint: longDescription
+      Value: Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island.
+    - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
+      Hint: longitude
+      Value: "-122.455438"
+    - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
+      Hint: image
+      Value: |
+        <image mediaid="{0659BC99-DBFB-5E3B-87C2-350504EB91A2}" />

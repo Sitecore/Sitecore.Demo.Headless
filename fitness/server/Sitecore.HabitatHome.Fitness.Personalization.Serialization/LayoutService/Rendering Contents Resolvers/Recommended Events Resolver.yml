@@ -1,0 +1,21 @@
+﻿---
+ID: "64bdc03e-2754-442f-9b59-0a9bfc0a7919"
+Parent: "c626493f-1cc3-4986-a701-f28b83d649f7"
+Template: "814c1dbb-b118-4511-ba2b-7288ed3d490b"
+Path: /sitecore/system/Modules/Layout Service/Rendering Contents Resolvers/Recommended Events Resolver
+DB: master
+SharedFields:
+- ID: "9edd2fcc-04ae-4230-84b4-c46c963f2284"
+  Hint: Rendering Contents Resolver Parameters
+  Value: "take=5&templateid=%7B9F2F1E35-62EF-5618-AD2B-3C2988389F89%7D&rootid=%7BDEEB4737-CF04-5EC9-82A1-40C214E25813%7D&showAllIfNoProfile=true"
+- ID: "de218ede-a9ad-4b04-86c5-9ff593ccf39d"
+  Hint: Type
+  Value: Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolvers.RecommendedItemResolver,Sitecore.HabitatHome.Fitness.Personalization
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181018T175515Z

@@ -1,0 +1,26 @@
+﻿---
+ID: "ee0a4990-e01d-5e23-a591-d9d31e0d44e6"
+Parent: "61708d94-e161-503b-bfb0-1afbde303d10"
+Template: "61708d94-e161-503b-bfb0-1afbde303d10"
+Path: "/sitecore/templates/Project/habitatfitness/product-folder/__Standard Values"
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{F7CFB991-FDCD-5036-A021-29E58A67DA4B}"
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T230928Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport

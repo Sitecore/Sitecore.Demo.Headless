@@ -1,0 +1,9 @@
+{
+  "sitecore": {
+    "instancePath": "C:\\inetpub\\wwwroot\\habitathome.dev.local",
+    "apiKey": "{EBF6D5C1-EB80-4B15-91AB-DD3845797774}",
+    "deploySecret": "mavarpkb2bbnrzctyjle3yy5xvku9z69gv22a2d53zh",
+    "deployUrl": "http://habitathome.dev.local/sitecore/api/jss/import",
+    "layoutServiceHost": "https://habitathome.dev.local"
+  }
+}

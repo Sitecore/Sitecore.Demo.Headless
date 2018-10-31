@@ -30,17 +30,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sitecore.XConnect, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.XConnect.NoReferences.9.0.180604\lib\NET462\Sitecore.XConnect.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.XConnect.Collection.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.XConnect.Collection.Model.NoReferences.9.0.180604\lib\NET462\Sitecore.XConnect.Collection.Model.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Sitecore.XConnect.Collection.Model.NoReferences" Version="9.0.180604" />
+    <PackageReference Include="Sitecore.XConnect.NoReferences" Version="9.0.180604" />
+    <PackageReference Include="Sitecore.XConnect.Search.NoReferences" Version="9.0.180604" />
+    <PackageReference Include="System.Interactive.Async" Version="3.1.1" />
+    <PackageReference Include="System.Interactive.Async.Providers" Version="3.1.1" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Interactive.Async, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Interactive.Async.3.0.0\lib\net45\System.Interactive.Async.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facets\DemographicsFacet.cs" />
@@ -54,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

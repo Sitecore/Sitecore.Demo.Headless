@@ -1,0 +1,76 @@
+﻿---
+ID: "824e5407-b767-56f5-9a0f-5ac04baf82d5"
+Parent: "12676f34-9f75-534c-99cd-77a295d3b75b"
+Template: "f7cfb991-fdcd-5036-a021-29e58a67da4b"
+Path: /sitecore/content/habitatfitness/Content/products/CamelBak Arc 2 Belt
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf"
+        name="Sports">
+        <key
+          name="Basketball"
+          value="0" />
+        <key
+          name="Bowling"
+          value="0" />
+        <key
+          name="Cycling"
+          value="0" />
+        <key
+          name="Golf"
+          value="0" />
+        <key
+          name="Kayaking"
+          value="0" />
+        <key
+          name="Rock Climbing"
+          value="0" />
+        <key
+          name="Running"
+          value="10" />
+        <key
+          name="Swimming"
+          value="0" />
+        <key
+          name="Volleyball"
+          value="0" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: CamelBak Arc 2 Belt
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234952Z
+    - ID: "2fa17014-b3b5-5966-8ee0-f3116c4313c2"
+      Hint: title
+      Value: CamelBak Arc 2 Belt
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "45799a8f-a01c-500d-8f1e-2558501ed660"
+      Hint: link
+      Value: |
+        <link linktype="external" url="https://express.google.com/u/0/product/1666205335111892153_974748790307604846_1699011" />
+    - ID: "4d7cc259-2d5c-59d5-a4dc-974a35bf0847"
+      Hint: image
+      Value: |
+        <image mediaid="{369CFC27-5B3E-50F2-9CF4-BAEA602EC6B7}" />
+    - ID: "97f252de-efda-5ed7-a61c-0a2673a7c26b"
+      Hint: description
+      Value: This hydration belt keeps your water, gummies, and keys all within an arms reach.

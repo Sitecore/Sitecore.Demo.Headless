@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{310540F3-8784-47B0-B29E-2BACEEAC7A8C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>deploy</RootNamespace>
-    <AssemblyName>deploy</AssemblyName>
+    <RootNamespace>Sitecore.HabitatHome.Fitness.Collection.Model.Deploy</RootNamespace>
+    <AssemblyName>Sitecore.HabitatHome.Fitness.Collection.Model.Deploy</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,11 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="System.Interactive.Async" Version="3.1.1" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Interactive.Async, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Interactive.Async.3.0.0\lib\net45\System.Interactive.Async.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,7 +54,6 @@
     <None Include="deploy.props">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
     <None Include="xmodels\Sitecore.HabitatHome.Fitness.Collection.Model, 9.0.json" />
   </ItemGroup>
   <ItemGroup>
