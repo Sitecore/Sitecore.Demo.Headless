@@ -1811,11 +1811,8 @@ a[target="_blank"]:after {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
+
 @media screen and (min-width: 768px) {
   .sportPicker {
     padding: 62px 0;
