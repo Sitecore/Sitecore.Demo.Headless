@@ -15,7 +15,40 @@ SharedFields:
 - ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
   Hint: __Tracking
   Type: Tracking
-  Value: 
+  Value: |
+    <tracking>
+      <profile
+        id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf"
+        name="Sports">
+        <key
+          name="Basketball"
+          value="10" />
+        <key
+          name="Bowling"
+          value="0" />
+        <key
+          name="Cycling"
+          value="0" />
+        <key
+          name="Golf"
+          value="0" />
+        <key
+          name="Kayaking"
+          value="0" />
+        <key
+          name="Rock Climbing"
+          value="0" />
+        <key
+          name="Running"
+          value="0" />
+        <key
+          name="Swimming"
+          value="0" />
+        <key
+          name="Volleyball"
+          value="0" />
+      </profile>
+    </tracking>
 - ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
   Hint: __Originator
   Value: "{F4671616-58FF-4621-A2D6-BBCF51C91F6B}"
