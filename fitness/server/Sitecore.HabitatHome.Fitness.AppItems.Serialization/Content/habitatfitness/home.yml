@@ -30,19 +30,24 @@ Languages:
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
               uid="{448061BD-5555-556C-B994-6DB0EEBFD7CD}"
-              p:after="p[@uid='{BD1E7498-7C10-55AD-AECC-7675ED701A82}']"
+              p:after="p[@uid='{83352061-4FCC-54FB-8D7C-76600CB9B874}']"
               s:rname="Navigation"
               s:id="{9EF8ADBC-47C9-5B78-8C92-1D4188F3E7E8}"
               s:par=""
               s:ph="/hf-nav" />
             <r
-              uid="{9D6FEA4F-9878-5B56-A88B-7FC9310B6770}"
+              uid="{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}"
               p:after="r[@uid='{448061BD-5555-556C-B994-6DB0EEBFD7CD}']"
+              s:id="{6C52D240-FC18-5182-98FA-5001A47BB426}"
+              s:ph="/hf-body" />
+            <r
+              uid="{9D6FEA4F-9878-5B56-A88B-7FC9310B6770}"
+              p:after="r[@uid='{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}']"
               s:rname="PersonalizePrompt"
               s:ds="{1BDA6387-2F81-5BEB-8FA4-960368445B63}"
               s:id="{C3433D20-9FDE-511C-9C1F-35C061E19ACE}"
               s:par=""
-              s:ph="/hf-body">
+              s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0">
               <rls>
                 <ruleset>
                   <rule
@@ -95,7 +100,7 @@ Languages:
               s:ds="{92A03E9E-4C72-543B-A474-75B444B0BE3B}"
               s:id="{A3948268-0B8E-5A8F-9D04-F6ABCDE04774}"
               s:par=""
-              s:ph="/hf-body">
+              s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0">
               <rls>
                 <ruleset>
                   <rule
@@ -136,7 +141,7 @@ Languages:
               s:ds="{794ECAE4-7888-5B9A-BFC1-C8AAA0A69783}"
               s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}"
               s:par=""
-              s:ph="/hf-body" />
+              s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0" />
             <r
               uid="{B5156FA2-8867-5EB2-89B7-8D9ECAFD090A}"
               p:after="*[1=2]"
@@ -144,7 +149,7 @@ Languages:
               s:ds="{7A4991FA-0B3C-5BF0-A534-408EB750B2B9}"
               s:id="{9E75D093-FB12-5018-96A0-0D76F6A96ECC}"
               s:par=""
-              s:ph="/hf-body" />
+              s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0" />
           </d>
         </r>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"

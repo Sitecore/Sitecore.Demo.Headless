@@ -40,6 +40,14 @@ SharedFields:
           uid="{BD1E7498-7C10-55AD-AECC-7675ED701A82}"
           key="hf-createaccount-form-group"
           md="{1B45C243-9663-5D83-9129-A40725AD8785}" />
+        <p
+          uid="{8A91BED2-CC2F-5261-9980-3F7AAAF7D9F5}"
+          key=" hf-home"
+          md="{C31B44FE-D6AD-54CA-8432-966C9997028E}" />
+        <p
+          uid="{83352061-4FCC-54FB-8D7C-76600CB9B874}"
+          key="hf-home"
+          md="{C31B44FE-D6AD-54CA-8432-966C9997028E}" />
       </d>
     </r>
 Languages:
