@@ -10,7 +10,7 @@
       "hf-body"
     ],
     "sitecoreDistPath": "/dist/habitatfitness",
-    "sitecoreConfigPath": "/App_Config/Include/zzz",
+    "sitecoreConfigPath": "/App_Config/Include/Sitecore.HabitatHome.Fitness",
     "language": "en"
   },
   "author": {
