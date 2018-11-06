@@ -1,6 +1,7 @@
 ﻿using Sitecore.Collections;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,11 +12,11 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
     /// IMPORTANT: this is not going to scale or perform on large content repositories
     /// it is intended to be simple and not search dependent
     /// </summary>
-    public class DataService : IDataService
+    public class ProductDataService : IDataService
     {
-        public IEnumerable<Item> GetAll([NotNull]Database database, [NotNull]ID templateId, [NotNull]ID rootId)
+        public IEnumerable<Item> GetAll([NotNull]Database database, [NotNull]Guid rootId, [NotNull]Guid templateId)
         {
-            var rootItem = database.GetItem(rootId);
+            var rootItem = database.GetItem(new ID(rootId));
 
             if (rootItem == null)
             {
@@ -23,7 +24,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
             }
 
             return rootItem.GetChildren(ChildListOptions.IgnoreSecurity | ChildListOptions.SkipSorting)
-             .Where(child => child.TemplateID.Equals(templateId));
+                           .Where(child => child.TemplateID.Guid.Equals(templateId));
         }
     }
 }

@@ -8,7 +8,6 @@ namespace Sitecore.HabitatHome.Fitness.Personalization
     {
         public void Configure(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddTransient<IDataService, DataService>();
         }
     }
 }

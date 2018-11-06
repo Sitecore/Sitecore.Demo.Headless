@@ -20,7 +20,6 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolver
     public class RecommendedItemResolver : IRenderingContentsResolver
     {
         private readonly IGetFieldSerializerPipeline getFieldSerializerPipeline;
-        private readonly IDataService dataService;
 
         public bool IncludeServerUrlInMediaUrls { get; set; }
 
@@ -30,10 +29,9 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolver
 
         public NameValueCollection Parameters { get; set; }
 
-        public RecommendedItemResolver([NotNull]IGetFieldSerializerPipeline getFieldSerializerPipeline, [NotNull]IDataService dataService)
+        public RecommendedItemResolver([NotNull]IGetFieldSerializerPipeline getFieldSerializerPipeline)
         {
             this.getFieldSerializerPipeline = getFieldSerializerPipeline;
-            this.dataService = dataService;
         }
 
         public object ResolveContents(Rendering rendering, IRenderingConfiguration renderingConfig)
@@ -59,6 +57,8 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolver
             Guid.TryParse(Parameters["templateid"], out Guid templateId);
             Guid.TryParse(Parameters["rootid"], out Guid rootId);
             bool.TryParse(Parameters["showAllIfNoProfile"], out bool showAllIfNoProfile);
+            var dataServiceClassName = Parameters["dataServiceClass"];
+            Assert.IsNotNullOrEmpty(dataServiceClassName, "dataServiceClass cannot be empty");
 
             // no profiles are set and showAllIfNoProfile = false - returning null
             var profiles = Tracker.Current?.Interaction?.Profiles;
@@ -67,7 +67,10 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolver
                 return null;
             }
 
-            var allItems = dataService.GetAll(rendering.Item.Database, new ID(templateId), new ID(rootId)).ToList();
+            IDataService dataService = (IDataService)Activator.CreateInstance(Type.GetType(dataServiceClassName));
+            Assert.IsNotNull(dataService, $"dataService could not be resolved using {dataServiceClassName}");
+
+            var allItems = dataService.GetAll(rendering.Item.Database, rootId, templateId).ToList();
 
             if (!allItems.Any())
             {

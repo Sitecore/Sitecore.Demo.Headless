@@ -5,6 +5,14 @@ namespace Sitecore.HabitatHome.Fitness.Personalization
 {
     public static class Wellknown
     {
+        public static class FieldIds
+        {
+            public static class Events
+            {
+                public static readonly ID Date = ID.Parse(Guid.Parse("{1A0B22B8-AC4C-59FC-BC97-2133AE8E82D9}"));
+            }
+        }
+
         public static class ProfileItemIds
         {
             public static readonly ID SportsProfile = ID.Parse(Guid.Parse("{8B3C8714-83CA-41F1-BBF6-FF260F732AAF}"));
