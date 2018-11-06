@@ -25,7 +25,7 @@
       `REACT_APP_FIREBASE_SENDER_ID=<insert-here>`
         [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/gcp-sender-id.png]]
        
-      - Scroll down to the "Web configuration" section, grab the Key pair from "Web Push certificates" and put the value here: 
+      - Scroll down to the "Web configuration" section, grab the Key pair from "Web Push certificates" and put the value here (generate if it doesn't exist yet): 
       `REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=<insert-here>`
         [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/push-cert.png]]
    
