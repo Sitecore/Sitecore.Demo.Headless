@@ -19,19 +19,16 @@
       - Login to Firebase console.
       - Create a new project and open it.
       - Click on the "gear" icon and access "project settings":
-
-        ![project settings][https://raw.githubusercontent.com/Sitecore/Sitecore.HabitatHome.Omni/master/fitness/app/docs/img/project-settings.png]
-
+       [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png]]
+ 
       - Go to "Cloud Messaging" tab and retrieve "Sender ID" and put the value as 
       `REACT_APP_FIREBASE_SENDER_ID=<insert-here>`
-        
-        ![sender id][https://raw.githubusercontent.com/Sitecore/Sitecore.HabitatHome.Omni/master/fitness/app/docs/img/gcp-sender-id.png]
-
+        [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/gcp-sender-id.png]]
+       
       - Scroll down to the "Web configuration" section, grab the Key pair from "Web Push certificates" and put the value here: 
       `REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=<insert-here>`
-
-          ![web push key][https://raw.githubusercontent.com/Sitecore/Sitecore.HabitatHome.Omni/master/fitness/app/docs/img/push-cert.png]
-
+        [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/push-cert.png]]
+   
       > Please take extra care about these API keys, make sure to put appopriate security restrictions and do not commit those to source control.
 
 1. `jss start`
