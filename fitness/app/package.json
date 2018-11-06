@@ -15,16 +15,16 @@
   },
   "author": {
     "name": "Sitecore Corporation",
-    "url": "https://jss.sitecore.net"
+    "url": "https://github.com/Sitecore/Sitecore.HabitatHome.Omni"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sitecore/jss.git"
+    "url": "git+https://github.com/Sitecore/Sitecore.HabitatHome.Omni.git"
   },
   "bugs": {
-    "url": "https://github.com/sitecore/jss/issues"
+    "url": "https://github.com/Sitecore/Sitecore.HabitatHome.Omni/issues"
   },
-  "license": "Apache-2.0",
+  "license": "MPL-2.0",
   "dependencies": {
     "@sitecore-jss/sitecore-jss-proxy": "^10.0.0-preview.1",
     "@sitecore-jss/sitecore-jss-react": "^10.0.0-preview.1",
