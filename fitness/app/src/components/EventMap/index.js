@@ -3,8 +3,12 @@ import GoogleMapReact from "google-map-react";
 
 const EventOverlay = ({ text }) => <div className="event-map-overlay">{text}</div>;
 
-// TODO: move API key to config
 const EventMap = ({ eventName, zoom, latitude, longitude }) => {
+
+  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+  if(!apiKey){
+    throw new Error("GOOGLE_API_KEY is missing. Please add it to environment variables.");
+  }
 
   const lat = parseFloat(latitude.value);
   const lng = parseFloat(longitude.value);
@@ -16,7 +20,7 @@ const EventMap = ({ eventName, zoom, latitude, longitude }) => {
   return (
     <div className="eventDetail-map" style={{ height: "300px", width: "100%" }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyByGj2X2KrpmqTaZXKS4HH6FEYayQkJQ64" }}
+        bootstrapURLKeys={{ key: apiKey }}
         defaultZoom={zoom}
         defaultCenter={defaultCenter}
       >

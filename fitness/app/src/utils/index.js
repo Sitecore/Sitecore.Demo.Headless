@@ -23,14 +23,18 @@ export const getUrlParams = (search = ``) => {
 
 export const initializeFirebase = callback => {
   try {
-    firebase.initializeApp({
-      messagingSenderId: "191904745393"
-    });
+    const senderId = process.env.REACT_APP_FIREBASE_SENDER_ID;
+    if(!senderId){
+      throw new Error("FIREBASE_SENDER_ID is missing. Please add it to environment variables.");
+    }
 
+    firebase.initializeApp({ messagingSenderId: senderId});
+    const messagingKey = process.env.REACT_APP_FIREBASE_MESSAGING_PUSH_KEY;
+    if(!messagingKey){
+      throw new Error("FIREBASE_MESSAGING_PUSH_KEY is missing. Please add it to environment variables.");
+    }
     const messaging = firebase.messaging();
-    messaging.usePublicVapidKey(
-      "BIlgEONDNQ-29Grj0qPcmPYoNnfpSrtykqdKtq7IqZGoipD0QAzQRCI6KBthtpLbF-qEVUApkZ0hy4U5HAuSbVk"
-    );
+    messaging.usePublicVapidKey(messagingKey);
     messaging.onMessage(function(payload) {
       console.log("Message received. ", payload);
       callback(payload);
