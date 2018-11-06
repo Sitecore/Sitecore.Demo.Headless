@@ -104,6 +104,22 @@ Languages:
               <rls>
                 <ruleset>
                   <rule
+                    uid="{6D9B6A1A-CC5F-40CA-AA42-4FBD92DBE501}"
+                    s:name="Boston Marathon Campaign">
+                    <conditions>
+                      <condition
+                        uid="6559EEE3166146A0856590D0922D798B"
+                        s:id="{D379525C-4DE6-4738-89ED-60CC0B8F91E5}"
+                        s:CampaignId="{C0D46075-D0B2-49AD-8660-92B5E525D639}" />
+                    </conditions>
+                    <actions>
+                      <action
+                        uid="175ED7EB7F374FFAAAF4B1878763ECA5"
+                        s:id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
+                        s:DataSource="{0E7F0DB4-1FB9-4BD6-BAAE-D0885B8BF5B0}" />
+                    </actions>
+                  </rule>
+                  <rule
                     uid="{84A50ED1-3D95-4D50-B2AD-B16A7F953C62}"
                     s:name="baller">
                     <conditions>

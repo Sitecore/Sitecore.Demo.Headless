@@ -1,4 +1,3 @@
-
 import { firebase } from "@firebase/app";
 import "@firebase/messaging";
 
@@ -7,6 +6,20 @@ export const canUseDOM = !!(
   window.document &&
   window.document.createElement
 );
+
+export const getUrlParams = (search = ``) => {
+  if (!search) {
+    return {};
+  }
+  let hashes = search.slice(search.indexOf("?") + 1).split("&");
+  let params = {};
+  hashes.map(hash => {
+    let [key, val] = hash.split("=");
+    params[key] = decodeURIComponent(val);
+  });
+
+  return params;
+};
 
 export const initializeFirebase = callback => {
   try {

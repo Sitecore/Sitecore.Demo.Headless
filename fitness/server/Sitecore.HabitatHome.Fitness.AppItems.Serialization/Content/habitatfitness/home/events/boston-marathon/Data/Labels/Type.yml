@@ -1,0 +1,39 @@
+﻿---
+ID: "365ec5d3-5352-42dd-8355-8cf695801884"
+Parent: "2be516d8-0dc5-405b-baa0-98ec5dda61d9"
+Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
+Path: "/sitecore/content/habitatfitness/home/events/boston-marathon/Data/Labels/Type"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Type
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234953Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "59b299b1-bc62-56cc-b686-599aa0d8100b"
+      Hint: value
+      Value: road
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\virtualssuser
+    - ID: "741cd00c-93ab-5967-89a7-d2916c98c246"
+      Hint: name
+      Value: Type
+    - ID: "95a0cc5a-7336-50f5-a4e9-e8ba7729231d"
+      Hint: image
+      Value: |
+        <image mediaid="{54306739-7DD7-54C6-BC16-4A3FC8DEFBE1}" />

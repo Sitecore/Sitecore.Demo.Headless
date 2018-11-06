@@ -10,8 +10,9 @@ import config from "./temp/config";
 import Layout from "./Layout";
 import NotFound from "./NotFound";
 import { flush } from "./utils/XConnectProxy";
-import { dataFetcher } from './utils/dataFetcher';
-import Loading from './components/Loading';
+import { getUrlParams, canUseDOM } from "./utils";
+import { dataFetcher } from "./utils/dataFetcher";
+import Loading from "./components/Loading";
 
 // Dynamic route handler for Sitecore items.
 // Because JSS app routes are defined in Sitecore, traditional static React routing isn't enough -
@@ -119,7 +120,8 @@ export default class RouteHandler extends React.Component {
    * Loads route data from Sitecore Layout Service into state.routeData
    */
   updateRouteData() {
-    const sitecoreRoutePath = this.props.route.match.params.sitecoreRoute || "/";
+    const sitecoreRoutePath =
+      this.props.route.match.params.sitecoreRoute || "/";
     const language =
       this.props.route.match.params.lang || this.state.defaultLanguage;
 
@@ -228,11 +230,19 @@ export function setServerSideRenderingState(ssrState) {
  * @param {dataApi.LayoutServiceRequestOptions} options Layout service fetch options
  */
 function getRouteData(route, language, options = {}) {
+  let currentUrlParams = {};
+  if (canUseDOM) {
+    currentUrlParams = getUrlParams(window.location.search);
+  }
+
+  const systemQueryParams = { sc_lang: language, sc_apikey: config.sitecoreApiKey };
+  const queryParams = Object.assign(currentUrlParams, systemQueryParams);
+
   const fetchOptions = {
     layoutServiceConfig: { host: config.sitecoreApiHost },
-    querystringParams: { sc_lang: language, sc_apikey: config.sitecoreApiKey },
+    querystringParams: queryParams,
     requestConfig: options,
-    fetcher: dataFetcher,
+    fetcher: dataFetcher
   };
 
   return dataApi.fetchRouteData(route, fetchOptions).catch(error => {

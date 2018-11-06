@@ -2,7 +2,7 @@
 ID: "e0508fd9-e542-5a30-928a-2de3c63a9416"
 Parent: "b1c0adc1-014d-4245-9f28-808be3735c6c"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/oakland-marathon/Data/Labels/Parcicipants"
+Path: "/sitecore/content/habitatfitness/home/events/oakland-marathon/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
@@ -32,7 +32,7 @@ Languages:
         sitecore\virtualssuser
     - ID: "741cd00c-93ab-5967-89a7-d2916c98c246"
       Hint: name
-      Value: Distance
+      Value: Number of Participants
     - ID: "95a0cc5a-7336-50f5-a4e9-e8ba7729231d"
       Hint: image
       Value: |
