@@ -6,6 +6,9 @@ Path: /sitecore/system/Marketing Control Panel/Profiles/Gender
 DB: master
 BranchID: "07624a03-bb2f-45d8-abe1-15e2b1705ff3"
 SharedFields:
+- ID: "9fb30799-29ef-46af-910d-188bd16314b1"
+  Hint: Type
+  Value: Average
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{689E2994-4656-4C58-9112-7826CB46EE69}"

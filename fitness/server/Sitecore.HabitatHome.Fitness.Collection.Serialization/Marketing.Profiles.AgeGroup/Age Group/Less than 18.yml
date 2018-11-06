@@ -11,6 +11,9 @@ SharedFields:
 - ID: "271d7b0f-446c-4f24-bfe7-e33c20bf7a41"
   Hint: MinValue
   Value: 0
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 50
 Languages:
 - Language: en
   Fields:

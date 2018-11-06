@@ -21,7 +21,6 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolver
     {
         private readonly IGetFieldSerializerPipeline getFieldSerializerPipeline;
         private readonly IDataService dataService;
-        private const string SportsProfileItemId = "{8B3C8714-83CA-41F1-BBF6-FF260F732AAF}";
 
         public bool IncludeServerUrlInMediaUrls { get; set; }
 
@@ -55,45 +54,92 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolver
         }
 
         private IEnumerable<Item> GetItems(Rendering rendering)
-        {   
+        {
             Guid.TryParse(Parameters["templateid"], out Guid templateId);
             Guid.TryParse(Parameters["rootid"], out Guid rootId);
             bool.TryParse(Parameters["showAllIfNoProfile"], out bool showAllIfNoProfile);
 
             // no profiles are set and showAllIfNoProfile = false - returning null
-            var sportsProfile = Tracker.Current?.Interaction?.Profiles[SportsFacet.DefaultKey];
-            if ((sportsProfile == null || sportsProfile.Count <= 0) && !showAllIfNoProfile)
+            var profiles = Tracker.Current?.Interaction?.Profiles;
+            if (profiles == null && !showAllIfNoProfile)
             {
                 return null;
             }
 
             var allItems = dataService.GetAll(rendering.Item.Database, new ID(templateId), new ID(rootId)).ToList();
 
-            if (sportsProfile == null || sportsProfile.Count <= 0 || !allItems.Any())
+            if (!allItems.Any())
             {
                 return allItems;
             }
-             
-            return GetRecommendedItems(allItems, rendering.Item.Database, sportsProfile);
+
+            var recommendedItems = GetRecommendedItems(allItems, rendering.Item.Database);
+
+            // if no recommended items returned, fallback to showing all items from the data service
+            if (!recommendedItems.Any() && showAllIfNoProfile)
+            {
+                return allItems;
+            }
+
+            return recommendedItems;
         }
 
-        private IEnumerable<Item> GetRecommendedItems(IEnumerable<Item> items, [NotNull]Database database, [NotNull]Profile sportsProfile)
+        private IEnumerable<Item> GetRecommendedItems(IEnumerable<Item> items, [NotNull]Database database)
         {
-            var sportsProfileItem = database.GetItem(SportsProfileItemId);
-            if (sportsProfileItem == null)
+            var profiledBySports = GetProfiledItems(items, database, SportsFacet.DefaultKey, Wellknown.ProfileItemIds.SportsProfile);
+            var profiledByAgeGroup = GetProfiledItems(items, database, "Age Group", Wellknown.ProfileItemIds.AgeGroupProfile);
+            var profiledByGender = GetProfiledItems(items, database, "Gender", Wellknown.ProfileItemIds.GenderProfile);
+
+            var profiledItems = new List<ProfiledItem>();
+            profiledItems.AddRange(profiledBySports);
+            profiledItems.AddRange(profiledByAgeGroup);
+            profiledItems.AddRange(profiledByGender);
+
+            // storing matched items as dictionary for lookups
+            var itemMap = profiledItems.GroupBy(p => p.Item.ID.Guid)
+                                       .ToDictionary(g => g.Key, g => g.First());
+
+            var itemScorings = new List<Tuple<Guid, double>>();
+            foreach (var group in profiledItems.GroupBy(p => p.Item.ID.Guid))
             {
-                Log.Warn($"RecommendedEventListResolver: Sports Profile Item not found (id: {SportsProfileItemId}", this);
-                return items;
+                var groupKey = group.Key;
+                var sumDistance = 0.0;
+                foreach (var scoring in group)
+                {
+                    sumDistance += 10 - scoring.ProfiledItemCalculation.Distance;
+                }
+
+                sumDistance = sumDistance / 3;
+
+                var itemScoring = new Tuple<Guid, double>(groupKey, sumDistance);
+                itemScorings.Add(itemScoring);
+            }
+
+            return itemScorings.OrderByDescending(i => i.Item2).Select(i => itemMap[i.Item1].Item);
+        }
+
+        private IEnumerable<ProfiledItem> GetProfiledItems(IEnumerable<Item> items, [NotNull]Database database, [NotNull] string profileKey, [NotNull] ID profileItemId)
+        {
+            var trackerProfile = Tracker.Current?.Interaction?.Profiles[profileKey];
+            if (trackerProfile == null || trackerProfile.Count <= 0)
+            {
+                Log.Debug($"RecommendedEventListResolver: Profile key {profileKey} was not found on current tracker", this);
+                return Enumerable.Empty<ProfiledItem>();
+            }
+
+            var profileItem = database.GetItem(profileItemId);
+            if (profileItem == null)
+            {
+                Log.Warn($"RecommendedEventListResolver: Profile Item not found (id: {profileItemId}", this);
+                return Enumerable.Empty<ProfiledItem>();
             }
 
             var calculator = new DistanceCalculator();
             var collectedProfileItems = items.Select(i => new ProfiledItem(i)).ToList();
 
-            calculator.Calculate(sportsProfile, collectedProfileItems, SportsFacet.DefaultKey, new Analytics.Data.Items.ProfileItem(sportsProfileItem));
+            calculator.Calculate(trackerProfile, collectedProfileItems, profileKey, new Analytics.Data.Items.ProfileItem(profileItem));
 
-            var sorted = collectedProfileItems.Where(i => i.ProfiledItemCalculation?.Distance <= 100).OrderBy(i => i.ProfiledItemCalculation?.Distance);
-
-            return sorted.Select(i => i.Item);
+            return collectedProfileItems.Where(i => i.ProfiledItemCalculation?.Distance < 10);
         }
     }
 }
