@@ -14,6 +14,35 @@ SharedFields:
   Value: |
     <tracking>
       <profile
+        id="ad17d2b4-4904-467e-82fe-1cfbfeca2ba5"
+        name="Age Group">
+        <key
+          name="from 18 to 34"
+          value="9" />
+        <key
+          name="from 35 to 50"
+          value="3" />
+        <key
+          name="from 50 to 70"
+          value="0" />
+        <key
+          name="Less than 18"
+          value="7" />
+        <key
+          name="More than 70"
+          value="0" />
+      </profile>
+      <profile
+        id="ea255590-37ec-4a05-a12f-015f66be470b"
+        name="Gender">
+        <key
+          name="Female"
+          value="0" />
+        <key
+          name="Male"
+          value="10" />
+      </profile>
+      <profile
         id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf"
         name="Sports">
         <key

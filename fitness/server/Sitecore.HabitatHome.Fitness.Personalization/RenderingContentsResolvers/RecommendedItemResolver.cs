@@ -43,8 +43,9 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolver
                 : null;
 
             var serializer = new Serializers.ItemSerializer(getFieldSerializerPipeline);
+            int.TryParse(Parameters["take"], out int take);
 
-            var items = GetItems(rendering) ?? Enumerable.Empty<Item>();
+            var items = GetItems(rendering).Take(take) ?? Enumerable.Empty<Item>();
 
             return new
             {
@@ -139,7 +140,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolver
 
             calculator.Calculate(trackerProfile, collectedProfileItems, profileKey, new Analytics.Data.Items.ProfileItem(profileItem));
 
-            return collectedProfileItems.Where(i => i.ProfiledItemCalculation?.Distance < 10);
+            return collectedProfileItems.Where(i => i.ProfiledItemCalculation?.Distance <= 10);
         }
     }
 }

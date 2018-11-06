@@ -7,7 +7,7 @@ DB: master
 SharedFields:
 - ID: "9edd2fcc-04ae-4230-84b4-c46c963f2284"
   Hint: Rendering Contents Resolver Parameters
-  Value: "take=5&templateid=%7BF7CFB991-FDCD-5036-A021-29E58A67DA4B%7D&rootid=%7B12676F34-9F75-534C-99CD-77A295D3B75B%7D&showAllIfNoProfile=false"
+  Value: "take=4&templateid=%7BF7CFB991-FDCD-5036-A021-29E58A67DA4B%7D&rootid=%7B12676F34-9F75-534C-99CD-77A295D3B75B%7D&showAllIfNoProfile=false"
 - ID: "de218ede-a9ad-4b04-86c5-9ff593ccf39d"
   Hint: Type
   Value: Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolvers.RecommendedItemResolver,Sitecore.HabitatHome.Fitness.Personalization
