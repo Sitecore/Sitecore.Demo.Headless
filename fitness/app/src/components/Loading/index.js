@@ -30,7 +30,7 @@ class Loading extends React.Component {
 
     return (
       <div style={{ margin: "auto" }}>
-        <img src={loadingImg} width="380px" />
+        <img src={loadingImg} width="380px" alt="Loading..." />
       </div>
     );
   }
