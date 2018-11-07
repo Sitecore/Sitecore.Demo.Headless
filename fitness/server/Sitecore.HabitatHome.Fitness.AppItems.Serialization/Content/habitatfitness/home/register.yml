@@ -27,9 +27,9 @@ Languages:
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
               uid="{A3D7149C-5EA7-58E2-B1A5-8F5FAC4E2B55}"
-              p:after="p[@uid='{BD1E7498-7C10-55AD-AECC-7675ED701A82}']"
+              p:after="p[@uid='{83352061-4FCC-54FB-8D7C-76600CB9B874}']"
               s:rname="BreadcrumbNavigation"
-              s:id="{FFED31EF-4033-5352-86CD-7EEC3E0C6B82}"
+              s:id="{C42C4419-0E19-5DEB-A3D8-BD5CE1F84B03}"
               s:par=""
               s:ph="/hf-nav" />
             <r

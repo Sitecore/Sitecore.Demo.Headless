@@ -5,7 +5,7 @@ fields:
   pageTitle: Registration
 placeholders:
   hf-nav:
-    - componentName: BreadcrumbNavigation
+    - componentName: DetailNavigation
   hf-body:
     - componentName: RegistrationWizard
       placeholders:

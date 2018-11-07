@@ -12,8 +12,8 @@ import {
  */
 export default function(manifest) {
   manifest.addComponent({
-    name: "BreadcrumbNavigation",
-    displayName: "Breadcrumb Navigation",
-    icon: SitecoreIcon.NavigateRight,
+    name: "DetailNavigation",
+    displayName: "Detail Page Navigation",
+    icon: SitecoreIcon.NavigateBeginning,
   });
 }

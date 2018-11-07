@@ -21,6 +21,6 @@ fields:
       copy: true
 placeholders:
   hf-nav:
-  - componentName: EventDetailsNavigation
+  - componentName: DetailNavigation
   hf-body:
     - id: event-detail-anonymous

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { withRouter } from "react-router";
 import { translate } from "react-i18next";
 
-class EventDetailsNavigation extends React.Component {
+class DetailNavigation extends React.Component {
   render() {
     const { t, routeData } = this.props;
     const currentPageName = routeData.displayName
@@ -22,4 +22,4 @@ class EventDetailsNavigation extends React.Component {
   }
 }
 
-export default withRouter(translate()(EventDetailsNavigation));
+export default withRouter(translate()(DetailNavigation));

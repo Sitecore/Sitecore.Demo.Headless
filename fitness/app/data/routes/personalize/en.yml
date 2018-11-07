@@ -4,7 +4,7 @@ fields:
   pageTitle: Personalize
 placeholders:
   hf-nav:
-  - componentName: BreadcrumbNavigation
+  - componentName: DetailNavigation
   hf-body:
   - componentName: PersonalizationWizard
     fields:

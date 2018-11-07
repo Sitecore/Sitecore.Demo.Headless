@@ -26,15 +26,8 @@ Languages:
           <d
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
-              uid="{24718DB4-AE63-52ED-BC5C-71E4C8F4509E}"
-              p:after="p[@uid='{BD1E7498-7C10-55AD-AECC-7675ED701A82}']"
-              s:rname="BreadcrumbNavigation"
-              s:id="{FFED31EF-4033-5352-86CD-7EEC3E0C6B82}"
-              s:par=""
-              s:ph="/hf-nav" />
-            <r
               uid="{D9C5338A-E893-560A-9733-EE9648B8FE3A}"
-              p:after="r[@uid='{24718DB4-AE63-52ED-BC5C-71E4C8F4509E}']"
+              p:after="p[@uid='{83352061-4FCC-54FB-8D7C-76600CB9B874}']"
               s:rname="PersonalizationWizard"
               s:ds="{71E8F208-DBD0-5733-AF38-7F1519228FAD}"
               s:id="{FAFEEBBD-39BB-5801-9CF5-5164CAF00580}"
@@ -106,12 +99,17 @@ Languages:
               s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0/hf-createaccount-form-{1298BC0B-22DC-5424-9824-62A283B7AECD}-0" />
             <r
               uid="{7413D681-4DC1-51F6-A962-28483A9B2D50}"
-              p:after="*[1=2]"
+              p:after="r[@uid='{5B15FFCF-ABE9-569A-9A20-8D5313CEC34D}']"
               s:rname="RegistrationSuccessStep"
               s:ds="{7F85119E-113F-5BB9-8944-379445D629DF}"
               s:id="{9748DEFE-3AD9-55A2-BED2-FFE7458BA107}"
               s:par=""
               s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0" />
+            <r
+              uid="{25495759-4FE9-4CD4-B085-3203017C37C9}"
+              p:after="*[1=2]"
+              s:id="{C42C4419-0E19-5DEB-A3D8-BD5CE1F84B03}"
+              s:ph="/hf-nav" />
           </d>
         </r>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
