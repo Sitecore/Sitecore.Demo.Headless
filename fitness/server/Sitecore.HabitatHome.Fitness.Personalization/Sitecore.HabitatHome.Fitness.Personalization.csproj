@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pipelines\GetLayoutServiceContext\EventInfo.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Rules\AgeGroupCondition.cs" />

@@ -57,8 +57,6 @@ class EventDetailLoggedIn extends React.Component {
       </button>
     );
 
-    const icon = <button className="favorite-icon" />;
-
     return (
       <Fragment>
         <EventDetail
@@ -66,7 +64,6 @@ class EventDetailLoggedIn extends React.Component {
           date={date}
           description={description}
           cta={cta}
-          icon={icon}
         />
         <RegistrationPrompt
           open={this.state.promptOpen}
