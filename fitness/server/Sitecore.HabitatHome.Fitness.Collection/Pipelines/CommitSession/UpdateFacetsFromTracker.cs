@@ -32,16 +32,13 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
                         return;
                     }
 
-                    var sportsFacetSet = SetSportsFacet(facets, client, contact);
-                    var personalFacetSet = SetPersonalFacet(facets, client, contact);
-                    var emailFacetSet = SetEmailFacet(facets, client, contact);
-                    var favoriteEventFacetSet = SetFavoriteEventFacet(facets, client, contact);
-                    var eventRegistrationFacetSet = SetEventRegistrationFacet(facets, client, contact);
+                    SetSportsFacet(facets, client, contact);
+                    SetPersonalFacet(facets, client, contact);
+                    SetEmailFacet(facets, client, contact);
+                    SetFavoriteEventFacet(facets, client, contact);
+                    SetEventRegistrationFacet(facets, client, contact);
 
-                    if (sportsFacetSet || personalFacetSet || emailFacetSet)
-                    {
-                        client.Submit();
-                    }
+                    client.Submit();
                 }
                 catch (XdbExecutionException ex)
                 {
@@ -50,133 +47,94 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
             }
         }
 
-        private bool SetFavoriteEventFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        private void SetFavoriteEventFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
         {
-            Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Enter SetFavoriteEventFacet()", this);
-
             if (facets.TryGetValue(FavoriteEventsFacet.DefaultKey, out Facet facet))
             {
                 if (facet is FavoriteEventsFacet eventFacet)
                 {
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetFavoriteEventFacet()", this);
                     client.SetFacet(contact, FavoriteEventsFacet.DefaultKey, eventFacet);
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Done SetFavoriteEventFacet()", this);
-                    return true;
                 }
                 else
                 {
                     Log.Error($"{FavoriteEventsFacet.DefaultKey} facet is not of expected type. Expected {typeof(FavoriteEventsFacet).FullName}", this);
                 }
             }
-
-            return false;
         }
 
-        private bool SetEventRegistrationFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        private void SetEventRegistrationFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
         {
-            Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Enter SetEventRegistrationFacet()", this);
-
             if (facets.TryGetValue(RegisteredEventsFacet.DefaultKey, out Facet facet))
             {
                 if (facet is RegisteredEventsFacet eventFacet)
                 {
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetEventRegistrationFacet()", this);
                     client.SetFacet(contact, RegisteredEventsFacet.DefaultKey, eventFacet);
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Done SetEventRegistrationFacet()", this);
-                    return true;
                 }
                 else
                 {
                     Log.Error($"{RegisteredEventsFacet.DefaultKey} facet is not of expected type. Expected {typeof(RegisteredEventsFacet).FullName}", this);
                 }
             }
-
-            return false;
         }
 
-        private bool SetDemographicsFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        private void SetDemographicsFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
         {
-            Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Enter SetDemographicsFacet()", this);
-
             if (facets.TryGetValue(DemographicsFacet.DefaultKey, out Facet demographicsFacet))
             {
                 if (demographicsFacet is DemographicsFacet demographics)
                 {
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetDemographicsFacet()", this);
                     client.SetFacet(contact, DemographicsFacet.DefaultKey, demographics);
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Done SetDemographicsFacet()", this);
-                    return true;
                 }
                 else
                 {
                     Log.Error($"{DemographicsFacet.DefaultKey} facet is not of expected type. Expected {typeof(DemographicsFacet).FullName}", this);
                 }
             }
-
-            return false;
         }
 
-        private bool SetEmailFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        private void SetEmailFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
         {
-            Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Enter SetEmailFacet()", this);
             if (facets.TryGetValue(EmailAddressList.DefaultFacetKey, out Facet emailFacet))
             {
                 if (emailFacet is EmailAddressList email)
                 {
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetEmailFacet()", this);
                     client.SetEmails(contact, email);
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Done SetEmailFacet()", this);
-                    return true;
                 }
                 else
                 {
                     Log.Error($"{EmailAddressList.DefaultFacetKey} facet is not of expected type. Expected {typeof(EmailAddressList).FullName}", this);
                 }
             }
-
-            return false;
         }
 
-        private bool SetPersonalFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        private void SetPersonalFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
         {
-            Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Enter SetPersonalFacet()", this);
             if (facets.TryGetValue(PersonalInformation.DefaultFacetKey, out Facet personalFacet))
             {
                 if (personalFacet is PersonalInformation personal)
                 {
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetPersonalFacet()", this);
                     client.SetPersonal(contact, personal);
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetPersonalFacet()", this);
-                    return true;
                 }
                 else
                 {
                     Log.Error($"{PersonalInformation.DefaultFacetKey} facet is not of expected type. Expected {typeof(PersonalInformation).FullName}", this);
                 }
             }
-
-            return false;
         }
 
-        private bool SetSportsFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        private void SetSportsFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
         {
-            Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Enter SetSportsFacet()", this);
             if (facets.TryGetValue(SportsFacet.DefaultKey, out Facet sportsFacet))
             {
                 if (sportsFacet is SportsFacet sports)
                 {
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetSportsFacet()", this);
                     client.SetFacet(contact, SportsFacet.DefaultKey, sports);
-                    Log.Info($"**HF** UpdateFacetsFromTracker.Process(). Setting SetSportsFacet()", this);
-                    return true;
                 }
                 else
                 {
                     Log.Error($"{SportsFacet.DefaultKey} facet is not of expected type. Expected {typeof(SportsFacet).FullName}", this);
                 }
             }
-
-            return false;
         }
     }
 }
