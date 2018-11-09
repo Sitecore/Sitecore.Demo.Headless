@@ -1,0 +1,18 @@
+﻿---
+ID: "6775245a-7612-4b2b-9f3d-949ff34c8274"
+Parent: "fcab4f3c-421d-4dcd-aa1a-247cb9e8eb8b"
+Template: "4a6a7e36-2481-438f-a9ba-0453ecc638fa"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Sports/Pattern Cards/default
+DB: master
+Languages:
+- Language: en
+  Fields:
+  - ID: "fe732790-2ddb-4657-a882-c2fce1fbf0c9"
+    Hint: Name
+    Value: default
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181109T035530Z
