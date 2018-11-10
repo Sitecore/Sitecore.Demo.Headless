@@ -57,20 +57,6 @@ export function setDemographicsPreferences() {
   }
 }
 
-export function addToFavorites(eventId) {
-  if (!eventId) {
-    throw new Error("event id is not specified");
-  }
-  return post("favorites", { EventId: eventId });
-}
-
-export function register(eventId) {
-  if (!eventId) {
-    throw new Error("event id is not specified");
-  }
-  return post("register", { EventId: eventId });
-}
-
 export function setIdentifiers() {
   if (typeof localStorage !== "undefined") {
     const firstname = localStorage.getItem("firstname");

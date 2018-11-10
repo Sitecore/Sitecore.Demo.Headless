@@ -10,8 +10,12 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
 
         void UpdateIdentificationFacet(IdentificationPayload data);
 
-        void UpdateEventFavoritesFacet(EventPayload data);
+        void AddEventToFavoritesFacet(EventPayload data);
 
-        void UpdateEventRegistrationFacet(EventPayload data);
+        void RemoveEventToFavoritesFacet(EventPayload data);
+
+        void AddEventRegistrationFacet(EventPayload data);
+
+        void RemoveEventRegistrationFacet(EventPayload data);
     }
 }

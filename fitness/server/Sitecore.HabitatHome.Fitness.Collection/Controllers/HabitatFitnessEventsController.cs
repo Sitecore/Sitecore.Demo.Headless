@@ -24,46 +24,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers
             this.profileUpdateService = profileUpdateService;
         }
 
-        [ActionName("favorites")]
-        [HttpPost]
-        [CancelCurrentPage]
-        public HttpResponseMessage UpdateEventFavorites([System.Web.Http.FromBody]EventPayload data)
-        {
-            try
-            {
-                facetUpdateService.UpdateEventFavoritesFacet(data);
-            }
-            catch (Exception ex)
-            {
-                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
-                {
-                    Content = new StringContent(ex.Message)
-                };
-            }
-
-            return new HttpResponseMessage(HttpStatusCode.OK);
-        }
-
-        [ActionName("register")]
-        [HttpPost]
-        [CancelCurrentPage]
-        public HttpResponseMessage UpdateEventRegistration([System.Web.Http.FromBody]EventPayload data)
-        {
-            try
-            {
-                facetUpdateService.UpdateEventRegistrationFacet(data);
-            }
-            catch (Exception ex)
-            {
-                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
-                {
-                    Content = new StringContent(ex.Message)
-                };
-            }
-
-            return new HttpResponseMessage(HttpStatusCode.OK);
-        }
-
         [ActionName("demographics")]
         [HttpPost]
         [CancelCurrentPage]

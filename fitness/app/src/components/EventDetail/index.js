@@ -36,7 +36,9 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
               className="eventDetail-image-overlay-meta eventDetail-image-overlay-meta_type"
             />
           </div>
-          <div className="eventDetail-image-overlay-badges">{icon}</div>
+          <div className="eventDetail-image-overlay-badges">
+            {icon}
+          </div>
         </div>
       </div>
       <div className="eventDetail-content">

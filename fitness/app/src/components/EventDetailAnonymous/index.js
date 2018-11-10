@@ -1,14 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import { RichText, DateField } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
 import dayjs from "dayjs";
 import { translate } from "react-i18next";
 import EventDetail from "../EventDetail";
+import EventFavoriteButton from "../EventFavoriteButton";
 
-const EventDetailAnonymous = props => {
+const EventDetailAnonymous = (props) => {
   const { fields, routeData } = props;
   const routeFields = routeData.fields;
-  const description = <RichText field={routeFields.description} tag="p" />;
 
   const date = (
     <DateField
@@ -25,15 +25,13 @@ const EventDetailAnonymous = props => {
     </NavLink>
   );
 
-  const icon = <button className="favorite-icon" />;
-
   return (
     <EventDetail
       {...props}
       date={date}
-      description={description}
+      description={<RichText field={routeFields.description} tag="p" />}
       cta={cta}
-      icon={icon}
+      icon={<EventFavoriteButton {...props} />}
     />
   );
 };
