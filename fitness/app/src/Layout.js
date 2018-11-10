@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Placeholder } from "@sitecore-jss/sitecore-jss-react";
 import Helmet from "react-helmet";
-import { initializeFirebase } from "./utils";
+import { initializeFirebase } from "./services/SubscriptionService";
 import { translate } from "react-i18next";
 
 import { ToastContainer, toast } from "react-toastify";

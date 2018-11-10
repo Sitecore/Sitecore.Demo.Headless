@@ -11,7 +11,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
     {
         public static Analytics.Tracking.Contact GetCurrentTrackerContact()
         {
-            Assert.IsTrue(Tracker.Current != null && Tracker.IsActive, "Tracker is not active");
             return Tracker.Current?.Contact;
         }
 

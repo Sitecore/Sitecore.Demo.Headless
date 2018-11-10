@@ -96,10 +96,11 @@
     <Compile Include="Controllers\Events\HabitatFitnessEventRegistrationController.cs" />
     <Compile Include="Controllers\Events\HabitatFitnessEventFavoritesController.cs" />
     <Compile Include="Controllers\HabitatFitnessEventsController.cs" />
-    <Compile Include="Controllers\Subscriptions\HabitatFitnessNotificationsController.cs" />
+    <Compile Include="Controllers\Subscriptions\HabitatFitnessSubscriptionsController.cs" />
     <Compile Include="Filters\CancelCurrentPageAttribute.cs" />
     <Compile Include="Model\EventPayload.cs" />
-    <Compile Include="Model\SubscriptionPayload.cs" />
+    <Compile Include="Model\UnsubscribePayload.cs" />
+    <Compile Include="Model\SubscribePayload.cs" />
     <Compile Include="Model\IdentificationPayload.cs" />
     <Compile Include="Model\DemographicsPayload.cs" />
     <Compile Include="Model\StringArrayPayload.cs" />

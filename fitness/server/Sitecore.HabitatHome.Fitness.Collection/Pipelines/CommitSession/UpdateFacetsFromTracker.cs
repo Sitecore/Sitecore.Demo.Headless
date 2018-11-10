@@ -1,6 +1,7 @@
 ﻿using Sitecore.Analytics.Pipelines.CommitSession;
 using Sitecore.Analytics.XConnect.Facets;
 using Sitecore.Diagnostics;
+using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
@@ -28,15 +29,18 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
                     var contact = client.GetContactIdFromDevice();
                     if (contact == null)
                     {
-                        Log.Warn("**HF** UpdateFacetsFromTracker.Process(). Cannot resolve contact id from device", this);
+                        Log.Fatal("**HF** UpdateFacetsFromTracker.Process(). Cannot resolve contact id from device", this);
                         return;
                     }
 
-                    SetSportsFacet(facets, client, contact);
                     SetPersonalFacet(facets, client, contact);
                     SetEmailFacet(facets, client, contact);
-                    SetFavoriteEventFacet(facets, client, contact);
-                    SetEventRegistrationFacet(facets, client, contact);
+                    SetSportsFacet(facets, client, contact);
+
+                    SetStringValueListFacet(facets, client, contact, FacetIDs.FavoriteEvents);
+                    SetStringValueListFacet(facets, client, contact, FacetIDs.RegisteredEvents);
+                    SetStringValueListFacet(facets, client, contact, FacetIDs.Subscriptions);
+                    SetStringValueListFacet(facets, client, contact, FacetIDs.SubscriptionTokens);
 
                     client.Submit();
                 }
@@ -47,32 +51,17 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
             }
         }
 
-        private void SetFavoriteEventFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        private void SetStringValueListFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact, [NotNull]string key)
         {
-            if (facets.TryGetValue(FavoriteEventsFacet.DefaultKey, out Facet facet))
+            if (facets.TryGetValue(key, out Facet facet))
             {
-                if (facet is FavoriteEventsFacet eventFacet)
+                if (facet is StringValueListFacet typedFacet)
                 {
-                    client.SetFacet(contact, FavoriteEventsFacet.DefaultKey, eventFacet);
+                    client.SetFacet(contact, key, typedFacet);
                 }
                 else
                 {
-                    Log.Error($"{FavoriteEventsFacet.DefaultKey} facet is not of expected type. Expected {typeof(FavoriteEventsFacet).FullName}", this);
-                }
-            }
-        }
-
-        private void SetEventRegistrationFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
-        {
-            if (facets.TryGetValue(RegisteredEventsFacet.DefaultKey, out Facet facet))
-            {
-                if (facet is RegisteredEventsFacet eventFacet)
-                {
-                    client.SetFacet(contact, RegisteredEventsFacet.DefaultKey, eventFacet);
-                }
-                else
-                {
-                    Log.Error($"{RegisteredEventsFacet.DefaultKey} facet is not of expected type. Expected {typeof(RegisteredEventsFacet).FullName}", this);
+                    Log.Error($"{key} facet is not of expected type. Expected {typeof(StringValueListFacet).FullName}", this);
                 }
             }
         }

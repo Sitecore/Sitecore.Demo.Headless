@@ -28,6 +28,35 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
             trackerContact.UpdateXConnectFacets(facets);
         }
 
+        public void RemoveAll([NotNull]string facetKey)
+        {
+            var trackerContact = ContactExtensions.GetCurrentTrackerContact();
+            Assert.IsNotNull(trackerContact, "Current contact is null");
+
+            var facets = trackerContact.GetXConnectFacets();
+            RemoveAllFacetValues(facetKey, facets);
+            trackerContact.UpdateXConnectFacets(facets);
+        }
+
+        public bool ContainsValue([NotNull] string facetKey, [NotNull] string facetValue)
+        {
+            var trackerContact = ContactExtensions.GetCurrentTrackerContact();
+            Assert.IsNotNull(trackerContact, "Current contact is null");
+            var facets = trackerContact.GetXConnectFacets();
+
+            if (!facets.ContainsKey(facetKey))
+            {
+                return false;
+            }
+
+            if (facets[facetKey] is StringValueListFacet facet)
+            {
+                return facet.Values.Contains(facetValue);
+            }
+
+            return false; 
+        }
+
         protected void AddFacetValue([NotNull]string value, [NotNull]string facetKey, [NotNull]Dictionary<string, Facet> facets)
         {
             StringValueListFacet facet;
@@ -58,6 +87,16 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
                 {
                     facet.Values.Remove(value);
                 }
+            }
+        }
+
+        protected void RemoveAllFacetValues([NotNull]string facetKey, [NotNull]Dictionary<string, Facet> facets)
+        {
+            StringValueListFacet facet;
+            if (facets.ContainsKey(facetKey))
+            {
+                facet = (StringValueListFacet)facets[facetKey];
+                facet.Values.Clear();
             }
         }
     }

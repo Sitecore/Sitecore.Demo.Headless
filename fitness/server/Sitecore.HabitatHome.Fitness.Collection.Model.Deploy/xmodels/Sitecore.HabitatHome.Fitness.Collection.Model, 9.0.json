@@ -24,18 +24,6 @@
         }
       }
     },
-    "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.NotificationSubscriptionsFacet": {
-      "Type": "Facet",
-      "BaseType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet",
-      "ClrType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.NotificationSubscriptionsFacet, Sitecore.HabitatHome.Fitness.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "Properties": {}
-    },
-    "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.NotificationTopicsFacet": {
-      "Type": "Facet",
-      "BaseType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet",
-      "ClrType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.NotificationTopicsFacet, Sitecore.HabitatHome.Fitness.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "Properties": {}
-    },
     "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.SportsFacet": {
       "Type": "Facet",
       "BaseType": "Sitecore.XConnect.Facet",
@@ -57,35 +45,28 @@
           "Type": "String"
         }
       }
-    },
-    "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.RegisteredEventsFacet": {
-      "Type": "Facet",
-      "BaseType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet",
-      "ClrType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.RegisteredEventsFacet, Sitecore.HabitatHome.Fitness.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "Properties": {}
-    },
-    "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.FavoriteEventsFacet": {
-      "Type": "Facet",
-      "BaseType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet",
-      "ClrType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.FavoriteEventsFacet, Sitecore.HabitatHome.Fitness.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "Properties": {}
     }
   },
   "Facets": [
     {
       "Target": "Contact",
-      "Name": "StringValueListFacet",
+      "Name": "FavoriteEvents",
       "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet"
     },
     {
       "Target": "Contact",
-      "Name": "NotificationSubscriptions",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.NotificationSubscriptionsFacet"
+      "Name": "RegisteredEvents",
+      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet"
     },
     {
       "Target": "Contact",
-      "Name": "NotificationTopics",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.NotificationTopicsFacet"
+      "Name": "Subscriptions",
+      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet"
+    },
+    {
+      "Target": "Contact",
+      "Name": "SubscriptionTokens",
+      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet"
     },
     {
       "Target": "Contact",
@@ -96,16 +77,6 @@
       "Target": "Contact",
       "Name": "Demographics",
       "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.DemographicsFacet"
-    },
-    {
-      "Target": "Contact",
-      "Name": "RegisteredEvents",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.RegisteredEventsFacet"
-    },
-    {
-      "Target": "Contact",
-      "Name": "FavoriteEvents",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.FavoriteEventsFacet"
     }
   ]
 }

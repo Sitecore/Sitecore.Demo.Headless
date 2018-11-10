@@ -1,5 +1,6 @@
 ﻿using Sitecore.Analytics;
 using Sitecore.Analytics.XConnect.Facets;
+using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
 using Sitecore.Rules;
 using Sitecore.Rules.Conditions;
@@ -19,18 +20,20 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
             }
 
             var contextItem = Context.Item;
-            if(contextItem == null)
+            if (contextItem == null)
             {
                 return false;
             }
+            var eventId = contextItem.ID.Guid.ToString("D");
 
             var facets = Tracker.Current.Contact.GetFacet<IXConnectFacets>("XConnectFacets");
             Facet facet = null;
-            if (facets?.Facets?.TryGetValue(RegisteredEventsFacet.DefaultKey, out facet) ?? false)
+            if (facets?.Facets?.TryGetValue(FacetIDs.RegisteredEvents, out facet) ?? false)
             {
-                var registeredEventFacet = facet as RegisteredEventsFacet;
-                var eventId = contextItem.ID.Guid.ToString("D");
-                return registeredEventFacet.Values.Contains(eventId);
+                if (facet is StringValueListFacet registeredEventFacet)
+                {
+                    return registeredEventFacet.Values.Contains(eventId);
+                }
             }
             return false;
         }

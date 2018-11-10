@@ -6,6 +6,7 @@ using System;
 using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Collection.Services;
 using Sitecore.HabitatHome.Fitness.Collection.Filters;
+using Sitecore.Diagnostics;
 
 namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Events
 {
@@ -15,51 +16,57 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Events
     [SuppressFormsAuthenticationRedirect]
     public class HabitatFitnessEventRegistrationController : Controller
     {
-        private IFacetUpdateService facetUpdateService;
+        private IStringValueListFacetService facetService;
 
-        public HabitatFitnessEventRegistrationController([NotNull]IFacetUpdateService facetUpdateService)
+        public HabitatFitnessEventRegistrationController([NotNull]IStringValueListFacetService facetService)
         {
-            this.facetUpdateService = facetUpdateService;
+            this.facetService = facetService;
         }
 
         [ActionName("add")]
         [HttpPost]
         [CancelCurrentPage]
-        public HttpResponseMessage Add([System.Web.Http.FromBody]EventPayload data)
+        public ActionResult Add([System.Web.Http.FromBody]EventPayload data)
         {
+            // TODO: move data validation
+            if (!data.IsValid())
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "invalid data");
+            }
             try
             {
-                facetUpdateService.AddEventRegistrationFacet(data);
+                facetService.Add(data.EventId, FacetIDs.RegisteredEvents);
             }
             catch (Exception ex)
             {
-                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
-                {
-                    Content = new StringContent(ex.Message)
-                };
+                Log.Error($"Unable to add value '{data.EventId}' to contact's '${FacetIDs.RegisteredEvents}' facet ", ex, this);
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
             }
 
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
         [ActionName("remove")]
         [HttpPost]
         [CancelCurrentPage]
-        public HttpResponseMessage Remove([System.Web.Http.FromBody]EventPayload data)
+        public ActionResult Remove([System.Web.Http.FromBody]EventPayload data)
         {
+            // TODO: move data validation
+            if (!data.IsValid())
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "invalid data");
+            }
             try
             {
-                facetUpdateService.RemoveEventRegistrationFacet(data);
+                facetService.Add(data.EventId, FacetIDs.RegisteredEvents);
             }
             catch (Exception ex)
             {
-                return new HttpResponseMessage(HttpStatusCode.InternalServerError)
-                {
-                    Content = new StringContent(ex.Message)
-                };
+                Log.Error($"Unable to remove value '{data.EventId}' to contact's '${FacetIDs.RegisteredEvents}' facet ", ex, this);
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
             }
 
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
     }
 }

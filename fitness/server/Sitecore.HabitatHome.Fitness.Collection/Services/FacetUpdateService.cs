@@ -14,70 +14,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
     // TODO: refactor interface methods, too much boilerplate
     public class FacetUpdateService : IFacetUpdateService
     {
-        public void AddEventToFavoritesFacet([NotNull] EventPayload data)
-        {
-            Assert.IsTrue(data.IsValid(), "event id cannot be empty");
-            Assert.IsTrue(Guid.TryParse(data.EventId, out Guid eventGuid), "event id is not a guid");
-
-            var trackerContact = GetTrackerContact();
-            Assert.IsNotNull(trackerContact, "Current contact is null");
-
-            var facets = GetXConnectFacets(trackerContact);
-
-            AddEventFavorites(data, facets);
-
-            trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
-        }
-
-        public void RemoveEventToFavoritesFacet([NotNull] EventPayload data)
-        {
-            Assert.IsTrue(data.IsValid(), "event id cannot be empty");
-            Assert.IsTrue(Guid.TryParse(data.EventId, out Guid eventGuid), "event id is not a guid");
-
-            var trackerContact = GetTrackerContact();
-            Assert.IsNotNull(trackerContact, "Current contact is null");
-
-            var facets = GetXConnectFacets(trackerContact);
-
-            RemoveEventFavorites(data, facets);
-
-            trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
-        }
-
-        public void AddEventRegistrationFacet([NotNull] EventPayload data)
-        {
-            Assert.IsTrue(data.IsValid(), "event id cannot be empty");
-            Assert.IsTrue(Guid.TryParse(data.EventId, out Guid eventGuid), "event id is not a guid");
-
-            var contact = GetTrackerContact();
-            Assert.IsNotNull(contact, "Current contact is null");
-
-            Assert.IsTrue(contact.IdentificationLevel == Analytics.Model.ContactIdentificationLevel.Known, "contact has to be known to be able to register");
-
-            var facets = GetXConnectFacets(contact);
-
-            AddEventRegistration(data, facets);
-
-            contact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
-        }
-
-        public void RemoveEventRegistrationFacet([NotNull] EventPayload data)
-        {
-            Assert.IsTrue(data.IsValid(), "event id cannot be empty");
-            Assert.IsTrue(Guid.TryParse(data.EventId, out Guid eventGuid), "event id is not a guid");
-
-            var contact = GetTrackerContact();
-            Assert.IsNotNull(contact, "Current contact is null");
-
-            Assert.IsTrue(contact.IdentificationLevel == Analytics.Model.ContactIdentificationLevel.Known, "contact has to be known to be able to register");
-
-            var facets = GetXConnectFacets(contact);
-
-            RemoveEventRegistration(data, facets);
-
-            contact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
-        }
-
         public void UpdateDemographicsFacet([NotNull]DemographicsPayload data)
         {
             Assert.IsTrue(data.IsValid(), "DemographicsPayload is not valid");
@@ -122,65 +58,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
             Tracker.Current.Session.IdentifyAs(Wellknown.EMAIL_IDENT_SOURCE, data.Email);
 
             trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
-        }
-
-        protected void AddEventFavorites(EventPayload data, Dictionary<string, Facet> facets)
-        {
-            FavoriteEventsFacet facet;
-            if (facets.ContainsKey(FavoriteEventsFacet.DefaultKey))
-            {
-                facet = (FavoriteEventsFacet)facets[FavoriteEventsFacet.DefaultKey];
-                facet.Values.Add(data.EventId);
-            }
-            else
-            {
-                facet = new FavoriteEventsFacet();
-                facet.Values.Add(data.EventId);
-                facets.Add(FavoriteEventsFacet.DefaultKey, facet);
-            }
-        }
-
-        protected void RemoveEventFavorites(EventPayload data, Dictionary<string, Facet> facets)
-        {
-            FavoriteEventsFacet facet;
-            if (facets.ContainsKey(FavoriteEventsFacet.DefaultKey))
-            {
-                facet = (FavoriteEventsFacet)facets[FavoriteEventsFacet.DefaultKey];
-
-                if (facet.Values.Contains(data.EventId))
-                {
-                    facet.Values.Remove(data.EventId);
-                }
-            }
-        }
-
-        protected void AddEventRegistration(EventPayload data, Dictionary<string, Facet> facets)
-        {
-            RegisteredEventsFacet facet;
-            if (facets.ContainsKey(RegisteredEventsFacet.DefaultKey))
-            {
-                facet = (RegisteredEventsFacet)facets[RegisteredEventsFacet.DefaultKey];
-                facet.Values.Add(data.EventId);
-            }
-            else
-            {
-                facet = new RegisteredEventsFacet(); ;
-                facet.Values.Add(data.EventId);
-                facets.Add(RegisteredEventsFacet.DefaultKey, facet);
-            }
-        }
-
-        protected void RemoveEventRegistration(EventPayload data, Dictionary<string, Facet> facets)
-        {
-            RegisteredEventsFacet facet;
-            if (facets.ContainsKey(RegisteredEventsFacet.DefaultKey))
-            {
-                facet = (RegisteredEventsFacet)facets[RegisteredEventsFacet.DefaultKey];
-                if (facet.Values.Contains(data.EventId))
-                {
-                    facet.Values.Remove(data.EventId);
-                }
-            }
         }
 
         protected void UpdateSportsFacet(SportPreferencesPayload data, Dictionary<string, Facet> facets)

@@ -116,6 +116,10 @@
       <Project>{8b8ef537-2e63-4cc5-93b0-7dfa3f784ec1}</Project>
       <Name>Sitecore.HabitatHome.Fitness.Collection.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sitecore.HabitatHome.Fitness.Collection\Sitecore.HabitatHome.Fitness.Collection.csproj">
+      <Project>{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.Collection</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
