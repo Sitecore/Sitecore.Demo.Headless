@@ -24,22 +24,22 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Pipelines.GetLayoutServic
                 {
                     var facets = contact.GetFacet<IXConnectFacets>("XConnectFacets");
                     Facet facet = null;
-                    var isFavorite = false;
+                    var favorited = false;
                     if (facets?.Facets?.TryGetValue(FavoriteEventsFacet.DefaultKey, out facet) ?? false)
                     {
                         var eventFavoritesFacet = facet as FavoriteEventsFacet;
                         var favorites = eventFavoritesFacet?.Values;
-                        isFavorite = favorites.Contains(eventId);
+                        favorited = favorites.Contains(eventId);
                     }
 
-                    var isRegistered = false;
+                    var registered = false;
                     if (facets?.Facets?.TryGetValue(RegisteredEventsFacet.DefaultKey, out facet) ?? false)
                     {
                         var registeredEventFacet = facet as RegisteredEventsFacet;
-                        isRegistered = registeredEventFacet.Values.Contains(eventId);
+                        registered = registeredEventFacet.Values.Contains(eventId);
                     }
 
-                    var isSubscribed = false;
+                    var subscribed = false;
                     // TODO: subscription facet read out
                     //if (facets?.Facets?.TryGetValue(RegisteredEventsFacet.DefaultKey, out facet) ?? false)
                     //{
@@ -51,9 +51,9 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Pipelines.GetLayoutServic
                     args.ContextData.Add("event",
                         new
                         {
-                            isFavorite,
-                            isSubscribed,
-                            isRegistered
+                            favorited,
+                            subscribed,
+                            registered
                         });
                 }
             }

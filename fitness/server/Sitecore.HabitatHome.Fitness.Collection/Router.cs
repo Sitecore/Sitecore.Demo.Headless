@@ -10,6 +10,16 @@ namespace Sitecore.HabitatHome.Fitness.Collection
             {
                 controller = "HabitatFitnessEvents",
             });
+
+            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-event-favorites-api", "sitecore/api/habitatfitness/events/favorites/{action}", new
+            {
+                controller = "HabitatFitnessEventFavorites",
+            });
+
+            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-event-registration-api", "sitecore/api/habitatfitness/events/registration/{action}", new
+            {
+                controller = "HabitatFitnessEventRegistration",
+            });
         }
     }
 

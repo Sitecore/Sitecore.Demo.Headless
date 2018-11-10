@@ -14,7 +14,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
     // TODO: refactor interface methods, too much boilerplate
     public class FacetUpdateService : IFacetUpdateService
     {
-        public void UpdateEventFavoritesFacet([NotNull] EventPayload data)
+        public void AddEventToFavoritesFacet([NotNull] EventPayload data)
         {
             Assert.IsTrue(data.IsValid(), "event id cannot be empty");
             Assert.IsTrue(Guid.TryParse(data.EventId, out Guid eventGuid), "event id is not a guid");
@@ -24,13 +24,27 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
 
             var facets = GetXConnectFacets(trackerContact);
 
-            UpdateEventFavorites(data, facets);
+            AddEventFavorites(data, facets);
 
-            Log.Info($"**HF** UpdateEventRegistrationFacet. Setting collected facets.", this);
             trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
         }
 
-        public void UpdateEventRegistrationFacet([NotNull] EventPayload data)
+        public void RemoveEventToFavoritesFacet([NotNull] EventPayload data)
+        {
+            Assert.IsTrue(data.IsValid(), "event id cannot be empty");
+            Assert.IsTrue(Guid.TryParse(data.EventId, out Guid eventGuid), "event id is not a guid");
+
+            var trackerContact = GetTrackerContact();
+            Assert.IsNotNull(trackerContact, "Current contact is null");
+
+            var facets = GetXConnectFacets(trackerContact);
+
+            RemoveEventFavorites(data, facets);
+
+            trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
+        }
+
+        public void AddEventRegistrationFacet([NotNull] EventPayload data)
         {
             Assert.IsTrue(data.IsValid(), "event id cannot be empty");
             Assert.IsTrue(Guid.TryParse(data.EventId, out Guid eventGuid), "event id is not a guid");
@@ -42,9 +56,25 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
 
             var facets = GetXConnectFacets(contact);
 
-            UpdateEventRegistration(data, facets);
+            AddEventRegistration(data, facets);
 
-            Log.Info($"**HF** UpdateEventRegistrationFacet. Setting collected facets.", this);
+            contact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
+        }
+
+        public void RemoveEventRegistrationFacet([NotNull] EventPayload data)
+        {
+            Assert.IsTrue(data.IsValid(), "event id cannot be empty");
+            Assert.IsTrue(Guid.TryParse(data.EventId, out Guid eventGuid), "event id is not a guid");
+
+            var contact = GetTrackerContact();
+            Assert.IsNotNull(contact, "Current contact is null");
+
+            Assert.IsTrue(contact.IdentificationLevel == Analytics.Model.ContactIdentificationLevel.Known, "contact has to be known to be able to register");
+
+            var facets = GetXConnectFacets(contact);
+
+            RemoveEventRegistration(data, facets);
+
             contact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
         }
 
@@ -60,7 +90,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
             UpdateAgeGroup(data, facets);
             UpdateGender(data, facets);
 
-            Log.Info($"**HF** UpdateDemographicsFacet. Setting collected facets.", this);
             trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
         }
 
@@ -75,7 +104,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
 
             UpdateSportsFacet(data, facets);
 
-            Log.Info($"**HF** UpdateSportsFacet. Setting collected facets.", this);
             trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
         }
 
@@ -93,11 +121,10 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
 
             Tracker.Current.Session.IdentifyAs(Wellknown.EMAIL_IDENT_SOURCE, data.Email);
 
-            Log.Info($"**HF** UpdateIdentificationFacet. Setting collected facets.", this);
             trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
         }
 
-        protected void UpdateEventFavorites(EventPayload data, Dictionary<string, Facet> facets)
+        protected void AddEventFavorites(EventPayload data, Dictionary<string, Facet> facets)
         {
             FavoriteEventsFacet facet;
             if (facets.ContainsKey(FavoriteEventsFacet.DefaultKey))
@@ -112,8 +139,22 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
                 facets.Add(FavoriteEventsFacet.DefaultKey, facet);
             }
         }
- 
-        protected void UpdateEventRegistration(EventPayload data, Dictionary<string, Facet> facets)
+
+        protected void RemoveEventFavorites(EventPayload data, Dictionary<string, Facet> facets)
+        {
+            FavoriteEventsFacet facet;
+            if (facets.ContainsKey(FavoriteEventsFacet.DefaultKey))
+            {
+                facet = (FavoriteEventsFacet)facets[FavoriteEventsFacet.DefaultKey];
+
+                if (facet.Values.Contains(data.EventId))
+                {
+                    facet.Values.Remove(data.EventId);
+                }
+            }
+        }
+
+        protected void AddEventRegistration(EventPayload data, Dictionary<string, Facet> facets)
         {
             RegisteredEventsFacet facet;
             if (facets.ContainsKey(RegisteredEventsFacet.DefaultKey))
@@ -123,9 +164,22 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
             }
             else
             {
-                facet = new RegisteredEventsFacet();;
+                facet = new RegisteredEventsFacet(); ;
                 facet.Values.Add(data.EventId);
                 facets.Add(RegisteredEventsFacet.DefaultKey, facet);
+            }
+        }
+
+        protected void RemoveEventRegistration(EventPayload data, Dictionary<string, Facet> facets)
+        {
+            RegisteredEventsFacet facet;
+            if (facets.ContainsKey(RegisteredEventsFacet.DefaultKey))
+            {
+                facet = (RegisteredEventsFacet)facets[RegisteredEventsFacet.DefaultKey];
+                if (facet.Values.Contains(data.EventId))
+                {
+                    facet.Values.Remove(data.EventId);
+                }
             }
         }
 
@@ -230,19 +284,15 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
 
         protected Dictionary<string, Facet> GetXConnectFacets([NotNull]Analytics.Tracking.Contact trackerContact)
         {
-            Assert.IsTrue(trackerContact.Facets.ContainsKey("XConnectFacets"), "**HF** FacetUpdateService: XConnectFacets are missing");
-
-            Log.Info("**HF** XConnectFacets found", this);
+            Assert.IsTrue(trackerContact.Facets.ContainsKey("XConnectFacets"), "FacetUpdateService: XConnectFacets are missing");
 
             var facets = new Dictionary<string, Facet>();
             var existingFacets = trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets;
             if (existingFacets != null)
             {
-                Log.Info("**HF** XConnectFacets existing facets found", this);
                 return existingFacets.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
             }
 
-            Log.Info("**HF** XConnectFacets returning empty facets", this);
             return new Dictionary<string, Facet>();
         }
     }

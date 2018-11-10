@@ -4,7 +4,8 @@ import dayjs from "dayjs";
 import { translate } from "react-i18next";
 import EventDetail from "../EventDetail";
 import RegistrationPrompt from "../RegistrationPrompt";
-import { register } from "../../utils/XConnectProxy";
+import { register } from "../../services/EventService";
+import EventFavoriteButton from "../EventFavoriteButton";
 
 class EventDetailLoggedIn extends React.Component {
   state = {
@@ -24,7 +25,8 @@ class EventDetailLoggedIn extends React.Component {
   }
 
   onRegister() {
-    register(this.props.routeData.itemId)
+    const eventId = this.props.routeData.itemId;
+    register(eventId)
       .then(response => {
         this.toggle();
         window.location.reload();
@@ -64,6 +66,7 @@ class EventDetailLoggedIn extends React.Component {
           date={date}
           description={description}
           cta={cta}
+          icon={<EventFavoriteButton {...this.props} />}
         />
         <RegistrationPrompt
           open={this.state.promptOpen}
