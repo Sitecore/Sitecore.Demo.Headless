@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Facets\DemographicsFacet.cs" />
+    <Compile Include="Facets\StringListFacet.cs" />
     <Compile Include="Facets\RegisteredEventsFacet.cs" />
     <Compile Include="Facets\NotificationSubscriptionsFacet.cs" />
     <Compile Include="Facets\FavoriteEventsFacet.cs" />

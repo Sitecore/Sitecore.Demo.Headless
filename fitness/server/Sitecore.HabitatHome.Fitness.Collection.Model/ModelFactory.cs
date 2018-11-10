@@ -17,6 +17,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Model
             builder.ReferenceModel(CollectionModel.Model);
 
             //Attach the contact facets
+            builder.DefineFacet<Contact, StringValueListFacet>();
             builder.DefineFacet<Contact, NotificationSubscriptionsFacet>(NotificationSubscriptionsFacet.DefaultKey);
             builder.DefineFacet<Contact, NotificationTopicsFacet>(NotificationTopicsFacet.DefaultKey);
             builder.DefineFacet<Contact, SportsFacet>(SportsFacet.DefaultKey);

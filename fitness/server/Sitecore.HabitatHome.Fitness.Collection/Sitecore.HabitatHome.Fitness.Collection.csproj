@@ -96,8 +96,10 @@
     <Compile Include="Controllers\Events\HabitatFitnessEventRegistrationController.cs" />
     <Compile Include="Controllers\Events\HabitatFitnessEventFavoritesController.cs" />
     <Compile Include="Controllers\HabitatFitnessEventsController.cs" />
+    <Compile Include="Controllers\Subscriptions\HabitatFitnessNotificationsController.cs" />
     <Compile Include="Filters\CancelCurrentPageAttribute.cs" />
     <Compile Include="Model\EventPayload.cs" />
+    <Compile Include="Model\SubscriptionPayload.cs" />
     <Compile Include="Model\IdentificationPayload.cs" />
     <Compile Include="Model\DemographicsPayload.cs" />
     <Compile Include="Model\StringArrayPayload.cs" />
@@ -107,6 +109,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Router.cs" />
+    <Compile Include="Services\ContactExtensions.cs" />
+    <Compile Include="Services\StringValueListFacetService.cs" />
+    <Compile Include="Services\IStringValueListFacetService.cs" />
     <Compile Include="Services\IFacetUpdateService.cs" />
     <Compile Include="Services\IProfileUpdateService.cs" />
     <Compile Include="Services\ProfileUpdateService.cs" />

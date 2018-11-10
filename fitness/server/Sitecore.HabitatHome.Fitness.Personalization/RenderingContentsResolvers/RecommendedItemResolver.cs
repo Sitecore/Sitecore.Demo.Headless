@@ -43,7 +43,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.RenderingContentsResolver
             var serializer = new Serializers.ItemSerializer(getFieldSerializerPipeline);
             int.TryParse(Parameters["take"], out int take);
 
-            var items = GetItems(rendering).Take(take) ?? Enumerable.Empty<Item>();
+            var items = GetItems(rendering)?.Take(take) ?? Enumerable.Empty<Item>();
 
             return new
             {

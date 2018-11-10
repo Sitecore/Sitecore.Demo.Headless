@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Sitecore.DependencyInjection;
 using Sitecore.HabitatHome.Fitness.Collection.Controllers;
+using Sitecore.HabitatHome.Fitness.Collection.Controllers.Events;
+using Sitecore.HabitatHome.Fitness.Collection.Controllers.Subscriptions;
 using Sitecore.HabitatHome.Fitness.Collection.Services;
 
 namespace Sitecore.HabitatHome.Fitness.Collection
@@ -13,9 +15,11 @@ namespace Sitecore.HabitatHome.Fitness.Collection
 
             serviceCollection.AddTransient<IProfileUpdateService, ProfileUpdateService>();
             serviceCollection.AddTransient<IFacetUpdateService, FacetUpdateService>();
+            serviceCollection.AddTransient<IStringValueListFacetService, StringValueListFacetService>();
             serviceCollection.AddTransient<HabitatFitnessEventsController>();
             serviceCollection.AddTransient<HabitatFitnessEventFavoritesController>();
             serviceCollection.AddTransient<HabitatFitnessEventRegistrationController>();
+            serviceCollection.AddTransient<HabitatFitnessSubscriptionsController>();
         }
     }
 }

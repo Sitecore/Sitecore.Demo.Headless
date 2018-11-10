@@ -8,7 +8,7 @@ using Sitecore.HabitatHome.Fitness.Collection.Services;
 using Sitecore.HabitatHome.Fitness.Collection.Filters;
 using Sitecore.Diagnostics;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Controllers
+namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Events
 {
     [RequireSscApiKey]
     [ImpersonateApiKeyUser]
