@@ -1,11 +1,11 @@
 ﻿using Sitecore.Analytics;
 using Sitecore.Analytics.Data.Items;
-using Sitecore.Analytics.XConnect.Facets;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
+using Sitecore.HabitatHome.Fitness.Collection.Services;
+using Sitecore.HabitatHome.Fitness.Personalization.Utils;
 using Sitecore.Rules;
 using Sitecore.Rules.Conditions;
-using Sitecore.XConnect;
+using System.Web.Mvc;
 
 namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
 {
@@ -20,27 +20,19 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
                 return false;
             }
 
-            var facets = Tracker.Current.Contact.GetFacet<IXConnectFacets>("XConnectFacets");
-            Facet facet = null;
-            if (facets?.Facets?.TryGetValue(DemographicsFacet.DefaultKey, out facet) ?? false)
+            var service = DependencyResolver.Current.GetService<IDemographicsService>();
+
+            if (service == null)
             {
-                var demographicsFacet = facet as DemographicsFacet;
-                var ageGroup = demographicsFacet?.AgeGroup;
-                return GetProfileKeyName().Equals(ageGroup, System.StringComparison.InvariantCultureIgnoreCase);
+                Log.Error("AgeGroupCondition failed. IDemographicsService is not available", this);
+                return false;
             }
 
-            return false;
-        }
-
-        private string GetProfileKeyName()
-        {
-            var profileKeyItem = Context.Database.GetItem(AgeGroupProfileKeyId);
-            if (profileKeyItem == null)
-            {
-                Log.Warn($"SportsCondition: Unable to resolve profile key item {AgeGroupProfileKeyId}", this);
-            }
-
-            return new ProfileKeyItem(profileKeyItem).KeyName;
+            var profileKeyName = ProfileExtensions.GetProfileKeyName(AgeGroupProfileKeyId);
+            var ageGroup = service.GetAgeGroup();
+            var result = profileKeyName.Equals(ageGroup, System.StringComparison.InvariantCultureIgnoreCase);
+            Log.Debug($"{this.GetType().Name}: {profileKeyName}.Equals('{ageGroup}', System.StringComparison.InvariantCultureIgnoreCase) = {result}");
+            return result;
         }
     }
 }

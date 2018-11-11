@@ -1,12 +1,13 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
-import { canUseDOM } from "../../utils";
 import { translate } from "react-i18next";
 import {
-  setIdentifiers,
-  setDemographicsPreferences
-} from "../../utils/XConnectProxy";
+  setDemographicsFacet,
+  setDemographicsProfile
+} from "../../services/DemographicsService";
+import { setIdentification } from "../../services/IdentificationService";
+
 import ContinueButton from "../ContinueButton";
 import Consent from "../Consent";
 
@@ -31,10 +32,6 @@ class CreateAccountStep extends React.Component {
         [event.target.name]: event.target.value
       })
     );
-
-    if (canUseDOM) {
-      localStorage.setItem(event.target.name, event.target.value);
-    }
   }
 
   isValid() {
@@ -42,7 +39,9 @@ class CreateAccountStep extends React.Component {
   }
 
   onContinueClick() {
-    setIdentifiers()
+    const { firstname, lastname, email, gender, age } = this.state;
+
+    setIdentification(firstname, lastname, email)
       .then(response => {
         console.log(response.data);
       })
@@ -50,7 +49,15 @@ class CreateAccountStep extends React.Component {
         console.log(err);
       });
 
-    setDemographicsPreferences()
+    setDemographicsFacet(age, gender)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    setDemographicsProfile(age, gender)
       .then(response => {
         console.log(response.data);
       })

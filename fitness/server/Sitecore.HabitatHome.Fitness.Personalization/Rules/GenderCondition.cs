@@ -2,10 +2,13 @@
 using Sitecore.Analytics.Data.Items;
 using Sitecore.Analytics.XConnect.Facets;
 using Sitecore.Diagnostics;
+using Sitecore.HabitatHome.Fitness.Collection.Services;
+using Sitecore.HabitatHome.Fitness.Personalization.Utils;
 using Sitecore.Rules;
 using Sitecore.Rules.Conditions;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
+using System.Web.Mvc;
 
 namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
 {
@@ -20,27 +23,19 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
                 return false;
             }
 
-            var facets = Tracker.Current.Contact.GetFacet<IXConnectFacets>("XConnectFacets");
-            Facet facet = null;
-            if (facets?.Facets?.TryGetValue(PersonalInformation.DefaultFacetKey, out facet) ?? false)
+            var service = DependencyResolver.Current.GetService<IDemographicsService>();
+
+            if (service == null)
             {
-                var personalFacet = facet as PersonalInformation;
-                var gender = personalFacet?.Gender;
-                return GetProfileKeyName().Equals(gender, System.StringComparison.InvariantCultureIgnoreCase);
+                Log.Error("AgeGroupCondition failed. IDemographicsService is not available", this);
+                return false;
             }
 
-            return false;
-        }
-
-        private string GetProfileKeyName()
-        {
-            var profileKeyItem = Context.Database.GetItem(GenderProfileKeyId);
-            if (profileKeyItem == null)
-            {
-                Log.Warn($"SportsCondition: Unable to resolve profile key item {GenderProfileKeyId}", this);
-            }
-
-            return new ProfileKeyItem(profileKeyItem).KeyName;
+            var profileKeyName = ProfileExtensions.GetProfileKeyName(GenderProfileKeyId);
+            var gender = service.GetGender();
+            var result = profileKeyName.Equals(gender, System.StringComparison.InvariantCultureIgnoreCase);
+            Log.Debug($"{this.GetType().Name}: {profileKeyName}.Equals('{gender}', System.StringComparison.InvariantCultureIgnoreCase) = {result}");
+            return result;
         }
     }
 }

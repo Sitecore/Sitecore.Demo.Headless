@@ -5,9 +5,11 @@ import SportOption from "../SportOption";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import ContinueButton from "../ContinueButton";
-import { canUseDOM } from "../../utils";
 import { translate } from "react-i18next";
-import { setSportsPreferences } from "../../utils/XConnectProxy";
+import {
+  setSportsFacets,
+  setSportsProfile
+} from "../../services/SportsService";
 
 class SportsPickerStep extends Component {
   state = {
@@ -33,7 +35,15 @@ class SportsPickerStep extends Component {
   }
 
   handleContinueClick(event) {
-    setSportsPreferences()
+    setSportsFacets(this.state.selectedSports)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    setSportsProfile(this.state.selectedSports)
       .then(response => {
         console.log(response.data);
       })
@@ -52,10 +62,6 @@ class SportsPickerStep extends Component {
     }
 
     this.setState({ selectedSports });
-
-    if (canUseDOM) {
-      localStorage.setItem("sports", JSON.stringify(selectedSports));
-    }
   }
 
   onSliderChange(value) {

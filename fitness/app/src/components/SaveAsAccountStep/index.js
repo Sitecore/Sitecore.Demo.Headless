@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
-import { canUseDOM } from "../../utils";
 import { translate } from "react-i18next";
-import { setIdentifiers } from "../../utils/XConnectProxy";
+import { setIdentification } from "../../services/IdentificationService";
 import Consent from "../Consent";
 import ContinueButton from "../ContinueButton";
 
@@ -26,14 +25,12 @@ class SaveAsAccountStep extends Component {
         [event.target.name]: event.target.value
       })
     );
-
-    if (canUseDOM) {
-      localStorage.setItem(event.target.name, event.target.value);
-    }
   }
 
   onCreateClick() {
-    setIdentifiers()
+    const { firstname, lastname, email } = this.state;
+
+    setIdentification(firstname, lastname, email)
       .then(response => {
         console.log(response.data);
       })

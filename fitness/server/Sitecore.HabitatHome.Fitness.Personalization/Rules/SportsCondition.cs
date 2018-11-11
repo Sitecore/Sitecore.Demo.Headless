@@ -1,11 +1,10 @@
 ﻿using Sitecore.Analytics;
-using Sitecore.Analytics.Data.Items;
-using Sitecore.Analytics.XConnect.Facets;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
+using Sitecore.HabitatHome.Fitness.Collection.Services;
+using Sitecore.HabitatHome.Fitness.Personalization.Utils;
 using Sitecore.Rules;
 using Sitecore.Rules.Conditions;
-using Sitecore.XConnect;
+using System.Web.Mvc;
 
 namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
 {
@@ -17,29 +16,31 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
         {
             if (!Tracker.Current.IsActive)
             {
+                Log.Error($"{this.GetType().Name} failed. Tracker is not active", this);
                 return false;
             }
 
-            var facets = Tracker.Current.Contact.GetFacet<IXConnectFacets>("XConnectFacets");
-            Facet facet = null;
-            if (facets?.Facets?.TryGetValue(SportsFacet.DefaultKey, out facet) ?? false)
+            var service = DependencyResolver.Current.GetService<ISportsService>();
+
+            if (service == null)
             {
-                var facetRating = facet as SportsFacet;
-                return facetRating?.Ratings?.ContainsKey(GetProfileKeyName()) ?? false;
+                Log.Error($"{this.GetType().Name} failed. IDemographicsService is not available", this);
+                return false;
             }
 
-            return false;
-        }
-
-        private string GetProfileKeyName()
-        {
-            var profileKeyItem = Context.Database.GetItem(SportProfileKeyId);
-            if(profileKeyItem == null)
+            var profileKeyName = ProfileExtensions.GetProfileKeyName(SportProfileKeyId);
+            var result = false;
+            if (!string.IsNullOrWhiteSpace(profileKeyName))
             {
-                Log.Warn($"SportsCondition: Unable to resolve profile key item {SportProfileKeyId}", this);
+                var facet = service.ReadFacet();
+                if (facet != null)
+                {
+                    result = facet.Ratings.ContainsKey(profileKeyName);
+                }
             }
 
-            return new ProfileKeyItem(profileKeyItem).KeyName;
+            Log.Debug($"{this.GetType().Name}: facet.Ratings.ContainsKey('{profileKeyName}') = {result}");
+            return result;
         }
     }
 }

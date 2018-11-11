@@ -5,14 +5,12 @@ using System.Collections.Generic;
 namespace Sitecore.HabitatHome.Fitness.Collection.Model.Facets
 {
     [Serializable]
-    public class RegisteredEventsFacet : Facet
+    public class StringValueListFacet : Facet
     {
-        public RegisteredEventsFacet()
+        public StringValueListFacet()
         {
             Values = new List<string>();
         }
-
-        public static string DefaultKey = "RegisteredEvents";
 
         public List<string> Values { get; set; }
     }

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { RichText, DateField } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
 import dayjs from "dayjs";
