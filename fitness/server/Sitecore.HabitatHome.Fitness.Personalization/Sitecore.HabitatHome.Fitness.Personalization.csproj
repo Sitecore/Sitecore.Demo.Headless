@@ -82,11 +82,12 @@
     <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Rules\AgeGroupCondition.cs" />
-    <Compile Include="Rules\CurrentEventRegisteredCondition.cs" />
+    <Compile Include="Rules\BaseEventFacetCondition.cs" />
+    <Compile Include="Rules\IsContactRegisteredForEvent.cs" />
     <Compile Include="Rules\IsContactKnownCondition.cs" />
     <Compile Include="Rules\GenderCondition.cs" />
-    <Compile Include="Rules\NotificationSubscriptionCondition.cs" />
-    <Compile Include="Rules\NotificationTopicCondition.cs" />
+    <Compile Include="Rules\IsContactSubscribedToEvent.cs" />
+    <Compile Include="Rules\IsContactFavoritedEvent.cs" />
     <Compile Include="Rules\SportsCondition.cs" />
     <Compile Include="Rules\SportsSkillCondition.cs" />
     <Compile Include="Services\ProductDataService.cs" />
