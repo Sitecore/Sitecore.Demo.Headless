@@ -1,4 +1,5 @@
 ﻿using Sitecore.XConnect;
+using Sitecore.XConnect.Client;
 using System.Collections.Generic;
 
 namespace Sitecore.HabitatHome.Fitness.Collection.Services
@@ -10,5 +11,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
         void RemoveAll(string facetKey);
         bool ContainsValue(string facetKey, string facetValue);
         string[] GetFacetValues(string facetKey, IReadOnlyDictionary<string, Facet> facets);
+        void SetFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact, [NotNull]string facetKey);
     }
 }

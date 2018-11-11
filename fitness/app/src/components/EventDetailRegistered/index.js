@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import { RichText } from "@sitecore-jss/sitecore-jss-react";
 import dayjs from "dayjs";
 import { translate } from "react-i18next";

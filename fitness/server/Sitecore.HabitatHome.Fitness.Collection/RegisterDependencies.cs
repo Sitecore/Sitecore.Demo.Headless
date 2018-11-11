@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Sitecore.DependencyInjection;
 using Sitecore.HabitatHome.Fitness.Collection.Controllers;
-using Sitecore.HabitatHome.Fitness.Collection.Controllers.Events;
 using Sitecore.HabitatHome.Fitness.Collection.Controllers.Subscriptions;
 using Sitecore.HabitatHome.Fitness.Collection.Services;
 
@@ -13,15 +12,20 @@ namespace Sitecore.HabitatHome.Fitness.Collection
         {
             serviceCollection.AddTransient<IRouter, Router>();
 
-            serviceCollection.AddTransient<IProfileUpdateService, ProfileUpdateService>();
-            serviceCollection.AddTransient<IFacetUpdateService, FacetUpdateService>();
+            serviceCollection.AddTransient<IDemographicsService, DemographicsService>();
+            serviceCollection.AddTransient<ISportsService, SportsService>();
+            serviceCollection.AddTransient<IIdentificationService, IdentificationService>();
+
             serviceCollection.AddTransient<IStringValueListFacetService, StringValueListFacetService>();
             serviceCollection.AddTransient<IEventNotificationService, EventNotificationService>();
             serviceCollection.AddTransient<ISessionEventSubscriptionsService, SessionEventSubscriptionsService>();
 
-            serviceCollection.AddTransient<HabitatFitnessEventsController>();
+            serviceCollection.AddTransient<HabitatFitnessDemographicsController>();
             serviceCollection.AddTransient<HabitatFitnessEventFavoritesController>();
             serviceCollection.AddTransient<HabitatFitnessEventRegistrationController>();
+            serviceCollection.AddTransient<HabitatFitnessIdentificationController>();
+            serviceCollection.AddTransient<HabitatFitnessSessionController>();
+            serviceCollection.AddTransient<HabitatFitnessSportsController>();
             serviceCollection.AddTransient<HabitatFitnessSubscriptionsController>();
         }
     }

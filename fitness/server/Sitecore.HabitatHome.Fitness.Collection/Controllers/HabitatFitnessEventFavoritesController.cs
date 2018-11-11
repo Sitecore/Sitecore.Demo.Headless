@@ -8,17 +8,17 @@ using Sitecore.HabitatHome.Fitness.Collection.Services;
 using Sitecore.HabitatHome.Fitness.Collection.Filters;
 using Sitecore.Diagnostics;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Events
+namespace Sitecore.HabitatHome.Fitness.Collection.Controllers
 {
     [RequireSscApiKey]
     [ImpersonateApiKeyUser]
     [EnableApiKeyCors]
     [SuppressFormsAuthenticationRedirect]
-    public class HabitatFitnessEventRegistrationController : Controller
+    public class HabitatFitnessEventFavoritesController : Controller
     {
         private IStringValueListFacetService facetService;
 
-        public HabitatFitnessEventRegistrationController([NotNull]IStringValueListFacetService facetService)
+        public HabitatFitnessEventFavoritesController([NotNull]IStringValueListFacetService facetService)
         {
             this.facetService = facetService;
         }
@@ -35,11 +35,11 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Events
             }
             try
             {
-                facetService.Add(data.EventId, FacetIDs.RegisteredEvents);
+                facetService.Add(data.EventId, FacetIDs.FavoriteEvents);
             }
             catch (Exception ex)
             {
-                Log.Error($"Unable to add value '{data.EventId}' to contact's '${FacetIDs.RegisteredEvents}' facet ", ex, this);
+                Log.Error($"Unable to add value '{data.EventId}' to contact's '${FacetIDs.FavoriteEvents}' facet ", ex, this);
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
             }
 
@@ -58,11 +58,11 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Events
             }
             try
             {
-                facetService.Add(data.EventId, FacetIDs.RegisteredEvents);
+                facetService.Remove(data.EventId, FacetIDs.FavoriteEvents);
             }
             catch (Exception ex)
             {
-                Log.Error($"Unable to remove value '{data.EventId}' to contact's '${FacetIDs.RegisteredEvents}' facet ", ex, this);
+                Log.Error($"Unable to remove value '{data.EventId}' to contact's '${FacetIDs.FavoriteEvents}' facet ", ex, this);
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
             }
 

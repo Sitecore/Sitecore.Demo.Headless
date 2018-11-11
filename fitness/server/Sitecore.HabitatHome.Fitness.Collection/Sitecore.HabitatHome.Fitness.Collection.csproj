@@ -93,10 +93,13 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\Events\HabitatFitnessEventRegistrationController.cs" />
-    <Compile Include="Controllers\Events\HabitatFitnessEventFavoritesController.cs" />
-    <Compile Include="Controllers\HabitatFitnessEventsController.cs" />
-    <Compile Include="Controllers\Subscriptions\HabitatFitnessSubscriptionsController.cs" />
+    <Compile Include="Controllers\HabitatFitnessEventRegistrationController.cs" />
+    <Compile Include="Controllers\HabitatFitnessEventFavoritesController.cs" />
+    <Compile Include="Controllers\HabitatFitnessIdentificationController.cs" />
+    <Compile Include="Controllers\HabitatFitnessSportsController.cs" />
+    <Compile Include="Controllers\HabitatFitnessDemographicsController.cs" />
+    <Compile Include="Controllers\HabitatFitnessSessionController.cs" />
+    <Compile Include="Controllers\HabitatFitnessSubscriptionsController.cs" />
     <Compile Include="Filters\CancelCurrentPageAttribute.cs" />
     <Compile Include="Model\EventPayload.cs" />
     <Compile Include="Model\UnsubscribePayload.cs" />
@@ -112,16 +115,18 @@
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="Services\ContactExtensions.cs" />
+    <Compile Include="Services\SportsService.cs" />
+    <Compile Include="Services\ISportsService.cs" />
+    <Compile Include="Services\IdentificationService.cs" />
     <Compile Include="Services\EventNotificationService.cs" />
+    <Compile Include="Services\DemographicsService.cs" />
+    <Compile Include="Services\IDemographicsService.cs" />
     <Compile Include="Services\IEventNotificationService.cs" />
+    <Compile Include="Services\IIdentificationService.cs" />
     <Compile Include="Services\ISessionEventSubscriptionsService.cs" />
     <Compile Include="Services\SessionEventSubscriptionsService.cs" />
     <Compile Include="Services\StringValueListFacetService.cs" />
     <Compile Include="Services\IStringValueListFacetService.cs" />
-    <Compile Include="Services\IFacetUpdateService.cs" />
-    <Compile Include="Services\IProfileUpdateService.cs" />
-    <Compile Include="Services\ProfileUpdateService.cs" />
-    <Compile Include="Services\FacetUpdateService.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Wellknown.cs" />
     <Compile Include="XConnectClientFactory.cs" />

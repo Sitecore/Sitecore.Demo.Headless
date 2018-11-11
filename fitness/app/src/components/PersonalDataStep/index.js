@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
 import ContinueButton from "../ContinueButton/";
 import { NavLink } from "react-router-dom";
-import { canUseDOM } from "../../utils";
 import { translate } from "react-i18next";
-import { setDemographicsPreferences } from "../../utils/XConnectProxy";
+import {
+  setDemographicsFacet,
+  setDemographicsProfile
+} from "../../services/DemographicsService";
 
 class PersonalDataStep extends Component {
   state = {
@@ -24,14 +26,19 @@ class PersonalDataStep extends Component {
         [event.target.name]: event.target.value
       })
     );
-
-    if (canUseDOM) {
-      localStorage.setItem(event.target.name, event.target.value);
-    }
   }
 
   handleContinueClick(event) {
-    setDemographicsPreferences()
+    const { age, gender } = this.state;
+    setDemographicsFacet(age, gender)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    setDemographicsProfile(age, gender)
       .then(response => {
         console.log(response.data);
       })
@@ -48,11 +55,7 @@ class PersonalDataStep extends Component {
       <div className="wizardStep wizardStep_personalInfo">
         <div className="wizardStep-content">
           <div className="wizardStep-header">
-            <Text
-              field={fields.title}
-              tag="h4"
-              className="wizardStep-title"
-            />
+            <Text field={fields.title} tag="h4" className="wizardStep-title" />
           </div>
           <div className="wizardStep-form-container">
             <div className="wizardStep-form">

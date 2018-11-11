@@ -1,5 +1,4 @@
 ﻿using Sitecore.Analytics.Pipelines.CommitSession;
-using Sitecore.Analytics.XConnect.Facets;
 using Sitecore.Diagnostics;
 using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Collection.Services;
@@ -46,8 +45,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
                 return;
             }
 
-            var facets = args.Session.Contact.GetFacet<IXConnectFacets>("XConnectFacets")?.Facets;
-            string[] tokens = facetService.GetFacetValues(FacetIDs.SubscriptionTokens, facets);
+            string[] tokens = facetService.GetFacetValues(FacetIDs.SubscriptionTokens, args.Session.Contact.GetXConnectFacets());
             // TODO: review this. Any notification token should work
             string token = tokens.FirstOrDefault();
 

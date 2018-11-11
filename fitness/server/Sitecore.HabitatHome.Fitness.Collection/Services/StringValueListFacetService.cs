@@ -2,6 +2,7 @@
 using Sitecore.XConnect;
 using System.Collections.Generic;
 using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
+using Sitecore.XConnect.Client;
 
 namespace Sitecore.HabitatHome.Fitness.Collection.Services
 {
@@ -74,6 +75,21 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
             }
 
             return new string[0];
+        }
+
+        public void SetFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact, [NotNull]string facetKey)
+        {
+            if (facets.TryGetValue(facetKey, out Facet facet))
+            {
+                if (facet is StringValueListFacet typedFacet)
+                {
+                    client.SetFacet(contact, facetKey, typedFacet);
+                }
+                else
+                {
+                    Log.Error($"{facetKey} facet is not of expected type. Expected {typeof(StringValueListFacet).FullName}", this);
+                }
+            }
         }
 
         protected void AddFacetValue([NotNull]string value, [NotNull]string facetKey, [NotNull]Dictionary<string, Facet> facets)

@@ -9,7 +9,7 @@ import SitecoreContextFactory from "./lib/SitecoreContextFactory";
 import config from "./temp/config";
 import Layout from "./Layout";
 import NotFound from "./NotFound";
-import { flush } from "./utils/XConnectProxy";
+import { flush } from "./services/SessionService";
 import { getUrlParams, canUseDOM } from "./utils";
 import { dataFetcher } from "./utils/dataFetcher";
 import Loading from "./components/Loading";
@@ -235,7 +235,10 @@ function getRouteData(route, language, options = {}) {
     currentUrlParams = getUrlParams(window.location.search);
   }
 
-  const systemQueryParams = { sc_lang: language, sc_apikey: config.sitecoreApiKey };
+  const systemQueryParams = {
+    sc_lang: language,
+    sc_apikey: config.sitecoreApiKey
+  };
   const queryParams = Object.assign(currentUrlParams, systemQueryParams);
 
   const fetchOptions = {
