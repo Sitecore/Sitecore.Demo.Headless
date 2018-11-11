@@ -16,6 +16,9 @@ namespace Sitecore.HabitatHome.Fitness.Collection
             serviceCollection.AddTransient<IProfileUpdateService, ProfileUpdateService>();
             serviceCollection.AddTransient<IFacetUpdateService, FacetUpdateService>();
             serviceCollection.AddTransient<IStringValueListFacetService, StringValueListFacetService>();
+            serviceCollection.AddTransient<IEventNotificationService, EventNotificationService>();
+            serviceCollection.AddTransient<ISessionEventSubscriptionsService, SessionEventSubscriptionsService>();
+
             serviceCollection.AddTransient<HabitatFitnessEventsController>();
             serviceCollection.AddTransient<HabitatFitnessEventFavoritesController>();
             serviceCollection.AddTransient<HabitatFitnessEventRegistrationController>();

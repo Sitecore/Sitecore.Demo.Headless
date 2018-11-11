@@ -16,10 +16,12 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Subscriptions
     public class HabitatFitnessSubscriptionsController : Controller
     {
         private IStringValueListFacetService facetService;
+        private ISessionEventSubscriptionsService sessionEventSubscriptionsService;
 
-        public HabitatFitnessSubscriptionsController([NotNull]IStringValueListFacetService facetService)
+        public HabitatFitnessSubscriptionsController([NotNull]IStringValueListFacetService facetService, [NotNull] ISessionEventSubscriptionsService sessionEventSubscriptionsService)
         {
             this.facetService = facetService;
+            this.sessionEventSubscriptionsService = sessionEventSubscriptionsService;
         }
 
         [ActionName("subscribe")]
@@ -45,6 +47,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Subscriptions
             try
             {
                 facetService.Add(data.EventId, FacetIDs.Subscriptions);
+                sessionEventSubscriptionsService.Add(data.EventId);
             }
             catch (Exception ex)
             {

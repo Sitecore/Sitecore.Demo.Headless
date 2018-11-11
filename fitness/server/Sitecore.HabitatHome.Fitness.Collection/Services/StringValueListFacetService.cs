@@ -54,7 +54,26 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
                 return facet.Values.Contains(facetValue);
             }
 
-            return false; 
+            return false;
+        }
+
+        public string[] GetFacetValues([NotNull]string facetKey, [NotNull]IReadOnlyDictionary<string, Facet> facets = null)
+        {
+            if (facets == null)
+            {
+                var trackerContact = ContactExtensions.GetCurrentTrackerContact();
+                Assert.IsNotNull(trackerContact, "Current contact is null");
+                facets = trackerContact.GetXConnectFacets();
+            }
+
+            StringValueListFacet facet;
+            if (facets.ContainsKey(facetKey))
+            {
+                facet = (StringValueListFacet)facets[facetKey];
+                return facet.Values.ToArray();
+            }
+
+            return new string[0];
         }
 
         protected void AddFacetValue([NotNull]string value, [NotNull]string facetKey, [NotNull]Dictionary<string, Facet> facets)

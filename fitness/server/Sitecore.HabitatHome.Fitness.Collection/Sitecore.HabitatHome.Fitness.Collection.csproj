@@ -105,18 +105,24 @@
     <Compile Include="Model\DemographicsPayload.cs" />
     <Compile Include="Model\StringArrayPayload.cs" />
     <Compile Include="Model\SportPreferencesPayload.cs" />
+    <Compile Include="Pipelines\CommitSession\SendInitialEventSubscription.cs" />
     <Compile Include="Pipelines\CommitSession\UpdateFacetsFromTracker.cs" />
     <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="Services\ContactExtensions.cs" />
+    <Compile Include="Services\EventNotificationService.cs" />
+    <Compile Include="Services\IEventNotificationService.cs" />
+    <Compile Include="Services\ISessionEventSubscriptionsService.cs" />
+    <Compile Include="Services\SessionEventSubscriptionsService.cs" />
     <Compile Include="Services\StringValueListFacetService.cs" />
     <Compile Include="Services\IStringValueListFacetService.cs" />
     <Compile Include="Services\IFacetUpdateService.cs" />
     <Compile Include="Services\IProfileUpdateService.cs" />
     <Compile Include="Services\ProfileUpdateService.cs" />
     <Compile Include="Services\FacetUpdateService.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="Wellknown.cs" />
     <Compile Include="XConnectClientFactory.cs" />
   </ItemGroup>

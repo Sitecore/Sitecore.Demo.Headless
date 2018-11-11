@@ -14,6 +14,25 @@ This repository is used to share Sitecore JSS PWA demo assets (and future “Sit
 1. cd `repo/fitness/server`
 1. Open `cake-config.json` and modify it according to your environment.
 	> You will likely need to update `ProjectFolder` and maybe even `XConnectRoot` and `WebsiteRoot`.
+	
+1. Open the `Sitecore.HabitatHome.Fitness.Collection.config` file located under `Sitecore.HabitatHome.Omni\fitness\server\Sitecore.HabitatHome.Fitness.Collection\App_Config\Include\Sitecore.HabitatHome.Fitness` folder and set the value of the `HabitatFitness.FirebaseMessagingApiKey` setting to Firebase Server key.
+
+    - How to obtain the Firebase Server key:
+      - Create a Firebase account.
+      - Login to Firebase console.
+      - Create a new project and open it.
+      - Click on the "gear" icon and access "project settings":
+       [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png]]
+ 
+      - Go to "Cloud Messaging" tab and copy the "Server key" value (create it if it doesn't exist):
+      [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/server-key.png]]
+
+	
+1. If you know where you are going to be hosting your web app, open the `Sitecore.HabitatHome.Fitness.Collection.config` file located under `Sitecore.HabitatHome.Omni\fitness\server\Sitecore.HabitatHome.Fitness.Collection\App_Config\Include\Sitecore.HabitatHome.Fitness` folder and set the value of the `HabitatFitness.PublicHostName` setting to the public facing host name.
+
+    > Leave it as (`http://localhost:3000`) if you are not sure yet.
+    > This setting will control the target url of the push notifications.
+
 1. Run `.\build.ps1`
 1. Manually copy/paste `Sitecore.HabitatHome.Fitness.Collection.Model.dll` from your the `/bin` folder of your
 Sitecore CM instsance to the `/bin` folder of your xConnect instance.
