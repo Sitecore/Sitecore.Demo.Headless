@@ -28,6 +28,7 @@ const AppRoot = ({ path, Router }) => {
     >
       <Router location={path} context={{}}>
         <Switch>
+          <Route key="/null" path="/null" component={null} />
           {routePatterns.map(routePattern => (
             <Route
               key={routePattern}

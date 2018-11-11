@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { translate } from "react-i18next";
-
+import { flush } from "../../services/SessionService";
 import logo from "../../assets/img/logo.svg";
 
 import {
@@ -30,6 +30,17 @@ class Navigation extends React.Component {
     });
   }
 
+  flushSession() {
+    flush()
+      .then(response => {
+        this.toggle();
+        console.log(response.data);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
   nav(url) {
     this.toggle();
     this.props.history.push(url);
@@ -37,7 +48,8 @@ class Navigation extends React.Component {
 
   render() {
     const { t, context } = this.props;
-    const identification = context && context.contact ? context.contact.identification : null;
+    const identification =
+      context && context.contact ? context.contact.identification : null;
 
     return (
       <div className="nav-container">
@@ -76,6 +88,16 @@ class Navigation extends React.Component {
                   </NavLink>
                 </NavItem>
               )}
+              <NavItem>
+                <NavLink
+                  tag={Link}
+                  to={"/"}
+                  onClick={() => this.flushSession()}
+                  className="nav-link"
+                >
+                  {t("flush-session")}
+                </NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

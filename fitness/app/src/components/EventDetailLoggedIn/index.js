@@ -6,6 +6,7 @@ import EventDetail from "../EventDetail";
 import RegistrationPrompt from "../RegistrationPrompt";
 import { register } from "../../services/EventService";
 import EventFavoriteButton from "../EventFavoriteButton";
+import { withRouter } from "react-router";
 
 class EventDetailLoggedIn extends React.Component {
   state = {
@@ -26,10 +27,17 @@ class EventDetailLoggedIn extends React.Component {
 
   onRegister() {
     const eventId = this.props.routeData.itemId;
+
     register(eventId)
       .then(response => {
         this.toggle();
-        window.location.reload();
+        // refreshing the current route
+        // workaround for https://github.com/ReactTraining/react-router/issues/1982#issuecomment-172040295
+        const currentLocation = this.props.history.location.pathname;
+        this.props.history.push("/null");
+        setTimeout(() => {
+          this.props.history.push(currentLocation);
+        });
       })
       .catch(err => {
         console.log(err);
@@ -78,4 +86,4 @@ class EventDetailLoggedIn extends React.Component {
   }
 }
 
-export default translate()(EventDetailLoggedIn);
+export default translate()(withRouter(EventDetailLoggedIn));

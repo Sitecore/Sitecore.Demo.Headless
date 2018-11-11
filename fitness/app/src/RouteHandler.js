@@ -9,7 +9,6 @@ import SitecoreContextFactory from "./lib/SitecoreContextFactory";
 import config from "./temp/config";
 import Layout from "./Layout";
 import NotFound from "./NotFound";
-import { flush } from "./services/SessionService";
 import { getUrlParams, canUseDOM } from "./utils";
 import { dataFetcher } from "./utils/dataFetcher";
 import Loading from "./components/Loading";
@@ -84,25 +83,9 @@ export default class RouteHandler extends React.Component {
 
     // tell i18next to sync its current language with the route language
     this.updateLanguage();
-
-    this.onUnload = this.onUnload.bind(this);
-  }
-
-  onUnload(event) {
-    if (this.state.routeData.sitecore.context.pageEditing === false) {
-      flush()
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    }
   }
 
   componentDidMount() {
-    window.addEventListener("beforeunload", this.onUnload);
-
     // if no existing routeData is present (from SSR), get Layout Service fetching the route data
     if (!this.state.routeData) {
       this.updateRouteData();
@@ -113,7 +96,6 @@ export default class RouteHandler extends React.Component {
 
   componentWillUnmount() {
     this.componentIsMounted = false;
-    window.removeEventListener("beforeunload", this.onUnload);
   }
 
   /**
