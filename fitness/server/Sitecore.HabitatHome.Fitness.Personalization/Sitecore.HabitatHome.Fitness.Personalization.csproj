@@ -88,6 +88,7 @@
     <Compile Include="Rules\GenderCondition.cs" />
     <Compile Include="Rules\IsContactSubscribedToEvent.cs" />
     <Compile Include="Rules\IsContactFavoritedEvent.cs" />
+    <Compile Include="Utils\ProfileExtensions.cs" />
     <Compile Include="Rules\SportsCondition.cs" />
     <Compile Include="Rules\SportsSkillCondition.cs" />
     <Compile Include="Services\ProductDataService.cs" />

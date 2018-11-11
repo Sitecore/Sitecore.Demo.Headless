@@ -2,7 +2,9 @@
 using Sitecore.Diagnostics;
 using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Collection.Services;
+using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
 {
@@ -51,7 +53,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
 
             foreach (var eventSubscription in eventSubscriptions)
             {
-                notificationService.SendInitialEventNotification(token, eventSubscription);
+                Task.Run(() => notificationService.SendInitialEventNotification(token, eventSubscription));
             }
         }
     }

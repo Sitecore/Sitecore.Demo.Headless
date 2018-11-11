@@ -50,7 +50,9 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
             }
 
             var eventId = eventItem.ID.Guid.ToString("D");
-            return facetService.ContainsValue(FacetKey, eventId);
+            var result = facetService.ContainsValue(FacetKey, eventId);
+            Log.Debug($"{this.GetType().Name}: facetService.ContainsValue('{FacetKey}', '{eventId}') = {result}");
+            return result;
         }
     }
 }

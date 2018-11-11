@@ -4,6 +4,7 @@ using Sitecore.Diagnostics;
 using Sitecore.XConnect.Collection.Model;
 using System;
 using System.Net;
+using System.Threading;
 
 namespace Sitecore.HabitatHome.Fitness.Collection.Services
 {
@@ -17,6 +18,8 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
 
         public void SendInitialEventNotification([NotNull]string token, [NotNull] string eventId)
         {
+            // TODO: this is temporary for testing purposes
+            Thread.Sleep(5000);
             // TODO: make db name configurable extract event info
             var eventItem = Factory.GetDatabase("master").GetItem(eventId);
             if (eventItem == null)

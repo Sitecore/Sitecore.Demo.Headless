@@ -1,4 +1,5 @@
 ﻿using Sitecore.Analytics;
+using Sitecore.Diagnostics;
 using Sitecore.Rules;
 using Sitecore.Rules.Conditions;
 
@@ -15,7 +16,9 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
                 return false;
             }  
             var contact = Tracker.Current?.Contact;
-            return contact == null ? false : contact.IdentificationLevel == Analytics.Model.ContactIdentificationLevel.Known;
+            var result = contact == null ? false : contact.IdentificationLevel == Analytics.Model.ContactIdentificationLevel.Known;
+            Log.Debug($"{this.GetType().Name}: {contact.IdentificationLevel} == Analytics.Model.ContactIdentificationLevel.Known = {result}");
+            return result;
         }
     }
 }

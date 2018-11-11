@@ -54,7 +54,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
 
                     identificationService.SetPersonalFacet(facets, client, contact);
                     identificationService.SetEmailFacet(facets, client, contact);
-
+                    demographicsService.SetFacet(facets, client, contact);
                     sportsService.SetFacet(facets, client, contact);
 
                     stringValueListFacetService.SetFacet(facets, client, contact, FacetIDs.FavoriteEvents);

@@ -45,6 +45,26 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
             }
         }
 
+        public SportsFacet ReadFacet()
+        {
+            var trackerContact = ContactExtensions.GetCurrentTrackerContact();
+            Assert.IsNotNull(trackerContact, "Current contact is null");
+
+            var facets = trackerContact.GetXConnectFacets();
+
+            if (!facets.ContainsKey(SportsFacet.DefaultKey))
+            {
+                return null;
+            }
+
+            if (facets[SportsFacet.DefaultKey] is SportsFacet facet)
+            {
+                return facet;
+            }
+
+            return null;
+        }
+
         protected void UpdateSportsFacet(SportPreferencesPayload data, Dictionary<string, Facet> facets)
         {
             SportsFacet sportsFacet;

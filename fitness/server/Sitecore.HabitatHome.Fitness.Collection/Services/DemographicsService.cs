@@ -1,5 +1,4 @@
-﻿using Sitecore.Analytics.XConnect.Facets;
-using Sitecore.Diagnostics;
+﻿using Sitecore.Diagnostics;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
 using System.Collections.Generic;
@@ -44,6 +43,68 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
                     Log.Error($"{DemographicsFacet.DefaultKey} facet is not of expected type. Expected {typeof(DemographicsFacet).FullName}", this);
                 }
             }
+        }
+
+        public string GetAgeGroup()
+        {
+            var facet = ReadDemographicsFacet();
+            if(facet == null)
+            {
+                return string.Empty;
+            }
+
+            return facet.AgeGroup;
+        }
+
+        public string GetGender()
+        {
+            var facet = ReadPersonalInformationFacet();
+            if (facet == null)
+            {
+                return string.Empty;
+            }
+
+            return facet.Gender;
+        }
+
+        protected PersonalInformation ReadPersonalInformationFacet()
+        {
+            var trackerContact = ContactExtensions.GetCurrentTrackerContact();
+            Assert.IsNotNull(trackerContact, "Current contact is null");
+
+            var facets = trackerContact.GetXConnectFacets();
+
+            if (!facets.ContainsKey(PersonalInformation.DefaultFacetKey))
+            {
+                return null;
+            }
+
+            if (facets[PersonalInformation.DefaultFacetKey] is PersonalInformation facet)
+            {
+                return facet;
+            }
+
+            return null;
+        }
+
+        protected DemographicsFacet ReadDemographicsFacet()
+        {
+            var trackerContact = ContactExtensions.GetCurrentTrackerContact();
+            Assert.IsNotNull(trackerContact, "Current contact is null");
+
+            var facets = trackerContact.GetXConnectFacets();
+
+            if (!facets.ContainsKey(DemographicsFacet.DefaultKey))
+            {
+                return null;
+            }
+
+            if (facets[DemographicsFacet.DefaultKey] is DemographicsFacet facet)
+            {
+                return facet;
+            }
+
+            return null;
         }
 
         protected void UpdateGenderProfile(DemographicsPayload data)
