@@ -53,7 +53,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
 
             foreach (var eventSubscription in eventSubscriptions)
             {
-                Task.Run(() => notificationService.SendInitialEventNotification(token, eventSubscription));
+                notificationService.SendInitialEventNotification(token, eventSubscription);
             }
         }
     }
