@@ -30,6 +30,7 @@ Setup(context =>
 
 Task("Default")
 .WithCriteria(configuration != null)
+.IsDependentOn("Copy-Sitecore-Lib")
 .IsDependentOn("Modify-PublishSettings")
 .IsDependentOn("Publish-All-Projects")
 .IsDependentOn("Apply-Xml-Transform")
@@ -55,7 +56,6 @@ Task("Quick-Deploy")
 
 Task("Copy-Sitecore-Lib")
     .Does(()=> {
-		
         var files = GetFiles( 
             $"{configuration.WebsiteRoot}/bin/Sitecore.JavaScriptServices*.dll",
             $"{configuration.WebsiteRoot}/bin/Sitecore.LayoutService*.dll");
