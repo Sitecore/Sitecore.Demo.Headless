@@ -1,8 +1,8 @@
 ﻿---
-ID: "92a03e9e-4c72-543b-a474-75b444b0be3b"
-Parent: "14c76265-ddfa-5b50-8712-4e9e7bf8c3d2"
-Template: "92ff32f7-9d1c-5ee8-964a-b0db3fd3b345"
-Path: /sitecore/content/habitatfitness/home/Data/Featured Event
+ID: "e0508fd9-e542-5a30-928a-2de3c63a9416"
+Parent: "b1c0adc1-014d-4245-9f28-808be3735c6c"
+Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
+Path: "/sitecore/content/habitatfitness/sample-events/running-event-template/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
@@ -13,7 +13,7 @@ Languages:
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Featured Event
+    Value: Number of Participants
   Versions:
   - Version: 1
     Fields:
@@ -23,13 +23,17 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "515d8219-6b20-5596-81d8-8d506f3be1db"
-      Hint: event
-      Value: 
+    - ID: "59b299b1-bc62-56cc-b686-599aa0d8100b"
+      Hint: value
+      Value: "500-1K"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\virtualssuser
-    - ID: "ffbf49a9-1fc8-5316-98ff-4a971882f4ea"
-      Hint: label
-      Value: Recommended for you
+    - ID: "741cd00c-93ab-5967-89a7-d2916c98c246"
+      Hint: name
+      Value: Number of Participants
+    - ID: "95a0cc5a-7336-50f5-a4e9-e8ba7729231d"
+      Hint: image
+      Value: |
+        <image mediaid="{D1D7AA1D-5D8C-57E9-9E75-E5170F02BF24}" />
