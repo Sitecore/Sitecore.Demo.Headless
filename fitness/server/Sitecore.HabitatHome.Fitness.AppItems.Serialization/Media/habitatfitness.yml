@@ -1,8 +1,8 @@
 ﻿---
 ID: "c6ce50db-959d-538c-bcb3-7c4905517751"
-Parent: "3d6658d8-a0bf-4e75-b3e2-d050fabcf4e1"
+Parent: "90ae357f-6171-4ea9-808c-5600b678f726"
 Template: "fe5dd826-48c6-436d-b87a-7c4210c7413b"
-Path: /sitecore/media library/habitatfitness
+Path: /sitecore/media library/Project/habitatfitness
 DB: master
 Languages:
 - Language: en

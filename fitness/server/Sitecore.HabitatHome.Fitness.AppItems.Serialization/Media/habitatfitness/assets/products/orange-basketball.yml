@@ -2,7 +2,7 @@
 ID: "a65be1a7-a67d-4c51-b551-da2a33e0c4f3"
 Parent: "9bed554c-731a-563a-8346-f4f175934935"
 Template: "f1828a2c-7e5d-4bbd-98ca-320474871548"
-Path: "/sitecore/media library/habitatfitness/assets/products/orange-basketball"
+Path: "/sitecore/media library/Project/habitatfitness/assets/products/orange-basketball"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

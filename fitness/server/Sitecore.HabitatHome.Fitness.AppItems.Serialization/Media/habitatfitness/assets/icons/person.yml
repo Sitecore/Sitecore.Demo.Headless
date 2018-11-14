@@ -2,7 +2,7 @@
 ID: "d1d7aa1d-5d8c-57e9-9e75-e5170f02bf24"
 Parent: "c64075b8-4790-5f7e-9061-8f534e0d1b3d"
 Template: "f1828a2c-7e5d-4bbd-98ca-320474871548"
-Path: /sitecore/media library/habitatfitness/assets/icons/person
+Path: /sitecore/media library/Project/habitatfitness/assets/icons/person
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

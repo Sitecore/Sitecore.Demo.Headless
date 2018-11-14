@@ -1,0 +1,18 @@
+﻿---
+ID: "a67a7c42-d896-4f3a-a0e7-091f6de94025"
+Parent: "e888e7f5-53b8-4477-898f-c43975edacce"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/habitatfitness/home/events/Canada/Alberta
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181114T185457Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod

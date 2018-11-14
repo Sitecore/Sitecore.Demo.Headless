@@ -1,0 +1,18 @@
+﻿---
+ID: "7c22b0ac-3c41-4e6b-a017-dccd7abe8edf"
+Parent: "e888e7f5-53b8-4477-898f-c43975edacce"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/habitatfitness/home/events/Canada/Nunavut
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181114T185515Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod
