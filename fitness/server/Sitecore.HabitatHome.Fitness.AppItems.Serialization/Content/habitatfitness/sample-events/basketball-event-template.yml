@@ -1,16 +1,14 @@
 ﻿---
-ID: "717be20a-3d7e-42b4-9e4c-09cb9f5d4725"
+ID: "e8a83982-6924-4435-91d2-f9ffa706c1e6"
 Parent: "e14b44b9-bf5b-4e3d-ae7e-5a26d0d8b1e3"
 Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
-Path: "/sitecore/content/habitatfitness/sample-events/golf-event-template"
+Path: "/sitecore/content/habitatfitness/sample-events/basketball-event-template"
 DB: master
+BranchID: "98791841-696b-429a-8593-49f3188306b5"
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: Office/16x16/signal_flag_checkered.png
-- ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
-  Hint: __Source Item
-  Value: 
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: 
@@ -24,7 +22,7 @@ SharedFields:
         name="Sports">
         <key
           name="Basketball"
-          value="0" />
+          value="10" />
         <key
           name="Bowling"
           value="0" />
@@ -33,7 +31,7 @@ SharedFields:
           value="0" />
         <key
           name="Golf"
-          value="10" />
+          value="0" />
         <key
           name="Kayaking"
           value="0" />
@@ -59,7 +57,7 @@ Languages:
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Golf Event Template
+    Value: Street Basketball Event Template
   Versions:
   - Version: 1
     Fields:
@@ -69,12 +67,9 @@ Languages:
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Street Basketball Santa Monica
-    - ID: "1b86697d-60ca-4d80-83fb-7555a2e6ce1c"
-      Hint: __Source
-      Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181113T195633Z
+      Value: 20181028T000508Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Street Basketball Santa Monica
@@ -84,14 +79,10 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: "{0F6824DA-28D2-46BB-801C-61F9A3E35359}"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
-        sitecore\demogod
+        sitecore\admin
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
       Value: Show off your hoops skills

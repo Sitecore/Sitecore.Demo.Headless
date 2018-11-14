@@ -27,7 +27,7 @@ SharedFields:
           value="0" />
         <key
           name="Cycling"
-          value="0" />
+          value="10" />
         <key
           name="Golf"
           value="0" />
@@ -39,7 +39,7 @@ SharedFields:
           value="0" />
         <key
           name="Running"
-          value="10" />
+          value="0" />
         <key
           name="Swimming"
           value="0" />
@@ -71,7 +71,7 @@ Languages:
       Value: 20181113T195957Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
-      Value: Running Event Template
+      Value: Cycling Event Template
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
       Value: 37.79661
@@ -81,10 +81,7 @@ Languages:
     - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
       Hint: labels
       Type: multilist
-      Value: |
-        {E65964C0-8033-4923-974E-4DEA21912EFC}
-        {86ECAB93-2D1B-4FEC-8589-E9E30B11624B}
-        {236132DE-6FFD-4FAC-ACF5-991E0A074E8A}
+      Value: "{86ECAB93-2D1B-4FEC-8589-E9E30B11624B}"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
