@@ -1,0 +1,18 @@
+﻿---
+ID: "8fe8acfa-54ea-42b6-b11f-bd5fe2520b14"
+Parent: "e2695fa6-6462-49f9-ab8d-b41ff1d578a3"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/habitatfitness/home/events/Canada/Newfoundland and Labrador/St Anthony
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181114T185556Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod

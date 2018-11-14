@@ -1,0 +1,18 @@
+﻿---
+ID: "136ac886-ddce-4f88-adf0-029e834318e7"
+Parent: "c122767d-76de-41ae-9634-5a83a1fcead3"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/habitatfitness/home/events/Canada/Quebec/Drummondville
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181114T185600Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod
