@@ -1,8 +1,8 @@
 ﻿---
-ID: "ea626909-01ea-42c7-8046-d24d2642c9be"
-Parent: "74e5bb4d-ffff-46e4-a245-30252f93898b"
+ID: "ff7e79e4-2833-45f0-817e-e538a3396e8c"
+Parent: "20f06937-b73e-47e0-9191-c2342a1a2628"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Manitoba/Selkirk/selkirk-golf-tournament/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-golf-tournament/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -33,7 +33,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185541Z
+      Value: 20181115T105552Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

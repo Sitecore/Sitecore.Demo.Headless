@@ -1,8 +1,8 @@
 ﻿---
-ID: "0bd28872-414d-467b-918d-e0f3e1e7443e"
-Parent: "1bc2bd2e-daf9-4c8a-a630-8af48a134759"
+ID: "4bc88ad7-301b-4b38-85bc-91db00f575eb"
+Parent: "c9b10528-b7d6-4030-a1bc-7634a0895c90"
 Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Manitoba/Gillam/gillam-5k-run"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/gillam/gillam-5k-run"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
@@ -59,7 +59,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20190203T000000Z
+      Value: 20200607T000000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Gillam 5K Run
@@ -68,7 +68,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185924Z
+      Value: 20181114T205711Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Gillam 5K Run
@@ -82,23 +82,23 @@ Languages:
       Hint: labels
       Type: multilist
       Value: |
-        {D5C179F6-B8AA-48F3-A1D7-64E6C33C98CE}
-        {E8FB0A8F-328D-424B-A677-1BC853561351}
-        {C1DAD80B-7CCA-4050-9817-E865FCFFA274}
+        {31D06128-03E7-47CB-987A-9A025CA2DDC9}
+        {0031DC17-FB2F-4696-9D5F-AF78E29C816F}
+        {D5EE39B2-E446-4AAB-8C34-4FE4F9888868}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: This is the race event of the year for Gillam. Challenge yourself to a 5K Run and join others with the same goals.
+      Value: The Gillam 5K Run is the only Gold Label 5K Run event in Canada and one of only four  Gold Label 5K Runs in the world. The Gillam 5K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the 5K Run Championships.
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
-      Value: Long Description. This is the race event of the year for Gillam. Challenge yourself to a 5K Run and join others with the same goals.
+      Value: Long Description. The Gillam 5K Run is the only Gold Label 5K Run event in Canada and one of only four  Gold Label 5K Runs in the world. The Gillam 5K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the 5K Run Championships.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-94.7000"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running07-800x410" mediaid="{F1BBE6C0-8F0E-48B4-8AE4-A3C187B3C9BB}" />
+        <image alt="running11-800x410" mediaid="{AADAE825-7603-4C36-9EA4-D84DD1F364B7}" />

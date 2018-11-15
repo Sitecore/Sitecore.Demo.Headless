@@ -1,0 +1,22 @@
+﻿---
+ID: "c0fe4ca2-e9b6-4153-b8cc-90d3b1e4697e"
+Parent: "5b1526f3-e3c1-426a-830d-1b3de50839c2"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/kamloops"
+DB: master
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Kamloops
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181114T205717Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod

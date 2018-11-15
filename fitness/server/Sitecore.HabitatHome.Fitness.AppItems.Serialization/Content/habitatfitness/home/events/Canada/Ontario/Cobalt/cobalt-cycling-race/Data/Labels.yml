@@ -1,8 +1,8 @@
 ﻿---
-ID: "16ae20f0-0e65-4b62-9854-3ac11b11ee57"
-Parent: "a4a5be5d-0613-4a04-b646-c0a49bbb7420"
+ID: "6aa2e523-3ff5-42a0-abfb-5578fc7843dc"
+Parent: "f8954b7e-f6db-48db-9daa-69e31b6906b6"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Ontario/Cobalt/cobalt-cycling-race/Data/Labels"
+Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/cobalt/cobalt-cycling-race/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -31,7 +31,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185703Z
+      Value: 20181115T105756Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

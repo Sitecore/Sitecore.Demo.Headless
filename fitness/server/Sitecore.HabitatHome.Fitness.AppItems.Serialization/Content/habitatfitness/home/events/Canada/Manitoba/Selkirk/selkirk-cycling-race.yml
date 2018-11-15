@@ -1,8 +1,8 @@
 ﻿---
-ID: "840d28df-4876-47f5-a648-476d19de912a"
-Parent: "72e1f40b-7be0-41a4-98bf-2bc22fc5c5ad"
+ID: "f4246dd7-2646-4fc8-aa4e-1a8c6ed2f8a1"
+Parent: "2e02a289-dc71-40c5-a978-558fd2736b0b"
 Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Manitoba/Selkirk/selkirk-cycling-race"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-cycling-race"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
@@ -59,7 +59,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20191008T000000Z
+      Value: 20190106T000000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Selkirk Cycling Race
@@ -68,7 +68,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185653Z
+      Value: 20181115T105746Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Selkirk Cycling Race
@@ -82,22 +82,22 @@ Languages:
       Hint: labels
       Type: multilist
       Value: |
-        {93DB38EC-E13C-4175-B352-14C1D5EDFF7D}
-        {6473BAB0-945F-4D36-B99B-6BE70E3E0480}
+        {AC673C7E-2FFA-4EA7-AD3A-FDD9A5154F54}
+        {910E746D-83FD-41E2-8D20-D29C5C40E3FE}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: "The race in Selkirk starts at the old railway station and heads north on West Creek Road. Take a left onto Upper Fairfield Drive and continue straight until taking a right on Honeypot Rd. Follow Honeypot north to a 4-way intersection and take a right. Follow 76 Rd back to West Creek road and take that back to the start. The finishing line is at the Railway Crossing sign about a hundred yards south of the starting area."
+      Value: Selkirk Road Race. To get to the start, go up RT 38 and turn left on West Creek road, follow for 1/2 mile to start/finish area. Course goes out West Creek 5 miles, left turn on Back West Creek, then another immediate right puts you back on West Creek. Finish is at the Rail Road Crossing sign.
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
-      Value: "Long Description. The race in Selkirk starts at the old railway station and heads north on West Creek Road. Take a left onto Upper Fairfield Drive and continue straight until taking a right on Honeypot Rd. Follow Honeypot north to a 4-way intersection and take a right. Follow 76 Rd back to West Creek road and take that back to the start. The finishing line is at the Railway Crossing sign about a hundred yards south of the starting area."
+      Value: Long Description. Selkirk Road Race. To get to the start, go up RT 38 and turn left on West Creek road, follow for 1/2 mile to start/finish area. Course goes out West Creek 5 miles, left turn on Back West Creek, then another immediate right puts you back on West Creek. Finish is at the Rail Road Crossing sign.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-96.8833"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="cycling" mediaid="{2D68C915-4484-4866-B611-1EBD57C814FF}" />
+        <image alt="cycling" mediaid="{745358F9-B88B-47B2-85B4-C24BB397F1BD}" />

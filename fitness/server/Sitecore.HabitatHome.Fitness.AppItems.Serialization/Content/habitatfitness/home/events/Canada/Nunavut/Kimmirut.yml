@@ -1,17 +1,21 @@
 ﻿---
-ID: "785daf97-c6c3-415c-9e85-7702f1bd7abc"
-Parent: "7c22b0ac-3c41-4e6b-a017-dccd7abe8edf"
+ID: "ad1a4ffc-314a-4e4f-8e4c-d9ede8c7fa4b"
+Parent: "dec00f19-7edc-4602-8128-08159edd4e28"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: /sitecore/content/habitatfitness/home/events/Canada/Nunavut/Kimmirut
+Path: /sitecore/content/habitatfitness/home/events/canada/nunavut/kimmirut
 DB: master
 Languages:
 - Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Kimmirut
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185517Z
+      Value: 20181114T205910Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

@@ -1,8 +1,8 @@
 ﻿---
-ID: "95113dff-293e-4f1f-831e-150c722c23ea"
-Parent: "d4df2494-f6d6-4001-a630-4cb99e0dc68b"
+ID: "5bdd0ab6-a76c-4b19-b2b4-8acf0dda7e18"
+Parent: "79c7eb81-a6e9-434a-a023-32ccdedd2a57"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Ontario/Hearst/hearst-marathon/Data/Labels"
+Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/hearst/hearst-marathon/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -31,7 +31,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T190104Z
+      Value: 20181114T205956Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

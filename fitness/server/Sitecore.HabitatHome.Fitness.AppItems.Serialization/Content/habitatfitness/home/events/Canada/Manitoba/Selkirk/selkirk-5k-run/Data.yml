@@ -1,8 +1,8 @@
 ﻿---
-ID: "5059e3ba-4f75-4eaf-ab94-bf21c0b934fe"
-Parent: "41407193-f9ea-414f-a4ea-f0e8992e3936"
+ID: "cac7d054-e50f-4b80-afb0-0cb0abdbc3f8"
+Parent: "77dc862b-f393-4bd7-b03c-bf029fb20470"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Manitoba/Selkirk/selkirk-5k-run/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-5k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185905Z
+      Value: 20181114T205623Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

@@ -1,8 +1,8 @@
 ﻿---
-ID: "382a85df-15c5-425b-982d-8f005ab9df54"
-Parent: "1777f925-9b40-42a8-a85e-f5313ab5383f"
+ID: "fff263be-be95-4f5c-ab39-7dc59f5ff7cc"
+Parent: "21c029dd-1e02-4297-87c4-dbab9e5fe466"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Nunavut/Iqaluit/iqaluit-cycling-race/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/iqaluit/iqaluit-cycling-race/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185658Z
+      Value: 20181115T105751Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

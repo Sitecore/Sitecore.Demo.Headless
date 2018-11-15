@@ -1,8 +1,8 @@
 ﻿---
-ID: "fb410284-061c-4f47-b5a1-e0e3c9defbf8"
-Parent: "785daf97-c6c3-415c-9e85-7702f1bd7abc"
+ID: "1dfcd0d3-4750-4cc6-aa94-aaea700c7642"
+Parent: "ad1a4ffc-314a-4e4f-8e4c-d9ede8c7fa4b"
 Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Nunavut/Kimmirut/kimmirut-5k-run"
+Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/kimmirut/kimmirut-5k-run"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
@@ -59,7 +59,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20200710T000000Z
+      Value: 20181229T000000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Kimmirut 5K Run
@@ -68,7 +68,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T190031Z
+      Value: 20181114T205911Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Kimmirut 5K Run
@@ -82,23 +82,23 @@ Languages:
       Hint: labels
       Type: multilist
       Value: |
-        {327F0AB6-E3C9-4DD9-81FE-850C6C31D0D2}
-        {9ACA7D35-5C4E-4645-B021-7BBF3B96345F}
-        {7C267ACE-17FB-4C2B-B697-7D2CCE064984}
+        {8256E8E5-8876-4674-A61A-5A93FF680A1F}
+        {E676C531-2101-4591-9CAD-6CCF78B2F838}
+        {C6A8DACC-9120-43F7-B6C7-D3E1BAD34352}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: This is the race event of the year for Kimmirut. Challenge yourself to a 5K Run and join others with the same goals.
+      Value: The Kimmirut 5K Run takes participants past Kimmirut's historic buildings for a 5 tour of some of Kimmirut's biggest landmarks.
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
-      Value: Long Description. This is the race event of the year for Kimmirut. Challenge yourself to a 5K Run and join others with the same goals.
+      Value: Long Description. The Kimmirut 5K Run takes participants past Kimmirut's historic buildings for a 5 tour of some of Kimmirut's biggest landmarks.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-69.8833"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running03-800x410" mediaid="{CAB63A2E-91D6-45C1-B462-2EEF671D838C}" />
+        <image alt="running11-800x410" mediaid="{AADAE825-7603-4C36-9EA4-D84DD1F364B7}" />

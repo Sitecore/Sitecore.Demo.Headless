@@ -1,8 +1,8 @@
 ﻿---
-ID: "e87958e3-640a-493f-ae37-55cb9f8204c1"
-Parent: "840d28df-4876-47f5-a648-476d19de912a"
+ID: "7b8a131a-cd12-489d-a8c7-7f6275469222"
+Parent: "f4246dd7-2646-4fc8-aa4e-1a8c6ed2f8a1"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Manitoba/Selkirk/selkirk-cycling-race/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-cycling-race/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185654Z
+      Value: 20181115T105746Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 
