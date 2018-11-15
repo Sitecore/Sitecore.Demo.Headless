@@ -1,8 +1,8 @@
 ﻿---
-ID: "3b3adbdf-2e92-407f-8690-bec6e4cf8ba0"
-Parent: "dcea50bb-bb3e-4b0b-821f-8485e1573368"
+ID: "96ce64c7-514a-43c5-be69-c85574075cde"
+Parent: "3afe3c05-5b58-4078-a23a-cb99617f0e19"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Ontario/Chapleau/chapleau-cycling-race/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/chapleau/chapleau-cycling-race/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185723Z
+      Value: 20181115T105817Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

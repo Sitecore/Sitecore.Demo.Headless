@@ -1,0 +1,104 @@
+﻿---
+ID: "53d072d4-8758-430b-8b4d-9509c23c66e8"
+Parent: "fc2ce06c-e71d-406c-bf26-247bfe1e7058"
+Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/igloolik/igloolik-half-marathon"
+DB: master
+SharedFields:
+- ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
+  Hint: __Source Item
+  Value: 
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf"
+        name="Sports">
+        <key
+          name="Basketball"
+          value="0" />
+        <key
+          name="Bowling"
+          value="0" />
+        <key
+          name="Cycling"
+          value="0" />
+        <key
+          name="Golf"
+          value="0" />
+        <key
+          name="Kayaking"
+          value="0" />
+        <key
+          name="Rock Climbing"
+          value="0" />
+        <key
+          name="Running"
+          value="10" />
+        <key
+          name="Swimming"
+          value="0" />
+        <key
+          name="Volleyball"
+          value="0" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Igloolik Half Marathon
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
+      Hint: date
+      Value: 20191026T000000Z
+    - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
+      Hint: name
+      Value: Igloolik Half Marathon
+    - ID: "1b86697d-60ca-4d80-83fb-7555a2e6ce1c"
+      Hint: __Source
+      Value: 
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181114T205810Z
+    - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
+      Hint: pageTitle
+      Value: Igloolik Half Marathon
+    - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
+      Hint: latitude
+      Value: 69.2565
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
+      Hint: labels
+      Type: multilist
+      Value: |
+        {09F4961B-B7B1-4489-B16B-18267E6985AB}
+        {F228388B-F591-4CD7-BC94-4FD293409834}
+        {99218093-B7D7-45B9-90AE-D1283C1579BA}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod
+    - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
+      Hint: description
+      Value: Experience Igloolik's diversity and beauty with a Half Marathon that touches all aspects of its culture, and finishes with one hella awesome party.
+    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
+      Hint: longDescription
+      Value: Long Description. Experience Igloolik's diversity and beauty with a Half Marathon that touches all aspects of its culture, and finishes with one hella awesome party.
+    - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
+      Hint: longitude
+      Value: "-81.7936"
+    - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
+      Hint: image
+      Value: |
+        <image alt="running08-800x410" mediaid="{EE8A3FB5-55E9-4F8A-AB8F-E91226B74947}" />

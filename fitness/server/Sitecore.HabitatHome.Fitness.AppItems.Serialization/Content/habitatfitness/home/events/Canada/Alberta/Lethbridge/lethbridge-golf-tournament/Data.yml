@@ -1,8 +1,8 @@
 ﻿---
-ID: "8a8d5c58-9433-462b-9bd3-68ed0f43d58e"
-Parent: "75b3ff3d-6365-4594-b682-0740a3f47ae4"
+ID: "d115473d-2b22-43c0-8dfd-f1b588301a25"
+Parent: "ac39f140-95d0-4b3a-a7d1-b8cff3c3614b"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Alberta/Lethbridge/lethbridge-golf-tournament/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/alberta/lethbridge/lethbridge-golf-tournament/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -33,7 +33,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185555Z
+      Value: 20181115T105603Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

@@ -1,8 +1,8 @@
 ﻿---
-ID: "a34a4a23-806c-491e-9406-ace299ae0920"
-Parent: "c546812e-756e-43c9-8046-b9a9bf119790"
+ID: "7c794200-13ff-4656-a145-fe3a2442c032"
+Parent: "88073da3-9834-4e0e-96ab-1dd3aa13ef73"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Ontario/London/london-cycling-race/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/london/london-cycling-race/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185713Z
+      Value: 20181115T105806Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

@@ -1,8 +1,8 @@
 ﻿---
-ID: "74e5bb4d-ffff-46e4-a245-30252f93898b"
-Parent: "72e1f40b-7be0-41a4-98bf-2bc22fc5c5ad"
+ID: "20f06937-b73e-47e0-9191-c2342a1a2628"
+Parent: "2e02a289-dc71-40c5-a978-558fd2736b0b"
 Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Manitoba/Selkirk/selkirk-golf-tournament"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-golf-tournament"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -65,7 +65,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20200426T000000Z
+      Value: 20191020T000000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Selkirk Golf Tournament
@@ -74,7 +74,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185541Z
+      Value: 20181115T105552Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Selkirk Golf Tournament
@@ -87,21 +87,21 @@ Languages:
     - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
       Hint: labels
       Type: multilist
-      Value: "{812EDEA6-7696-4860-86B6-172125ADE190}"
+      Value: "{BDF937C3-F391-440C-8C1C-2F0309912053}"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: "Selkirk course was named the Best Public Golf Course last year, Best Layout, Best Conditioning, and it had the Best Greens and the Best Par-4 (No. 1). More importantly, it also had the Best Customer Service!"
+      Value: "Enjoy the breathtaking view of this course in the city of Selkirk in Canada. Opening with a beautiful par-five featuring majestic pines down the right hand side, the golf course gives you a hint of what to expect."
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
-      Value: "Long Description. Selkirk course was named the Best Public Golf Course last year, Best Layout, Best Conditioning, and it had the Best Greens and the Best Par-4 (No. 1). More importantly, it also had the Best Customer Service!"
+      Value: "Long Description. Enjoy the breathtaking view of this course in the city of Selkirk in Canada. Opening with a beautiful par-five featuring majestic pines down the right hand side, the golf course gives you a hint of what to expect."
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-96.8833"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="golf" mediaid="{5A60333C-E988-473E-BED2-0470032843EC}" />
+        <image alt="golf" mediaid="{17F4B6BB-82C1-4543-95A1-6E496D639D50}" />

@@ -1,8 +1,8 @@
 ﻿---
-ID: "429ad3ab-0fdd-4005-bdb9-329d7f955ecc"
-Parent: "ab349d4e-6058-4023-8c75-a0b5e205d636"
+ID: "4bb8e019-1676-4fdd-8ec3-2cbd83ddce88"
+Parent: "6bb70bf7-5362-4f4e-8cfa-1b62eb9a1767"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Nunavut/Arviat/arviat-cycling-race/Data/Labels"
+Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/arviat/arviat-cycling-race/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -31,7 +31,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185728Z
+      Value: 20181115T105822Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

@@ -1,8 +1,8 @@
 ﻿---
-ID: "1812acea-395e-46eb-833b-7e9f652ea7d7"
-Parent: "cb21c9c1-af1e-43a5-90d2-2f2c68bae575"
+ID: "e95fd5f5-dba4-429e-b125-b5e845ab82f7"
+Parent: "dc3e1c79-1603-4c09-b656-24676d9032f1"
 Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Saskatchewan/Weyburn/weyburn-half-marathon"
+Path: "/sitecore/content/habitatfitness/home/events/canada/saskatchewan/weyburn/weyburn-half-marathon"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
@@ -59,7 +59,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20200704T000000Z
+      Value: 20200506T000000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Weyburn Half Marathon
@@ -68,7 +68,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T190035Z
+      Value: 20181114T205914Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Weyburn Half Marathon
@@ -82,23 +82,23 @@ Languages:
       Hint: labels
       Type: multilist
       Value: |
-        {6E2E5D7D-5404-4E55-B496-0D074F36F796}
-        {5A8CC197-CD7A-484E-A457-3840623847D4}
-        {87A20FB7-9BBD-44F8-AE2A-4DCAA775D5E7}
+        {C6C8A461-3A57-44B6-971C-1715A2CE29BD}
+        {ED97781C-62F7-4A75-8932-45E8A72430B1}
+        {87B44D57-0B89-4E4E-8000-496A13ACFE63}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: The Weyburn Half Marathon course is a scenic tour through the Weyburn, passing notable neighborhoods and attractions
+      Value: The Weyburn Half Marathon is the only Gold Label Half Marathon event in Canada and one of only four  Gold Label Half Marathons in the world. The Weyburn Half Marathon attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the Half Marathon Championships.
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
-      Value: Long Description. The Weyburn Half Marathon course is a scenic tour through the Weyburn, passing notable neighborhoods and attractions
+      Value: Long Description. The Weyburn Half Marathon is the only Gold Label Half Marathon event in Canada and one of only four  Gold Label Half Marathons in the world. The Weyburn Half Marathon attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the Half Marathon Championships.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-103.8500"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running08-800x410" mediaid="{EE8A3FB5-55E9-4F8A-AB8F-E91226B74947}" />
+        <image alt="running06-800x410" mediaid="{E677FCBB-45F1-4A47-A17C-FF5F81E97D37}" />

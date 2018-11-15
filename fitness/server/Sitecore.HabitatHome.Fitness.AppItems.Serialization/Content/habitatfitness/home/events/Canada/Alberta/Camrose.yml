@@ -1,17 +1,21 @@
 ﻿---
-ID: "d6cd6832-7a5c-4c92-86d1-4ce4d9cfa8de"
-Parent: "a67a7c42-d896-4f3a-a0e7-091f6de94025"
+ID: "fe0c5481-a5a0-41ee-b3aa-9ef3b9f9cffe"
+Parent: "a89960a9-11f8-4dd9-8308-72af6f03beb6"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: /sitecore/content/habitatfitness/home/events/Canada/Alberta/Camrose
+Path: /sitecore/content/habitatfitness/home/events/canada/alberta/camrose
 DB: master
 Languages:
 - Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Camrose
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185458Z
+      Value: 20181114T205705Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

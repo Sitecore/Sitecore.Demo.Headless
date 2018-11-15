@@ -1,8 +1,8 @@
 ﻿---
-ID: "0fb75386-308c-43bb-8b3e-de3cd52d1704"
-Parent: "c14317dc-d65a-4f96-a7db-e0219b6ff641"
+ID: "1c4f7476-2b32-4860-b46e-0663a46bae15"
+Parent: "7dca6d2b-4aa4-40ea-917c-5b660e9a11a5"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Manitoba/Churchill/churchill-10k-run/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/churchill/churchill-10k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T190028Z
+      Value: 20181114T205902Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

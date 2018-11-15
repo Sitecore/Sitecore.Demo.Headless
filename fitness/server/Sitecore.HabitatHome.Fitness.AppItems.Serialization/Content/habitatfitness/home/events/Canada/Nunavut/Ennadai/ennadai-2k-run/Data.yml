@@ -1,8 +1,8 @@
 ﻿---
-ID: "cb9c0e15-d5cb-4330-af0b-a2169e7e1d0f"
-Parent: "0bf5535a-14a7-4627-8435-419dae7b046b"
+ID: "78399a9a-50e0-4290-8851-fb09ab43b25f"
+Parent: "5e5284d8-44b2-45bc-a151-6c97467c0328"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Nunavut/Ennadai/ennadai-2k-run/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/ennadai/ennadai-2k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T190025Z
+      Value: 20181114T205855Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 
