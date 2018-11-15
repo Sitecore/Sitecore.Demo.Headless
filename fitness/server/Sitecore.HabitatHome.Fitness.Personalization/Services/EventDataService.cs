@@ -24,7 +24,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
                 return Enumerable.Empty<Item>();
             }
 
-            return rootItem.GetChildren(ChildListOptions.IgnoreSecurity | ChildListOptions.SkipSorting)
+            return rootItem.Axes.GetDescendants()
                                 .Where(eventItem => eventItem.TemplateID.Guid.Equals(templateId) &&
                                                     EventDateInFuture(eventItem))
                                 .OrderBy(eventItem => eventItem[Wellknown.FieldIds.Events.Date]);

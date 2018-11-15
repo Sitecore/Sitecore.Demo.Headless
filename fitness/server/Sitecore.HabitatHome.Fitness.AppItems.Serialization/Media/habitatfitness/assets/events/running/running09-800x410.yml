@@ -1,8 +1,8 @@
 ﻿---
 ID: "bd5b1d1c-2105-497c-97c4-83231b34255a"
-Parent: "6c93d0b9-d496-59e1-8805-072d15c3bafc"
+Parent: "ca9c4161-1ecc-48f3-9086-730b8d880483"
 Template: "daf085e8-602e-43a6-8299-038ff171349f"
-Path: "/sitecore/media library/Project/habitatfitness/assets/events/running09-800x410"
+Path: "/sitecore/media library/Project/habitatfitness/assets/events/running/running09-800x410"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
