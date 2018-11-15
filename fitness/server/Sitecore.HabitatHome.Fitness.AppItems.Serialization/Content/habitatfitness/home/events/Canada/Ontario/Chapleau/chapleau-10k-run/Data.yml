@@ -1,8 +1,8 @@
 ﻿---
-ID: "817adf5d-0eb3-40b5-bbaa-aa594b27f289"
-Parent: "e25106ef-a9aa-48fe-b7d8-c329ea5d923f"
+ID: "f2ff0d88-104d-4a58-a9ce-6452523916ae"
+Parent: "1bb98949-3dbd-4cba-ab0e-2d7543ea94fc"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Ontario/Chapleau/chapleau-10k-run/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/chapleau/chapleau-10k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T190047Z
+      Value: 20181114T205926Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

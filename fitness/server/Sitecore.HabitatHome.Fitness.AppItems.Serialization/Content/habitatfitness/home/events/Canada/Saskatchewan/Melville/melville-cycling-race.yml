@@ -1,8 +1,8 @@
 ﻿---
-ID: "b9b8a357-1c29-40eb-878b-c062adc61fe1"
-Parent: "fe51a2ff-481e-44af-8c7c-1d4899d30166"
+ID: "a518297f-b0b9-419e-a58e-bcfc719044cb"
+Parent: "22113268-a904-4ce9-a5d4-c2edcc981f48"
 Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Saskatchewan/Melville/melville-cycling-race"
+Path: "/sitecore/content/habitatfitness/home/events/canada/saskatchewan/melville/melville-cycling-race"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
@@ -59,7 +59,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20200917T000000Z
+      Value: 20200422T000000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Melville Cycling Race
@@ -68,7 +68,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185656Z
+      Value: 20181115T105748Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Melville Cycling Race
@@ -82,18 +82,18 @@ Languages:
       Hint: labels
       Type: multilist
       Value: |
-        {4B7CBCEB-29DA-4F01-AE0B-CFC5D14DA240}
-        {40C03E5F-780B-4797-A1EC-C3412450E3BC}
+        {82909B44-7771-49CA-9905-3F030DBBF5A1}
+        {017D2DD4-FA62-4C9B-9C89-E10145D9FB04}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: A  hilly road race course starting near the fishing access parking lot in Port Crane. The finish is an orange cone  a few hundred yards before the Fireside Inn Melville.
+      Value: Melville Road Race. To get to the start, go up RT 38 and turn left on West Creek road, follow for 1/2 mile to start/finish area. Course goes out West Creek 5 miles, left turn on Back West Creek, then another immediate right puts you back on West Creek. Finish is at the Rail Road Crossing sign.
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
-      Value: Long Description. A  hilly road race course starting near the fishing access parking lot in Port Crane. The finish is an orange cone  a few hundred yards before the Fireside Inn Melville.
+      Value: Long Description. Melville Road Race. To get to the start, go up RT 38 and turn left on West Creek road, follow for 1/2 mile to start/finish area. Course goes out West Creek 5 miles, left turn on Back West Creek, then another immediate right puts you back on West Creek. Finish is at the Rail Road Crossing sign.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-102.8000"

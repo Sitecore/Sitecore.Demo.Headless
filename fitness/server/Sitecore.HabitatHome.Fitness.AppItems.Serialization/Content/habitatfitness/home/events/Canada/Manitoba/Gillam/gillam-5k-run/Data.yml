@@ -1,8 +1,8 @@
 ﻿---
-ID: "110b69dc-60f8-4afe-ac19-bcbd27c68777"
-Parent: "0bd28872-414d-467b-918d-e0f3e1e7443e"
+ID: "f2486997-d6c7-4f85-b882-5070e33b3aa5"
+Parent: "4bc88ad7-301b-4b38-85bc-91db00f575eb"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Manitoba/Gillam/gillam-5k-run/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/gillam/gillam-5k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185925Z
+      Value: 20181114T205712Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

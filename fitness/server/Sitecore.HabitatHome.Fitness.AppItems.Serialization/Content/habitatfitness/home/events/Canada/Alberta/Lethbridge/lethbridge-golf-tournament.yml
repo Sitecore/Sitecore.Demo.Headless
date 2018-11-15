@@ -1,8 +1,8 @@
 ﻿---
-ID: "75b3ff3d-6365-4594-b682-0740a3f47ae4"
-Parent: "8ce90fe5-d082-4f9c-a79d-2c20745dbbdb"
+ID: "ac39f140-95d0-4b3a-a7d1-b8cff3c3614b"
+Parent: "efccc729-09b9-45e5-8087-e664014315fe"
 Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Alberta/Lethbridge/lethbridge-golf-tournament"
+Path: "/sitecore/content/habitatfitness/home/events/canada/alberta/lethbridge/lethbridge-golf-tournament"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -65,7 +65,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20200325T000000Z
+      Value: 20201027T000000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Lethbridge Golf Tournament
@@ -74,7 +74,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185555Z
+      Value: 20181115T105603Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Lethbridge Golf Tournament
@@ -87,7 +87,7 @@ Languages:
     - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
       Hint: labels
       Type: multilist
-      Value: "{C8E3B65C-9AA0-4497-A6B6-CF777421263B}"
+      Value: "{7712F0CA-8233-46EE-BDE2-833486F21CF0}"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
@@ -104,4 +104,4 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="golf" mediaid="{978F9236-8F42-4295-A591-49FD12C930EC}" />
+        <image alt="golf" mediaid="{17F4B6BB-82C1-4543-95A1-6E496D639D50}" />

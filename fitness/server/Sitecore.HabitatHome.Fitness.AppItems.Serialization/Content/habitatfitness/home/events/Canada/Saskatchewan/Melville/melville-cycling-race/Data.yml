@@ -1,8 +1,8 @@
 ﻿---
-ID: "3ab8adb5-9f9b-4fde-acfc-fee4c0999e27"
-Parent: "b9b8a357-1c29-40eb-878b-c062adc61fe1"
+ID: "efbf8404-bbf8-4b82-be69-53a68781afb4"
+Parent: "a518297f-b0b9-419e-a58e-bcfc719044cb"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Saskatchewan/Melville/melville-cycling-race/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/saskatchewan/melville/melville-cycling-race/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185656Z
+      Value: 20181115T105749Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

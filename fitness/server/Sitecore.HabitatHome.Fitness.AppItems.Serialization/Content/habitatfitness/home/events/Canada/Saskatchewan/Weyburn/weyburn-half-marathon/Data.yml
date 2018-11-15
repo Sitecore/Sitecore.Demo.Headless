@@ -1,8 +1,8 @@
 ﻿---
-ID: "0b102e9f-1046-4481-81e3-c03dc7969c0b"
-Parent: "1812acea-395e-46eb-833b-7e9f652ea7d7"
+ID: "0f1202a1-24b7-4f03-a595-317472977fbf"
+Parent: "e95fd5f5-dba4-429e-b125-b5e845ab82f7"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Saskatchewan/Weyburn/weyburn-half-marathon/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/saskatchewan/weyburn/weyburn-half-marathon/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T190035Z
+      Value: 20181114T205915Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

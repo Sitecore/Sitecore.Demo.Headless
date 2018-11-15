@@ -1,8 +1,8 @@
 ﻿---
-ID: "793ef83f-6c76-445a-ba43-44e17b9d8ea3"
-Parent: "fb410284-061c-4f47-b5a1-e0e3c9defbf8"
+ID: "52d2b756-29e5-42be-83c3-57d66722b586"
+Parent: "1dfcd0d3-4750-4cc6-aa94-aaea700c7642"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Nunavut/Kimmirut/kimmirut-5k-run/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/kimmirut/kimmirut-5k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T190032Z
+      Value: 20181114T205911Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

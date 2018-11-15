@@ -1,8 +1,8 @@
 ﻿---
-ID: "bf567ed5-80c4-47a3-bf25-a1d4c67cfe69"
-Parent: "756de474-62b3-4121-a37d-4715668bf85f"
+ID: "f2a854f5-9961-467e-8853-14a0b6740b26"
+Parent: "520034a8-3d83-4bce-aa18-0dfc87c705e5"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/Canada/Manitoba/Steinbach/steinbach-5k-run/Data"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/steinbach/steinbach-5k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -30,7 +30,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185910Z
+      Value: 20181114T205647Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

@@ -1,17 +1,21 @@
 ﻿---
-ID: "1bc2bd2e-daf9-4c8a-a630-8af48a134759"
-Parent: "fc9dfa31-36c7-4e55-bb0b-23d3f4dcf704"
+ID: "c9b10528-b7d6-4030-a1bc-7634a0895c90"
+Parent: "003b56bb-26d5-4865-8189-2ff7eb8e0c04"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: /sitecore/content/habitatfitness/home/events/Canada/Manitoba/Gillam
+Path: /sitecore/content/habitatfitness/home/events/canada/manitoba/gillam
 DB: master
 Languages:
 - Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Gillam
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T185924Z
+      Value: 20181114T205711Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
