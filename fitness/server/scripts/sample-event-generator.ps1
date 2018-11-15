@@ -2,10 +2,10 @@
 $citiesFile = "C:\temp\worldcities.csv\worldcities.csv"
 $cities = Import-Csv $citiesFile | select city_ascii, country, iso2, admin_name, lat, lng | Where-object {$_.iso2 -eq "CA"} | ConvertTo-Json | ConvertFrom-Json
 
-$sport = "running" # possible values golf, basketball, running, cycling
+$sport = "golf" # possible values golf, basketball, running, cycling
 
-$modCities = 6 # Modulus factor for selecting a subset of cities (2 = every other city, 5 = every 5 cities)
-$maxEvents = 2 # Maximum number of events per city.
+$modCities = 20 # Modulus factor for selecting a subset of cities (2 = every other city, 5 = every 5 cities)
+$maxEvents = 1 # Maximum number of events per city.
 
 $rootPath = "master://content/habitatfitness/home/events/"
 
@@ -55,21 +55,35 @@ Function GetOrCreateCityFolder {
         [string] $Province,
         [string] $City
     )
-    $countryPath = ("{0}/{1}" -f $BasePath, $Country)
+    $countryPath = ("{0}/{1}" -f $BasePath, $Country.Replace(' ','-').ToLower())
     
     if (!(Test-Path -Path $countryPath)) {
         # Create Country
-        New-Item -Path $countryPath -ItemType "/Common/Folder" > $null
+         New-Item -Path $countryPath -ItemType "/Common/Folder" > $null
+        $countryItem = Get-Item $countryPath
+        $countryItem.Editing.BeginEdit() > $null
+        $countryItem["__Display name"] = $Country
+        $countryItem.Editing.EndEdit() > $null
+
     }
     
-    $provincePath = ("{0}/{1}" -f $countryPath, $Province)
+
+    $provincePath = ("{0}/{1}" -f $countryPath, $Province.Replace(' ','-').ToLower())
     if (!(Test-Path -Path $provincePath)) {
         New-Item -Path $provincePath -ItemType "/Common/Folder" > $null
-        
+        $provinceItem = Get-Item $provincePath
+        $provinceItem.Editing.BeginEdit() > $null
+        $provinceItem["__Display name"] = $Province
+        $provinceItem.Editing.EndEdit() > $null
     }
-    $cityPath = ("{0}/{1}" -f $provincePath, $City)
+    $cityPath = ("{0}/{1}" -f $provincePath, $City.Replace(' ','-').Replace("'","").ToLower())
     if (!(Test-Path -Path $cityPath)) {
-        New-Item -Path $cityPath -ItemType "/Common/Folder" > $null
+         New-Item -Path $cityPath -ItemType "/Common/Folder" > $null
+         $cityItem = Get-Item $cityPath
+         
+         $cityItem.Editing.BeginEdit() > $null
+        $cityItem["__Display name"] = $City
+        $cityItem.Editing.EndEdit() > $null
     }
     return $cityPath.ToString()
 }
