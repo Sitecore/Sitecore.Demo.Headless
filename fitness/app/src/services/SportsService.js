@@ -1,14 +1,14 @@
-import { execute } from "./GenericService";
+import { post } from "./GenericService";
 import { required } from "../utils";
 
 export function setSportsFacets(sportRatings = required()) {
-  return execute("/sports/facet", {
+  return post("/sports/facet", {
     Ratings: sportRatings
   });
 }
 
 export function setSportsProfile(sportRatings = required()) {
-  return execute("/sports/profile", {
+  return post("/sports/profile", {
     Ratings: sportRatings
   });
 }

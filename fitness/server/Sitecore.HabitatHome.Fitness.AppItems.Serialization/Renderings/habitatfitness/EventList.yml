@@ -20,7 +20,7 @@ SharedFields:
   Value: 0
 - ID: "b0b15510-b138-470e-8f33-8da2e228aafe"
   Hint: Rendering Contents Resolver
-  Value: "{64BDC03E-2754-442F-9B59-0A9BFC0A7919}"
+  Value: 
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
   Value: ./Data|/sitecore/content/habitatfitness/Components/EventList

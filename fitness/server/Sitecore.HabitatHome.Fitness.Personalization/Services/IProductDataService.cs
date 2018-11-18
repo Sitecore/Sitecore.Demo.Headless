@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 namespace Sitecore.HabitatHome.Fitness.Personalization.Services
 {
-    public interface IDataService
+    public interface IProductDataService
     {
-        IEnumerable<Item> GetAll(Database database, Guid rootId, Guid templateId);
+        IEnumerable<Item> GetAll(Database database);
     }
 }

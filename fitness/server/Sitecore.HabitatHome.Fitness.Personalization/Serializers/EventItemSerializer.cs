@@ -13,11 +13,11 @@ using System.Linq;
 
 namespace Sitecore.HabitatHome.Fitness.Personalization.Serializers
 {
-    public class ItemSerializer : IItemSerializer
+    public class EventItemSerializer : IItemSerializer
     {
         protected readonly IGetFieldSerializerPipeline GetFieldSerializerPipeline;
 
-        public ItemSerializer([NotNull]IGetFieldSerializerPipeline getFieldSerializerPipeline)
+        public EventItemSerializer([NotNull]IGetFieldSerializerPipeline getFieldSerializerPipeline)
         {
             GetFieldSerializerPipeline = getFieldSerializerPipeline;
         }

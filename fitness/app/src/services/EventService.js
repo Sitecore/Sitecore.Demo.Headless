@@ -1,4 +1,4 @@
-import { execute } from "./GenericService";
+import { post, get } from "./GenericService";
 import { required } from "../utils";
 
 export function addToFavorites(eventId) {
@@ -17,6 +17,10 @@ export function unregister(eventId) {
   return executeEventAction("registration/remove", eventId);
 }
 
+export function getAll() {
+  return get(`/events`, { take: 3 });
+}
+
 function executeEventAction(eventAction, eventId = required()) {
-  return execute(`/events/${eventAction}`, { EventId: eventId });
+  return post(`/events/${eventAction}`, { EventId: eventId });
 }
