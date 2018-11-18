@@ -2263,7 +2263,7 @@ a[target="_blank"]:after {
   }
 }
 
-.productRecommendationList-header {
+.list-header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2283,8 +2283,8 @@ a[target="_blank"]:after {
   align-items: center;
   margin: 0.625em 0 1.5em;
 }
-.productRecommendationList-header:before,
-.productRecommendationList-header:after {
+.list-header:before,
+.list-header:after {
   content: "";
   display: block;
   height: 1px;
@@ -2296,7 +2296,7 @@ a[target="_blank"]:after {
   background: rgba(255, 255, 255, 0.278431);
 }
 
-.productRecommendationList-title {
+.list-title {
   margin: 0;
   color: rgba(255, 255, 255, 0.5);
   display: inline-block;

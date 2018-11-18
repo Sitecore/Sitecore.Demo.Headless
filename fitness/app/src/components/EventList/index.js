@@ -1,7 +1,9 @@
 import React from "react";
 import EventListItem from "../EventListItem";
-import { getAll } from "../../services/EventService";
+import { getAll, EventDisplayCount } from "../../services/EventService";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
+import withSizes from "react-sizes";
+import EventItemLoader from "../EventItemLoader";
 
 class EventList extends React.Component {
   state = {
@@ -24,33 +26,35 @@ class EventList extends React.Component {
 
   render() {
     const { events, loading, error } = this.state;
-    const { fields } = this.props;
+    const { fields, width, height } = this.props;
 
+    let eventItems = [];
     if (loading) {
-      return <h1>Loading...</h1>;
-    }
-
-    if (error) {
-      return <h1>Error</h1>;
+      for (let i = 0; i < EventDisplayCount; i++) {
+        eventItems.push(
+          <EventItemLoader key={i} width={width} height={height} />
+        );
+      }
+    } else {
+      eventItems = events.map((e, i) => <EventListItem key={i} {...e} />);
     }
 
     return (
       <div className="events">
-        <div class="productRecommendationList-header">
-          <Text
-            tag="h4"
-            field={fields.title}
-            className="productRecommendationList-title"
-          />
+        <div className="list-header">
+          <Text tag="h4" field={fields.title} className="list-title" />
         </div>
-        <div className="events-items">
-          {events.map((e, i) => (
-            <EventListItem key={i} {...e} />
-          ))}
-        </div>
+        <div className="events-items">{eventItems}</div>
       </div>
     );
   }
 }
 
-export default EventList;
+const mapSizesToProps = function(sizes) {
+  return {
+    width: sizes.width,
+    height: sizes.height
+  };
+};
+
+export default withSizes(mapSizesToProps)(EventList);
