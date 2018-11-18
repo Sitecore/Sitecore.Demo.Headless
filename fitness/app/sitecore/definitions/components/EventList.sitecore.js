@@ -16,8 +16,7 @@ export default function(manifest) {
     displayName: "Event List",
     icon: SitecoreIcon.ListStyle_bullets,
     fields: [
-      { name: "title", type: CommonFieldTypes.SingleLineText },
-      { name: "items", type: CommonFieldTypes.ContentList }
+      { name: "title", displayName: "Title", type: CommonFieldTypes.SingleLineText },
     ]
   });
 }

@@ -1,4 +1,4 @@
-import { execute } from "./GenericService";
+import { post } from "./GenericService";
 import { firebase } from "@firebase/app";
 import "@firebase/messaging";
 
@@ -22,7 +22,7 @@ function executeAction(eventAction, payload) {
   if (!payload) {
     throw new Error("missing payload");
   }
-  return execute(`/subscription/${eventAction}`, payload);
+  return post(`/subscription/${eventAction}`, payload);
 }
 
 const getMessagingToken = async () => {

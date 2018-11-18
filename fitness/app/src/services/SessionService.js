@@ -1,5 +1,5 @@
-import { execute } from "./GenericService";
+import { post } from "./GenericService";
 
 export function flush() {
-  return execute("/session/flush");
+  return post("/session/flush");
 }

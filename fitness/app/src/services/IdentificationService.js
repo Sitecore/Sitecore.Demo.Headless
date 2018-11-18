@@ -1,4 +1,4 @@
-import { execute } from "./GenericService";
+import { post } from "./GenericService";
 import { required } from "../utils";
 
 export function setIdentification(
@@ -6,7 +6,7 @@ export function setIdentification(
   lastname = required(),
   email = required()
 ) {
-  return execute("/identification/facet", {
+  return post("/identification/facet", {
     Email: email,
     FirstName: firstname,
     LastName: lastname

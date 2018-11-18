@@ -10,12 +10,7 @@ import { NavLink } from "react-router-dom";
 import { translate } from "react-i18next";
 import EventLabels from "../EventLabels";
 
-const EventListItem = ({ id, label, fields, url, featured, t }) => {
-  // url may not be resolved in connected mode befor RCR is set on EventList component
-  // so need to be using id temporarily see https://github.com/Sitecore/jss/issues/69
-  if (!url) {
-    url = id;
-  }
+const EventListItem = ({ id, fields, url, label, featured, t }) => {
   return (
     <div className={`events-item ${featured ? "events-item_featured" : ""}`}>
       <div className="events-item-image-container">

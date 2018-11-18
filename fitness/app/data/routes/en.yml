@@ -20,12 +20,6 @@ placeholders:
         - componentName: EventList
           fields:
             title: Events near you
-            items:
-            - id: oakland-marathon
         - componentName: ProductRecommendationList
           fields:
             title: Gear just for you
-            items:
-            - id: flip-belt
-            - id: camelbak-arc
-            - id: hydration-belt
