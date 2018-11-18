@@ -33,7 +33,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
             if (!string.IsNullOrWhiteSpace(profileKeyName))
             {
                 var facet = service.ReadFacet();
-                if (facet != null)
+                if (facet != null && facet.Ratings.ContainsKey(profileKeyName))
                 {
                     result = facet.Ratings.ContainsKey(profileKeyName);
                 }
