@@ -8,8 +8,7 @@ import EventItemLoader from "../EventItemLoader";
 class EventList extends React.Component {
   state = {
     events: [],
-    loading: true,
-    error: false
+    loading: true
   };
 
   componentDidMount() {
@@ -19,7 +18,6 @@ class EventList extends React.Component {
         this.setState({ loading: false });
       })
       .catch(error => {
-        this.setState({ error: true });
         console.error(error);
       });
   }

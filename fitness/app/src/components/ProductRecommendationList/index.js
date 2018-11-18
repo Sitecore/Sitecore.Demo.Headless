@@ -9,7 +9,6 @@ class ProductRecommendationList extends React.Component {
   state = {
     products: [],
     loading: true,
-    error: false
   };
 
   componentDidMount() {
@@ -19,7 +18,6 @@ class ProductRecommendationList extends React.Component {
         this.setState({ loading: false });
       })
       .catch(error => {
-        this.setState({ error: true });
         console.error(error);
       });
   }

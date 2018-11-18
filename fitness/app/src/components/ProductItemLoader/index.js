@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import loadingImg from "../../assets/img/loading.gif";
 import ContentLoader from "react-content-loader";
 
 class ProductItemLoader extends React.Component {
@@ -10,7 +9,6 @@ class ProductItemLoader extends React.Component {
     this.state = {
       showLoading: false
     };
-
     this.timer = setTimeout(this.showLoading, this.props.timeout);
   }
 
