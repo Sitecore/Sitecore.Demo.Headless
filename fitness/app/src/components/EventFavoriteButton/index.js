@@ -4,6 +4,10 @@ import {
   addToFavorites,
   removeFromFavorites
 } from "../../services/EventService";
+import {
+  trackEventFavorite,
+  trackEventUnfavorite
+} from "../../services/TrackingService";
 
 class EventFavoriteButton extends React.Component {
   state = {
@@ -32,6 +36,18 @@ class EventFavoriteButton extends React.Component {
       })
       .catch(err => {
         this.setState({ favorited: false });
+        console.log(err);
+      });
+
+    const trackingPromise = this.state.favorited
+      ? trackEventUnfavorite(eventId)
+      : trackEventFavorite(eventId);
+
+    trackingPromise
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(err => {
         console.log(err);
       });
   }
