@@ -53,8 +53,6 @@
     <PackageReference Include="Sitecore.Analytics.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Analytics.XConnect.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Framework.Rules.Abstractions" Version="3.0.1" />
-    <PackageReference Include="Sitecore.Kernel.NoReferences" Version="9.0.180604" />
-    <PackageReference Include="Sitecore.Mvc.NoReferences" Version="9.0.180604" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Sitecore.JavaScriptServices.Configuration">
@@ -72,6 +70,9 @@
     <Reference Include="Sitecore.XConnect.Segmentation.Predicates.Model">
       <HintPath>..\sc.lib\Sitecore.XConnect.Segmentation.Predicates.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Xdb.MarketingAutomation.Core">
+      <HintPath>..\sc.lib\Sitecore.Xdb.MarketingAutomation.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -84,6 +85,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\SendPushNotification.cs" />
+    <Compile Include="Services\EventNotificationService.cs" />
+    <Compile Include="Services\IEventNotificationService.cs" />
     <Compile Include="Predicates\AgeGroupMatches.cs" />
     <Compile Include="Predicates\SportsContains.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,10 +106,6 @@
     <ProjectReference Include="..\Sitecore.HabitatHome.Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj">
       <Project>{8b8ef537-2e63-4cc5-93b0-7dfa3f784ec1}</Project>
       <Name>Sitecore.HabitatHome.Fitness.Collection.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sitecore.HabitatHome.Fitness.Collection\Sitecore.HabitatHome.Fitness.Collection.csproj">
-      <Project>{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}</Project>
-      <Name>Sitecore.HabitatHome.Fitness.Collection</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
