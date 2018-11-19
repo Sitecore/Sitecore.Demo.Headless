@@ -17,7 +17,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection
             serviceCollection.AddTransient<IIdentificationService, IdentificationService>();
 
             serviceCollection.AddTransient<IStringValueListFacetService, StringValueListFacetService>();
-            serviceCollection.AddTransient<IEventNotificationService, EventNotificationService>();
             serviceCollection.AddTransient<ISessionEventSubscriptionsService, SessionEventSubscriptionsService>();
 
             serviceCollection.AddTransient<HabitatFitnessDemographicsController>();

@@ -108,7 +108,6 @@
     <Compile Include="Model\DemographicsPayload.cs" />
     <Compile Include="Model\StringArrayPayload.cs" />
     <Compile Include="Model\SportPreferencesPayload.cs" />
-    <Compile Include="Pipelines\CommitSession\SendInitialEventSubscription.cs" />
     <Compile Include="Pipelines\CommitSession\UpdateFacetsFromTracker.cs" />
     <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,10 +117,8 @@
     <Compile Include="Services\SportsService.cs" />
     <Compile Include="Services\ISportsService.cs" />
     <Compile Include="Services\IdentificationService.cs" />
-    <Compile Include="Services\EventNotificationService.cs" />
     <Compile Include="Services\DemographicsService.cs" />
     <Compile Include="Services\IDemographicsService.cs" />
-    <Compile Include="Services\IEventNotificationService.cs" />
     <Compile Include="Services\IIdentificationService.cs" />
     <Compile Include="Services\ISessionEventSubscriptionsService.cs" />
     <Compile Include="Services\SessionEventSubscriptionsService.cs" />
