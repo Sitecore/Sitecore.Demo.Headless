@@ -85,20 +85,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\SendPushNotification.cs" />
     <Compile Include="Predicates\BaseStringListFacetPredicate.cs" />
     <Compile Include="Predicates\EventFavoritesContains.cs" />
     <Compile Include="Predicates\EventSubscriptionContains.cs" />
     <Compile Include="Predicates\EventRegistrationContains.cs" />
     <Compile Include="Predicates\SportsSkillPredicate.cs" />
-    <Compile Include="Services\EventNotificationService.cs" />
-    <Compile Include="Services\IEventNotificationService.cs" />
     <Compile Include="Predicates\AgeGroupMatches.cs" />
     <Compile Include="Predicates\SportsContains.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Segmentation.Serialization.config" />
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Segmentation.Serialization.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

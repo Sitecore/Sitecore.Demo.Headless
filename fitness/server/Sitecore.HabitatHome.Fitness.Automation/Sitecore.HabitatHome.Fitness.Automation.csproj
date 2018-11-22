@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}</ProjectGuid>
+    <ProjectGuid>{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.HabitatHome.Fitness.Personalization</RootNamespace>
-    <AssemblyName>Sitecore.HabitatHome.Fitness.Personalization</AssemblyName>
+    <RootNamespace>Sitecore.HabitatHome.Fitness.Automation</RootNamespace>
+    <AssemblyName>Sitecore.HabitatHome.Fitness.Automation</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -52,12 +52,7 @@
     <PackageReference Include="Sitecore.Analytics.Model.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Analytics.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Analytics.XConnect.NoReferences" Version="9.0.180604" />
-    <PackageReference Include="Sitecore.ContentSearch.Linq.NoReferences" Version="9.0.180604" />
-    <PackageReference Include="Sitecore.ContentSearch.NoReferences" Version="9.0.180604" />
-    <PackageReference Include="Sitecore.Kernel.NoReferences" Version="9.0.180604" />
-    <PackageReference Include="Sitecore.Mvc.NoReferences" Version="9.0.180604" />
-    <PackageReference Include="Sitecore.XConnect.Collection.Model.NoReferences" Version="9.0.180604" />
-    <PackageReference Include="Sitecore.XConnect.NoReferences" Version="9.0.180604" />
+    <PackageReference Include="Sitecore.Framework.Rules.Abstractions" Version="3.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Sitecore.JavaScriptServices.Configuration">
@@ -72,6 +67,12 @@
     <Reference Include="Sitecore.LayoutService.Mvc">
       <HintPath>..\sc.lib\Sitecore.LayoutService.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.XConnect.Segmentation.Predicates.Model">
+      <HintPath>..\sc.lib\Sitecore.XConnect.Segmentation.Predicates.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Xdb.MarketingAutomation.Core">
+      <HintPath>..\sc.lib\Sitecore.Xdb.MarketingAutomation.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -84,39 +85,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\HabitatFitnessProductsController.cs" />
-    <Compile Include="Controllers\HabitatFitnessEventsController.cs" />
-    <Compile Include="Pipelines\GetLayoutServiceContext\EventInfo.cs" />
-    <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />
-    <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
-    <Compile Include="RegisterDependencies.cs" />
-    <Compile Include="Router.cs" />
-    <Compile Include="Rules\AgeGroupCondition.cs" />
-    <Compile Include="Rules\BaseEventFacetCondition.cs" />
-    <Compile Include="Rules\IsContactRegisteredForEvent.cs" />
-    <Compile Include="Rules\IsContactKnownCondition.cs" />
-    <Compile Include="Rules\GenderCondition.cs" />
-    <Compile Include="Rules\IsContactSubscribedToEvent.cs" />
-    <Compile Include="Rules\IsContactFavoritedEvent.cs" />
-    <Compile Include="Services\IEventDataService.cs" />
-    <Compile Include="Services\IItemScoringService.cs" />
-    <Compile Include="Services\ItemScoringService.cs" />
-    <Compile Include="Utils\ProfileExtensions.cs" />
-    <Compile Include="Rules\SportsCondition.cs" />
-    <Compile Include="Rules\SportsSkillCondition.cs" />
-    <Compile Include="Services\ProductDataService.cs" />
-    <Compile Include="Services\IProductDataService.cs" />
-    <Compile Include="Services\EventDataService.cs" />
-    <Compile Include="Services\DistanceCalculator.cs" />
+    <Compile Include="Activities\SendPushNotification.cs" />
+    <Compile Include="Services\EventNotificationService.cs" />
+    <Compile Include="Services\IEventNotificationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serializers\EventItemSerializer.cs" />
-    <Compile Include="Wellknown.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Personalization.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Personalization.Serialization.config" />
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Automation.Serialization.config" />
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Automation.config" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -129,10 +105,6 @@
     <ProjectReference Include="..\Sitecore.HabitatHome.Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj">
       <Project>{8b8ef537-2e63-4cc5-93b0-7dfa3f784ec1}</Project>
       <Name>Sitecore.HabitatHome.Fitness.Collection.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sitecore.HabitatHome.Fitness.Collection\Sitecore.HabitatHome.Fitness.Collection.csproj">
-      <Project>{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}</Project>
-      <Name>Sitecore.HabitatHome.Fitness.Collection</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
