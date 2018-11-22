@@ -8,20 +8,24 @@ using Sitecore.Framework.Rules;
 
 namespace Sitecore.HabitatHome.Fitness.Segmentation.Predicates
 {
-    public class SportsContains : ICondition, IContactSearchQueryFactory
+    public abstract class BaseStringListFacetPredicate : ICondition, IContactSearchQueryFactory
     {
-        public string SportName { get; set; }
+        protected abstract string FacetId { get; }
+
+        public Guid EventId { get; set; }
+
+        public string EventIdFormatted { get { return EventId.ToString("D"); } }
 
         public bool Evaluate(IRuleExecutionContext context)
         {
-            return context.Fact<Contact>().GetFacet<SportsFacet>(SportsFacet.DefaultKey).Ratings.Keys.Any(key => key == SportName);
+            return context.Fact<Contact>().GetFacet<StringValueListFacet>(FacetId).Values.Any(key => key == EventIdFormatted);
         }
 
         public Expression<Func<Contact, bool>> CreateContactSearchQuery(IContactSearchQueryContext context)
         {
             // This is duplicating the Evaluate method on purpose
             // Do not modify this expression, segmentation engine doesn't like it
-            return contact => contact.GetFacet<SportsFacet>(SportsFacet.DefaultKey).Ratings.Keys.Any(key => key == SportName);
+            return contact => contact.GetFacet<StringValueListFacet>(FacetId).Values.Any(key => key == EventIdFormatted);
         }
     }
 }
