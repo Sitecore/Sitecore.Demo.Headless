@@ -2,7 +2,7 @@
 ID: "ccf198d3-05b2-4955-a4a5-a1a489215324"
 Parent: "20e444b5-8773-4c6d-8957-d559e7111466"
 Template: "f0d16eee-3a05-4e43-a082-795a32b873c0"
-Path: /sitecore/system/Settings/Rules/Definitions/Elements/Habitat Fitness/Registered For Event
+Path: /sitecore/system/Settings/Rules/Definitions/Elements/Habitat Fitness/Registered for Event
 DB: master
 SharedFields:
 - ID: "ab51c8b2-f0e1-4471-9aae-cc080d774923"

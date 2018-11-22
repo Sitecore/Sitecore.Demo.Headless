@@ -58,7 +58,7 @@ Languages:
         sitecore\admin
     - ID: "af321234-4eb9-4ef5-9197-65903351939c"
       Hint: Text
-      Value: "where contact [SportProfileKeyId,Tree,root=/sitecore/system/Marketing Control Panel/Profiles/Sports&selection=		/sitecore/templates/System/Analytics/Profile Key,sport] skill level [OperatorId,Operator,,compares to] [SkillLevel,Integer,,number]"
+      Value: "where contact's [SportProfileKeyId,Tree,root=/sitecore/system/Marketing Control Panel/Profiles/Sports&selection=		/sitecore/templates/System/Analytics/Profile Key,sport] skill level [OperatorId,Operator,,compares to] [SkillLevel,Integer,,number]"
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
