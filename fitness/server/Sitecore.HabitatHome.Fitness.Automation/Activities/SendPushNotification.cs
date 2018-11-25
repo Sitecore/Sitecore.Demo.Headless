@@ -1,7 +1,7 @@
 ﻿using Sitecore.Framework.Conditions;
 using Sitecore.HabitatHome.Fitness.Automation.Services;
 using Sitecore.HabitatHome.Fitness.Collection.Model;
-using Sitecore.XConnect;
+using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
 using Sitecore.Xdb.MarketingAutomation.Core.Activity;
 using Sitecore.Xdb.MarketingAutomation.Core.Processing.Plan;
 using System.Collections.Generic;
@@ -17,23 +17,23 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Activities
         {
             Condition.Requires(context.Contact).IsNotNull();
 
-            var subscriptionFacet = context.Contact.GetFacet<UntypedFacet>(FacetIDs.Subscriptions);
+            var subscriptionFacet = context.Contact.GetFacet<StringValueListFacet>(FacetIDs.Subscriptions);
             var eventSubscriptions = new List<string>();
             if (subscriptionFacet != null)
             {
-                foreach(var xValue in (XCollection)subscriptionFacet.XObject["Values"])
+                foreach(var subscription in subscriptionFacet.Values)
                 {
-                    eventSubscriptions.Add((string)xValue);
+                    eventSubscriptions.Add(subscription);
                 }
             }
 
-            var tokenFacet = context.Contact.GetFacet<UntypedFacet>(FacetIDs.SubscriptionTokens);
+            var tokenFacet = context.Contact.GetFacet<StringValueListFacet>(FacetIDs.SubscriptionTokens);
             var tokens = new List<string>();
             if (tokenFacet != null)
             {
-                foreach (var xValue in (XCollection)tokenFacet.XObject["Values"])
+                foreach (var tokenId in tokenFacet.Values)
                 {
-                    tokens.Add((string)xValue);
+                    tokens.Add(tokenId);
                 }
             }
 

@@ -62,6 +62,9 @@
       <Name>Sitecore.HabitatHome.Fitness.Collection.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="automation\sc.HabitatHome.Fitness.Collection.Model.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

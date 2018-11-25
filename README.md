@@ -2,44 +2,75 @@
 This repository is used to share Sitecore JSS PWA demo assets (and future “Sitecore Omni” related demo assets) Status (Public or Private)
 
 ## Assumptions
+1. Sitecore 9.0.1 or higher is installed. For CM-only deployment, skip steps 1.1 and 1.2 below.
+    > Habitat Fitness doesn't support 9.0.0 (Initial Release).
 1. Your current site's "main" hostname is `habitathome.dev.local`
 1. You also have a binding (w/ SSL) (and hosts entry) to `habitatfitness.dev.local`
 1. Sitecore.JSS Server package is installed on your target Sitecore instance.
 	> It is highly recommended to acquire the latest nightly build of Sitecore.JSS server for 9.0.
+1. These deployment steps are not intended for the "Code-first" scenario, as the content items are expected to be deserialized via Unicorn. For the simplified Code-first scenario, please consult a separate demo scenarios document.
 
-### Deployment
+## Deployment
 
-#### 1. Deploy server-side components
+### 1. Deploy server-side components
 
 1. cd `repo/fitness/server`
 1. Open `cake-config.json` and modify it according to your environment.
-	> You will likely need to update `ProjectFolder` and maybe even `XConnectRoot` and `WebsiteRoot`.
-	
-1. Open the `Sitecore.HabitatHome.Fitness.Collection.config` file located under `Sitecore.HabitatHome.Omni\fitness\server\Sitecore.HabitatHome.Fitness.Collection\App_Config\Include\Sitecore.HabitatHome.Fitness` folder and set the value of the `HabitatFitness.FirebaseMessagingApiKey` setting to Firebase Server key.
-
-    - How to obtain the Firebase Server key:
-      - Create a Firebase account.
-      - Login to Firebase console.
-      - Create a new project and open it.
-      - Click on the "gear" icon and access "project settings":
-       [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png]]
- 
-      - Go to "Cloud Messaging" tab and copy the "Server key" value (create it if it doesn't exist):
-      [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/server-key.png]]
-
-	
-1. If you know where you are going to be hosting your web app, open the `Sitecore.HabitatHome.Fitness.Collection.config` file located under `Sitecore.HabitatHome.Omni\fitness\server\Sitecore.HabitatHome.Fitness.Collection\App_Config\Include\Sitecore.HabitatHome.Fitness` folder and set the value of the `HabitatFitness.PublicHostName` setting to the public facing host name.
-
-    > Leave it as (`http://localhost:3000`) if you are not sure yet.
-    > This setting will control the target url of the push notifications.
-
+	> You will likely need to update paths to `ProjectFolder`, `XConnectRoot`, and `WebsiteRoot`.
 1. Run `.\build.ps1`
-1. Manually copy/paste `Sitecore.HabitatHome.Fitness.Collection.Model.dll` from your the `/bin` folder of your
-Sitecore CM instsance to the `/bin` folder of your xConnect instance.
+
+#### 1.1 Deploy xConnect Model to xConnect server
+1. Manually copy/paste `Sitecore.HabitatHome.Fitness.Collection.Model.dll` from your the `/bin` folder of your Sitecore CM instsance to the `/bin` folder of your xConnect instance.
 1. Copy `Sitecore.HabitatHome.Fitness.Collection.Model, 9.0.json` file from your repo (`Sitecore.HabitatHome.Omni\fitness\server\Sitecore.HabitatHome.Fitness.Collection.Model.Deploy\xmodels`)
 to `your-xConnect-instance/Website/App_data/Models` folder.
-    
-#### 2. Deploy the app
+
+#### 1.1 Deploy xConnect model to xConnect Indexing service
+1. Copy `Sitecore.HabitatHome.Fitness.Collection.Model, 9.0.json` file from your repo (`Sitecore.HabitatHome.Omni\fitness\server\Sitecore.HabitatHome.Fitness.Collection.Model.Deploy\xmodels`)
+to `your-xConnect-indexing-service/App_data/Models` folder.
+
+##### 1.2 Deploy bits to Marketing Automation service
+
+1. Copy the following DLLs from `fitness\server\Sitecore.HabitatHome.Fitness.Automation\bin\Debug|Release` to the Marketing Automation service's `/bin` folder:
+    - `Sitecore.HabitatHome.Fitness.Automation.dll`
+    - `Sitecore.HabitatHome.Fitness.Collection.Model.dll`
+
+1. Add the following element to `sc.MarketingAutomation.ContactLoader.xml` file that can be found in `marketing-automation-service-webroot]\App_Data\Config\sitecore\MarketingAutomation` folder, under `<Settings>/ <Sitecore>/<XConnect>/<MarketingAutomation>/<Engine>/<Services>` section:
+    ```xml
+    <MarketingAutomation.Loading.ContactFacetsConfigurator>
+      <Type>Sitecore.Xdb.MarketingAutomation.Loading.ContactFacetsConfigurator, Sitecore.Xdb.MarketingAutomation</Type>
+      <As>Sitecore.Xdb.MarketingAutomation.Core.Loading.IContactExpandOptionsConfigurator, Sitecore.Xdb.MarketingAutomation.Core</As>
+      <LifeTime>Singleton</LifeTime>
+      <Options>
+        <IncludeFacetNames>
+          <Demographics>Demographics</Demographics>
+          <Sports>Sports</Sports>
+          <Subscriptions>Subscriptions</Subscriptions>
+          <SubscriptionTokens>SubscriptionTokens</SubscriptionTokens>
+          <FavoriteEvents>FavoriteEvents</FavoriteEvents>
+          <RegisteredEvents>RegisteredEvents</RegisteredEvents>
+        </IncludeFacetNames>
+      </Options>
+    </MarketingAutomation.Loading.ContactFacetsConfigurator>
+
+    ```
+
+1. Add the following element to `sc.MarketingAutomation.ActivityTypes.xml` file that can be found in `marketing-automation-service-webroot]\App_Data\Config\sitecore\MarketingAutomation` folder, under `<Settings>/ <Sitecore>/<XConnect>/<Services>` section:
+    ```xml
+    <MarketingAutomation.Activity.PushNotification>
+      <Type>Sitecore.Xdb.MarketingAutomation.Locator.ActivityTypeRegistration, Sitecore.Xdb.MarketingAutomation</Type>
+      <LifeTime>Singleton</LifeTime>
+      <Options>
+        <Id>{7233ED87-BB7F-4498-8EB2-2E56896D71A7}</Id>
+        <ImplementationType>Sitecore.HabitatHome.Fitness.Automation.Activities.SendPushNotification, Sitecore.HabitatHome.Fitness.Automation</ImplementationType>
+      </Options>
+    </MarketingAutomation.Activity.PushNotification>
+    ```
+
+1. Copy the following folder under `\fitness\server\Sitecore.HabitatHome.Fitness.Automation.Plugins\sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness` to `[Sitecore-CM-instance-webroot]\ Website\sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness`.
+
+1. Copy `sc.HabitatHome.Fitness.Collection.Model.xml` file from `fitness\server\Sitecore.HabitatHome.Fitness.Collection.Model.Deploy\automation` to `marketing-automation-service-webroot]\App_Data\Config\sitecore` folder. 
+
+### 2. Deploy the app
 
 1. cd `/fitness/app`
 1. `npm install` from cmd
@@ -86,4 +117,6 @@ to `your-xConnect-instance/Website/App_data/Models` folder.
       > Please take extra care about these API keys, make sure to put appopriate security restrictions and do not commit those to source control.
 
 1. run `jss deploy config` from cmd
+  > This deploys the config files under `/fitness/app/sitecore/config` and will require elevated permissions depending on your target location. Make sure to run this command "as administrator" to avoid permission issues. After this command execution, the Sitecore instance will recycle.
+
 1. run `jss deploy files` from cmd
