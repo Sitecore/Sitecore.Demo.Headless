@@ -7,7 +7,7 @@ DB: master
 SharedFields:
 - ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
   Hint: Source
-  Value: /sitecore/media library/habitatfitness/assets/products
+  Value: /sitecore/media library/project/habitatfitness/assets/products
 - ID: "21828437-ea4b-40a1-8c61-4ce60ea41db6"
   Hint: Validate Button
   Type: tree list
