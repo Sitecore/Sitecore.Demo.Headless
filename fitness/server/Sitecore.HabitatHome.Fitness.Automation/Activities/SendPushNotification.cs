@@ -12,6 +12,12 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Activities
     public class SendPushNotification : IActivity
     {
         public IActivityServices Services { get; set; }
+        public IEventNotificationService NotificationService { get; set; }
+
+        public SendPushNotification(IEventNotificationService notificationService)
+        {
+            NotificationService = notificationService;
+        }
 
         public ActivityResult Invoke(IContactProcessingContext context)
         {
@@ -38,11 +44,10 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Activities
             }
 
             var token = tokens.FirstOrDefault();
-            IEventNotificationService notificationService = new EventNotificationService();
 
             foreach (var eventSubscription in eventSubscriptions)
             {
-                notificationService.SendInitialEventNotification(context.Contact, token);
+                NotificationService.SendInitialEventNotification(context.Contact, token);
             }
 
             return new SuccessMove();

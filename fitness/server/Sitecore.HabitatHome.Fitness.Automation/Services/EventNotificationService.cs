@@ -5,23 +5,28 @@ using System.Net;
 
 namespace Sitecore.HabitatHome.Fitness.Automation.Services
 {
-    // TODO: this is a WIP service. The contract of this service will change
     public class EventNotificationService : IEventNotificationService
     {
+        public string FirebaseMessagingApiUri{ get; set; }
+
+        public string FirebaseMessagingApiKey { get; set; }
+
+        public string PublicHostName { get; set; }
+
         public void SendInitialEventNotification(Contact contact, string token)
         {
-            var uri = new Uri("https://fcm.googleapis.com/fcm/send");
+            var uri = new Uri(FirebaseMessagingApiUri);
             using (var client = new WebClient())
             {
                 client.Headers.Add("Content-Type", "application/json");
-                client.Headers.Add("Authorization", $"key=INSERT-FIREBASE-TOKEN-HERE");
+                client.Headers.Add("Authorization", $"key={FirebaseMessagingApiKey}");
 
                 dynamic data = new JObject();
                 data.notification = new JObject();
                 data.notification.title = $"Hey {GetCurrentContactName(contact)}!";
                 data.notification.body = $"Thanks for registering for the event, it will be outstanding.";
-                data.notification.click_action = $"http://localhost:3000";
-                data.notification.icon = $"http://localhost:3000/favicon-32x32.png";
+                data.notification.click_action = PublicHostName;
+                data.notification.icon = $"{PublicHostName}/favicon-32x32.png";
                 data.to = token;
 
                 try
