@@ -36,7 +36,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
             if (!string.IsNullOrWhiteSpace(profileKeyName))
             {
                 var facet = service.ReadFacet();
-                if (facet != null)
+                if (facet != null && facet.Ratings.ContainsKey(profileKeyName))
                 {
                     sportSkillLevel = facet.Ratings[profileKeyName];
                     result = CompareSkillLevel(sportSkillLevel);

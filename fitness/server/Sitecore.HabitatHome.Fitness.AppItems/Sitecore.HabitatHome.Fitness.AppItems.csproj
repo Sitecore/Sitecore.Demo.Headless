@@ -79,6 +79,7 @@
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.AppItems.Serialization.config" />
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\z.Sitecore.HabitatHome.Fitness.DevSettings.config" />
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Common.Serialization.config" />
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.MarketingDefinitions.Serialization.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
