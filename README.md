@@ -48,6 +48,7 @@ to `your-xConnect-indexing-service/App_data/Models` folder.
           <SubscriptionTokens>SubscriptionTokens</SubscriptionTokens>
           <FavoriteEvents>FavoriteEvents</FavoriteEvents>
           <RegisteredEvents>RegisteredEvents</RegisteredEvents>
+          <PersonalInformation>Personal</PersonalInformation>
         </IncludeFacetNames>
       </Options>
     </MarketingAutomation.Loading.ContactFacetsConfigurator>
@@ -69,6 +70,34 @@ to `your-xConnect-indexing-service/App_data/Models` folder.
 1. Copy the following folder under `\fitness\server\Sitecore.HabitatHome.Fitness.Automation.Plugins\sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness` to `[Sitecore-CM-instance-webroot]\ Website\sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness`.
 
 1. Copy `sc.HabitatHome.Fitness.Collection.Model.xml` file from `fitness\server\Sitecore.HabitatHome.Fitness.Collection.Model.Deploy\automation` to `marketing-automation-service-webroot]\App_Data\Config\sitecore` folder. 
+
+1. Open `sc.MarketingAutomation.HabitatFitnessServices.xml` file from `fitness\server\Sitecore.HabitatHome.Fitness.Automation\App_Data\Config\Sitecore\MarketingAutomation` folder and maket the following changes:
+
+    - Add Firebase Server API Key:
+
+      ```xml
+      <FirebaseMessagingApiKey>INSERT-SERVER-API-KEY-HERE</FirebaseMessagingApiKey>
+      ```
+        How to obtain the Firebase Server key:
+      - Create a Firebase account.
+      - Login to Firebase console.
+      - Create a new project and open it.
+      - Click on the "gear" icon and access "project settings":
+       [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png]]
+ 
+      - Go to "Cloud Messaging" tab and copy the "Server key" value (create it if it doesn't exist):
+      [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/server-key.png]]
+
+
+    - If you also deploying the app to a separate host, adjust the following setting as well:
+
+      ```xml
+      <PublicHostName>https://app.habitathomedemo.com</PublicHostName>
+      ```
+
+      > This host name will be used as onclick action for the push notification and as a base url to retrieve app icon showin next to the push notification. 
+
+1. Copy the modified `sc.MarketingAutomation.HabitatFitnessServices.xml` file to `marketing-automation-service-webroot]\App_Data\Config\sitecore\MarketingAutomation` folder. 
 
 ### 2. Deploy the app
 

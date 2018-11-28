@@ -31,9 +31,6 @@ class EventFavoriteButton extends React.Component {
       : addToFavorites(eventId);
 
     operation
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         this.setState({ favorited: false });
         console.log(err);
@@ -44,9 +41,6 @@ class EventFavoriteButton extends React.Component {
       : trackEventFavorite(eventId);
 
     trackingPromise
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         console.log(err);
       });

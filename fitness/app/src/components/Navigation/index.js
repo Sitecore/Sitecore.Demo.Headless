@@ -34,7 +34,6 @@ class Navigation extends React.Component {
     flush()
       .then(response => {
         this.toggle();
-        console.log(response.data);
       })
       .catch(err => {
         console.error(err);

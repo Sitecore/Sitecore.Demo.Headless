@@ -42,25 +42,16 @@ class CreateAccountStep extends React.Component {
     const { firstname, lastname, email, gender, age } = this.state;
 
     setIdentification(firstname, lastname, email)
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         console.log(err);
       });
 
     setDemographicsFacet(age, gender)
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         console.log(err);
       });
 
     setDemographicsProfile(age, gender)
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         console.log(err);
       });
