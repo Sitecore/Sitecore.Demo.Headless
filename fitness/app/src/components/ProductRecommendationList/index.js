@@ -8,7 +8,7 @@ import withSizes from "react-sizes";
 class ProductRecommendationList extends React.Component {
   state = {
     products: [],
-    loading: true,
+    loading: true
   };
 
   componentDidMount() {
@@ -37,6 +37,10 @@ class ProductRecommendationList extends React.Component {
       productItems = products.map((productData, index) => (
         <ProductRecommendationListItem key={index} {...productData} />
       ));
+    }
+
+    if (!loading && productItems.length <= 0) {
+      return null;
     }
 
     return (

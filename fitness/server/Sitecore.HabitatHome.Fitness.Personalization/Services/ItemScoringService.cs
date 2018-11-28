@@ -65,7 +65,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
 
             calculator.Calculate(trackerProfile, collectedProfileItems, profileKey, new Analytics.Data.Items.ProfileItem(profileItem));
 
-            return collectedProfileItems.Where(i => i.ProfiledItemCalculation?.Distance <= 10);
+            return collectedProfileItems.Where(i => i.ProfiledItemCalculation?.Distance <= 100);
         }
     }
 }
