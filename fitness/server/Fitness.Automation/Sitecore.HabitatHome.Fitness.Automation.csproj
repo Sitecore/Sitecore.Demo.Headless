@@ -97,6 +97,8 @@
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Automation.Serialization.config" />
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Automation.config" />
     <Content Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.HabitatFitnessServices.xml" />
+    <None Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.ActivityTypes.xml.xdt" />
+    <None Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.ContactLoader.xml.xdt" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

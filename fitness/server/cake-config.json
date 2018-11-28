@@ -2,6 +2,7 @@
   "WebsiteRoot": "C:\\inetpub\\wwwroot\\habitathome.dev.local",
   "XConnectRoot": "C:\\inetpub\\wwwroot\\habitathome_xconnect.dev.local",
   "XConnectIndexerRoot": "C:\\inetpub\\wwwroot\\habitathome_xconnect.dev.local\\App_data\\jobs\\continuous\\IndexWorker",
+  "XConnectAutomationServiceRoot": "C:\\inetpub\\wwwroot\\habitathome_xconnect.dev.local\\App_data\\jobs\\continuous\\AutomationEngine",
   "InstanceUrl": "https://habitathome.dev.local/",
   "SolutionName": "Sitecore.HabitatHome.Fitness.sln",
   "ProjectFolder": "C:\\projects\\Sitecore.HabitatHome.Omni\\fitness\\server",

@@ -38,7 +38,6 @@ Task("Default")
 .IsDependentOn("Post-Deploy");
 
 Task("Post-Deploy")
-.IsDependentOn("Publish-Transforms")
 .IsDependentOn("Sync-Unicorn");
 
 Task("Quick-Deploy")
@@ -47,8 +46,7 @@ Task("Quick-Deploy")
 .IsDependentOn("Modify-PublishSettings")
 .IsDependentOn("Publish-All-Projects")
 .IsDependentOn("Apply-Xml-Transform")
-.IsDependentOn("Modify-Unicorn-Source-Folder")
-.IsDependentOn("Publish-Transforms");
+.IsDependentOn("Modify-Unicorn-Source-Folder");
 
 /*===============================================
 ================= SUB TASKS =====================
@@ -134,36 +132,11 @@ Task("Sync-Unicorn").Does(() => {
 
 
 Task("Apply-Xml-Transform").Does(() => {
-    var layers = new string[] {  configuration.ProjectSrcFolder};
+	// target website transforms 
+	Transform($"{configuration.ProjectSrcFolder}\\Fitness.AppItems", configuration.WebsiteRoot);
 
-    foreach(var layer in layers)
-    {
-        Transform(layer);
-    }
+	// xconnect transforms
+	Transform($"{configuration.ProjectSrcFolder}\\Fitness.Automation\\App_Data\\Config\\sitecore\\MarketingAutomation", $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation");
 });
-
-Task("Publish-Transforms").Does(() => {
-    var layers = new string[] { configuration.ProjectSrcFolder};
-    var destination = $@"{configuration.WebsiteRoot}\temp\transforms";
-
-    CreateFolder(destination);
-
-    try
-    {
-        var files = new List<string>();
-        foreach(var layer in layers)
-        {
-            var xdtFiles = GetTransformFiles(layer).Select(x => x.FullPath).ToList();
-            files.AddRange(xdtFiles);
-        }   
-
-        CopyFiles(files, destination, preserveFolderStructure: true);
-    }
-    catch (System.Exception ex)
-    {
-        WriteError(ex.Message);
-    }
-});
-
 
 RunTarget(target);

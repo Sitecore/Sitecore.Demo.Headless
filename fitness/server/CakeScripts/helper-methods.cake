@@ -11,6 +11,7 @@ public class Configuration
     public string WebsiteRoot {get;set;}
     public string XConnectRoot {get;set;}
     public string XConnectIndexerRoot {get;set;}
+	public string XConnectAutomationServiceRoot {get;set;}
     public string InstanceUrl {get;set;}
     public string SolutionName {get;set;}
     public string ProjectFolder {get;set;}
@@ -93,12 +94,13 @@ public FilePathCollection GetTransformFiles(string rootFolder)
 {
     Func<IFileSystemInfo, bool> exclude_obj_bin_folder =fileSystemInfo => !fileSystemInfo.Path.FullPath.Contains("/obj/") || !fileSystemInfo.Path.FullPath.Contains("/bin/");
 
+	Information($"Collecting transforms from: {rootFolder}");
     var xdtFiles = GetFiles($"{rootFolder}\\**\\*.xdt", exclude_obj_bin_folder);
 
     return xdtFiles;
 }
 
-public void Transform(string rootFolder) {
+public void Transform(string rootFolder, string destinationRootFolder) {
     var xdtFiles = GetTransformFiles(rootFolder);
 
     foreach (var file in xdtFiles)
@@ -106,7 +108,7 @@ public void Transform(string rootFolder) {
         Information($"Applying configuration transform:{file.FullPath}");
         var fileToTransform = Regex.Replace(file.FullPath, ".+/(.+)/*.xdt", "$1");
         fileToTransform = Regex.Replace(fileToTransform, ".sc-internal", "");
-        var sourceTransform = $"{configuration.WebsiteRoot}\\{fileToTransform}";
+        var sourceTransform = $"{destinationRootFolder}\\{fileToTransform}";
         
         XdtTransformConfig(sourceTransform			                // Source File
                             , file.FullPath			                // Tranforms file (*.xdt)
