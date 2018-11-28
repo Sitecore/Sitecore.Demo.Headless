@@ -107,6 +107,12 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj">
+      <Project>{8b8ef537-2e63-4cc5-93b0-7dfa3f784ec1}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.Collection.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

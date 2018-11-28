@@ -72,11 +72,15 @@ public void PrintHeader(ConsoleColor foregroundColor)
 public void PublishProjects(string rootFolder, string websiteRoot)
 {
 	cakeConsole.WriteLine(rootFolder);
+	
+    Func<IFileSystemInfo, bool> excludedProjects = fileSystemInfo => !fileSystemInfo.Path.FullPath.Contains("Fitness.Automation.Plugins");
 
-    var projects = GetFiles($"{rootFolder}\\**\\*.csproj");
+    var projects = GetFiles($"{rootFolder}\\**\\*.csproj", excludedProjects);
 
     foreach (var project in projects)
     {
+		Information($"Publishing project {project}");
+
         MSBuild(project, cfg => InitializeMSBuildSettings(cfg)
                                    .WithTarget(configuration.BuildTargets)
                                    .WithProperty("DeployOnBuild", "true")
