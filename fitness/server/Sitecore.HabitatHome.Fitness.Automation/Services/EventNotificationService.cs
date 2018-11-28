@@ -1,17 +1,40 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json.Linq;
+using Sitecore.Framework.Conditions;
 using Sitecore.XConnect;
+using Sitecore.XConnect.Collection.Model;
 using System;
 using System.Net;
 
 namespace Sitecore.HabitatHome.Fitness.Automation.Services
 {
-    public class EventNotificationService : IEventNotificationService
+    public class EventNotificationServiceOptions
     {
-        public string FirebaseMessagingApiUri{ get; set; }
+        public string FirebaseMessagingApiUri { get; set; }
 
         public string FirebaseMessagingApiKey { get; set; }
 
         public string PublicHostName { get; set; }
+    }
+
+    public class EventNotificationService : IEventNotificationService
+    {
+        public string FirebaseMessagingApiUri { get; set; }
+
+        public string FirebaseMessagingApiKey { get; set; }
+
+        public string PublicHostName { get; set; }
+
+        public EventNotificationService(IConfiguration configuration)
+        {
+            Condition.Requires(configuration, nameof(configuration)).IsNotNull();
+            this.BindPropertiesFromOptions(configuration.As<EventNotificationServiceOptions>());
+        }
+
+        public EventNotificationService(EventNotificationServiceOptions options)
+        {
+            BindPropertiesFromOptions(options);
+        }
 
         public void SendInitialEventNotification(Contact contact, string token)
         {
@@ -33,7 +56,6 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Services
                 {
                     var result = client.UploadString(uri, data.ToString());
                 }
-
                 catch (Exception ex)
                 {
                     // TODO: inject logger here.
@@ -41,10 +63,22 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Services
             }
         }
 
+        private void BindPropertiesFromOptions(EventNotificationServiceOptions options)
+        {
+            Condition.Requires(options, nameof(options)).IsNotNull();
+            this.FirebaseMessagingApiUri = options.FirebaseMessagingApiUri;
+            this.FirebaseMessagingApiKey = options.FirebaseMessagingApiKey;
+            this.PublicHostName = options.PublicHostName;
+        }
+
         private string GetCurrentContactName(Contact contact)
         {
-            // TODO: get contact first name - this errors out now
-            //var facets = contact.GetFacet<PersonalInformation>(PersonalInformation.DefaultFacetKey);
+            var personalInfoFacet = contact.GetFacet<PersonalInformation>(PersonalInformation.DefaultFacetKey);
+            if (personalInfoFacet != null)
+            {
+                return personalInfoFacet.FirstName;
+            }
+
             return "Visitor";
         }
     }

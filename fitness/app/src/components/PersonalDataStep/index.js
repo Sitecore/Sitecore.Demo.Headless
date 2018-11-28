@@ -31,17 +31,11 @@ class PersonalDataStep extends Component {
   handleContinueClick(event) {
     const { age, gender } = this.state;
     setDemographicsFacet(age, gender)
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         console.log(err);
       });
 
     setDemographicsProfile(age, gender)
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         console.log(err);
       });

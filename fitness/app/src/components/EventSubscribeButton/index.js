@@ -28,9 +28,6 @@ class EventSubscribeButton extends React.Component {
       : subscribe(eventId);
 
     operation
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         this.setState({ subscribed: false });
         console.log(err);
@@ -41,9 +38,6 @@ class EventSubscribeButton extends React.Component {
       : trackEventSubscribe(eventId);
 
     trackingPromise
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         console.log(err);
       });
