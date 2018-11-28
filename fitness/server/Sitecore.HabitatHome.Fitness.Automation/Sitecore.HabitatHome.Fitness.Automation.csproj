@@ -52,6 +52,9 @@
     <PackageReference Include="Sitecore.Analytics.Model.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Analytics.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Analytics.XConnect.NoReferences" Version="9.0.180604" />
+    <PackageReference Include="Sitecore.Framework.Configuration.Extensions">
+      <Version>2.0.7</Version>
+    </PackageReference>
     <PackageReference Include="Sitecore.Framework.Rules.Abstractions" Version="3.0.1" />
   </ItemGroup>
   <ItemGroup>
