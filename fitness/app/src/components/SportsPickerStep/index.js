@@ -36,17 +36,11 @@ class SportsPickerStep extends Component {
 
   handleContinueClick(event) {
     setSportsFacets(this.state.selectedSports)
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         console.log(err);
       });
 
     setSportsProfile(this.state.selectedSports)
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         console.log(err);
       });
