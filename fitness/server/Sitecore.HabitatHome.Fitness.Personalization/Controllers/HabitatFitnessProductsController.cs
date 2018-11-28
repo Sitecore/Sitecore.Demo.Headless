@@ -36,7 +36,8 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Controllers
         {
             try
             {
-                var scroredItems = itemScoringService.ScoreItems(dataService.GetAll(Context.Database), Context.Database);
+                var allItems = dataService.GetAll(Context.Database);
+                var scroredItems = itemScoringService.ScoreItems(allItems, Context.Database);
                 var items = new JArray(scroredItems.Take(take).Select(i => JObject.Parse(itemSerializer.Serialize(i))));
                 return Content(items.ToString(), "application/json");
             }

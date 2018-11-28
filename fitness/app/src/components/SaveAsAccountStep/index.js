@@ -30,13 +30,9 @@ class SaveAsAccountStep extends Component {
   onCreateClick() {
     const { firstname, lastname, email } = this.state;
 
-    setIdentification(firstname, lastname, email)
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    setIdentification(firstname, lastname, email).catch(err => {
+      console.log(err);
+    });
   }
 
   isValid() {
