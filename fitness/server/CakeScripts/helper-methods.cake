@@ -88,9 +88,7 @@ public void PublishProjects(string rootFolder, string websiteRoot)
                                    .WithProperty("WebPublishMethod", "FileSystem")
                                    .WithProperty("DeleteExistingFiles", "false")
                                    .WithProperty("publishUrl", websiteRoot)
-                                   .WithProperty("BuildProjectReferences", "false")
-								   .WithProperty("DeployXConnectTarget", configuration.XConnectRoot)
-								   .WithProperty("DeployIndexingTarget", configuration.XConnectIndexerRoot));
+                                   .WithProperty("BuildProjectReferences", "false"));
     }
 }
 
@@ -119,7 +117,11 @@ public void Transform(string rootFolder, string destinationRootFolder) {
                             , sourceTransform);		                // Target File
     }
 }
-
+public void DeployFiles(string source, string destination){
+    var files = GetFiles($"{source}");
+        EnsureDirectoryExists(destination);
+        CopyFiles(files, destination);
+}
 public void RebuildIndex(string indexName)
 {
     var url = $"{configuration.InstanceUrl}utilities/indexrebuild.aspx?index={indexName}";

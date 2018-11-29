@@ -66,30 +66,4 @@
     <Content Include="automation\sc.HabitatHome.Fitness.Collection.Model.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-      IF NOT EXIST "$(DeployXConnectTarget)" GOTO NO_PATH
-      IF NOT EXIST "$(DeployIndexingTarget)" GOTO NO_PATH
-
-      ECHO generate the model and copy it to the solution
-      "$(TargetPath)" "$(ProjectDir)\xmodels"
-
-      ECHO deploying assemblies to xconnect
-      copy /Y "$(TargetDir)\Sitecore.HabitatHome.Fitness*.dll" "$(DeployXConnectTarget)\bin"
-
-      ECHO deploying the model to xconnect service and indexer
-      xcopy /E /R/Y "$(ProjectDir)\xmodels" "$(DeployXConnectTarget)\App_data\models"
-      xcopy /E /R/Y "$(ProjectDir)\xmodels" "$(DeployIndexingTarget)\App_data\models"
-
-
-      GOTO EXIT
-
-      :NO_PATH
-
-      ECHO One or more of the following are not set in deploy.props [DeployXConnectTarget, DeployIndexingTarget]
-      ECHO DeployXConnectTarget = "$(DeployXConnectTarget)"
-      ECHO DeployIndexingTarget = "$(DeployIndexingTarget)"
-
-      :EXIT</PostBuildEvent>
-  </PropertyGroup>
 </Project>
