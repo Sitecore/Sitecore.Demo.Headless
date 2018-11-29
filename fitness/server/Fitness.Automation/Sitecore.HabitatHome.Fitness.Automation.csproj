@@ -56,26 +56,14 @@
       <Version>2.0.7</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.Framework.Rules.Abstractions" Version="3.0.1" />
+    <PackageReference Include="Sitecore.XConnect.Segmentation.Predicates.Model.NoReferences">
+      <Version>9.0.180604</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Xdb.MarketingAutomation.Core.NoReferences" Version="9.0.180604" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Sitecore.JavaScriptServices.Configuration">
-      <HintPath>..\sc.lib\Sitecore.JavaScriptServices.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.JavaScriptServices.ViewEngine">
-      <HintPath>..\sc.lib\Sitecore.JavaScriptServices.ViewEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.LayoutService">
-      <HintPath>..\sc.lib\Sitecore.LayoutService.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.LayoutService.Mvc">
-      <HintPath>..\sc.lib\Sitecore.LayoutService.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.XConnect.Segmentation.Predicates.Model">
-      <HintPath>..\sc.lib\Sitecore.XConnect.Segmentation.Predicates.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Xdb.MarketingAutomation.Core">
-      <HintPath>..\sc.lib\Sitecore.Xdb.MarketingAutomation.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -109,7 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj">
-      <Project>{8b8ef537-2e63-4cc5-93b0-7dfa3f784ec1}</Project>
+      <Project>{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}</Project>
       <Name>Sitecore.HabitatHome.Fitness.Collection.Model</Name>
     </ProjectReference>
   </ItemGroup>
