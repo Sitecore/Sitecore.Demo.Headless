@@ -56,26 +56,14 @@
       <Version>2.0.7</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.Framework.Rules.Abstractions" Version="3.0.1" />
+    <PackageReference Include="Sitecore.XConnect.Segmentation.Predicates.Model.NoReferences">
+      <Version>9.0.180604</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Xdb.MarketingAutomation.Core.NoReferences" Version="9.0.180604" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Sitecore.JavaScriptServices.Configuration">
-      <HintPath>..\sc.lib\Sitecore.JavaScriptServices.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.JavaScriptServices.ViewEngine">
-      <HintPath>..\sc.lib\Sitecore.JavaScriptServices.ViewEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.LayoutService">
-      <HintPath>..\sc.lib\Sitecore.LayoutService.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.LayoutService.Mvc">
-      <HintPath>..\sc.lib\Sitecore.LayoutService.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.XConnect.Segmentation.Predicates.Model">
-      <HintPath>..\sc.lib\Sitecore.XConnect.Segmentation.Predicates.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Xdb.MarketingAutomation.Core">
-      <HintPath>..\sc.lib\Sitecore.Xdb.MarketingAutomation.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -97,6 +85,8 @@
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Automation.Serialization.config" />
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Automation.config" />
     <Content Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.HabitatFitnessServices.xml" />
+    <None Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.ActivityTypes.xml.xdt" />
+    <None Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.ContactLoader.xml.xdt" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -104,6 +94,12 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj">
+      <Project>{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.Collection.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

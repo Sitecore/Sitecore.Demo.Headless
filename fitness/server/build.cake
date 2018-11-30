@@ -38,7 +38,6 @@ Task("Default")
 .IsDependentOn("Post-Deploy");
 
 Task("Post-Deploy")
-.IsDependentOn("Publish-Transforms")
 .IsDependentOn("Sync-Unicorn");
 
 Task("Quick-Deploy")
@@ -47,8 +46,7 @@ Task("Quick-Deploy")
 .IsDependentOn("Modify-PublishSettings")
 .IsDependentOn("Publish-All-Projects")
 .IsDependentOn("Apply-Xml-Transform")
-.IsDependentOn("Modify-Unicorn-Source-Folder")
-.IsDependentOn("Publish-Transforms");
+.IsDependentOn("Modify-Unicorn-Source-Folder");
 
 /*===============================================
 ================= SUB TASKS =====================
@@ -57,8 +55,7 @@ Task("Quick-Deploy")
 Task("Copy-Sitecore-Lib")
     .Does(()=> {
         var files = GetFiles( 
-            $"{configuration.WebsiteRoot}/bin/Sitecore.JavaScriptServices*.dll",
-            $"{configuration.WebsiteRoot}/bin/Sitecore.LayoutService*.dll");
+            $"{configuration.WebsiteRoot}/bin/Sitecore*.dll");
         var destination = "./sc.lib";
         EnsureDirectoryExists(destination);
         CopyFiles(files, destination);
@@ -66,7 +63,8 @@ Task("Copy-Sitecore-Lib")
 
 Task("Publish-All-Projects")
 .IsDependentOn("Build-Solution")
-.IsDependentOn("Publish-Projects");
+.IsDependentOn("Publish-Projects")
+.IsDependentOn("Publish-XConnect");
 
 
 Task("Build-Solution").Does(() => {
@@ -74,9 +72,47 @@ Task("Build-Solution").Does(() => {
 });
 
 Task("Publish-Projects").Does(() => {
-    PublishProjects(configuration.ProjectSrcFolder, configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Automation", configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Collection", configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Personalization", configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Segmentation", configuration.WebsiteRoot);
 });
 
+Task("Publish-XConnect").Does(()=>{
+   DeployFiles(
+       $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\bin\\Debug\\Sitecore.HabitatHome.Fitness.*.dll",
+       $"{configuration.XConnectRoot}\\bin");
+   
+    DeployFiles(
+        $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\xmodels\\*",
+        $"{configuration.XConnectRoot}\\App_Data\\Models"
+    );
+    DeployFiles(
+        $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\xmodels\\*",
+        $"{configuration.XConnectIndexerRoot}\\App_Data\\Models"
+    );
+    DeployFiles(
+        $"{configuration.ProjectSrcFolder}\\Fitness.Automation\\bin\\Sitecore.HabitatHome.Fitness.Automation.dll",
+        $"{configuration.XConnectAutomationServiceRoot}\\bin"
+    );
+    DeployFiles(
+        $"{configuration.ProjectSrcFolder}\\Fitness.Automation\\bin\\Sitecore.HabitatHome.Fitness.Collection.Model.dll",
+        $"{configuration.XConnectAutomationServiceRoot}\\bin"
+    );
+    DeployFiles(
+        $"{configuration.ProjectSrcFolder}\\Fitness.Automation.Plugins\\sitecore\\shell\\client\\applications\\MarketingAutomation\\plugins\\HabitatFitness\\*",
+        $"{configuration.WebsiteRoot}\\sitecore\\shell\\client\\Applications\\MarketingAutomation\\plugins\\HabitatFitness"
+    );
+    DeployFiles(
+        $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\automation\\*",
+        $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore"
+    );
+    DeployFiles(
+        $"{configuration.ProjectSrcFolder}\\Fitness.Automation\\App_Data\\Config\\Sitecore\\MarketingAutomation\\*.xml",
+        $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation "
+    );
+
+});
 Task("Modify-Unicorn-Source-Folder").Does(() => {
     var zzzDevSettingsFile = File($"{configuration.WebsiteRoot}/App_config/Include/Sitecore.HabitatHome.Fitness/z.Sitecore.HabitatHome.Fitness.DevSettings.config");
     
@@ -134,36 +170,11 @@ Task("Sync-Unicorn").Does(() => {
 
 
 Task("Apply-Xml-Transform").Does(() => {
-    var layers = new string[] {  configuration.ProjectSrcFolder};
+	// target website transforms 
+	Transform($"{configuration.ProjectSrcFolder}\\Fitness.AppItems", configuration.WebsiteRoot);
 
-    foreach(var layer in layers)
-    {
-        Transform(layer);
-    }
+	// xconnect transforms
+	Transform($"{configuration.ProjectSrcFolder}\\Fitness.Automation\\App_Data\\Config\\sitecore\\MarketingAutomation", $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation");
 });
-
-Task("Publish-Transforms").Does(() => {
-    var layers = new string[] { configuration.ProjectSrcFolder};
-    var destination = $@"{configuration.WebsiteRoot}\temp\transforms";
-
-    CreateFolder(destination);
-
-    try
-    {
-        var files = new List<string>();
-        foreach(var layer in layers)
-        {
-            var xdtFiles = GetTransformFiles(layer).Select(x => x.FullPath).ToList();
-            files.AddRange(xdtFiles);
-        }   
-
-        CopyFiles(files, destination, preserveFolderStructure: true);
-    }
-    catch (System.Exception ex)
-    {
-        WriteError(ex.Message);
-    }
-});
-
 
 RunTarget(target);
