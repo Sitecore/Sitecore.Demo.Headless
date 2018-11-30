@@ -5,6 +5,11 @@ fields:
   selectTitle: Your gender
   options:
     - template: Profile Key
+      name: Prefer not to say
+      displayName: Prefer not to say
+      fields:
+        Name: Prefer not to say
+    - template: Profile Key
       name: Female
       displayName: Female
       fields:
@@ -14,3 +19,8 @@ fields:
       displayName: Male
       fields:
         Name: Male
+    - template: Profile Key
+      name: Non-binary third gender
+      displayName: Non-binary / third gender
+      fields:
+        Name: Non-binary / third gender
