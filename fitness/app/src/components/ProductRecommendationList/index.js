@@ -23,7 +23,7 @@ class ProductRecommendationList extends React.Component {
   }
 
   render() {
-    const { products, loading, error } = this.state;
+    const { products, loading } = this.state;
     const { fields, height, width } = this.props;
 
     let productItems = [];
