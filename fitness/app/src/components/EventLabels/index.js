@@ -3,7 +3,7 @@ import { Text } from "@sitecore-jss/sitecore-jss-react";
 
 const EventLabel = ({ label, className }) => {
   let fields = label.fields;
-  // TODO: workaround for a serialization issue in connected
+  // temp workaround for a serialization issue in connected
   if (fields.fields) {
     fields = label.fields.fields;
   }
