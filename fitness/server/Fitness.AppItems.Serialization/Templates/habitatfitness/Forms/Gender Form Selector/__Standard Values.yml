@@ -1,0 +1,30 @@
+﻿---
+ID: "ca7effbc-0028-4c35-ae94-36dec4d4c223"
+Parent: "9bfea57c-783a-4695-9ccd-5c7577482d6a"
+Template: "9bfea57c-783a-4695-9ccd-5c7577482d6a"
+Path: /sitecore/templates/Project/habitatfitness/Forms/Gender Form Selector/__Standard Values
+DB: master
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T230930Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
+    - ID: "62e8e955-cf00-420b-94e5-196c6a1c8d4d"
+      Hint: options
+      Type: Multilist
+      Value: |
+        {99BF4FDF-5AEE-433C-92FF-0C6649B2E6B8}
+        {B7574236-2C5B-4B52-BC15-9AA739158C8F}
+        {9627F625-DA43-42EA-8E80-D5B74914467C}
+        {E3E83946-554D-4BF8-A5F4-8A80F84247F1}

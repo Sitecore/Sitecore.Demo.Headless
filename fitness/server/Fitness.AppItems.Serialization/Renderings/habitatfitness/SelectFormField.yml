@@ -13,7 +13,7 @@ SharedFields:
   Value: Office/16x16/drop_down_list.png
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
-  Value: /sitecore/templates/Project/habitatfitness/SelectFormField
+  Value: /sitecore/templates/Project/habitatfitness/Forms/SelectFormField
 - ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
   Hint: __Read Only
   Type: Checkbox
