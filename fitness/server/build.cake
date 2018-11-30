@@ -93,11 +93,11 @@ Task("Publish-XConnect").Does(()=>{
     );
     DeployFiles(
         $"{configuration.ProjectSrcFolder}\\Fitness.Automation\\bin\\Sitecore.HabitatHome.Fitness.Automation.dll",
-        $"{configuration.XConnectAutomationServiceRoot}\\bin"
+        $"{configuration.XConnectAutomationServiceRoot}"
     );
     DeployFiles(
         $"{configuration.ProjectSrcFolder}\\Fitness.Automation\\bin\\Sitecore.HabitatHome.Fitness.Collection.Model.dll",
-        $"{configuration.XConnectAutomationServiceRoot}\\bin"
+        $"{configuration.XConnectAutomationServiceRoot}"
     );
     DeployFiles(
         $"{configuration.ProjectSrcFolder}\\Fitness.Automation.Plugins\\sitecore\\shell\\client\\applications\\MarketingAutomation\\plugins\\HabitatFitness\\*",

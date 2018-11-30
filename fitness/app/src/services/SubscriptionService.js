@@ -30,7 +30,6 @@ const getMessagingToken = async () => {
     const messaging = firebase.messaging();
     await messaging.requestPermission();
     const token = await messaging.getToken();
-    // TODO: debugging
     console.log({ token });
     return token;
   } catch (error) {

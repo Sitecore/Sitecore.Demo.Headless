@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import loadingImg from "../../assets/img/loading.gif";
 import ContentLoader from "react-content-loader";
 
 class EventItemLoader extends React.Component {
