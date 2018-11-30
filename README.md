@@ -3,11 +3,11 @@ This repository is used to share Sitecore JSS PWA demo assets (and future “Sit
 
 ## Version support
 ### App 
-> Located under `/fitness/app`.
+> The sources for the app are located under `/fitness/app`.
 - Sitecore 9.0.x and 9.1.
 
-### Server-side
-> Located under `/fitness/server`.
+### Server
+> The server-side part is located under `/fitness/server`.
 - Sitecore 9.0.1 or 9.0.2 only for the time being.
 > Server-side support for Sitecore 9.1 is being tested at the moment. 
 
@@ -27,12 +27,26 @@ Check the official JSS pre-requisites [here](https://jss.sitecore.com/docs/getti
 
 > At this time, some API services (registration and data collection for ex.) are not mocked, so it is expected to see some console errors during Personalization and Registration wizard flows.
 
-## Integrated setup
+### Code-first deployment
+
+In this scenario, the code-first app deployment is performed without any server-side components (described in the "Complete setup" below). This process will bootstrap the content artifacts for the app in vanilla Sitecore instance.
+
+> It is expected that some components on Home screen that are dependent on mocked APIs (event list and product list) won't work until you deploy the server-side components since the mocked APIs are not deployed.  
+
+#### Pre-requisites
+See Pre-requisites for "Complete setup" below.
+
+#### Steps
+See steps 3-6 below in "Deploy the app to Sitecore instance" section.
+
+As the final step, execute `jss deploy app --includeContent --includeDictionary`, which takes care of content and file deployment.
+
+## Complete setup
 
 These steps are intended for the complete setup with the app and Sitecore server-side working in full Sitecore XP configuration.
 The content for the app are to be deserialized via Unicorn using the PowerShell script below. For the simplified "front-end only" scenario, please see "Quick Start" above.
 
-### Assumptions
+### Pre-requisites
 1. Sitecore 9.0.1 or higher is installed.
     > Habitat Fitness doesn't support 9.0.0 (Initial Release).
 
@@ -41,7 +55,7 @@ The content for the app are to be deserialized via Unicorn using the PowerShell 
 1. Your current site's "main" hostname is `habitathome.dev.local`
 1. You also have a binding (w/ SSL) (and hosts entry) to `habitatfitness.dev.local`
 1. Sitecore.JSS v11 Server package is installed on your target Sitecore instance.
-	> Habitat Fitness may work with JSS Tech Preview 4 (not official) and wasn't even tried with earlier Tech Previews of Sitecore JSS.
+	> Habitat Fitness _may_ work with JSS Tech Preview 4 (not officially supported) and wasn't even tried with earlier Tech Previews.
 
 ### Deployment
 
