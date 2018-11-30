@@ -1,93 +1,54 @@
 module.exports = [
   {
-    url: "/Content/products/Mini-Basketball",
+    url: "/Content/products/Overunder-Game-Ball",
     fields: {
       title: {
-        value: "Junior Basketball"
+        value: "Overunder Game Ball"
       },
       description: {
-        value: "For the kids you know...."
+        value: "Overunder Game Ball"
       },
       link: {
         value: {
           href:
-            "https://basketball.epicsports.com/prod/3937/tachikara-sgb-5r-junior-rubber-basketballs.html",
-          linktype: "external",
-          url:
-            "https://basketball.epicsports.com/prod/3937/tachikara-sgb-5r-junior-rubber-basketballs.html",
-          anchor: "",
-          target: ""
+            "https://experiencecommerce.habitathomedemo.com/shop/BasketballCollection%3dhabitat_master-basketball%20collection/OverunderGameBall%3d8042127",
+          text: "Experience Commerce - Overunder Game Ball",
+          target: "_blank"
         }
       },
       image: {
         value: {
-          src:
-            "http://habitatfitness.dev.local/-/media/Project/habitatfitness/assets/products/junior-basketball.ashx?h=300&la=en&w=300&hash=7A95DCB4796940EC566DC535152CED76",
-          alt: "",
-          width: "300",
-          height: "300"
+          src: "/assets/products/overunder-game-ball.jpg",
+          alt: "Basketball",
+          width: "790",
+          height: "527"
         }
       }
     }
   },
   {
-    url: "/Content/products/Basketball-Socks",
+    url: "/Content/products/Habitat-Striva-Training-Markers",
     fields: {
       title: {
-        value: "Basketball Socks"
+        value: "Habitat Striva Training Markers"
       },
       description: {
-        value: "You need these. Try playing without socks."
+        value: "Habitat Striva Training Markers"
       },
       link: {
         value: {
           href:
-            "https://www.absolutesportsocks.com/fastbreak-basketball-crew-socks/",
-          linktype: "external",
-          url:
-            "https://www.absolutesportsocks.com/fastbreak-basketball-crew-socks/",
-          anchor: "",
-          target: ""
+            "https://experiencecommerce.habitathomedemo.com/shop/Running%3dhabitat_master-running/HabitatStrivaTrainingMarkers%3d8042138",
+          text: "Experience Commerce - Training Markers",
+          target: "_blank"
         }
       },
       image: {
         value: {
-          src:
-            "http://habitatfitness.dev.local/-/media/Project/habitatfitness/assets/products/basketball-socks.ashx?h=610&la=en&w=610&hash=75841B18F4BEE0753CDF286FD4D6331C",
-          alt: "basketball socks",
-          width: "610",
-          height: "610"
-        }
-      }
-    }
-  },
-  {
-    url: "/Content/products/Hanks-Basketball",
-    fields: {
-      title: {
-        value: "Hanks Basketball"
-      },
-      description: {
-        value: '"You can\'t play basketball without a basketball", Captain O.'
-      },
-      link: {
-        value: {
-          href:
-            "https://www.dickssportinggoods.com/p/spalding-nba-official-game-basketball-29-5-16splunbgmblltwttbkb/16splunbgmblltwttbkb",
-          linktype: "external",
-          url:
-            "https://www.dickssportinggoods.com/p/spalding-nba-official-game-basketball-29-5-16splunbgmblltwttbkb/16splunbgmblltwttbkb",
-          anchor: "",
-          target: ""
-        }
-      },
-      image: {
-        value: {
-          src:
-            "http://habitatfitness.dev.local/-/media/Project/habitatfitness/assets/products/orange-basketball.ashx?h=170&la=en&w=170&hash=E463B76359611115DA95850CE7C8E213",
-          alt: "Hanks Basketball",
-          width: "170",
-          height: "170"
+          src: "/assets/products/striva-training-markers.jpg",
+          alt: "Habitat Striva Training Markers",
+          width: "790",
+          height: "527"
         }
       }
     }
