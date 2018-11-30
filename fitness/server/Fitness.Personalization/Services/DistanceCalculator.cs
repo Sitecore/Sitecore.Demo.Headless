@@ -40,6 +40,11 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
 
         public void AssignContentProfile(Profile profile, string profileName)
         {
+            if(Item == null)
+            {
+                return;
+            }
+
             Field field = Item.Fields[trackingFieldName];
             if (field == null)
             {
