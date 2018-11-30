@@ -15,31 +15,7 @@ This repository is used to share Sitecore JSS PWA demo assets (and future “Sit
 You can get the app running (front-end only) without Sitecore install and run disconnected, what is also known as "Code-First".
 The app functionality will naturally be limited (no tracking, personalization, etc.), but it is enough to understand how the app is put together.
 
-### Pre-requisites
-
-Check the official JSS pre-requisites [here](https://jss.sitecore.com/docs/getting-started/quick-start).
-
-### Steps
-1. `npm install -g @sitecore-jss/sitecore-jss-cli`
-1. cd `/fitness/app`
-1. `npm install`
-1. `jss start`
-
-> At this time, some API services (registration and data collection for ex.) are not mocked, so it is expected to see some console errors during Personalization and Registration wizard flows.
-
-### Code-first deployment
-
-In this scenario, the code-first app deployment is performed without any server-side components (described in the "Complete setup" below). This process will bootstrap the content artifacts for the app in vanilla Sitecore instance.
-
-> It is expected that some components on Home screen that are dependent on mocked APIs (event list and product list) won't work until you deploy the server-side components since the mocked APIs are not deployed.  
-
-#### Pre-requisites
-See Pre-requisites for "Complete setup" below.
-
-#### Steps
-See steps 3-6 below in "Deploy the app to Sitecore instance" section.
-
-As the final step, execute `jss deploy app --includeContent --includeDictionary`, which takes care of content and file deployment.
+See the directions [here](https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/README.md).
 
 ## Complete setup
 
@@ -108,41 +84,17 @@ If this is changed to `web`, you will need to perform site-level Smart Publishin
       > This API key is known because it is serialized and will be synced to your Sitecore instance via Unicorn.
 	- hit "enter" when asked for the deployment secret
 
-1. Add the same environment variables as above to `habitatfitness.config` file under `/sitecore/config` folder in this project directory. They are listed under `<configuration>/<sitecore>/<javaScriptServices>/<EnvironmentVariables>/<renderEngines>/<renderingEngine>/<instance>/<EnvironmentVariables>`:
+1. Setup API keys for the 3rd party services if you haven't done it already as a part of [Quick start](https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/README.md).
+
+1. Open `habitatfitness.config` file under `/sitecore/config` folder in this project directory.
+
+1. Add the same environment variables for API keys obtained for `.env` (see [Quick start](https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/README.md)) file under `<configuration>/<sitecore>/<javaScriptServices>/<EnvironmentVariables>/<renderEngines>/<renderingEngine>/<instance>/<EnvironmentVariables>` section of `habitatfitness.config` file:
 
     ```
       <var name="REACT_APP_GOOGLE_API_KEY" value="..." />
       <var name="REACT_APP_FIREBASE_MESSAGING_PUSH_KEY" value="..." />
       <var name="REACT_APP_FIREBASE_SENDER_ID" value="..." />
     ```
-
-1. Create `.env` file next to `package.json` and add the following entries with real values of your personal API keys to the corrsponding services.
-
-    ```
-    REACT_APP_GOOGLE_API_KEY=<insert-yours-here>
-    REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=<insert-yours-here>
-    REACT_APP_FIREBASE_SENDER_ID=<insert-yours-here>
-    ```
-
-    - [How to obtain a Google API key](https://developers.google.com/maps/documentation/javascript/get-api-key).
-      > Please do not forget to restrict this API key to your origins.
-
-    - How to obtain a Firebase API key:
-      - Create a Firebase account.
-      - Login to Firebase console.
-      - Create a new project and open it.
-      - Click on the "gear" icon and access "project settings":
-       [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png]]
- 
-      - Go to "Cloud Messaging" tab and retrieve "Sender ID" and put the value as 
-      `REACT_APP_FIREBASE_SENDER_ID=<insert-here>`
-        [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/gcp-sender-id.png]]
-       
-      - Scroll down to the "Web configuration" section, grab the Key pair from "Web Push certificates" and put the value here (generate if it doesn't exist yet): 
-      `REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=<insert-here>`
-        [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/push-cert.png]]
-   
-      > Please take extra care about these API keys, make sure to put appopriate security restrictions and do not commit those to source control.
 
 1. Execute `jss deploy config` from cmd.
     > This deploys the config files under `/fitness/app/sitecore/config` and will require elevated permissions depending on your target location. Make sure to run this command "as administrator" to avoid permission issues. After this command execution, the Sitecore instance will recycle.
