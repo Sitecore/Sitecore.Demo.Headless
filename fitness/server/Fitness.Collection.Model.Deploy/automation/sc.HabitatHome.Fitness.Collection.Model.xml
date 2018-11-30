@@ -1,0 +1,18 @@
+﻿<Settings>
+  <Sitecore>
+    <XConnect>
+      <Services>
+        <XConnect.Client.Configuration>
+          <Options>
+            <Models>
+              <HabitatFitnessModel>
+                <TypeName>Sitecore.HabitatHome.Fitness.Collection.Model.ModelFactory, Sitecore.HabitatHome.Fitness.Collection.Model</TypeName>
+                <PropertyName>Instance</PropertyName>
+              </HabitatFitnessModel>
+          </Models>
+          </Options>
+        </XConnect.Client.Configuration>
+      </Services>
+    </XConnect>
+  </Sitecore>
+</Settings>

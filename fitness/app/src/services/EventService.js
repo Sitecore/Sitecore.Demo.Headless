@@ -20,7 +20,7 @@ export function unregister(eventId) {
 }
 
 export function getAll() {
-  return get(`/events`, { take: EventDisplayCount });
+  return get(`/events`, { take: EventDisplayCount }, true);
 }
 
 function executeEventAction(eventAction, eventId = required()) {

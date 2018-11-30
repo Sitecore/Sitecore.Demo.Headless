@@ -28,7 +28,9 @@
   "dependencies": {
     "@sitecore-jss/sitecore-jss-proxy": "^10.0.0-preview.1",
     "@sitecore-jss/sitecore-jss-react": "^10.0.0-preview.1",
+    "@sitecore-jss/sitecore-jss-tracking": "^10.0.0-preview.1",
     "axios": "^0.18.0",
+    "axios-cache-adapter": "^2.1.1",
     "bootstrap": "^4.1.1",
     "dayjs": "^1.7.7",
     "firebase": "^5.4.2",

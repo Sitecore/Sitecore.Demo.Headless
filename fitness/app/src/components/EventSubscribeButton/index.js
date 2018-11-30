@@ -1,9 +1,10 @@
 import React from "react";
 import { translate } from "react-i18next";
+import { subscribe, unsubscribe } from "../../services/SubscriptionService";
 import {
-  subscribe,
-  unsubscribe
-} from "../../services/SubscriptionService";
+  trackEventSubscribe,
+  trackEventUnsubscription
+} from "../../services/TrackingService";
 
 class EventSubscribeButton extends React.Component {
   state = {
@@ -27,18 +28,24 @@ class EventSubscribeButton extends React.Component {
       : subscribe(eventId);
 
     operation
-      .then(response => {
-        console.log(response.data);
-      })
       .catch(err => {
         this.setState({ subscribed: false });
+        console.log(err);
+      });
+
+    const trackingPromise = this.state.subscribed
+      ? trackEventUnsubscription(eventId)
+      : trackEventSubscribe(eventId);
+
+    trackingPromise
+      .catch(err => {
         console.log(err);
       });
   }
 
   render() {
     const { subscribed } = this.state;
-    const suffix =  subscribed ? "-active" : "";
+    const suffix = subscribed ? "-active" : "";
     return (
       <div
         className={`event-action event-action-subscribe${suffix}`}

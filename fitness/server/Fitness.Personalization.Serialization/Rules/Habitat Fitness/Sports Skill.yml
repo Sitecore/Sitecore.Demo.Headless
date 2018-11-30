@@ -1,0 +1,79 @@
+﻿---
+ID: "0148a61f-061a-4b75-9e3c-db6e67f03e6a"
+Parent: "20e444b5-8773-4c6d-8957-d559e7111466"
+Template: "f0d16eee-3a05-4e43-a082-795a32b873c0"
+Path: /sitecore/system/Settings/Rules/Definitions/Elements/Habitat Fitness/Sports Skill
+DB: master
+SharedFields:
+- ID: "ab51c8b2-f0e1-4471-9aae-cc080d774923"
+  Hint: Type
+  Value: Sitecore.HabitatHome.Fitness.Personalization.Rules.SportsSkillCondition,Sitecore.HabitatHome.Fitness.Personalization
+Languages:
+- Language: da
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: "Kontakts engagement-værdi"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171219T155402Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
+      Hint: Text
+      Value: "hvor antallet af kontaktens aktuelle engagement-værdipoint [OperatorId,Operator,,compares to] [ContactEngagementValue,Integer,,number]"
+- Language: "de-DE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Kontakt Engagementwert
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171219T155838Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
+      Hint: Text
+      Value: "die die Anzahl der derzeitigen Engagementwertpunkte des Kontakts [OperatorId,Operator,,entspricht] [ContactEngagementValue,Integer,,number]"
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20150720T160002Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
+      Hint: Text
+      Value: "where contact's [SportProfileKeyId,Tree,root=/sitecore/system/Marketing Control Panel/Profiles/Sports&selection=		/sitecore/templates/System/Analytics/Profile Key,sport] skill level [OperatorId,Operator,,compares to] [SkillLevel,Integer,,number]"
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: コンタクトのエンゲージメント バリュー
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171219T160256Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
+      Hint: Text
+      Value: "条件： コンタクトの現行のエンゲージメント バリュー ポイントの数が [ContactEngagementValue,Integer,,数] [OperatorId,Operator,,と比較する] 場合"

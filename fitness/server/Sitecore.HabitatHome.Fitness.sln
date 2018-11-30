@@ -3,15 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection", "Sitecore.HabitatHome.Fitness.Collection\Sitecore.HabitatHome.Fitness.Collection.csproj", "{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection.Model", "Sitecore.HabitatHome.Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj", "{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xConnect", "xConnect", "{A9B69A5C-3877-43BC-A434-C67DA86359AE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection.Model.Deploy", "Sitecore.HabitatHome.Fitness.Collection.Model.Deploy\Sitecore.HabitatHome.Fitness.Collection.Model.Deploy.csproj", "{310540F3-8784-47B0-B29E-2BACEEAC7A8C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Personalization", "Sitecore.HabitatHome.Fitness.Personalization\Sitecore.HabitatHome.Fitness.Personalization.csproj", "{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{9409F3C3-B313-4767-AB93-0E3B4E9F61B9}"
 	ProjectSection(SolutionItems) = preProject
@@ -34,7 +26,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unicorn", "Unicorn", "{38D0
 		scripts\Unicorn\Unicorn.psm1 = scripts\Unicorn\Unicorn.psm1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.AppItems", "Sitecore.HabitatHome.Fitness.AppItems\Sitecore.HabitatHome.Fitness.AppItems.csproj", "{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.AppItems", "Fitness.AppItems\Sitecore.HabitatHome.Fitness.AppItems.csproj", "{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Automation", "Fitness.Automation\Sitecore.HabitatHome.Fitness.Automation.csproj", "{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Automation.Plugins", "Fitness.Automation.Plugins\Sitecore.HabitatHome.Fitness.Automation.Plugins.csproj", "{51428CBD-14D4-4BFA-9C54-BD1DCEB38B83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection", "Fitness.Collection\Sitecore.HabitatHome.Fitness.Collection.csproj", "{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection.Model", "Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj", "{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection.Model.Deploy", "Fitness.Collection.Model.Deploy\Sitecore.HabitatHome.Fitness.Collection.Model.Deploy.csproj", "{310540F3-8784-47B0-B29E-2BACEEAC7A8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Personalization", "Fitness.Personalization\Sitecore.HabitatHome.Fitness.Personalization.csproj", "{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Segmentation", "Fitness.Segmentation\Sitecore.HabitatHome.Fitness.Segmentation.csproj", "{699D6EAB-B71E-4A58-AB09-98C88B7AC0B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +48,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51428CBD-14D4-4BFA-9C54-BD1DCEB38B83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51428CBD-14D4-4BFA-9C54-BD1DCEB38B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51428CBD-14D4-4BFA-9C54-BD1DCEB38B83}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,25 +68,26 @@ Global
 		{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{310540F3-8784-47B0-B29E-2BACEEAC7A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310540F3-8784-47B0-B29E-2BACEEAC7A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310540F3-8784-47B0-B29E-2BACEEAC7A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310540F3-8784-47B0-B29E-2BACEEAC7A8C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699D6EAB-B71E-4A58-AB09-98C88B7AC0B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699D6EAB-B71E-4A58-AB09-98C88B7AC0B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699D6EAB-B71E-4A58-AB09-98C88B7AC0B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699D6EAB-B71E-4A58-AB09-98C88B7AC0B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{310540F3-8784-47B0-B29E-2BACEEAC7A8C} = {A9B69A5C-3877-43BC-A434-C67DA86359AE}
 		{58B12CE8-0F2B-4E74-A61D-76C36776589B} = {9409F3C3-B313-4767-AB93-0E3B4E9F61B9}
 		{C18E560F-D66D-490B-B6E9-BA149166D233} = {9409F3C3-B313-4767-AB93-0E3B4E9F61B9}
 		{38D05F6E-1A40-4B38-BB64-82220085FEF6} = {C18E560F-D66D-490B-B6E9-BA149166D233}
+		{310540F3-8784-47B0-B29E-2BACEEAC7A8C} = {A9B69A5C-3877-43BC-A434-C67DA86359AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49F9BD31-72EE-4C86-9D4F-A7A7B669E80E}

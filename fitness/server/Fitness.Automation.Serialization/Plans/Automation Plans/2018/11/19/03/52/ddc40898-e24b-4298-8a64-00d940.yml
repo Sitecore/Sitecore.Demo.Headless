@@ -1,0 +1,37 @@
+﻿---
+ID: "ddc40898-e24b-4298-8a64-00d940a71fd0"
+Parent: "11985345-29d4-4eb3-b862-a491fd023da4"
+Template: "d4d43c33-3661-4630-af63-0754cab7b110"
+Path: "/sitecore/system/Marketing Control Panel/Automation Plans/2018/11/19/03/52/ddc40898-e24b-4298-8a64-00d940a71fd0"
+DB: master
+SharedFields:
+- ID: "1766652d-080b-409c-abbf-3a90e0f801f5"
+  Hint: Start Date
+  Value: 00010101T000000Z
+- ID: "2c41a32f-86a9-4f43-8550-bf0af266e3f2"
+  Hint: End Date
+  Value: 99991231T235959
+- ID: "3fb918c8-08ec-4879-8062-088bbf71ee72"
+  Hint: Plan Data
+  Value: |
+    {"ReentryMode":0,"ContextKeyFactoryType":null,"EntryActivityId":"65cda85a-2db4-424b-d668-e32c4fb545df","Alias":"ddc40898-e24b-4298-8a64-00d940a71fd0","IgnoreIsActiveProperty":true,"Activities":{"65cda85a-2db4-424b-d668-e32c4fb545df":{"Paths":{"default":"9eb47368-86c8-86ca-a0dd-15705b0d7487"},"Id":"65cda85a-2db4-424b-d668-e32c4fb545df","ActivityTypeId":"8c92d3c1-2c38-4e8a-92d1-9590e17cce89","Parameters":{"EventIds":{"$type":"System.Collections.Generic.List`1[[System.Guid, mscorlib]], mscorlib","$values":[]},"GoalIds":{"$type":"System.Collections.Generic.List`1[[System.Guid, mscorlib]], mscorlib","$values":["8fd55d9e-6b07-4c0c-a0c8-545ea77d0391"]},"OutcomeIds":{"$type":"System.Collections.Generic.List`1[[System.Guid, mscorlib]], mscorlib","$values":[]},"TestOperation":0,"UseCondition":false}},"9eb47368-86c8-86ca-a0dd-15705b0d7487":{"Paths":{"default":"e8bd73e8-32bd-11bc-00c6-96493e7017a4"},"Id":"9eb47368-86c8-86ca-a0dd-15705b0d7487","ActivityTypeId":"9046a4aa-07d9-4377-8a6e-1db27765b2ba","Parameters":{"Name":"Delay","ListenerDelay":{"$type":"Sitecore.Marketing.Automation.Models.ListenerDelay, Sitecore.Marketing.Automation.Models","Delay":"00:01:00","WaitUntil":null}}},"e8bd73e8-32bd-11bc-00c6-96493e7017a4":{"Paths":{"default":"a0a4353e-d8a1-d64e-fc45-beff9f74f9fa"},"Id":"e8bd73e8-32bd-11bc-00c6-96493e7017a4","ActivityTypeId":"c2a5ef3a-dde9-4309-8921-5a6fd011d0ba","Parameters":{"Lists":{"$type":"System.Collections.Generic.List`1[[System.Guid, mscorlib]], mscorlib","$values":["0948a166-040a-4d02-c4bc-6eeac76fe423"]}}},"a0a4353e-d8a1-d64e-fc45-beff9f74f9fa":{"Paths":{"default":"37cfcbb7-0c2b-31cc-948c-ac272bfd3905"},"Id":"a0a4353e-d8a1-d64e-fc45-beff9f74f9fa","ActivityTypeId":"7233ed87-bb7f-4498-8eb2-2e56896d71a7","Parameters":{}},"37cfcbb7-0c2b-31cc-948c-ac272bfd3905":{"Paths":{},"Id":"37cfcbb7-0c2b-31cc-948c-ac272bfd3905","ActivityTypeId":"a47371c2-8921-421f-8902-f3eccd229d56","Parameters":{}}},"UniversalActivities":{}}
+- ID: "621d7a1f-c6a3-4a2f-8fcd-7dd1fd893c9c"
+  Hint: Custom Values
+  Value: "{}"
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{689E2994-4656-4C58-9112-7826CB46EE69}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181119T035221Z
+    - ID: "365f1971-b028-4065-bc11-ce1f471452af"
+      Hint: Name
+      Value: Event Subscribers
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{EDCBB550-BED3-490F-82B8-7B2F14CCD26E}"
