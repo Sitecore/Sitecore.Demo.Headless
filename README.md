@@ -84,7 +84,7 @@ If this is changed to `web`, you will need to perform site-level Smart Publishin
       > This API key is known because it is serialized and will be synced to your Sitecore instance via Unicorn.
 	- hit "enter" when asked for the deployment secret
 
-1. Setup API keys for the 3rd party services if you haven't done it already as a part of [Quick start](https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/README.md).
+1. Setup API keys for the 3rd party services if you haven't done it already as a part of [Quick start](https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/README.md#connecting-3rd-party-api-services).
 
 1. Open `habitatfitness.config` file under `/sitecore/config` folder in this project directory.
 
