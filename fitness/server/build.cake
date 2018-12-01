@@ -72,6 +72,7 @@ Task("Build-Solution").Does(() => {
 });
 
 Task("Publish-Projects").Does(() => {
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.AppItems", configuration.WebsiteRoot);
     PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Automation", configuration.WebsiteRoot);
     PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Collection", configuration.WebsiteRoot);
     PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Personalization", configuration.WebsiteRoot);
