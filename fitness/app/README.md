@@ -69,12 +69,12 @@ In this scenario, the code-first app deployment is performed without any server-
 
 #### Steps
 
+1. Create a new API key by follow directions in Step 2 [here](https://jss.sitecore.com/docs/getting-started/app-deployment) and copy the item ID into clipboard.
+
 1. `jss setup` from cmd and specify the following:
 	- path to your Sitecore instance
 	- `https://habitatfitness.dev.local` (it is important it is not set to the default host name of the instance - habitathome.dev.local).
-	- `{EBF6D5C1-EB80-4B15-91AB-DD3845797774}` for the API key
-      > This API key is known because it is serialized and will be synced to your Sitecore instance via Unicorn.
-	- hit "enter" when asked for the deployment secret
+	-  Use the API key item ID obtained above when prompted for API key
 
 1. Open `habitatfitness.config` file under `/sitecore/config` folder in this project directory.
 
