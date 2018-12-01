@@ -30,7 +30,7 @@ The content for the app are to be deserialized via Unicorn using the PowerShell 
 
 1. Your current site's "main" hostname is `habitathome.dev.local`
 1. You also have a binding (w/ SSL) (and hosts entry) to `habitatfitness.dev.local`
-1. Sitecore.JSS v11 Server package is installed on your target Sitecore instance.
+1. Sitecore.JSS v11 Server package is installed on your target Sitecore instance. See [the official docs](https://jss.sitecore.com/docs/getting-started/jss-server-install) for directions.
 	> Habitat Fitness _may_ work with JSS Tech Preview 4 (not officially supported) and wasn't even tried with earlier Tech Previews.
 
 ### Deployment
