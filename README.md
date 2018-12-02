@@ -62,16 +62,25 @@ If this is changed to `web`, you will need to perform site-level Smart Publishin
 
 ##### 1.2. Rebuild search indexes
 1. Log into Sitecore and open "Control Panel" from Launchpad.
-1. Open "Indexing manager" tool.
-1. Toggle `sitecore_master_index` index.
-    > By default, the app is configured in association with a site sourcing content from `master` database. If this is changed in configuration to `web`, you will need to also rebuild the `sitecore_web_index` index.
+1. Open Indexing manager.
+1. Toggle the `sitecore_master_index` index.
+    > By default, the app is configured in association with a site sourcing content from `master` database. If this is changed in configuration to `web`, you will need to also toggle the `sitecore_web_index` index.
 1. Hit the "Rebuild" button.
 
 ##### 1.3. XP-only post-deployment
-1. Log into Sitecore and open "Control Panel" from Launchpad.
+1. Open Workbox app from Launchpad.
+1. Toggle "Analytics Workflow", you should be seeing goals and events.
+1. Click "Deploy (all)" at the bottom of the list.  
+1. Open "Control Panel" from Launchpad.
 1. Open "Deploy marketing definitions" tool.
 1. Toggle all definitions.
 1. Hit the "Deploy" button.
+1. Open Indexing manager from Control Panel.
+ Toggle the following indexes:
+    - `sitecore_marketingdefinitions_master`
+    - `sitecore_marketing_asset_index_master`
+
+    > By default, the app is configured in association with a site sourcing content from `master` database. If this is changed in configuration to `web`, you will need to also toggle the corresponding `web` indexes.
 
 #### 2. Deploy the app to Sitecore instance
 
