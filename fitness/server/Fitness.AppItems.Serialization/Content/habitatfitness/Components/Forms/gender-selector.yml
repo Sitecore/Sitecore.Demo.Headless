@@ -1,7 +1,7 @@
 ﻿---
 ID: "dddf7944-90ff-5d1e-bbcf-a7187cf23735"
 Parent: "6374a178-df61-5ad2-a20d-b0258cf3d7f5"
-Template: "40a63e80-390d-5c17-869f-7eb9b5bfd2d7"
+Template: "9bfea57c-783a-4695-9ccd-5c7577482d6a"
 Path: "/sitecore/content/habitatfitness/Components/forms/gender-selector"
 DB: master
 SharedFields:
@@ -21,10 +21,12 @@ Languages:
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "6bba236a-7395-5094-8c5d-f0c27ff1994b"
       Hint: options
-      Type: Treelist
+      Type: Multilist
       Value: |
-        {2A20299E-7544-583D-8B56-713FF5704055}
-        {901273E2-7EE4-576E-AC4C-9217A5D25171}
+        {99BF4FDF-5AEE-433C-92FF-0C6649B2E6B8}
+        {B7574236-2C5B-4B52-BC15-9AA739158C8F}
+        {9627F625-DA43-42EA-8E80-D5B74914467C}
+        {E3E83946-554D-4BF8-A5F4-8A80F84247F1}
     - ID: "cf45aba9-aa4e-5df2-8cab-3530af93176a"
       Hint: selectTitle
       Value: Your gender

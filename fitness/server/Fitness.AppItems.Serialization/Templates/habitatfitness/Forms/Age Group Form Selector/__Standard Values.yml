@@ -1,0 +1,31 @@
+﻿---
+ID: "0c1383b9-b593-488a-94bd-3fd7b5536b71"
+Parent: "a1b91d16-47d0-4868-8f25-f66c71b3cf8c"
+Template: "a1b91d16-47d0-4868-8f25-f66c71b3cf8c"
+Path: /sitecore/templates/Project/habitatfitness/Forms/Age Group Form Selector/__Standard Values
+DB: master
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T230930Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
+    - ID: "912e22e3-2a7f-4851-823d-2c4ee2e94bad"
+      Hint: options
+      Type: Multilist
+      Value: |
+        {A52D47FC-CD77-4038-9E9F-C114A621B757}
+        {D891C86C-190B-4BE5-84FA-00644CC0EFEE}
+        {10FBC1D1-A171-41DE-B026-C78B86315371}
+        {F7A544ED-B12D-45A9-B75F-DD7DE4FF39F1}
+        {9EE1245F-BD08-4558-AC7D-4083E21B7F0B}

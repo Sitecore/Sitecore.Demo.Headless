@@ -1,6 +1,3 @@
-import { post } from "./GenericService";
-import { firebase } from "@firebase/app";
-import "@firebase/messaging";
 import { trackingApi } from "@sitecore-jss/sitecore-jss-tracking";
 import config from "../temp/config";
 import { dataFetcher } from './../utils/dataFetcher';

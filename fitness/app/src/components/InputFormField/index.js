@@ -34,6 +34,4 @@ class InputFormField extends Component {
   }
 }
 
-// TODO: default props
-
 export default InputFormField;

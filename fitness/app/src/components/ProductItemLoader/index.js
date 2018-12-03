@@ -22,7 +22,7 @@ class ProductItemLoader extends React.Component {
 
   render() {
     const { showLoading } = this.state;
-    const { width, height } = this.props;
+    const { width } = this.props;
 
     if (!showLoading) {
       return null;

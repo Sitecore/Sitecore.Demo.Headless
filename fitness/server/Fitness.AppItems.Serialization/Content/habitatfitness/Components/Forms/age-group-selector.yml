@@ -1,7 +1,7 @@
 ﻿---
 ID: "fda4b79d-d71c-59e6-92aa-6f3919c408c6"
 Parent: "6374a178-df61-5ad2-a20d-b0258cf3d7f5"
-Template: "40a63e80-390d-5c17-869f-7eb9b5bfd2d7"
+Template: "a1b91d16-47d0-4868-8f25-f66c71b3cf8c"
 Path: "/sitecore/content/habitatfitness/Components/forms/age-group-selector"
 DB: master
 SharedFields:
@@ -21,13 +21,22 @@ Languages:
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "6bba236a-7395-5094-8c5d-f0c27ff1994b"
       Hint: options
-      Type: Treelist
+      Type: Multilist
       Value: |
         {18C8CF93-41B4-5BD0-A5F5-099EE19ACB4A}
         {6925B531-E2DA-5256-9C37-FECD0665CBFF}
         {06D71280-2627-590E-BC0B-BC4B323B9BB5}
         {4DAAC541-A608-54C4-AEFE-8C4BCB3762E7}
         {42449147-730E-55E0-A24F-BE75C41E573D}
+    - ID: "912e22e3-2a7f-4851-823d-2c4ee2e94bad"
+      Hint: options
+      Type: Multilist
+      Value: |
+        {A52D47FC-CD77-4038-9E9F-C114A621B757}
+        {10FBC1D1-A171-41DE-B026-C78B86315371}
+        {F7A544ED-B12D-45A9-B75F-DD7DE4FF39F1}
+        {9EE1245F-BD08-4558-AC7D-4083E21B7F0B}
+        {D891C86C-190B-4BE5-84FA-00644CC0EFEE}
     - ID: "cf45aba9-aa4e-5df2-8cab-3530af93176a"
       Hint: selectTitle
       Value: Your age group

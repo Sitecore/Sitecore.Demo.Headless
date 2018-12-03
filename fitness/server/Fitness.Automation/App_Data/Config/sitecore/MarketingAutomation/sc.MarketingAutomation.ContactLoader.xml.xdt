@@ -19,10 +19,10 @@
                   <SubscriptionTokens>SubscriptionTokens</SubscriptionTokens>
                   <FavoriteEvents>FavoriteEvents</FavoriteEvents>
                   <RegisteredEvents>RegisteredEvents</RegisteredEvents>
+                  <PersonalInformation>Personal</PersonalInformation>
                 </IncludeFacetNames>
               </Options>
             </MarketingAutomation.Loading.ContactFacetsConfigurator>
-
           </Services>
         </Engine>
       </MarketingAutomation>

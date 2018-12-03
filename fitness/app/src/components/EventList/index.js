@@ -23,7 +23,7 @@ class EventList extends React.Component {
   }
 
   render() {
-    const { events, loading, error } = this.state;
+    const { events, loading } = this.state;
     const { fields, width, height } = this.props;
 
     let eventItems = [];
