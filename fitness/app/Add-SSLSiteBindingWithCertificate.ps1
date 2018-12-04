@@ -1,5 +1,5 @@
 Param(
-    [string] $SiteName = "habitathome.dev.local",
+    [string] $SiteName = "habitathome1564.dev.local",
     [string] $JssHostName = "habitatfitness.dev.local"
 )
 
@@ -9,6 +9,9 @@ function Add-SSLSiteBindingWithCertificate {
             SiteName    = $SiteName 
             JssHostName = $JssHostName 
         }
+
+        Set-HostsEntry -IPAddress 127.0.0.1 -HostName 'habitatfitness.dev.local'
+        write-host "Hosts entry set for" $params.JssHostName -ForegroundColor Green
 
         $certPersonal = Get-ChildItem -Path "cert:\LocalMachine\My\" | Where-Object { $_.subject -eq "CN=habitatfitness.dev.local" }
         if ($null -ne $certPersonal)
@@ -28,7 +31,7 @@ function Add-SSLSiteBindingWithCertificate {
         }
         else 
         {
-            Copy-Item -Path cert:\LocalMachine\My\$certPersonal.Thumbprint -Destination "cert:\LocalMachine\Root\" -Force
+            Copy-Item -Path cert:\LocalMachine\My\$certPersonal.Thumbprint -Destination cert:\LocalMachine\Root\
             write-host "Certificate copied to 'cert:\LocalMachine\Root\' store for" $params.JssHostName -ForegroundColor Green
         }
 
