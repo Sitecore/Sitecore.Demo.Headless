@@ -29,7 +29,7 @@ In order for Google Maps to render on Event Detail screen and for push notificat
       - Login to Firebase console.
       - Create a new project and open it.
       - Click on the "gear" icon and access "project settings":
-        <img align="left"  src="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png"/>
+        <a href="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png"><img align="left"  src="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png" alt="firebase"/></a>
  
       - Go to "Cloud Messaging" tab and retrieve "Sender ID" and put the value as 
       `REACT_APP_FIREBASE_SENDER_ID=<insert-here>`
