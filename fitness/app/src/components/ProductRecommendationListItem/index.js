@@ -7,7 +7,7 @@ const ProductRecommendationListItem = ({ fields }) => {
       <div className="productRecommendationList-item-inner">
         <Link field={fields.link} className="product-link">
           <div className="productRecommendationList-item-image">
-            <Image field={fields.image} />
+            <Image field={fields.image} style={null} />
           </div>
           <div className="productRecommendationList-item-body">
             <Text
