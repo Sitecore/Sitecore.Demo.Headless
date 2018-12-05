@@ -34,3 +34,7 @@ Languages:
     - ID: "610840f3-9755-593c-9c1c-3b1bbe17dcfb"
       Hint: title
       Value: Events for you
+    - ID: "c1d7f4ec-8edd-48b0-aeb1-70818133629d"
+      Hint: items
+      Type: Treelist
+      Value: "{AD5BA40D-D329-5E5F-A425-55EB724BB125}"

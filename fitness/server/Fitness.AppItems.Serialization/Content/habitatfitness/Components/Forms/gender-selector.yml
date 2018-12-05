@@ -21,12 +21,10 @@ Languages:
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "6bba236a-7395-5094-8c5d-f0c27ff1994b"
       Hint: options
-      Type: Multilist
+      Type: Treelist
       Value: |
-        {99BF4FDF-5AEE-433C-92FF-0C6649B2E6B8}
-        {B7574236-2C5B-4B52-BC15-9AA739158C8F}
-        {9627F625-DA43-42EA-8E80-D5B74914467C}
-        {E3E83946-554D-4BF8-A5F4-8A80F84247F1}
+        {2A20299E-7544-583D-8B56-713FF5704055}
+        {901273E2-7EE4-576E-AC4C-9217A5D25171}
     - ID: "cf45aba9-aa4e-5df2-8cab-3530af93176a"
       Hint: selectTitle
       Value: Your gender

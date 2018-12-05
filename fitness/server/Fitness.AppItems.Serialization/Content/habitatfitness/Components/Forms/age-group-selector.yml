@@ -21,7 +21,7 @@ Languages:
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "6bba236a-7395-5094-8c5d-f0c27ff1994b"
       Hint: options
-      Type: Multilist
+      Type: Treelist
       Value: |
         {18C8CF93-41B4-5BD0-A5F5-099EE19ACB4A}
         {6925B531-E2DA-5256-9C37-FECD0665CBFF}

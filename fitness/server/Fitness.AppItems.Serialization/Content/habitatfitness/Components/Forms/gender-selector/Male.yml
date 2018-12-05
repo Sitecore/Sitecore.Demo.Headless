@@ -1,0 +1,28 @@
+﻿---
+ID: "901273e2-7ee4-576e-ac4c-9217a5d25171"
+Parent: "dddf7944-90ff-5d1e-bbcf-a7187cf23735"
+Template: "551c1312-27ac-5a3b-9a6b-62db47ed571c"
+Path: "/sitecore/content/habitatfitness/Components/forms/gender-selector/Male"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Male
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234952Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "e0db40f2-6292-59ab-b61c-bc7cb59a95ab"
+      Hint: Name
+      Value: Male
