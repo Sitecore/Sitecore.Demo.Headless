@@ -4,16 +4,20 @@
   -->
   <Sitecore>
     <XConnect>
-      <Services>
-        <MarketingAutomation.Activity.PushNotification xdt:Transform="InsertIfMissing">
-          <Type>Sitecore.Xdb.MarketingAutomation.Locator.ActivityTypeRegistration, Sitecore.Xdb.MarketingAutomation</Type>
-          <LifeTime>Singleton</LifeTime>
-          <Options>
-            <Id>{7233ED87-BB7F-4498-8EB2-2E56896D71A7}</Id>
-            <ImplementationType>Sitecore.HabitatHome.Fitness.Automation.Activities.SendPushNotification, Sitecore.HabitatHome.Fitness.Automation</ImplementationType>
-          </Options>
-        </MarketingAutomation.Activity.PushNotification>
-      </Services>
+      <MarketingAutomation>
+        <Engine>
+          <Services>
+            <MarketingAutomation.Activity.PushNotification xdt:Transform="InsertIfMissing">
+              <Type>Sitecore.Xdb.MarketingAutomation.Locator.ActivityTypeRegistration, Sitecore.Xdb.MarketingAutomation</Type>
+              <LifeTime>Singleton</LifeTime>
+              <Options>
+                <Id>{7233ED87-BB7F-4498-8EB2-2E56896D71A7}</Id>
+                <ImplementationType>Sitecore.HabitatHome.Fitness.Automation.Activities.SendPushNotification, Sitecore.HabitatHome.Fitness.Automation</ImplementationType>
+              </Options>
+            </MarketingAutomation.Activity.PushNotification>
+          </Services>
+        </Engine>
+      </MarketingAutomation>
     </XConnect>
   </Sitecore>
 </Settings>
