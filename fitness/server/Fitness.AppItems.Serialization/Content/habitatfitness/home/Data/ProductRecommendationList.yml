@@ -27,10 +27,6 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\virtualssuser
-    - ID: "7b535692-1b2e-5d0d-81c0-caa79ed8ede3"
-      Hint: items
-      Type: Multilist
-      Value: 
     - ID: "adbc7315-0205-5b63-b129-4221e4715b62"
       Hint: title
       Value: Gear just for you

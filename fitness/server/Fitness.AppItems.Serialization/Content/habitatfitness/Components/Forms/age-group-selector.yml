@@ -19,15 +19,6 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "6bba236a-7395-5094-8c5d-f0c27ff1994b"
-      Hint: options
-      Type: Treelist
-      Value: |
-        {18C8CF93-41B4-5BD0-A5F5-099EE19ACB4A}
-        {6925B531-E2DA-5256-9C37-FECD0665CBFF}
-        {06D71280-2627-590E-BC0B-BC4B323B9BB5}
-        {4DAAC541-A608-54C4-AEFE-8C4BCB3762E7}
-        {42449147-730E-55E0-A24F-BE75C41E573D}
     - ID: "912e22e3-2a7f-4851-823d-2c4ee2e94bad"
       Hint: options
       Type: Multilist
