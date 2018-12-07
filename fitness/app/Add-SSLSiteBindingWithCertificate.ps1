@@ -1,5 +1,5 @@
 Param(
-    [string] $SiteName = "habitathome1564.dev.local",
+    [string] $SiteName = "habitathome.dev.local",
     [string] $JssHostName = "habitatfitness.dev.local"
 )
 
