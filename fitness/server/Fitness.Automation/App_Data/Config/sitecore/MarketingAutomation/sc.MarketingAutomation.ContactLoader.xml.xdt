@@ -13,13 +13,13 @@
               <LifeTime>Singleton</LifeTime>
               <Options>
                 <IncludeFacetNames>
-                  <Demographics>Demographics</Demographics>
-                  <Sports>Sports</Sports>
-                  <Subscriptions>Subscriptions</Subscriptions>
-                  <SubscriptionTokens>SubscriptionTokens</SubscriptionTokens>
-                  <FavoriteEvents>FavoriteEvents</FavoriteEvents>
-                  <RegisteredEvents>RegisteredEvents</RegisteredEvents>
-                  <PersonalInformation>Personal</PersonalInformation>
+                  <Demographics xdt:Transform="InsertIfMissing">Demographics</Demographics>
+                  <Sports xdt:Transform="InsertIfMissing">Sports</Sports>
+                  <Subscriptions xdt:Transform="InsertIfMissing">Subscriptions</Subscriptions>
+                  <SubscriptionTokens xdt:Transform="InsertIfMissing">SubscriptionTokens</SubscriptionTokens>
+                  <FavoriteEvents xdt:Transform="InsertIfMissing">FavoriteEvents</FavoriteEvents>
+                  <RegisteredEvents xdt:Transform="InsertIfMissing">RegisteredEvents</RegisteredEvents>
+                  <Personal xdt:Transform="InsertIfMissing">Personal</Personal>
                 </IncludeFacetNames>
               </Options>
             </MarketingAutomation.Loading.ContactFacetsConfigurator>
