@@ -14,6 +14,7 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
         <div className="eventDetail-image">
           <Image
             field={routeFields.image}
+            style={null}
             srcSet={[{ mw: 650 }, { mw: 350 }]}
             sizes="(min-width: 960px) 650px, 350px"
             width={null}
