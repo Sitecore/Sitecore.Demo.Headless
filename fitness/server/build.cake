@@ -53,6 +53,7 @@ Task("Quick-Deploy")
 ===============================================*/
 
 Task("Copy-Sitecore-Lib")
+	.WithCriteria(()=>(configuration.BuildConfiguration == "Local"))
     .Does(()=> {
         var files = GetFiles( 
             $"{configuration.WebsiteRoot}/bin/Sitecore*.dll");

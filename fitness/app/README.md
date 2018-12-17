@@ -29,15 +29,15 @@ In order for Google Maps to render on Event Detail screen and for push notificat
       - Login to Firebase console.
       - Create a new project and open it.
       - Click on the "gear" icon and access "project settings":
-       [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png]]
+        <a href="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png">(Firebase Settings)<img align="left"  src="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png"/></a>
  
       - Go to "Cloud Messaging" tab and retrieve "Sender ID" and put the value as 
       `REACT_APP_FIREBASE_SENDER_ID=<insert-here>`
-        [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/gcp-sender-id.png]]
+        <a href="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/gcp-sender-id.png">(Sender ID)<img align="left"  src="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/gcp-sender-id.png" /></a>
        
       - Scroll down to the "Web configuration" section, grab the Key pair from "Web Push certificates" and put the value here (generate if it doesn't exist yet): 
       `REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=<insert-here>`
-        [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/push-cert.png]]
+         <a href="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/push-cert.png">(PUSH KEY)<img align="left"  src="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/push-cert.png"/></a>
    
       > Please take extra care about these API keys, make sure to put appopriate security restrictions and do not commit those to source control.
 

@@ -134,11 +134,12 @@ Run `jss start:connected` from cmd.
       - Login to Firebase console.
       - Create a new project and open it.
       - Click on the "gear" icon and access "project settings":
-       [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png]]
- 
-      - Go to "Cloud Messaging" tab and copy the "Server key" value (create it if it doesn't exist):
-      [[https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/server-key.png]]
 
+        <a href="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png">(Project Settings)<img align="left"  src="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/project-settings.png" /></a>
+
+      - Go to "Cloud Messaging" tab and copy the "Server key" value (create it if it doesn't exist):
+
+        <a href="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/server-key.png">(Server Key)<img align="left"  src="https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/docs/img/server-key.png" /></a>
 
     - If you also deploying the app to a separate host, adjust the following setting as well:
 

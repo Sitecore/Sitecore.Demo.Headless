@@ -55,6 +55,7 @@
     <PackageReference Include="Sitecore.Analytics.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Analytics.XConnect.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Kernel.NoReferences" Version="9.0.180604" />
+    <PackageReference Include="Sitecore.LayoutService.Mvc" Version="4.0.2" />
     <PackageReference Include="Sitecore.Mvc.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.XConnect.Client.Configuration.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.XConnect.Client.NoReferences" Version="9.0.180604" />
@@ -65,10 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Sitecore.LayoutService.Mvc, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\sc.lib\Sitecore.LayoutService.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.Web.DynamicData" />
@@ -77,7 +74,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-	<Reference Include="System.Core" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
