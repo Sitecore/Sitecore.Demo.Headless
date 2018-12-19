@@ -65,8 +65,6 @@ class SportsPickerStep extends Component {
     const { selectedSports, selectedItemKey } = this.state;
     const { stepCount, fields, t, rendering } = this.props;
 
-    debugger;
-
     const anySportSelected = Object.keys(selectedSports).length > 0;
     const sliderValue = selectedItemKey ? selectedSports[selectedItemKey] : 5;
 
