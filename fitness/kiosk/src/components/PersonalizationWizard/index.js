@@ -5,6 +5,7 @@ import {
   withPlaceholder
 } from "@sitecore-jss/sitecore-jss-react";
 import { PersonalizationWizardContext } from "../../contexts/PersonalizationWizardContext";
+import { NavLink } from "react-router-dom";
 
 class PersonalizationWizardWrap extends Component {
   state = {
@@ -32,39 +33,44 @@ class PersonalizationWizard extends Component {
   }
 
   getStepNames(placeholder) {
-    return placeholder.filter(e => e.type !== "code").map((element, i) => {
-      return <Text field={element.props.fields.stepName} />;
-    });
+    return placeholder
+      .filter(e => e.type !== "code")
+      .map((element, i) => {
+        return <Text field={element.props.fields.stepName} />;
+      });
   }
 
   render() {
     const { fields, wizardPlaceholder, rendering } = this.props;
+    const stepNames = this.getStepNames(wizardPlaceholder);
     return (
       <PersonalizationWizardWrap>
         <div className="personalizationWizard">
           <PersonalizationWizardContext.Consumer>
             {context => (
               <Fragment>
-                <div className="personalizationWizard-header">
-                  <Text
-                    tag="h3"
-                    field={fields.title}
-                    className="personalizationWizard-title"
-                  />
-
-                  <ProgressBar
-                    percentage={this.getPercentage(
-                      context.activeStepIndex,
-                      wizardPlaceholder.length
-                    )}
-                    steps={this.getStepNames(wizardPlaceholder)}
-                  />
-                </div>
+                {stepNames.length > 1 && (
+                  <div className="personalizationWizard-header">
+                    <Text
+                      tag="h3"
+                      field={fields.title}
+                      className="personalizationWizard-title"
+                    />
+                    <ProgressBar
+                      percentage={this.getPercentage(
+                        context.activeStepIndex,
+                        wizardPlaceholder.length
+                      )}
+                      steps={stepNames}
+                    />
+                  </div>
+                )}
                 <div className="personalizationWizard-body">
                   <Placeholder
                     name="hf-personalization-wizard"
                     rendering={rendering}
                     currentContext={context}
+                    stepCount={stepNames.length}
                     render={(components, placeholderData, props) => (
                       <Fragment>{components[context.activeStepIndex]}</Fragment>
                     )}

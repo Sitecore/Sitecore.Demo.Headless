@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router";
-import { Text } from "@sitecore-jss/sitecore-jss-react";
+import { Text, Placeholder } from "@sitecore-jss/sitecore-jss-react";
 import SportOption from "../SportOption";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import ContinueButton from "../ContinueButton";
+import PersonalizationResultsButton from "../PersonalizationResultsButton";
 import { translate } from "react-i18next";
 import {
   setSportsFacets,
@@ -35,15 +36,13 @@ class SportsPickerStep extends Component {
   }
 
   handleContinueClick(event) {
-    setSportsFacets(this.state.selectedSports)
-      .catch(err => {
-        console.log(err);
-      });
+    setSportsFacets(this.state.selectedSports).catch(err => {
+      console.log(err);
+    });
 
-    setSportsProfile(this.state.selectedSports)
-      .catch(err => {
-        console.log(err);
-      });
+    setSportsProfile(this.state.selectedSports).catch(err => {
+      console.log(err);
+    });
   }
 
   updateSelectedSports(key, value) {
@@ -64,7 +63,9 @@ class SportsPickerStep extends Component {
 
   render() {
     const { selectedSports, selectedItemKey } = this.state;
-    const { fields, t } = this.props;
+    const { stepCount, fields, t, rendering } = this.props;
+
+    debugger;
 
     const anySportSelected = Object.keys(selectedSports).length > 0;
     const sliderValue = selectedItemKey ? selectedSports[selectedItemKey] : 5;
@@ -128,11 +129,15 @@ class SportsPickerStep extends Component {
         ) : null}
 
         <div className="sportPicker-actions align-items-center">
-          <ContinueButton
-            currentContext={this.props.currentContext}
-            disabled={!canContinue}
-            onContinue={this.handleContinueClick}
-          />
+          {stepCount > 1 ? (
+            <ContinueButton
+              currentContext={this.props.currentContext}
+              disabled={!canContinue}
+              onContinue={this.handleContinueClick}
+            />
+          ) : (
+            <PersonalizationResultsButton />
+          )}
         </div>
       </Fragment>
     );

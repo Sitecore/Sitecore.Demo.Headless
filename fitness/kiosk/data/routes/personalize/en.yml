@@ -12,16 +12,3 @@ placeholders:
     placeholders:
       hf-personalization-wizard:
       - id: sports-picker
-      - componentName: SaveAsAccountStep
-        fields:
-          title: Want to save it as account?
-          stepName: Personal
-          skipLink:
-            href: /
-            text: Skip this
-        placeholders:
-          hf-createaccount-form:
-            - id: email-input
-            - id: firstname-input
-            - id: lastname-input
-      - id: registration-success
