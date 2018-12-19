@@ -33,3 +33,7 @@ load-more: Load More
 choose-location: Choose This Location
 change-location: Change Location
 go: Go
+register-thanks: Thanks for registering!
+registration-directions: We sent you an email with directions.
+error-registering-title: Ooops, there was an error during registration.
+error-registering-text: Please try again.

@@ -1,15 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Consent from "../Consent";
 import { translate } from "react-i18next";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
 import { setIdentification } from "../../services/IdentificationService";
+import { NavLink } from "react-router-dom";
 
 class KioskSignup extends React.Component {
   state = {
     firstname: "",
     lastname: "",
     email: "",
-    signedUp: false
+    signedUp: false,
+    error: false
   };
 
   constructor(props) {
@@ -35,13 +37,14 @@ class KioskSignup extends React.Component {
     setIdentification(firstname, lastname, email)
       .then(response => this.setState({ signedUp: true }))
       .catch(err => {
+        this.setState({ error: true });
         console.log(err);
       });
   }
 
   render() {
     const { t, fields } = this.props;
-    const { firstname, lastname, email, signedUp } = this.state;
+    const { firstname, lastname, email, signedUp, error } = this.state;
 
     const form = (
       <form className="form createAccount-form">
@@ -96,11 +99,43 @@ class KioskSignup extends React.Component {
       </form>
     );
 
+    let message = (
+      <Fragment>
+        <div className="form-body">
+          <h2 className="form-title">{t("register-thanks")}</h2>
+          <p className="form-title">{t("registration-directions")}</p>
+        </div>
+        <div className="form-footer">
+          <div className="form-actions">
+            <NavLink to={"/"} className="btn btn-primary">
+              {t("home")}
+            </NavLink>
+          </div>
+        </div>
+      </Fragment>
+    );
+
+    if (error) {
+      message = (
+        <Fragment>
+          <div className="form-body">
+            <h2 className="form-title">{t("error-registering-title")}</h2>
+            <p className="form-title">{t("error-registering-text")}</p>
+          </div>
+          <div className="form-footer">
+            <div className="form-actions">
+              <NavLink to={"/"} className="btn btn-primary">
+                {t("home")}
+              </NavLink>
+            </div>
+          </div>
+        </Fragment>
+      );
+    }
+
     return (
       <div className="createAccount">
-        <div className="createAccount-body">
-          {signedUp ? <h2>{t("signup-thanks")}</h2> : form}
-        </div>
+        <div className="createAccount-body">{signedUp || error ? message : form}</div>
       </div>
     );
   }

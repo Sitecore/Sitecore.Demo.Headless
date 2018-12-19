@@ -1,5 +1,5 @@
-id: signup-page
-name: signup
+id: register-page
+name: register
 displayName: Sign Up
 fields:
   pageTitle: Sign Up
@@ -9,4 +9,4 @@ placeholders:
   hf-kiosk-body:
     - componentName: KioskSignup
       fields:
-          title: Sign Up
+          title: Register
