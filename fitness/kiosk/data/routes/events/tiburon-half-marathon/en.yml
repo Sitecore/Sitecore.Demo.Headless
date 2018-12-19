@@ -1,0 +1,26 @@
+id: tiburon-half-marathon
+url: /events/tiburon-half-marathon
+displayName: Tiburon Half Marathon
+template: event-page
+fields:
+  pageTitle: Tiburon Half Marathon
+  name: Tiburon Half Marathon
+  description: Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island.
+  longDescription: Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island.
+  date: '2018-10-29T08:00:00.000Z'
+  latitude: 37.873221
+  longitude: -122.455438
+  image:
+    src: /assets/events/tiburon-half-marathon.jpg
+  labels:
+    - id: road-type-label
+      copy: true
+    - id: participants-label
+      copy: true
+    - id: distance-label
+      copy: true
+placeholders:
+  hf-nav:
+  - componentName: DetailNavigation
+  hf-body:
+    - id: event-detail-anonymous

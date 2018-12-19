@@ -1,0 +1,25 @@
+id: home-page
+fields:
+  pageTitle: Home
+placeholders:
+  hf-nav:
+  - componentName: Navigation
+  hf-body:
+  - componentName: HomeContainer
+    placeholders:
+      hf-home:
+        - componentName: PersonalizePrompt
+          fields:
+            headerText: Personalize your experience!
+            bodyText: explore events and gear based on your favorite sports and fitness level
+        - componentName: FeaturedEvent
+          fields:
+            event:
+              id: tiburon-half-marathon
+            label: Recommended for you
+        - componentName: EventList
+          fields:
+            title: Events near you
+        - componentName: ProductRecommendationList
+          fields:
+            title: Gear just for you

@@ -1,15 +1,15 @@
 {
-  "name": "habitatfitness",
+  "name": "habitatfitness-kiosk",
   "description": "Habitat demo for Sitecore JSS",
   "version": "0.0.1",
   "private": true,
   "config": {
-    "appName": "habitatfitness",
+    "appName": "habitatfitness-kiosk",
     "rootPlaceholders": [
       "hf-nav",
       "hf-body"
     ],
-    "sitecoreDistPath": "/dist/habitatfitness",
+    "sitecoreDistPath": "/dist/habitatfitness-kiosk",
     "sitecoreConfigPath": "/App_Config/Include/Sitecore.HabitatHome.Fitness",
     "language": "en"
   },

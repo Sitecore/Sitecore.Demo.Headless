@@ -1,0 +1,7 @@
+fields:
+  pageTitle: My Events
+placeholders:
+  hf-body:
+  - componentName: ContentBlock
+    fields:
+      heading: My Events

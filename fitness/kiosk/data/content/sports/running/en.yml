@@ -1,0 +1,5 @@
+id: running
+name: Running
+template: Profile Key
+fields:
+  Name: Running
