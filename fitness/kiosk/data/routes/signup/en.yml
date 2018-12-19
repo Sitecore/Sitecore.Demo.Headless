@@ -1,0 +1,12 @@
+id: signup-page
+name: signup
+displayName: Sign Up
+fields:
+  pageTitle: Sign Up
+placeholders:
+  hf-kiosk-nav:
+  - componentName: KioskNav
+  hf-kiosk-body:
+    - componentName: KioskSignup
+      fields:
+          title: Sign Up

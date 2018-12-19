@@ -3,7 +3,6 @@ import { Image, Text } from "@sitecore-jss/sitecore-jss-react";
 import { translate } from "react-i18next";
 import EventMap from "../EventMap";
 import EventLabels from "../EventLabels";
-import withScrollToTop from "../../hoc/withScrollToTop";
 
 const EventDetail = ({ context, t, fields, routeData, date, cta, icon, description }) => {
   const routeFields = routeData.fields;
@@ -51,4 +50,4 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
   );
 };
 
-export default withScrollToTop(translate()(EventDetail));
+export default translate()(EventDetail);

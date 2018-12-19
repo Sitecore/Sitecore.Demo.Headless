@@ -2,7 +2,7 @@ fields:
   pageTitle: Events
 template: event-page
 placeholders:
-  hf-body:
-  - componentName: ContentBlock
-    fields:
-      heading: Events
+  hf-kiosk-nav:
+    - componentName: KioskNav
+  hf-kiosk-body:
+    - componentName: KioskEventList

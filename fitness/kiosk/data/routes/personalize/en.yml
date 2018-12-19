@@ -3,26 +3,15 @@ displayName: Personalize
 fields:
   pageTitle: Personalize
 placeholders:
-  hf-nav:
-  - componentName: DetailNavigation
-  hf-body:
+  hf-kiosk-nav:
+  - componentName: KioskNav
+  hf-kiosk-body:
   - componentName: PersonalizationWizard
     fields:
       title: Personalize
     placeholders:
       hf-personalization-wizard:
       - id: sports-picker
-      - componentName: PersonalDataStep
-        fields:
-          title: Let's refine it a bit
-          stepName: Demographics
-          skipLink:
-              href: /
-              text: Skip this
-        placeholders:
-          hf-createaccount-form:
-          - id: gender-selector
-          - id: age-group-selector
       - componentName: SaveAsAccountStep
         fields:
           title: Want to save it as account?

@@ -9,10 +9,13 @@ import { Manifest } from '@sitecore-jss/sitecore-jss-manifest';
  */
 export default function addPlaceholdersToManifest(manifest) {
   manifest.addPlaceholder(
-    { name: 'hf-nav', displayName: 'Navigation' },
+    { name: 'hf-kiosk-nav', displayName: 'Kiosk Navigation' },
   );
   manifest.addPlaceholder(
-    { name: 'hf-body', displayName: 'Body' },
+    { name: 'hf-kiosk-body', displayName: 'Kiosk Body' },
+  );
+  manifest.addPlaceholder(
+    { name: 'hf-kiosk-footer', displayName: 'Kiosk Footer' },
   );
   manifest.addPlaceholder(
     { name: 'hf-personalization-wizard', displayName: 'Personalization Wizard' },

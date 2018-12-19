@@ -23,4 +23,13 @@ hour: hour
 countdown: countdown
 registration-confirmation: Are you sure you would like to register for this event?
 scroll-top: Back to Top
-flush-session: End current session
+flush-session: End Session
+set-location: Set Location
+events: Events
+showing-results: Showing results for
+change location: Change Location
+filter-sport: Filter by Sport
+load-more: Load More
+choose-location: Choose This Location
+change-location: Change Location
+go: Go

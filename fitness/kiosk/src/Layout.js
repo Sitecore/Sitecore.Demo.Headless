@@ -55,7 +55,7 @@ class Layout extends Component {
         </Helmet>
 
         <Placeholder
-          name="hf-nav"
+          name="hf-kiosk-nav"
           rendering={route}
           routeData={route}
           context={context}
@@ -64,12 +64,22 @@ class Layout extends Component {
         {/* root placeholder for the app, which we add components to using route data */}
         <main role="main">
           <ToastContainer />
-          <Placeholder
-            name="hf-body"
-            rendering={route}
-            routeData={route}
-            context={context}
-          />
+          <div className="mainContent">
+            <Placeholder
+              name="hf-kiosk-body"
+              rendering={route}
+              routeData={route}
+              context={context}
+            />
+          </div>
+          <div className="mainFooter backToTopContainer">
+            <Placeholder
+              name="hf-kiosk-footer"
+              rendering={route}
+              routeData={route}
+              context={context}
+            />
+          </div>
         </main>
       </Fragment>
     );
