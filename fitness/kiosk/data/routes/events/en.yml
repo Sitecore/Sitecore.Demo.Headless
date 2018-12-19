@@ -1,6 +1,7 @@
+name: events
+displayName: Events
 fields:
   pageTitle: Events
-template: event-page
 placeholders:
   hf-kiosk-nav:
     - componentName: KioskNav

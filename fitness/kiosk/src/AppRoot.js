@@ -13,7 +13,7 @@ import RouteHandler from "./RouteHandler";
 export const routePatterns = [
   "/:lang([a-z]{2}-[A-Z]{2})/:sitecoreRoute*",
   "/:lang([a-z]{2})/:sitecoreRoute*",
-  "/:sitecoreRoute*"
+  '/:sitecoreRoute*',
 ];
 
 // wrap the app with:
@@ -29,13 +29,9 @@ const AppRoot = ({ path, Router }) => {
       <Router location={path} context={{}}>
         <Switch>
           <Route key="/null" path="/null" component={null} />
-          {routePatterns.map(routePattern => (
-            <Route
-              key={routePattern}
-              path={routePattern}
-              render={routeRenderFunction}
-            />
-          ))}
+            {routePatterns.map((routePattern) => (
+              <Route key={routePattern} path={routePattern} render={routeRenderFunction} />
+            ))}
         </Switch>
       </Router>
     </SitecoreContext>

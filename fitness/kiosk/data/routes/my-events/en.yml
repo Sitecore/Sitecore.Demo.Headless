@@ -1,7 +1,0 @@
-fields:
-  pageTitle: My Events
-placeholders:
-  hf-kiosk-body:
-  - componentName: ContentBlock
-    fields:
-      heading: My Events
