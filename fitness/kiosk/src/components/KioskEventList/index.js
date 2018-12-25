@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { translate } from "react-i18next";
 import EventListItem from "../EventListItem";
 import { getAll, EventDisplayCount } from "../../services/EventService";
+import { getCurrentLocation, getCurrentCoordinates } from "../../services/GeolocationService";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
 import withSizes from "react-sizes";
 import EventItemLoader from "../EventItemLoader";
@@ -12,7 +13,10 @@ class KioskEventList extends React.Component {
   state = {
     events: [],
     loading: true,
-    sportsFilterOpen: false
+    sportsFilterOpen: false,
+    location: "San Franciso, CA",
+    take: 12,
+    skip: 0
   };
 
   constructor(props) {
@@ -22,7 +26,11 @@ class KioskEventList extends React.Component {
   }
 
   componentDidMount() {
-    getAll()
+    const { take, skip } = this.state;
+    const { lat, lng } = getCurrentCoordinates();
+    this.setState({ location: getCurrentLocation() });
+
+    getAll(take, skip, lat, lng)
       .then(response => {
         this.setState({ events: response.data });
         this.setState({ loading: false });
@@ -47,7 +55,10 @@ class KioskEventList extends React.Component {
   onApplyFilter(filter) {
     this.toggleSportsFilter();
     this.setState({ loading: true });
-    getAll(filter)
+    const { take, skip } = this.state;
+    const { lat, lng } = getCurrentCoordinates();
+
+    getAll(take, skip, lat, lng, filter)
       .then(response => {
         this.setState({ events: response.data });
         this.setState({ loading: false });
@@ -58,7 +69,7 @@ class KioskEventList extends React.Component {
   }
 
   render() {
-    const { events, loading } = this.state;
+    const { events, loading, location } = this.state;
     const { fields, width, height, t } = this.props;
 
     let eventItems = [];
@@ -79,7 +90,7 @@ class KioskEventList extends React.Component {
             <div className="eventsFilter-status">
               <p>
                 {t("showing-results")}&nbsp;
-                <strong className="term">San Franciso, CA</strong>.
+                <span className="term">{location}</span>
               </p>
               <NavLink
                 to={"/change-location"}

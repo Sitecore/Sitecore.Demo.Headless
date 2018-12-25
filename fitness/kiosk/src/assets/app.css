@@ -213,6 +213,10 @@ a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.btn-action:disabled img {
+  opacity: 0.7;
+}
+
 .btn-secondary {
   background: rgba(0, 0, 0, 0);
   padding: 0.97297em 1.59459em;

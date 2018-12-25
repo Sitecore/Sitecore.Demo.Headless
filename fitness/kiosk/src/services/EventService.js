@@ -19,11 +19,11 @@ export function unregister(eventId) {
   return executeEventAction("registration/remove", eventId);
 }
 
-export function getAll(filter) {
-  const payload = { take: EventDisplayCount };
+export function getAll(take, skip, lat, lng, sportsFilter) {
+  const payload = { take: take, skip: skip, lat: lat, lng: lng };
 
-  if (filter && filter.length > 0) {
-    payload.filter = filter.join("|");
+  if (sportsFilter && sportsFilter.length > 0) {
+    payload.filter = sportsFilter.join("|");
   }
   return get(`/events`, payload, false);
 }

@@ -41,3 +41,5 @@ see-results: See Results
 select-sports: Select sports
 apply-filter: Apply Filter
 cancel: Cancel
+enter-location: Please, enter the location
+location-set: Location is set
