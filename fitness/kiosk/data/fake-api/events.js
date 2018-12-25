@@ -1,6 +1,7 @@
 module.exports = [
   {
     url: "/events/tiburon-half-marathon",
+    type: "Running",
     fields: {
       pageTitle: {
         value: "Tiburon Half Marathon"
@@ -87,6 +88,7 @@ module.exports = [
     }
   },
   {
+    type: "Running",
     url: "/events/oakland-marathon",
     fields: {
       pageTitle: {
@@ -173,6 +175,7 @@ module.exports = [
     }
   },
   {
+    type: "Running",
     url: "/events/tiburon-half-marathon",
     fields: {
       pageTitle: {
@@ -260,6 +263,7 @@ module.exports = [
     }
   },
   {
+    type: "Running",
     url: "/events/oakland-marathon",
     fields: {
       pageTitle: {
@@ -346,6 +350,7 @@ module.exports = [
     }
   },
   {
+    type: "Running",
     url: "/events/tiburon-half-marathon",
     fields: {
       pageTitle: {
@@ -433,6 +438,7 @@ module.exports = [
     }
   },
   {
+    type: "Running",
     url: "/events/oakland-marathon",
     fields: {
       pageTitle: {
@@ -519,13 +525,14 @@ module.exports = [
     }
   },
   {
-    url: "/events/tiburon-half-marathon",
+    type: "Golf",
+    url: "/events/tiburon-golf",
     fields: {
       pageTitle: {
-        value: "Tiburon Half Marathon"
+        value: "Tiburon Golf"
       },
       name: {
-        value: "Tiburon Half Marathon"
+        value: "Tiburon Golf"
       },
       description: {
         value:
@@ -606,13 +613,14 @@ module.exports = [
     }
   },
   {
-    url: "/events/oakland-marathon",
+    type: "Golf",
+    url: "/events/oakland-golf",
     fields: {
       pageTitle: {
-        value: "Oakland Marathon"
+        value: "Oakland Golf"
       },
       name: {
-        value: "Oakland Marathon"
+        value: "Oakland Golf"
       },
       description: {
         value:
@@ -692,13 +700,14 @@ module.exports = [
     }
   },
   {
-    url: "/events/tiburon-half-marathon",
+    type: "Cycling",
+    url: "/events/tiburon-cycling",
     fields: {
       pageTitle: {
-        value: "Tiburon Half Marathon"
+        value: "Tiburon Cycling Race"
       },
       name: {
-        value: "Tiburon Half Marathon"
+        value: "Tiburon Cycling Race"
       },
       description: {
         value:

@@ -46,11 +46,21 @@ const proxyOptions = {
   },
   afterMiddlewareRegistered: app => {
     app.get("/sitecore/api/habitatfitness/events", (req, res) =>
-      res.send(events)
+      res.send(getFilteredEvents(req))
     );
     app.get("/sitecore/api/habitatfitness/products", (req, res) =>
       res.send(products)
     );
+  }
+};
+
+const getFilteredEvents = req => {
+  const filter = req.query.filter;
+  if (filter) {
+    const sportFilters = filter.split("|");
+    return events.filter(e => sportFilters.includes(e.type));
+  } else {
+    return events;
   }
 };
 

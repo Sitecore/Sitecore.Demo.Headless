@@ -7,3 +7,14 @@ placeholders:
     - componentName: KioskNav
   hf-kiosk-body:
     - componentName: KioskEventList
+      fields:
+        sports:
+        - id: running
+        - id: cycling
+        - id: kayaking
+        - id: rock-climbing
+        - id: swimming
+        - id: basketball
+        - id: bowling
+        - id: golf
+        - id: volleyball

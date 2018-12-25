@@ -5,7 +5,7 @@ import Icon from '../Icon';
 
 class SportOption extends Component {
   state = {
-    selected: null
+    selected: this.props.selected
   };
 
   onClick() {

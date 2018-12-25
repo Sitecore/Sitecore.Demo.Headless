@@ -19,8 +19,13 @@ export function unregister(eventId) {
   return executeEventAction("registration/remove", eventId);
 }
 
-export function getAll() {
-  return get(`/events`, { take: EventDisplayCount }, true);
+export function getAll(filter) {
+  const payload = { take: EventDisplayCount };
+
+  if (filter && filter.length > 0) {
+    payload.filter = filter.join("|");
+  }
+  return get(`/events`, payload, false);
 }
 
 function executeEventAction(eventAction, eventId = required()) {
