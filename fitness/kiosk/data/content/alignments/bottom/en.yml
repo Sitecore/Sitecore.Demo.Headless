@@ -2,3 +2,5 @@ id: bottom-alignment
 name: bottom
 displayName: Bottom
 template: lookup
+fields:
+  name: bottom

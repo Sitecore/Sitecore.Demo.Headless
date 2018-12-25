@@ -10,5 +10,5 @@ placeholders:
       cta:
         href: /events
         text: Let's get started
-    params:
-        alignment: top
+      alignment:
+        id: top-alignment

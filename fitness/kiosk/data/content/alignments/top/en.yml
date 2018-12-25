@@ -2,3 +2,5 @@ id: top-alignment
 name: top
 displayName: Top
 template: lookup
+fields:
+  name: top

@@ -15,10 +15,23 @@ export default function(manifest) {
     name: "WelcomeScreen",
     icon: SitecoreIcon.DocumentTag,
     fields: [
-      { name: "backgroundImage", type: CommonFieldTypes.Image },
-      { name: "cta", type: CommonFieldTypes.GeneralLink }
-    ],
-    params: [{ name: "alignment", type: "droplist" }]
+      {
+        name: "backgroundImage",
+        type: CommonFieldTypes.Image,
+        displayName: "Background Image"
+      },
+      {
+        name: "cta",
+        type: CommonFieldTypes.GeneralLink,
+        displayName: "Call to Action"
+      },
+      {
+        name: "alignment",
+        type: CommonFieldTypes.ItemLink,
+        source: "/sitecore/content/habitatfitness-kiosk/Content/alignments",
+        displayName: "Call to Action Alignment"
+      }
+    ]
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,
     register it here, or components added to that placeholder will not be returned by Sitecore:

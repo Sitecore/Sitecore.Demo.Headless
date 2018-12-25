@@ -13,6 +13,7 @@ export default function(manifest) {
   manifest.addTemplate({
     name: "lookup",
     displayName: "Lookup",
-    icon: SitecoreIcon.ClientNetwork
+    icon: "/~/icon/office/32x32/graph_connection_directed.png",
+    fields: [{ name: "name", type: CommonFieldTypes.SingleLineText }]
   });
 }
