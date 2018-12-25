@@ -8,7 +8,6 @@ using Sitecore.HabitatHome.Fitness.Personalization.Services;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
-using System.Web.Helpers;
 
 namespace Sitecore.HabitatHome.Fitness.Personalization.Controllers
 {
@@ -32,11 +31,12 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Controllers
         [HttpGet]
         [ActionName("Index")]
         [CancelCurrentPage]
-        public ActionResult Get(int take = 5)
+        public ActionResult Get(int take, int skip, float lat, float lng, string profiles)
         {
             try
             {
-                var allItems = dataService.GetAll(Context.Database);
+                var profileNames = string.IsNullOrWhiteSpace(profiles) ? new string[0] : profiles.Split('|');
+                var allItems = dataService.GetAll(Context.Database, profileNames, take, skip, lat, lng, out int totalSearchResults);
                 var scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);
 
                 // if no items were scrored - return the original item list
@@ -45,8 +45,14 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Controllers
                     scoredItems = allItems;
                 }
 
-                var items = new JArray(scoredItems.Take(take).Select(i => JObject.Parse(itemSerializer.Serialize(i))));
-                return Content(items.ToString(), "application/json");
+                var events = new JArray(scoredItems.Take(take).Select(i => JObject.Parse(itemSerializer.Serialize(i))));
+                var results = new JObject
+                {
+                    { "events", events },
+                    { "total", totalSearchResults }
+                };
+
+                return Content(results.ToString(), "application/json");
             }
             catch (Exception ex)
             {

@@ -3,10 +3,15 @@ import { NavLink } from "react-router-dom";
 import { translate } from "react-i18next";
 import EventListItem from "../EventListItem";
 import { getAll, EventDisplayCount } from "../../services/EventService";
-import { getCurrentLocation, getCurrentCoordinates } from "../../services/GeolocationService";
+import {
+  getCurrentLocation,
+  getCurrentCoordinates
+} from "../../services/GeolocationService";
 import withSizes from "react-sizes";
 import EventItemLoader from "../EventItemLoader";
 import SportsFilter from "../SportsFilter";
+
+const eventBatchSize = 6;
 
 class KioskEventList extends React.Component {
   state = {
@@ -14,25 +19,30 @@ class KioskEventList extends React.Component {
     loading: true,
     sportsFilterOpen: false,
     location: getCurrentLocation(),
-    take: 12,
-    skip: 0
+    take: eventBatchSize,
+    skip: 0,
+    totalEvents: 0,
+    filter: []
   };
 
   constructor(props) {
     super(props);
     this.toggleSportsFilter = this.toggleSportsFilter.bind(this);
     this.onApplyFilter = this.onApplyFilter.bind(this);
+    this.onLoadMoreClick = this.onLoadMoreClick.bind(this);
+    this.scrollToBottom = this.scrollToBottom.bind(this);
   }
+
+  scrollToBottom = () => {
+    this.loadMore.scrollIntoView({ behavior: "smooth" });
+  };
 
   componentDidMount() {
     const { take, skip } = this.state;
     const { lat, lng } = getCurrentCoordinates();
 
     getAll(take, skip, lat, lng)
-      .then(response => {
-        this.setState({ events: response.data });
-        this.setState({ loading: false });
-      })
+      .then(response => this.processEventData(response))
       .catch(error => {
         console.error(error);
       });
@@ -44,25 +54,63 @@ class KioskEventList extends React.Component {
     });
   }
 
-  onApplyFilter(filter) {
-    this.toggleSportsFilter();
-    this.setState({ loading: true });
-    const { take, skip } = this.state;
+  onLoadMoreClick() {
+    let { take, skip, filter } = this.state;
     const { lat, lng } = getCurrentCoordinates();
 
+    take = take + eventBatchSize;
+    skip = skip + eventBatchSize;
+
+    this.setState({
+      loading: true,
+      take,
+      skip
+    });
+
     getAll(take, skip, lat, lng, filter)
-      .then(response => {
-        this.setState({ events: response.data });
-        this.setState({ loading: false });
-      })
+      .then(response => this.processEventData(response, true))
+      .then(() => this.scrollToBottom())
       .catch(error => {
         console.error(error);
       });
   }
 
+  onApplyFilter(filter) {
+    this.toggleSportsFilter();
+    this.setState({ filter });
+
+    // resetting take and skip after a filter is applied
+    const take = eventBatchSize;
+    const skip = 0;
+
+    const { lat, lng } = getCurrentCoordinates();
+    this.setState({ loading: true, take, skip });
+
+    getAll(take, skip, lat, lng, filter)
+      .then(response => this.processEventData(response))
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+  processEventData(response, concat = false) {
+    if (response && response.data && response.data.events) {
+      let { total, events } = response.data;
+      if (concat) {
+        events = this.state.events.concat(events);
+      }
+      this.setState({ events });
+      this.setState({ total });
+    }
+    this.setState({ loading: false });
+  }
+
   render() {
-    const { events, loading, location } = this.state;
+    const { events, loading, location, total, skip, take } = this.state;
     const { fields, width, height, t } = this.props;
+
+    const canLoadMore = total > take;
+    console.warn({ canLoadMore });
 
     let eventItems = [];
     if (loading) {
@@ -108,11 +156,19 @@ class KioskEventList extends React.Component {
             <div className="events eventsGrid">
               <div className="events-items">{eventItems}</div>
             </div>
-            {events.length > 6 && (
+            <div
+              ref={el => {
+                this.loadMore = el;
+              }}
+            />
+            {canLoadMore && (
               <div className="loadsMore">
-                <a href="#" className="btn btn-primary btn-action">
+                <button
+                  className="btn btn-primary btn-action"
+                  onClick={this.onLoadMoreClick}
+                >
                   {t("load-more")}
-                </a>
+                </button>
               </div>
             )}
           </div>

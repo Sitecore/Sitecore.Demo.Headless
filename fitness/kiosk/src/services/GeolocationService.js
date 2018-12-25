@@ -30,13 +30,10 @@ export function getCurrentLocation() {
 }
 
 export function getCurrentCoordinates() {
-  if(canUseDOM){
-    return {
-      lat: localStorage.getItem("lat"),
-      lng: localStorage.getItem("lng")
-    }
+  return {
+    lat: getLatitude(),
+    lng: getLongitude()
   }
-  return {};
 }
 
 export function findLocationByAddress(address = required()) {
