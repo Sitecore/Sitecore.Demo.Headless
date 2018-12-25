@@ -4,7 +4,6 @@ import { translate } from "react-i18next";
 import EventListItem from "../EventListItem";
 import { getAll, EventDisplayCount } from "../../services/EventService";
 import { getCurrentLocation, getCurrentCoordinates } from "../../services/GeolocationService";
-import { Text } from "@sitecore-jss/sitecore-jss-react";
 import withSizes from "react-sizes";
 import EventItemLoader from "../EventItemLoader";
 import SportsFilter from "../SportsFilter";
@@ -37,12 +36,6 @@ class KioskEventList extends React.Component {
       .catch(error => {
         console.error(error);
       });
-  }
-
-  toggleSportsFilter() {
-    this.setState({
-      sportsFilterOpen: !this.state.sportsFilterOpen
-    });
   }
 
   toggleSportsFilter() {

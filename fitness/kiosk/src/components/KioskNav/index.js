@@ -1,6 +1,5 @@
 import React from "react";
 import { translate } from "react-i18next";
-import { Text, Link } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.svg";
 import { flush } from "../../services/SessionService";

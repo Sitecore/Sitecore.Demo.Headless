@@ -1,9 +1,6 @@
 import React from "react";
-import { RichText } from "@sitecore-jss/sitecore-jss-react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { Text } from "@sitecore-jss/sitecore-jss-react";
 import { translate } from "react-i18next";
-import { NavLink } from "react-router-dom";
 import SportOption from "../SportOption";
 
 class SportsFilter extends React.Component {

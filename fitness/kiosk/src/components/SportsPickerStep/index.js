@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router";
-import { Text, Placeholder } from "@sitecore-jss/sitecore-jss-react";
+import { Text } from "@sitecore-jss/sitecore-jss-react";
 import SportOption from "../SportOption";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -63,7 +63,7 @@ class SportsPickerStep extends Component {
 
   render() {
     const { selectedSports, selectedItemKey } = this.state;
-    const { stepCount, fields, t, rendering } = this.props;
+    const { stepCount, fields, t } = this.props;
 
     const anySportSelected = Object.keys(selectedSports).length > 0;
     const sliderValue = selectedItemKey ? selectedSports[selectedItemKey] : 5;

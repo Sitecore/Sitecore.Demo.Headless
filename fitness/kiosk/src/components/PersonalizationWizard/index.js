@@ -5,7 +5,6 @@ import {
   withPlaceholder
 } from "@sitecore-jss/sitecore-jss-react";
 import { PersonalizationWizardContext } from "../../contexts/PersonalizationWizardContext";
-import { NavLink } from "react-router-dom";
 
 class PersonalizationWizardWrap extends Component {
   state = {

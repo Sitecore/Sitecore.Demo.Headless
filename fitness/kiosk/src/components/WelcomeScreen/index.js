@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Link } from "@sitecore-jss/sitecore-jss-react";
+import { Link } from "@sitecore-jss/sitecore-jss-react";
 import logo from "../../assets/img/logo.svg";
 import { NavLink } from "react-router-dom";
 

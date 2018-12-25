@@ -21,7 +21,6 @@ const EventListItem = ({ id, fields, url, label, featured, t }) => {
               style={null}
               srcSet={[{ mw: 650 }, { mw: 350 }]}
               sizes="(min-width: 960px) 650px, 350px"
-              style={null}
               width={null}
               height={null}
             />
