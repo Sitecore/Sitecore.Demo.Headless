@@ -1,0 +1,9 @@
+id: distance-label
+name: Distance
+displayName: Distance
+template: event-label
+fields:
+  name: Distance
+  value: 13mi
+  image:
+    src: /assets/icons/map.svg

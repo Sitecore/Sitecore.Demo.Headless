@@ -27,7 +27,10 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
         public void UpdateProfile([NotNull]SportPreferencesPayload data)
         {
             Tracker.Current.Interaction.Profiles.Remove(SportsFacet.DefaultKey);
-            Tracker.Current.Interaction.Profiles[SportsFacet.DefaultKey].Score(data.Ratings.ToDictionary(kvp => kvp.Key, kvp => (double)kvp.Value));
+            if(data.Ratings != null)
+            {
+                Tracker.Current.Interaction.Profiles[SportsFacet.DefaultKey].Score(data.Ratings.ToDictionary(kvp => kvp.Key, kvp => (double)kvp.Value));
+            }
         }
 
         public void SetFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)

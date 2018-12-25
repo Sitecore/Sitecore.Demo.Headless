@@ -1,0 +1,21 @@
+id: events-page
+name: events
+displayName: Events
+fields:
+  pageTitle: Events
+placeholders:
+  hf-kiosk-nav:
+    - componentName: KioskNav
+  hf-kiosk-body:
+    - componentName: KioskEventList
+      fields:
+        sports:
+        - id: running
+        - id: cycling
+        - id: kayaking
+        - id: rock-climbing
+        - id: swimming
+        - id: basketball
+        - id: bowling
+        - id: golf
+        - id: volleyball
