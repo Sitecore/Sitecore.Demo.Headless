@@ -14,7 +14,7 @@ class KioskEventList extends React.Component {
     events: [],
     loading: true,
     sportsFilterOpen: false,
-    location: "San Franciso, CA",
+    location: getCurrentLocation(),
     take: 12,
     skip: 0
   };
@@ -28,7 +28,6 @@ class KioskEventList extends React.Component {
   componentDidMount() {
     const { take, skip } = this.state;
     const { lat, lng } = getCurrentCoordinates();
-    this.setState({ location: getCurrentLocation() });
 
     getAll(take, skip, lat, lng)
       .then(response => {

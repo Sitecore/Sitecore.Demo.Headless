@@ -6,10 +6,11 @@ import {
   getLatitude,
   getLongitude,
   findLocationByAddress,
+  findLocationByLatLng,
   getCurrentLocation,
   updateGeoLocation
 } from "../../services/GeolocationService";
-import Icon from '../Icon';
+import Icon from "../Icon";
 
 class ChangeLocation extends React.Component {
   state = {
@@ -26,6 +27,9 @@ class ChangeLocation extends React.Component {
     this.updateAddress = this.updateAddress.bind(this);
     this.onGoClick = this.onGoClick.bind(this);
     this.onChooseLocationClick = this.onChooseLocationClick.bind(this);
+    this.onGetCurrentLocationClick = this.onGetCurrentLocationClick.bind(this);
+    this.navigatorSuccess = this.navigatorSuccess.bind(this);
+    this.navigatorError = this.navigatorError.bind(this);
   }
 
   onChooseLocationClick() {
@@ -73,6 +77,45 @@ class ChangeLocation extends React.Component {
     }
   }
 
+  onGetCurrentLocationClick() {
+    navigator.geolocation.getCurrentPosition(
+      this.navigatorSuccess,
+      this.navigatorError
+    );
+  }
+
+  navigatorSuccess(position) {
+    this.setState({ lat: position.coords.latitude });
+    this.setState({ lng: position.coords.longitude });
+
+    findLocationByLatLng(position.coords.latitude, position.coords.longitude)
+      .then(response => {
+        if (
+          response.data &&
+          response.data.results &&
+          response.data.results.length > 0
+        ) {
+          const firstMatch = response.data.results[0];
+          console.log({ location: firstMatch });
+          const location = firstMatch.formatted_address;
+          this.setState({ location });
+          this.setState({ locationSet: false });
+          this.setState({ error: false });
+        } else {
+          console.warn("No results returned from Google Maps API");
+          this.setState({ error: true });
+        }
+      })
+      .catch(error => {
+        this.setState({ error: true });
+        console.error(error);
+      });
+  }
+
+  navigatorError() {
+    this.setState({ error: true });
+  }
+
   render() {
     const { zoom, t } = this.props;
     const { address, location, lat, lng, locationSet, error } = this.state;
@@ -92,6 +135,11 @@ class ChangeLocation extends React.Component {
     return (
       <div className="changeLocation">
         <div className="changeLocation-search">
+          <button
+            className="btn btn-secondary active target"
+            disabled={!navigator.geolocation}
+            onClick={this.onGetCurrentLocationClick}
+          />
           <input
             type="text"
             placeholder={location ? location : t("enter-location")}
