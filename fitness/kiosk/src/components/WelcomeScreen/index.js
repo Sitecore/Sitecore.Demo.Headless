@@ -1,22 +1,58 @@
 import React from "react";
-import { Text } from "@sitecore-jss/sitecore-jss-react";
+import { Text, Link } from "@sitecore-jss/sitecore-jss-react";
 import logo from "../../assets/img/logo.svg";
 import { NavLink } from "react-router-dom";
 
-const WelcomeScreen = props => (
+const WelcomeScreen = ({ context, fields, params }) => (
   <div
     className="welcomeScreen"
-    style={{ backgroundImage: "url(//via.placeholder.com/1728x3072/312213)" }}
+    style={
+      fields.backgroundImage
+        ? { backgroundImage: `url(${fields.backgroundImage.value.src})` }
+        : null
+    }
   >
-    <a className="logo" href="/">
+    <NavLink className="logo" to="/">
       <img src={logo} alt="Habitat Fitness Kiosk" />
-    </a>
+    </NavLink>
     <div className="welcomeScreen-content">
-      <NavLink className="btn btn-primary btn-action" to="/events">
-        Get Started
-      </NavLink>
+      {context.pageEditing ? (
+        <Link
+          field={fields.cta}
+          style={getStyleFromAlignmentParam(params.alignment)}
+        />
+      ) : (
+        <NavLink
+          className="btn btn-primary btn-action"
+          to={fields.cta.value.href}
+          style={getStyleFromAlignmentParam(params.alignment)}
+        >
+          {fields.cta.value.text}
+        </NavLink>
+      )}
     </div>
   </div>
 );
+
+const getStyleFromAlignmentParam = alignment => {
+  debugger;
+  if (alignment === "bottom") {
+    return {
+      bottom: 0,
+      position: "absolute"
+    };
+  }
+  if (alignment === "top") {
+    return {
+      top: 200,
+      position: "absolute"
+    };
+  }
+  // default returns empty style object, which will center the button
+  if (alignment === "middle") {
+    return {};
+  }
+  return {};
+};
 
 export default WelcomeScreen;

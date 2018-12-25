@@ -1,5 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore-jss-manifest';
+import {
+  CommonFieldTypes,
+  SitecoreIcon,
+  Manifest
+} from "@sitecore-jss/sitecore-jss-manifest";
 
 /**
  * Adds the WelcomeScreen component to the disconnected manifest.
@@ -8,11 +12,13 @@ import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore
  */
 export default function(manifest) {
   manifest.addComponent({
-    name: 'WelcomeScreen',
+    name: "WelcomeScreen",
     icon: SitecoreIcon.DocumentTag,
     fields: [
-      { name: 'heading', type: CommonFieldTypes.SingleLineText },
+      { name: "backgroundImage", type: CommonFieldTypes.Image },
+      { name: "cta", type: CommonFieldTypes.GeneralLink }
     ],
+    params: [{ name: "alignment", type: "droplist" }]
     /*
     If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,
     register it here, or components added to that placeholder will not be returned by Sitecore:
