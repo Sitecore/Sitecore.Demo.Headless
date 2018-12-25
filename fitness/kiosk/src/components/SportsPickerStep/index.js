@@ -22,43 +22,45 @@ class SportsPickerStep extends Component {
     super(props);
     this.onCardClick = this.onCardClick.bind(this);
     this.onSliderChange = this.onSliderChange.bind(this);
-    this.handleContinueClick = this.handleContinueClick.bind(this);
   }
 
   onCardClick(key, remove) {
+    let { selectedSports } = this.state;
     if (remove) {
       this.setState({ selectedItemKey: null });
-      this.updateSelectedSports(key, null);
+      selectedSports = this.updateSelectedSports(key, null);
     } else {
       this.setState({ selectedItemKey: key });
-      this.updateSelectedSports(key, undefined);
+      selectedSports = this.updateSelectedSports(key, undefined);
     }
+
+    this.sendUpdatedSportsPreferences(selectedSports);
   }
 
-  handleContinueClick(event) {
-    setSportsFacets(this.state.selectedSports).catch(err => {
+  sendUpdatedSportsPreferences(sports) {
+    setSportsFacets(sports).catch(err => {
       console.log(err);
     });
 
-    setSportsProfile(this.state.selectedSports).catch(err => {
+    setSportsProfile(sports).catch(err => {
       console.log(err);
     });
   }
 
   updateSelectedSports(key, value) {
     let selectedSports = this.state.selectedSports;
-
     if (value == null && Object.keys(selectedSports).includes(key)) {
       delete selectedSports[key];
     } else {
       selectedSports[key] = value !== undefined ? value : 5;
     }
-
     this.setState({ selectedSports });
+    return selectedSports;
   }
 
   onSliderChange(value) {
-    this.updateSelectedSports(this.state.selectedItemKey, value);
+    const updatedSports = this.updateSelectedSports(this.state.selectedItemKey, value);
+    this.sendUpdatedSportsPreferences(updatedSports);
   }
 
   render() {
@@ -131,7 +133,6 @@ class SportsPickerStep extends Component {
             <ContinueButton
               currentContext={this.props.currentContext}
               disabled={!canContinue}
-              onContinue={this.handleContinueClick}
             />
           ) : (
             <PersonalizationResultsButton />
