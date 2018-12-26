@@ -52,6 +52,7 @@
     <PackageReference Include="Sitecore.Analytics.Model.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Analytics.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.Analytics.XConnect.NoReferences" Version="9.0.180604" />
+    <PackageReference Include="Sitecore.ContentSearch.Data.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.ContentSearch.Linq.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.ContentSearch.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.JavaScriptServices.Configuration">
@@ -83,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Controllers\HabitatFitnessProductsController.cs" />
     <Compile Include="Controllers\HabitatFitnessEventsController.cs" />
+    <Compile Include="Indexing\ComputedFields\CoordinatesField.cs" />
     <Compile Include="Indexing\ComputedFields\ProfileNamesField.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\EventInfo.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />

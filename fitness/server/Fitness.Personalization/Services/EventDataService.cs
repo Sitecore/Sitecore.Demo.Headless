@@ -1,4 +1,5 @@
 ﻿using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.Data;
 using Sitecore.ContentSearch.Linq;
 using Sitecore.ContentSearch.Linq.Utilities;
 using Sitecore.ContentSearch.SearchTypes;
@@ -24,6 +25,9 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
 
         [IndexField("_profilenames")]
         public string ProfileNames { get; set; }
+
+        [IndexField("coordinates")]
+        public Coordinate EventLocation { get; set; }
     }
 
     /// <summary>
@@ -31,7 +35,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
     /// </summary>
     public class EventDataService : IEventDataService
     {
-        public IEnumerable<Item> GetAll([NotNull]Database database, string[] profileNames, int take, int skip, float latitude, float longitude, out int totalSearchResults)
+        public IEnumerable<Item> GetAll([NotNull]Database database, string[] profileNames, int take, int skip, double latitude, double longitude, out int totalSearchResults)
         {
             using (var context = GetIndex(database).CreateSearchContext(SearchSecurityOptions.DisableSecurityCheck))
             {
@@ -58,7 +62,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
                 // getting the results
                 var searchResults = context.GetQueryable<EventSearchResultItem>()
                                             .Where(query)
-                                            .OrderBy(i => i.Date)
+                                            .OrderByDistance(s => s.EventLocation, new Coordinate(latitude, longitude))
                                             .Take(take)
                                             .Skip(skip)
                                             .GetResults();

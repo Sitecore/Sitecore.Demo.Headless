@@ -16,6 +16,8 @@ namespace Sitecore.HabitatHome.Fitness.Personalization
             public static class Events
             {
                 public static readonly ID Date = ID.Parse(Guid.Parse("{1A0B22B8-AC4C-59FC-BC97-2133AE8E82D9}"));
+                public static readonly ID Latitude = ID.Parse(Guid.Parse("{330BAD8C-8319-5A15-8FD8-164B8C7021FD}"));
+                public static readonly ID Longitude = ID.Parse(Guid.Parse("{8D5D5171-6372-5791-8954-969D52F5BA8A}"));
             }
         }
 
