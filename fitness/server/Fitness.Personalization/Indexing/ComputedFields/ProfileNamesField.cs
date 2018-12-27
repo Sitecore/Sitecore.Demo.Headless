@@ -39,7 +39,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Indexing.ComputedFields
                     {
                         if (profileValue > 0)
                         {
-                            yield return profileEl.Attribute("name").Value;
+                            yield return profileEl.Attribute("name").Value.ToLowerInvariant();
                         }
                     }
                 }

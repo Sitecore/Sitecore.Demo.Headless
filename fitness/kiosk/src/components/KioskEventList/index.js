@@ -110,7 +110,6 @@ class KioskEventList extends React.Component {
     const { fields, width, height, t } = this.props;
 
     const canLoadMore = total > take;
-    console.warn({ canLoadMore });
 
     let eventItems = [];
     if (loading) {

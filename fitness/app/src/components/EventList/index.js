@@ -8,16 +8,23 @@ import EventItemLoader from "../EventItemLoader";
 class EventList extends React.Component {
   state = {
     events: [],
-    loading: true
+    loading: true,
+    error: false
   };
 
   componentDidMount() {
     getAll()
       .then(response => {
-        this.setState({ events: response.data });
+        if (response && response.data && response.data.events) {
+          this.setState({ events: response.data.events });
+          this.setState({ error: false });
+        } else{
+          console.warn("unable to fetch any events");
+        }
         this.setState({ loading: false });
       })
       .catch(error => {
+        this.setState({ error: true });
         console.error(error);
       });
   }
@@ -42,7 +49,9 @@ class EventList extends React.Component {
         <div className="list-header">
           <Text tag="h4" field={fields.title} className="list-title" />
         </div>
-        <div className="events-items">{eventItems}</div>
+        <div className="events-items">
+          {eventItems}
+        </div>
       </div>
     );
   }

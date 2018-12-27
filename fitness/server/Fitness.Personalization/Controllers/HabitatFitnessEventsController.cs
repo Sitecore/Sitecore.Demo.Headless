@@ -8,6 +8,8 @@ using Sitecore.HabitatHome.Fitness.Personalization.Services;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
+using Sitecore.Analytics;
+using Sitecore.HabitatHome.Fitness.Personalization.Utils;
 
 namespace Sitecore.HabitatHome.Fitness.Personalization.Controllers
 {
@@ -31,12 +33,19 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Controllers
         [HttpGet]
         [ActionName("Index")]
         [CancelCurrentPage]
-        public ActionResult Get(int take, int skip, float lat, float lng, string profiles)
+        public ActionResult Get(int take = 5, int skip = -1, float lat = 0, float lng = 0, string profiles = "")
         {
             try
             {
+                // fetching profile names from the action parameter
                 var profileNames = string.IsNullOrWhiteSpace(profiles) ? new string[0] : profiles.Split('|');
-                var allItems = dataService.GetAll(Context.Database, profileNames, take, skip, lat, lng, out int totalSearchResults);
+                // or loading from the tracker if not specified
+                if (!profileNames.Any())
+                {
+                    profileNames = Tracker.Current.GetPopulatedProfilesFromTracker();
+                }
+
+                var allItems = dataService.GetAll(Context.Database, profileNames, -1, -1, lat, lng, out int totalSearchResults);
                 var scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);
 
                 // if no items were scrored - return the original item list
@@ -58,7 +67,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Controllers
             {
                 Log.Error("Unable to retrieve events", ex, this);
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
-            }  
+            }
         }
     }
 }

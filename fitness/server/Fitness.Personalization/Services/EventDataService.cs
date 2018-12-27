@@ -52,9 +52,10 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
                 dateQuery = dateQuery.And(i => i.Date > DateTime.UtcNow);
 
                 var profileNamesQuery = PredicateBuilder.True<EventSearchResultItem>();
-                foreach(var profileName in profileNames)
+                foreach (var profileName in profileNames)
                 {
-                    profileNamesQuery = profileNamesQuery.Or(item => item.ProfileNames.Equals(profileName));
+                    var profileNameValue = profileName.ToLowerInvariant();
+                    profileNamesQuery = profileNamesQuery.Or(item => item.ProfileNames.Equals(profileNameValue));
                 }
 
                 // joining the queries
@@ -63,14 +64,28 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
                 query = query.And(dateQuery);
                 query = query.And(profileNamesQuery);
 
-                // getting the results
-                var searchResults = context.GetQueryable<EventSearchResultItem>()
-                                            .Where(query)
-                                            .OrderByDistance(s => s.EventLocation, new Coordinate(latitude, longitude))
-                                            .Take(take)
-                                            .Skip(skip)
-                                            .GetResults();
+                // building IQueryable
+                var queryable = context.GetQueryable<EventSearchResultItem>()
+                                            .Where(query);
 
+                // TODO: consider nullable
+                if (latitude !=0 && longitude != 0)
+                {
+                    queryable = queryable.OrderByDistance(s => s.EventLocation, new Coordinate(latitude, longitude));
+                }
+
+                if (take > -1)
+                {
+                    queryable = queryable.Take(take);
+                }
+
+                if (skip > -1)
+                {
+                    queryable = queryable.Skip(skip);
+                }
+
+                // getting the results
+                var searchResults = queryable.GetResults();
                 totalSearchResults = searchResults.TotalSearchResults;
                 return searchResults.Select(i => i.Document.GetItem()).ToList();
             }
