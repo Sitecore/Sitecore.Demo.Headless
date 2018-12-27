@@ -45,6 +45,9 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
                 var templateQuery = PredicateBuilder.True<EventSearchResultItem>();
                 templateQuery = templateQuery.And(i => i.TemplateId == Wellknown.TemplateIds.Event);
 
+                var parentQuery = PredicateBuilder.True<EventSearchResultItem>();
+                parentQuery = parentQuery.And(i => i.Parent != Wellknown.ItemIds.SampleEventsFolder);
+
                 var dateQuery = PredicateBuilder.True<EventSearchResultItem>();
                 dateQuery = dateQuery.And(i => i.Date > DateTime.UtcNow);
 
@@ -56,6 +59,7 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
 
                 // joining the queries
                 query = query.And(templateQuery);
+                query = query.And(parentQuery);
                 query = query.And(dateQuery);
                 query = query.And(profileNamesQuery);
 

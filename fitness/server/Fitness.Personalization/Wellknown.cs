@@ -11,6 +11,11 @@ namespace Sitecore.HabitatHome.Fitness.Personalization
             public static readonly ID Product = ID.Parse(Guid.Parse("{F7CFB991-FDCD-5036-A021-29E58A67DA4B}"));
         }
 
+        public static class ItemIds
+        {
+            public static readonly ID SampleEventsFolder = ID.Parse(Guid.Parse("{E14B44B9-BF5B-4E3D-AE7E-5A26D0D8B1E3}"));
+        }
+        
         public static class FieldIds
         {
             public static class Events
