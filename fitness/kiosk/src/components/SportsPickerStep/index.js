@@ -11,6 +11,7 @@ import {
   setSportsFacets,
   setSportsProfile
 } from "../../services/SportsService";
+import { trackCompleteFavoriteSports } from "../../services/TrackingService";
 
 class SportsPickerStep extends Component {
   state = {
@@ -135,7 +136,7 @@ class SportsPickerStep extends Component {
               disabled={!canContinue}
             />
           ) : (
-            <PersonalizationResultsButton />
+            <PersonalizationResultsButton onClick={() => trackCompleteFavoriteSports()} />
           )}
         </div>
       </Fragment>

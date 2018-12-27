@@ -4,6 +4,7 @@ import { translate } from "react-i18next";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
 import { setIdentification } from "../../services/IdentificationService";
 import { NavLink } from "react-router-dom";
+import { trackCompleteRegistration } from "../../services/TrackingService";
 
 class KioskSignup extends React.Component {
   state = {
@@ -36,6 +37,7 @@ class KioskSignup extends React.Component {
     const { firstname, lastname, email } = this.state;
     setIdentification(firstname, lastname, email)
       .then(response => this.setState({ signedUp: true }))
+      .then(() => trackCompleteRegistration())
       .catch(err => {
         this.setState({ error: true });
         console.log(err);

@@ -1,6 +1,6 @@
 import { trackingApi } from "@sitecore-jss/sitecore-jss-tracking";
 import config from "../temp/config";
-import { dataFetcher } from './../utils/dataFetcher';
+import { dataFetcher } from "./../utils/dataFetcher";
 
 const trackingApiOptions = {
   host: config.sitecoreApiHost,
@@ -11,29 +11,33 @@ const trackingApiOptions = {
 };
 
 export function trackEventSubscribe(eventId) {
-  return trackingApi
-    .trackEvent([{ goalId: "Subscribe to Event" }], trackingApiOptions)
-    .then(() => console.log("Page event pushed"))
-    .catch(error => console.error(error));
+  return trackGoal("Subscribe to Event");
 }
 
 export function trackEventUnsubscription(eventId) {
-  return trackingApi
-    .trackEvent([{ goalId: "Unsubscribe to Event" }], trackingApiOptions)
-    .then(() => console.log("Page event pushed"))
-    .catch(error => console.error(error));
+  return trackGoal("Unsubscribe to Event");
 }
 
 export function trackEventFavorite(eventId) {
-  return trackingApi
-    .trackEvent([{ goalId: "Favorite Event" }], trackingApiOptions)
-    .then(() => console.log("Page event pushed"))
-    .catch(error => console.error(error));
+  return trackGoal("Favorite Event");
 }
 
 export function trackEventUnfavorite(eventId) {
+  return trackGoal("Unfavorite Event");
+}
+
+export function trackCompleteRegistration() {
+  return trackGoal("Complete Registration");
+}
+
+export function trackCompleteFavoriteSports() {
+  return trackGoal("Complete Favorite Sports");
+}
+
+
+export function trackGoal(goalId) {
   return trackingApi
-    .trackEvent([{ goalId: "Unfavorite Event" }], trackingApiOptions)
-    .then(() => console.log("Page event pushed"))
+    .trackEvent([{ goalId }], trackingApiOptions)
+    .then(() => console.log("Goal pushed to JSS tracker API"))
     .catch(error => console.error(error));
 }
