@@ -2,7 +2,7 @@ id: home-page
 fields:
   pageTitle: Home
 placeholders:
-  hf-kiosk-body:
+  hf-body:
   - componentName: WelcomeScreen
     fields:
       backgroundImage:

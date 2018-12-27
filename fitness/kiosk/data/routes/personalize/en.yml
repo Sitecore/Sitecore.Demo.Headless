@@ -3,9 +3,9 @@ displayName: Personalize
 fields:
   pageTitle: Personalize
 placeholders:
-  hf-kiosk-nav:
-  - componentName: KioskNav
-  hf-kiosk-body:
+  hf-nav:
+  - componentName: DetailNavigation
+  hf-body:
   - componentName: PersonalizationWizard
     fields:
       title: Personalize

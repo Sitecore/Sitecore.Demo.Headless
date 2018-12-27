@@ -13,9 +13,14 @@ import EventLabels from "../EventLabels";
 class EventListItem extends PureComponent {
   render() {
     const { id, fields, url, label, featured, t } = this.props;
+    let eventUrl = url;
+    if(url.startsWith('/sitecore/content/habitatfitness/home/events')){
+      eventUrl = eventUrl.replace('/sitecore/content/habitatfitness/home/events', '/events');
+    }
+
     return (
       <div className={`events-item ${featured ? "events-item_featured" : ""}`}>
-        <NavLink to={`${url}`}>
+        <NavLink to={`${eventUrl}`}>
           <div className="events-item-image-container">
             <div className="events-item-image">
               <Image

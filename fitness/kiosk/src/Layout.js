@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.css";
 import "./assets/app.css";
 import "react-toastify/dist/ReactToastify.min.css";
+import BackToEventsButton from "./components/BackToEventsButton";
 
 const ToastBody = ({ title, body, link, icon, click_action }) => (
   <Fragment>
@@ -55,7 +56,7 @@ class Layout extends Component {
         </Helmet>
 
         <Placeholder
-          name="hf-kiosk-nav"
+          name="hf-nav"
           rendering={route}
           routeData={route}
           context={context}
@@ -66,19 +67,14 @@ class Layout extends Component {
           <ToastContainer />
           <div className="mainContent">
             <Placeholder
-              name="hf-kiosk-body"
+              name="hf-body"
               rendering={route}
               routeData={route}
               context={context}
             />
           </div>
           <div className="mainFooter backToTopContainer">
-            <Placeholder
-              name="hf-kiosk-footer"
-              rendering={route}
-              routeData={route}
-              context={context}
-            />
+            <BackToEventsButton route={route} />
           </div>
         </main>
       </Fragment>

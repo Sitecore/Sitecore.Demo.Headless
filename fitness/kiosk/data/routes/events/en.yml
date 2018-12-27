@@ -4,9 +4,9 @@ displayName: Events
 fields:
   pageTitle: Events
 placeholders:
-  hf-kiosk-nav:
-    - componentName: KioskNav
-  hf-kiosk-body:
+  hf-nav:
+    - componentName: DetailNavigation
+  hf-body:
     - componentName: KioskEventList
       fields:
         sports:

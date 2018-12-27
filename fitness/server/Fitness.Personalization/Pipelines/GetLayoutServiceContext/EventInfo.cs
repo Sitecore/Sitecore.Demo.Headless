@@ -24,6 +24,11 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Pipelines.GetLayoutServic
                 return;
             }
 
+            if (args.RenderedItem == null)
+            {
+                return;
+            }
+
             if (args.RenderedItem.TemplateID.Equals(Wellknown.TemplateIds.Event))
             {
                 var eventId = args.RenderedItem.ID.Guid.ToString("D");

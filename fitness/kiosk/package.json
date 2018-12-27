@@ -6,9 +6,8 @@
   "config": {
     "appName": "habitatfitness-kiosk",
     "rootPlaceholders": [
-      "hf-kiosk-nav",
-      "hf-kiosk-body",
-      "hf-kiosk-footer"
+      "hf-nav",
+      "hf-body"
     ],
     "sitecoreDistPath": "/dist/habitatfitness-kiosk",
     "sitecoreConfigPath": "/App_Config/Include/Sitecore.HabitatHome.Fitness",

@@ -4,9 +4,9 @@ displayName: Sign Up
 fields:
   pageTitle: Sign Up
 placeholders:
-  hf-kiosk-nav:
-  - componentName: KioskNav
-  hf-kiosk-body:
+  hf-nav:
+  - componentName: DetailNavigation
+  hf-body:
     - componentName: KioskSignup
       fields:
           title: Register

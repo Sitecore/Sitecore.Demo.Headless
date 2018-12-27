@@ -1,25 +1,53 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { withRouter } from "react-router";
 import { translate } from "react-i18next";
+import { NavLink } from "react-router-dom";
+import logo from "../../assets/img/logo.svg";
+import { flush } from "../../services/SessionService";
 
-class DetailNavigation extends React.Component {
-  render() {
-    const { t, routeData } = this.props;
-    const currentPageName = routeData.displayName
-      ? routeData.displayName
-      : routeData.name;
+const flushSession = () => {
+  flush()
+    .then(response => {
+      console.log("session flushed");
+    })
+    .catch(err => {
+      console.error(err);
+    });
+};
 
-    return (
-      <div className="direction-fixedHeader headerBar">
-        <NavLink className="btn-back" to="/">
-          {t("habitat-fitness")}
-          Back
-        </NavLink>
-        <h1 className="headerBar-title">{currentPageName}</h1>
-      </div>
-    );
-  }
-}
+const DetailNavigation = ({ t }) => (
+  <div className="nav-container">
+    <nav className="navbar navbar-light">
+      <NavLink className="navbar-brand" to="/">
+        <img src={logo} alt="habitat-fitness" />
+      </NavLink>
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/events">
+            {t("events")}
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/personalize">
+            {t("personalize")}
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/change-location">
+            {t("set-location")}
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <a
+            href="#"
+            onClick={() => flushSession()}
+            className="nav-link nav-link__close"
+          >
+            {t("flush-session")}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+);
 
-export default withRouter(translate()(DetailNavigation));
+export default translate()(DetailNavigation);

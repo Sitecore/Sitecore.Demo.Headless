@@ -1,0 +1,4 @@
+id: back-to-events-button
+componentName: BackToEventsButton
+fields:
+  title: Back to Events

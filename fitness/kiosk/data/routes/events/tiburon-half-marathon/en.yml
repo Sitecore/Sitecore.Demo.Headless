@@ -20,9 +20,7 @@ fields:
     - id: distance-label
       copy: true
 placeholders:
-  hf-kiosk-nav:
-    - componentName: KioskNav
-  hf-kiosk-body:
+  hf-nav:
+    - componentName: DetailNavigation
+  hf-body:
     - id: event-detail-anonymous
-  hf-kiosk-footer:
-    - id: back-to-events-button
