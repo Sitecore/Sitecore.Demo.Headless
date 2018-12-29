@@ -2,6 +2,7 @@
 using Sitecore.Analytics.XConnect.Facets;
 using Sitecore.Diagnostics;
 using Sitecore.XConnect;
+using Sitecore.XConnect.Collection.Model;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,6 +32,24 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
         public static void UpdateXConnectFacets(this Analytics.Tracking.Contact trackerContact, [NotNull]Dictionary<string, Facet> facets)
         {
             trackerContact.GetFacet<IXConnectFacets>("XConnectFacets").Facets = facets;
+        }
+
+        public static string GetPreferredEmail(this Contact contact)
+        {
+            if (contact.Facets.TryGetValue(EmailAddressList.DefaultFacetKey, out Facet emailFacet))
+            {
+                if (emailFacet is EmailAddressList email)
+                {
+                    return email.PreferredEmail.SmtpAddress;
+                }
+                else
+                {
+                    Log.Error($"{EmailAddressList.DefaultFacetKey} facet is not of expected type. Expected {typeof(EmailAddressList).FullName}", new object());
+                    return string.Empty;
+                }
+            }
+
+            return string.Empty;
         }
     }
 }
