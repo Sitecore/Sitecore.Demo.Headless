@@ -1,25 +1,25 @@
 ﻿---
-ID: "0cbd6a9f-4e26-546b-8891-14156c1cfdc5"
-Parent: "606a91b5-6987-5e4e-8150-1c17a1eb5dbf"
-Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: /sitecore/content/habitatfitness/Components
+ID: "bdee3800-f778-58a3-a7c5-3cb5f4aaa7d4"
+Parent: "d21fbe00-15bd-548e-b125-520c61cb7749"
+Template: "0a2847e6-9885-450b-b61e-f9e6528480ef"
+Path: "/sitecore/content/habitatfitness-kiosk/habitatfitness-kiosk Dictionary"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
-  Value: /~/icon/software/32x32/components.png
+  Value: Office/32x32/book2.png
 Languages:
 - Language: en
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Components
+    Value: Dictionary
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181027T234951Z
+      Value: 20181227T054332Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |

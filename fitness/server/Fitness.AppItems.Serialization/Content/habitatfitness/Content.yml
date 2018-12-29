@@ -4,6 +4,10 @@ Parent: "606a91b5-6987-5e4e-8150-1c17a1eb5dbf"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
 Path: /sitecore/content/habitatfitness/Content
 DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: /~/icon/applicationsv2/32x32/document.png
 Languages:
 - Language: en
   Fields:

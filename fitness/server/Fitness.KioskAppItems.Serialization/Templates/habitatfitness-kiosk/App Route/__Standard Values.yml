@@ -1,0 +1,64 @@
+﻿---
+ID: "725d75d1-79b3-550d-b217-02227c95e32b"
+Parent: "31dd7376-b03f-53f6-a9b0-a5ecda67f6c2"
+Template: "31dd7376-b03f-53f6-a9b0-a5ecda67f6c2"
+Path: "/sitecore/templates/Project/habitatfitness-kiosk/App Route/__Standard Values"
+DB: master
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{7A9EEA01-0929-57A1-A4C4-AF46BC0B4D96}">
+        <p
+          uid="{245E8BF7-14DA-5CAE-B611-53E912EFA34C}"
+          key="hf-nav"
+          md="{B635C401-2EED-5C49-87A9-35EABD8C8F45}" />
+        <p
+          uid="{0C85F343-685F-5BFC-A3E7-5B93422AF0E7}"
+          key="hf-body"
+          md="{1D881B4A-65C7-5AA8-A954-A44789611723}" />
+        <p
+          uid="{3B586CC8-014D-54DF-8900-794567F82F36}"
+          key="hf-personalization-wizard"
+          md="{333A93AD-B0D8-53C6-996C-E7B3FB9B4C6C}" />
+        <p
+          uid="{99A520AF-908C-59D9-9E11-89C7FD05D917}"
+          key="hf-registration-wizard"
+          md="{F9B47572-B90A-519A-84D6-AD08FDAEA3AB}" />
+        <p
+          uid="{950A0379-A40F-5E87-93FB-28F58CCCF7B2}"
+          key="hf-createaccount-form"
+          md="{016B3BD3-7EBC-59FE-8234-4BE80E2D3E44}" />
+        <p
+          uid="{0B9C812D-9B23-568A-95B9-F50DB110DDC9}"
+          key="hf-createaccount-form-group"
+          md="{EFF7082F-7703-5E16-9F22-82BC4C0647EA}" />
+        <p
+          uid="{F569ECC8-2DCA-53F4-9CD9-3CE2F45A1066}"
+          key=" hf-home"
+          md="{F3BA7E61-DDE6-55DE-B637-60FE5800DCAE}" />
+        <p
+          uid="{FBEA60B1-3C35-523E-B12F-D4D677369DF2}"
+          key="hf-home"
+          md="{F3BA7E61-DDE6-55DE-B637-60FE5800DCAE}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181227T054320Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
