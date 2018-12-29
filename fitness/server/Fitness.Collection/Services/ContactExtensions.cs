@@ -51,5 +51,28 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
 
             return string.Empty;
         }
+
+        public static bool CompletedRegistration(this Analytics.Tracking.Session session)
+        {
+            return session.Interaction.Pages.SelectMany(p => p.PageEvents).Any(e => e.IsGoal && e.PageEventDefinitionId == Wellknown.CompleteRegistrationGoalId);
+        }
+
+        public static string GetName(this Contact contact)
+        {
+            if (contact.Facets.TryGetValue(PersonalInformation.DefaultFacetKey, out Facet facet))
+            {
+                if (facet is PersonalInformation personalInformation)
+                {
+                    return personalInformation.FirstName;
+                }
+                else
+                {
+                    Log.Error($"{PersonalInformation.DefaultFacetKey} facet is not of expected type. Expected {typeof(PersonalInformation).FullName}", new object());
+                    return string.Empty;
+                }
+            }
+
+            return string.Empty;
+        }
     }
 }

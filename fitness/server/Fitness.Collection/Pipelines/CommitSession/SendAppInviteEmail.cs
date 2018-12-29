@@ -19,31 +19,34 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
 
         public override void Process(CommitSessionPipelineArgs args)
         {
-            var contactId = args.Session.Contact.ContactId;
-
-            using (var client = SitecoreXConnectClientConfiguration.GetClient())
+            if (args.Session.CompletedRegistration())
             {
-                try
+                using (var client = SitecoreXConnectClientConfiguration.GetClient())
                 {
-                    var contact = client.GetContactFromTrackerId(contactId, new ExpandOptions(EmailAddressList.DefaultFacetKey));
-                    if (contact != null)
+                    try
                     {
-                        var alias = contact.Identifiers.FirstOrDefault(i => i.Source == "Alias");
-                        var email = contact.GetPreferredEmail();
+                        var contactId = args.Session.Contact.ContactId;
+                        var contact = client.GetContactFromTrackerId(contactId, new ExpandOptions(EmailAddressList.DefaultFacetKey, PersonalInformation.DefaultFacetKey));
+                        if (contact != null)
+                        {
+                            var alias = contact.Identifiers.FirstOrDefault(i => i.Source == "Alias");
+                            var email = contact.GetPreferredEmail();
+                            var name = contact.GetName();
 
-                        if (!string.IsNullOrEmpty(alias.Identifier) && !string.IsNullOrEmpty(email))
-                        {
-                            emailService.SendAppInviteEmail("http://localhost:3000", email, alias.Identifier);
-                        }
-                        else
-                        {
-                            Log.Fatal("SendAppInviteEmail unable to send app invite email, missing required data", this);
+                            if (!string.IsNullOrEmpty(alias.Identifier) && !string.IsNullOrEmpty(email))
+                            {
+                                emailService.SendAppInviteEmail(Settings.MobileAppHostName, email, name, alias.Identifier);
+                            }
+                            else
+                            {
+                                Log.Fatal("SendAppInviteEmail unable to send app invite email, missing required data", this);
+                            }
                         }
                     }
-                }
-                catch (XdbExecutionException ex)
-                {
-                    Log.Error("SendAppInviteEmail failed miserably.", ex, this);
+                    catch (XdbExecutionException ex)
+                    {
+                        Log.Error("SendAppInviteEmail failed miserably.", ex, this);
+                    }
                 }
             }
         }
