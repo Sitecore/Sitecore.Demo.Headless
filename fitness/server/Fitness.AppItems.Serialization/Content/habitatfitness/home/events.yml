@@ -12,6 +12,27 @@ SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{4A517AEB-BD9A-4B2B-A61E-265E687F4925}"
+          p:after="p[@uid='{83352061-4FCC-54FB-8D7C-76600CB9B874}']"
+          s:id="{C42C4419-0E19-5DEB-A3D8-BD5CE1F84B03}"
+          s:ph="/hf-nav" />
+        <r
+          uid="{94D10C6B-1F5C-4AAD-9EA9-85950F470A82}"
+          p:after="*[1=2]"
+          s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}"
+          s:par="take&amp;showInGrid=1&amp;showTitle&amp;showEventDescription&amp;personalize"
+          s:ph="/hf-body" />
+      </d>
+    </r>
 Languages:
 - Language: en
   Fields:
@@ -21,32 +42,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
-      Hint: __Final Renderings
-      Type: Layout
-      Value: |
-        <r xmlns:p="p" xmlns:s="s"
-          p:p="1">
-          <d
-            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-            <r
-              uid="{E439C8F8-7617-5F91-8F7F-C46D6BF3B192}">
-              <p:d />
-            </r>
-            <r
-              uid="{13DB9BDF-1938-58AB-A9BF-E41918BDD276}"
-              p:after="*[1=2]"
-              s:rname="ContentBlock"
-              s:ds="{74325EBD-0D44-5278-B727-39E6185BDF62}"
-              s:id="{725C0864-75AE-5DF8-AAE2-7486FF940BEB}"
-              s:par=""
-              s:ph="/hf-body" />
-            <r
-              uid="{26C520F9-E8C9-57C3-92BF-012E9AA56078}">
-              <p:d />
-            </r>
-          </d>
-        </r>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20181027T234953Z

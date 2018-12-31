@@ -7,14 +7,15 @@ const apiStem = `/sitecore/api/habitatfitness`;
 
 const cache = setupCache({
   maxAge: 15 * 60 * 1000,
-  exclude: { query: false },
+  key: req => req.url + JSON.stringify(req.params),
+  exclude: { query: false }
 });
 
 const api = axios.create({
   adapter: cache.adapter
 });
 
-export async function clearCache(){
+export async function clearCache() {
   await cache.store.clear();
   console.log("memory cache cleared");
 }

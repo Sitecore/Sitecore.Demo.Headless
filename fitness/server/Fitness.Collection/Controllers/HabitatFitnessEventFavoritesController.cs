@@ -35,7 +35,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers
             }
             try
             {
-                facetService.Add(data.EventId, FacetIDs.FavoriteEvents);
+                facetService.Add(data.EventIdFormatted, FacetIDs.FavoriteEvents);
             }
             catch (Exception ex)
             {
@@ -58,7 +58,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers
             }
             try
             {
-                facetService.Remove(data.EventId, FacetIDs.FavoriteEvents);
+                facetService.Remove(data.EventIdFormatted, FacetIDs.FavoriteEvents);
             }
             catch (Exception ex)
             {

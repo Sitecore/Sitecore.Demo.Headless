@@ -58,14 +58,12 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
             return false;
         }
 
-        public string[] GetFacetValues([NotNull]string facetKey, [NotNull]IReadOnlyDictionary<string, Facet> facets = null)
+        public string[] GetFacetValues([NotNull]string facetKey)
         {
-            if (facets == null)
-            {
-                var trackerContact = ContactExtensions.GetCurrentTrackerContact();
-                Assert.IsNotNull(trackerContact, "Current contact is null");
-                facets = trackerContact.GetXConnectFacets();
-            }
+            var trackerContact = ContactExtensions.GetCurrentTrackerContact();
+            Assert.IsNotNull(trackerContact, "Current contact is null");
+
+            var facets = trackerContact.GetXConnectFacets();
 
             StringValueListFacet facet;
             if (facets.ContainsKey(facetKey))

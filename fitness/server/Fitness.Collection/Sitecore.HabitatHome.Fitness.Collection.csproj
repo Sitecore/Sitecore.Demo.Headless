@@ -105,7 +105,6 @@
     <Compile Include="Controllers\HabitatFitnessSubscriptionsController.cs" />
     <Compile Include="Filters\CancelCurrentPageAttribute.cs" />
     <Compile Include="Model\EventPayload.cs" />
-    <Compile Include="Model\UnsubscribePayload.cs" />
     <Compile Include="Model\SubscribePayload.cs" />
     <Compile Include="Model\IdentificationPayload.cs" />
     <Compile Include="Model\DemographicsPayload.cs" />

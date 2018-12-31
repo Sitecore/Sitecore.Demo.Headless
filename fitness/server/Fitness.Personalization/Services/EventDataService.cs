@@ -91,6 +91,11 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
             }
         }
 
+        public Item GetById([NotNull]Database database, Guid itemId)
+        {
+            return database.GetItem(new ID(itemId));
+        }
+
         private ISearchIndex GetIndex([NotNull]Database database)
         {
             return ContentSearchManager.GetIndex($"sitecore_{database.Name}_index");

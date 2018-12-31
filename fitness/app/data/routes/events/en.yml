@@ -1,8 +1,17 @@
+id: events-page
+name: events
+displayName: Events
 fields:
   pageTitle: Events
-template: event-page
 placeholders:
+  hf-nav:
+    - componentName: DetailNavigation
   hf-body:
-  - componentName: ContentBlock
-    fields:
-      heading: Events
+    - componentName: EventList
+      fields:
+        title: All events
+      params:
+        showInGrid: "1"
+        showTitle: "0"
+        showEventDescription: "0"
+        personalize: "0"

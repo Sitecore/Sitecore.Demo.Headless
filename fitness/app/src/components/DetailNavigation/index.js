@@ -1,20 +1,26 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { withRouter } from "react-router";
 import { translate } from "react-i18next";
+import { withLastLocation } from "react-router-last-location";
 
 class DetailNavigation extends React.Component {
   render() {
-    const { t, routeData } = this.props;
+    const { t, routeData, lastLocation } = this.props;
     const currentPageName = routeData.displayName
       ? routeData.displayName
       : routeData.name;
 
+    let prevousLocation =
+      routeData.templateName === "event-page" ? lastLocation : "/";
+
+    if (!prevousLocation) {
+      prevousLocation = "/";
+    }
+
     return (
       <div className="direction-fixedHeader headerBar">
-        <NavLink className="btn-back" to="/">
+        <NavLink className="btn-back" to={prevousLocation}>
           {t("habitat-fitness")}
-          Back
         </NavLink>
         <h1 className="headerBar-title">{currentPageName}</h1>
       </div>
@@ -22,4 +28,4 @@ class DetailNavigation extends React.Component {
   }
 }
 
-export default withRouter(translate()(DetailNavigation));
+export default translate()(withLastLocation(DetailNavigation));
