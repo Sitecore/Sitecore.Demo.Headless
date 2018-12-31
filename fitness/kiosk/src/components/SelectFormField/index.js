@@ -7,36 +7,37 @@ class SelectFormField extends Component {
     value: ""
   };
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
     this.props.onChange(event);
   }
 
   render() {
     const { fields } = this.props;
+    const defaultValue = getRawFieldValue(fields.selectName);
     return (
       <div className="field">
         <select
-          name={getRawFieldValue(fields.selectName)}
+          name={defaultValue}
           value={this.state.value}
           onChange={this.handleChange}
         >
           <option value="" disabled>
-            <Text field={fields.selectTitle} />
+            {defaultValue}
           </option>
-          {fields.options.map((option, index) => (
-            <option
-              key={index}
-              value={getRawFieldValue(option.fields.Name)}
-            >
-              <Text field={option.fields.Name} />
-            </option>
-          ))}
+          {fields.options.map((option, index) => {
+            const value = getRawFieldValue(option.fields.Name);
+            return (
+              <option key={index} value={value}>
+                {value}
+              </option>
+            );
+          })}
         </select>
       </div>
     );
