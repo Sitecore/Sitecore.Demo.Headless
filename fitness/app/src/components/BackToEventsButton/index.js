@@ -1,5 +1,4 @@
 import React from "react";
-import { Text } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
 
 const BackToEventsButton = ({ fields }) => (

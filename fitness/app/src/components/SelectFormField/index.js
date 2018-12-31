@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Text } from "@sitecore-jss/sitecore-jss-react";
 import { getRawFieldValue } from "../../utils";
 
 class SelectFormField extends Component {
