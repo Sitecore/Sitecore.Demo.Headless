@@ -1,13 +1,12 @@
 import React, { Fragment } from "react";
 import { translate } from "react-i18next";
-
 import EventListItem from "../EventListItem";
 import {
   getRegisteredEvents,
   getFavoritedEvents,
   removeFromFavorites
 } from "../../services/EventService";
-import { unsubscribe } from "../../services/SubscriptionService";
+import { unsubscribe, subscribe } from "../../services/SubscriptionService";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
 import withSizes from "react-sizes";
 import EventItemLoader from "../EventItemLoader";
@@ -19,7 +18,9 @@ const tabs = [
     name: "registered-events",
     actionClassName: "event-action-subscribe",
     fetch: getRegisteredEvents,
-    action: unsubscribe
+    action: (eventId, subscribed) => {
+      return subscribed ? subscribe(eventId) : unsubscribe(eventId);
+    }
   },
   {
     name: "favorited-events",
@@ -41,20 +42,8 @@ class MyEvents extends React.Component {
     super(props);
     this.onTabChange = this.onTabChange.bind(this);
     this.fetchData = this.fetchData.bind(this);
-    this.fetchData = this.fetchData.bind(this);
-    this.subscribeToEvent = this.subscribeToEvent.bind(this);
-    this.unSubscribeFromEvent = this.unSubscribeFromEvent.bind(this);
-    this.favoriteEvent = this.favoriteEvent.bind(this);
-    this.unfavoriteEvent = this.unfavoriteEvent.bind(this);
+    this.unfavorite = this.unfavorite.bind(this);
   }
-
-  subscribeToEvent(eventId) {}
-
-  unSubscribeFromEvent(eventId) {}
-
-  favoriteEvent(eventId) {}
-
-  unfavoriteEvent(eventId) {}
 
   onTabChange(e) {
     const tabIndex = Number.parseInt(e.target.name);
@@ -62,12 +51,13 @@ class MyEvents extends React.Component {
     this.fetchData(tabs[tabIndex].fetch);
   }
 
+  unfavorite(eventId) {}
+
   componentDidMount() {
     this.fetchData(tabs[this.state.activeTabIndex].fetch);
   }
 
   fetchData(fetchingFunc) {
-    debugger;
     this.setState({ loading: true });
     fetchingFunc()
       .then(response => {
@@ -111,7 +101,6 @@ class MyEvents extends React.Component {
                 active={e.active}
                 className={activeTab.actionClassName}
                 action={activeTab.action}
-                onAction={() => this.fetchData(activeTab.fetch)}
               />
             }
           />

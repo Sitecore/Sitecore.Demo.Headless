@@ -12,16 +12,12 @@ class EventBadge extends React.Component {
 
   onBadgeClick() {
     this.setState({ active: !this.state.active });
-    this.props.action(this.props.eventId);
-    this.props.onAction();
+    this.props.action(this.props.eventId, !this.state.active);
   }
 
   render() {
     const { eventId, className } = this.props;
     const { active } = this.state;
-
-    debugger;
-
     return (
       <div
         className={`event-action ${className}${

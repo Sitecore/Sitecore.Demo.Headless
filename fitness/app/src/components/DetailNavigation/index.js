@@ -12,8 +12,7 @@ class DetailNavigation extends React.Component {
 
     let prevousLocation =
       routeData.templateName === "event-page" ? lastLocation : "/";
-
-    if (!prevousLocation) {
+    if (!prevousLocation || prevousLocation.pathname === "/null") {
       prevousLocation = "/";
     }
 
