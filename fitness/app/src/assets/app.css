@@ -2895,3 +2895,78 @@ a.product-link:hover {
 .eventsGrid .events-item-image-overlay-content .events-item-meta {
   margin: 0 0 0.66667em;
 }
+
+.eventsSearchResults-content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: auto;
+}
+
+/* container to wrap events listing and loads more button */
+.eventsContainer {
+  position: relative;
+}
+
+.loadsMore {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 21.2963vw 0 8.33333vw 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(hsl(240, 4.62%, 12.75%)),
+    color-stop(17.15%, hsla(240, 4.62%, 12.75%, 0.97841)),
+    color-stop(31.37%, hsla(240, 4.62%, 12.75%, 0.92315)),
+    color-stop(43.05%, hsla(240, 4.62%, 12.75%, 0.84094)),
+    color-stop(52.59%, hsla(240, 4.62%, 12.75%, 0.73852)),
+    color-stop(60.4%, hsla(240, 4.62%, 12.75%, 0.62263)),
+    color-stop(66.88%, hsla(240, 4.62%, 12.75%, 0.5)),
+    color-stop(72.41%, hsla(240, 4.62%, 12.75%, 0.37737)),
+    color-stop(77.41%, hsla(240, 4.62%, 12.75%, 0.26148)),
+    color-stop(82.27%, hsla(240, 4.62%, 12.75%, 0.15906)),
+    color-stop(87.38%, hsla(240, 4.62%, 12.75%, 0.07685)),
+    color-stop(93.16%, hsla(240, 4.62%, 12.75%, 0.02159)),
+    to(hsla(240, 4.62%, 12.75%, 0))
+  );
+  background: linear-gradient(
+    to top,
+    hsl(240, 4.62%, 12.75%),
+    hsla(240, 4.62%, 12.75%, 0.97841) 17.15%,
+    hsla(240, 4.62%, 12.75%, 0.92315) 31.37%,
+    hsla(240, 4.62%, 12.75%, 0.84094) 43.05%,
+    hsla(240, 4.62%, 12.75%, 0.73852) 52.59%,
+    hsla(240, 4.62%, 12.75%, 0.62263) 60.4%,
+    hsla(240, 4.62%, 12.75%, 0.5) 66.88%,
+    hsla(240, 4.62%, 12.75%, 0.37737) 72.41%,
+    hsla(240, 4.62%, 12.75%, 0.26148) 77.41%,
+    hsla(240, 4.62%, 12.75%, 0.15906) 82.27%,
+    hsla(240, 4.62%, 12.75%, 0.07685) 87.38%,
+    hsla(240, 4.62%, 12.75%, 0.02159) 93.16%,
+    hsla(240, 4.62%, 12.75%, 0)
+  );
+}
+.loadsMore .btn-action {
+  min-width: 40.50926vw;
+  margin: 1.38889vw 0;
+}

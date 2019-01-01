@@ -28,3 +28,4 @@ flush-session: End current session
 registered-events: Registered Events
 favorited-events: Favorited Events
 no-events: No events
+load-more: Load more

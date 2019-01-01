@@ -17,8 +17,12 @@ export function unregister(eventId) {
   return executeEventAction("registration/remove", eventId);
 }
 
-export function getAll(payload) {
-  return get(`/events`, payload, true);
+export function getAll(take, skip, lat, lng, profiles, personalize) {
+  const payload = { take, skip, lat, lng, personalize };
+  if (profiles && profiles.length > 0) {
+    payload.profiles = profiles.join("|");
+  }
+  return get(`/events`, payload, false);
 }
 
 export function getRegisteredEvents() {

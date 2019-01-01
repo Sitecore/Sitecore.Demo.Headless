@@ -15,3 +15,4 @@ placeholders:
         showTitle: "0"
         showEventDescription: "0"
         personalize: "0"
+        showLoadMore: "1"

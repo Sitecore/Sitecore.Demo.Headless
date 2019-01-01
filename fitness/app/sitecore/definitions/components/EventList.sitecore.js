@@ -50,6 +50,11 @@ export default function(manifest) {
         name: "personalize",
         displayName: "Personalize Event List",
         type: CommonFieldTypes.Checkbox
+      },
+      {
+        name: "showLoadMore",
+        displayName: "Show Load More",
+        type: CommonFieldTypes.Checkbox
       }
     ]
   });

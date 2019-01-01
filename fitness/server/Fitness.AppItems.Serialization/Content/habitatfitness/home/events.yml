@@ -29,7 +29,7 @@ SharedFields:
           uid="{94D10C6B-1F5C-4AAD-9EA9-85950F470A82}"
           p:after="*[1=2]"
           s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}"
-          s:par="take&amp;showInGrid=1&amp;showTitle&amp;showEventDescription&amp;personalize"
+          s:par="take=8&amp;showInGrid=1&amp;showTitle&amp;showEventDescription&amp;personalize=1&amp;showLoadMore=1"
           s:ph="/hf-body" />
       </d>
     </r>

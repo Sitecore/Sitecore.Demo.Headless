@@ -26,6 +26,7 @@ placeholders:
             showTitle: "1"
             showEventDescription: "1"
             personalize: "1"
+            showLoadMore: "0"
         - componentName: ProductRecommendationList
           fields:
             title: Gear just for you
