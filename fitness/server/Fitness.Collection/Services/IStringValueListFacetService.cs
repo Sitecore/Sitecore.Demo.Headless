@@ -10,7 +10,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Services
         void Remove(string value, string facetKey);
         void RemoveAll(string facetKey);
         bool ContainsValue(string facetKey, string facetValue);
-        string[] GetFacetValues(string facetKey, IReadOnlyDictionary<string, Facet> facets);
+        string[] GetFacetValues(string facetKey);
         void SetFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact, [NotNull]string facetKey);
     }
 }

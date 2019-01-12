@@ -7,6 +7,7 @@ using Sitecore.XConnect.Schema;
 using Sitecore.Xdb.Common.Web;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 
@@ -24,16 +25,10 @@ namespace Sitecore.HabitatHome.Fitness.Collection
             return deviceProfile?.LastKnownContact;
         }
 
-        public static async Task AddContactIdentifier(string email)
+        public static Contact GetContactFromTrackerId(this XConnectClient client, Guid contactId, ExpandOptions contactExpandOptions)
         {
-            using(var client = await Create())
-            {
-                var contact = GetContactIdFromDevice(client);
-                if(contact != null)
-                {
-                    client.AddContactIdentifier(contact, new ContactIdentifier(Wellknown.EMAIL_IDENT_SOURCE, email, ContactIdentifierType.Known));
-                }
-            }
+            var id = new IdentifiedContactReference("xDB.Tracker", contactId.ToString("N"));
+            return client.GetContactAsync(id, contactExpandOptions).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         public static async Task<XConnectClient> Create()
@@ -75,11 +70,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection
 
             await cfg.InitializeAsync();
             return new XConnectClient(cfg);
-        }
-
-        public static async Task<Contact> ResolveContact(XConnectClient client, Guid contactId, ExpandOptions expandOptions)
-        {
-            return await client.GetContactAsync(contactId, expandOptions);
         }
     }
 }
