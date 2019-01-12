@@ -50,19 +50,18 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Controllers
                 }
 
                 var allItems = dataService.GetAll(Context.Database, profileNames, take, skip, lat, lng, out int totalSearchResults);
-                var scoredItems = allItems;
-
+  
                 if (personalize)
                 {
-                    scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);
-                    // if no items were scrored - return the original item list
-                    if (!scoredItems.Any())
+                    var scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);
+                    // return scored items only if anything was returned
+                    if (scoredItems.Any())
                     {
-                        scoredItems = dataService.GetAll(Context.Database, new string[0], take, skip, lat, lng, out totalSearchResults);
+                        allItems = scoredItems;
                     }
                 }
 
-                var events = new JArray(scoredItems.Select(i => JObject.Parse(itemSerializer.Serialize(i))));
+                var events = new JArray(allItems.Select(i => JObject.Parse(itemSerializer.Serialize(i))));
                 var results = new JObject
                 {
                     { "events", events },
