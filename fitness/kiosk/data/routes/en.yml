@@ -1,0 +1,14 @@
+id: home-page
+fields:
+  pageTitle: Home
+placeholders:
+  hf-body:
+  - componentName: WelcomeScreen
+    fields:
+      backgroundImage:
+        src: /assets/backgrounds/running.jpg
+      cta:
+        href: /events
+        text: Let's get started
+      alignment:
+        id: top-alignment

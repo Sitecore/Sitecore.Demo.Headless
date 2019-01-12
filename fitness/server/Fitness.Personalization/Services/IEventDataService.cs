@@ -7,6 +7,8 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Services
 {
     public interface IEventDataService
     {
-        IEnumerable<Item> GetAll(Database database);
+        IEnumerable<Item> GetAll(Database database, string[] profileNames, int take, int skip, double latitude, double longitude, out int totalSearchResults);
+
+        Item GetById(Database database, Guid itemId);
     }
 }

@@ -102,6 +102,8 @@
   <ItemGroup>
     <Compile Include="Controllers\HabitatFitnessProductsController.cs" />
     <Compile Include="Controllers\HabitatFitnessEventsController.cs" />
+    <Compile Include="Indexing\ComputedFields\CoordinatesField.cs" />
+    <Compile Include="Indexing\ComputedFields\ProfileNamesField.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\EventInfo.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />
     <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />

@@ -1,0 +1,8 @@
+id: email-input
+componentName: InputFormField
+fields:
+  type: email
+  placeholder: Email
+  name: email
+  id: email
+  required: true
