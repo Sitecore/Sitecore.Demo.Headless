@@ -156,7 +156,7 @@ Languages:
               s:rname="EventList"
               s:ds="{794ECAE4-7888-5B9A-BFC1-C8AAA0A69783}"
               s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}"
-              s:par=""
+              s:par="take=3&amp;showInGrid&amp;showTitle=1&amp;showEventDescription=1&amp;personalize=1&amp;showLoadMore"
               s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0" />
             <r
               uid="{B5156FA2-8867-5EB2-89B7-8D9ECAFD090A}"

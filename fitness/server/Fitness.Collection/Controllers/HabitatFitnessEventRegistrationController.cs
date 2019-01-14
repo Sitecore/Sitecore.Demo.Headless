@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using System.Net.Http;
 using Sitecore.LayoutService.Mvc.Security;
 using System.Web.Mvc;
 using System;
@@ -35,7 +34,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers
             }
             try
             {
-                facetService.Add(data.EventId, FacetIDs.RegisteredEvents);
+                facetService.Add(data.EventIdFormatted, FacetIDs.RegisteredEvents);
             }
             catch (Exception ex)
             {
@@ -58,7 +57,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers
             }
             try
             {
-                facetService.Add(data.EventId, FacetIDs.RegisteredEvents);
+                facetService.Add(data.EventIdFormatted, FacetIDs.RegisteredEvents);
             }
             catch (Exception ex)
             {

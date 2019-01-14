@@ -17,6 +17,8 @@ const config = require("../package.json").config;
 const touchToReloadFilePath = "src/temp/config.js";
 const events = require("../data/fake-api/events");
 const products = require("../data/fake-api/products");
+const favoritedEvents = require("../data/fake-api/favorited-events");
+const registeredEvents = require("../data/fake-api/registered-events");
 
 const proxyOptions = {
   appRoot: __dirname,
@@ -50,6 +52,12 @@ const proxyOptions = {
     );
     app.get("/sitecore/api/habitatfitness/products", (req, res) =>
       res.send(products)
+    );
+    app.get("/sitecore/api/habitatfitness/events/getfavorites", (req, res) =>
+      res.send(favoritedEvents)
+    );
+    app.get("/sitecore/api/habitatfitness/events/getregistrations", (req, res) =>
+      res.send(registeredEvents)
     );
   }
 };

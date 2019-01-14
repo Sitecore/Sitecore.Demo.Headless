@@ -1,0 +1,46 @@
+personalize: Personalize
+logout: Log out
+login: Login
+create-account: Create Account
+my-events: My Events
+beginner: Beginner
+expert: Expert
+continue: Continue
+skip this: Skip this
+validation link sent: We've sent you a validation link!
+ok: OK
+get-started: Get Started
+no-thanks: No Thanks
+register-to-signup: Register to signup
+habitat-fitness: Habitat Fitness
+consent: By creating an account you agree to our <a href="/">Terms of Service</a> and <a href="/">Privacy Policy</a>
+register: Register
+home: Home
+days: days
+hours: hours
+day: day
+hour: hour
+countdown: countdown
+registration-confirmation: Are you sure you would like to register for this event?
+scroll-top: Back to Top
+flush-session: End Session
+set-location: Set Location
+events: Events
+showing-results: Showing results for
+change location: Change Location
+filter-sport: Filter by Sport
+load-more: Load More
+choose-location: Choose This Location
+change-location: Change Location
+go: Go
+register-thanks: Thanks for registering!
+registration-directions: We sent you an email with directions.
+error-registering-title: Ooops, there was an error during registration.
+error-registering-text: Please try again.
+see-results: See Results
+select-sports: Select sports
+apply-filter: Apply Filter
+cancel: Cancel
+enter-location: Please, enter the location
+location-set: Location is set
+back-events: Back to Events

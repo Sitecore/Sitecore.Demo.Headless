@@ -19,7 +19,14 @@ placeholders:
             label: Recommended for you
         - componentName: EventList
           fields:
-            title: Events near you
+            title: Events for you
+          params:
+            take: "3"
+            showInGrid: "0"
+            showTitle: "1"
+            showEventDescription: "1"
+            personalize: "1"
+            showLoadMore: "0"
         - componentName: ProductRecommendationList
           fields:
             title: Gear just for you

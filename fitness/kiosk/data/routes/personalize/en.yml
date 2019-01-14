@@ -1,0 +1,14 @@
+name: personalize
+displayName: Personalize
+fields:
+  pageTitle: Personalize
+placeholders:
+  hf-nav:
+  - componentName: DetailNavigation
+  hf-body:
+  - componentName: PersonalizationWizard
+    fields:
+      title: Personalize
+    placeholders:
+      hf-personalization-wizard:
+      - id: sports-picker

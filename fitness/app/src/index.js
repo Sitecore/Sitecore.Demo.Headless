@@ -20,9 +20,14 @@ let renderFunction = ReactDOM.render;
 
   SSR is initiated from /server/server.js.
 */
-if (window.__JSS_STATE__) {
+let __JSS_STATE__ = null;
+const ssrRawJson = document.getElementById('__JSS_STATE__');
+if (ssrRawJson) {
+  __JSS_STATE__ = JSON.parse(ssrRawJson.innerHTML);
+}
+if (__JSS_STATE__) {
   // push the initial SSR state into the route handler, where it will be used
-  setServerSideRenderingState(window.__JSS_STATE__);
+  setServerSideRenderingState(__JSS_STATE__);
 
   // when React initializes from a SSR-based initial state, you need to render with `hydrate` instead of `render`
   renderFunction = ReactDOM.hydrate;
