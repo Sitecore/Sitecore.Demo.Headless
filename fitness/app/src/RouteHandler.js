@@ -1,16 +1,13 @@
 import React from "react";
 import i18n from "i18next";
 import Helmet from "react-helmet";
-import {
-  isExperienceEditorActive,
-  dataApi
-} from "@sitecore-jss/sitecore-jss-react";
+import { isExperienceEditorActive, dataApi } from '@sitecore-jss/sitecore-jss-react';
 import SitecoreContextFactory from "./lib/SitecoreContextFactory";
+import { dataFetcher } from "./utils/dataFetcher";
 import config from "./temp/config";
 import Layout from "./Layout";
 import NotFound from "./NotFound";
 import { getUrlParams, canUseDOM } from "./utils";
-import { dataFetcher } from "./utils/dataFetcher";
 import Loading from "./components/Loading";
 
 // Dynamic route handler for Sitecore items.
@@ -28,19 +25,15 @@ export default class RouteHandler extends React.Component {
     this.state = {
       notFound: true,
       routeData: ssrInitialState, // null when client-side rendering
-      defaultLanguage: config.defaultLanguage
+      defaultLanguage: config.defaultLanguage,
     };
 
-    if (
-      ssrInitialState &&
-      ssrInitialState.sitecore &&
-      ssrInitialState.sitecore.route
-    ) {
+    if (ssrInitialState && ssrInitialState.sitecore && ssrInitialState.sitecore.route) {
       // set the initial sitecore context data if we got SSR initial state
       SitecoreContextFactory.setSitecoreContext({
         route: ssrInitialState.sitecore.route,
         itemId: ssrInitialState.sitecore.route.itemId,
-        ...ssrInitialState.sitecore.context
+        ...ssrInitialState.sitecore.context,
       });
     }
 
@@ -51,21 +44,14 @@ export default class RouteHandler extends React.Component {
 
     // if we have an initial SSR state, and that state doesn't have a valid route data,
     // then this is a 404 route.
-    if (
-      ssrInitialState &&
-      (!ssrInitialState.sitecore || !ssrInitialState.sitecore.route)
-    ) {
+    if (ssrInitialState && (!ssrInitialState.sitecore || !ssrInitialState.sitecore.route)) {
       this.state.notFound = true;
     }
 
     // if we have an SSR state, and that state has language data, set the current language
     // (this makes the language of content follow the Sitecore context language cookie)
     // note that a route-based language (i.e. /de-DE) will override this default; this is for home.
-    if (
-      ssrInitialState &&
-      ssrInitialState.context &&
-      ssrInitialState.context.language
-    ) {
+    if (ssrInitialState && ssrInitialState.context && ssrInitialState.context.language) {
       this.state.defaultLanguage = ssrInitialState.context.language;
     }
 
@@ -102,23 +88,25 @@ export default class RouteHandler extends React.Component {
    * Loads route data from Sitecore Layout Service into state.routeData
    */
   updateRouteData() {
-    const sitecoreRoutePath =
-      this.props.route.match.params.sitecoreRoute || "/";
-    const language =
-      this.props.route.match.params.lang || this.state.defaultLanguage;
+    let sitecoreRoutePath = this.props.route.match.params.sitecoreRoute || '/';
+    if (!sitecoreRoutePath.startsWith('/')) {
+      sitecoreRoutePath = `/${sitecoreRoutePath}`;
+    }
+
+    const language = this.props.route.match.params.lang || this.state.defaultLanguage;
 
     // get the route data for the new route
-    getRouteData(sitecoreRoutePath, language).then(routeData => {
-      if (routeData !== null) {
+    getRouteData(sitecoreRoutePath, language).then((routeData) => {
+      if (routeData !== null && routeData.sitecore && routeData.sitecore.route) {
         // set the sitecore context data and push the new route
         SitecoreContextFactory.setSitecoreContext({
           route: routeData.sitecore.route,
           itemId: routeData.sitecore.route.itemId,
-          ...routeData.sitecore.context
+          ...routeData.sitecore.context,
         });
         this.setState({ routeData, notFound: false });
       } else {
-        this.setState({ notFound: true });
+        this.setState({ routeData, notFound: true });
       }
     });
   }
@@ -127,8 +115,7 @@ export default class RouteHandler extends React.Component {
    * Updates the current app language to match the route data.
    */
   updateLanguage() {
-    const newLanguage =
-      this.props.route.match.params.lang || this.state.defaultLanguage;
+    const newLanguage = this.props.route.match.params.lang || this.state.defaultLanguage;
 
     if (i18n.language !== newLanguage) {
       this.languageIsChanging = true;
@@ -180,7 +167,7 @@ export default class RouteHandler extends React.Component {
           <Helmet>
             <title>{i18n.t("Page not found")}</title>
           </Helmet>
-          <NotFound />
+          <NotFound context={routeData.sitecore && routeData.sitecore.context} />
         </div>
       );
     }
@@ -230,8 +217,13 @@ function getRouteData(route, language, options = {}) {
     fetcher: dataFetcher
   };
 
-  return dataApi.fetchRouteData(route, fetchOptions).catch(error => {
-    console.error("Route data fetch error", error);
+  return dataApi.fetchRouteData(route, fetchOptions).catch((error) => {
+    if (error.response && error.response.status === 404 && error.response.data) {
+      return error.response.data;
+    }
+
+    console.error('Route data fetch error', error, error.response);
+
     return null;
   });
 }

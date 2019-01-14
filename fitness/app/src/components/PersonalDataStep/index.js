@@ -7,6 +7,7 @@ import {
   setDemographicsFacet,
   setDemographicsProfile
 } from "../../services/DemographicsService";
+import { trackCompleteDemographics } from "../../services/TrackingService";
 
 class PersonalDataStep extends Component {
   state = {
@@ -39,6 +40,8 @@ class PersonalDataStep extends Component {
       .catch(err => {
         console.log(err);
       });
+
+    trackCompleteDemographics();
   }
 
   render() {

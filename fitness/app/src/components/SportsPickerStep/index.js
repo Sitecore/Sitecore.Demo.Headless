@@ -10,6 +10,7 @@ import {
   setSportsFacets,
   setSportsProfile
 } from "../../services/SportsService";
+import { trackCompleteFavoriteSports } from "../../services/TrackingService";
 
 class SportsPickerStep extends Component {
   state = {
@@ -44,6 +45,8 @@ class SportsPickerStep extends Component {
       .catch(err => {
         console.log(err);
       });
+
+    trackCompleteFavoriteSports();
   }
 
   updateSelectedSports(key, value) {

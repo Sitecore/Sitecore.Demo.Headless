@@ -1,0 +1,12 @@
+id: register-page
+name: register
+displayName: Sign Up
+fields:
+  pageTitle: Sign Up
+placeholders:
+  hf-nav:
+  - componentName: DetailNavigation
+  hf-body:
+    - componentName: KioskSignup
+      fields:
+          title: Register

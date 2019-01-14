@@ -10,7 +10,17 @@ import { NavLink } from "react-router-dom";
 import { translate } from "react-i18next";
 import EventLabels from "../EventLabels";
 
-const EventListItem = ({ id, fields, url, label, featured, t }) => {
+const EventListItem = ({
+  id,
+  fields,
+  url,
+  label,
+  featured,
+  showDescription,
+  showMetatags,
+  badge,
+  t
+}) => {
   return (
     <div className={`events-item ${featured ? "events-item_featured" : ""}`}>
       <div className="events-item-image-container">
@@ -27,23 +37,26 @@ const EventListItem = ({ id, fields, url, label, featured, t }) => {
             />
           </NavLink>
         </div>
-        <div className="events-item-image-overlay">
-          <div className="events-item-image-overlay-content">
-            <div className="events-item-metas">
-              {featured && (
-                <Text
-                  field={label}
-                  tag="p"
-                  className="events-item-meta events-item-meta_recommended"
+        {showMetatags && (
+          <div className="events-item-image-overlay">
+            <div className="events-item-image-overlay-content">
+              <div className="events-item-metas">
+                {featured && (
+                  <Text
+                    field={label}
+                    tag="p"
+                    className="events-item-meta events-item-meta_recommended"
+                  />
+                )}
+                <EventLabels
+                  labels={fields.labels}
+                  className="events-item-meta events-item-meta_type"
                 />
-              )}
-              <EventLabels
-                labels={fields.labels}
-                className="events-item-meta events-item-meta_type"
-              />
+              </div>
             </div>
           </div>
-        </div>
+        )}
+        <div className="eventDetail-image-overlay-badges">{badge}</div>
       </div>
       <div className="events-item-content">
         <div className="events-item-content-inner">
@@ -56,11 +69,13 @@ const EventListItem = ({ id, fields, url, label, featured, t }) => {
             className="events-item-date"
             render={date => dayjs(date).format("MMM D YYYY")}
           />
-          <RichText
-            field={fields.description}
-            tag="p"
-            className="events-item-name-description"
-          />
+          {showDescription && (
+            <RichText
+              field={fields.description}
+              tag="p"
+              className="events-item-name-description"
+            />
+          )}
         </div>
       </div>
     </div>
@@ -68,7 +83,9 @@ const EventListItem = ({ id, fields, url, label, featured, t }) => {
 };
 
 EventListItem.defaultProps = {
-  fields: {}
+  fields: {},
+  showDescription: true,
+  showMetatags: true
 };
 
 export default translate()(EventListItem);

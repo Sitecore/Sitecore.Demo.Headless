@@ -5,6 +5,7 @@ import { translate } from "react-i18next";
 import { setIdentification } from "../../services/IdentificationService";
 import Consent from "../Consent";
 import ContinueButton from "../ContinueButton";
+import { trackCompleteRegistration } from "../../services/TrackingService";
 
 class SaveAsAccountStep extends Component {
   state = {
@@ -33,6 +34,8 @@ class SaveAsAccountStep extends Component {
     setIdentification(firstname, lastname, email).catch(err => {
       console.log(err);
     });
+
+    trackCompleteRegistration();
   }
 
   isValid() {

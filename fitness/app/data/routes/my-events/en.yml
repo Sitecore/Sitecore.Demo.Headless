@@ -1,7 +1,10 @@
+id: myevents-page
+name: my-events
+displayName: My Events
 fields:
   pageTitle: My Events
 placeholders:
+  hf-nav:
+  - componentName: DetailNavigation
   hf-body:
-  - componentName: ContentBlock
-    fields:
-      heading: My Events
+  - componentName: MyEvents

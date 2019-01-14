@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import componentFactory from "./temp/componentFactory";
 import SitecoreContextFactory from "./lib/SitecoreContextFactory";
 import RouteHandler from "./RouteHandler";
+import { LastLocationProvider } from "react-router-last-location";
 
 // This is the main JSX entry point of the app invoked by the renderer (server or client rendering).
 // By default the app's normal rendering is delegated to <RouteHandler> that handles the loading of JSS route data.
@@ -27,16 +28,18 @@ const AppRoot = ({ path, Router }) => {
       contextFactory={SitecoreContextFactory}
     >
       <Router location={path} context={{}}>
-        <Switch>
-          <Route key="/null" path="/null" component={null} />
-          {routePatterns.map(routePattern => (
-            <Route
-              key={routePattern}
-              path={routePattern}
-              render={routeRenderFunction}
-            />
-          ))}
-        </Switch>
+        <LastLocationProvider>
+          <Switch>
+            <Route key="/null" path="/null" component={null} />
+            {routePatterns.map(routePattern => (
+              <Route
+                key={routePattern}
+                path={routePattern}
+                render={routeRenderFunction}
+              />
+            ))}
+          </Switch>
+        </LastLocationProvider>
       </Router>
     </SitecoreContext>
   );

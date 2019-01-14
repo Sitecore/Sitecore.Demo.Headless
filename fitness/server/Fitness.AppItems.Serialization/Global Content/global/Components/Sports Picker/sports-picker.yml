@@ -1,0 +1,43 @@
+﻿---
+ID: "89d5dd57-6e02-5698-915e-4d875760ebec"
+Parent: "6eef06a8-6c11-449c-9864-d45d6d0527ab"
+Template: "92c6b0a9-42ee-5884-bc16-057318857540"
+Path: "/sitecore/content/global/Components/Sports Picker/sports-picker"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234952Z
+    - ID: "385b40de-d6a2-5a6a-9db6-930782c36ce7"
+      Hint: sports
+      Type: Multilist
+      Value: |
+        {5FAADDBB-E478-49CB-A461-FAB0731D2A63}
+        {FDFEE004-5411-42AF-A772-972A2596AE80}
+        {59D2B549-58B3-4156-BAA5-9210336B9E33}
+        {A11DB2F1-EDBA-420A-B9DA-E62ADD92261A}
+        {9E2FD4CD-D7D3-4BFF-965A-9A1B0DB1947A}
+        {926DB535-C654-4918-AAB8-DE581085748D}
+        {80935AF5-DAEB-41E6-AA8F-1F60F91ADFFE}
+        {7D4C48D7-D058-4443-B7A6-A51EABEEFD27}
+        {DFCA4453-6075-4172-9DE4-B1932CD43B22}
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "52803cb0-7518-5cc5-9d39-962a52040110"
+      Hint: selectSkillTitle
+      Value: "What's your skill level in $selected-sport?"
+    - ID: "9efe8415-6dc7-5031-8679-56eb6c3db9b5"
+      Hint: title
+      Value: Pick your favorite sports
+    - ID: "e12d8770-1f35-56b5-8247-e53a6cebf4df"
+      Hint: stepName
+      Value: Sports

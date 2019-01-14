@@ -1,0 +1,9 @@
+id: road-type-label
+name: Type
+displayName: Type
+template: event-label
+fields:
+  name: Type
+  value: road
+  image:
+    src: /assets/icons/road.svg

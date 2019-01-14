@@ -3,6 +3,7 @@ logout: Log out
 login: Login
 create-account: Create Account
 my-events: My Events
+all-events: All Events
 beginner: Beginner
 expert: Expert
 continue: Continue
@@ -24,3 +25,7 @@ countdown: countdown
 registration-confirmation: Are you sure you would like to register for this event?
 scroll-top: Back to Top
 flush-session: End current session
+registered-events: Registered Events
+favorited-events: Favorited Events
+no-events: No events
+load-more: Load more
