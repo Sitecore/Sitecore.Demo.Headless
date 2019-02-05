@@ -12,7 +12,6 @@ namespace Sitecore.HabitatHome.Fitness.Collection
         {
             serviceCollection.AddTransient<IRouter, Router>();
 
-            serviceCollection.AddTransient<IEmailService, EmailService>();
             serviceCollection.AddTransient<IDemographicsService, DemographicsService>();
             serviceCollection.AddTransient<ISportsService, SportsService>();
             serviceCollection.AddTransient<IIdentificationService, IdentificationService>();

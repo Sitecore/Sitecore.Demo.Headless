@@ -24,14 +24,14 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.RequestBegin
             {
                 return;
             }
-                
+
             var queryString = args.PageContext.RequestContext.HttpContext.Request.QueryString;
-            var contactAlias = queryString["alias"];
-            if (!string.IsNullOrWhiteSpace(contactAlias))
+            var email = queryString["email"];
+            if (!string.IsNullOrWhiteSpace(email))
             {
                 try
                 {
-                    Tracker.Current?.Session?.IdentifyAs("Alias", contactAlias);
+                    Tracker.Current?.Session?.IdentifyAs(Wellknown.EMAIL_IDENT_SOURCE, email);
                 }
                 catch(Exception ex)
                 {

@@ -3,6 +3,7 @@ using Sitecore.Analytics.XConnect.Facets;
 using Sitecore.Diagnostics;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 

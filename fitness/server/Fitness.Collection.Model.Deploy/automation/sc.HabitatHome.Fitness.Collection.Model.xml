@@ -9,7 +9,7 @@
                 <TypeName>Sitecore.HabitatHome.Fitness.Collection.Model.ModelFactory, Sitecore.HabitatHome.Fitness.Collection.Model</TypeName>
                 <PropertyName>Instance</PropertyName>
               </HabitatFitnessModel>
-          </Models>
+            </Models>
           </Options>
         </XConnect.Client.Configuration>
       </Services>
