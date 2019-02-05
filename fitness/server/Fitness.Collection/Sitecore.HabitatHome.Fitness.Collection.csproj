@@ -110,7 +110,6 @@
     <Compile Include="Model\DemographicsPayload.cs" />
     <Compile Include="Model\StringArrayPayload.cs" />
     <Compile Include="Model\SportPreferencesPayload.cs" />
-    <Compile Include="Pipelines\CommitSession\SendAppInviteEmail.cs" />
     <Compile Include="Pipelines\CommitSession\UpdateFacetsFromTracker.cs" />
     <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
     <Compile Include="Pipelines\RequestBegin\IdentifyContactViaAlias.cs" />
@@ -118,8 +117,6 @@
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="Services\ContactExtensions.cs" />
-    <Compile Include="Services\EmailService.cs" />
-    <Compile Include="Services\IEmailService.cs" />
     <Compile Include="Services\SportsService.cs" />
     <Compile Include="Services\ISportsService.cs" />
     <Compile Include="Services\IdentificationService.cs" />
