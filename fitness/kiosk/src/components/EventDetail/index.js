@@ -1,10 +1,17 @@
 import React from "react";
-import { Image, Text } from "@sitecore-jss/sitecore-jss-react";
+import {
+  Image,
+  Text,
+  RichText,
+  DateField
+} from "@sitecore-jss/sitecore-jss-react";
 import { translate } from "react-i18next";
+import { NavLink } from "react-router-dom";
+import dayjs from "dayjs";
 import EventMap from "../EventMap";
 import EventLabels from "../EventLabels";
 
-const EventDetail = ({ context, t, fields, routeData, date, cta, icon, description }) => {
+const EventDetail = ({ t, routeData }) => {
   const routeFields = routeData.fields;
   const eventName = routeData.name.value;
   return (
@@ -27,8 +34,15 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
               tag="h1"
               className="eventDetail-title"
             />
-            {date}
-            {cta}
+            <DateField
+              field={routeFields.date}
+              tag="p"
+              className="eventDetail-date"
+              render={date => dayjs(date).format("MMM D YYYY")}
+            />
+            <NavLink to={"/register"} className="btn btn-primary">
+              {t("register")}
+            </NavLink>
           </div>
           <div className="eventDetail-image-overlay-metas">
             <EventLabels
@@ -36,13 +50,12 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
               className="eventDetail-image-overlay-meta eventDetail-image-overlay-meta_type"
             />
           </div>
-          <div className="eventDetail-image-overlay-badges">
-            {icon}
-          </div>
         </div>
       </div>
       <div className="eventDetail-content">
-        <div className="eventDetail-description">{description}</div>
+        <div className="eventDetail-description">
+          <RichText field={routeFields.description} tag="p" />
+        </div>
         <EventMap {...routeFields} eventName={eventName} />
       </div>
     </div>

@@ -1,6 +1,0 @@
-id: event-detail-registered
-name: event-detail-registered
-displayName: Event Detail (Registered)
-componentName: EventDetailRegistered
-fields:
-  ctaText: Directions

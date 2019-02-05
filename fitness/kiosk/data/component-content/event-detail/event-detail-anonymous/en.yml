@@ -1,8 +1,0 @@
-id: event-detail-anonymous
-name: event-detail-anonymous
-displayName: Event Detail (Anonymous)
-componentName: EventDetailAnonymous
-fields:
-  ctaText: Register to Signup
-  ctaLink:
-    href: /register

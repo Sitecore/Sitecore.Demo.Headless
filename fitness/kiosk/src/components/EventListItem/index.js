@@ -12,7 +12,7 @@ import EventLabels from "../EventLabels";
 
 class EventListItem extends PureComponent {
   render() {
-    const { id, fields, url, label, featured, t } = this.props;
+    const { fields, url, label, featured, } = this.props;
     let eventUrl = url;
     if(url.startsWith('/sitecore/content/habitatfitness/home/events')){
       eventUrl = eventUrl.replace('/sitecore/content/habitatfitness/home/events', '/events');
