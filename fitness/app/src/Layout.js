@@ -28,6 +28,11 @@ class Layout extends Component {
 
   onMessageReceived(payload) {
     console.log("Layout. Message received. ", payload);
+    if(!payload.notification){
+      console.warn("Received empty notification body. The notification was already processed.");
+      return;
+    }
+    
     toast.info(<ToastBody {...payload.notification} />, {
       position: "top-center",
       autoClose: 5000,
