@@ -1,11 +1,11 @@
-﻿using Sitecore.Analytics.XConnect.Facets;
-using Sitecore.Diagnostics;
+﻿using Sitecore.Diagnostics;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
 using System.Collections.Generic;
 using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.XConnect.Client;
 using Sitecore.Analytics;
+using System;
 
 namespace Sitecore.HabitatHome.Fitness.Collection.Services
 {
