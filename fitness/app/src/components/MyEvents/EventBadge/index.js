@@ -16,7 +16,7 @@ class EventBadge extends React.Component {
   }
 
   render() {
-    const { eventId, className } = this.props;
+    const { className } = this.props;
     const { active } = this.state;
     return (
       <div
