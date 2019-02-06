@@ -7,7 +7,6 @@ import {
   removeFromFavorites
 } from "../../services/EventService";
 import { unsubscribe, subscribe } from "../../services/SubscriptionService";
-import { Text } from "@sitecore-jss/sitecore-jss-react";
 import withSizes from "react-sizes";
 import EventItemLoader from "../EventItemLoader";
 import Tabs from "./Tabs";
@@ -77,7 +76,7 @@ class MyEvents extends React.Component {
 
   render() {
     const { events, loading, activeTabIndex } = this.state;
-    const { fields, width, height, t } = this.props;
+    const { width, height, t } = this.props;
 
     let eventItems = [];
     if (loading) {

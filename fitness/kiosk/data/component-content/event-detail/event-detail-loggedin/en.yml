@@ -1,6 +1,0 @@
-id: event-detail-loggedin
-name: event-detail-loggedin
-displayName: Event Detail (Logged In)
-componentName: EventDetailLoggedIn
-fields:
-  ctaText: Sign Up

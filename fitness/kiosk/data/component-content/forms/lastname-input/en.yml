@@ -1,8 +1,0 @@
-id: lastname-input
-componentName: InputFormField
-fields:
-  type: text
-  name: lastname
-  id: lastname
-  placeholder: Last Name
-  required: false

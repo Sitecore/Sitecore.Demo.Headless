@@ -11,7 +11,7 @@ const Tabs = ({ tabs, activeTabIndex, onTabChange }) => {
               key={index}
               index={index}
               {...tab}
-              active={index == activeTabIndex}
+              active={index === activeTabIndex}
               onTabChange={onTabChange}
             />
           );

@@ -11,15 +11,13 @@ import { translate } from "react-i18next";
 import EventLabels from "../EventLabels";
 
 const EventListItem = ({
-  id,
   fields,
   url,
   label,
   featured,
   showDescription,
   showMetatags,
-  badge,
-  t
+  badge
 }) => {
   return (
     <div className={`events-item ${featured ? "events-item_featured" : ""}`}>
@@ -28,7 +26,6 @@ const EventListItem = ({
           <NavLink to={`${url}`}>
             <Image
               field={fields.image}
-	       style={null}
               srcSet={[{ mw: 650 }, { mw: 350 }]}
               sizes="(min-width: 960px) 650px, 350px"
               style={null}

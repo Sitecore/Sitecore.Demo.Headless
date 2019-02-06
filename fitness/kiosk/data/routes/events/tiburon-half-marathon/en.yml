@@ -23,4 +23,8 @@ placeholders:
   hf-nav:
     - componentName: DetailNavigation
   hf-body:
-    - id: event-detail-anonymous
+    - componentName: EventDetailAnonymous
+      fields:
+        ctaText: Register to Signup
+        ctaLink:
+          href: /register
