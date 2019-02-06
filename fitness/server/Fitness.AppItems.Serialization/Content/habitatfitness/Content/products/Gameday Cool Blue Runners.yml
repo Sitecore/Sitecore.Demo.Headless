@@ -1,0 +1,72 @@
+﻿---
+ID: "fff9c481-0fea-4e01-8ebb-3133d9b2a85e"
+Parent: "12676f34-9f75-534c-99cd-77a295d3b75b"
+Template: "f7cfb991-fdcd-5036-a021-29e58a67da4b"
+Path: /sitecore/content/habitatfitness/Content/products/Gameday Cool Blue Runners
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf"
+        name="Sports">
+        <key
+          name="Basketball"
+          value="0" />
+        <key
+          name="Bowling"
+          value="0" />
+        <key
+          name="Cycling"
+          value="2" />
+        <key
+          name="Golf"
+          value="0" />
+        <key
+          name="Kayaking"
+          value="0" />
+        <key
+          name="Rock Climbing"
+          value="0" />
+        <key
+          name="Running"
+          value="8" />
+        <key
+          name="Swimming"
+          value="0" />
+        <key
+          name="Volleyball"
+          value="3" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190206T141912Z
+    - ID: "2fa17014-b3b5-5966-8ee0-f3116c4313c2"
+      Hint: title
+      Value: Gameday Cool Blue Runners
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{AF32C98B-C828-42AF-A649-74C1DE3303FB}"
+    - ID: "4d7cc259-2d5c-59d5-a4dc-974a35bf0847"
+      Hint: image
+      Value: |
+        <image mediaid="{AA9B6F39-F3F2-4B23-B769-68FA36FFE4FA}" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "97f252de-efda-5ed7-a61c-0a2673a7c26b"
+      Hint: description
+      Value: "Hit the pavement or the trail in these Cool Blue Runners. A true all-purpose running shoe to meet your everyday needs."
