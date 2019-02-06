@@ -69,7 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\plugin.js" />
+    <Content Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\ClearSubscriptions\plugin.js" />
+    <Content Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\PushNotification\plugin.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -87,17 +88,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\codegen\codegen\activities\send-email\editor\send-email-editor.component.css.shim.ngstyle.d.ts" />
-    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\codegen\codegen\activities\send-email\editor\send-email-editor.component.ngfactory.d.ts" />
-    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\codegen\codegen\activities\send-email\send-email.module.ngfactory.d.ts" />
-    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activities\send-email\editor\send-email-editor.component.d.ts" />
-    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activities\send-email\email-campaigns.service.d.ts" />
-    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activities\send-email\send-email-activity.d.ts" />
-    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activities\send-email\send-email.module.d.ts" />
-    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\email-activities.plugin.d.ts" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\ClearSubscriptions\codegen\codegen\activities\send-email\editor\send-email-editor.component.css.shim.ngstyle.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\ClearSubscriptions\codegen\codegen\activities\send-email\editor\send-email-editor.component.ngfactory.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\ClearSubscriptions\codegen\codegen\activities\send-email\send-email.module.ngfactory.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\ClearSubscriptions\codegen\src\activities\send-email\editor\send-email-editor.component.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\ClearSubscriptions\codegen\src\activities\send-email\email-campaigns.service.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\ClearSubscriptions\codegen\src\activities\send-email\send-email-activity.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\ClearSubscriptions\codegen\src\activities\send-email\send-email.module.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\ClearSubscriptions\codegen\src\email-activities.plugin.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\PushNotification\codegen\codegen\activities\send-email\editor\send-email-editor.component.css.shim.ngstyle.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\PushNotification\codegen\codegen\activities\send-email\editor\send-email-editor.component.ngfactory.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\PushNotification\codegen\codegen\activities\send-email\send-email.module.ngfactory.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\PushNotification\codegen\src\activities\send-email\editor\send-email-editor.component.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\PushNotification\codegen\src\activities\send-email\email-campaigns.service.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\PushNotification\codegen\src\activities\send-email\send-email-activity.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\PushNotification\codegen\src\activities\send-email\send-email.module.d.ts" />
+    <TypeScriptCompile Include="sitecore\shell\client\applications\MarketingAutomation\plugins\HabitatFitness\PushNotification\codegen\src\email-activities.plugin.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,22 @@
+﻿---
+ID: "07992d79-4a7d-4941-a5b6-a9be750c8e0d"
+Parent: "df10a84b-f3da-4a05-ac70-aa9d378fe0ed"
+Template: "8ccbef0d-6652-44b1-ad05-32e78120ceb8"
+Path: /sitecore/system/Settings/Analytics/Marketing Automation/Activity Types/Clear event subscriptions/Paths
+DB: master
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{7E26A2F2-275D-44DD-A3A0-E94EF0329214}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170227T125136Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
