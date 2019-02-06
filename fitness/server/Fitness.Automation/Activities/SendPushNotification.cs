@@ -1,4 +1,5 @@
-﻿using Sitecore.Framework.Conditions;
+﻿using Sitecore.DependencyInjection;
+using Sitecore.Framework.Conditions;
 using Sitecore.HabitatHome.Fitness.Automation.Services;
 using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
@@ -6,6 +7,7 @@ using Sitecore.Xdb.MarketingAutomation.Core.Activity;
 using Sitecore.Xdb.MarketingAutomation.Core.Processing.Plan;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace Sitecore.HabitatHome.Fitness.Automation.Activities
@@ -20,6 +22,10 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Activities
         {
             NotificationService = notificationService;
         }
+
+        public string Title { get; set; }
+
+        public string Body { get; set; }
 
         public ActivityResult Invoke(IContactProcessingContext context)
         {
@@ -52,7 +58,7 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Activities
             {
                 foreach (var eventSubscription in eventSubscriptions)
                 {
-                    NotificationService.SendInitialEventNotification(context.Contact, token);
+                    NotificationService.SendInitialEventNotification(context.Contact, Title, Body, token);
                 }
 
                 return new SuccessMove();

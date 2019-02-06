@@ -36,7 +36,7 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Services
             BindPropertiesFromOptions(options);
         }
 
-        public void SendInitialEventNotification(Contact contact, string token)
+        public void SendInitialEventNotification(Contact contact, string title, string body, string token)
         {
             var uri = new Uri(FirebaseMessagingApiUri);
             using (var client = new WebClient())
@@ -46,8 +46,8 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Services
 
                 dynamic data = new JObject();
                 data.notification = new JObject();
-                data.notification.title = $"Hey {GetCurrentContactName(contact)}!";
-                data.notification.body = $"Thanks for registering for the event, it will be outstanding.";
+                data.notification.title = title.Replace("$first_name$", GetCurrentContactName(contact));
+                data.notification.body = body.Replace("$first_name$", GetCurrentContactName(contact));
                 data.notification.click_action = PublicHostName;
                 data.notification.icon = $"{PublicHostName}/favicon-32x32.png";
                 data.to = token;

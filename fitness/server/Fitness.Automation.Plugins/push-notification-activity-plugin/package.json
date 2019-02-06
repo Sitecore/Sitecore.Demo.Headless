@@ -1,0 +1,37 @@
+{
+  "name": "push-notification-activity-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "angular-cli": {},
+  "scripts": {
+    "predev": "npm install && rimraf ./codegen/",
+    "dev": "ngc -p ./src/tsconfig.aot.json && npm run build",
+    "prebuild": "rimraf ./dist/",
+    "build": "webpack --display-error-details"
+  },
+  "dependencies": {
+    "@angular/common": "5.2.9",
+    "@angular/core": "5.2.11",
+    "@angular/forms": "5.2.11",
+    "@angular/http": "5.2.11",
+    "@angular/platform-browser": "5.2.9",
+    "@ngx-translate/core": "9.0.2",
+    "@sitecore/ma-core": "file:..\\ma-core",
+    "rxjs": "5.5.11",
+    "zone.js": "0.8.25"
+  },
+  "devDependencies": {
+    "@angular/compiler": "5.2.9",
+    "@angular/compiler-cli": "5.2.9",
+    "copyfiles": "2.0.0",
+    "rimraf": "2.6.2",
+    "ts-loader": "4.1.0",
+    "typescript": "2.8.1",
+    "webpack": "4.4.1",
+    "webpack-cli": "^2.0.13"
+  },
+  "author": "Sitecore Corporation",
+  "license": "Apache 2.0"
+}
