@@ -7,7 +7,6 @@ using Sitecore.Xdb.MarketingAutomation.Core.Activity;
 using Sitecore.Xdb.MarketingAutomation.Core.Processing.Plan;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 
 namespace Sitecore.HabitatHome.Fitness.Automation.Activities
@@ -32,41 +31,24 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Activities
             Condition.Requires(context.Contact).IsNotNull();
             Condition.Requires(NotificationService).IsNotNull();
 
-            var subscriptionFacet = context.Contact.GetFacet<StringValueListFacet>(FacetIDs.Subscriptions);
-            var eventSubscriptions = new List<string>();
-            if (subscriptionFacet != null)
-            {
-                foreach (var subscription in subscriptionFacet.Values)
-                {
-                    eventSubscriptions.Add(subscription);
-                }
-            }
-
-            var tokenFacet = context.Contact.GetFacet<StringValueListFacet>(FacetIDs.SubscriptionTokens);
             var tokens = new List<string>();
+            var tokenFacet = context.Contact.GetFacet<StringValueListFacet>(FacetIDs.SubscriptionTokens);
             if (tokenFacet != null)
             {
-                foreach (var tokenId in tokenFacet.Values)
-                {
-                    tokens.Add(tokenId);
-                }
-            }
+                var token = tokenFacet.Values.FirstOrDefault();
 
-            var token = tokens.FirstOrDefault();
-
-            try
-            {
-                foreach (var eventSubscription in eventSubscriptions)
+                try
                 {
                     NotificationService.SendInitialEventNotification(context.Contact, Title, Body, token);
+                    return new SuccessMove();
                 }
+                catch (Exception ex)
+                {
+                    return new Failure($"SendPushNotification failed with '{ex.Message}'");
+                }
+            }
 
-                return new SuccessMove();
-            }
-            catch (Exception ex)
-            {
-                return new Failure($"SendPushNotification failed with '{ex.Message}'");
-            }
+            return new Failure($"SendPushNotification failed. No subscription token was resolved for contact {context.Contact.Id}.");
         }
     }
 }

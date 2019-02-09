@@ -52,14 +52,7 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Services
                 data.notification.icon = $"{PublicHostName}/favicon-32x32.png";
                 data.to = token;
 
-                try
-                {
-                    var result = client.UploadString(uri, data.ToString());
-                }
-                catch (Exception ex)
-                {
-                    // TODO: inject logger here.
-                }
+                client.UploadString(uri, data.ToString());
             }
         }
 

@@ -86,7 +86,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\ClearEventSubscriptions.cs" />
     <Compile Include="Activities\SendPushNotification.cs" />
     <Compile Include="Services\EventNotificationService.cs" />
     <Compile Include="Services\IEventNotificationService.cs" />
