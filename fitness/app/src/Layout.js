@@ -7,40 +7,52 @@ import { translate } from "react-i18next";
 import { ToastContainer, toast } from "react-toastify";
 
 import "bootstrap/dist/css/bootstrap.css";
-import "./assets/app.css";
 import "react-toastify/dist/ReactToastify.min.css";
+import "./assets/app.css";
 
-const ToastBody = ({ title, body, link, icon, click_action }) => (
+// remove double quotes
+const unquote = str => str.replace(/['"]+/g, "");
+
+const ToastBody = ({ title, body, ctaText, click_action }) => (
   <Fragment>
-    {/* <img src={icon} /> */}
-    <h5>{title}</h5>
-    <p>{body}</p>
-    <a className="btn btn-danger" href={click_action}>
-      See more
+    <h5 dangerouslySetInnerHTML={{ __html: unquote(title) }} />
+    <p dangerouslySetInnerHTML={{ __html: unquote(body) }} />
+    <a className="btn btn-primary" href={click_action}>
+      {ctaText}
     </a>
   </Fragment>
 );
 
 class Layout extends Component {
+  constructor(props) {
+    super(props);
+    this.onMessageReceived = this.onMessageReceived.bind(this);
+  }
+
   componentDidMount() {
     initializeFirebase(this.onMessageReceived);
   }
 
   onMessageReceived(payload) {
     console.log("Layout. Message received. ", payload);
-    if(!payload.notification){
-      console.warn("Received empty notification body. The notification was already processed.");
+    if (!payload.notification) {
+      console.warn(
+        "Received empty notification body. The notification was already processed."
+      );
       return;
     }
-    
-    toast.info(<ToastBody {...payload.notification} />, {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true
-    });
+
+    toast.info(
+      <ToastBody {...payload.notification} ctaText={this.props.t("ok")} />,
+      {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true
+      }
+    );
   }
 
   render() {

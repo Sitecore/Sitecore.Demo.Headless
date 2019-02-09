@@ -2970,3 +2970,9 @@ a.product-link:hover {
   min-width: 40.50926vw;
   margin: 1.38889vw 0;
 }
+
+.Toastify__toast {
+  background: #201f21;
+  background-image:radial-gradient(at 79% 100%, #393326 0%, rgba(57, 51, 38, 0) 100%), radial-gradient(at 0% 20%, #273c47 0%, rgba(39, 60, 71, 0) 100%);
+  top: 2em;
+}
