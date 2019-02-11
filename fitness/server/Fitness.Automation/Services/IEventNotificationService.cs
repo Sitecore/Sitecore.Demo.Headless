@@ -4,6 +4,6 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Services
 {
     public interface IEventNotificationService
     {
-        void SendInitialEventNotification(Contact contact, string token);
+        void SendInitialEventNotification(Contact contact, string title, string body, string token);
     }
 }

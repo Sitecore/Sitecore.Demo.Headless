@@ -1,0 +1,85 @@
+﻿---
+ID: "6fef792e-7a7a-5c0e-afd7-b5442de5238a"
+Parent: "5fe6f1a4-a96b-5113-82a4-b9b05b4951f3"
+Template: "31dd7376-b03f-53f6-a9b0-a5ecda67f6c2"
+Path: "/sitecore/content/habitatfitness-kiosk/home/register"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Register
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <p
+              uid="{245E8BF7-14DA-5CAE-B611-53E912EFA34C}">
+              <p:d />
+            </p>
+            <p
+              uid="{0C85F343-685F-5BFC-A3E7-5B93422AF0E7}">
+              <p:d />
+            </p>
+            <r
+              uid="{591D96AD-8F66-5C79-A2C6-2F49A82E1CF7}"
+              p:before="*"
+              s:rname="DetailNavigation"
+              s:id="{C42C4419-0E19-5DEB-A3D8-BD5CE1F84B03}"
+              s:par=""
+              s:ph="/hf-nav" />
+            <r
+              uid="{46ACD2B8-C124-5BAD-A739-EA76023C7768}"
+              p:after="*[1=2]"
+              s:rname="KioskSignup"
+              s:ds="{D88A73AC-F6F1-57AE-82CE-BF3DBE5E3AF7}"
+              s:id="{056E770F-2B6A-55FC-9C65-8782D71898DC}"
+              s:par=""
+              s:ph="/hf-body" />
+            <p
+              uid="{3B586CC8-014D-54DF-8900-794567F82F36}">
+              <p:d />
+            </p>
+            <p
+              uid="{99A520AF-908C-59D9-9E11-89C7FD05D917}">
+              <p:d />
+            </p>
+            <p
+              uid="{950A0379-A40F-5E87-93FB-28F58CCCF7B2}">
+              <p:d />
+            </p>
+            <p
+              uid="{0B9C812D-9B23-568A-95B9-F50DB110DDC9}">
+              <p:d />
+            </p>
+            <p
+              uid="{F569ECC8-2DCA-53F4-9CD9-3CE2F45A1066}">
+              <p:d />
+            </p>
+            <p
+              uid="{FBEA60B1-3C35-523E-B12F-D4D677369DF2}">
+              <p:d />
+            </p>
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181227T054332Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{AF32C98B-C828-42AF-A649-74C1DE3303FB}"
+    - ID: "8e48ce57-ba8f-5f8c-ae02-263f1995b1ea"
+      Hint: pageTitle
+      Value: Sign Up

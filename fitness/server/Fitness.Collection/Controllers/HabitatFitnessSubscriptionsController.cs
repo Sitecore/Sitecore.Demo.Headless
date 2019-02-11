@@ -46,8 +46,8 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Subscriptions
 
             try
             {
-                facetService.Add(data.EventId, FacetIDs.Subscriptions);
-                sessionEventSubscriptionsService.Add(data.EventId);
+                facetService.Add(data.EventIdFormatted, FacetIDs.Subscriptions);
+                sessionEventSubscriptionsService.Add(data.EventIdFormatted);
             }
             catch (Exception ex)
             {
@@ -61,7 +61,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Subscriptions
         [ActionName("unsubscribe")]
         [HttpPost]
         [CancelCurrentPage]
-        public ActionResult UnSubscribe([System.Web.Http.FromBody]UnsubscribePayload data)
+        public ActionResult UnSubscribe([System.Web.Http.FromBody]EventPayload data)
         {
             // TODO: move data validation
             if (!data.IsValid())
@@ -70,7 +70,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Controllers.Subscriptions
             }
             try
             {
-                facetService.Remove(data.EventId, FacetIDs.Subscriptions);
+                facetService.Remove(data.EventIdFormatted, FacetIDs.Subscriptions);
             }
             catch (Exception ex)
             {

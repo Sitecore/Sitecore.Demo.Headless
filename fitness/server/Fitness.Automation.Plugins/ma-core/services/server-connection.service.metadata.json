@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"IServerConnectionService":{"__symbolic":"interface"},"SERVER_CONNECTION_SERVICE":{"__symbolic":"new","expression":{"__symbolic":"reference","module":"@angular/core","name":"InjectionToken","line":12,"character":45},"arguments":["ServerConnectionService"]}}}]

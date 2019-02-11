@@ -29,4 +29,4 @@ Languages:
     - ID: "b155a5ae-27fc-5e24-b1a5-75f9a860f200"
       Hint: ctaLink
       Value: |
-        <link linktype="internal" id="{876CC4F6-CC19-521F-B474-8540963C2E57}" />
+        <link linktype="external" url="/register" anchor="" target="" />

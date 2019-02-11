@@ -98,3 +98,12 @@ Want to get the app deployed with the server-side components? Consult the "Compl
 ### Want to learn more about JSS app mechanics?
 
 Consult this [README](https://github.com/Sitecore/jss/blob/master/samples/react/README.md) for more details. This app is largely based on that boilerplate.
+
+## Notes
+
+### Running jss manifest
+
+Since the component manifest definitions are collocated with component sources, `jss manifest` may fail to find the component definitions.
+Make sure you run the command with the following `manifestSourceFiles` flag:
+
+`jss manifest --manifestSourceFiles ./src/**/*.sitecore.js ./sitecore/definitions/**/*.sitecore.js`

@@ -11,7 +11,7 @@ SharedFields:
 - ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
   Hint: __Read Only
   Type: Checkbox
-  Value: 0
+  Value: 1
 - ID: "e391b526-d0c5-439d-803e-17512eae6222"
   Hint: Allowed Controls
   Type: TreelistEx
@@ -23,6 +23,8 @@ SharedFields:
     {0EFCB51C-7B5E-5FAC-A8B2-79EB2F8ECBDA}
     {230B5E44-1877-519D-9D18-388EF800E321}
     {90192F3F-F9FB-58B7-95D2-D7D37D2A18D4}
+    {1930DFBC-BF51-5563-B4B9-E1C684CCC722}
+    {18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}
 Languages:
 - Language: en
   Fields:

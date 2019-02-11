@@ -15,6 +15,14 @@
                 <ImplementationType>Sitecore.HabitatHome.Fitness.Automation.Activities.SendPushNotification, Sitecore.HabitatHome.Fitness.Automation</ImplementationType>
               </Options>
             </MarketingAutomation.Activity.PushNotification>
+            <MarketingAutomation.Activity.ClearEventSubscriptions xdt:Transform="InsertIfMissing">
+              <Type>Sitecore.Xdb.MarketingAutomation.Locator.ActivityTypeRegistration, Sitecore.Xdb.MarketingAutomation</Type>
+              <LifeTime>Singleton</LifeTime>
+              <Options>
+                <Id>{DF10A84B-F3DA-4A05-AC70-AA9D378FE0ED}</Id>
+                <ImplementationType>Sitecore.HabitatHome.Fitness.Automation.Activities.ClearEventSubscriptions, Sitecore.HabitatHome.Fitness.Automation</ImplementationType>
+              </Options>
+            </MarketingAutomation.Activity.ClearEventSubscriptions>
           </Services>
         </Engine>
       </MarketingAutomation>
