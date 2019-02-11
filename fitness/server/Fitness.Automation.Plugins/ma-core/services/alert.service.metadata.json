@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"IAlertService":{"__symbolic":"interface"},"ALERT_SERVICE":{"__symbolic":"new","expression":{"__symbolic":"reference","module":"@angular/core","name":"InjectionToken","line":13,"character":33},"arguments":["AlertService"]}}}]

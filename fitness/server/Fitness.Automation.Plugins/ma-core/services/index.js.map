@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../code/ng-ma-core/src/services/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,KAAK,EAAE,SAAS,EAAE,MAAM,wBAAwB,CAAC;AAC1D,OAAO,EAAE,qBAAqB,EAAwB,MAAM,yBAAyB,CAAC;AACtF,OAAO,EAAE,aAAa,EAAiB,MAAM,iBAAiB,CAAC;AAC/D,OAAO,EAA4B,yBAAyB,EAAE,MAAM,6BAA6B,CAAC;AAClG,OAAO,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC"}
