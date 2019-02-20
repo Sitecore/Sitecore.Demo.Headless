@@ -89,7 +89,7 @@ In this scenario, the code-first app deployment is performed without any server-
 1. Execute `jss deploy config` from cmd.
     > This deploys the config files under `/fitness/app/sitecore/config` and will require elevated permissions depending on your target location. Make sure to run this command "as administrator" to avoid permission issues. After this command execution, the Sitecore instance will recycle.
 
-1. Execute `jss deploy app --includeContent --includeDictionary`, which takes care of content and file deployment.
+1. Execute `npm run jss:deploy`, which takes care of content and file deployment.
 
 ### Complete deployment with server-side
 
@@ -107,3 +107,5 @@ Since the component manifest definitions are collocated with component sources, 
 Make sure you run the command with the following `manifestSourceFiles` flag:
 
 `jss manifest --manifestSourceFiles ./src/**/*.sitecore.js ./sitecore/definitions/**/*.sitecore.js`
+
+Alternatively, run `npm run jss:manifest`.
