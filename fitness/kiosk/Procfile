@@ -1,1 +1,0 @@
-web: cd app && node ./scripts/disconnected-ssr.js $PORT
