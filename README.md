@@ -25,11 +25,11 @@ The content for the app are to be deserialized via Unicorn using the PowerShell 
 1. Sitecore 9.0.1 or higher is installed.
     > Habitat Fitness doesn't support 9.0.0 (Initial Release).
 
-    > At this time, the *server-side* part does not support newly released Sitecore 9.1 yet, it is work in progress. That being said, you can deploy the "front-end" only part to Sitecore 9.1 using Step 2 "Deploy the app" below.
+    > In this repository, the 'master' branch is generally targeting the most recent release of Sitecore and support for older Sitecore version can be found in branches named like 'release/9.1'.
 
 1. Your current site's "main" hostname is `habitathome.dev.local`
 1. You also have a binding (w/ SSL) (and hosts entry) to `habitatfitness.dev.local`
-1. Sitecore.JSS v11 Server package is installed on your target Sitecore instance. See [the official docs](https://jss.sitecore.com/docs/getting-started/jss-server-install) for directions.
+1. Sitecore.JSS v11.0.x Server package is installed on your target Sitecore instance. See [the official docs](https://jss.sitecore.com/docs/getting-started/jss-server-install) for directions.
 	> Habitat Fitness _may_ work with JSS Tech Preview 4 (not officially supported) and wasn't even tried with earlier Tech Previews.
 
 ### Deployment
