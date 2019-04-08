@@ -30,8 +30,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitnes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Automation", "Fitness.Automation\Sitecore.HabitatHome.Fitness.Automation.csproj", "{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Automation.Plugins", "Fitness.Automation.Plugins\Sitecore.HabitatHome.Fitness.Automation.Plugins.csproj", "{51428CBD-14D4-4BFA-9C54-BD1DCEB38B83}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection", "Fitness.Collection\Sitecore.HabitatHome.Fitness.Collection.csproj", "{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection.Model", "Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj", "{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}"
@@ -56,9 +54,6 @@ Global
 		{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51428CBD-14D4-4BFA-9C54-BD1DCEB38B83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51428CBD-14D4-4BFA-9C54-BD1DCEB38B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51428CBD-14D4-4BFA-9C54-BD1DCEB38B83}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}.Release|Any CPU.ActiveCfg = Release|Any CPU

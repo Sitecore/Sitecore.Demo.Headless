@@ -1,4 +1,5 @@
-﻿using Sitecore.Framework.Conditions;
+﻿using Sitecore.DependencyInjection;
+using Sitecore.Framework.Conditions;
 using Sitecore.HabitatHome.Fitness.Automation.Services;
 using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
@@ -21,46 +22,33 @@ namespace Sitecore.HabitatHome.Fitness.Automation.Activities
             NotificationService = notificationService;
         }
 
+        public string Title { get; set; }
+
+        public string Body { get; set; }
+
         public ActivityResult Invoke(IContactProcessingContext context)
         {
             Condition.Requires(context.Contact).IsNotNull();
             Condition.Requires(NotificationService).IsNotNull();
 
-            var subscriptionFacet = context.Contact.GetFacet<StringValueListFacet>(FacetIDs.Subscriptions);
-            var eventSubscriptions = new List<string>();
-            if (subscriptionFacet != null)
-            {
-                foreach (var subscription in subscriptionFacet.Values)
-                {
-                    eventSubscriptions.Add(subscription);
-                }
-            }
-
-            var tokenFacet = context.Contact.GetFacet<StringValueListFacet>(FacetIDs.SubscriptionTokens);
             var tokens = new List<string>();
+            var tokenFacet = context.Contact.GetFacet<StringValueListFacet>(FacetIDs.SubscriptionTokens);
             if (tokenFacet != null)
             {
-                foreach (var tokenId in tokenFacet.Values)
+                var token = tokenFacet.Values.FirstOrDefault();
+
+                try
                 {
-                    tokens.Add(tokenId);
+                    NotificationService.SendInitialEventNotification(context.Contact, Title, Body, token);
+                    return new SuccessMove();
+                }
+                catch (Exception ex)
+                {
+                    return new Failure($"SendPushNotification failed with '{ex.Message}'");
                 }
             }
 
-            var token = tokens.FirstOrDefault();
-
-            try
-            {
-                foreach (var eventSubscription in eventSubscriptions)
-                {
-                    NotificationService.SendInitialEventNotification(context.Contact, token);
-                }
-
-                return new SuccessMove();
-            }
-            catch (Exception ex)
-            {
-                return new Failure($"SendPushNotification failed with '{ex.Message}'");
-            }
+            return new Failure($"SendPushNotification failed. No subscription token was resolved for contact {context.Contact.Id}.");
         }
     }
 }
