@@ -81,6 +81,7 @@
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\z.Sitecore.HabitatHome.Fitness.DevSettings.config" />
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Common.Serialization.config" />
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.MarketingDefinitions.Serialization.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
@@ -95,7 +96,6 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Unicorn\Unicorn.SharedSecret.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
