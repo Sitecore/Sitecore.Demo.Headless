@@ -7,7 +7,6 @@ using Sitecore.XConnect.Schema;
 using Sitecore.Xdb.Common.Web;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 
@@ -53,13 +52,13 @@ namespace Sitecore.HabitatHome.Fitness.Collection
             var certificate = connectionStrings["xconnect.collection.certificate"]?.ConnectionString;
 
             List<IHttpClientModifier> modifiers = null;
-            CertificateWebRequestHandlerModifier[] certificateModifiers = null;
+            CertificateHttpClientHandlerModifier[] certificateModifiers = null;
 
             //if a certificate was specified in config
             if (string.IsNullOrEmpty(certificate) == false)
             {
-                var certOptions = CertificateWebRequestHandlerModifierOptions.Parse(certificate);
-                certificateModifiers = new[] { new CertificateWebRequestHandlerModifier(certOptions) };
+                var certOptions = CertificateHttpClientHandlerModifierOptions.Parse(certificate);
+                certificateModifiers = new[] { new CertificateHttpClientHandlerModifier(certOptions) };
                 modifiers = new List<IHttpClientModifier>() { new TimeoutHttpClientModifier(new TimeSpan(0, 0, 20)) };
             }
 
