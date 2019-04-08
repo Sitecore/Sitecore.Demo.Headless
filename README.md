@@ -4,12 +4,11 @@ This repository is used to share Sitecore JSS PWA demo assets (and future “Sit
 ## Version support
 ### App 
 > The sources for the app are located under `/fitness/app`.
-- Sitecore 9.0.x and 9.1.
+- Sitecore 9.0.x and 9.1.x.
 
 ### Server
 > The server-side part is located under `/fitness/server`.
-- Sitecore 9.0.1 or 9.0.2 only for the time being.
-> Server-side support for Sitecore 9.1 is being tested at the moment. 
+- Sitecore 9.0.x and 9.1.x.
 
 ## Quick Start
 You can get the app running (front-end only) without Sitecore install and run disconnected, what is also known as "Code-First".
