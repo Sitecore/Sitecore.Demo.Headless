@@ -34,6 +34,7 @@ Task("Default")
 .IsDependentOn("Modify-PublishSettings")
 .IsDependentOn("Publish-All-Projects")
 .IsDependentOn("Apply-Xml-Transform")
+.IsDependentOn("Modify-Kiosk-Variable")
 .IsDependentOn("Modify-Unicorn-Source-Folder")
 .IsDependentOn("Post-Deploy");
 
@@ -46,6 +47,7 @@ Task("Quick-Deploy")
 .IsDependentOn("Modify-PublishSettings")
 .IsDependentOn("Publish-All-Projects")
 .IsDependentOn("Apply-Xml-Transform")
+.IsDependentOn("Modify-Kiosk-Variable")
 .IsDependentOn("Modify-Unicorn-Source-Folder");
 
 /*===============================================
@@ -177,6 +179,13 @@ Task("Apply-Xml-Transform").Does(() => {
 
 	// xconnect transforms
 	Transform($"{configuration.ProjectSrcFolder}\\Fitness.Automation\\App_Data\\Config\\sitecore\\MarketingAutomation", $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation");
+});
+
+Task("Modify-Kiosk-Variable").Does(() => {
+	var webConfigFile = File($"{configuration.WebsiteRoot}/Web.config");
+	var appSetting = "configuration/appSettings/add[@key='kiosk:define']/@value";
+	var appSettingValue = configuration.KioskAppDeploy ? "On" : "Off";	
+    XmlPoke(webConfigFile, appSetting, appSettingValue);
 });
 
 RunTarget(target);

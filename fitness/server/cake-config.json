@@ -8,5 +8,6 @@
   "ProjectFolder": "C:\\projects\\Sitecore.HabitatHome.Omni\\fitness\\server",
   "BuildConfiguration": "Debug",
   "BuildToolVersions": "VS2017",
-  "RunCleanBuilds": true
+  "RunCleanBuilds": true,
+  "KioskAppDeploy": true
 }
