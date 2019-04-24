@@ -82,6 +82,7 @@
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Common.Serialization.config" />
     <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.MarketingDefinitions.Serialization.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config" />
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.GraphQL.config.disabled" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
