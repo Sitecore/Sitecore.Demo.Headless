@@ -13,10 +13,10 @@
                     <security>
                         <systemService type="Sitecore.Services.GraphQL.Hosting.Security.GraphQLSecurity, Sitecore.Services.GraphQL">
                             <requireAuthentication>false</requireAuthentication>
-                            <requireApiKey>true</requireApiKey>
+                            <requireApiKey>false</requireApiKey>
                         </systemService>
                     </security>
-					          <content>
+		      <content>
                         <schemaProviders>
                             <systemContent type="Sitecore.Services.GraphQL.Content.ContentSchemaProvider, Sitecore.Services.GraphQL.Content">
                                 <mutations hint="raw:AddMutation">
