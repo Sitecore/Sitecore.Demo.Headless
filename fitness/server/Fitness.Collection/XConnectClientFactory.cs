@@ -65,7 +65,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection
             collectionClient = new CollectionWebApiClient(new Uri(endpointUri, "odata/"), modifiers, certificateModifiers);
             searchClient = new SearchWebApiClient(new Uri(endpointUri, "odata/"), modifiers, certificateModifiers);
             configurationClient = new ConfigurationWebApiClient(new Uri(endpointUri, "configuration/"), modifiers, certificateModifiers);
-            cfg = new XConnectClientConfiguration(new XdbRuntimeModel(ModelFactory.Instance), collectionClient, searchClient, configurationClient, true);
+            cfg = new XConnectClientConfiguration(new XdbRuntimeModel(ModelFactory.Model), collectionClient, searchClient, configurationClient, true);
 
             await cfg.InitializeAsync();
             return new XConnectClient(cfg);
