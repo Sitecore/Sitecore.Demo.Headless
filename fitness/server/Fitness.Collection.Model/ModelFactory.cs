@@ -7,7 +7,7 @@ namespace Sitecore.HabitatHome.Fitness.Collection.Model
 {
     public static class ModelFactory
     {
-        public static XdbModel Model { get; } = CreateModel();
+        public static XdbModel Instance { get; } = CreateModel();
 
         public static XdbModel CreateModel()
         {
