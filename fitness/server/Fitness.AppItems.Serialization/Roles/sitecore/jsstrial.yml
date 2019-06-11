@@ -17,8 +17,6 @@ MemberOf:
   Role: |
     sitecore\Forms Editor
   Role: |
-    sitecore\Sitecore Minimal Page Editor
-  Role: |
     sitecore\Marketing Automation Editors
   Role: |
     sitecore\Designer
