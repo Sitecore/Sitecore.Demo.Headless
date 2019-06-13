@@ -19,6 +19,7 @@ public class Configuration
     public string MessageStatisticsApiKey {get;set;}
     public string MarketingDefinitionsApiKey {get;set;}
     public bool RunCleanBuilds {get;set;}
+	public bool KioskAppDeploy {get;set;}
 	public int DeployExmTimeout {get;set;}
     public string BuildToolVersions 
     {
