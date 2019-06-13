@@ -1,0 +1,4 @@
+[build]
+  base = "fitness/app"
+  publish = "fitness/app/build/"
+  command = "npm run build:netlify"

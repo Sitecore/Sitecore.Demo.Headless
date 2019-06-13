@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "removeComments": true,
+        "sourceMap": true,
+        "outDir": "./codegen",
+        "rootDir": "./",
+        "declaration": true,
+        "lib": [
+            "es2016",
+            "dom"
+        ],
+        "baseUrl": "",
+        "paths": {
+            "@ng-bootstrap/*": [
+                "./node_modules/@ng-bootstrap/*"
+            ]
+        }
+    }
+}

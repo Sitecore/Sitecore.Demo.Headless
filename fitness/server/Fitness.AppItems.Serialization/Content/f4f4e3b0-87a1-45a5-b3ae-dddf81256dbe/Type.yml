@@ -1,0 +1,45 @@
+﻿---
+ID: "eaa6cde4-d46b-48fe-9d47-85dbd193aa7e"
+Parent: "f4f4e3b0-87a1-45a5-b3ae-dddf81256dbe"
+Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
+Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/kenora/kenora-half-marathon/Data/Labels/Type"
+DB: master
+SharedFields:
+- ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
+  Hint: __Source Item
+  Value: 
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Type
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b86697d-60ca-4d80-83fb-7555a2e6ce1c"
+      Hint: __Source
+      Value: 
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181114T205838Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "59b299b1-bc62-56cc-b686-599aa0d8100b"
+      Hint: value
+      Value: 
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod
+    - ID: "741cd00c-93ab-5967-89a7-d2916c98c246"
+      Hint: name
+      Value: Type
+    - ID: "95a0cc5a-7336-50f5-a4e9-e8ba7729231d"
+      Hint: image
+      Value: |
+        <image mediaid="{54306739-7DD7-54C6-BC16-4A3FC8DEFBE1}" />

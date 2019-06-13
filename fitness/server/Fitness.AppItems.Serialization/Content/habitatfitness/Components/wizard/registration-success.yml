@@ -1,0 +1,27 @@
+﻿---
+ID: "7f85119e-113f-5bb9-8944-379445d629df"
+Parent: "f8d8b1f9-69a0-59ca-bb51-5b06399b0715"
+Template: "6b2b5f4f-e880-5379-ab8e-a47a52e2eb5a"
+Path: "/sitecore/content/habitatfitness/Components/wizard/registration-success"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234952Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "9efe8415-6dc7-5031-8679-56eb6c3db9b5"
+      Hint: title
+      Value: Thank you for registering.
+    - ID: "e12d8770-1f35-56b5-8247-e53a6cebf4df"
+      Hint: stepName
+      Value: Finish

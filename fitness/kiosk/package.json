@@ -1,0 +1,95 @@
+{
+  "name": "habitatfitness-kiosk",
+  "description": "Habitat demo for Sitecore JSS",
+  "version": "0.0.1",
+  "private": true,
+  "config": {
+    "appName": "habitatfitness-kiosk",
+    "rootPlaceholders": [
+      "hf-nav",
+      "hf-body"
+    ],
+    "sitecoreDistPath": "/dist/habitatfitness-kiosk",
+    "sitecoreConfigPath": "/App_Config/Include/Sitecore.HabitatHome.Fitness",
+    "language": "en"
+  },
+  "author": {
+    "name": "Sitecore Corporation",
+    "url": "https://github.com/Sitecore/Sitecore.HabitatHome.Omni"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sitecore/Sitecore.HabitatHome.Omni.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sitecore/Sitecore.HabitatHome.Omni/issues"
+  },
+  "license": "MPL-2.0",
+  "dependencies": {
+    "@sitecore-jss/sitecore-jss-react": "^11.0.1",
+    "@sitecore-jss/sitecore-jss-tracking": "^11.0.1",
+    "axios": "^0.18.0",
+    "axios-cache-adapter": "^2.1.1",
+    "bootstrap": "^4.1.3",
+    "dayjs": "^1.7.8",
+    "google-map-react": "^1.0.9",
+    "i18next": "^11.3.2",
+    "i18next-fetch-backend": "^0.1.0",
+    "rc-slider": "^8.6.2",
+    "react": "~16.6.0",
+    "react-content-loader": "^3.4.1",
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0",
+    "react-i18next": "^7.7.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.5",
+    "react-sizes": "^1.0.4",
+    "reactstrap": "^6.5.0",
+    "serialize-javascript": "^1.5.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.0.0",
+    "@sitecore-jss/sitecore-jss-cli": "^11.0.1",
+    "@sitecore-jss/sitecore-jss-dev-tools": "^11.0.1",
+    "@sitecore-jss/sitecore-jss-manifest": "^11.0.1",
+    "babel-preset-react-app": "^5.0.4",
+    "chalk": "^2.4.1",
+    "chokidar": "^2.0.3",
+    "cross-env": "^5.1.5",
+    "html-loader": "^0.5.5",
+    "http-proxy-middleware": "^0.19.1",
+    "npm-run-all": "^4.1.3",
+    "null-loader": "^0.1.1",
+    "url-loader": "^1.0.1",
+    "webpack-cli": "^3.2.3"
+  },
+  "scripts": {
+    "jss": "jss",
+    "start": "npm-run-all --serial bootstrap:disconnected --parallel start:react start:proxy start:watch-components",
+    "start:connected": "scjss-verify-setup && npm-run-all --serial bootstrap:connected start:react start:watch-components",
+    "build": "npm-run-all --serial bootstrap:connected build:client build:server",
+    "scaffold": "node scripts/scaffold-component.js",
+    "start:react": "react-scripts start",
+    "start:proxy": "node scripts/disconnected-mode-proxy.js",
+    "start:watch-components": "node scripts/generate-component-factory.js --watch",
+    "start:ssr": "node scripts/disconnected-ssr.js",
+    "setup:ci": "cross-env-shell jss setup --nonInteractive --layoutServiceHost $HOST --apiKey $APIKEY",
+    "build:netlify": "npm-run-all --serial setup:ci bootstrap:connected build:static",
+    "build:static": "react-scripts build",
+    "build:client": "cross-env-shell PUBLIC_URL=$npm_package_config_sitecoreDistPath \"react-scripts build\"",
+    "build:server": "cross-env-shell NODE_ENV=production \"webpack --config server/server.webpack.config.js\"",
+    "jss:manifest": "jss manifest -c -d --manifestSourceFiles ./src/**/*.sitecore.js ./sitecore/definitions/**/*.sitecore.js",
+    "jss:deploy": "jss deploy app -c -d --manifestSourceFiles ./src/**/*.sitecore.js ./sitecore/definitions/**/*.sitecore.js",
+    "bootstrap:connected": "node scripts/bootstrap.js",
+    "bootstrap:disconnected": "node scripts/bootstrap.js --disconnected",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

@@ -1,0 +1,31 @@
+id: age-group-selector
+componentName: SelectFormField
+fields:
+  selectName: age
+  selectTitle: Your age group
+  options:
+    - template: Profile Key
+      name: Less than 18
+      displayName: Less than 18
+      fields:
+        Name: Less than 18
+    - template: Profile Key
+      name: from 18 to 34
+      displayName: from 18 to 34
+      fields:
+        Name: from 18 to 34
+    - template: Profile Key
+      name: from 35 to 50
+      displayName: from 35 to 50
+      fields:
+        Name: from 35 to 50
+    - template: Profile Key
+      name: from 50 to 70
+      displayName: from 50 to 70
+      fields:
+        Name: from 50 to 70
+    - template: Profile Key
+      name: More than 70
+      displayName: More than 70
+      fields:
+        Name: More than 70

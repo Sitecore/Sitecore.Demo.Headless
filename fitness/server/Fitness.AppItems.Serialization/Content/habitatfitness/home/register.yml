@@ -1,0 +1,127 @@
+﻿---
+ID: "876cc4f6-cc19-521f-b474-8540963c2e57"
+Parent: "82bbadaf-bd4a-5fce-9e12-eaa858ee8e94"
+Template: "295aae2b-4b5b-59e5-a898-c093c24313b4"
+Path: /sitecore/content/habitatfitness/home/register
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Registration
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{A3D7149C-5EA7-58E2-B1A5-8F5FAC4E2B55}"
+              p:after="p[@uid='{83352061-4FCC-54FB-8D7C-76600CB9B874}']"
+              s:rname="BreadcrumbNavigation"
+              s:id="{C42C4419-0E19-5DEB-A3D8-BD5CE1F84B03}"
+              s:par=""
+              s:ph="/hf-nav" />
+            <r
+              uid="{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}"
+              p:after="r[@uid='{A3D7149C-5EA7-58E2-B1A5-8F5FAC4E2B55}']"
+              s:rname="RegistrationWizard"
+              s:id="{7719D373-6ABA-5E32-BCE0-CA663AF72E08}"
+              s:par=""
+              s:ph="/hf-body" />
+            <r
+              uid="{1BAB19C0-4403-5655-8E00-A2D7589B8FF4}"
+              p:after="r[@uid='{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}']"
+              s:rname="CreateAccountStep"
+              s:ds="{E31DAC34-5229-5785-A74A-6C77D8D38094}"
+              s:id="{C7171CD1-88DC-5C66-B5C1-BF86B595C64E}"
+              s:par=""
+              s:ph="/hf-body/hf-registration-wizard-{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}-0" />
+            <r
+              uid="{95E78EA5-090C-5A4C-8903-45E9F11B9858}"
+              p:after="r[@uid='{1BAB19C0-4403-5655-8E00-A2D7589B8FF4}']"
+              s:rname="InputFormField"
+              s:ds="{EE6520F0-EFB3-57C3-9BE1-E75125FAC26C}"
+              s:id="{95593F0E-7640-5488-93C1-2AB61E9BA751}"
+              s:par=""
+              s:ph="/hf-body/hf-registration-wizard-{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}-0/hf-createaccount-form-{1BAB19C0-4403-5655-8E00-A2D7589B8FF4}-0" />
+            <r
+              uid="{7A5E7407-47E9-5A7E-88F7-C78692D1DFFD}"
+              p:after="r[@uid='{95E78EA5-090C-5A4C-8903-45E9F11B9858}']"
+              s:rname="InputFormField"
+              s:ds="{86BDD0C7-9B1E-5674-BE30-389864D3BFCE}"
+              s:id="{95593F0E-7640-5488-93C1-2AB61E9BA751}"
+              s:par=""
+              s:ph="/hf-body/hf-registration-wizard-{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}-0/hf-createaccount-form-{1BAB19C0-4403-5655-8E00-A2D7589B8FF4}-0" />
+            <r
+              uid="{41D17480-C30E-5A31-916C-1552719A64A5}"
+              p:after="r[@uid='{7A5E7407-47E9-5A7E-88F7-C78692D1DFFD}']"
+              s:rname="InputFormField"
+              s:ds="{A13BACF2-7EC0-57EC-ABF8-39847F876990}"
+              s:id="{95593F0E-7640-5488-93C1-2AB61E9BA751}"
+              s:par=""
+              s:ph="/hf-body/hf-registration-wizard-{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}-0/hf-createaccount-form-{1BAB19C0-4403-5655-8E00-A2D7589B8FF4}-0" />
+            <r
+              uid="{1934778E-89A0-5AB9-96E7-D9813361434C}"
+              p:after="r[@uid='{41D17480-C30E-5A31-916C-1552719A64A5}']"
+              s:rname="FieldGroup"
+              s:id="{64F87E0C-70A4-568D-8810-0B0B8949583F}"
+              s:par=""
+              s:ph="/hf-body/hf-registration-wizard-{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}-0/hf-createaccount-form-{1BAB19C0-4403-5655-8E00-A2D7589B8FF4}-0" />
+            <r
+              uid="{B43891F2-2537-5A17-A26A-30231D027C86}"
+              p:after="r[@uid='{1934778E-89A0-5AB9-96E7-D9813361434C}']"
+              s:rname="SelectFormField"
+              s:ds="{DDDF7944-90FF-5D1E-BBCF-A7187CF23735}"
+              s:id="{841E8E2B-8BCD-53C6-9C41-2CF5F8BD4E3A}"
+              s:par=""
+              s:ph="/hf-body/hf-registration-wizard-{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}-0/hf-createaccount-form-{1BAB19C0-4403-5655-8E00-A2D7589B8FF4}-0/hf-createaccount-form-group-{1934778E-89A0-5AB9-96E7-D9813361434C}-0" />
+            <r
+              uid="{ECA83DB0-34D4-5579-9207-A6172192CADE}"
+              p:after="r[@uid='{B43891F2-2537-5A17-A26A-30231D027C86}']"
+              s:rname="SelectFormField"
+              s:ds="{FDA4B79D-D71C-59E6-92AA-6F3919C408C6}"
+              s:id="{841E8E2B-8BCD-53C6-9C41-2CF5F8BD4E3A}"
+              s:par=""
+              s:ph="/hf-body/hf-registration-wizard-{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}-0/hf-createaccount-form-{1BAB19C0-4403-5655-8E00-A2D7589B8FF4}-0/hf-createaccount-form-group-{1934778E-89A0-5AB9-96E7-D9813361434C}-0" />
+            <r
+              uid="{56B8011F-B0B3-5BD2-A63C-B33826922CD8}"
+              p:after="r[@uid='{ECA83DB0-34D4-5579-9207-A6172192CADE}']"
+              s:rname="SportsPickerStep"
+              s:ds="{89D5DD57-6E02-5698-915E-4D875760EBEC}"
+              s:id="{22E9812C-F7A7-5B26-B399-C2A5CC171182}"
+              s:par=""
+              s:ph="/hf-body/hf-registration-wizard-{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}-0" />
+            <r
+              uid="{5A7FC43E-8CB7-5105-BB6E-F3F10D1604E3}"
+              p:after="*[1=2]"
+              s:rname="RegistrationSuccessStep"
+              s:ds="{7F85119E-113F-5BB9-8944-379445D629DF}"
+              s:id="{9748DEFE-3AD9-55A2-BED2-FFE7458BA107}"
+              s:par=""
+              s:ph="/hf-body/hf-registration-wizard-{3CEFE02D-F152-51CD-9A2B-B2F80959BBB6}-0" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234955Z
+    - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
+      Hint: pageTitle
+      Value: Registration
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\virtualssuser

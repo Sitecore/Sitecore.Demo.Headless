@@ -1,0 +1,9 @@
+name: change-location
+displayName: Change Location
+fields:
+  pageTitle: Change Location
+placeholders:
+  hf-nav:
+  - componentName: DetailNavigation
+  hf-body:
+  - componentName: ChangeLocation

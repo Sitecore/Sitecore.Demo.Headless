@@ -1,0 +1,57 @@
+﻿---
+ID: "deeb4737-cf04-5ec9-82a1-40c214e25813"
+Parent: "82bbadaf-bd4a-5fce-9e12-eaa858ee8e94"
+Template: "295aae2b-4b5b-59e5-a898-c093c24313b4"
+Path: /sitecore/content/habitatfitness/home/events
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{98791841-696B-429A-8593-49F3188306B5}"
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{4A517AEB-BD9A-4B2B-A61E-265E687F4925}"
+          p:after="p[@uid='{83352061-4FCC-54FB-8D7C-76600CB9B874}']"
+          s:id="{C42C4419-0E19-5DEB-A3D8-BD5CE1F84B03}"
+          s:ph="/hf-nav" />
+        <r
+          uid="{94D10C6B-1F5C-4AAD-9EA9-85950F470A82}"
+          p:after="*[1=2]"
+          s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}"
+          s:par="take=8&amp;showInGrid=1&amp;showTitle&amp;showEventDescription&amp;personalize=1&amp;showLoadMore=1"
+          s:ph="/hf-body" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Events
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234953Z
+    - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
+      Hint: pageTitle
+      Value: Events
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\virtualssuser

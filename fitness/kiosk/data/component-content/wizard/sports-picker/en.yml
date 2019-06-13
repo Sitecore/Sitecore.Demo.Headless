@@ -1,0 +1,16 @@
+id: sports-picker
+componentName: SportsPickerStep
+fields:
+  title: Pick your favorite sports
+  stepName: Sports
+  selectSkillTitle: What's your skill level in $selected-sport?
+  sports:
+    - id: running
+    - id: cycling
+    - id: kayaking
+    - id: rock-climbing
+    - id: swimming
+    - id: basketball
+    - id: bowling
+    - id: golf
+    - id: volleyball
