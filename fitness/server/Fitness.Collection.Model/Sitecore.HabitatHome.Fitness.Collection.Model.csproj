@@ -33,13 +33,13 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Sitecore.XConnect">
-      <Version>9.1.1</Version>
+      <Version>2.1.0-r00224</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect.Collection.Model">
-      <Version>9.1.1</Version>
+      <Version>2.1.0-r00224</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect.Search">
-      <Version>9.1.1</Version>
+      <Version>2.1.0-r00079.36</Version>
     </PackageReference>
     <PackageReference Include="System.Interactive.Async" Version="3.1.1" />
     <PackageReference Include="System.Interactive.Async.Providers" Version="3.1.1" />
