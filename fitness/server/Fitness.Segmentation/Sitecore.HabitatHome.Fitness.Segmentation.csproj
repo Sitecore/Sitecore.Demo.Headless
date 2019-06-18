@@ -48,7 +48,7 @@
       <Version>3.4.0-alpha1.2</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect.Segmentation.Predicates.Model">
-      <Version>6.0.0-r00232.27</Version>
+      <Version>9.2.0-r002893</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
