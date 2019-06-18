@@ -20,6 +20,7 @@ public class Configuration
     public string MarketingDefinitionsApiKey {get;set;}
     public bool RunCleanBuilds {get;set;}
 	public bool KioskAppDeploy {get;set;}
+	public bool ContentHub {get;set;}
 	public int DeployExmTimeout {get;set;}
     public string BuildToolVersions 
     {

@@ -3,6 +3,9 @@
       
         <!-- Enable/Disable Deployment of Habitat Fitness Kiosk App -->
         <add key="kiosk:define" value="On" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
+
+      <!-- Enable/Disable Deployment of Habitat Fitness Kiosk App -->
+      <add key="contenthub:define" value="Off" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
       
     </appSettings>
 </configuration>
