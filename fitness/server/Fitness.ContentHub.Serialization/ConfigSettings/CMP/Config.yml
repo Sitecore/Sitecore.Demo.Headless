@@ -7,10 +7,10 @@ DB: master
 SharedFields:
 - ID: "0b8e14d1-6a2d-46b9-b2e8-f51c32c0d0e8"
   Hint: Content Hub URI
-  Value: "https://scmdemoinstance.stylelabs.io/en-us"
+  Value: "https://[InstanceName].stylelabs.io/en-us"
 - ID: "0fe08d15-b948-4375-9a88-4a8fb2cb980e"
   Hint: Connection String
-  Value: "Endpoint=sb://sitecorecmpdemo.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=U2PvyzBPuc0fo4bd+0JCUpmE36I4SJz5v2xAPSTKIM4="
+  Value: Endpoint=
 - ID: "21ca0142-2d9e-46ce-99e6-12adeebcd635"
   Hint: Default Language
   Value: en
