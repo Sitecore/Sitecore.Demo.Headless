@@ -1,0 +1,24 @@
+﻿---
+Role: |
+  sitecore\jsstrial
+MemberOf:
+  Role: |
+    sitecore\Sitecore Client Advanced Publishing
+  Role: |
+    sitecore\Analytics Content Profiling
+  Role: |
+    sitecore\Analytics Personalization
+  Role: |
+    sitecore\Author
+  Role: |
+    sitecore\Analytics Advanced Testing
+  Role: |
+    sitecore\Analytics Reporting
+  Role: |
+    sitecore\Forms Editor
+  Role: |
+    sitecore\Marketing Automation Editors
+  Role: |
+    sitecore\Designer
+  Role: |
+    sitecore\EXM Advanced Users

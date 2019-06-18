@@ -9,5 +9,6 @@
   "BuildConfiguration": "Debug",
   "BuildToolVersions": "VS2017",
   "RunCleanBuilds": true,
-  "KioskAppDeploy": true
+  "KioskAppDeploy": true,
+  "ContentHub":  false
 }

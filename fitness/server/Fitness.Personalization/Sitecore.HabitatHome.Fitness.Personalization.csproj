@@ -47,44 +47,43 @@
     <PackageReference Include="Microsoft.AspNet.Mvc">
       <Version>5.2.4</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Sitecore.Analytics">
-      <Version>9.1.1</Version>
+      <Version>13.0.0-r00189.27</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.Analytics.Model">
-      <Version>9.1.1</Version>
+      <Version>13.0.0-r00452.49</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.Analytics.XConnect">
-      <Version>9.1.1</Version>
+      <Version>13.0.0-r00189.27</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.ContentSearch">
-      <Version>9.1.1</Version>
+      <Version>5.0.0-r00290.19</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.ContentSearch.Linq">
-      <Version>9.1.1</Version>
+      <Version>5.0.0-r00290.19</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.JavaScriptServices.Configuration">
-      <Version>12.0.1</Version>
+      <Version>13.0.0-r00330</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.JavaScriptServices.ViewEngine">
-      <Version>12.0.1</Version>
+      <Version>13.0.0-r00330</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.Kernel">
-      <Version>9.1.1</Version>
+      <Version>13.0.0-r00729</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.LayoutService">
-      <Version>4.0.3</Version>
+      <Version>5.0.0-r00104</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.Mvc">
-      <Version>9.1.1</Version>
+      <Version>4.0.0-r00284.4</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect">
-      <Version>9.1.1</Version>
+      <Version>2.1.0-r00224</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect.Collection.Model">
-      <Version>9.1.1</Version>
+      <Version>2.1.0-r00224</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

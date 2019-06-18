@@ -35,6 +35,7 @@ Task("Default")
 .IsDependentOn("Publish-All-Projects")
 .IsDependentOn("Apply-Xml-Transform")
 .IsDependentOn("Modify-Kiosk-Variable")
+.IsDependentOn("Modify-ContentHub-Variable")
 .IsDependentOn("Modify-Unicorn-Source-Folder")
 .IsDependentOn("Post-Deploy");
 
@@ -48,6 +49,7 @@ Task("Quick-Deploy")
 .IsDependentOn("Publish-All-Projects")
 .IsDependentOn("Apply-Xml-Transform")
 .IsDependentOn("Modify-Kiosk-Variable")
+.IsDependentOn("Modify-ContentHub-Variable")
 .IsDependentOn("Modify-Unicorn-Source-Folder");
 
 /*===============================================
@@ -185,6 +187,13 @@ Task("Modify-Kiosk-Variable").Does(() => {
 	var webConfigFile = File($"{configuration.WebsiteRoot}/Web.config");
 	var appSetting = "configuration/appSettings/add[@key='kiosk:define']/@value";
 	var appSettingValue = configuration.KioskAppDeploy ? "On" : "Off";	
+    XmlPoke(webConfigFile, appSetting, appSettingValue);
+});
+
+Task("Modify-ContentHub-Variable").Does(() => {
+	var webConfigFile = File($"{configuration.WebsiteRoot}/Web.config");
+	var appSetting = "configuration/appSettings/add[@key='contenthub:define']/@value";
+	var appSettingValue = configuration.ContentHub ? "On" : "Off";	
     XmlPoke(webConfigFile, appSetting, appSettingValue);
 });
 

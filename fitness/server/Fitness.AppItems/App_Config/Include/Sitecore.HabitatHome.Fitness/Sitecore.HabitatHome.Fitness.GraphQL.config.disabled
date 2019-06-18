@@ -1,0 +1,36 @@
+﻿<!--
+  JSS Sitecore Configuration Patch File
+
+  This configuration file patches updates to the following 2 config file that are installed with JSS server side components:
+  - Sitecore.Services.GraphQL.config
+  - Sitecore.Services.GraphQL.Content.config
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:role="http://www.sitecore.net/xmlconfig/role/">
+    <sitecore>
+        <api>
+            <GraphQL>
+                <defaults>
+                    <security>
+                        <systemService type="Sitecore.Services.GraphQL.Hosting.Security.GraphQLSecurity, Sitecore.Services.GraphQL">
+                            <requireAuthentication>false</requireAuthentication>
+                            <requireApiKey>false</requireApiKey>
+                        </systemService>
+                    </security>
+		      <content>
+                        <schemaProviders>
+                            <systemContent type="Sitecore.Services.GraphQL.Content.ContentSchemaProvider, Sitecore.Services.GraphQL.Content">
+                                <mutations hint="raw:AddMutation">
+                                    <patch:delete />
+                                </mutations>
+                                <subscriptions hint="raw:AddSubscription">
+                                    <patch:delete />
+                                </subscriptions>
+                            </systemContent>
+                        </schemaProviders>
+                    </content>
+                </defaults>
+            </GraphQL>
+        </api>
+    </sitecore>
+</configuration>
+

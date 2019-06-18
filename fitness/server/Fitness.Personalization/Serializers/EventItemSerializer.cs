@@ -2,6 +2,7 @@
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
+using Sitecore.LayoutService.Serialization;
 using Sitecore.LayoutService.Serialization.FieldSerializers;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
 using Sitecore.LayoutService.Serialization.Pipelines.GetFieldSerializer;
@@ -48,6 +49,11 @@ namespace Sitecore.HabitatHome.Fitness.Personalization.Serializers
                 }
                 return stringWriter.ToString();
             }
+        }
+
+        public string Serialize([NotNull]Item item, SerializationOptions options)
+        {
+            return Serialize(item);
         }
 
         protected bool FieldFilter(Field field)
