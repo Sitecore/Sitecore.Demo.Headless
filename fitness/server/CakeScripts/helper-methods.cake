@@ -181,7 +181,7 @@ public void Spam(Action action, int? timeoutMinutes = null)
 		}
 	}
 
-    throw new TimeoutException($"Unable to complete within {timeoutMinutes} minutes.", lastException);
+    throw new System.TimeoutException($"Unable to complete within {timeoutMinutes} minutes.", lastException);
 }
 
 public void WriteError(string errorMessage)
