@@ -47,21 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Sitecore.Analytics">
-      <Version>9.2.0-r002893</Version>
-    </PackageReference>
-    <PackageReference Include="Sitecore.Analytics.Model">
-      <Version>9.2.0-r002893</Version>
-    </PackageReference>
-    <PackageReference Include="Sitecore.Analytics.XConnect">
-      <Version>9.2.0-r002893</Version>
-    </PackageReference>
-    <PackageReference Include="Sitecore.Marketing.Automation.Activity">
-      <Version>9.2.0-r002893</Version>
-    </PackageReference>
-    <PackageReference Include="Sitecore.XConnect.Segmentation.Predicates.Model">
-      <Version>9.2.0-r002893</Version>
-    </PackageReference>
     <PackageReference Include="Sitecore.Xdb.MarketingAutomation.Core">
       <Version>9.2.0-r002893</Version>
     </PackageReference>
@@ -93,7 +78,6 @@
     <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\plugin.js" />
     <None Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.ActivityTypes.xml.xdt" />
     <None Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.ContactLoader.xml.xdt" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
