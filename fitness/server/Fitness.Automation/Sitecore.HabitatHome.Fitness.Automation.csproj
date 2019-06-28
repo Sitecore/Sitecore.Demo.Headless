@@ -96,10 +96,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\push-notification-activity\push-notification-activity-activity.d.ts" />
-    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\push-notification-activity\push-notification-activity-editor.component.d.ts" />
-    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\push-notification-activity\push-notification-activity-module.d.ts" />
-    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\push-notification-activity\push-notification-activity-plugin.d.ts" />
+    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activity\activity-activity.d.ts" />
+    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activity\activity-editor.component.d.ts" />
+    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activity\activity-module.d.ts" />
+    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activity\activity-plugin.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
