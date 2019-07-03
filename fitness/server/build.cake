@@ -33,7 +33,7 @@ private string GetXconnectServiceName()
     var xPath = "connectionStrings/add[@name='xconnect.collection']/@connectionString";
     string xConnectUrl = XmlPeek(connectionStringFile, xPath);
     var uri = new Uri(xConnectUrl);
-    return uri.Host;
+	return uri.Host + "-MarketingAutomationService";
 }
 
 Task("Default")
@@ -95,13 +95,11 @@ Task("Publish-Projects").Does(() => {
 });
 
 Task("Stop-XConnect-Service").Does(()=>{
-	var uriWithoutProtocol = GetXconnectServiceName();
-    StopService($"{uriWithoutProtocol}-MarketingAutomationService");
+    StopService(GetXconnectServiceName());
 });
 
 Task("Start-XConnect-Service").Does(()=>{
-	var uriWithoutProtocol = GetXconnectServiceName();
-    StartService($"{uriWithoutProtocol}-MarketingAutomationService");
+    StartService(GetXconnectServiceName());
 });
 
 Task("Publish-XConnect").Does(()=>{
