@@ -27,6 +27,14 @@ Setup(context =>
     configuration = DeserializeJsonFromFile<Configuration>(configFile);
 });
 
+private string GetXconnectServiceName() 
+{
+	var connectionStringFile = new FilePath($"{configuration.WebsiteRoot}/App_config/ConnectionStrings.config");
+    var xPath = "connectionStrings/add[@name='xconnect.collection']/@connectionString";
+    string xConnectUrl = XmlPeek(connectionStringFile, xPath);
+    var uri = new Uri(xConnectUrl);
+    return uri.Host;
+}
 
 Task("Default")
 .WithCriteria(configuration != null)
@@ -87,25 +95,17 @@ Task("Publish-Projects").Does(() => {
 });
 
 Task("Stop-XConnect-Service").Does(()=>{
-   var connectionStringFile = new FilePath($"{configuration.WebsiteRoot}/App_config/ConnectionStrings.config");
-   var xPath = "connectionStrings/add[@name='xconnect.collection']/@connectionString";
-   string xConnectUrl = XmlPeek(connectionStringFile, xPath);
-   var uri = new Uri(xConnectUrl);
-   string uriWithoutProtocol = uri.Host;
-   StopService($"{uriWithoutProtocol}-MarketingAutomationService");
+	var uriWithoutProtocol = GetXconnectServiceName();
+    StopService($"{uriWithoutProtocol}-MarketingAutomationService");
 });
 
 Task("Start-XConnect-Service").Does(()=>{
-   var connectionStringFile = new FilePath($"{configuration.WebsiteRoot}/App_config/ConnectionStrings.config");
-   var xPath = "connectionStrings/add[@name='xconnect.collection']/@connectionString";
-   string xConnectUrl = XmlPeek(connectionStringFile, xPath);
-   var uri = new Uri(xConnectUrl);
-   string uriWithoutProtocol = uri.Host;
-   StartService($"{uriWithoutProtocol}-MarketingAutomationService");
+	var uriWithoutProtocol = GetXconnectServiceName();
+    StartService($"{uriWithoutProtocol}-MarketingAutomationService");
 });
 
 Task("Publish-XConnect").Does(()=>{
-   DeployFiles(
+    DeployFiles(
        $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\bin\\Debug\\Sitecore.HabitatHome.Fitness.*.dll",
        $"{configuration.XConnectRoot}\\bin"
 	);
