@@ -4,9 +4,9 @@
 #addin "Cake.Json"
 #addin "Newtonsoft.Json"
 #addin "Cake.Incubator"
+#addin "Cake.Services"
 
 #load "local:?path=CakeScripts/helper-methods.cake"
-
 
 var target = Argument<string>("Target", "Default");
 var configuration = new Configuration();
@@ -27,6 +27,14 @@ Setup(context =>
     configuration = DeserializeJsonFromFile<Configuration>(configFile);
 });
 
+private string GetXconnectServiceName() 
+{
+	var connectionStringFile = new FilePath($"{configuration.WebsiteRoot}/App_config/ConnectionStrings.config");
+    var xPath = "connectionStrings/add[@name='xconnect.collection']/@connectionString";
+    string xConnectUrl = XmlPeek(connectionStringFile, xPath);
+    var uri = new Uri(xConnectUrl);
+	return uri.Host + "-MarketingAutomationService";
+}
 
 Task("Default")
 .WithCriteria(configuration != null)
@@ -68,8 +76,10 @@ Task("Copy-Sitecore-Lib")
 
 Task("Publish-All-Projects")
 .IsDependentOn("Build-Solution")
+.IsDependentOn("Stop-XConnect-Service")
 .IsDependentOn("Publish-Projects")
-.IsDependentOn("Publish-XConnect");
+.IsDependentOn("Publish-XConnect")
+.IsDependentOn("Start-XConnect-Service");
 
 
 Task("Build-Solution").Does(() => {
@@ -84,11 +94,19 @@ Task("Publish-Projects").Does(() => {
     PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Segmentation", configuration.WebsiteRoot);
 });
 
+Task("Stop-XConnect-Service").Does(()=>{
+    StopService(GetXconnectServiceName());
+});
+
+Task("Start-XConnect-Service").Does(()=>{
+    StartService(GetXconnectServiceName());
+});
+
 Task("Publish-XConnect").Does(()=>{
-   DeployFiles(
+    DeployFiles(
        $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\bin\\Debug\\Sitecore.HabitatHome.Fitness.*.dll",
-       $"{configuration.XConnectRoot}\\bin");
-   
+       $"{configuration.XConnectRoot}\\bin"
+	);
     DeployFiles(
         $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\xmodels\\*",
         $"{configuration.XConnectRoot}\\App_Data\\Models"
@@ -106,10 +124,6 @@ Task("Publish-XConnect").Does(()=>{
         $"{configuration.XConnectAutomationServiceRoot}"
     );
     DeployFiles(
-        $"{configuration.ProjectSrcFolder}\\Fitness.Automation.Plugins\\sitecore\\shell\\client\\applications\\MarketingAutomation\\plugins\\HabitatFitness\\*",
-        $"{configuration.WebsiteRoot}\\sitecore\\shell\\client\\Applications\\MarketingAutomation\\plugins\\HabitatFitness"
-    );
-    DeployFiles(
         $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\automation\\*",
         $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore"
     );
@@ -117,7 +131,6 @@ Task("Publish-XConnect").Does(()=>{
         $"{configuration.ProjectSrcFolder}\\Fitness.Automation\\App_Data\\Config\\Sitecore\\MarketingAutomation\\*.xml",
         $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation "
     );
-
 });
 Task("Modify-Unicorn-Source-Folder").Does(() => {
     var zzzDevSettingsFile = File($"{configuration.WebsiteRoot}/App_config/Include/Sitecore.HabitatHome.Fitness/z.Sitecore.HabitatHome.Fitness.DevSettings.config");

@@ -1,5 +1,4 @@
-﻿using Sitecore.DependencyInjection;
-using Sitecore.Framework.Conditions;
+﻿using Sitecore.Framework.Conditions;
 using Sitecore.HabitatHome.Fitness.Automation.Services;
 using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
