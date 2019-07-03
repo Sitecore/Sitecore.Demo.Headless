@@ -23,7 +23,7 @@ SharedFields:
 - ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
   Hint: __Read Only
   Type: Checkbox
-  Value: 0
+  Value: 1
 - ID: "af0fe26a-a78b-491d-885c-03d95bc17342"
   Hint: State
   Value: Active
@@ -44,7 +44,7 @@ Languages:
       Value: 20190304T231706Z
     - ID: "8436a90c-85c0-4f16-8373-393c4c0a82c6"
       Hint: From Name
-      Value: Habitat Fitness
+      Value: Habitat Fitness App
     - ID: "89b7628a-3564-4c9a-8116-dcb15f692573"
       Hint: Body
       Value: |
