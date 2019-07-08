@@ -1,0 +1,6 @@
+node_modules/
+scjssconfig.json
+/fitness/*/build
+/fitness/*/sitecore/package
+/fitness/*/sitecore/manifest
+/fitness/*/src/temp
