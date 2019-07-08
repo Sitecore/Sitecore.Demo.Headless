@@ -25,3 +25,6 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{EDCBB550-BED3-490F-82B8-7B2F14CCD26E}"
+    - ID: "e259e500-b38e-41fe-82db-8b604bcf9e75"
+      Hint: Description
+      Value: "Global opt-out list for the '{5E077689-911B-4073-BDDA-31263A1D88CD}' Kiosk EXM manager root"

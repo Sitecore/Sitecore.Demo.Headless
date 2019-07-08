@@ -1,19 +1,20 @@
 ﻿---
-ID: "872a22d8-312a-4115-a5c6-b6a46764bf46"
-Parent: "0de95ae4-41ab-4d01-9eb0-67441b7c2450"
+ID: "5e077689-911b-4073-bdda-31263a1d88cd"
+Parent: "d21fbe00-15bd-548e-b125-520c61cb7749"
 Template: "cf9c8a2a-2794-4fea-980a-ef8426f3d6c3"
-Path: /sitecore/content/Email
+Path: "/sitecore/content/habitatfitness-kiosk/Email"
 DB: master
+BranchID: "f8fae92a-4f10-470c-ad5c-7ed9e6b636af"
 SharedFields:
 - ID: "1b963507-6176-4336-a14d-d5070c3b0286"
   Hint: Base URL
-  Value: "https://habitathome.dev.local"
+  Value: "https://habitatfitness-kiosk.dev.local"
 - ID: "1ec023fb-dbb4-4a7b-837d-55f9614737b8"
   Hint: POP3 Password
   Value: •
 - ID: "52d572ad-9678-423f-96e2-477528418ba1"
   Hint: "Global Opt-out List"
-  Value: "{CDCDD641-7FFF-472E-A050-0EB117394039}"
+  Value: "{0948A166-040A-4D02-C4BC-6EEAC76FE423}"
 - ID: "6ce2099a-ab45-40e9-bb59-7ef2f9ba7bfb"
   Hint: Brand Logo
   Value: 
@@ -317,10 +318,6 @@ SharedFields:
   Value: 1
 Languages:
 - Language: en
-  Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
-    Hint: __Display name
-    Value: Email
   Versions:
   - Version: 1
     Fields:
@@ -329,7 +326,4 @@ Languages:
       Value: noreply@habitathomedemo.com
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20180103T182134Z
-    - ID: "85fdc8e9-0ac4-4c70-b5a7-5d17451c1e5a"
-      Hint: Preference Center Title
-      Value: Email Preference Center
+      Value: 20190705T192746Z
