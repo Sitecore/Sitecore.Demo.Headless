@@ -10,7 +10,7 @@ SharedFields:
   Value: "https://[InstanceName].stylelabs.io/en-us"
 - ID: "0fe08d15-b948-4375-9a88-4a8fb2cb980e"
   Hint: Connection String
-  Value: Endpoint=
+  Value: "Endpoint=sb://sitecorecmpdemo.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=U2PvyzBPuc0fo4bd+0JCUpmE36I4SJz5v2xAPSTKIM4="
 - ID: "21ca0142-2d9e-46ce-99e6-12adeebcd635"
   Hint: Default Language
   Value: en
@@ -19,13 +19,13 @@ SharedFields:
   Value: m_out
 - ID: "4f34ff99-f829-4c6c-92a6-a85975acb7dc"
   Hint: User Name
-  Value: sitecoreuser
+  Value: username
 - ID: "51c956b7-6f65-4605-9476-4441f0904495"
   Hint: Outgoing topic name
   Value: m_in
 - ID: "5a891676-3468-4575-8d97-0e4b2bdc3e78"
   Hint: Password
-  Value: "Sitecore12!@#$%^&*()"
+  Value: password
 - ID: "71aa4d06-34f7-49ab-93db-acb0a53ea544"
   Hint: Client Id
   Value: LogicApp
