@@ -1,8 +1,8 @@
 ﻿---
-ID: "10f3d353-78c9-4cdb-b0d2-f9226f130478"
-Parent: "872a22d8-312a-4115-a5c6-b6a46764bf46"
+ID: "799ddae4-6009-4bc4-a92a-acb5053897c3"
+Parent: "5e077689-911b-4073-bdda-31263a1d88cd"
 Template: "d8ad4b81-9269-4868-949f-37d1c28687e5"
-Path: /sitecore/content/Email/Messages
+Path: "/sitecore/content/habitatfitness-kiosk/Email/Messages"
 DB: master
 BranchID: "f8fae92a-4f10-470c-ad5c-7ed9e6b636af"
 SharedFields:
@@ -23,4 +23,4 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20180103T182137Z
+      Value: 20190705T192746Z

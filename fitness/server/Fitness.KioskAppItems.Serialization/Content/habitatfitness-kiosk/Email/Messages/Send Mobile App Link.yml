@@ -1,8 +1,8 @@
 ﻿---
-ID: "dfd4e36c-61fa-4da8-b418-b27fa96e4984"
-Parent: "17b9bd68-23e4-4bec-84f9-f5da9f1d6c98"
+ID: "1f841263-93ad-4f66-aa5e-c04d7c277029"
+Parent: "799ddae4-6009-4bc4-a92a-acb5053897c3"
 Template: "ecf0a9c8-fe56-45d8-b750-6bde3a34a532"
-Path: /sitecore/content/Email/Messages/2019/03/04T223208/Send Mobile App Link
+Path: "/sitecore/content/habitatfitness-kiosk/Email/Messages/Send Mobile App Link"
 DB: master
 SharedFields:
 - ID: "0934bec4-325a-427b-95bb-46f78cea9591"
@@ -13,17 +13,13 @@ SharedFields:
   Value: "{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
 - ID: "2bbf5276-ed11-4cd0-946f-66678b524457"
   Hint: Campaign Position
-  Value: "{C1B8669B-C41A-4ED3-BF0D-E859CF880D42}"
+  Value: "{67483DDD-3423-4F0A-BB0E-AB6A1404C3A2}"
 - ID: "6ec7a9e6-9fd5-4892-bbf6-11e76e0e5db8"
   Hint: Start Time
-  Value: 20190304T231751Z
+  Value: 20190705T195639Z
 - ID: "78f0b1f8-fdf4-4c1c-bec6-1ac68a210a52"
   Hint: Campaign
-  Value: "{E80F1067-24E6-45B4-9F5C-9A75E352492C}"
-- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
-  Hint: __Read Only
-  Type: Checkbox
-  Value: 0
+  Value: "{CFE7E7DB-4815-4382-A65F-7529E6FD2B4E}"
 - ID: "af0fe26a-a78b-491d-885c-03d95bc17342"
   Hint: State
   Value: Active
@@ -41,10 +37,10 @@ Languages:
       Value: noreply@habitathomedemo.com
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20190304T231706Z
+      Value: 20190705T193811Z
     - ID: "8436a90c-85c0-4f16-8373-393c4c0a82c6"
       Hint: From Name
-      Value: Habitat Fitness
+      Value: Habitat Fitness App
     - ID: "89b7628a-3564-4c9a-8116-dcb15f692573"
       Hint: Body
       Value: |
