@@ -148,20 +148,12 @@ Run `jss start:connected` from cmd.
 
       > This host name will be used as onclick action for the push notification and as a base url to retrieve app icon showin next to the push notification. 
 
-### 2. Configuring Email service for Kiosk app
+### 2. Configuring email link hostname for Kiosk app
 
 After registration is completed on the Kiosk app, the back-end is setup to send a welcome email with the link to mobile app, which identifies the contact on that app.
-For the time being, the email sending is done via SendGrid and needs to be configured:
+The email sending is done via Sitecore Email Experience Manager (EXM) and needs to be configured:
 
-1.  Setup account with SendGrid and acquire the API key.
-1.  Open `Sitecore.HabitatHome.Fitness.Collection.config` in `App_Config/Include/Sitecore.HabitatHome.Fitness` folder and put the API key from SendGrid as value of the following setting:
-
-    ```
-    <setting name="HabitatHome.Fitness.EmailApiKey" value="PUT-YOUR-SENDGRID-API-KEY-HERE" />
-    ```
-
-1. Set the value of host name configured for your mobile app. This host name will be used to generate the link in email sent after registration on Kiosk app. When running locally in dev mode, this is likely `http://localhost:3000`
-
-    ```
-    <setting name="HabitatHome.Fitness.MobileAppHostName" value="http://localhost:3000" />
-    ```
+1. In the Content Editor on the master database, open the `/sitecore/Content/Habitat Fitness Kiosk/Email` item.
+1. Switch to the Content tab.
+1. Change the "Base URL" field value to match your kiosk application hostname. Default is `https://habitatfitness-kiosk.dev.local`.
+1. Save the item.
