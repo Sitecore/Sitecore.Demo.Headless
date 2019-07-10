@@ -7,7 +7,7 @@ const EventMap = ({ eventName, zoom, latitude, longitude }) => {
 
   const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
   if(!apiKey){
-    console.error("GOOGLE_API_KEY is missing. Please add it to environment variables. More in readme: https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/README.md");
+    console.error("GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/docs/configuration/installation.md");
   }
 
   const lat = parseFloat(latitude.value);

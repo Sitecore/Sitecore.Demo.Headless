@@ -40,7 +40,7 @@ export function findLocationByAddress(address = required()) {
   const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
   if (!apiKey) {
     return Promise.reject(
-      "GOOGLE_API_KEY is missing. Please add it to environment variables. More in readme: https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/README.md"
+      "GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/docs/configuration/installation.md"
     );
   }
 
@@ -58,7 +58,7 @@ export function findLocationByLatLng(lat = required(), lng = required()) {
   const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
   if (!apiKey) {
     return Promise.reject(
-      "GOOGLE_API_KEY is missing. Please add it to environment variables. More in readme: https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/fitness/app/README.md"
+      "GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/docs/configuration/installation.md"
     );
   }
 
