@@ -8,21 +8,16 @@ All the defaults are configurable. More on that later.
 
 1. A clone of this repository.
     * The default project folder is `C:\projects\Sitecore.HabitatHome.Omni`.
-
     > In this repository, the 'master' branch is generally targeting the most recent release of Sitecore and support for older Sitecore version can be found in branches named like 'release/9.1'.
-
 2. Sitecore 9.1.0 or higher is installed.
     * This demo uses features of Experience Platform (XP) and also supports being deployed on XM.
     * The default website root is `C:\inetpub\wwwroot\habitathome.dev.local`.
     * The default xConnect website root is `C:\inetpub\wwwroot\habitathome_xconnect.dev.local`.
-
     > Habitat Fitness does not support 9.0.0 (Initial Release).
-
 3. Sitecore JSS CLI installed globally
     * `npm install -g @sitecore-jss/sitecore-jss-cli`
 4. Sitecore.JSS v11.x Server package is installed on your Sitecore instance. See [the official docs](https://jss.sitecore.com/docs/getting-started/jss-server-install) for directions.
     > Habitat Fitness _may_ work with JSS 9.0 Tech Preview 4 (not officially supported) and wasn't even tried with earlier Tech Previews.
-
 5. Hostnames
     * The main hostname of the Sitecore instance.
       * The default is `habitathome.dev.local`.
@@ -73,7 +68,7 @@ If you have custom hostnames and/or project or website root paths, open the [`\f
                   <Services>
                     <HabitatFitness.EventNotificationService>
                       <Options>
-                        <FirebaseMessagingApiKey>INSERT-SERVER-KEY-HERE</FirebaseMessagingApiKey>
+                        <FirebaseMessagingApiKey>INSERT-SERVER-API-KEY-HERE</FirebaseMessagingApiKey>
                       </Options>
                     </HabitatFitness.EventNotificationService>
                   </Services>
@@ -156,7 +151,6 @@ If this is changed to `web`, you will need to perform a site-level Smart Publish
 11. Select the following indexes:
     * `sitecore_marketingdefinitions_master`
     * `sitecore_marketing_asset_index_master`
-
     > By default, the app is configured in association with a site sourcing content from the `master` database. If this is changed in configuration to `web`, you will also need to select the corresponding `web` indexes.
 
 ## Fitness
@@ -182,26 +176,21 @@ If you have a custom Fitness app hostname, open the [`\fitness\app\sitecore\conf
 In order for Google Maps to render on the event detail screen and for push notifications, follow the steps below.
 
 1. Create a `.env` file next to the `\fitness\app\package.json` file with the following content:
-
     ```text
     REACT_APP_GOOGLE_API_KEY=
     REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=
     REACT_APP_FIREBASE_SENDER_ID=
     ```
-
 2. [Obtain a Google Maps API Key](google-maps.md).
     1. In the `.env` file, paste the API key as the value of the `REACT_APP_GOOGLE_API_KEY` entry.
-
 3. [Obtain a Firebase sender ID and key pair](firebase.md).
     1. In the `.env` file:
         1. Paste the "Sender ID" as the value of the `REACT_APP_FIREBASE_SENDER_ID` entry.
     2. Paste "Key pair" as the value of the `REACT_APP_FIREBASE_MESSAGING_PUSH_KEY` entry.
         > Please take extra care about these API keys, make sure to put appopriate security restrictions and do not commit those to source control.
-
 4. Save the file.
 5. Open the [`\fitness\kiosk\sitecore\config\habitatfitness-kiosk.config`](///fitness/kiosk/sitecore/config/habitatfitness-kiosk.config) file.
     1. Uncomment the `<var />` elements inside the `<EnvironmentVariables>` element.
-
         ```xml
         <configuration>
           <sitecore>
@@ -222,7 +211,6 @@ In order for Google Maps to render on the event detail screen and for push notif
           </sitecore>
         </configuration>
         ```
-
     2. Replace the `<insert-yours-here>` values by the values  of the `.env` file.
 6. Save the file.
 
@@ -253,7 +241,6 @@ In order for Google Maps to render on the event detail screen and for push notif
 
 1. Run `jss deploy config`
     > This deploys the config files that live under `/fitness/app/sitecore/config`. Make sure to run this command "as administrator" to avoid permission issues. After this command execution, the Sitecore instance will recycle.
-
 2. Run `jss deploy files`
     > Since the items were taken care by the server deployment script (via Unicorn sync 🦄), you don't have to deploy items (usually done via the `jss deploy items` CLI command).
 
@@ -296,11 +283,9 @@ In order for Google Maps to render on the event detail screen, follow the steps 
 > If you already did it for the Fitness app, simply copy the required value from the Fitness `.env` file.
 
 1. Create a `.env` file next to the `\fitness\kiosk\package.json` file with the following content:
-
     ```text
     REACT_APP_GOOGLE_API_KEY=
     ```
-
 2. [Obtain a Google Maps API Key](google-maps.md).
     1. In the `.env` file, paste the API key as the value of the `REACT_APP_GOOGLE_API_KEY` entry.
 3. Save the file.
@@ -333,7 +318,6 @@ In order for Google Maps to render on the event detail screen, follow the steps 
 1. Open an elevated (run as administrator) terminal in the `\fitness\kiosk` folder.
 2. Run `jss deploy config`
     > This deploys the config files that live under `/fitness/kiosk/sitecore/config`. Make sure to run this command "as administrator" to avoid permission issues. After this command execution, the Sitecore instance will recycle.
-
 3. Run `jss deploy files`
     > Since the items were taken care by the server deployment script (via Unicorn sync 🦄), you don't have to deploy items (usually done via the `jss deploy items` CLI command).
 

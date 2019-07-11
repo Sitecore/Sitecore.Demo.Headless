@@ -22,11 +22,9 @@ All the defaults are configurable. More on that later.
 In order for Google Maps to render on the event detail screen, follow the steps below.
 
 1. Create a `.env` file next to the `\fitness\app\package.json` file with the following content:
-
     ```text
     REACT_APP_GOOGLE_API_KEY=
     ```
-
 2. [Obtain a Google Maps API Key](google-maps.md).
     1. In the `.env` file, paste the API key as the value of the `REACT_APP_GOOGLE_API_KEY` entry.
 3. Save the file.
@@ -63,11 +61,9 @@ In order for Google Maps to render on the event detail screen, follow the steps 
 > If you already did it for the Fitness app, simply copy the Fitness `.env` file.
 
 1. Create a `.env` file next to the `\fitness\kiosk\package.json` file with the following content:
-
     ```text
     REACT_APP_GOOGLE_API_KEY=
     ```
-
 2. [Obtain a Google Maps API Key](google-maps.md).
     1. In the `.env` file, paste the API key as the value of the `REACT_APP_GOOGLE_API_KEY` entry.
 3. Save the file.
