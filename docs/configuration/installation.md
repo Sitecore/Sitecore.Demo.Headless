@@ -189,7 +189,7 @@ In order for Google Maps to render on the event detail screen and for push notif
         2. Paste the "Key pair" as the value of the `REACT_APP_FIREBASE_MESSAGING_PUSH_KEY` entry.
         > Please take extra care about these API keys, make sure to put appopriate security restrictions and do not commit those to source control.
 4. Save the file.
-5. Open the [`\fitness\kiosk\sitecore\config\habitatfitness-kiosk.config`](///fitness/kiosk/sitecore/config/habitatfitness-kiosk.config) file.
+5. Open the [`\fitness\app\sitecore\config\habitatfitness.config`](///fitness/app/sitecore/config/habitatfitness.config) file.
     1. Uncomment the `<var />` elements inside the `<EnvironmentVariables>` element.
         ```xml
         <configuration>
@@ -200,9 +200,11 @@ In order for Google Maps to render on the event detail screen and for push notif
                   <instance id="defaults">
                     <EnvironmentVariables>
                       <!--
-                          HABITAT FITNESS KIOSK: set the following settings as per the README.MD
+                          HABITAT FITNESS: set the following settings as per /docs/configuration/installation.md
                       -->
                       <var name="REACT_APP_GOOGLE_API_KEY" value="<insert-yours-here>" />
+                      <var name="REACT_APP_FIREBASE_MESSAGING_PUSH_KEY" value="<insert-yours-here>" />
+                      <var name="REACT_APP_FIREBASE_SENDER_ID" value="<insert-yours-here>" />
                     </EnvironmentVariables>
                   </instance>
                 </renderEngine>
@@ -211,7 +213,7 @@ In order for Google Maps to render on the event detail screen and for push notif
           </sitecore>
         </configuration>
         ```
-    2. Replace the `<insert-yours-here>` values by the values  of the `.env` file.
+    2. Replace the `<insert-yours-here>` values by the values of the `.env` file.
 6. Save the file.
 
 ### Fitness Setup
@@ -289,6 +291,30 @@ In order for Google Maps to render on the event detail screen, follow the steps 
 2. [Obtain a Google Maps API Key](google-maps.md).
     1. In the `.env` file, paste the API key as the value of the `REACT_APP_GOOGLE_API_KEY` entry.
 3. Save the file.
+4. Open the [`\fitness\kiosk\sitecore\config\habitatfitness-kiosk.config`](///fitness/kiosk/sitecore/config/habitatfitness-kiosk.config) file.
+    1. Uncomment the `<var />` element inside the `<EnvironmentVariables>` element.
+        ```xml
+        <configuration>
+          <sitecore>
+            <javaScriptServices>
+              <renderEngines>
+                <renderEngine name="nodejs">
+                  <instance id="defaults">
+                    <EnvironmentVariables>
+                      <!--
+                          HABITAT FITNESS KIOSK: set the following settings as per /docs/configuration/installation.md
+                      -->
+                      <var name="REACT_APP_GOOGLE_API_KEY" value="<insert-yours-here>" />
+                    </EnvironmentVariables>
+                  </instance>
+                </renderEngine>
+              </renderEngines>
+            </javaScriptServices>
+          </sitecore>
+        </configuration>
+        ```
+    2. Replace the `<insert-yours-here>` value by the value of the `.env` file.
+5. Save the file.
 
 ### Kiosk Setup
 
