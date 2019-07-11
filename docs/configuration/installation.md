@@ -186,7 +186,7 @@ In order for Google Maps to render on the event detail screen and for push notif
 3. [Obtain a Firebase sender ID and key pair](firebase.md).
     1. In the `.env` file:
         1. Paste the "Sender ID" as the value of the `REACT_APP_FIREBASE_SENDER_ID` entry.
-    2. Paste "Key pair" as the value of the `REACT_APP_FIREBASE_MESSAGING_PUSH_KEY` entry.
+        2. Paste "Key pair" as the value of the `REACT_APP_FIREBASE_MESSAGING_PUSH_KEY` entry.
         > Please take extra care about these API keys, make sure to put appopriate security restrictions and do not commit those to source control.
 4. Save the file.
 5. Open the [`\fitness\kiosk\sitecore\config\habitatfitness-kiosk.config`](///fitness/kiosk/sitecore/config/habitatfitness-kiosk.config) file.
