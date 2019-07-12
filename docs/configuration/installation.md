@@ -110,48 +110,50 @@ If you have custom hostnames and/or project or website root paths, open the [`\f
 
 ### Publishing
 
-The JSS apps are setup to source content from the `master` database out of the box to simplify initial setup and operation in "Connected" mode. This is done inside the [`\fitness\app\sitecore\config\habitatfitness.config`](///fitness/app/sitecore/config/habitatfitness.config) and [`\fitness\kiosk\sitecore\config\habitatfitness-kiosk.config`](///fitness/kiosk/sitecore/config/habitatfitness-kiosk.config) files (`database="master"`):
+The JSS apps are setup to source content from the `web` database out of the box to simplify installation. This is done inside the [`\fitness\app\sitecore\config\habitatfitness.config`](///fitness/app/sitecore/config/habitatfitness.config) and [`\fitness\kiosk\sitecore\config\habitatfitness-kiosk.config`](///fitness/kiosk/sitecore/config/habitatfitness-kiosk.config) files (`database="web"`):
 
 ```xml
 <site patch:before="site[@name='website']"
       name="habitatfitness"
       ...
-      database="master" />
+      database="web" />
 
 <site patch:before="site[@name='website']"
       name="habitatfitness-kiosk"
       ...
-      database="master" />
+      database="web" />
 ```
 
-If this is changed to `web`, you will need to perform a site-level Smart Publishing operation. Otherwise, this is not needed.
+> If this is changed to `master`, publishing is not required.
 
-### Rebuild Search Indexes
+1. From the Launchpad, open the Desktop.
+2. Open the Sitecore start menu.
+3. Click the "Publish Site" item.
+4. Under "Publishing", select "Smart publish".
+5. Under "Publishing language", select all languages.
+6. Under "Publishing targets", select all targets.
+7. Hit the "Publish" button.
+8. When this is done, close the "Publish Site" tool.
 
-1. Log into Sitecore.
-2. From the Launchpad, open the Control Panel.
-3. Under Indexing, open the "Indexing manager".
-4. Select the `sitecore_master_index` index.
-    > By default, the app is configured in association with a site sourcing content from the `master` database. If this is changed in configuration to `web`, you will also need to select the `sitecore_web_index` index.
-5. Hit the "Rebuild" button.
+### XP-Only - Deploy Marketing Definitions
 
-### XP-Only - Deploy Goals, Events, and Marketing Definitions
+The new marketing definitions must be copied to the reporting database by deploying them.
 
-1. From the Launchpad, open the Workbox.
-2. In the Workflows ribbon section, select the "Analytics Workflow" item.
-    1. You should see goals and events.
-3. At the bottom of the list, click "Deploy (all)".
-4. Go back to Launchpad.
-5. Open the "Control Panel".
-6. Under Analytics, open the "Deploy marketing definitions" tool.
-7. Select all the definitions.
-8. Hit the "Deploy" button.
-9. When it is done, close the "Deploy marketing definitions" tool.
-10. Under Indexing, open the "Indexing manager".
-11. Select the following indexes:
+1. From the Launchpad, open the "Control Panel".
+2. Under Analytics, open the "Deploy marketing definitions" tool.
+3. Select all the definitions.
+4. Hit the "Deploy" button.
+5. When it is done, close the "Deploy marketing definitions" tool.
+
+The marketing definitions were automatically indexed in web indexes during the above publishing step. If the JSS apps content source is changed in configuration to `master`, you must rebuild marketing master indexes:
+
+1. From the Launchpad, open the "Control Panel".
+2. Under Indexing, open the "Indexing manager".
+3. Select the following indexes:
     * `sitecore_marketingdefinitions_master`
     * `sitecore_marketing_asset_index_master`
-    > By default, the app is configured in association with a site sourcing content from the `master` database. If this is changed in configuration to `web`, you will also need to select the corresponding `web` indexes.
+4. Hit the "Rebuild" button.
+5. When it is done, close the "Indexing Manager".
 
 ## Fitness
 
@@ -281,14 +283,18 @@ If you have a custom Kiosk app hostname, open the [`\fitness\kiosk\sitecore\conf
 
 #### XP-Only - EXM Custom Kiosk Hostname
 
-After registration is completed on the Kiosk app, the back-end is setup to send a welcome email with the link to mobile app, which identifies the contact on that app.
-The email sending is done via Sitecore Email Experience Manager (EXM) and needs to be configured:
+After registration is completed on the Kiosk app, the back-end is setup to send a welcome email with the link to the Fitness mobile app, which identifies the contact on that app.
+The email sending is done via Sitecore Email Experience Manager (EXM) and needs to be configured if you have a custom hostname:
 
 1. In the Content Editor on the master database, open the `/sitecore/Content/Habitat Fitness Kiosk/Email` item.
 2. Switch to the Content tab.
 3. Change the "Base URL" field value to match your kiosk application hostname.
     * The default is `https://habitatfitness-kiosk.dev.local`
 4. Save the item.
+5. Navigate to the "Publish" ribbon menu tab.
+6. Click the "Publish" button to publish the item.
+7. Confirm by clicking the "OK" button.
+8. Close the confirmation message by clicking the "OK" button.
 
 ### Optional - Connecting Kiosk to 3rd Party API Services
 
