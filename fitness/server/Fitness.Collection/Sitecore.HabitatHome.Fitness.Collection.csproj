@@ -145,7 +145,6 @@
     <Compile Include="Services\SessionEventSubscriptionsService.cs" />
     <Compile Include="Services\StringValueListFacetService.cs" />
     <Compile Include="Services\IStringValueListFacetService.cs" />
-    <Compile Include="Settings.cs" />
     <Compile Include="Wellknown.cs" />
     <Compile Include="XConnectClientFactory.cs" />
   </ItemGroup>
