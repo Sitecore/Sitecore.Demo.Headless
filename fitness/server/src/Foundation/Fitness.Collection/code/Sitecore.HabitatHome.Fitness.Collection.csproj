@@ -161,7 +161,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Foundation\Fitness.Collection.Model\Sitecore.HabitatHome.Fitness.Collection.Model.csproj">
+    <ProjectReference Include="..\..\Fitness.Collection.Model\code\Sitecore.HabitatHome.Fitness.Collection.Model.csproj">
       <Project>{8b8ef537-2e63-4cc5-93b0-7dfa3f784ec1}</Project>
       <Name>Sitecore.HabitatHome.Fitness.Collection.Model</Name>
     </ProjectReference>
