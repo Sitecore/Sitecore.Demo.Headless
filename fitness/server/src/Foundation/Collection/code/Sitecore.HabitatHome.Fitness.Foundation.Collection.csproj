@@ -108,7 +108,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Collection.Serialization.config">
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Foundation.Collection.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Web.config" />
@@ -149,7 +149,7 @@
     <Compile Include="XConnectClientFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Collection.config">
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Foundation.Collection.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
