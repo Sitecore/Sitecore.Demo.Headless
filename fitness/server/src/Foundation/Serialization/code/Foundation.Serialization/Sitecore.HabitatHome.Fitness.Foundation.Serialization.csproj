@@ -6,12 +6,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC}</ProjectGuid>
+    <ProjectGuid>{CE150842-25D5-4673-B4F8-F951465EFA28}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.HabitatHome.Fitness.Project.AppItems</RootNamespace>
-    <AssemblyName>Sitecore.HabitatHome.Fitness.Project.AppItems</AssemblyName>
+    <RootNamespace>Sitecore.HabitatHome.Fitness.Foundation.Serialization</RootNamespace>
+    <AssemblyName>Sitecore.HabitatHome.Fitness.Foundation.Serialization</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -22,7 +22,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,29 +61,38 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Project.AppItems.Serialization.config" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\z.Sitecore.HabitatHome.Fitness.DevSettings.config" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Project.Common.Serialization.config" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Project.MarketingDefinitions.Serialization.config" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Project.GraphQL.config.disabled" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Project.ContentHub.Serialization.config" />
-    <None Include="Web.config">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Sitecore.HabitatHome.Fitness.Project.KioskAppItems.Serialization.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web.config.xdt" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
+    <Content Include="App_Config\Include\Rainbow.config" />
+    <None Include="App_Config\Include\Unicorn\Unicorn.UI.IdentityServer.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Unicorn">
+      <Version>4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Unicorn.Roles">
+      <Version>4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Unicorn.Users">
+      <Version>4.1.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.DataProvider.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.DataProvider.config" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -98,9 +106,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>41502</DevelopmentServerPort>
+          <DevelopmentServerPort>52554</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:41502/</IISUrl>
+          <IISUrl>http://localhost:52554/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
