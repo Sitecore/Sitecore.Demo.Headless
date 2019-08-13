@@ -3,12 +3,12 @@ using System.Net.Http;
 using Sitecore.LayoutService.Mvc.Security;
 using System.Web.Mvc;
 using System;
-using Sitecore.HabitatHome.Fitness.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Collection.Services;
-using Sitecore.HabitatHome.Fitness.Collection.Filters;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
 using Sitecore.Diagnostics;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Filters;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Services;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Controllers
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Controllers
 {
     [RequireSscApiKey]
     [ImpersonateApiKeyUser]

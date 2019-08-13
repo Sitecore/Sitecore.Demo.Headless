@@ -8,7 +8,7 @@ using Sitecore.Analytics.Tracking;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Services
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Services
 {
     public class ProfiledItemDistance
     {

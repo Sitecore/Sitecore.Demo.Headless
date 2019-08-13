@@ -1,7 +1,7 @@
-﻿using Sitecore.XConnect;
-using System;
+﻿using System;
+using Sitecore.XConnect;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Model.Facets
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets
 {
     [Serializable]
     public class DemographicsFacet : Facet

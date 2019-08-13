@@ -7,8 +7,8 @@
     <ProjectGuid>{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.HabitatHome.Fitness.Collection.Model</RootNamespace>
-    <AssemblyName>Sitecore.HabitatHome.Fitness.Collection.Model</AssemblyName>
+    <RootNamespace>Sitecore.HabitatHome.Fitness.Foundation.Collection.Model</RootNamespace>
+    <AssemblyName>Sitecore.HabitatHome.Fitness.Foundation.Collection.Model</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -57,7 +57,7 @@
   <ItemGroup>
     <Compile Include="FacetIDs.cs" />
     <Compile Include="Facets\DemographicsFacet.cs" />
-    <Compile Include="Facets\StringListFacet.cs" />
+    <Compile Include="Facets\StringValueListFacet.cs" />
     <Compile Include="Facets\SportsFacet.cs" />
     <Compile Include="ModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

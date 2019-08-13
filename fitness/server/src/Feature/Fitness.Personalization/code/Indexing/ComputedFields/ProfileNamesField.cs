@@ -1,12 +1,11 @@
-﻿using Sitecore.ContentSearch;
-using Sitecore.ContentSearch.ComputedFields;
-using Sitecore.Data.Items;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.ComputedFields;
+using Sitecore.Data.Items;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Indexing.ComputedFields
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Indexing.ComputedFields
 {
     public class ProfileNamesField : IComputedIndexField
     {

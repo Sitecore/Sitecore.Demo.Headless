@@ -1,11 +1,11 @@
-﻿using Sitecore.Analytics;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Sitecore.Analytics;
 using Sitecore.Analytics.Data.Items;
 using Sitecore.Analytics.Tracking;
 using Sitecore.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Utils
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Utils
 {
     public static class ProfileExtensions
     {

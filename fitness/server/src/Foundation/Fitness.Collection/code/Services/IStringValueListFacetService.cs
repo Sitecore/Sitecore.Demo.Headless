@@ -2,7 +2,7 @@
 using Sitecore.XConnect.Client;
 using System.Collections.Generic;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Services
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Services
 {
     public interface IStringValueListFacetService
     {

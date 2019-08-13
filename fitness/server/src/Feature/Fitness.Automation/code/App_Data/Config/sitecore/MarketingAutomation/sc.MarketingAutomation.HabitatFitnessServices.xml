@@ -5,8 +5,8 @@
         <Engine>
           <Services>
             <HabitatFitness.EventNotificationService>
-              <Type>Sitecore.HabitatHome.Fitness.Automation.Services.EventNotificationService, Sitecore.HabitatHome.Fitness.Automation</Type>
-              <As>Sitecore.HabitatHome.Fitness.Automation.Services.IEventNotificationService, Sitecore.HabitatHome.Fitness.Automation</As>
+              <Type>Sitecore.HabitatHome.Fitness.Feature.Automation.Services.EventNotificationService, Sitecore.HabitatHome.Fitness.Feature.Automation</Type>
+              <As>Sitecore.HabitatHome.Fitness.Feature.Automation.Services.IEventNotificationService, Sitecore.HabitatHome.Fitness.Feature.Automation</As>
               <LifeTime>Singleton</LifeTime>
               <Options>
                 <FirebaseMessagingApiUri>https://fcm.googleapis.com/fcm/send</FirebaseMessagingApiUri>

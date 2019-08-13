@@ -1,5 +1,5 @@
 ﻿using Sitecore.Analytics;
-using Sitecore.HabitatHome.Fitness.Collection.Model;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Client.WebApi;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 
-namespace Sitecore.HabitatHome.Fitness.Collection
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection
 {
     public static class XConnectClientFactory
     {

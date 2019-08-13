@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Model
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Model
 {
     public class EventPayload
     {

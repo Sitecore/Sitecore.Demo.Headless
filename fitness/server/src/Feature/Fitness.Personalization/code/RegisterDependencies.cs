@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Sitecore.DependencyInjection;
-using Sitecore.HabitatHome.Fitness.Personalization.Controllers;
-using Sitecore.HabitatHome.Fitness.Personalization.Serializers;
-using Sitecore.HabitatHome.Fitness.Personalization.Services;
+using Sitecore.HabitatHome.Fitness.Feature.Personalization.Controllers;
+using Sitecore.HabitatHome.Fitness.Feature.Personalization.Serializers;
+using Sitecore.HabitatHome.Fitness.Feature.Personalization.Services;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization
 {
     public class RegisterDependencies : IServicesConfigurator
     {

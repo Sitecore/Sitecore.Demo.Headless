@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sitecore.HabitatHome.Fitness.Collection
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection
 {
     public class Wellknown
     {

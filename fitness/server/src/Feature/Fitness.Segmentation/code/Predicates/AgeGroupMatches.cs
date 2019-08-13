@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Sitecore.Framework.Rules;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Segmentation.Predicates;
-using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
 
-namespace Sitecore.HabitatHome.Fitness.Segmentation.Predicates
+namespace Sitecore.HabitatHome.Fitness.Feature.Segmentation.Predicates
 {
     public class AgeGroupMatches : ICondition, IContactSearchQueryFactory
     {

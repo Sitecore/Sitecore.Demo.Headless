@@ -1,6 +1,6 @@
 ﻿using Sitecore.XConnect;
 
-namespace Sitecore.HabitatHome.Fitness.Automation.Services
+namespace Sitecore.HabitatHome.Fitness.Feature.Automation.Services
 {
     public interface IEventNotificationService
     {

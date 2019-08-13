@@ -1,13 +1,13 @@
-﻿using Sitecore.Analytics;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Sitecore.Analytics;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Services
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Services
 {
     public class ItemScoringService: IItemScoringService
     {

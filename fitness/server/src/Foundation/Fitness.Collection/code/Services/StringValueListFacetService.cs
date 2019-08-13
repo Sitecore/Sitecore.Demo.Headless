@@ -1,10 +1,10 @@
 ﻿using Sitecore.Diagnostics;
 using Sitecore.XConnect;
 using System.Collections.Generic;
-using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets;
 using Sitecore.XConnect.Client;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Services
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Services
 {
     // TODO: Add/Remove have the same boilerplate
     public class StringValueListFacetService : IStringValueListFacetService

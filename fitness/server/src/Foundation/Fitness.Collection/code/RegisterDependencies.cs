@@ -1,10 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Sitecore.DependencyInjection;
-using Sitecore.HabitatHome.Fitness.Collection.Controllers;
-using Sitecore.HabitatHome.Fitness.Collection.Controllers.Subscriptions;
-using Sitecore.HabitatHome.Fitness.Collection.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Controllers;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Services;
 
-namespace Sitecore.HabitatHome.Fitness.Collection
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection
 {
     public class RegisterDependencies : IServicesConfigurator
     {

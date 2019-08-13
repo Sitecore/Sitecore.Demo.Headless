@@ -1,4 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Newtonsoft.Json;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
@@ -7,12 +11,8 @@ using Sitecore.LayoutService.Serialization.FieldSerializers;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
 using Sitecore.LayoutService.Serialization.Pipelines.GetFieldSerializer;
 using Sitecore.Links;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Serializers
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Serializers
 {
     public class EventItemSerializer : IItemSerializer
     {

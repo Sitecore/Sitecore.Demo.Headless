@@ -2,12 +2,12 @@
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
 using System.Collections.Generic;
-using Sitecore.HabitatHome.Fitness.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets;
 using Sitecore.Analytics;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
 using Sitecore.XConnect.Client;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Services
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Services
 {
     public class DemographicsService : IDemographicsService
     {

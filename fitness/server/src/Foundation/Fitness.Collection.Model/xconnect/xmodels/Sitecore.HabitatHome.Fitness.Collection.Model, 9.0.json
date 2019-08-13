@@ -1,5 +1,5 @@
 {
-  "Name": "Sitecore.HabitatHome.Fitness.Collection.Model",
+  "Name": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model",
   "Version": "9.0",
   "References": [
     {
@@ -12,10 +12,10 @@
     }
   ],
   "Types": {
-    "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet": {
+    "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.StringValueListFacet": {
       "Type": "Facet",
       "BaseType": "Sitecore.XConnect.Facet",
-      "ClrType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet, Sitecore.HabitatHome.Fitness.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "ClrType": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.StringValueListFacet, Sitecore.HabitatHome.Fitness.Foundation.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "Properties": {
         "Values": {
           "Type": [
@@ -24,10 +24,10 @@
         }
       }
     },
-    "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.SportsFacet": {
+    "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.SportsFacet": {
       "Type": "Facet",
       "BaseType": "Sitecore.XConnect.Facet",
-      "ClrType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.SportsFacet, Sitecore.HabitatHome.Fitness.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "ClrType": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.SportsFacet, Sitecore.HabitatHome.Fitness.Foundation.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "Properties": {
         "Ratings": {
           "Type": {
@@ -36,10 +36,10 @@
         }
       }
     },
-    "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.DemographicsFacet": {
+    "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.DemographicsFacet": {
       "Type": "Facet",
       "BaseType": "Sitecore.XConnect.Facet",
-      "ClrType": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.DemographicsFacet, Sitecore.HabitatHome.Fitness.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "ClrType": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.DemographicsFacet, Sitecore.HabitatHome.Fitness.Foundation.Collection.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "Properties": {
         "AgeGroup": {
           "Type": "String"
@@ -51,32 +51,32 @@
     {
       "Target": "Contact",
       "Name": "FavoriteEvents",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet"
+      "Type": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.StringValueListFacet"
     },
     {
       "Target": "Contact",
       "Name": "RegisteredEvents",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet"
+      "Type": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.StringValueListFacet"
     },
     {
       "Target": "Contact",
       "Name": "Subscriptions",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet"
+      "Type": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.StringValueListFacet"
     },
     {
       "Target": "Contact",
       "Name": "SubscriptionTokens",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.StringValueListFacet"
+      "Type": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.StringValueListFacet"
     },
     {
       "Target": "Contact",
       "Name": "Sports",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.SportsFacet"
+      "Type": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.SportsFacet"
     },
     {
       "Target": "Contact",
       "Name": "Demographics",
-      "Type": "Sitecore.HabitatHome.Fitness.Collection.Model.Facets.DemographicsFacet"
+      "Type": "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets.DemographicsFacet"
     }
   ]
 }

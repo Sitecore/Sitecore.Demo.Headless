@@ -1,4 +1,7 @@
-﻿using Sitecore.ContentSearch;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Data;
 using Sitecore.ContentSearch.Linq;
 using Sitecore.ContentSearch.Linq.Utilities;
@@ -6,11 +9,8 @@ using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.ContentSearch.Security;
 using Sitecore.Data;
 using Sitecore.Data.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Services
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Services
 {
     public class EventSearchResultItem : SearchResultItem
     {

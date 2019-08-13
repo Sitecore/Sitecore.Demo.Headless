@@ -2,12 +2,12 @@
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
 using System.Collections.Generic;
-using Sitecore.HabitatHome.Fitness.Collection.Model;
 using Sitecore.XConnect.Client;
 using Sitecore.Analytics;
 using System;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Services
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Services
 {
     public class IdentificationService : IIdentificationService
     {

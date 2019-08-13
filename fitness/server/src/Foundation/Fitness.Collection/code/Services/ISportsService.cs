@@ -1,10 +1,10 @@
-﻿using Sitecore.HabitatHome.Fitness.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Collection.Model.Facets;
+﻿using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using System.Collections.Generic;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Services
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Services
 {
     public interface ISportsService
     {

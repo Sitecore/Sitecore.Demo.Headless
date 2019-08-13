@@ -1,6 +1,6 @@
-﻿using Sitecore.HabitatHome.Fitness.Collection.Model;
+﻿using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
 
-namespace Sitecore.HabitatHome.Fitness.Segmentation.Predicates
+namespace Sitecore.HabitatHome.Fitness.Feature.Segmentation.Predicates
 {
     public class EventSubscriptionContains : BaseStringListFacetPredicate
     {

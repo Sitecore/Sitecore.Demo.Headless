@@ -2,7 +2,7 @@
 using Sitecore.JavaScriptServices.Configuration;
 using Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Pipelines.GetLayoutServiceContext
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Pipelines.GetLayoutServiceContext
 {
     public class ContactInfo : Sitecore.JavaScriptServices.ViewEngine.LayoutService.Pipelines.GetLayoutServiceContext.JssGetLayoutServiceContextProcessor
     {

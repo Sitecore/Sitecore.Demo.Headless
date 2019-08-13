@@ -1,12 +1,12 @@
 ﻿using Sitecore.Analytics.Pipelines.CommitSession;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Collection.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Services;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Client.Configuration;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Pipelines.CommitSession
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Pipelines.CommitSession
 {
     public class UpdateFacetsFromTracker : CommitSessionProcessor
     {

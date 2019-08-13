@@ -1,12 +1,12 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System;
+using System.Net;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using Sitecore.Framework.Conditions;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
-using System;
-using System.Net;
 
-namespace Sitecore.HabitatHome.Fitness.Automation.Services
+namespace Sitecore.HabitatHome.Fitness.Feature.Automation.Services
 {
     public class EventNotificationServiceOptions
     {

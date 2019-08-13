@@ -8,7 +8,7 @@ namespace deploy
         static void Main(string[] args)
         {
             string name;
-            string json = Sitecore.HabitatHome.Fitness.Collection.Model.ModelFactory.CreateDeploymentJson(out name);
+            string json = Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.ModelFactory.CreateDeploymentJson(out name);
             string fileName = $"{name}.json";
 
             Console.WriteLine("Running deploy.exe");

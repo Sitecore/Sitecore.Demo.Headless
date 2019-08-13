@@ -1,7 +1,7 @@
-﻿using Sitecore.Pipelines;
-using System.Web.Routing;
+﻿using System.Web.Routing;
+using Sitecore.Pipelines;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Pipelines.Initialize
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Pipelines.Initialize
 {
     public class RouteInitializer
     {

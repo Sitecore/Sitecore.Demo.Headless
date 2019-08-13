@@ -1,10 +1,10 @@
 ﻿using System.Globalization;
-using Sitecore.Data.Items;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.ComputedFields;
 using Sitecore.ContentSearch.Data;
+using Sitecore.Data.Items;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Indexing.ComputedFields
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Indexing.ComputedFields
 {
     public class CoordinatesField : AbstractComputedIndexField
     {

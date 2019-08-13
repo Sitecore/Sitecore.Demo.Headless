@@ -1,16 +1,15 @@
-﻿using System.Net;
-using Sitecore.LayoutService.Mvc.Security;
-using System.Web.Mvc;
-using System;
-using Sitecore.HabitatHome.Fitness.Collection.Filters;
-using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Personalization.Services;
+﻿using System;
 using System.Linq;
+using System.Net;
+using System.Web.Mvc;
 using Newtonsoft.Json.Linq;
+using Sitecore.Diagnostics;
+using Sitecore.HabitatHome.Fitness.Feature.Personalization.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Filters;
+using Sitecore.LayoutService.Mvc.Security;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
-using System.Web.Helpers;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Controllers
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Controllers
 {
     [RequireSscApiKey]
     [ImpersonateApiKeyUser]

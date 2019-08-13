@@ -1,12 +1,12 @@
-﻿using Sitecore.Analytics;
+﻿using System.Web.Mvc;
+using Sitecore.Analytics;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Collection.Services;
-using Sitecore.HabitatHome.Fitness.Personalization.Utils;
+using Sitecore.HabitatHome.Fitness.Feature.Personalization.Utils;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Services;
 using Sitecore.Rules;
 using Sitecore.Rules.Conditions;
-using System.Web.Mvc;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Rules
 {
     public class SportsCondition<T> : OperatorCondition<T> where T : RuleContext
     {

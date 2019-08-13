@@ -1,7 +1,7 @@
-﻿using Sitecore.HabitatHome.Fitness.Collection.Model;
+﻿using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
 using Sitecore.Rules;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization.Rules
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Rules
 {
     public class IsContactSubscribedToEvent<T> : BaseEventFacetCondition<T> where T : RuleContext
     {

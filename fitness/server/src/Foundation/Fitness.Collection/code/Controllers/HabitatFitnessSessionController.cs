@@ -2,10 +2,10 @@
 using Sitecore.LayoutService.Mvc.Security;
 using System.Web.Mvc;
 using System;
-using Sitecore.HabitatHome.Fitness.Collection.Filters;
 using Sitecore.Diagnostics;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Filters;
 
-namespace Sitecore.HabitatHome.Fitness.Collection.Controllers
+namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Controllers
 {
     /// <summary>
     /// This controller is for development and testing purposes only

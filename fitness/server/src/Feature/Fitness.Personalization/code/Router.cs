@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Sitecore.HabitatHome.Fitness.Personalization
+namespace Sitecore.HabitatHome.Fitness.Feature.Personalization
 {
     public class Router : IRouter
     {
