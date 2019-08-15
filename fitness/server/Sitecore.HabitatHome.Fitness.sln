@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitnes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Feature.Automation", "src\Feature\Automation\code\Sitecore.HabitatHome.Fitness.Feature.Automation.csproj", "{9A3F5FEF-B381-47BD-92E9-D64D52126BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Foundation.Collection", "src\Foundation\Collection\code\Sitecore.HabitatHome.Fitness.Foundation.Collection.csproj", "{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Feature.Collection", "src\Feature\Collection\code\Sitecore.HabitatHome.Fitness.Feature.Collection.csproj", "{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model", "src\Foundation\Collection.Model\code\Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.csproj", "{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}"
 EndProject
@@ -96,7 +96,7 @@ Global
 		{38D05F6E-1A40-4B38-BB64-82220085FEF6} = {C18E560F-D66D-490B-B6E9-BA149166D233}
 		{E5B68690-9A50-49D8-9B1A-E8C5DA181ADC} = {EA401552-2AAA-4F19-A1BF-01E1CA119453}
 		{9A3F5FEF-B381-47BD-92E9-D64D52126BCF} = {793A4AD2-0A79-4A1C-BFBF-E0A3BC7B5E97}
-		{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85} = {EDE3845D-78A7-421B-97B6-CDCE28311569}
+		{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85} = {793A4AD2-0A79-4A1C-BFBF-E0A3BC7B5E97}
 		{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1} = {EDE3845D-78A7-421B-97B6-CDCE28311569}
 		{310540F3-8784-47B0-B29E-2BACEEAC7A8C} = {A9B69A5C-3877-43BC-A434-C67DA86359AE}
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48} = {793A4AD2-0A79-4A1C-BFBF-E0A3BC7B5E97}

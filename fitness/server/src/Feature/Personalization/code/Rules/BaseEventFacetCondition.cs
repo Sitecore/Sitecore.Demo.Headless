@@ -2,7 +2,7 @@
 using Sitecore.Analytics;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services;
 using Sitecore.Rules;
 using Sitecore.Rules.Conditions;
 

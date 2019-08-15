@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}</ProjectGuid>
+    <ProjectGuid>{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.HabitatHome.Fitness.Feature.Personalization</RootNamespace>
-    <AssemblyName>Sitecore.HabitatHome.Fitness.Feature.Personalization</AssemblyName>
+    <RootNamespace>Sitecore.HabitatHome.Fitness.Feature.Collection</RootNamespace>
+    <AssemblyName>Sitecore.HabitatHome.Fitness.Feature.Collection</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -44,13 +44,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.Mvc">
-      <Version>5.2.4</Version>
-    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.4" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.4" />
+    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="1.0.8" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Sitecore.Analytics">
+      <Version>9.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Analytics.Core">
       <Version>9.2.0</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.Analytics.Model">
@@ -59,88 +62,96 @@
     <PackageReference Include="Sitecore.Analytics.XConnect">
       <Version>9.2.0</Version>
     </PackageReference>
-    <PackageReference Include="Sitecore.ContentSearch">
-      <Version>9.2.0</Version>
-    </PackageReference>
-    <PackageReference Include="Sitecore.ContentSearch.Linq">
-      <Version>9.2.0</Version>
-    </PackageReference>
-    <PackageReference Include="Sitecore.JavaScriptServices.Configuration">
-      <Version>13.0.0</Version>
-    </PackageReference>
-    <PackageReference Include="Sitecore.JavaScriptServices.ViewEngine">
-      <Version>13.0.0</Version>
-    </PackageReference>
     <PackageReference Include="Sitecore.Kernel">
       <Version>9.2.0</Version>
     </PackageReference>
-    <PackageReference Include="Sitecore.LayoutService">
-      <Version>5.0.0</Version>
-    </PackageReference>
+    <PackageReference Include="Sitecore.LayoutService.Mvc" Version="5.0.0" />
     <PackageReference Include="Sitecore.Mvc">
       <Version>9.2.0</Version>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect">
       <Version>9.2.0</Version>
     </PackageReference>
+    <PackageReference Include="Sitecore.XConnect.Client">
+      <Version>9.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Sitecore.XConnect.Client.Configuration">
+      <Version>9.2.0</Version>
+    </PackageReference>
     <PackageReference Include="Sitecore.XConnect.Collection.Model">
       <Version>9.2.0</Version>
     </PackageReference>
+    <PackageReference Include="Sitecore.Xdb.Common.Web">
+      <Version>9.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http" Version="4.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\HabitatFitnessProductsController.cs" />
-    <Compile Include="Controllers\HabitatFitnessEventsController.cs" />
-    <Compile Include="Indexing\ComputedFields\CoordinatesField.cs" />
-    <Compile Include="Indexing\ComputedFields\ProfileNamesField.cs" />
-    <Compile Include="Pipelines\GetLayoutServiceContext\EventInfo.cs" />
-    <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />
-    <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
-    <Compile Include="RegisterDependencies.cs" />
-    <Compile Include="Router.cs" />
-    <Compile Include="Rules\AgeGroupCondition.cs" />
-    <Compile Include="Rules\BaseEventFacetCondition.cs" />
-    <Compile Include="Rules\IsContactRegisteredForEvent.cs" />
-    <Compile Include="Rules\IsContactKnownCondition.cs" />
-    <Compile Include="Rules\GenderCondition.cs" />
-    <Compile Include="Rules\IsContactSubscribedToEvent.cs" />
-    <Compile Include="Rules\IsContactFavoritedEvent.cs" />
-    <Compile Include="Services\IEventDataService.cs" />
-    <Compile Include="Services\IItemScoringService.cs" />
-    <Compile Include="Services\IProductDataService.cs" />
-    <Compile Include="Services\ItemScoringService.cs" />
-    <Compile Include="Utils\ProfileExtensions.cs" />
-    <Compile Include="Rules\SportsCondition.cs" />
-    <Compile Include="Rules\SportsSkillCondition.cs" />
-    <Compile Include="Services\ProductDataService.cs" />
-    <Compile Include="Services\EventDataService.cs" />
-    <Compile Include="Services\DistanceCalculator.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serializers\EventItemSerializer.cs" />
-    <Compile Include="Wellknown.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Feature.Personalization.config">
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Foundation.Collection.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Feature.Personalization.Serialization.config" />
-    <None Include="web.config" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HabitatFitnessEventRegistrationController.cs" />
+    <Compile Include="Controllers\HabitatFitnessEventFavoritesController.cs" />
+    <Compile Include="Controllers\HabitatFitnessIdentificationController.cs" />
+    <Compile Include="Controllers\HabitatFitnessSportsController.cs" />
+    <Compile Include="Controllers\HabitatFitnessDemographicsController.cs" />
+    <Compile Include="Controllers\HabitatFitnessSessionController.cs" />
+    <Compile Include="Controllers\HabitatFitnessSubscriptionsController.cs" />
+    <Compile Include="Model\EventPayload.cs" />
+    <Compile Include="Model\SubscribePayload.cs" />
+    <Compile Include="Model\IdentificationPayload.cs" />
+    <Compile Include="Model\DemographicsPayload.cs" />
+    <Compile Include="Model\StringArrayPayload.cs" />
+    <Compile Include="Model\SportPreferencesPayload.cs" />
+    <Compile Include="Pipelines\CommitSession\UpdateFacetsFromTracker.cs" />
+    <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
+    <Compile Include="Pipelines\RequestBegin\IdentifyContactViaAlias.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterDependencies.cs" />
+    <Compile Include="Router.cs" />
+    <Compile Include="Services\ContactExtensions.cs" />
+    <Compile Include="Services\SportsService.cs" />
+    <Compile Include="Services\IdentificationService.cs" />
+    <Compile Include="Services\DemographicsService.cs" />
+    <Compile Include="Services\SessionEventSubscriptionsService.cs" />
+    <Compile Include="Services\StringValueListFacetService.cs" />
+    <Compile Include="Wellknown.cs" />
+    <Compile Include="XConnectClientFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Foundation.Collection.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
     </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -162,9 +173,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53550</DevelopmentServerPort>
+          <DevelopmentServerPort>51540</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53550/</IISUrl>
+          <IISUrl>http://localhost:51540/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
