@@ -62,16 +62,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Project.AppItems.Serialization.config" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Project.Unicorn.DevSettings.config" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Project.Common.Serialization.config" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Project.MarketingDefinitions.Serialization.config" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Project.GraphQL.config.disabled" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Project.ContentHub.Serialization.config" />
+    <Content Include="App_Config\Include\Project\Project.AppItems.Serialization.config" />
+    <Content Include="App_Config\Include\Project\Project.Unicorn.DevSettings.config" />
+    <Content Include="App_Config\Include\Project\Project.Common.Serialization.config" />
+    <Content Include="App_Config\Include\Project\Project.MarketingDefinitions.Serialization.config" />
+    <Content Include="App_Config\Include\Project\Project.GraphQL.config.disabled" />
+    <Content Include="App_Config\Include\Project\Project.ContentHub.Serialization.config" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Project.KioskAppItems.Serialization.config" />
+    <Content Include="App_Config\Include\Project\Project.KioskAppItems.Serialization.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

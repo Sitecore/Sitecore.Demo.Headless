@@ -70,8 +70,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Feature.Automation.Serialization.config" />
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Feature.Automation.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Automation.Serialization.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Automation.config" />
     <Content Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.HabitatFitnessServices.xml" />
     <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\plugin.js" />
     <None Include="App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.ActivityTypes.xml.xdt" />
@@ -99,6 +99,7 @@
     <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activity\activity-module.d.ts" />
     <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\HabitatFitness\codegen\src\activity\activity-plugin.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

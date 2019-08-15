@@ -131,10 +131,10 @@
     <Compile Include="Wellknown.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Feature.Personalization.config">
+    <Content Include="App_Config\Include\Feature\Feature.Personalization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Sitecore.HabitatHome.Fitness\Feature.Personalization.Serialization.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Personalization.Serialization.config" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
