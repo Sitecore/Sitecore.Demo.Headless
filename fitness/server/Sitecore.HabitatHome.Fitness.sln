@@ -32,9 +32,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitnes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Feature.Collection", "src\Feature\Collection\code\Sitecore.HabitatHome.Fitness.Feature.Collection.csproj", "{6ED673BF-33F1-430E-B8D8-B66B8AEB0E85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Foundation.Collection.Model", "src\Foundation\Collection.Model\code\Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.csproj", "{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Foundation.Analytics", "src\Foundation\Analytics\code\Sitecore.HabitatHome.Fitness.Foundation.Analytics.csproj", "{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Collection.Model.Deploy", "src\Foundation\Collection.Model\xconnect\Sitecore.HabitatHome.Fitness.Collection.Model.Deploy.csproj", "{310540F3-8784-47B0-B29E-2BACEEAC7A8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Foundation.Analytics.Deploy", "src\Foundation\Analytics\xconnect\Sitecore.HabitatHome.Fitness.Foundation.Analytics.Deploy.csproj", "{310540F3-8784-47B0-B29E-2BACEEAC7A8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Feature.Personalization", "src\Feature\Personalization\code\Sitecore.HabitatHome.Fitness.Feature.Personalization.csproj", "{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48}"
 EndProject

@@ -2,8 +2,8 @@
 using Sitecore.Analytics;
 using Sitecore.Diagnostics;
 using Sitecore.HabitatHome.Fitness.Feature.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Model;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Collection.Model;

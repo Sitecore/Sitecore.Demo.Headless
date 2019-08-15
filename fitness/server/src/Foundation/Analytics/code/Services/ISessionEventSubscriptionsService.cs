@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Sitecore.Analytics.Tracking;
 
-namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services
+namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services
 {
     public interface ISessionEventSubscriptionsService
     {

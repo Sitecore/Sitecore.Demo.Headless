@@ -2,7 +2,7 @@
 using System.Net;
 using System.Web.Mvc;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Filters;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Filters;
 using Sitecore.LayoutService.Mvc.Security;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Controllers

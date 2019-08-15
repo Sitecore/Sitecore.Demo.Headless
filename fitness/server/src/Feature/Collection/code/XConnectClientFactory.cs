@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 using Sitecore.Analytics;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Client.WebApi;

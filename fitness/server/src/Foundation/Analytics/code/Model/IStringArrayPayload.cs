@@ -1,4 +1,4 @@
-﻿namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Model
+﻿namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model
 {
     public interface IStringArrayPayload
     {

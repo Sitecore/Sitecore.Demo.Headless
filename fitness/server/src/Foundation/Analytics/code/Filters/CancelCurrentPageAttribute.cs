@@ -1,7 +1,7 @@
-﻿using Sitecore.Analytics;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Sitecore.Analytics;
 
-namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Filters
+namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Filters
 {
     public class CancelCurrentPage : ActionFilterAttribute
     {

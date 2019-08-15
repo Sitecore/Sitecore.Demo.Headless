@@ -1,8 +1,8 @@
 ﻿using Sitecore.Analytics.Pipelines.CommitSession;
 using Sitecore.Diagnostics;
 using Sitecore.HabitatHome.Fitness.Feature.Collection.Services;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Client.Configuration;

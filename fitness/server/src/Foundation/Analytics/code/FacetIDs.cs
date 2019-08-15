@@ -1,4 +1,4 @@
-﻿namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Model
+﻿namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics
 {
     public static class FacetIDs
     {

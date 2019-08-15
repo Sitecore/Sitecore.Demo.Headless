@@ -5,7 +5,7 @@ using System.Web.Mvc;
 using Newtonsoft.Json.Linq;
 using Sitecore.Diagnostics;
 using Sitecore.HabitatHome.Fitness.Feature.Personalization.Services;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Filters;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Filters;
 using Sitecore.LayoutService.Mvc.Security;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
 

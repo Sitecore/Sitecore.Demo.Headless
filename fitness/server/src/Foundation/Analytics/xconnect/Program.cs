@@ -1,14 +1,14 @@
 ﻿using System;
 using System.IO;
 
-namespace deploy
+namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Deploy
 {
     class Program
     {
         static void Main(string[] args)
         {
             string name;
-            string json = Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.ModelFactory.CreateDeploymentJson(out name);
+            string json = ModelFactory.CreateDeploymentJson(out name);
             string fileName = $"{name}.json";
 
             Console.WriteLine("Running deploy.exe");

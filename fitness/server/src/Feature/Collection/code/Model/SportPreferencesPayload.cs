@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Model;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Model
 {

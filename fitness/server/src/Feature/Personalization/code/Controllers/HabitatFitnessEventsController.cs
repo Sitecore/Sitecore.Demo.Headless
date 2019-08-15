@@ -7,9 +7,9 @@ using Sitecore.Analytics;
 using Sitecore.Diagnostics;
 using Sitecore.HabitatHome.Fitness.Feature.Personalization.Services;
 using Sitecore.HabitatHome.Fitness.Feature.Personalization.Utils;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Filters;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Filters;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 using Sitecore.LayoutService.Mvc.Security;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
 

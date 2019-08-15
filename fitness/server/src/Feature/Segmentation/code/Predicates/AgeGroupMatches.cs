@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Sitecore.Framework.Rules;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Segmentation.Predicates;
 

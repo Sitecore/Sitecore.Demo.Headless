@@ -1,7 +1,7 @@
 ﻿using System;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 using Sitecore.JavaScriptServices.Configuration;
 using Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext;
 

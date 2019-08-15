@@ -2,7 +2,7 @@
 using Sitecore.DependencyInjection;
 using Sitecore.HabitatHome.Fitness.Feature.Collection.Controllers;
 using Sitecore.HabitatHome.Fitness.Feature.Collection.Services;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Collection
 {

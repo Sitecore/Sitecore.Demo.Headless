@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 

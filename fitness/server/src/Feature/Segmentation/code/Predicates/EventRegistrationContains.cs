@@ -1,4 +1,4 @@
-﻿using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
+﻿using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Segmentation.Predicates
 {

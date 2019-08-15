@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Sitecore.Analytics.Tracking;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
 {

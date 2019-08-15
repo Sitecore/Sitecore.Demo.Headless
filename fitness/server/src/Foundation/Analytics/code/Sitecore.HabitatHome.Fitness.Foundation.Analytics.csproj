@@ -7,8 +7,8 @@
     <ProjectGuid>{8B8EF537-2E63-4CC5-93B0-7DFA3F784EC1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.HabitatHome.Fitness.Foundation.Collection.Model</RootNamespace>
-    <AssemblyName>Sitecore.HabitatHome.Fitness.Foundation.Collection.Model</AssemblyName>
+    <RootNamespace>Sitecore.HabitatHome.Fitness.Foundation.Analytics</RootNamespace>
+    <AssemblyName>Sitecore.HabitatHome.Fitness.Foundation.Analytics</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

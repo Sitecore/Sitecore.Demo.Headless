@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Framework.Conditions;
 using Sitecore.HabitatHome.Fitness.Feature.Automation.Services;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
 using Sitecore.Xdb.MarketingAutomation.Core.Activity;
 using Sitecore.Xdb.MarketingAutomation.Core.Processing.Plan;
 

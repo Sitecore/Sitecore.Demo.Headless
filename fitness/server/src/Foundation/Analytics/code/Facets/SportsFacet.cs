@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Sitecore.XConnect;
 
-namespace Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Facets
+namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets
 {
     [Serializable]
     public class SportsFacet : Facet

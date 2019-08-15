@@ -3,9 +3,9 @@ using System.Net;
 using System.Web.Mvc;
 using Sitecore.Diagnostics;
 using Sitecore.HabitatHome.Fitness.Feature.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Filters;
-using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model.Services;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Filters;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 using Sitecore.LayoutService.Mvc.Security;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Controllers

@@ -1,4 +1,4 @@
-﻿using Sitecore.HabitatHome.Fitness.Foundation.Collection.Model;
+﻿using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
 using Sitecore.Rules;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Rules
