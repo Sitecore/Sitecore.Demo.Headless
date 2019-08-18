@@ -46,7 +46,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{EA401552-2AAA-4F19-A1BF-01E1CA119453}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Foundation.Serialization", "src\Foundation\Serialization\code\Foundation.Serialization\Sitecore.HabitatHome.Fitness.Foundation.Serialization.csproj", "{CE150842-25D5-4673-B4F8-F951465EFA28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Foundation.Serialization", "src\Foundation\Serialization\code\Sitecore.HabitatHome.Fitness.Foundation.Serialization.csproj", "{CE150842-25D5-4673-B4F8-F951465EFA28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
