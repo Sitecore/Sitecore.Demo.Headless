@@ -1,10 +1,10 @@
-#addin "Cake.XdtTransform"
-#addin "Cake.Powershell"
-#addin "Cake.Http"
-#addin "Cake.Json"
-#addin "Newtonsoft.Json"
-#addin "Cake.Incubator"
-#addin "Cake.Services"
+#addin nuget:?package=Cake.XdtTransform&version=0.16.0
+#addin nuget:?package=Cake.Powershell&version=0.4.8
+#addin nuget:?package=Cake.Http&version=0.7.0
+#addin nuget:?package=Cake.Json&version=4.0.0
+#addin nuget:?package=Newtonsoft.Json&version=11.0.2
+#addin nuget:?package=Cake.Incubator&version=5.1.0
+#addin nuget:?package=Cake.Services&version=0.3.5
 
 #load "local:?path=CakeScripts/helper-methods.cake"
 
@@ -22,12 +22,12 @@ Setup(context =>
 {
 	cakeConsole.ForegroundColor = ConsoleColor.Yellow;
 	PrintHeader(ConsoleColor.DarkGreen);
-	
+
     var configFile = new FilePath(configJsonFile);
     configuration = DeserializeJsonFromFile<Configuration>(configFile);
 });
 
-private string GetXconnectServiceName() 
+private string GetXconnectServiceName()
 {
 	var connectionStringFile = new FilePath($"{configuration.WebsiteRoot}/App_config/ConnectionStrings.config");
     var xPath = "connectionStrings/add[@name='xconnect.collection']/@connectionString";
@@ -67,12 +67,12 @@ Task("Quick-Deploy")
 Task("Copy-Sitecore-Lib")
 	.WithCriteria(()=>(configuration.BuildConfiguration == "Local"))
     .Does(()=> {
-        var files = GetFiles( 
+        var files = GetFiles(
             $"{configuration.WebsiteRoot}/bin/Sitecore*.dll");
         var destination = "./sc.lib";
         EnsureDirectoryExists(destination);
         CopyFiles(files, destination);
-}); 
+});
 
 Task("Publish-All-Projects")
 .IsDependentOn("Build-Solution")
@@ -134,7 +134,7 @@ Task("Publish-XConnect").Does(()=>{
 });
 Task("Modify-Unicorn-Source-Folder").Does(() => {
     var zzzDevSettingsFile = File($"{configuration.WebsiteRoot}/App_config/Include/Sitecore.HabitatHome.Fitness/z.Sitecore.HabitatHome.Fitness.DevSettings.config");
-    
+
 	var rootXPath = "configuration/sitecore/sc.variable[@name='{0}']/@value";
     var sourceFolderXPath = string.Format(rootXPath, "fitnessSourceFolder");
     var directoryPath = MakeAbsolute(new DirectoryPath(configuration.SourceFolder)).FullPath;
@@ -172,12 +172,12 @@ Task("Sync-Unicorn").Does(() => {
 
     var authenticationFile = new FilePath($"{configuration.WebsiteRoot}/App_config/Include/Unicorn/Unicorn.zSharedSecret.config");
     var xPath = "/configuration/sitecore/unicorn/authenticationProvider/SharedSecret";
-    
+
     string sharedSecret = XmlPeek(authenticationFile, xPath);
- 
-    
-   
-    
+
+
+
+
     StartPowershellFile(unicornSyncScript, new PowershellSettings()
                                                         .SetFormatOutput()
                                                         .SetLogOutput()
@@ -189,7 +189,7 @@ Task("Sync-Unicorn").Does(() => {
 
 
 Task("Apply-Xml-Transform").Does(() => {
-	// target website transforms 
+	// target website transforms
 	Transform($"{configuration.ProjectSrcFolder}\\Fitness.AppItems", configuration.WebsiteRoot);
 
 	// xconnect transforms
@@ -199,14 +199,14 @@ Task("Apply-Xml-Transform").Does(() => {
 Task("Modify-Kiosk-Variable").Does(() => {
 	var webConfigFile = File($"{configuration.WebsiteRoot}/Web.config");
 	var appSetting = "configuration/appSettings/add[@key='kiosk:define']/@value";
-	var appSettingValue = configuration.KioskAppDeploy ? "On" : "Off";	
+	var appSettingValue = configuration.KioskAppDeploy ? "On" : "Off";
     XmlPoke(webConfigFile, appSetting, appSettingValue);
 });
 
 Task("Modify-ContentHub-Variable").Does(() => {
 	var webConfigFile = File($"{configuration.WebsiteRoot}/Web.config");
 	var appSetting = "configuration/appSettings/add[@key='contenthub:define']/@value";
-	var appSettingValue = configuration.ContentHub ? "On" : "Off";	
+	var appSettingValue = configuration.ContentHub ? "On" : "Off";
     XmlPoke(webConfigFile, appSetting, appSettingValue);
 });
 
