@@ -7,7 +7,7 @@
   "SolutionName": "Sitecore.HabitatHome.Fitness.sln",
   "ProjectFolder": "C:\\projects\\Sitecore.HabitatHome.Omni\\fitness\\server\\src",
   "BuildConfiguration": "Debug",
-  "BuildToolVersions": "VS2017",
+  "BuildToolVersions": "VS2019",
   "RunCleanBuilds": true,
   "KioskAppDeploy": true,
   "ContentHub":  false
