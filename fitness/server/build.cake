@@ -87,11 +87,12 @@ Task("Build-Solution").Does(() => {
 });
 
 Task("Publish-Projects").Does(() => {
-    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.AppItems", configuration.WebsiteRoot);
-    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Automation", configuration.WebsiteRoot);
-    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Collection", configuration.WebsiteRoot);
-    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Personalization", configuration.WebsiteRoot);
-    PublishProjects($"{configuration.ProjectSrcFolder}\\Fitness.Segmentation", configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Foundation\\Serialization\\code", configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Feature\\Automation\\code", configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Feature\\Collection\\code", configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Feature\\Personalization\\code", configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Feature\\Segmentation\\code", configuration.WebsiteRoot);
+    PublishProjects($"{configuration.ProjectSrcFolder}\\Project\\AppItems\\code", configuration.WebsiteRoot);
 });
 
 Task("Stop-XConnect-Service").Does(()=>{
@@ -104,36 +105,36 @@ Task("Start-XConnect-Service").Does(()=>{
 
 Task("Publish-XConnect").Does(()=>{
     DeployFiles(
-       $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\bin\\Debug\\Sitecore.HabitatHome.Fitness.*.dll",
+       $"{configuration.ProjectSrcFolder}\\Foundation\\Analytics\\xconnect\\bin\\Debug\\Sitecore.HabitatHome.Fitness.*.dll",
        $"{configuration.XConnectRoot}\\bin"
 	);
     DeployFiles(
-        $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\xmodels\\*",
+        $"{configuration.ProjectSrcFolder}\\Foundation\\Analytics\\xconnect\\xmodels\\*",
         $"{configuration.XConnectRoot}\\App_Data\\Models"
     );
     DeployFiles(
-        $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\xmodels\\*",
+        $"{configuration.ProjectSrcFolder}\\Foundation\\Analytics\\xconnect\\xmodels\\*",
         $"{configuration.XConnectIndexerRoot}\\App_Data\\Models"
     );
     DeployFiles(
-        $"{configuration.ProjectSrcFolder}\\Fitness.Automation\\bin\\Sitecore.HabitatHome.Fitness.Automation.dll",
+        $"{configuration.ProjectSrcFolder}\\Feature\\Automation\\code\\bin\\Sitecore.HabitatHome.Fitness.Feature.Automation",
         $"{configuration.XConnectAutomationServiceRoot}"
     );
     DeployFiles(
-        $"{configuration.ProjectSrcFolder}\\Fitness.Automation\\bin\\Sitecore.HabitatHome.Fitness.Collection.Model.dll",
+        $"{configuration.ProjectSrcFolder}\\Feature\\Automation\\code\\bin\\Sitecore.HabitatHome.Fitness.Foundation.Analytics.dll",
         $"{configuration.XConnectAutomationServiceRoot}"
     );
     DeployFiles(
-        $"{configuration.ProjectSrcFolder}\\Fitness.Collection.Model.Deploy\\automation\\*",
+        $"{configuration.ProjectSrcFolder}\\Foundation\\Analytics\\xconnect\\automation\\*",
         $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore"
     );
     DeployFiles(
-        $"{configuration.ProjectSrcFolder}\\Fitness.Automation\\App_Data\\Config\\Sitecore\\MarketingAutomation\\*.xml",
+        $"{configuration.ProjectSrcFolder}\\Feature\\Automation\\code\\App_Data\\Config\\Sitecore\\MarketingAutomation\\*.xml",
         $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation "
     );
 });
 Task("Modify-Unicorn-Source-Folder").Does(() => {
-    var zzzDevSettingsFile = File($"{configuration.WebsiteRoot}/App_config/Include/Sitecore.HabitatHome.Fitness/z.Sitecore.HabitatHome.Fitness.DevSettings.config");
+    var zzzDevSettingsFile = File($"{configuration.WebsiteRoot}/App_config/Include/Project/Project.Unicorn.DevSettings.config");
 
 	var rootXPath = "configuration/sitecore/sc.variable[@name='{0}']/@value";
     var sourceFolderXPath = string.Format(rootXPath, "fitnessSourceFolder");
@@ -175,9 +176,6 @@ Task("Sync-Unicorn").Does(() => {
 
     string sharedSecret = XmlPeek(authenticationFile, xPath);
 
-
-
-
     StartPowershellFile(unicornSyncScript, new PowershellSettings()
                                                         .SetFormatOutput()
                                                         .SetLogOutput()
@@ -190,10 +188,10 @@ Task("Sync-Unicorn").Does(() => {
 
 Task("Apply-Xml-Transform").Does(() => {
 	// target website transforms
-	Transform($"{configuration.ProjectSrcFolder}\\Fitness.AppItems", configuration.WebsiteRoot);
+	Transform($"{configuration.ProjectSrcFolder}\\Project\\AppItems\\code", configuration.WebsiteRoot);
 
 	// xconnect transforms
-	Transform($"{configuration.ProjectSrcFolder}\\Fitness.Automation\\App_Data\\Config\\sitecore\\MarketingAutomation", $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation");
+	Transform($"{configuration.ProjectSrcFolder}\\Feature\\Automation\\code\\App_Data\\Config\\sitecore\\MarketingAutomation", $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation");
 });
 
 Task("Modify-Kiosk-Variable").Does(() => {

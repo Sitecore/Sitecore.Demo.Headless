@@ -64,7 +64,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="automation\sc.HabitatHome.Fitness.Collection.Model.xml" />
+    <Content Include="automation\sc.HabitatHome.Fitness.Foundation.Analytics.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
