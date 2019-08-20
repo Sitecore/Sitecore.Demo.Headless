@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{EA40
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Foundation.Serialization", "src\Foundation\Serialization\code\Sitecore.HabitatHome.Fitness.Foundation.Serialization.csproj", "{CE150842-25D5-4673-B4F8-F951465EFA28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.HabitatHome.Fitness.Feature.Automation.xConnect", "src\Feature\Automation\xconnect\Sitecore.HabitatHome.Fitness.Feature.Automation.xConnect.csproj", "{6C8C80DA-C41F-4271-A015-E0BEDE5368E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{CE150842-25D5-4673-B4F8-F951465EFA28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE150842-25D5-4673-B4F8-F951465EFA28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE150842-25D5-4673-B4F8-F951465EFA28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8C80DA-C41F-4271-A015-E0BEDE5368E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8C80DA-C41F-4271-A015-E0BEDE5368E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8C80DA-C41F-4271-A015-E0BEDE5368E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8C80DA-C41F-4271-A015-E0BEDE5368E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +108,7 @@ Global
 		{4473BFB3-079C-4C5A-BEA3-16AEFEA09F48} = {793A4AD2-0A79-4A1C-BFBF-E0A3BC7B5E97}
 		{699D6EAB-B71E-4A58-AB09-98C88B7AC0B4} = {793A4AD2-0A79-4A1C-BFBF-E0A3BC7B5E97}
 		{CE150842-25D5-4673-B4F8-F951465EFA28} = {EDE3845D-78A7-421B-97B6-CDCE28311569}
+		{6C8C80DA-C41F-4271-A015-E0BEDE5368E4} = {A9B69A5C-3877-43BC-A434-C67DA86359AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49F9BD31-72EE-4C86-9D4F-A7A7B669E80E}

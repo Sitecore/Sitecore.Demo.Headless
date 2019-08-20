@@ -129,7 +129,7 @@ Task("Publish-XConnect").Does(()=>{
         $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore"
     );
     DeployFiles(
-        $"{configuration.ProjectSrcFolder}\\Feature\\Automation\\code\\App_Data\\Config\\Sitecore\\MarketingAutomation\\*.xml",
+        $"{configuration.ProjectSrcFolder}\\Feature\\Automation\\xconnect\\App_Data\\Config\\Sitecore\\MarketingAutomation\\*.xml",
         $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation "
     );
 });
@@ -189,9 +189,9 @@ Task("Sync-Unicorn").Does(() => {
 Task("Apply-Xml-Transform").Does(() => {
 	// target website transforms
 	Transform($"{configuration.ProjectSrcFolder}\\Project\\AppItems\\code", configuration.WebsiteRoot);
-
+  
 	// xconnect transforms
-	Transform($"{configuration.ProjectSrcFolder}\\Feature\\Automation\\code\\App_Data\\Config\\sitecore\\MarketingAutomation", $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation");
+	Transform($"{configuration.ProjectSrcFolder}\\Feature\\Automation\\xconnect\\App_Data\\Config\\sitecore\\MarketingAutomation", $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation");
 });
 
 Task("Modify-Kiosk-Variable").Does(() => {
