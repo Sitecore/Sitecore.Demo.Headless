@@ -65,13 +65,13 @@ Task("Quick-Deploy")
 ===============================================*/
 
 Task("Copy-Sitecore-Lib")
-	.WithCriteria(()=>(configuration.BuildConfiguration == "Local"))
-		.Does(()=> {
-			var files = GetFiles(
-				$"{configuration.WebsiteRoot}/bin/Sitecore*.dll");
-			var destination = "./sc.lib";
-			EnsureDirectoryExists(destination);
-			CopyFiles(files, destination);
+.WithCriteria(()=>(configuration.BuildConfiguration == "Local"))
+.Does(()=> {
+	var files = GetFiles(
+		$"{configuration.WebsiteRoot}/bin/Sitecore*.dll");
+	var destination = "./sc.lib";
+	EnsureDirectoryExists(destination);
+	CopyFiles(files, destination);
 });
 
 Task("Publish-All-Projects")
@@ -81,9 +81,8 @@ Task("Publish-All-Projects")
 .IsDependentOn("Publish-XConnect")
 .IsDependentOn("Start-XConnect-Service");
 
-
 Task("Build-Solution").Does(() => {
-		MSBuild(configuration.SolutionFile, cfg => InitializeMSBuildSettings(cfg));
+	MSBuild(configuration.SolutionFile, cfg => InitializeMSBuildSettings(cfg));
 });
 
 Task("Publish-Projects").Does(() => {
@@ -94,7 +93,7 @@ Task("Publish-Projects").Does(() => {
 });
 
 Task("Stop-XConnect-Service").Does(()=>{
-		StopService(GetXconnectServiceName());
+	StopService(GetXconnectServiceName());
 });
 
 Task("Start-XConnect-Service").Does(()=>{
@@ -105,7 +104,7 @@ Task("Publish-XConnect").Does(()=>{
 	DeployFiles(
 		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\bin\\Debug\\Sitecore.HabitatHome.Fitness.*.dll",
 		$"{configuration.XConnectRoot}\\bin"
-);
+	);
 	DeployFiles(
 		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\xmodels\\*",
 		$"{configuration.XConnectRoot}\\App_Data\\Models"
@@ -131,6 +130,7 @@ Task("Publish-XConnect").Does(()=>{
 		$"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation "
 	);
 });
+
 Task("Modify-Unicorn-Source-Folder").Does(() => {
 	var zzzDevSettingsFile = File($"{configuration.WebsiteRoot}/App_config/Include/Project/Project.Unicorn.DevSettings.config");
 
@@ -139,9 +139,9 @@ Task("Modify-Unicorn-Source-Folder").Does(() => {
 	var directoryPath = MakeAbsolute(new DirectoryPath(configuration.SourceFolder)).FullPath;
 
 	var xmlSetting = new XmlPokeSettings {
-			Namespaces = new Dictionary<string, string> {
-				{"patch", @"http://www.sitecore.net/xmlconfig/"}
-			}
+		Namespaces = new Dictionary<string, string> {
+			{"patch", @"http://www.sitecore.net/xmlconfig/"}
+		}
 	};
 	XmlPoke(zzzDevSettingsFile, sourceFolderXPath, directoryPath, xmlSetting);
 });
@@ -183,7 +183,6 @@ Task("Sync-Unicorn").Does(() => {
 																					}));
 });
 
-
 Task("Apply-Xml-Transform").Does(() => {
 	// target website transforms
 	Transform($"{configuration.SourceFolder}\\Project\\AppItems\\code", configuration.WebsiteRoot);
@@ -196,14 +195,14 @@ Task("Modify-Kiosk-Variable").Does(() => {
 	var webConfigFile = File($"{configuration.WebsiteRoot}/Web.config");
 	var appSetting = "configuration/appSettings/add[@key='kiosk:define']/@value";
 	var appSettingValue = configuration.KioskAppDeploy ? "On" : "Off";
-		XmlPoke(webConfigFile, appSetting, appSettingValue);
+	XmlPoke(webConfigFile, appSetting, appSettingValue);
 });
 
 Task("Modify-ContentHub-Variable").Does(() => {
 	var webConfigFile = File($"{configuration.WebsiteRoot}/Web.config");
 	var appSetting = "configuration/appSettings/add[@key='contenthub:define']/@value";
 	var appSettingValue = configuration.ContentHub ? "On" : "Off";
-		XmlPoke(webConfigFile, appSetting, appSettingValue);
+	XmlPoke(webConfigFile, appSetting, appSettingValue);
 });
 
 RunTarget(target);
