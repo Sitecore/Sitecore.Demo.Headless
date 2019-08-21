@@ -10,7 +10,7 @@ SharedFields:
   Value: 
 - ID: "ab51c8b2-f0e1-4471-9aae-cc080d774923"
   Hint: Type
-  Value: Sitecore.HabitatHome.Fitness.Segmentation.Predicates.AgeGroupMatches, Sitecore.HabitatHome.Fitness.Segmentation
+  Value: Sitecore.HabitatHome.Fitness.Feature.Segmentation.Predicates.AgeGroupMatches, Sitecore.HabitatHome.Fitness.Feature.Segmentation
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 1000

@@ -11,7 +11,7 @@ SharedFields:
   Value: "{144EEBB0-1CD1-4DEA-95A7-04D24D16FDC0}"
 - ID: "7615a1f6-281d-4f49-8e68-c7f0f4a7ad34"
   Hint: Implementation Type
-  Value: Sitecore.HabitatHome.Fitness.Automation.Activities.SendPushNotification, Sitecore.HabitatHome.Fitness.Automation
+  Value: Sitecore.HabitatHome.Fitness.Feature.Automation.Activities.SendPushNotification, Sitecore.HabitatHome.Fitness.Feature.Automation
 - ID: "b7b5336a-cc53-4b18-80a8-300e2b753b85"
   Hint: Icon
   Value: OfficeWhite/32x32/mobile_phone.png
