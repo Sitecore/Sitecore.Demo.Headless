@@ -10,6 +10,6 @@ packages
 *.user
 *.bak
 *.dll
-
 tools/*
 !tools/packages.config
+*metaproj*
