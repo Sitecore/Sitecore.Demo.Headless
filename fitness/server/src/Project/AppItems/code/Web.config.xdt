@@ -6,6 +6,9 @@
 
     <!-- Enable/Disable Deployment of Habitat Fitness Kiosk App -->
     <add key="contenthub:define" value="Off" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
+
+    <!-- Enable/Disable Sync of Unicorn Items -->
+    <add key="unicorn:define" value="On" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
   </appSettings>
   
   <runtime>
