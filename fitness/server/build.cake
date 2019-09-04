@@ -146,6 +146,18 @@ Task("Modify-Unicorn-Source-Folder").Does(() => {
 	XmlPoke(zzzDevSettingsFile, sourceFolderXPath, directoryPath, xmlSetting);
 });
 
+Task("Turn-On-Unicorn").Does(() => {
+	var webConfigFile = File($"{configuration.WebsiteRoot}/web.config");
+	var xmlSetting = new XmlPokeSettings {
+		Namespaces = new Dictionary<string, string> {
+			{"patch", @"http://www.sitecore.net/xmlconfig/"}
+		}
+	};
+
+	var unicornAppSettingXPath = "configuration/appSettings/add[@key='unicorn:define']/@value";
+	XmlPoke(webConfigFile, unicornAppSettingXPath, "On", xmlSetting);
+});
+
 Task("Modify-PublishSettings").Does(() => {
 	var publishSettingsOriginal = File($"{configuration.ProjectFolder}/publishsettings.targets");
 	var destination = $"{configuration.ProjectFolder}/publishsettings.targets.user";
@@ -165,7 +177,9 @@ Task("Modify-PublishSettings").Does(() => {
 	XmlPoke(destination,publishUrlPath,$"{configuration.InstanceUrl}",xmlSetting);
 });
 
-Task("Sync-Unicorn").Does(() => {
+Task("Sync-Unicorn")
+.IsDependentOn("Turn-On-Unicorn")
+.Does(() => {
 	var unicornUrl = configuration.InstanceUrl + "unicorn.aspx";
 	Information("Sync Unicorn items from url: " + unicornUrl);
 
@@ -175,12 +189,12 @@ Task("Sync-Unicorn").Does(() => {
 	string sharedSecret = XmlPeek(authenticationFile, xPath);
 
 	StartPowershellFile(unicornSyncScript, new PowershellSettings()
-																					.SetFormatOutput()
-																					.SetLogOutput()
-																					.WithArguments(args => {
-																						args.Append("secret", sharedSecret)
-																								.Append("url", unicornUrl);
-																					}));
+		.SetFormatOutput()
+		.SetLogOutput()
+		.WithArguments(args => {
+			args.Append("secret", sharedSecret)
+					.Append("url", unicornUrl);
+		}));
 });
 
 Task("Apply-Xml-Transform").Does(() => {
