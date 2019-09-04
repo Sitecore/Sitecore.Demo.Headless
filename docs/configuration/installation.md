@@ -55,7 +55,7 @@ If you have custom hostnames and/or project or website root paths, open the [`\f
 ### XP-Only - Optional - Configuring Marketing Automation Settings for Push Notifications
 
 1. [Obtain a Firebase server key](firebase.md).
-2. Open the [`\fitness\server\Fitness.Automation\App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.HabitatFitnessServices.xml`](///fitness/server/Fitness.Automation/App_Data/Config/sitecore/MarketingAutomation/sc.MarketingAutomation.HabitatFitnessServices.xml) file.
+2. Open the [`\fitness\server\src\Feature\Automation\xconnect\App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.HabitatFitnessServices.xml`](///fitness/server/src/Feature/Automation/xconnect/App_Data/Config/sitecore/MarketingAutomationsc.MarketingAutomation.HabitatFitnessServices.xml) file.
 3. Make the following changes:
     1. Replace `INSERT-SERVER-API-KEY-HERE` by the Firebase server key:
 
