@@ -1,0 +1,11 @@
+#this networkpolicy prevents all egress for all pods in
+#namespace
+#apiVersion: networking.k8s.io/v1
+#kind: NetworkPolicy
+#metadata:
+#  name: namespace-deny
+#  namespace: {{ .Release.Namespace }}
+#spec:
+#  podSelector: {}
+#  policyTypes:
+#  - Egress

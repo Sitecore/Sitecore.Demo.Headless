@@ -1,4 +1,4 @@
-#addin nuget:?package=Cake.XdtTransform&version=0.16.0
+#addin nuget:?package=Cake.XdtTransform&version=0.18.1
 #addin nuget:?package=Cake.Powershell&version=0.4.8
 #addin nuget:?package=Cake.Http&version=0.7.0
 #addin nuget:?package=Cake.Json&version=4.0.0
@@ -101,33 +101,18 @@ Task("Start-XConnect-Service").Does(()=>{
 });
 
 Task("Publish-XConnect").Does(()=>{
+	// Files required in this area are packaged / moved to the \temp folder in the Project.AppItems Post-Build events
 	DeployFiles(
-		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\bin\\Debug\\Sitecore.HabitatHome.Fitness.*.dll",
-		$"{configuration.XConnectRoot}\\bin"
+		$"{configuration.ProjectFolder}\\temp\\xconnectRoot",
+		$"{configuration.XConnectRoot}"
 	);
 	DeployFiles(
-		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\xmodels\\*",
-		$"{configuration.XConnectRoot}\\App_Data\\Models"
-	);
-	DeployFiles(
-		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\xmodels\\*",
-		$"{configuration.XConnectIndexerRoot}\\App_Data\\Models"
+		$"{configuration.ProjectFolder}\\temp\\xconnectIndexerRoot",
+		$"{configuration.XConnectIndexerRoot}"
 	);
 		DeployFiles(
-		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\automation\\*",
-		$"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore"
-	);
-	DeployFiles(
-		$"{configuration.FeatureSrcFolder}\\Automation\\code\\bin\\Sitecore.HabitatHome.Fitness.Feature.Automation",
+		$"{configuration.ProjectFolder}\\temp\\xConnectAutomationServiceRoot",
 		$"{configuration.XConnectAutomationServiceRoot}"
-	);
-	DeployFiles(
-		$"{configuration.FeatureSrcFolder}\\Automation\\code\\bin\\Sitecore.HabitatHome.Fitness.Foundation.Analytics.dll",
-		$"{configuration.XConnectAutomationServiceRoot}"
-	);
-	DeployFiles(
-		$"{configuration.FeatureSrcFolder}\\Automation\\xconnect\\App_Data\\Config\\Sitecore\\MarketingAutomation\\*.xml",
-		$"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation "
 	);
 });
 

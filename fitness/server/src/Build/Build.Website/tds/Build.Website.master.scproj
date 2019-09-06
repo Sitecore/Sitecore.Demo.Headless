@@ -1,0 +1,219 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>2007111b-c93a-40d1-81f8-9a062ea2d10c</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Build.Website</SingleAssemblyName>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+    <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
+    <LegacyFileReplacement>false</LegacyFileReplacement>
+    <CompactSitecoreItemsInProjectFile>True</CompactSitecoreItemsInProjectFile>
+    <AssemblyName>Build.Website</AssemblyName>
+    <Name>Build.Website.Master</Name>
+    <RootNamespace>Build.Website</RootNamespace>
+    <ManageRoles>False</ManageRoles>
+    <SitecoreDatabase>master</SitecoreDatabase>
+    <AssemblyStatus>Include</AssemblyStatus>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <PackageName>Build.Website.master</PackageName>
+    <PackageAuthor />
+    <PackagePublisher />
+    <PackageVersion />
+    <PackageReadme />
+    <SitecoreAssemblyPath />
+    <GeneratePackage>False</GeneratePackage>
+    <SeperateFilesAndItems>True</SeperateFilesAndItems>
+    <PackageExcludeCode>False</PackageExcludeCode>
+    <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package-CM' ">
+    <DebugSymbols>false</DebugSymbols>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <OutputPath>.\bin\Package-CM\</OutputPath>
+    <InstallSitecoreConnector>False</InstallSitecoreConnector>
+    <DisableFileDeployment>False</DisableFileDeployment>
+    <LightningDeployMode>False</LightningDeployMode>
+    <ConnectorTimeoutSeconds>120</ConnectorTimeoutSeconds>
+    <PackageName>HabitatHome.Omni.CM</PackageName>
+    <PackageAuthor>Sitecore Demo Team</PackageAuthor>
+    <PackagePublisher />
+    <PackageVersion />
+    <PackageReadme />
+    <SitecoreAssemblyPath />
+    <GeneratePackage>True</GeneratePackage>
+    <SeperateFilesAndItems>False</SeperateFilesAndItems>
+    <PackageExcludeCode>False</PackageExcludeCode>
+    <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
+    <BuildWebDeploy>True</BuildWebDeploy>
+    <WebDeployPackageCodeAndItemOptions>CodeAndItems</WebDeployPackageCodeAndItemOptions>
+    <WebDeployPackageName>HabitatHome.Omni.CM</WebDeployPackageName>
+    <WebDeployAppendDateAndTimeToPackageName>False</WebDeployAppendDateAndTimeToPackageName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package-CD' ">
+    <DebugSymbols>false</DebugSymbols>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <InstallSitecoreConnector>False</InstallSitecoreConnector>
+    <DisableFileDeployment>False</DisableFileDeployment>
+    <LightningDeployMode>False</LightningDeployMode>
+    <ConnectorTimeoutSeconds>120</ConnectorTimeoutSeconds>
+    <PackageName>HabitatHome.Omni.CD</PackageName>
+    <PackageAuthor>Sitecore Demo Team</PackageAuthor>
+    <PackagePublisher />
+    <PackageVersion />
+    <PackageReadme />
+    <SitecoreAssemblyPath />
+    <GeneratePackage>True</GeneratePackage>
+    <SeperateFilesAndItems>True</SeperateFilesAndItems>
+    <PackageExcludeCode>False</PackageExcludeCode>
+    <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
+    <OutputPath>.\bin\Package-CD\</OutputPath>
+    <BuildWebDeploy>True</BuildWebDeploy>
+    <WebDeployPackageCodeAndItemOptions>CodeAndItems</WebDeployPackageCodeAndItemOptions>
+    <WebDeployPackageName>HabitatHome.Omni.CD</WebDeployPackageName>
+    <WebDeployAppendDateAndTimeToPackageName>False</WebDeployAppendDateAndTimeToPackageName>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <BundledProject Include="..\..\..\Feature\Automation\tds\master\Sitecore.HabitatHome.Fitness.Feature.Automation.master.scproj">
+      <ProjectId>{0e789f0c-5a23-4bc4-8c17-dbb621ca9bcd}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\..\Feature\Collection\tds\master\Sitecore.HabitatHome.Fitness.Feature.Collection.master.scproj">
+      <ProjectId>{58b906c8-5287-4b87-ad40-f8d564a860da}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\..\Feature\Personalization\tds\master\Sitecore.HabitatHome.Fitness.Feature.Personalization.master.scproj">
+      <ProjectId>{9e3b44df-9e68-4d03-9227-28a1be4b0db1}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\..\Feature\Segmentation\tds\master\Sitecore.HabitatHome.Fitness.Feature.Segmentation.master.scproj">
+      <ProjectId>{c36e32a3-2267-4641-9c2d-50bc439cce89}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\..\Foundation\Serialization\tds\master\Sitecore.HabitatHome.Fitness.Foundation.Serialization.master.scproj">
+      <ProjectId>{563d307d-192b-4240-9641-1a5983419084}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\..\Project\AppItems\tds\master\Sitecore.HabitatHome.Fitness.Project.AppItems.master.scproj">
+      <ProjectId>{4d3ac28a-6b7b-4fd7-9ed8-c6708de978c7}</ProjectId>
+    </BundledProject>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Feature\Automation\code\Sitecore.HabitatHome.Fitness.Feature.Automation.csproj">
+      <Project>{9a3f5fef-b381-47bd-92e9-d64d52126bcf}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.Feature.Automation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\Automation\tds\master\Sitecore.HabitatHome.Fitness.Feature.Automation.master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\Collection\code\Sitecore.HabitatHome.Fitness.Feature.Collection.csproj">
+      <Project>{6ed673bf-33f1-430e-b8d8-b66b8aeb0e85}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.Feature.Collection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\Collection\tds\master\Sitecore.HabitatHome.Fitness.Feature.Collection.master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\Personalization\code\Sitecore.HabitatHome.Fitness.Feature.Personalization.csproj">
+      <Project>{4473bfb3-079c-4c5a-bea3-16aefea09f48}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.Feature.Personalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\Personalization\tds\master\Sitecore.HabitatHome.Fitness.Feature.Personalization.master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\Segmentation\code\Sitecore.HabitatHome.Fitness.Feature.Segmentation.csproj">
+      <Project>{699d6eab-b71e-4a58-ab09-98c88b7ac0b4}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.Feature.Segmentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Feature\Segmentation\tds\master\Sitecore.HabitatHome.Fitness.Feature.Segmentation.master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Serialization\code\Sitecore.HabitatHome.Fitness.Foundation.Serialization.csproj">
+      <Project>{ce150842-25d5-4673-b4f8-f951465efa28}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.Foundation.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Serialization\tds\master\Sitecore.HabitatHome.Fitness.Foundation.Serialization.master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Project\AppItems\code\Sitecore.HabitatHome.Fitness.Project.AppItems.csproj">
+      <Project>{e5b68690-9a50-49d8-9b1a-e8c5da181adc}</Project>
+      <Name>Sitecore.HabitatHome.Fitness.Project.AppItems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Project\AppItems\tds\master\Sitecore.HabitatHome.Fitness.Project.AppItems.master.scproj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <SourceWebProjects Include="{4473bfb3-079c-4c5a-bea3-16aefea09f48}|src\Feature\Personalization\code\Sitecore.HabitatHome.Fitness.Feature.Personalization.csproj">
+      <SourceWebPhysicalPath>..\..\..\Feature\Personalization\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Sitecore.HabitatHome.Fitness.Feature.Personalization.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>4473bfb3-079c-4c5a-bea3-16aefea09f48</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{699d6eab-b71e-4a58-ab09-98c88b7ac0b4}|src\Feature\Segmentation\code\Sitecore.HabitatHome.Fitness.Feature.Segmentation.csproj">
+      <SourceWebPhysicalPath>..\..\..\Feature\Segmentation\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Sitecore.HabitatHome.Fitness.Feature.Segmentation.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>699d6eab-b71e-4a58-ab09-98c88b7ac0b4</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{6ed673bf-33f1-430e-b8d8-b66b8aeb0e85}|src\Feature\Collection\code\Sitecore.HabitatHome.Fitness.Feature.Collection.csproj">
+      <SourceWebPhysicalPath>..\..\..\Feature\Collection\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Sitecore.HabitatHome.Fitness.Feature.Collection.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>6ed673bf-33f1-430e-b8d8-b66b8aeb0e85</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{9a3f5fef-b381-47bd-92e9-d64d52126bcf}|src\Feature\Automation\code\Sitecore.HabitatHome.Fitness.Feature.Automation.csproj">
+      <SourceWebPhysicalPath>..\..\..\Feature\Automation\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Sitecore.HabitatHome.Fitness.Feature.Automation.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>9a3f5fef-b381-47bd-92e9-d64d52126bcf</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{ce150842-25d5-4673-b4f8-f951465efa28}|src\Foundation\Serialization\code\Sitecore.HabitatHome.Fitness.Foundation.Serialization.csproj">
+      <SourceWebPhysicalPath>..\..\..\Foundation\Serialization\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Sitecore.HabitatHome.Fitness.Foundation.Serialization.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>ce150842-25d5-4673-b4f8-f951465efa28</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{e5b68690-9a50-49d8-9b1a-e8c5da181adc}|src\Project\AppItems\code\Sitecore.HabitatHome.Fitness.Project.AppItems.csproj">
+      <SourceWebPhysicalPath>..\..\..\Project\AppItems\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/Sitecore.HabitatHome.Fitness.Project.AppItems.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>e5b68690-9a50-49d8-9b1a-e8c5da181adc</SourceWebProjectId>
+    </SourceWebProjects>
+  </ItemGroup>
+  <ItemGroup>
+    <ExcludedAssemblies Include="Configy.%2a" />
+    <ExcludedAssemblies Include="Kamsar.%2a" />
+    <ExcludedAssemblies Include="MicroCHAP.dll" />
+    <ExcludedAssemblies Include="Microsoft.Owin.Security.Facebook.dll" />
+    <ExcludedAssemblies Include="Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <ExcludedAssemblies Include="Rainbow.%2a" />
+    <ExcludedAssemblies Include="Sitecore.Demo.%2a" />
+    <ExcludedAssemblies Include="Sitecore.HabitatHome.%2a" />
+    <ExcludedAssemblies Include="Unicorn.%2a" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
+  <Import Project="..\..\..\..\packages\HedgehogDevelopment.TDS.5.8.0.15\build\HedgehogDevelopment.TDS.targets" Condition="Exists('..\..\..\..\packages\HedgehogDevelopment.TDS.5.8.0.15\build\HedgehogDevelopment.TDS.targets')" />
+  <Import Project="..\..\..\..\packages\Sitecore.Demo.BuildTools.Packaging.9.2.0.51\build\Sitecore.Demo.BuildTools.Packaging.targets" Condition="Exists('..\..\..\..\packages\Sitecore.Demo.BuildTools.Packaging.9.2.0.51\build\Sitecore.Demo.BuildTools.Packaging.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\packages\Sitecore.Demo.BuildTools.Packaging.9.2.0.51\build\Sitecore.Demo.BuildTools.Packaging.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Sitecore.Demo.BuildTools.Packaging.9.2.0.51\build\Sitecore.Demo.BuildTools.Packaging.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\packages\HedgehogDevelopment.TDS.5.8.0.15\build\HedgehogDevelopment.TDS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\HedgehogDevelopment.TDS.5.8.0.15\build\HedgehogDevelopment.TDS.targets'))" />
+  </Target>
+</Project>

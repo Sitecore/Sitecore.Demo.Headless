@@ -1,0 +1,59 @@
+# Available parameters and their default values for the nginx ingress controller for the Sitecore Fitness application.
+
+#
+# tls ingress certificate configuration
+#
+tls:
+  certificate: ""
+  key: ""
+
+#
+# nginx ingress nested chart configuration
+#
+nginxingress:
+
+  controller:
+
+    # Name of the ingress class to route through this controller
+    ingressClass: sitecore-ingress
+
+    # Additional command line arguments to pass to nginx-ingress-controller
+    # E.g. to specify the default SSL certificate you can use
+    # extraArgs:
+    #   default-ssl-certificate: "<namespace>/<secret_name>"
+    #
+    # To specify the sitecore ingress tls cert secret use the following:
+    # extraArgs:
+    #   default-ssl-certificate: "sitecore/ingress-tls-cert"
+    extraArgs: {}
+
+    service:
+      annotations:
+        # When using a public IP provisioned in a resource group other than the node
+        # resource group, this annotation is needed to specify the resource group name
+        # See https://docs.microsoft.com/en-us/azure/aks/static-ip#use-a-static-ip-address-outside-of-the-node-resource-group
+        service.beta.kubernetes.io/azure-load-balancer-resource-group: ""
+
+      # LoadBalancer for ingress will get created with the static public IP specified
+      type: LoadBalancer
+      loadBalancerIP: ""
+
+      # Determines what type of inbound traffic is allowed by the ingress
+      enableHttp: false
+      enableHttps: true
+
+    # Export Prometheus metrics
+    metrics:
+      enabled: true
+
+    # Ensure that nginx is only provisioned on linux nodes
+    nodeSelector:
+      kubernetes.io/os: linux
+
+  defaultBackend:
+
+    # Ensure that nginx is only provisioned on linux nodes
+    nodeSelector:
+      kubernetes.io/os: linux
+
+

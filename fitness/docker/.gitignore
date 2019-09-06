@@ -1,0 +1,4 @@
+*.zip
+images/tests/data/**/*
+!images/tests/data/*/
+!images/tests/data/*/.gitkeep

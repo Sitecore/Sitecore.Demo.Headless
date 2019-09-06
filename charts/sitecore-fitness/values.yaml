@@ -1,0 +1,226 @@
+# Available parameters and their default values for the Sitecore Fitness chart.
+
+global:
+
+  ingress:
+    class: sitecore-ingress
+    host: 
+      cd: "h3emy4dylr.sitecore.com"
+      cm: "h3emy4dylr-cm.sitecore.com"
+      app: "h3emy4dylr-app.sitecore.com"
+
+  secrets:
+    SqlServerSaPassword: "superSecurep@ssword3!!"
+    SitecoreSqlUsername: "asdasdasd"
+    SitecoreSqlPassword: "Adasdads0123123!"
+    SitecoreAdminUsername: "asdasdas"
+    SitecoreAdminPassword: "Asdasdas123123!"
+    ApplicationInsightsKey: "asdasdasdasd"
+   
+#
+# Configuration for the SQL Server database.
+#
+sql:
+  
+  sqlServer:
+    edition: Express
+
+  image: sitecoredemocontainers.azurecr.io/habitatfitness-xp-sql:9.2.0-linux
+  imagePullPolicy: Always
+  
+  resources:
+    limits:
+      cpu: 2
+      memory: 4Gi
+    requests:
+      cpu: 2
+      memory: 2Gi
+  
+  probes:
+    liveness:
+      initialDelaySeconds: 15
+      periodSeconds: 20
+    readiness:
+      initialDelaySeconds: 5
+      periodSeconds: 10
+
+  storage:
+    disk:
+      name: h3emy4dylr-sqldata
+      uri: /subscriptions/.../providers/Microsoft.Compute/disks/h3emy4dylr-sqldata
+
+  # You can add one or more labels here for node selection.
+  nodeSelector:
+    kubernetes.io/os: linux
+
+#
+# Configuration for the Solr search component.
+#
+solr:
+
+  image: sitecoredemocontainers.azurecr.io/sitecore-xp-solr:9.2.0-linux
+  imagePullPolicy: Always
+
+  resources:
+    limits:
+      cpu: 2
+      memory: 1Gi
+    requests:
+      cpu: 1
+      memory: 500Mi
+
+  probes:
+    liveness:
+      initialDelaySeconds: 20
+      periodSeconds: 10
+    readiness:
+      initialDelaySeconds: 15
+      periodSeconds: 5
+  
+  storage:
+    className: managed-premium
+    size: 2Gi
+  
+  # You can add one or more labels here for node selection.
+  nodeSelector:
+    kubernetes.io/os: linux
+
+#
+# Configuration for the App component.
+#
+app:
+
+  image: sitecoredemocontainers.azurecr.io/habitatfitness-ssr-jss-app:9.2.0-linux
+  imagePullPolicy: Always
+
+  resources:
+    limits:
+      cpu: 500m
+      memory: 500Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
+
+  # You can add one or more labels here for node selection.
+  nodeSelector:
+    kubernetes.io/os: linux
+
+#
+# Configuration for the Content Manager (CM) server component.
+#
+cm:
+
+  image: sitecoredemocontainers.azurecr.io/habitatfitness-xp-jss-standalone:9.2.0-windowsservercore-ltsc2019
+  imagePullPolicy: Always
+
+  resources:
+    limits:
+      cpu: 2
+      memory: 4Gi
+    requests:
+      cpu: 1
+      memory: 2Gi
+
+  probes:
+    liveness:
+      initialDelaySeconds: 20
+      periodSeconds: 10
+      timeoutSeconds: 30
+    readiness:
+      initialDelaySeconds: 40
+      periodSeconds: 10
+      timeoutSeconds: 10
+
+  # You can add one or more labels here for node selection.
+  nodeSelector:
+    kubernetes.io/os: windows
+
+#
+# Configuration for the Content Delivery (CD) server component.
+#
+cd:
+
+  image: sitecoredemocontainers.azurecr.io/habitatfitness-xp-jss-cd:9.2.0-windowsservercore-ltsc2019
+  imagePullPolicy: Always
+
+  resources:
+    limits:
+      cpu: 2
+      memory: 2Gi
+    requests:
+      cpu: 1
+      memory: 1Gi
+
+  probes:
+    liveness:
+      initialDelaySeconds: 20
+      periodSeconds: 10
+      timeoutSeconds: 30
+    readiness:
+      initialDelaySeconds: 40
+      periodSeconds: 10
+      timeoutSeconds: 10
+
+  # You can add one or more labels here for node selection.
+  nodeSelector:
+    kubernetes.io/os: windows
+
+#
+# Configuration for the xConnect Server (xconnect) server component.
+#
+xconnect:
+
+  image: sitecoredemocontainers.azurecr.io/habitatfitness-xp-xconnect:9.2.0-windowsservercore-ltsc2019
+  imagePullPolicy: Always
+
+  resources:
+    limits:
+      cpu: 2
+      memory: 1500Mi
+    requests:
+      cpu: 1
+      memory: 500Mi
+
+  # You can add one or more labels here for node selection.
+  nodeSelector:
+    kubernetes.io/os: windows
+
+#
+# Configuration for the xConnect Processing (xconnect-automationengine) server component.
+#
+xconnectAutomationEngine:
+
+  image: sitecoredemocontainers.azurecr.io/habitatfitness-xp-xconnect-automationengine:9.2.0-windowsservercore-ltsc2019
+  imagePullPolicy: Always
+
+  resources:
+    limits:
+      cpu: 2
+      memory: 1500Mi
+    requests:
+      cpu: 1
+      memory: 500Mi
+
+  # You can add one or more labels here for node selection.
+  nodeSelector:
+    kubernetes.io/os: windows
+
+#
+# Configuration for the xConnect Indexer (xconnect-indexworker) server component.
+#
+xconnectIndexWorker:
+
+  image: sitecoredemocontainers.azurecr.io/habitatfitness-xp-xconnect-indexworker:9.2.0-windowsservercore-ltsc2019
+  imagePullPolicy: Always
+
+  resources:
+    limits:
+      cpu: 2
+      memory: 1500Mi
+    requests:
+      cpu: 1
+      memory: 500Mi
+
+  # You can add one or more labels here for node selection.
+  nodeSelector:
+    kubernetes.io/os: windows

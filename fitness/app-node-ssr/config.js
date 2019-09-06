@@ -7,7 +7,7 @@ const config = {
    * Should be https for production. Must be https to use SSC auth service,
    * if supporting Sitecore authentication.
    */
-  apiHost: "apiHost",
+  apiHost: process.env.JSS_APIHOST_URL,
   /**
    * layoutServiceRoot: The path to layout service for the JSS application.
    * Some apps, like advanced samples, use a custom LS configuration,
@@ -18,7 +18,7 @@ const config = {
    * apiKey: The Sitecore SSC API key your app uses.
    * Required.
    */
-  apiKey: "apiKey",
+  apiKey: "{EBF6D5C1-EB80-4B15-91AB-DD3845797774}",
   /**
    * pathRewriteExcludeRoutes: A list of absolute paths
    * that are NOT app routes and should not attempt to render a route

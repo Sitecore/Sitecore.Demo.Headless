@@ -4,3 +4,7 @@ scjssconfig.json
 /fitness/*/sitecore/package
 /fitness/*/sitecore/manifest
 /fitness/*/src/temp
+/fitness/*/src/deploy
+*.zip
+launch.json
+.vs/*
