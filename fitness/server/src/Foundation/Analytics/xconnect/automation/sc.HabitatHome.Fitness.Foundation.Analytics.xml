@@ -7,7 +7,7 @@
             <Models>
               <HabitatFitnessModel>
                 <TypeName>Sitecore.HabitatHome.Fitness.Foundation.Analytics.ModelFactory, Sitecore.HabitatHome.Fitness.Foundation.Analytics</TypeName>
-                <PropertyName>Instance</PropertyName>
+                <PropertyName>Model</PropertyName>
               </HabitatFitnessModel>
             </Models>
           </Options>
