@@ -5,6 +5,10 @@ scjssconfig.json
 /fitness/*/sitecore/manifest
 /fitness/*/src/temp
 /fitness/*/src/deploy
+/fitness/app/.env
+/fitness/kiosk/.env
+**/*.deploysecret.config
 *.zip
 launch.json
+**/.vscode
 .vs/*

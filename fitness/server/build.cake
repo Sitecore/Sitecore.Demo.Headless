@@ -1,4 +1,4 @@
-#addin nuget:?package=Cake.XdtTransform&version=0.18.1
+#addin nuget:?package=Cake.XdtTransform&version=0.18.1&loaddependencies=true
 #addin nuget:?package=Cake.Powershell&version=0.4.8
 #addin nuget:?package=Cake.Http&version=0.7.0
 #addin nuget:?package=Cake.Json&version=4.0.0
@@ -102,15 +102,15 @@ Task("Start-XConnect-Service").Does(()=>{
 
 Task("Publish-XConnect").Does(()=>{
 	// Files required in this area are packaged / moved to the \temp folder in the Project.AppItems Post-Build events
-	DeployFiles(
-		$"{configuration.ProjectFolder}\\temp\\xconnectRoot",
+	CopyDirectory(
+		$"{configuration.ProjectFolder}\\temp\\xConnectRoot",
 		$"{configuration.XConnectRoot}"
 	);
-	DeployFiles(
-		$"{configuration.ProjectFolder}\\temp\\xconnectIndexerRoot",
+	CopyDirectory(
+		$"{configuration.ProjectFolder}\\temp\\xConnectIndexerRoot",
 		$"{configuration.XConnectIndexerRoot}"
 	);
-		DeployFiles(
+	CopyDirectory(
 		$"{configuration.ProjectFolder}\\temp\\xConnectAutomationServiceRoot",
 		$"{configuration.XConnectAutomationServiceRoot}"
 	);
