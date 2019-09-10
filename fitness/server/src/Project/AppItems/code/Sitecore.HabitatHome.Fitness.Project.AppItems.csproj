@@ -164,13 +164,13 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y /i "$(SolutionDir)src\Foundation\Analytics\xconnect\bin\$(ConfigurationName)\Sitecore.HabitatHome.Fitness.*.dll" "$(SolutionDir)temp\xConnectRoot\bin"
-xcopy /y /i "$(SolutionDir)src\Foundation\Analytics\xconnect\xmodels\*" "$(SolutionDir)temp\xConnectRoot\App_Data\Models"
-xcopy /y /i "$(SolutionDir)src\Foundation\Analytics\xconnect\xmodels\*" "$(SolutionDir)temp\xConnectIndexerRoot\App_Data\Models"
-xcopy /y /i "$(SolutionDir)src\Foundation\Analytics\xconnect\automation\*" "$(SolutionDir)temp\xConnectAutomationServiceRoot\App_Data\Config\Sitecore"
-xcopy /y /i "$(SolutionDir)src\Feature\Automation\code\bin\Sitecore.HabitatHome.Fitness.Feature.Automation.dll" "$(SolutionDir)temp\xConnectAutomationServiceRoot"
-xcopy /y /i "$(SolutionDir)src\Feature\Automation\code\bin\Sitecore.HabitatHome.Fitness.Foundation.Analytics.dll" "$(SolutionDir)temp\xConnectAutomationServiceRoot"
-xcopy /y /i "$(SolutionDir)src\Feature\Automation\xconnect\App_Data\Config\Sitecore\MarketingAutomation\*.xml" "$(SolutionDir)temp\xConnectAutomationServiceRoot"
+    <PostBuildEvent>xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\bin\$(ConfigurationName)\Sitecore.HabitatHome.Fitness.*.dll" "$(ProjectDir)..\..\..\..\temp\xConnectRoot\bin"
+xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\xmodels\*" "$(ProjectDir)..\..\..\..\temp\xConnectRoot\App_Data\Models"
+xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\xmodels\*" "$(ProjectDir)..\..\..\..\temp\xConnectIndexerRoot\App_Data\Models"
+xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\automation\*" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot\App_Data\Config\Sitecore"
+xcopy /y /i "$(ProjectDir)..\..\..\Feature\Automation\code\bin\Sitecore.HabitatHome.Fitness.Feature.Automation.dll" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot"
+xcopy /y /i "$(ProjectDir)..\..\..\Feature\Automation\code\bin\Sitecore.HabitatHome.Fitness.Foundation.Analytics.dll" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot"
+xcopy /y /i "$(ProjectDir)..\..\..\Feature\Automation\xconnect\App_Data\Config\Sitecore\MarketingAutomation\*.xml" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot\App_Data\Config\Sitecore\MarketingAutomation"
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
