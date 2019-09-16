@@ -1,4 +1,4 @@
-﻿<configuration  xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+﻿<configuration  xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1">
 
   <!-- Environment variable support -->
   <configSections>
@@ -56,17 +56,31 @@
       </dependentAssembly>
 
       <!-- Application Insights -->
-      <dependentAssembly xdt:Transform="InsertIfMissing">
-        <assemblyIdentity name="Microsoft.AI.Agent.Intercept" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-2.4.0.0" newVersion="2.4.0.0" />
+      <dependentAssembly xdt:Transform="InsertIfMissing" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='Microsoft.AI.Agent.Intercept')">
+        <assemblyIdentity name="Microsoft.AI.Agent.Intercept" publicKeyToken="31bf3856ad364e35" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
+        <bindingRedirect oldVersion="0.0.0.0-2.4.0.0" newVersion="2.4.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />
       </dependentAssembly>
-      <dependentAssembly xdt:Transform="InsertIfMissing">
-        <assemblyIdentity name="Microsoft.ApplicationInsights" publicKeyToken="31bf3856ad364e35" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-2.5.1.0" newVersion="2.5.1.0" />
+      <dependentAssembly xdt:Transform="Replace" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='Microsoft.AI.Agent.Intercept')">
+        <assemblyIdentity name="Microsoft.AI.Agent.Intercept" publicKeyToken="31bf3856ad364e35" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
+        <bindingRedirect oldVersion="0.0.0.0-2.4.0.0" newVersion="2.4.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />
       </dependentAssembly>
-      <dependentAssembly xdt:Transform="InsertIfMissing">
-        <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" />
-        <bindingRedirect oldVersion="0.0.0.0-4.0.2.1" newVersion="4.0.2.1" />
+
+      <dependentAssembly xdt:Transform="InsertIfMissing" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='Microsoft.ApplicationInsights')">
+        <assemblyIdentity name="Microsoft.ApplicationInsights" publicKeyToken="31bf3856ad364e35" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
+        <bindingRedirect oldVersion="0.0.0.0-2.5.1.0" newVersion="2.5.1.0" xmlns="urn:schemas-microsoft-com:asm.v1" />
+      </dependentAssembly>
+      <dependentAssembly xdt:Transform="Replace" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='Microsoft.ApplicationInsights')">
+        <assemblyIdentity name="Microsoft.ApplicationInsights" publicKeyToken="31bf3856ad364e35" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
+        <bindingRedirect oldVersion="0.0.0.0-2.5.1.0" newVersion="2.5.1.0" xmlns="urn:schemas-microsoft-com:asm.v1" />
+      </dependentAssembly>
+
+      <dependentAssembly xdt:Transform="InsertIfMissing" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='System.Diagnostics.DiagnosticSource')">
+        <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.2.1" newVersion="4.0.2.1" xmlns="urn:schemas-microsoft-com:asm.v1" />
+      </dependentAssembly>
+      <dependentAssembly xdt:Transform="Replace" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='System.Diagnostics.DiagnosticSource')">
+        <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.2.1" newVersion="4.0.2.1" xmlns="urn:schemas-microsoft-com:asm.v1" />
       </dependentAssembly>
       <!-- /Application Insights -->
     </assemblyBinding>
