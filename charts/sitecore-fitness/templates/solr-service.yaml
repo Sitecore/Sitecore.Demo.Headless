@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: solr
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ template "fitness.name" . }}
+    chart: {{ template "fitness.chart" . }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ template "fitness.name" . }}-solr
+    release: {{ quote .Release.Name }}
+    component: search  
+  ports:
+    - name: solr
+      port: 8983
+      targetPort: 8983
+      protocol: TCP

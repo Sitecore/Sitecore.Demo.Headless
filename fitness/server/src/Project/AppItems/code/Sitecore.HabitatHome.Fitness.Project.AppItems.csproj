@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.Cloud.ApplicationInsights">
+      <HintPath>..\..\..\..\lib\Sitecore.Cloud.ApplicationInsights.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,6 +71,10 @@
     <Content Include="App_Config\Include\Project\Project.MarketingDefinitions.Serialization.config" />
     <Content Include="App_Config\Include\Project\Project.GraphQL.config.disabled" />
     <Content Include="App_Config\Include\Project\Project.ContentHub.Serialization.config" />
+    <Content Include="App_Config\Include\Project\Project.SitecoreHealthExtensions.config" />
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.config" />
+    <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.Counters.config" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
@@ -85,9 +92,55 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.TraceListener">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.Web">
+      <Version>2.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel">
+      <Version>2.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Configuration.ConfigurationBuilders.Base">
+      <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Configuration.ConfigurationBuilders.Environment">
+      <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Update">
+      <Version>9.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="SitecoreHealthExtensions">
+      <Version>1.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Diagnostics.DiagnosticSource">
+      <Version>4.4.1</Version>
+    </PackageReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Package-CM|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Package-CD|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -110,6 +163,16 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\bin\$(ConfigurationName)\Sitecore.HabitatHome.Fitness.*.dll" "$(ProjectDir)..\..\..\..\temp\xConnectRoot\bin"
+xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\xmodels\*" "$(ProjectDir)..\..\..\..\temp\xConnectRoot\App_Data\Models"
+xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\xmodels\*" "$(ProjectDir)..\..\..\..\temp\xConnectIndexerRoot\App_Data\Models"
+xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\automation\*" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot\App_Data\Config\Sitecore"
+xcopy /y /i "$(ProjectDir)..\..\..\Feature\Automation\code\bin\Sitecore.HabitatHome.Fitness.Feature.Automation.dll" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot"
+xcopy /y /i "$(ProjectDir)..\..\..\Feature\Automation\code\bin\Sitecore.HabitatHome.Fitness.Foundation.Analytics.dll" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot"
+xcopy /y /i "$(ProjectDir)..\..\..\Feature\Automation\xconnect\App_Data\Config\Sitecore\MarketingAutomation\*.xml" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot\App_Data\Config\Sitecore\MarketingAutomation"
+</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

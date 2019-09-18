@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cm
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ template "fitness.name" . }}
+    chart: {{ template "fitness.chart" . }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ template "fitness.name" . }}-cm
+    release: {{ quote .Release.Name }}
+    component: server  
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+      protocol: TCP

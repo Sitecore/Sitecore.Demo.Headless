@@ -1,0 +1,38 @@
+---
+ID: "b9bdbcc2-2623-5b0b-b203-2ccf17f0d879"
+Parent: "5799d2ac-8ddf-5d9e-a718-457f2f5ca5be"
+Template: "4146fd78-98b9-55e7-b64a-511dd2d156bb"
+Path: "/sitecore/content/habitatfitness/Components/event-detail/event-detail-registered"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Event Detail (Registered)
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234952Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "69679ade-cb7a-5542-9f7f-6d12fba7b7d5"
+      Hint: ctaText
+      Value: Directions
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "fde5e0bc-b2d4-429c-9fad-652acaaeeaec"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161654Z

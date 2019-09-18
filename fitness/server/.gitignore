@@ -13,3 +13,5 @@ packages
 tools/*
 !tools/packages.config
 *metaproj*
+temp/
+!lib/*

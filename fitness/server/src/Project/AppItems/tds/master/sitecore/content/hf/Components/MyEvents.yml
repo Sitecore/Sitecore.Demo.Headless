@@ -1,0 +1,24 @@
+---
+ID: "d0b6a8ea-d6e6-5e33-bcae-395bb297dfbe"
+Parent: "0cbd6a9f-4e26-546b-8891-14156c1cfdc5"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/habitatfitness/Components/MyEvents
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20181231T035508:636818253081967423Z"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f0985ab2-c994-42e7-b6b8-a0b08d5ab459"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161652Z

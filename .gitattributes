@@ -1,5 +1,6 @@
 
-
+# Ensure shell scripts is always LF
+*.sh text eol=lf
 
 # Do not adjust line endings on Sitecore .item files
 *.item -text

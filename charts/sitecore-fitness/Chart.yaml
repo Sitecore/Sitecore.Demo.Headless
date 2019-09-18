@@ -1,0 +1,12 @@
+apiVersion: v1
+name: sitecore-fitness
+version: 1.0.0
+appVersion: 9.2.0
+kubeVersion: ">=1.14.0"
+description: Sitecore JavaScript Services (JSS) is a complete SDK for JavaScript developers that enables you to build full-fledged solutions using Sitecore and modern JavaScript UI libraries and frameworks.
+home: https://jss.sitecore.com/
+icon: https://jss.sitecore.com/assets/img/sitecore-logo.svg
+sources:
+  - https://github.com/Sitecore/Sitecore.HabitatHome.Omni
+
+

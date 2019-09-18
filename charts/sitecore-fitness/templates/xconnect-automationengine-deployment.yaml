@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fitness.fullname" . }}-xconnect-automationengine
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ template "fitness.name" . }}
+    chart: {{ template "fitness.chart" . }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "fitness.name" . }}-xconnect-automationengine
+      release: {{ quote .Release.Name }}
+      component: server
+  template:
+    metadata:
+      labels:
+        app: {{ template "fitness.name" . }}-xconnect-automationengine
+        release: {{ .Release.Name }}
+        component: server  
+    spec:
+      serviceAccountName: {{ template "fitness.fullname" . }}-xconnect-automationengine
+      nodeSelector:
+{{ toYaml .Values.xconnectAutomationEngine.nodeSelector | trim | indent 8 }}
+      containers:
+      - name: xconnect-automationengine
+        image: {{ .Values.xconnectAutomationEngine.image }}
+        imagePullPolicy: {{ .Values.xconnectAutomationEngine.imagePullPolicy }}
+        resources:
+          limits:
+            cpu: {{ .Values.xconnectAutomationEngine.resources.limits.cpu }}
+            memory: {{ .Values.xconnectAutomationEngine.resources.limits.memory }}
+          requests:
+            cpu: {{ .Values.xconnectAutomationEngine.resources.requests.cpu }}
+            memory: {{ .Values.xconnectAutomationEngine.resources.requests.memory }}
+        env:
+          - name: APPLICATION_INSIGHTS_KEY  
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: ApplicationInsightsKey
+          - name: SITECORE_SQL_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: SitecoreSqlUsername
+          - name: SITECORE_SQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: SitecoreSqlPassword
+

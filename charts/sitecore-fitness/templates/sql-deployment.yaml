@@ -1,0 +1,105 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fitness.fullname" . }}-sql
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ template "fitness.name" . }}
+    chart: {{ template "fitness.chart" . }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: {{ template "fitness.name" . }}-sql
+      release: {{ quote .Release.Name }}
+      component: database  
+  template:
+    metadata:
+      labels:
+        app: {{ template "fitness.name" . }}-sql
+        release: {{ .Release.Name }}
+        component: database  
+    spec:
+      serviceAccountName: {{ template "fitness.fullname" . }}-sql
+      nodeSelector:
+{{ toYaml .Values.sql.nodeSelector | trim | indent 8 }}
+      initContainers:
+      - name: fix-the-volume-permission
+        image: busybox
+        command:
+        - sh
+        - -c
+        - chmod -R 777 /var/opt/mssql/data
+        - rm -d -f /var/opt/mssql/data/lost+found/
+        securityContext:
+          privileged: true
+        volumeMounts:
+          - mountPath: "/var/opt/mssql/data"
+            name: data
+      containers:
+      - name: sql
+        image: {{ .Values.sql.image }}
+        imagePullPolicy: {{ .Values.sql.imagePullPolicy }}
+        ports:
+          - name: mssql
+            containerPort: 1433
+        env:
+          - name: MSSQL_PID
+            value: {{ quote .Values.sql.sqlServer.edition }}
+          - name: ACCEPT_EULA
+            value: "Y"
+          - name: SA_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: SqlServerSaPassword
+          - name: SITECORE_SQL_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: SitecoreSqlUsername
+          - name: SITECORE_SQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: SitecoreSqlPassword
+          - name: SITECORE_ADMIN_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: SitecoreAdminUsername
+          - name: SITECORE_ADMIN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: SitecoreAdminPassword
+        resources:
+          limits:
+            cpu: {{ .Values.sql.resources.limits.cpu }}
+            memory: {{ .Values.sql.resources.limits.memory }}
+          requests:
+            cpu: {{ .Values.sql.resources.requests.cpu }}
+            memory: {{ .Values.sql.resources.requests.memory }}
+        livenessProbe:
+          tcpSocket:
+            port: mssql
+          initialDelaySeconds: {{ .Values.sql.probes.liveness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.sql.probes.liveness.periodSeconds }}
+        readinessProbe:
+          tcpSocket:
+            port: mssql
+          initialDelaySeconds: {{ .Values.sql.probes.readiness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.sql.probes.readiness.periodSeconds }}
+        volumeMounts:
+          - mountPath: "/var/opt/mssql/data"
+            name: data
+      volumes:
+        - name: data
+          azureDisk:
+            kind: Managed
+            diskName: {{ .Values.sql.storage.disk.name }}
+            diskURI: {{ .Values.sql.storage.disk.uri }}

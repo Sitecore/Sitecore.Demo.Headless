@@ -1,0 +1,35 @@
+---
+ID: "9627f625-da43-42ea-8e80-d5b74914467c"
+Parent: "ea255590-37ec-4a05-a12f-015f66be470b"
+Template: "44ab5107-3c73-42f0-a427-bec549f944b9"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Gender/Male
+DB: master
+SharedFields:
+- ID: "12e2c64a-5f08-4948-86c8-55ae06afeef8"
+  Hint: MaxValue
+  Value: 10
+- ID: "271d7b0f-446c-4f24-bfe7-e33c20bf7a41"
+  Hint: MinValue
+  Value: 0
+Languages:
+- Language: en
+  Fields:
+  - ID: "2e1a9aab-f7c1-49ee-b032-28b98d3688d6"
+    Hint: Name
+    Value: Male
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181020T185515Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "acc879ca-a331-4eb0-8242-da69859087e5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161639Z

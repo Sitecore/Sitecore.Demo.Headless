@@ -1,0 +1,51 @@
+---
+ID: "e3991da5-1aa5-4b59-98a0-ad535b3b92d3"
+Parent: "358ba4a3-016e-407b-b81d-4125dd4ca107"
+Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-3-on-3-basketball-challenge/Data/Labels/Participants"
+DB: master
+SharedFields:
+- ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
+  Hint: __Source Item
+  Value: 
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b86697d-60ca-4d80-83fb-7555a2e6ce1c"
+      Hint: __Source
+      Value: 
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181115T105834Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "59b299b1-bc62-56cc-b686-599aa0d8100b"
+      Hint: value
+      Value: 3
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod
+    - ID: "741cd00c-93ab-5967-89a7-d2916c98c246"
+      Hint: name
+      Value: Participants
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9b303cd1-8394-4c1a-b502-17d41e2c54e8"
+    - ID: "95a0cc5a-7336-50f5-a4e9-e8ba7729231d"
+      Hint: image
+      Value: |
+        <image mediaid="{D1D7AA1D-5D8C-57E9-9E75-E5170F02BF24}" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161711Z
