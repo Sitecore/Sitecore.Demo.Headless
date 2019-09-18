@@ -1,0 +1,35 @@
+---
+ID: "163a2e9c-fce3-47e7-88a4-fdca7f6a847a"
+Parent: "20e444b5-8773-4c6d-8957-d559e7111466"
+Template: "f0d16eee-3a05-4e43-a082-795a32b873c0"
+Path: /sitecore/system/Settings/Rules/Definitions/Elements/Habitat Fitness/Favorited the Event
+DB: master
+SharedFields:
+- ID: "ab51c8b2-f0e1-4471-9aae-cc080d774923"
+  Hint: Type
+  Value: Sitecore.HabitatHome.Fitness.Personalization.Rules.IsContactFavoritedEvent,Sitecore.HabitatHome.Fitness.Personalization
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20150720T160002Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "772424e5-d935-4bf6-a872-17a91d9bdfcc"
+    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
+      Hint: Text
+      Value: "where contact marked [EventId,Tree,root=/sitecore/content/habitatfitness/home/events&selection=/sitecore/templates/Project/habitatfitness/event-page, this]  event as favorite"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161641Z

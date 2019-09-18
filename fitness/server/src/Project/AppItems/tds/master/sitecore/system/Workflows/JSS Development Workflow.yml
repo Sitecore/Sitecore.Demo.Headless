@@ -1,0 +1,39 @@
+---
+ID: "6c59ae29-d0a1-4b77-9305-0abab21d5fe5"
+Parent: "05592656-56d7-4d85-aacf-30919ee494f9"
+Template: "1c0acc50-37be-4742-b43c-96a07a7410a5"
+Path: /sitecore/system/Workflows/JSS Development Workflow
+DB: master
+SharedFields:
+- ID: "b5166b38-e4bf-4410-953c-2037f2bf6a56"
+  Hint: Initial state
+  Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: |
+    ar|sitecore\jsstrial|pe|+workflowState:delete|+workflowState:write|+workflowCommand:execute|pd|+workflowState:delete|+workflowState:write|-workflowCommand:execute|
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170417T153546Z
+    - ID: "591f16da-4020-4ffd-9560-ef4996fc2a61"
+      Hint: Default Comment Dialog Height
+      Value: 250
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bd03af23-ea1c-451a-810f-37c3d096b78d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161721Z

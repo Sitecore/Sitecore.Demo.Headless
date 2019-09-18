@@ -1,0 +1,97 @@
+variables:
+  HELM_VERSION: 2.14.3
+  KUBEVAL_VERSION: 0.13.0 
+  KUBEVAL_CHECKSUM: cfdc72fe80afbf5dd190ec416fac38df4a81af8316642a1173f94db9fd812491
+  SITECORE_VERSION: 9.2.0
+  AZURE_SERVICE_CONNECTION: 4.ClusterDeployX
+  CONTAINER_REGISTRY_NAME: sitecoredemocontainers
+  K8S_SCHEMA_VERSION: 1.14.5
+trigger:
+  branches:
+    include:
+    - hack-master
+  paths:
+    include:
+    - charts/*
+pool:
+  vmImage: 'ubuntu-16.04'
+steps:
+- script: |
+    echo; echo "Installing helm..."
+    curl -Lo helm.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-v$HELM_VERSION-linux-amd64.tar.gz
+    curl -Lo helm.tar.gz.sha256 https://storage.googleapis.com/kubernetes-helm/helm-v$HELM_VERSION-linux-amd64.tar.gz.sha256
+    
+    expected=$(cat helm.tar.gz.sha256) 
+    echo "$expected helm.tar.gz" | sha256sum -c
+
+    tar -xvf helm.tar.gz
+    sudo mv linux-amd64/helm /usr/local/bin/helm
+    rm -rf linux-amd64 helm.tar.gz
+
+    echo; echo "Installing kubeval..."
+    curl -Lo kubeval-linux-amd64.tar.gz https://github.com/instrumenta/kubeval/releases/download/$KUBEVAL_VERSION/kubeval-linux-amd64.tar.gz
+    
+    echo "$KUBEVAL_CHECKSUM kubeval-linux-amd64.tar.gz" | sha256sum -c
+
+    tar -xvf kubeval-linux-amd64.tar.gz
+    sudo mv kubeval /usr/local/bin/kubeval
+    rm -rf kubeval-linux-amd64.tar.gz
+  displayName: 'Install Helm'
+
+- script: | 
+    helm lint sitecore-fitness
+  workingDirectory: charts
+  displayName: 'Lint sitecore-fitness'
+
+- script: | 
+    helm template sitecore-fitness --name pipeline-fitness --namespace pipeline-fitness -f sitecore-fitness/values.yaml | kubeval --kubernetes-version $(K8S_SCHEMA_VERSION)
+  workingDirectory: charts
+  displayName: 'Kubeval sitecore-fitness'
+
+- script: | 
+    helm lint sitecore-ingress
+  workingDirectory: charts
+  displayName: 'Lint sitecore-ingress'
+
+- script: | 
+    helm template sitecore-ingress --name pipeline-ingress --namespace pipeline-ingress -f sitecore-ingress/values.yaml | kubeval --kubernetes-version $(K8S_SCHEMA_VERSION)
+  workingDirectory: charts
+  displayName: 'Kubeval sitecore-ingress'
+
+- script: | 
+    helm init --client-only
+    mkdir -p $(Agent.TempDirectory)/charts/
+    helm package --destination $(Agent.TempDirectory)/charts --version $(SITECORE_VERSION)-$(Build.BuildId) sitecore-fitness
+    helm package --destination $(Agent.TempDirectory)/charts --version $(SITECORE_VERSION)-$(Build.BuildId) sitecore-ingress
+    
+    if [ "$(Build.SourceBranch)" == "refs/heads/hack-master" ]
+    then
+      # this is from merge to master so will update the main image as well
+      echo "Not a pull request packaging the main dev image"
+      helm package --destination $(Agent.TempDirectory)/charts --version $(SITECORE_VERSION)-dev sitecore-fitness
+      helm package --destination $(Agent.TempDirectory)/charts --version $(SITECORE_VERSION)-dev sitecore-ingress 
+    fi
+  workingDirectory: charts
+  displayName: 'Package charts'
+
+- task: AzureCLI@1
+  displayName: "Push helm charts to ACR"
+  inputs:
+    # Change here if you changed name for Service Connection
+    azureSubscription: $(AZURE_SERVICE_CONNECTION)
+    scriptLocation: 'inlineScript'
+    addSpnToEnvironment: true
+    inlineScript: |
+      az acr helm push -n $(CONTAINER_REGISTRY_NAME) --subscription $(CONTAINER_REGISTRY_SUB) $(Agent.TempDirectory)/charts/sitecore-fitness-$(SITECORE_VERSION)-$(Build.BuildId).tgz
+      az acr helm push -n $(CONTAINER_REGISTRY_NAME) --subscription $(CONTAINER_REGISTRY_SUB) $(Agent.TempDirectory)/charts/sitecore-ingress-$(SITECORE_VERSION)-$(Build.BuildId).tgz
+
+      if [ "$(Build.SourceBranch)" == "refs/heads/hack-master" ]
+      then
+        # this is from merge to master so will update the main image as well
+        # push to a "latest dev" package for easy development
+        echo "Not a pull request pushing the main dev image"
+        az acr helm push --force -n $(CONTAINER_REGISTRY_NAME) --subscription $(CONTAINER_REGISTRY_SUB) $(Agent.TempDirectory)/charts/sitecore-fitness-$(SITECORE_VERSION)-dev.tgz
+        az acr helm push --force -n $(CONTAINER_REGISTRY_NAME) --subscription $(CONTAINER_REGISTRY_SUB) $(Agent.TempDirectory)/charts/sitecore-ingress-$(SITECORE_VERSION)-dev.tgz
+      fi
+    workingDirectory: charts
+  

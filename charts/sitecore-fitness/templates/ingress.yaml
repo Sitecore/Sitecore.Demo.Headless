@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "fitness.fullname" . }}-ingress
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    kubernetes.io/ingress.class: {{ quote .Values.global.ingress.class }}
+  labels:
+    app: {{ template "fitness.name" . }}
+    chart: {{ template "fitness.chart" . }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  rules:
+  - host: {{ .Values.global.ingress.host.cd }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: cd
+          servicePort: 80
+  - host: {{ .Values.global.ingress.host.cm }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: cm
+          servicePort: 80
+  - host: {{ .Values.global.ingress.host.app }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: app
+          servicePort: 80
+

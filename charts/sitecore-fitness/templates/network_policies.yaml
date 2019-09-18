@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: sql-allow
+  namespace: {{ .Release.Namespace }}
+spec:
+  podSelector:
+    matchLabels:
+        name: {{ template "fitness.fullname" . }}-sql
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+            app: {{ template "fitness.name" . }}-cd
+    - podSelector:
+        matchLabels:
+            app: {{ template "fitness.name" . }}-cm
+    - podSelector:
+        matchLabels:
+            app: {{ template "fitness.name" . }}-xconnect
+    - podSelector:
+        matchLabels:
+            app: {{ template "fitness.name" . }}-xconnect-indexworker            
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: solr-allow-xconnect-indexworker
+  namespace: {{ .Release.Namespace }}
+spec:
+  podSelector:
+    matchLabels:
+        name: {{ template "fitness.fullname" . }}-solr
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+            app: {{ template "fitness.name" . }}-xconnect-indexworker
+
+
+    
+ 

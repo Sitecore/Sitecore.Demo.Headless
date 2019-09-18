@@ -1,0 +1,114 @@
+---
+ID: "4ca07d91-eca4-4175-b2fd-3cdaad0bfe91"
+Parent: "ffd2c61a-44b9-4c25-9f26-8f62787765d5"
+Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/churchill/churchill-marathon"
+DB: master
+SharedFields:
+- ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
+  Hint: __Source Item
+  Value: 
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf"
+        name="Sports">
+        <key
+          name="Basketball"
+          value="0" />
+        <key
+          name="Bowling"
+          value="0" />
+        <key
+          name="Cycling"
+          value="0" />
+        <key
+          name="Golf"
+          value="0" />
+        <key
+          name="Kayaking"
+          value="0" />
+        <key
+          name="Rock Climbing"
+          value="0" />
+        <key
+          name="Running"
+          value="10" />
+        <key
+          name="Swimming"
+          value="0" />
+        <key
+          name="Volleyball"
+          value="0" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Churchill Marathon
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
+      Hint: date
+      Value: 20190504T000000Z
+    - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
+      Hint: name
+      Value: Churchill Marathon
+    - ID: "1b86697d-60ca-4d80-83fb-7555a2e6ce1c"
+      Hint: __Source
+      Value: 
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181114T205905Z
+    - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
+      Hint: pageTitle
+      Value: Churchill Marathon
+    - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
+      Hint: latitude
+      Value: 58.7660
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
+      Hint: labels
+      Type: multilist
+      Value: |
+        {DC2ADC0A-CF15-4569-AEB4-6E8871C2037A}
+        {BAB4280A-6DAF-4D8A-9599-33AA5A7E7C51}
+        {E6C30551-C0A2-4268-AF8D-63C034770259}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod
+    - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
+      Hint: description
+      Value: The Churchill Marathon is the only Gold Label Marathon event in Canada and one of only four  Gold Label Marathons in the world. The Churchill Marathon attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the Marathon Championships.
+    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
+      Hint: longDescription
+      Value: Long Description. The Churchill Marathon is the only Gold Label Marathon event in Canada and one of only four  Gold Label Marathons in the world. The Churchill Marathon attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the Marathon Championships.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "fa4cbd6b-4966-4190-82ff-39ce7a9d1070"
+    - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
+      Hint: longitude
+      Value: "-94.1660"
+    - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
+      Hint: image
+      Value: |
+        <image alt="running03-800x410" mediaid="{CAB63A2E-91D6-45C1-B462-2EEF671D838C}" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161658Z

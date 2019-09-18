@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fitness.fullname" . }}-cm
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ template "fitness.name" . }}
+    chart: {{ template "fitness.chart" . }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "fitness.name" . }}-cm
+      release: {{ quote .Release.Name }}
+      component: server
+  template:
+    metadata:
+      labels:
+        app: {{ template "fitness.name" . }}-cm
+        release: {{ .Release.Name }}
+        component: server  
+    spec:
+      serviceAccountName: {{ template "fitness.fullname" . }}-cm
+      nodeSelector:
+{{ toYaml .Values.cm.nodeSelector | trim | indent 8 }}
+      containers:
+      - name: cm
+        image: {{ .Values.cm.image }}
+        imagePullPolicy: {{ .Values.cm.imagePullPolicy }}
+        ports:
+          - name: http
+            containerPort: 80
+        resources:
+          limits:
+            cpu: {{ .Values.cm.resources.limits.cpu }}
+            memory: {{ .Values.cm.resources.limits.memory }}
+          requests:
+            cpu: {{ .Values.cm.resources.requests.cpu }}
+            memory: {{ .Values.cm.resources.requests.memory }}
+        livenessProbe:
+          initialDelaySeconds: {{ .Values.cm.probes.liveness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.cm.probes.liveness.periodSeconds }}
+          timeoutSeconds: {{ .Values.cm.probes.liveness.timeoutSeconds }}
+          httpGet:
+            scheme: "HTTP"
+            path: /healthz
+            port: 80
+        readinessProbe:
+          initialDelaySeconds: {{ .Values.cm.probes.readiness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.cm.probes.readiness.periodSeconds }}
+          timeoutSeconds: {{ .Values.cm.probes.readiness.timeoutSeconds }}
+          httpGet:
+            scheme: "HTTP"
+            path: /readiness
+            port: 80
+        env:
+          - name: APPLICATION_INSIGHTS_KEY  
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: ApplicationInsightsKey
+          - name: SITECORE_SQL_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: SitecoreSqlUsername
+          - name: SITECORE_SQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "fitness.fullname" . }}-secret
+                key: SitecoreSqlPassword

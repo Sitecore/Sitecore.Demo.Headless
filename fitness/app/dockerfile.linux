@@ -1,0 +1,24 @@
+FROM node:10.11.0-alpine as source
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install -g @sitecore-jss/sitecore-jss-cli
+
+RUN npm install
+
+COPY . .
+
+RUN jss setup --instancePath /app/src/deploy --deployUrl http://habitatfitness.dev.local:44001 --layoutServiceHost http://habitatfitness.dev.local:44001/sitecore/api/jss/import --apiKey {EBF6D5C1-EB80-4B15-91AB-DD3845797774} --deploySecret patg3dt0mveyzwoo046lfiy9bktj0st9huuxqbcjwuwd --nonInteractive
+
+RUN jss build
+
+RUN jss deploy files
+
+FROM node:10.11.0-alpine
+
+WORKDIR /dist
+
+COPY --from=source /app/src/deploy/dist .
+

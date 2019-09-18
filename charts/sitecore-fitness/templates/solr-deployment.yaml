@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fitness.fullname" . }}-solr
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ template "fitness.name" . }}
+    chart: {{ template "fitness.chart" . }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: {{ template "fitness.name" . }}-solr
+      release: {{ quote .Release.Name }}
+      component: search
+  template:
+    metadata:
+      labels:
+        app: {{ template "fitness.name" . }}-solr
+        release: {{ .Release.Name }}
+        component: search
+    spec:
+      serviceAccountName: {{ template "fitness.fullname" . }}-solr
+      nodeSelector:
+{{ toYaml .Values.solr.nodeSelector | trim | indent 8 }}
+      initContainers:
+      - name: fix-the-volume-permission
+        image: busybox
+        command:
+        - sh
+        - -c
+        - chmod -R 777 /data
+        securityContext:
+          privileged: true
+        volumeMounts:
+          - mountPath: "/data"
+            name: data
+      containers:
+      - name: solr
+        image: {{ .Values.solr.image }}
+        imagePullPolicy: {{ .Values.solr.imagePullPolicy }}
+        ports:
+          - name: solr
+            containerPort: 8983
+        resources:
+          limits:
+            cpu: {{ .Values.solr.resources.limits.cpu }}
+            memory: {{ .Values.solr.resources.limits.memory }}
+          requests:
+            cpu: {{ .Values.solr.resources.requests.cpu }}
+            memory: {{ .Values.solr.resources.requests.memory }}
+        livenessProbe:
+          initialDelaySeconds: {{ .Values.solr.probes.liveness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.solr.probes.liveness.periodSeconds }}
+          httpGet:
+            scheme: "HTTP"
+            path: /solr/admin/info/system
+            port: 8983
+        readinessProbe:
+          initialDelaySeconds: {{ .Values.solr.probes.readiness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.solr.probes.readiness.periodSeconds }}
+          httpGet:
+            scheme: "HTTP"
+            path: /solr/admin/info/system
+            port: 8983
+        volumeMounts:
+          - mountPath: "/data"
+            name: data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ template "fitness.fullname" . }}-solrdata

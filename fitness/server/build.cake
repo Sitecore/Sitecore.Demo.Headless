@@ -1,4 +1,4 @@
-#addin nuget:?package=Cake.XdtTransform&version=0.16.0
+#addin nuget:?package=Cake.XdtTransform&version=0.18.1&loaddependencies=true
 #addin nuget:?package=Cake.Powershell&version=0.4.8
 #addin nuget:?package=Cake.Http&version=0.7.0
 #addin nuget:?package=Cake.Json&version=4.0.0
@@ -101,33 +101,18 @@ Task("Start-XConnect-Service").Does(()=>{
 });
 
 Task("Publish-XConnect").Does(()=>{
-	DeployFiles(
-		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\bin\\Debug\\Sitecore.HabitatHome.Fitness.*.dll",
-		$"{configuration.XConnectRoot}\\bin"
+	// Files required in this area are packaged / moved to the \temp folder in the Project.AppItems Post-Build events
+	CopyDirectory(
+		$"{configuration.ProjectFolder}\\temp\\xConnectRoot",
+		$"{configuration.XConnectRoot}"
 	);
-	DeployFiles(
-		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\xmodels\\*",
-		$"{configuration.XConnectRoot}\\App_Data\\Models"
+	CopyDirectory(
+		$"{configuration.ProjectFolder}\\temp\\xConnectIndexerRoot",
+		$"{configuration.XConnectIndexerRoot}"
 	);
-	DeployFiles(
-		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\xmodels\\*",
-		$"{configuration.XConnectIndexerRoot}\\App_Data\\Models"
-	);
-		DeployFiles(
-		$"{configuration.FoundationSrcFolder}\\Analytics\\xconnect\\automation\\*",
-		$"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore"
-	);
-	DeployFiles(
-		$"{configuration.FeatureSrcFolder}\\Automation\\code\\bin\\Sitecore.HabitatHome.Fitness.Feature.Automation",
+	CopyDirectory(
+		$"{configuration.ProjectFolder}\\temp\\xConnectAutomationServiceRoot",
 		$"{configuration.XConnectAutomationServiceRoot}"
-	);
-	DeployFiles(
-		$"{configuration.FeatureSrcFolder}\\Automation\\code\\bin\\Sitecore.HabitatHome.Fitness.Foundation.Analytics.dll",
-		$"{configuration.XConnectAutomationServiceRoot}"
-	);
-	DeployFiles(
-		$"{configuration.FeatureSrcFolder}\\Automation\\xconnect\\App_Data\\Config\\Sitecore\\MarketingAutomation\\*.xml",
-		$"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation "
 	);
 });
 

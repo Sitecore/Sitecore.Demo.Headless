@@ -1,0 +1,37 @@
+---
+ID: "dddf7944-90ff-5d1e-bbcf-a7187cf23735"
+Parent: "6374a178-df61-5ad2-a20d-b0258cf3d7f5"
+Template: "9bfea57c-783a-4695-9ccd-5c7577482d6a"
+Path: "/sitecore/content/habitatfitness/Components/forms/gender-selector"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234952Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3dac4fee-079c-4192-9d40-4317d96f3a0a"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "cf45aba9-aa4e-5df2-8cab-3530af93176a"
+      Hint: selectTitle
+      Value: Your gender
+    - ID: "d04b729a-39ab-5129-b4f8-2a64717e2e34"
+      Hint: selectName
+      Value: gender
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161653Z

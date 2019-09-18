@@ -1,0 +1,147 @@
+---
+ID: "d70b5f02-9434-5af5-8e13-a30b4540233e"
+Parent: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Path: "/sitecore/templates/Project/habitatfitness/event-page/__Standard Values"
+DB: master
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{2C211D0C-8DAE-587E-ACCD-DA500C88C3AF}">
+        <p
+          uid="{EEF24166-4D0F-54C4-8D2C-9CD69F811527}"
+          key="hf-nav"
+          md="{01038B98-8BBA-5008-AEFE-5E6E9AB8AAB2}" />
+        <p
+          uid="{B7B75125-02C9-5AC2-B119-1C27802A0788}"
+          key="hf-body"
+          md="{27E71AA5-BB6A-58D8-AAE2-914BE0CDE164}" />
+        <p
+          uid="{A6FC32B3-6FC1-5193-A8BD-B7861D63653A}"
+          key="hf-personalization-wizard"
+          md="{7A650CC4-E487-59AC-BA55-AECD5F63BCF3}" />
+        <p
+          uid="{11AB78B8-AF0C-5A37-BB7D-2A9676DAE1ED}"
+          key="hf-registration-wizard"
+          md="{B68F6852-A415-59D2-9009-69CF1ED0972B}" />
+        <p
+          uid="{79AD51E3-16A8-58E0-8876-7573B90332E8}"
+          key="hf-createaccount-form"
+          md="{F68972B1-1308-5D11-8316-1AFEECB1BF25}" />
+        <p
+          uid="{BD1E7498-7C10-55AD-AECC-7675ED701A82}"
+          key="hf-createaccount-form-group"
+          md="{1B45C243-9663-5D83-9129-A40725AD8785}" />
+        <r
+          uid="{E439C8F8-7617-5F91-8F7F-C46D6BF3B192}"
+          rname="EventDetailsNavigation"
+          id="{C42C4419-0E19-5DEB-A3D8-BD5CE1F84B03}"
+          par=""
+          ph="/hf-nav" />
+        <r
+          uid="{26C520F9-E8C9-57C3-92BF-012E9AA56078}"
+          rname="EventDetailAnonymous"
+          ds="{EC3095BB-03BB-5D57-B8FD-1E6D815AB30D}"
+          id="{0EFCB51C-7B5E-5FAC-A8B2-79EB2F8ECBDA}"
+          par=""
+          ph="/hf-body">
+          <rls>
+            <ruleset>
+              <rule
+                uid="{61D6D7A3-C6B5-4C93-8296-2C62A40B797C}"
+                name="already registered">
+                <conditions>
+                  <condition
+                    uid="B7E65F251F384D228BD6EB0813D0C270"
+                    id="{CCF198D3-05B2-4955-A4A5-A1A489215324}" />
+                </conditions>
+                <actions>
+                  <action
+                    uid="85ACD090D08F4BB98579F427EEEA3DCC"
+                    id="{7B578B65-BD2F-4C7C-9A24-DAE3E98B4F23}"
+                    RenderingItem="{90192F3F-F9FB-58B7-95D2-D7D37D2A18D4}" />
+                  <action
+                    uid="9B4F84B0255D49BEBA71FFC20D1C2E93"
+                    id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
+                    DataSource="{B9BDBCC2-2623-5B0B-B203-2CCF17F0D879}" />
+                </actions>
+              </rule>
+              <rule
+                uid="{86FEC4D8-A1C7-4130-BD09-49F077B53D43}"
+                name="current contact is known">
+                <conditions>
+                  <condition
+                    uid="8798425A52BA4B8E9458E15CD5D042A2"
+                    id="{94E2EE80-7A87-421F-B2F2-64E3C9FC0CEC}" />
+                </conditions>
+                <actions>
+                  <action
+                    uid="AC0E1C57F3294F1B88E487386A39E5B3"
+                    id="{7B578B65-BD2F-4C7C-9A24-DAE3E98B4F23}"
+                    RenderingItem="{230B5E44-1877-519D-9D18-388EF800E321}" />
+                  <action
+                    uid="E5F8FCFFBF454B919AAD23CF97A44061"
+                    id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
+                    DataSource="{7F5A525C-9F0A-5945-9E6B-182CAAA00929}" />
+                </actions>
+              </rule>
+              <rule
+                uid="{00000000-0000-0000-0000-000000000000}"
+                name="Default">
+                <conditions>
+                  <condition
+                    uid="E3537A56291F414E9131AB2568E8CC49"
+                    id="{4888ABBB-F17D-4485-B14B-842413F88732}" />
+                </conditions>
+                <actions>
+                  <action
+                    uid="E6A05A3DE30C429280C7C67741DBBE00"
+                    id="{7B578B65-BD2F-4C7C-9A24-DAE3E98B4F23}"
+                    RenderingItem="{0EFCB51C-7B5E-5FAC-A8B2-79EB2F8ECBDA}" />
+                  <action
+                    uid="452154BF54DC4740A24544563C83BFE3"
+                    id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
+                    DataSource="{EC3095BB-03BB-5D57-B8FD-1E6D815AB30D}" />
+                </actions>
+              </rule>
+            </ruleset>
+          </rls>
+        </r>
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
+      Hint: date
+      Value: $now
+    - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
+      Hint: name
+      Value: $name
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T230927Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ea5a937b-4762-412a-8e48-1fad35b20706"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161722Z

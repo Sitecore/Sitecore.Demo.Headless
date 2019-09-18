@@ -1,0 +1,49 @@
+---
+ID: "e7f0e29f-386f-49e0-b22d-47f9d25d02b9"
+Parent: "fcab4f3c-421d-4dcd-aa1a-247cb9e8eb8b"
+Template: "4a6a7e36-2481-438f-a9ba-0453ecc638fa"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Sports/Pattern Cards/Rock Climbing
+DB: master
+SharedFields:
+- ID: "6da71ad3-5849-4482-9317-d21390e5a348"
+  Hint: Pattern
+  Value: |
+    <tracking>
+      <profile id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf" name="Sports">
+        <key name="Basketball" value="0" />
+        <key name="Bowling" value="0" />
+        <key name="Cycling" value="0" />
+        <key name="Golf" value="0" />
+        <key name="Kayaking" value="0" />
+        <key name="Rock Climbing" value="10" />
+        <key name="Running" value="0" />
+        <key name="Swimming" value="0" />
+        <key name="Volleyball" value="0" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Fields:
+  - ID: "fe732790-2ddb-4657-a882-c2fce1fbf0c9"
+    Hint: Name
+    Value: Rock Climbing
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190314T140945Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8225c75d-eeb5-4d81-a09a-4ed11c59f5b4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20190820T161640Z
