@@ -70,8 +70,8 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="App_Config\Include\Rainbow.config" />
-    <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn.SharedSecret.config" />
+    <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Settings.config" />
     <None Include="App_Config\Include\Unicorn\Unicorn.UI.IdentityServer.config" />
   </ItemGroup>
   <ItemGroup>
