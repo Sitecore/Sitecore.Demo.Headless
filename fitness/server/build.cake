@@ -168,7 +168,7 @@ Task("Sync-Unicorn")
 	var unicornUrl = configuration.InstanceUrl + "unicorn.aspx";
 	Information("Sync Unicorn items from url: " + unicornUrl);
 
-	var authenticationFile = new FilePath($"{configuration.WebsiteRoot}/App_config/Include/Foundation/Foundation.Serialization.Unicorn.SharedSecret.config");
+	var authenticationFile = new FilePath($"{configuration.WebsiteRoot}/App_config/Include/Unicorn.SharedSecret.config");
 	var xPath = "/configuration/sitecore/unicorn/authenticationProvider/SharedSecret";
 
 	string sharedSecret = XmlPeek(authenticationFile, xPath);
