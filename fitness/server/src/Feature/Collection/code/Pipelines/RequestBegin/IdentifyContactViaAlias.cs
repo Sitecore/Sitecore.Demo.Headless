@@ -31,7 +31,7 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Pipelines.RequestBegin
             {
                 try
                 {
-                    Tracker.Current?.Session?.IdentifyAs(Wellknown.EMAIL_IDENT_SOURCE, email);
+                    Tracker.Current?.Session?.IdentifyAs(Context.Site.Domain.Name, email);
                 }
                 catch(Exception ex)
                 {
