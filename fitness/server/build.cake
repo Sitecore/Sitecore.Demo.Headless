@@ -183,8 +183,11 @@ Task("Sync-Unicorn")
 });
 
 Task("Apply-Xml-Transform").Does(() => {
-	// target website transforms
-	Transform($"{configuration.SourceFolder}\\Project\\AppItems\\code", configuration.WebsiteRoot);
+	// web.config transforms
+	XdtTransformConfig($"{configuration.WebsiteRoot}\\Web.config", $"{configuration.SourceFolder}\\Project\\AppItems\\code\\Web.config.xdt", $"{configuration.WebsiteRoot}\\Web.config");
+
+	// layers transforms
+	XdtTransformConfig($"{configuration.WebsiteRoot}\\App_Config\\Layers.config", $"{configuration.SourceFolder}\\Project\\AppItems\\code\\App_Config\\Layers.config.xdt", $"{configuration.WebsiteRoot}\\App_Config\\Layers.config");
 
 	// xconnect transforms
 	Transform($"{configuration.SourceFolder}\\Feature\\Automation\\xconnect\\App_Data\\Config\\sitecore\\MarketingAutomation", $"{configuration.XConnectAutomationServiceRoot}\\App_Data\\Config\\sitecore\\MarketingAutomation");
