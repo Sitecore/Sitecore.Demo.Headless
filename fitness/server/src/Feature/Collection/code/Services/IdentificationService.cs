@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Sitecore.Analytics;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Feature.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model;
 using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
+using Sitecore.XConnect.Client.Configuration;
 using Sitecore.XConnect.Collection.Model;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
@@ -25,35 +25,30 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             Tracker.Current.Session.IdentifyAs(Wellknown.EMAIL_IDENT_SOURCE, data.Email);
 
             trackerContact.UpdateXConnectFacets(facets);
+            UpdateXConnectContact(facets);
         }
 
-        public void SetEmailFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        public void SetEmailFacet(Facet facet, XConnectClient client, IEntityReference<Contact> contact)
         {
-            if (facets.TryGetValue(EmailAddressList.DefaultFacetKey, out Facet emailFacet))
+            if (facet is EmailAddressList email)
             {
-                if (emailFacet is EmailAddressList email)
-                {
-                    client.SetEmails(contact, email);
-                }
-                else
-                {
-                    Log.Error($"{EmailAddressList.DefaultFacetKey} facet is not of expected type. Expected {typeof(EmailAddressList).FullName}", this);
-                }
+                client.SetEmails(contact, email);
+            }
+            else
+            {
+                Log.Error($"{EmailAddressList.DefaultFacetKey} facet is not of expected type. Expected {typeof(EmailAddressList).FullName}", this);
             }
         }
 
-        public void SetPersonalFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
+        public void SetPersonalFacet(Facet facet, XConnectClient client, IEntityReference<Contact> contact)
         {
-            if (facets.TryGetValue(PersonalInformation.DefaultFacetKey, out Facet personalFacet))
+            if (facet is PersonalInformation personal)
             {
-                if (personalFacet is PersonalInformation personal)
-                {
-                    client.SetPersonal(contact, personal);
-                }
-                else
-                {
-                    Log.Error($"{PersonalInformation.DefaultFacetKey} facet is not of expected type. Expected {typeof(PersonalInformation).FullName}", this);
-                }
+                client.SetPersonal(contact, personal);
+            }
+            else
+            {
+                Log.Error($"{PersonalInformation.DefaultFacetKey} facet is not of expected type. Expected {typeof(PersonalInformation).FullName}", this);
             }
         }
 
@@ -90,6 +85,40 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             {
                 emails = new EmailAddressList(new EmailAddress(data.Email, true), Wellknown.PreferredEmailKey);
                 facets.Add(EmailAddressList.DefaultFacetKey, emails);
+            }
+        }
+
+        private void UpdateXConnectContact(Dictionary<string, Facet> facets)
+        {
+            var manager = Configuration.Factory.CreateObject("tracking/contactManager", true) as Sitecore.Analytics.Tracking.ContactManager;
+            using (var client = SitecoreXConnectClientConfiguration.GetClient())
+            {
+                try
+                {
+                    var contactId = client.GetContactIdFromDevice();
+                    if (contactId == null)
+                    {
+                        Log.Fatal("**HF** IdentificationService.UpdateXConnectContact. Cannot resolve contact id from device", this);
+                        return;
+                    }
+
+                    var contact = client.Get<Contact>(contactId, new ContactExpandOptions(PersonalInformation.DefaultFacetKey, EmailAddressList.DefaultFacetKey));
+                    facets.TryGetValue(PersonalInformation.DefaultFacetKey, out Facet newPersonalFacet);
+                    contact.Facets.TryGetValue(PersonalInformation.DefaultFacetKey, out Facet currentPersonalFacet);
+                    facets.TryGetValue(EmailAddressList.DefaultFacetKey, out Facet newEmailFacet);
+                    contact.Facets.TryGetValue(EmailAddressList.DefaultFacetKey, out Facet currentEmailFacet);
+
+                    SetPersonalFacet(currentPersonalFacet == null ? newPersonalFacet : currentPersonalFacet.GetFacetWithDefaultValues(newPersonalFacet), client, contactId);
+                    SetEmailFacet(currentEmailFacet == null ? newEmailFacet : currentEmailFacet.GetFacetWithDefaultValues(newEmailFacet), client, contactId);                    
+
+                    client.Submit();
+                    manager.RemoveFromSession(Sitecore.Analytics.Tracker.Current.Contact.ContactId);
+                    Tracker.Current.Session.Contact = manager.LoadContact(Sitecore.Analytics.Tracker.Current.Contact.ContactId);
+                }
+                catch (XdbExecutionException ex)
+                {
+                    Log.Error("UpdateXConnectContact failed.", ex, this);
+                }
             }
         }
     }
