@@ -5,12 +5,11 @@ using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model;
 using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
-using Sitecore.XConnect.Client.Configuration;
 using Sitecore.XConnect.Collection.Model;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
 {
-    public class IdentificationService : IIdentificationService
+    public class IdentificationService : AnalyticsServiceBase, IIdentificationService
     {
         public void UpdateFacet([NotNull]IIdentificationPayload data)
         {
@@ -26,30 +25,6 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
 
             trackerContact.UpdateXConnectFacets(facets);
             UpdateXConnectContact(facets);
-        }
-
-        public void SetEmailFacet(Facet facet, XConnectClient client, IEntityReference<Contact> contact)
-        {
-            if (facet is EmailAddressList email)
-            {
-                client.SetEmails(contact, email);
-            }
-            else
-            {
-                Log.Error($"{EmailAddressList.DefaultFacetKey} facet is not of expected type. Expected {typeof(EmailAddressList).FullName}", this);
-            }
-        }
-
-        public void SetPersonalFacet(Facet facet, XConnectClient client, IEntityReference<Contact> contact)
-        {
-            if (facet is PersonalInformation personal)
-            {
-                client.SetPersonal(contact, personal);
-            }
-            else
-            {
-                Log.Error($"{PersonalInformation.DefaultFacetKey} facet is not of expected type. Expected {typeof(PersonalInformation).FullName}", this);
-            }
         }
 
         protected void UpdateName(IIdentificationPayload data, Dictionary<string, Facet> facets)
@@ -88,37 +63,21 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             }
         }
 
-        private void UpdateXConnectContact(Dictionary<string, Facet> facets)
+        protected override void SetContactFacets(Dictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contactId)
         {
-            var manager = Configuration.Factory.CreateObject("tracking/contactManager", true) as Sitecore.Analytics.Tracking.ContactManager;
-            using (var client = SitecoreXConnectClientConfiguration.GetClient())
+            var contact = client.Get<Contact>(contactId,
+                new ContactExpandOptions(PersonalInformation.DefaultFacetKey, EmailAddressList.DefaultFacetKey));
+
+            var personalFacet = GetFacetOrDefault(facets, PersonalInformation.DefaultFacetKey, contact, client);
+            if (personalFacet is PersonalInformation personal)
             {
-                try
-                {
-                    var contactId = client.GetContactIdFromDevice();
-                    if (contactId == null)
-                    {
-                        Log.Fatal("**HF** IdentificationService.UpdateXConnectContact. Cannot resolve contact id from device", this);
-                        return;
-                    }
+                client.SetPersonal(contact, personal);
+            }
 
-                    var contact = client.Get<Contact>(contactId, new ContactExpandOptions(PersonalInformation.DefaultFacetKey, EmailAddressList.DefaultFacetKey));
-                    facets.TryGetValue(PersonalInformation.DefaultFacetKey, out Facet newPersonalFacet);
-                    contact.Facets.TryGetValue(PersonalInformation.DefaultFacetKey, out Facet currentPersonalFacet);
-                    facets.TryGetValue(EmailAddressList.DefaultFacetKey, out Facet newEmailFacet);
-                    contact.Facets.TryGetValue(EmailAddressList.DefaultFacetKey, out Facet currentEmailFacet);
-
-                    SetPersonalFacet(currentPersonalFacet == null ? newPersonalFacet : currentPersonalFacet.GetFacetWithDefaultValues(newPersonalFacet), client, contactId);
-                    SetEmailFacet(currentEmailFacet == null ? newEmailFacet : currentEmailFacet.GetFacetWithDefaultValues(newEmailFacet), client, contactId);                    
-
-                    client.Submit();
-                    manager.RemoveFromSession(Sitecore.Analytics.Tracker.Current.Contact.ContactId);
-                    Tracker.Current.Session.Contact = manager.LoadContact(Sitecore.Analytics.Tracker.Current.Contact.ContactId);
-                }
-                catch (XdbExecutionException ex)
-                {
-                    Log.Error("UpdateXConnectContact failed.", ex, this);
-                }
+            var emailFacet = GetFacetOrDefault(facets, EmailAddressList.DefaultFacetKey, contact, client);
+            if (emailFacet is EmailAddressList email)
+            {
+                client.SetEmails(contact, email);
             }
         }
     }

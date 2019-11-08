@@ -8,7 +8,5 @@ namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services
     public interface IIdentificationService
     {
         void UpdateFacet(IIdentificationPayload data);
-        void SetEmailFacet(Facet facet, XConnectClient client, IEntityReference<Contact> contact);
-        void SetPersonalFacet(Facet facet, XConnectClient client, IEntityReference<Contact> contact);
     }
 }
