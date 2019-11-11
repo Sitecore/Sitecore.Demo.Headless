@@ -79,7 +79,7 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             var sportsFacet = GetFacetOrDefault(facets, SportsFacet.DefaultKey, contact, client);
             if (sportsFacet is SportsFacet sports)
             {
-                client.SetFacet(contact, sportsFacet as SportsFacet);
+                client.SetFacet(contact, SportsFacet.DefaultKey, sportsFacet as SportsFacet);
             }
         }
     }
