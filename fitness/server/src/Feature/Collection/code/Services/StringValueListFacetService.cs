@@ -134,7 +134,7 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
                 var stringValueFacet = GetFacetOrDefault(facets, facetKey, contact, client);
                 if (stringValueFacet is StringValueListFacet stringValue)
                 {
-                    client.SetFacet(contact, stringValue);
+                    client.SetFacet(contact, facetKey, stringValue);
                 }
             }
         }
