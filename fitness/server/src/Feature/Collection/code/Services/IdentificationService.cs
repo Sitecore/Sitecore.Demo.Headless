@@ -22,7 +22,7 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             UpdateName(data, facets);
             UpdateEmail(data, facets);
 
-            Tracker.Current.Session.IdentifyAs(Wellknown.EMAIL_IDENT_SOURCE, data.Email);
+            Tracker.Current.Session.IdentifyAs(Context.Site.Domain.Name, data.Email);
 
             trackerContact.UpdateXConnectFacets(facets);
         }
