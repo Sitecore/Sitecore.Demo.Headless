@@ -73,9 +73,9 @@
     <Content Include="App_Config\Include\Project\Project.ContentHub.Serialization.config" />
     <Content Include="App_Config\Include\Project\Project.SitecoreHealthExtensions.config" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.config" />
-    <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.Counters.config" />
     <Content Include="App_Config\Layers.config.xdt" />
+    <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.config.disabled" />
+    <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.Counters.config.disabled" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
