@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Sitecore.Analytics;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Feature.Collection.Model;
 using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
 using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model;
 using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
@@ -11,7 +10,7 @@ using Sitecore.XConnect.Collection.Model;
 
 namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
 {
-    public class DemographicsService : IDemographicsService
+    public class DemographicsService : AnalyticsServiceBase, IDemographicsService
     {
         public void UpdateFacet([NotNull]IDemographicsPayload data)
         {
@@ -24,27 +23,13 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             UpdateGender(data, facets);
 
             trackerContact.UpdateXConnectFacets(facets);
+            UpdateXConnectContact(facets);
         }
 
         public void UpdateProfile([NotNull]IDemographicsPayload data)
         {
             UpdateGenderProfile(data);
             UpdateAgeGroupProfile(data);
-        }
-
-        public void SetFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact)
-        {
-            if (facets.TryGetValue(DemographicsFacet.DefaultKey, out Facet demographicsFacet))
-            {
-                if (demographicsFacet is DemographicsFacet demographics)
-                {
-                    client.SetFacet(contact, DemographicsFacet.DefaultKey, demographics);
-                }
-                else
-                {
-                    Log.Error($"{DemographicsFacet.DefaultKey} facet is not of expected type. Expected {typeof(DemographicsFacet).FullName}", this);
-                }
-            }
         }
 
         public string GetAgeGroup()
@@ -164,6 +149,24 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
                 };
 
                 facets.Add(PersonalInformation.DefaultFacetKey, personalInfo);
+            }
+        }
+
+        protected override void SetContactFacets(Dictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contactId)
+        {
+            var contact = client.Get<Contact>(contactId,
+                new ContactExpandOptions(PersonalInformation.DefaultFacetKey, DemographicsFacet.DefaultKey));
+
+            var personalFacet = GetFacetOrDefault(facets, PersonalInformation.DefaultFacetKey, contact, client);
+            if (personalFacet is PersonalInformation personal)
+            {
+                client.SetPersonal(contact, personal);
+            }
+
+            var demographicsFacet = GetFacetOrDefault(facets, DemographicsFacet.DefaultKey, contact, client);
+            if (demographicsFacet is DemographicsFacet demographics)
+            {
+                client.SetFacet(contact, DemographicsFacet.DefaultKey, demographics);
             }
         }
     }
