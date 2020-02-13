@@ -64,16 +64,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Modules\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Modules\Unicorn\Unicorn.config" />
-    <Content Include="App_Config\Modules\Unicorn\Unicorn.DataProvider.config" />
-    <Content Include="App_Config\Modules\Unicorn\Unicorn.PowerShell.config" />
-    <Content Include="App_Config\Modules\Unicorn\Unicorn.UI.config" />
-    <Content Include="App_Config\Modules\Rainbow.config" />
-    <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Rainbow.config" />
-    <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Unicorn.config" />
-    <None Include="App_Config\Modules\Unicorn\Unicorn.UI.IdentityServer.config" />
-    <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Unicorn.SharedSecret.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
+    <Content Include="App_Config\Include\Rainbow.config" />
+    <Content Include="App_Config\Include\Unicorn.SharedSecret.config" />
+    <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Settings.config" />
+    <None Include="App_Config\Include\Unicorn\Unicorn.UI.IdentityServer.config" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Unicorn">
@@ -87,12 +86,12 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Modules\Unicorn\Unicorn.Roles.config" />
-    <Content Include="App_Config\Modules\Unicorn\Unicorn.Roles.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.DataProvider.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Modules\Unicorn\Unicorn.Users.config" />
-    <Content Include="App_Config\Modules\Unicorn\Unicorn.Users.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.DataProvider.config" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
