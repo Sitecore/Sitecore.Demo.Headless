@@ -11,7 +11,7 @@ namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics
 
         public static XdbModel CreateModel()
         {
-            var builder = new XdbModelBuilder("Sitecore.HabitatHome.Fitness.Foundation.Analytics", new XdbModelVersion(9, 0));
+            var builder = new XdbModelBuilder("Sitecore.HabitatHome.Fitness.Foundation.Analytics", new XdbModelVersion(9, 3));
 
             //Reference Sitecore's model
             builder.ReferenceModel(CollectionModel.Model);
