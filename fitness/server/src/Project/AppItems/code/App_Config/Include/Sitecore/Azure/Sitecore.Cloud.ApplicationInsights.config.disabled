@@ -1,0 +1,107 @@
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:useApplicationInsights="http://www.sitecore.net/xmlconfig/useApplicationInsights/">
+  <sitecore>
+    <log4net>
+      <appender name="LogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="log" />
+      </appender>
+
+      <appender name="PublishingLogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="publishing" />
+      </appender>
+
+      <appender name="SearchLogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="search" />
+      </appender>
+
+      <appender name="CrawlingLogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="crawling" />
+      </appender>
+
+      <appender name="ClientLogAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="client" />
+      </appender>
+
+      <appender name="FxmLogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="fxm" />
+      </appender>
+
+      <appender name="AggregationLogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="aggregation" />
+      </appender>
+
+      <appender name="ContactMergeLogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="contactMergeDataUpgrade" />
+      </appender>
+
+      <appender name="OwinLogFileAppender" type="log4net.Appender.RollingFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="owin" />
+      </appender>
+
+      <appender name="EdsLogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="eds" />
+      </appender>
+
+      <appender name="ExmLogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="exm" />
+      </appender>
+
+      <appender name="WebDAVLogFileAppender" type="log4net.Appender.SitecoreLogFileAppender, Sitecore.Logging">
+        <patch:attribute useApplicationInsights:require="false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.LevelTraceAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <patch:attribute useApplicationInsights:require="!false" name="type">Sitecore.Cloud.ApplicationInsights.Logging.Log4NetAppender, Sitecore.Cloud.ApplicationInsights</patch:attribute>
+        <category useApplicationInsights:require="!false" value="webdav" />
+      </appender>
+    </log4net>
+
+    <pipelines>
+      <initialize>
+        <processor useApplicationInsights:require="!false"  xmlns:useApplicationInsights="http://www.sitecore.net/xmlconfig/useApplicationInsights/" type="Sitecore.Cloud.ApplicationInsights.TelemertyInitializers.AppInsightsInitializer, Sitecore.Cloud.ApplicationInsights" patch:before="*[1]" />
+        <processor useApplicationInsights:require="!false"  xmlns:useApplicationInsights="http://www.sitecore.net/xmlconfig/useApplicationInsights/" type="Sitecore.Cloud.ApplicationInsights.TelemertyInitializers.InjectTelemertyInitializers, Sitecore.Cloud.ApplicationInsights" patch:before="*[1]" />
+        <processor type="Sitecore.Cloud.ApplicationInsights.Logging.RemoveSitecoreTraceListeners, Sitecore.Cloud.ApplicationInsights" patch:before="*[1]" />
+      </initialize>
+    </pipelines>
+
+    <settings>
+      <!--  SERVER ROLE
+            The name for grouping metrics from instances by server role.
+            Default value: Single
+      -->
+      <setting name="ApplicationInsights.Role" value="" />
+
+      <!--  TELEMETRY TAGS
+            Tags that are included in telemetry data to identify the metrics from an instance.
+      -->
+      <setting name="ApplicationInsights.Tag" value="" />
+
+      <!--  DEVELOPER MODE
+            Enables developer mode in Application Insights TelemetryConfiguration.
+      -->
+      <setting name="ApplicationInsights.DeveloperMode" value="false" />
+
+      <setting name="Counters.Enabled">
+        <patch:attribute name="value">false</patch:attribute>
+      </setting>
+    </settings>
+  </sitecore>
+</configuration>

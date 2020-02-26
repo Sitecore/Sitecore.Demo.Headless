@@ -127,13 +127,14 @@
     <Compile Include="Model\DemographicsPayload.cs" />
     <Compile Include="Model\StringArrayPayload.cs" />
     <Compile Include="Model\SportPreferencesPayload.cs" />
-    <Compile Include="Pipelines\CommitSession\UpdateFacetsFromTracker.cs" />
     <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
     <Compile Include="Pipelines\RequestBegin\IdentifyContactViaAlias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Router.cs" />
+    <Compile Include="Services\AnalyticsServiceBase.cs" />
     <Compile Include="Services\ContactExtensions.cs" />
+    <Compile Include="Services\FacetExtensions.cs" />
     <Compile Include="Services\SportsService.cs" />
     <Compile Include="Services\IdentificationService.cs" />
     <Compile Include="Services\DemographicsService.cs" />

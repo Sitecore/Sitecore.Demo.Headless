@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Sitecore.Diagnostics;
+using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
 using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
 using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
 using Sitecore.XConnect;
@@ -8,7 +10,7 @@ using Sitecore.XConnect.Client;
 namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
 {
     // TODO: Add/Remove have the same boilerplate
-    public class StringValueListFacetService : IStringValueListFacetService
+    public class StringValueListFacetService : AnalyticsServiceBase, IStringValueListFacetService
     {
         public void Add([NotNull] string value, [NotNull]string facetKey)
         {
@@ -18,6 +20,7 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             var facets = trackerContact.GetXConnectFacets();
             AddFacetValue(value, facetKey, facets);
             trackerContact.UpdateXConnectFacets(facets);
+            UpdateXConnectContact(facets);
         }
 
         public void Remove([NotNull] string value, [NotNull]string facetKey)
@@ -28,6 +31,7 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             var facets = trackerContact.GetXConnectFacets();
             RemoveFacetValue(value, facetKey, facets);
             trackerContact.UpdateXConnectFacets(facets);
+            UpdateXConnectContact(facets);
         }
 
         public void RemoveAll([NotNull]string facetKey)
@@ -38,6 +42,7 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             var facets = trackerContact.GetXConnectFacets();
             RemoveAllFacetValues(facetKey, facets);
             trackerContact.UpdateXConnectFacets(facets);
+            UpdateXConnectContact(facets);
         }
 
         public bool ContainsValue([NotNull] string facetKey, [NotNull] string facetValue)
@@ -74,21 +79,6 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             }
 
             return new string[0];
-        }
-
-        public void SetFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact, [NotNull]string facetKey)
-        {
-            if (facets.TryGetValue(facetKey, out Facet facet))
-            {
-                if (facet is StringValueListFacet typedFacet)
-                {
-                    client.SetFacet(contact, facetKey, typedFacet);
-                }
-                else
-                {
-                    Log.Error($"{facetKey} facet is not of expected type. Expected {typeof(StringValueListFacet).FullName}", this);
-                }
-            }
         }
 
         protected void AddFacetValue([NotNull]string value, [NotNull]string facetKey, [NotNull]Dictionary<string, Facet> facets)
@@ -131,6 +121,21 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
             {
                 facet = (StringValueListFacet)facets[facetKey];
                 facet.Values.Clear();
+            }
+        }
+
+        protected override void SetContactFacets(Dictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contactId)
+        {
+            var keys = new List<string>() { FacetIDs.FavoriteEvents, FacetIDs.RegisteredEvents, FacetIDs.Subscriptions, FacetIDs.SubscriptionTokens };
+            var contact = client.Get<Contact>(contactId, new ContactExpandOptions(keys.ToArray()));
+
+            foreach (var facetKey in keys)
+            {
+                var stringValueFacet = GetFacetOrDefault(facets, facetKey, contact, client);
+                if (stringValueFacet is StringValueListFacet stringValue)
+                {
+                    client.SetFacet(contact, facetKey, stringValue);
+                }
             }
         }
     }
