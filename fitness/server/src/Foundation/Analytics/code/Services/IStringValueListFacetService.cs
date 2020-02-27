@@ -11,6 +11,5 @@ namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services
         void RemoveAll(string facetKey);
         bool ContainsValue(string facetKey, string facetValue);
         string[] GetFacetValues(string facetKey);
-        void SetFacet(IReadOnlyDictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contact, [NotNull]string facetKey);
     }
 }
