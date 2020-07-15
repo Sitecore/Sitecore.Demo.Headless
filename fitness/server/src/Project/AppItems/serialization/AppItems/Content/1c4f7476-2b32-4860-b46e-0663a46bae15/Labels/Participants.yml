@@ -2,7 +2,7 @@
 ID: "920adb06-9c9f-4ea4-8dbd-86d6a50ef7b3"
 Parent: "606b50b3-257c-44b0-aeb6-b46c1b03eb66"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/churchill/churchill-10k-run/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/churchill/churchill-10k-run/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

@@ -2,7 +2,7 @@
 ID: "2199f842-0e0a-41e7-9b59-680faa340fac"
 Parent: "cac8e69b-9767-439c-828d-e9d279299935"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/chesterfield-inlet/chesterfield-inlet-2k-run/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/chesterfield-inlet/chesterfield-inlet-2k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

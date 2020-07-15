@@ -6,7 +6,7 @@ using Sitecore.Framework.Conditions;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Automation.Services
+namespace Sitecore.Demo.Fitness.Feature.Automation.Services
 {
     public class EventNotificationServiceOptions
     {

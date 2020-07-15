@@ -14,7 +14,7 @@
   <!-- /Environment variable support -->
 
   <appSettings>
-    <!-- Enable/Disable Deployment of Habitat Fitness Kiosk App Items -->
+    <!-- Enable/Disable Deployment of Lighthouse Fitness Kiosk App Items -->
     <add key="kiosk:define" value="On" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
 
     <!-- Enable/Disable Deployment of Content Hub items -->
@@ -29,6 +29,16 @@
     <!-- /Application Insights -->
   </appSettings>
 
+  <location>
+    <system.webServer>
+      <httpProtocol>
+        <customHeaders>
+          <add xdt:Transform="SetAttributes" xdt:Locator="Match(name)" name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net https://*.stylelabs.io https://*.stylelabs.cloud https://*.stylelabsdemo.com https://*.stylelabsqa.com https://*.stylelabsdev.com https://*.googleapis.com http://*.sitecoredemo.io http://*.sitecoredemo.com; img-src 'self' data: https://*.stylelabs.io https://*.stylelabs.cloud https://*.stylelabsdemo.com https://*.stylelabsqa.com https://*.stylelabsdev.com https://*.gstatic.com https://*.googleapis.com http://*.sitecoredemo.io http://*.sitecoredemo.com; style-src 'self' 'unsafe-inline' https://*.googleapis.com https://*.typekit.net http://*.sitecoredemo.io http://*.sitecoredemo.com; font-src 'self' 'unsafe-inline' https://*.gstatic.com https://*.typekit.net http://*.sitecoredemo.io http://*.sitecoredemo.com;" />
+        </customHeaders>
+      </httpProtocol>
+    </system.webServer>
+  </location>
+
   <system.webServer>
     <modules>
       <!-- Application Insights -->
@@ -37,6 +47,9 @@
       <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" preCondition="managedHandler" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
       <!-- /Application Insights -->
     </modules>
+    <handlers>
+      <add verb="*" path="sitecorejss_media.ashx" type="Sitecore.JavaScriptServices.Media.MediaRequestHandler, Sitecore.JavaScriptServices.Media" name="Sitecore.JavaScriptServices.Media.MediaRequestHandler" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+    </handlers>
   </system.webServer>
 
   <system.diagnostics xdt:Transform="InsertIfMissing">

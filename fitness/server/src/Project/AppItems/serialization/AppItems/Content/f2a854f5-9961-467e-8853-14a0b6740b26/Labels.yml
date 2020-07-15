@@ -2,7 +2,7 @@
 ID: "d949fd66-062b-4307-8ce6-0ea9f4a91e72"
 Parent: "f2a854f5-9961-467e-8853-14a0b6740b26"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/steinbach/steinbach-5k-run/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/steinbach/steinbach-5k-run/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

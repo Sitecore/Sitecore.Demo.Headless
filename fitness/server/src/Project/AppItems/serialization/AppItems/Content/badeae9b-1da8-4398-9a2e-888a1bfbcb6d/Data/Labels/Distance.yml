@@ -2,7 +2,7 @@
 ID: "a66e83b5-523d-4164-a605-360609e58d38"
 Parent: "a33ef24b-93b9-4407-a702-db8b883e27d6"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/newfoundland-and-labrador/hopedale/hopedale-5k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/newfoundland-and-labrador/hopedale/hopedale-5k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

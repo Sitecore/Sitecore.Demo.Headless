@@ -1,0 +1,22 @@
+﻿---
+ID: "c94671f0-e8fc-564c-a097-e07634e511f0"
+Parent: "c504c5a0-16d5-51ce-a4a3-2b0b7c06d68d"
+Template: "c504c5a0-16d5-51ce-a4a3-2b0b7c06d68d"
+Path: /sitecore/templates/Project/lighthousefitness/PersonalizationWizard/__Standard Values
+DB: master
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T230929Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport

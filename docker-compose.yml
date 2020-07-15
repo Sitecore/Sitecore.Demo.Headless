@@ -1,0 +1,390 @@
+version: '2.4'
+
+services:
+
+  sql:
+    image: ${REGISTRY}lighthouse-jss-sql:${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: .
+      dockerfile: docker\images\windows\demo-sqldev\dockerfile
+      args:
+        BUILD_IMAGE: ${REGISTRY}demo-build-sdk:${SITECORE_VERSION}
+        BASE_IMAGE: ${REGISTRY}lighthouse-sql:${LIGHTHOUSE_VERSION}
+        INTERNAL_NUGET_SOURCE: ${INTERNAL_NUGET_SOURCE}
+        SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN}
+    volumes:
+      - .\data\sql:C:\Data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
+    environment:
+      SA_PASSWORD: ${SQL_SA_PASSWORD}
+      ACCEPT_EULA: "Y"
+      USER_PASSWORD: "b"
+      ADMIN_PASSWORD: "b"
+      ADMIN_USER_NAME: "sitecore\\superuser"
+      DISABLE_DEFAULT_ADMIN: 'FALSE'
+      DAM_URL: ${DAM_URL}
+    networks:
+      demo:
+        aliases:
+          - platform-sql
+
+  ps:
+    image: ${REGISTRY}lighthouse-ps:latest
+    isolation: ${ISOLATION}
+    # build:
+    #   context: .
+    #   dockerfile: .\docker\images\windows\demo-ps\dockerfile
+    #   args:
+    #     BASE_IMAGE: ${REGISTRY}sitecore-ps:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    restart: unless-stopped
+    environment:
+      CONN_STRING_CORE: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      CONN_STRING_MASTER: Data Source=sql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
+      CONN_STRING_WEB: Data Source=sql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
+    depends_on:
+      sql:
+        condition: service_healthy
+    ports:
+      - "44015:80"
+    networks:
+      - demo
+
+  solr:
+    image: ${REGISTRY}lighthouse-solr:latest
+    isolation: ${ISOLATION}
+    # build:
+    #   context: .
+    #   dockerfile: .\docker\images\windows\demo-solr\dockerfile
+    #   args:
+    #     BASE_IMAGE: ${REGISTRY}sitecore-xp-sxa-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
+    volumes:
+      - .\data\solr:C:\Data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
+    networks:
+      - demo
+
+  xconnect:
+    image: ${REGISTRY}lighthouse-jss-xconnect:${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\xconnect\\Development.ps1"
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-xconnect\dockerfile
+      args:
+        BUILD_IMAGE: ${REGISTRY}demo-build-sdk:latest
+        BASE_IMAGE: ${REGISTRY}lighthouse-xconnect:${LIGHTHOUSE_VERSION}
+        INTERNAL_NUGET_SOURCE: ${INTERNAL_NUGET_SOURCE}
+        SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN}
+    volumes:
+      - .\data\xconnect\logs:C:\inetpub\wwwroot\App_Data\logs
+      - .\data\xconnect\src:C:\src
+    mem_limit: 1GB
+    environment:
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
+      SITECORE_SITECORE:XCONNECT:COLLECTIONSEARCH:SERVICES:SOLR.SOLRREADERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
+      SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRWRITERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
+      SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_PROCESSING.ENGINE.STORAGE: Data Source=sql;Database=Sitecore.ProcessingEngineStorage;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_REPORTING: Data Source=sql;Database=Sitecore.Reporting;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION: Data Source=sql;Database=Sitecore.MarketingAutomation;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.PROCESSING.POOLS: Data Source=sql;Database=Sitecore.Processing.Pools;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA: Data Source=sql;Database=Sitecore.ReferenceData;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_COLLECTION: Data Source=sql;Database=Sitecore.Xdb.Collection.ShardMapManager;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLRCORE: http://solr:8983/solr/sitecore_xdb
+    depends_on:
+      - sql
+      - solr
+    networks:
+      - demo
+
+  indexworker:
+    image: ${REGISTRY}lighthouse-jss-indexworker:${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-indexworker\dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}lighthouse-indexworker:${LIGHTHOUSE_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\worker'; }"
+    volumes:
+      - .\data\indexworker\logs:C:\worker\App_Data\logs
+      - .\data\indexworker\src:c:\src
+    mem_limit: 500MB
+    environment:
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
+      SITECORE_CONNECTIONSTRINGS_COLLECTION: Data Source=sql;Initial Catalog=Sitecore.Xdb.Collection.ShardMapManager;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLRCORE: http://solr:8983/solr/sitecore_xdb
+      SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRREADERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
+      SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRWRITERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
+    depends_on:
+      sql:
+        condition: service_healthy
+      solr:
+        condition: service_started
+    networks:
+      - demo
+
+  automationengine:
+    image: ${REGISTRY}lighthouse-jss-automationengine:${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-automationengine\dockerfile
+      args:
+        BUILD_IMAGE: ${REGISTRY}demo-build-sdk:latest
+        BASE_IMAGE: ${REGISTRY}lighthouse-automationengine:${LIGHTHOUSE_VERSION}
+        INTERNAL_NUGET_SOURCE: ${INTERNAL_NUGET_SOURCE}
+        SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN}
+    volumes:
+      - .\data\automationengine:C:\inetpub\wwwroot\App_Data\logs
+    mem_limit: 500MB
+    environment:
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
+      SITECORE_CONNECTIONSTRINGS_XCONNECT.COLLECTION: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION: Data Source=sql;Database=Sitecore.MarketingAutomation;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA: Data Source=sql;Database=Sitecore.ReferenceData;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;User ID=sa;Password=${SQL_SA_PASSWORD}
+    depends_on:
+      sql:
+        condition: service_healthy
+      xconnect:
+        condition: service_started
+    networks:
+      - demo
+
+  cd:
+    image: ${REGISTRY}lighthouse-jss-cd:${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-cd\dockerfile
+      args:
+        BUILD_IMAGE: ${REGISTRY}demo-build-sdk:${SITECORE_VERSION}
+        BASE_IMAGE: ${REGISTRY}lighthouse-cd:${LIGHTHOUSE_VERSION}
+        INTERNAL_NUGET_SOURCE: ${INTERNAL_NUGET_SOURCE}
+        SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"
+    volumes:
+      - .\data\cd\src:C:\src
+    ports:
+      - "44002:80"
+    environment:
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
+      SITECORE_APPSETTINGS_ROLE:DEFINE: ContentDelivery
+      SITECORE_APPSETTINGS_SXAXM:DEFINE: sxaxconnect
+      SITECORE_APPSETTINGS_ENV:DEFINE: Docker
+      SITECORE_APPSETTINGS_UNICORN:DEFINE: Disabled
+      SITECORE_APPSETTINGS_PUBLISHINGSERVICE:DEFINE: Disabled
+      SITECORE_APPSETTINGS_INTEGRATIONS:DEFINE: None
+      SITECORE_CONNECTIONSTRINGS_CORE: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SECURITY: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_WEB: Data Source=sql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS: Data Source=sql;Initial Catalog=Sitecore.ExperienceForms;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLR.SEARCH: http://solr:8983/solr
+      SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION: Data Source=sql;Database=Sitecore.MarketingAutomation;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.PROCESSING.POOLS: Data Source=sql;Database=Sitecore.Processing.Pools;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA: Data Source=sql;Database=Sitecore.ReferenceData;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.PROCESSING.TASKS: Data Source=sql;Database=Sitecore.Processing.Tasks;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXM.MASTER: Data Source=sql;Database=Sitecore.EXM.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_REPORTING: Data Source=sql;Database=Sitecore.Reporting;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SITECORE.REPORTING.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XCONNECT.COLLECTION: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION.OPERATIONS.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION.REPORTING.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA.CLIENT: http://xconnect
+      SITECORE_APPSETTINGS_TELERIK.ASYNCUPLOAD.CONFIGURATIONENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
+      SITECORE_APPSETTINGS_TELERIK.UPLOAD.CONFIGURATIONHASHKEY: ${TELERIK_ENCRYPTION_KEY}
+      SITECORE_APPSETTINGS_TELERIK.WEB.UI.DIALOGPARAMETERSENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
+    depends_on:
+      sql:
+        condition: service_started
+      ps:
+        condition: service_started
+      solr:
+        condition: service_started
+      xconnect:
+        condition: service_started
+    networks:
+      demo:
+        aliases:
+          - ${HOSTNAME_SUFFIX}
+          - cumulus.${HOSTNAME_SUFFIX}
+          - finance.${HOSTNAME_SUFFIX}
+          - app-cd
+          - app-cd.${HOSTNAME_SUFFIX}
+          - kiosk-cd
+          - kiosk-cd.${HOSTNAME_SUFFIX}
+
+  app:
+    image: ${REGISTRY}lighthouse-jss-app:${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-app\dockerfile
+      args:
+        BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-1809
+        BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-1809
+    ports:
+      - "44040:80"
+    environment:
+      SITECORE_API_HOST: http://app-cd.sitecoredemo.io
+    depends_on:
+      cm:
+        condition: service_started
+      cd:
+        condition: service_started
+    networks:
+      demo:
+        aliases:
+          - app.${HOSTNAME_SUFFIX}
+
+  kiosk:
+    image: ${REGISTRY}lighthouse-jss-kiosk:${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-kiosk\dockerfile
+      args:
+        BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-1809
+        BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-1809
+    ports:
+      - "44041:80"
+    environment:
+      SITECORE_API_HOST: http://kiosk-cd.sitecoredemo.io
+    depends_on:
+      cm:
+        condition: service_started
+      cd:
+        condition: service_started
+    networks:
+      demo:
+        aliases:
+          - kiosk.${HOSTNAME_SUFFIX}
+
+  cm:
+    image: ${REGISTRY}lighthouse-jss-cm:${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-standalone\dockerfile
+      args:
+        BUILD_IMAGE: ${REGISTRY}demo-build-sdk:${SITECORE_VERSION}
+        BASE_IMAGE: ${REGISTRY}lighthouse-cm:${LIGHTHOUSE_VERSION}
+        INTERNAL_NUGET_SOURCE: ${INTERNAL_NUGET_SOURCE}
+        SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('C:\\src\\Web.config'); }"
+    mem_limit: 4G
+    volumes:
+      - .\data\cm\src:C:\src
+      - .\fitness\server\src:C:\projects\Sitecore.Demo.Omni\fitness\server\src
+      - C:\projects\Sitecore.Demo.Platform\items:c:\unicorn
+    ports:
+      - "44001:80"
+    environment:
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
+      SITECORE_APPSETTINGS_ROLE:DEFINE: Standalone
+      SITECORE_APPSETTINGS_SXAXM:DEFINE: sxaxconnect
+      SITECORE_APPSETTINGS_ENV:DEFINE: Docker
+      SITECORE_APPSETTINGS_UNICORN:DEFINE: Enabled
+      SITECORE_APPSETTINGS_PUBLISHINGSERVICE:DEFINE: Enabled
+      SITECORE_APPSETTINGS_INTEGRATIONS:DEFINE: None
+      SITECORE_APPSETTINGS_CONTENTHUB:DEFINE: Enabled
+      SITECORE_CONNECTIONSTRINGS_CORE: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SECURITY: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_MASTER: Data Source=sql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_WEB: Data Source=sql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS: Data Source=sql;Initial Catalog=Sitecore.ExperienceForms;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLR.SEARCH: http://solr:8983/solr
+      SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION: Data Source=sql;Database=Sitecore.MarketingAutomation;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.PROCESSING.POOLS: Data Source=sql;Database=Sitecore.Processing.Pools;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA: Data Source=sql;Database=Sitecore.ReferenceData;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.PROCESSING.TASKS: Data Source=sql;Database=Sitecore.Processing.Tasks;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXM.MASTER: Data Source=sql;Database=Sitecore.EXM.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_REPORTING: Data Source=sql;Database=Sitecore.Reporting;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SITECORE.REPORTING.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XCONNECT.COLLECTION: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION.OPERATIONS.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION.REPORTING.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA.CLIENT: http://xconnect
+      SITECORE_APPSETTINGS_TELERIK.ASYNCUPLOAD.CONFIGURATIONENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
+      SITECORE_APPSETTINGS_TELERIK.UPLOAD.CONFIGURATIONHASHKEY: ${TELERIK_ENCRYPTION_KEY}
+      SITECORE_APPSETTINGS_TELERIK.WEB.UI.DIALOGPARAMETERSENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
+      SITECORE_CONNECTIONSTRINGS_CMP.ContentHub: ${CMP_CONTENTHUB}
+      SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathIn: ${CMP_SERVICEBUSENTITYPATHIN}
+      SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusSubscription: ${CMP_SERVICEBUSSUBSCRIPTION}
+      SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathOut: ${CMP_SERVICEBUSENTITYPATHOUT}
+      SITECORE_CONNECTIONSTRINGS_SFMC: ${SFMC_CONNECTIONSTRING}
+    depends_on:
+      sql:
+        condition: service_healthy
+      ps:
+        condition: service_started
+      solr:
+        condition: service_started
+      xconnect:
+        condition: service_started
+    networks:
+      demo:
+        aliases:
+          - cm.${HOSTNAME_SUFFIX}
+          - cumulus-cm.${HOSTNAME_SUFFIX}
+          - finance-cm.${HOSTNAME_SUFFIX}
+
+  smtp:
+    image: rnwood/smtp4dev:v3
+    isolation: ${ISOLATION}
+    ports:
+      - "44025:25"
+      - "44026:80"
+    networks:
+      demo:
+        aliases:
+          - platform-smtp
+
+  init:
+    image: ${REGISTRY}lighthouse-init:latest
+    isolation: ${ISOLATION}
+    # build:
+    #   context: .\docker\images\windows\demo-init
+    #   args:
+    #     BUILD_IMAGE: mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1809
+    #     BASE_IMAGE: mcr.microsoft.com/dotnet/core/runtime:3.1-nanoserver-1809
+    environment:
+      ADMIN_PASSWORD: "b"
+      ADMIN_USER_NAME: "sitecore\\superuser"
+      HOST_CD: "cd"
+      HOST_CM: "cm"
+      HOST_PS: "ps"
+      MARKETING_DEFINITIONS_APIKEY: ${MARKETING_DEFINITIONS_APIKEY}
+    depends_on:
+      sql:
+        condition: service_healthy
+      ps:
+        condition: service_started
+      cm:
+        condition: service_started
+    networks:
+      - demo
+
+  monitor:
+    image: ${REGISTRY}sitecore-hostswriter:9174-nanoserver-${NANOSERVER_VERSION}
+    isolation: ${ISOLATION}
+    volumes:
+      - C:/windows/system32/drivers/etc:C:\driversetc
+      - source: '\\.\pipe\docker_engine'
+        target: '\\.\pipe\docker_engine'
+        type: npipe
+    networks:
+      - demo
+
+networks:
+  demo:
+    external:
+      name: nat

@@ -1,4 +1,4 @@
-# Sitecore.HabitatHome.Omni Documentation
+# Sitecore.Demo.Omni Documentation
 
 ## Installation
 

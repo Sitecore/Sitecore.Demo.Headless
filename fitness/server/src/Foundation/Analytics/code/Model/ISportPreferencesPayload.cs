@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model
+namespace Sitecore.Demo.Fitness.Foundation.Analytics.Model
 {
     public interface ISportPreferencesPayload
     {

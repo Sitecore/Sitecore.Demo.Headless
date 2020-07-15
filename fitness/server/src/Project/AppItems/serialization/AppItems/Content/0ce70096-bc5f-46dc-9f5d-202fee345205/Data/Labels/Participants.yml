@@ -2,7 +2,7 @@
 ID: "5d659050-ecbb-4277-969c-34e734e61df4"
 Parent: "85a9134f-5629-42d4-912c-fbae4b09b193"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/chilliwack/chilliwack-golf-tournament/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/chilliwack/chilliwack-golf-tournament/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

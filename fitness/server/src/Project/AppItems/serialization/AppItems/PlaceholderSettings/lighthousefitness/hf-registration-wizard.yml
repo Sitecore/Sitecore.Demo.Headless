@@ -1,0 +1,37 @@
+﻿---
+ID: "b68f6852-a415-59d2-9009-69cf1ed0972b"
+Parent: "0f13bd98-5bbd-5c8f-b295-22c8ada5dd5b"
+Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
+Path: "/sitecore/layout/Placeholder Settings/Project/lighthousefitness/hf-registration-wizard"
+DB: master
+SharedFields:
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
+  Hint: Placeholder Key
+  Value: "hf-registration-wizard"
+- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
+  Hint: __Read Only
+  Type: Checkbox
+  Value: 1
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
+  Hint: Allowed Controls
+  Type: TreelistEx
+  Value: |
+    {C7171CD1-88DC-5C66-B5C1-BF86B595C64E}
+    {22E9812C-F7A7-5B26-B399-C2A5CC171182}
+    {9748DEFE-3AD9-55A2-BED2-FFE7458BA107}
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Registration Wizard
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T230930Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport

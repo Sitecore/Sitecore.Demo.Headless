@@ -2,7 +2,7 @@
 ID: "3f8cb4db-40c0-4573-b4d7-89557b17994d"
 Parent: "29cde644-714b-4d98-9101-d9ddf7da18d8"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/newfoundland-and-labrador/nain/nain-cycling-race/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/newfoundland-and-labrador/nain/nain-cycling-race/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

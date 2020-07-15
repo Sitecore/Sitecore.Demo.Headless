@@ -6,7 +6,7 @@ using Sitecore.ContentSearch.Security;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Services
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
 {
     /// <summary>
     /// Service responsible for fetching product item data

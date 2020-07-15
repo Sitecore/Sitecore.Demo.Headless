@@ -2,7 +2,7 @@
 ID: "50e5fd9f-036c-42e7-b31e-0e0a3748e6a3"
 Parent: "e4b1edf8-67b1-4d00-86b8-f4ed3f105a5d"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/new-brunswick/bathurst/bathurst-marathon/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/new-brunswick/bathurst/bathurst-marathon/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

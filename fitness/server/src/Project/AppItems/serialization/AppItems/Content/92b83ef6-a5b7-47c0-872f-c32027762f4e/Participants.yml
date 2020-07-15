@@ -2,7 +2,7 @@
 ID: "a063f89a-2eed-4740-a8f3-a0d45d3b013b"
 Parent: "92b83ef6-a5b7-47c0-872f-c32027762f4e"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/quebec/rimouski/rimouski-5k-run/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/quebec/rimouski/rimouski-5k-run/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

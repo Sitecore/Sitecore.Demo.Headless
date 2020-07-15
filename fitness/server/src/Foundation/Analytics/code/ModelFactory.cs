@@ -1,9 +1,9 @@
-﻿using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
+﻿using Sitecore.Demo.Fitness.Foundation.Analytics.Facets;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
 using Sitecore.XConnect.Schema;
 
-namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics
+namespace Sitecore.Demo.Fitness.Foundation.Analytics
 {
     public static class ModelFactory
     {
@@ -11,7 +11,7 @@ namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics
 
         public static XdbModel CreateModel()
         {
-            var builder = new XdbModelBuilder("Sitecore.HabitatHome.Fitness.Foundation.Analytics", new XdbModelVersion(9, 3));
+            var builder = new XdbModelBuilder("Sitecore.Demo.Fitness.Foundation.Analytics", new XdbModelVersion(9, 3));
 
             //Reference Sitecore's model
             builder.ReferenceModel(CollectionModel.Model);

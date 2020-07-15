@@ -30,7 +30,7 @@ export default function register() {
     }
 
     //window.addEventListener('load', () => {
-      const swUrl = `/dist/habitatfitness/service-worker.js`;
+      const swUrl = `/dist/lighthousefitness/service-worker.js`;
 
       if (isLocalhost) {
         // This is running on localhost. Lets check if a service worker still exists or not.

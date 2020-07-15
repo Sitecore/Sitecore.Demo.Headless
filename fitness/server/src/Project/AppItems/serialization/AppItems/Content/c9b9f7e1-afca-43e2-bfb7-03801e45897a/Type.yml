@@ -2,7 +2,7 @@
 ID: "33b5f465-0d49-4dd8-aff1-2384fb3a13b4"
 Parent: "c9b9f7e1-afca-43e2-bfb7-03801e45897a"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/ennadai/ennadai-2k-run/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/ennadai/ennadai-2k-run/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

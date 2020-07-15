@@ -2,7 +2,7 @@
 ID: "45d805a1-8e41-400d-8b6e-69a16f2f0695"
 Parent: "0f50d32d-25cf-42f2-9847-03c97fdacab4"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/victoria/victoria-10k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/victoria/victoria-10k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

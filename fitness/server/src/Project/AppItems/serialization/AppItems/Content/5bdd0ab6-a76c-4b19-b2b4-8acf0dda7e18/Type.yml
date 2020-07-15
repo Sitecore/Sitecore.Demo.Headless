@@ -2,7 +2,7 @@
 ID: "e06a3fd9-c184-4bc3-adea-96de020c3e1b"
 Parent: "5bdd0ab6-a76c-4b19-b2b4-8acf0dda7e18"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/hearst/hearst-marathon/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/hearst/hearst-marathon/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

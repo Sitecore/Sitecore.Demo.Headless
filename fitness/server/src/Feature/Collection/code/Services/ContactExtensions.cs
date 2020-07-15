@@ -6,7 +6,7 @@ using Sitecore.Diagnostics;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Collection.Model;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
+namespace Sitecore.Demo.Fitness.Feature.Collection.Services
 {
     public static class ContactExtensions
     {

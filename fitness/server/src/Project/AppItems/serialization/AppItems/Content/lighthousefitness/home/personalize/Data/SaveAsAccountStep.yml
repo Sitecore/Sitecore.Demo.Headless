@@ -1,0 +1,39 @@
+﻿---
+ID: "9afce79b-fe50-5bb4-aec5-bb597dff8646"
+Parent: "91eddb32-d015-5c5d-846e-ce6eb3c92cd7"
+Template: "36916497-e872-5b5d-9464-a6264ce78c61"
+Path: /sitecore/content/lighthousefitness/home/personalize/Data/SaveAsAccountStep
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Save As Account Step
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181027T234955Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\virtualssuser
+    - ID: "9efe8415-6dc7-5031-8679-56eb6c3db9b5"
+      Hint: title
+      Value: "Want to save it as account?"
+    - ID: "e12d8770-1f35-56b5-8247-e53a6cebf4df"
+      Hint: stepName
+      Value: Personal
+    - ID: "e4b0e5f0-c9a9-51d5-815e-7ad3f5ea54f1"
+      Hint: skipLink
+      Value: |
+        <link text="Skip this" linktype="internal" id="{82BBADAF-BD4A-5FCE-9E12-EAA858EE8E94}" />

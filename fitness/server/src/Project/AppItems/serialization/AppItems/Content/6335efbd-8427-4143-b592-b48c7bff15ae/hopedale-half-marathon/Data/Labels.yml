@@ -2,7 +2,7 @@
 ID: "828c178b-6cce-46be-b4d0-2f11e4665683"
 Parent: "c059c511-161a-4255-8b36-b6387d282a30"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/newfoundland-and-labrador/hopedale/hopedale-half-marathon/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/newfoundland-and-labrador/hopedale/hopedale-half-marathon/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

@@ -2,7 +2,7 @@
 ID: "7080ea68-2068-4f9f-9e57-fc46c1db567c"
 Parent: "f7125c0d-f573-417a-a7fe-0f5cebc7cb56"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-5k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/selkirk/selkirk-5k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

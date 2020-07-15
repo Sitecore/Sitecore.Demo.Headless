@@ -2,7 +2,7 @@
 ID: "4458a4c4-5474-41aa-88c5-6b74ba1b96b8"
 Parent: "e386a85a-4f3c-4a9e-90b5-4e4d9593af4e"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/northwest-territories/tsiigehtchic/tsiigehtchic-10k-run/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/northwest-territories/tsiigehtchic/tsiigehtchic-10k-run/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

@@ -12,3 +12,4 @@ scjssconfig.json
 launch.json
 **/.vscode
 .vs/*
+/data/

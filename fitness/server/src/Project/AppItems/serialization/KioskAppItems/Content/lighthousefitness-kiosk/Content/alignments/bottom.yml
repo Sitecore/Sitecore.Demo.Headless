@@ -1,0 +1,28 @@
+﻿---
+ID: "a89284b3-0025-5508-8450-e4eacd8432f4"
+Parent: "13ce974d-e3d8-52aa-bb44-d4f1f14d4331"
+Template: "8f5de718-d14f-54fb-a5de-b4cafa1b96bd"
+Path: "/sitecore/content/lighthousefitness-kiosk/Content/alignments/bottom"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Bottom
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "07c1d1fd-4006-56c9-91f6-c55dab4b5508"
+      Hint: name
+      Value: bottom
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181227T054330Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"

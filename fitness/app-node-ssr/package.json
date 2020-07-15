@@ -1,10 +1,12 @@
 {
-  "name": "habitatfitness-ssr",
+  "name": "lighthousefitness-ssr",
   "version": "0.0.1",
-  "description": "Node server-side-rendering proxy Habitat Fitness app",
+  "description": "Node server-side-rendering proxy Lighthouse Fitness app",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "docker": "pwsh -NoProfile -ExecutionPolicy Unrestricted -File ./ReplaceTokens.ps1 && node index.js",
+    "dockerlinux": "./bootstrap.sh && node index.js"
   },
   "author": {
     "name": "Sitecore Corporation",

@@ -7,10 +7,10 @@ $sport = "golf" # possible values golf, basketball, running, cycling
 $modCities = 20 # Modulus factor for selecting a subset of cities (2 = every other city, 5 = every 5 cities)
 $maxEvents = 1 # Maximum number of events per city.
 
-$rootPath = "master://content/habitatfitness/home/events/"
+$rootPath = "master://content/lighthousefitness/home/events/"
 
-$origin = Get-Item ("master://content/habitatfitness/sample-events/{0}-event-template" -f $sport)
-$images = Get-ChildItem ("master://media library/Project/habitatfitness/assets/events/{0}" -f $sport)
+$origin = Get-Item ("master://content/lighthousefitness/sample-events/{0}-event-template" -f $sport)
+$images = Get-ChildItem ("master://media library/Project/lighthousefitness/assets/events/{0}" -f $sport)
 
 $baseDescriptions = @{}
 

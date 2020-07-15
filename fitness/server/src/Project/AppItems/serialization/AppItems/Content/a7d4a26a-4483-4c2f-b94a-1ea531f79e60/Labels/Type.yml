@@ -2,7 +2,7 @@
 ID: "0bee4a38-e6cd-424d-80c9-3267f09c065f"
 Parent: "259adf2c-201e-4304-8ec5-65eea8366aa2"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/winnipeg/winnipeg-10k-run/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/winnipeg/winnipeg-10k-run/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

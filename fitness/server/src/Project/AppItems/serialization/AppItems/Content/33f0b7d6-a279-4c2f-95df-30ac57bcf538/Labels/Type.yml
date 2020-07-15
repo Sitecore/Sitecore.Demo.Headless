@@ -2,7 +2,7 @@
 ID: "2df2bd37-214b-49ec-b96d-97e96e920c77"
 Parent: "e11e801f-2fd4-4867-bcc0-f33aea779bf7"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/arctic-bay/arctic-bay-5k-run/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/arctic-bay/arctic-bay-5k-run/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

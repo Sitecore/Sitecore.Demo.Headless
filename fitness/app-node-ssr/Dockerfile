@@ -20,6 +20,6 @@ WORKDIR /app
 
 COPY --from=source /app /app/.
 
-EXPOSE 3000
+EXPOSE 80
 
 ENTRYPOINT npm run start

@@ -2,7 +2,7 @@
 ID: "58170b8d-385c-4e66-9030-f626fd4ed419"
 Parent: "a2a993ad-c1b2-458c-b12a-8b2dbfff007a"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/kamloops/kamloops-2k-run/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/kamloops/kamloops-2k-run/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

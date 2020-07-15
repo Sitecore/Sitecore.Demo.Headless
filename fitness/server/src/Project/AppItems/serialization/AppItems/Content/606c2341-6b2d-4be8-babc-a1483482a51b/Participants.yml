@@ -2,7 +2,7 @@
 ID: "7b3bb83c-398c-41a0-9c4b-d1ed4ae1fdd7"
 Parent: "606c2341-6b2d-4be8-babc-a1483482a51b"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/kenora/kenora-2k-run/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/kenora/kenora-2k-run/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

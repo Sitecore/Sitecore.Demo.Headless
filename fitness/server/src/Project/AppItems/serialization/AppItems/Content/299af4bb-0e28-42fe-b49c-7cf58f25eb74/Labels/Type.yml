@@ -2,7 +2,7 @@
 ID: "275a4c9c-e479-4248-b0d6-a45be64a05af"
 Parent: "890c8238-724e-4085-b4b7-7bfc34a97e7e"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/alberta/lethbridge/lethbridge-5k-run/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/alberta/lethbridge/lethbridge-5k-run/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

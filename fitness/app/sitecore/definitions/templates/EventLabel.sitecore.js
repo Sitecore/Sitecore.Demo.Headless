@@ -17,7 +17,7 @@ export default function(manifest) {
     fields: [
       { name: "name", type: CommonFieldTypes.SingleLineText, displayName: "Label Name", required: true, standardValue: "$name" },
       { name: "value", type: CommonFieldTypes.SingleLineText, displayName: "Label Value", required: true },
-      { name: "image", type: CommonFieldTypes.Image, displayName: "Label Image", required: true, source: "/sitecore/media library/habitatfitness/assets/icons" },
+      { name: "image", type: CommonFieldTypes.Image, displayName: "Label Image", required: true, source: "/sitecore/media library/lighthousefitness/assets/icons" },
     ]
   });
 }

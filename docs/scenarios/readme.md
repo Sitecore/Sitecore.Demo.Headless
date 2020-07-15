@@ -1,4 +1,4 @@
-# Demo scenarios for Habitat Fitness
+# Demo scenarios for Lighthouse Fitness
 
 ## Developer / technical scenarios
 

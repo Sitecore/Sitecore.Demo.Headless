@@ -13,7 +13,7 @@ RUN npm install
 
 COPY . .
 
-RUN jss setup --instancePath c:\app\src\deploy --deployUrl http://habitatfitness.dev.local:44001 --layoutServiceHost http://habitatfitness.dev.local:44001/sitecore/api/jss/import --apiKey {EBF6D5C1-EB80-4B15-91AB-DD3845797774} --deploySecret patg3dt0mveyzwoo046lfiy9bktj0st9huuxqbcjwuwd --nonInteractive
+RUN jss setup --instancePath c:\app\src\deploy --deployUrl http://lighthousefitness.dev.local:44001 --layoutServiceHost http://lighthousefitness.dev.local:44001/sitecore/api/jss/import --apiKey {EBF6D5C1-EB80-4B15-91AB-DD3845797774} --deploySecret patg3dt0mveyzwoo046lfiy9bktj0st9huuxqbcjwuwd --nonInteractive
 
 RUN jss build
 

@@ -2,7 +2,7 @@
 ID: "5fdda756-23c5-4980-b5b6-0449f31fb266"
 Parent: "8aa01859-6286-442d-845e-750e5a632315"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/northwest-territories/fort-mcpherson/fort-mcpherson-2k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/northwest-territories/fort-mcpherson/fort-mcpherson-2k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

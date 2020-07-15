@@ -2,7 +2,7 @@
 ID: "3cb1f7ff-cee3-41af-ad3b-34818020c508"
 Parent: "6aa2e523-3ff5-42a0-abfb-5578fc7843dc"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/cobalt/cobalt-cycling-race/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/cobalt/cobalt-cycling-race/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

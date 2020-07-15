@@ -1,0 +1,24 @@
+﻿---
+ID: "9e4e1b36-f1d5-47a4-a152-840f765e7694"
+Parent: "05f059ec-82c3-40f7-9d25-94727d526154"
+Template: "f0d16eee-3a05-4e43-a082-795a32b873c0"
+Path: /sitecore/system/Settings/Rules/Definitions/Elements/Lighthouse Fitness Segmentation/Sport Profile
+DB: master
+SharedFields:
+- ID: "884e9630-ab42-4023-95d9-f221f3479950"
+  Hint: Code
+  Value: 
+- ID: "ab51c8b2-f0e1-4471-9aae-cc080d774923"
+  Hint: Type
+  Value: Sitecore.Demo.Fitness.Feature.Segmentation.Predicates.SportsContains, Sitecore.Demo.Fitness.Feature.Segmentation
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20181119T010104:636781860647406653Z"
+    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
+      Hint: Text
+      Value: "where contact has [SportName,Text,,specific] sport in profile"

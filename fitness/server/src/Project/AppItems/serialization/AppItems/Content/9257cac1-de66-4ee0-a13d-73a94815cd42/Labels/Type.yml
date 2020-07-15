@@ -2,7 +2,7 @@
 ID: "f83053c1-eaee-42fc-bc37-f083bffce4c3"
 Parent: "b797f660-041e-4fd1-a8f3-177f712ed3c5"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/northwest-territories/holman/holman-5k-run/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/northwest-territories/holman/holman-5k-run/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

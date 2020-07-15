@@ -2,7 +2,7 @@
 ID: "01709ab8-bb22-4164-bf9f-8ea9c2b0167b"
 Parent: "5b05b011-9da2-4a5a-b4a8-a938e3bcfa40"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/kamloops/kamloops-cycling-race/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/kamloops/kamloops-cycling-race/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

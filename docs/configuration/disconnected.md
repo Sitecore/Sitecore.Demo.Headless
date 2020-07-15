@@ -11,7 +11,7 @@ For the complete [integrated mode](https://jss.sitecore.com/docs/fundamentals/ap
 All the defaults are configurable. More on that later.
 
 1. A clone of this repository.
-    * The default project folder is `C:\projects\Sitecore.HabitatHome.Omni`.
+    * The default project folder is `C:\projects\Sitecore.Demo.Omni`.
 2. Sitecore JSS CLI installed globally
     * `npm install -g @sitecore-jss/sitecore-jss-cli`
 

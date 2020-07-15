@@ -2,7 +2,7 @@
 ID: "ac772b97-56bd-4467-82c1-88bcb2080d1f"
 Parent: "f2ff0d88-104d-4a58-a9ce-6452523916ae"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/chapleau/chapleau-10k-run/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/chapleau/chapleau-10k-run/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

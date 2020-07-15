@@ -1,6 +1,6 @@
 ﻿using Sitecore.XConnect;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
+namespace Sitecore.Demo.Fitness.Feature.Collection.Services
 {
     public static class FacetExtensions
     { 

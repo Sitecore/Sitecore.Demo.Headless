@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Sitecore.DependencyInjection;
-using Sitecore.HabitatHome.Fitness.Feature.Collection.Controllers;
-using Sitecore.HabitatHome.Fitness.Feature.Collection.Services;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
+using Sitecore.Demo.Fitness.Feature.Collection.Controllers;
+using Sitecore.Demo.Fitness.Feature.Collection.Services;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Collection
+namespace Sitecore.Demo.Fitness.Feature.Collection
 {
     public class RegisterDependencies : IServicesConfigurator
     {
@@ -19,13 +19,13 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Collection
             serviceCollection.AddTransient<IStringValueListFacetService, StringValueListFacetService>();
             serviceCollection.AddTransient<ISessionEventSubscriptionsService, SessionEventSubscriptionsService>();
 
-            serviceCollection.AddTransient<HabitatFitnessDemographicsController>();
-            serviceCollection.AddTransient<HabitatFitnessEventFavoritesController>();
-            serviceCollection.AddTransient<HabitatFitnessEventRegistrationController>();
-            serviceCollection.AddTransient<HabitatFitnessIdentificationController>();
-            serviceCollection.AddTransient<HabitatFitnessSessionController>();
-            serviceCollection.AddTransient<HabitatFitnessSportsController>();
-            serviceCollection.AddTransient<HabitatFitnessSubscriptionsController>();
+            serviceCollection.AddTransient<LighthouseFitnessDemographicsController>();
+            serviceCollection.AddTransient<LighthouseFitnessEventFavoritesController>();
+            serviceCollection.AddTransient<LighthouseFitnessEventRegistrationController>();
+            serviceCollection.AddTransient<LighthouseFitnessIdentificationController>();
+            serviceCollection.AddTransient<LighthouseFitnessSessionController>();
+            serviceCollection.AddTransient<LighthouseFitnessSportsController>();
+            serviceCollection.AddTransient<LighthouseFitnessSubscriptionsController>();
         }
     }
 }

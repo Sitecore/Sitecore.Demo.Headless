@@ -2,7 +2,7 @@
 ID: "4b135a8d-e4fc-4741-9a5f-15e9029ea5e4"
 Parent: "580a8750-428d-4fdd-8b0f-2e3610bdb842"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/ennadai/ennadai-half-marathon/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/ennadai/ennadai-half-marathon/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

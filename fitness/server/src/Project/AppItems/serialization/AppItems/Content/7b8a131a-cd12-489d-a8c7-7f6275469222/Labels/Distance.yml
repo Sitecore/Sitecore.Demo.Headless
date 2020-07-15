@@ -2,7 +2,7 @@
 ID: "ac673c7e-2ffa-4ea7-ad3a-fdd9a5154f54"
 Parent: "87282b32-2335-4ab4-9572-29b5054051aa"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-cycling-race/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/selkirk/selkirk-cycling-race/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

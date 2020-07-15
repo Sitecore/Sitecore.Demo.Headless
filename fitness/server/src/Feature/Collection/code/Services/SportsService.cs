@@ -2,13 +2,13 @@
 using System.Linq;
 using Sitecore.Analytics;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Facets;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Model;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
+namespace Sitecore.Demo.Fitness.Feature.Collection.Services
 {
     public class SportsService : AnalyticsServiceBase, ISportsService
     {

@@ -2,7 +2,7 @@
 ID: "5b0ba8f4-b0d4-4c4f-aa55-51f6b2af3ad5"
 Parent: "9cc1cd00-a87a-4137-b598-bf7e33ad28cd"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/kelowna/kelowna-marathon/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/kelowna/kelowna-marathon/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Deploy
+namespace Sitecore.Demo.Fitness.Foundation.Analytics.Deploy
 {
     class Program
     {

@@ -2,7 +2,7 @@
 ID: "11dc5b07-3050-4305-9b9f-710d0ad9d418"
 Parent: "9d3b8a6e-8a96-488c-8693-91672ab23db6"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/newfoundland-and-labrador/la-scie/la-scie-5k-run/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/newfoundland-and-labrador/la-scie/la-scie-5k-run/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

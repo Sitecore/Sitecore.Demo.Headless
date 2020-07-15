@@ -2,7 +2,7 @@
 ID: "1ee4b7be-4c2d-4f61-ab1a-259e28ea884d"
 Parent: "91d83fc9-2cbc-477d-8c7c-5cef5821b018"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/dauphin/dauphin-2k-run/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/dauphin/dauphin-2k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

@@ -2,7 +2,7 @@
 ID: "9d241150-e81e-4100-bd52-c7c324f4c362"
 Parent: "d203c6f8-8f4f-4c53-8e5c-c6f20d793f0a"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nova-scotia/baddeck/baddeck-3-on-3-basketball-drop-in/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nova-scotia/baddeck/baddeck-3-on-3-basketball-drop-in/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

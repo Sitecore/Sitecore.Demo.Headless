@@ -1,4 +1,4 @@
-# Sitecore.HabitatHome.Omni
+# Sitecore.Demo.Omni
 
 This repository is used to share Sitecore JSS PWA demo assets and future "Sitecore Omni" related demo assets.
 

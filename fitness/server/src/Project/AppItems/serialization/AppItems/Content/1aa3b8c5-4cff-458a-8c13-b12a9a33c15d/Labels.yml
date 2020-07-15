@@ -2,7 +2,7 @@
 ID: "5fa34b30-7b63-402f-8cd0-a8e2e62a528c"
 Parent: "1aa3b8c5-4cff-458a-8c13-b12a9a33c15d"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/coral-harbour/coral-harbour-cycling-race/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/coral-harbour/coral-harbour-cycling-race/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

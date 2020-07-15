@@ -2,7 +2,7 @@
 ID: "24a4056d-2c59-49f0-a6ba-63240a362578"
 Parent: "9d3d853d-9355-4733-805c-7a323174ea83"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/nanaimo/nanaimo-half-marathon/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/nanaimo/nanaimo-half-marathon/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

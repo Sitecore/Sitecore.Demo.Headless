@@ -1,0 +1,28 @@
+﻿---
+ID: "d88a73ac-f6f1-57ae-82ce-bf3dbe5e3af7"
+Parent: "94884cdc-f414-5be3-b73d-6c7f29816137"
+Template: "6ce01982-797c-546a-b75b-664a0fe2cbf3"
+Path: "/sitecore/content/lighthousefitness-kiosk/home/register/Data/kiosk-register"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Kiosk Register
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181227T054332Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "f856a470-269a-5f3e-be66-0a07d24924a3"
+      Hint: title
+      Value: Register

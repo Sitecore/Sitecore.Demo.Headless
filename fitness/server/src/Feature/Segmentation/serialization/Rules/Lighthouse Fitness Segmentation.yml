@@ -1,0 +1,18 @@
+﻿---
+ID: "05f059ec-82c3-40f7-9d25-94727d526154"
+Parent: "e7cbefe8-9112-4b95-a978-4e470d94c54a"
+Template: "54dae7cd-bfd8-4e69-9679-75f2ae9f9034"
+Path: /sitecore/system/Settings/Rules/Definitions/Elements/Lighthouse Fitness Segmentation
+DB: master
+SharedFields:
+- ID: "78003371-b463-4f9a-8a26-2d88cdcd1435"
+  Hint: Group
+  Value: "{6F1513C8-9A91-41D0-B414-84578CF424A3}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20181119T010003:636781860039210710Z"

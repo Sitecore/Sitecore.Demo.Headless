@@ -1,7 +1,7 @@
-﻿using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
+﻿using Sitecore.Demo.Fitness.Foundation.Analytics;
 using Sitecore.Rules;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Rules
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Rules
 {
     public class IsContactFavoritedEvent<T> : BaseEventFacetCondition<T> where T : RuleContext
     {

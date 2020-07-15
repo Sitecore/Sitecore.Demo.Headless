@@ -1,0 +1,22 @@
+﻿---
+ID: "5036e2eb-a4e3-46f4-8fac-6968929a77d7"
+Parent: "a3a128ce-de21-4a36-891f-c707b71bc5f4"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/newfoundland-and-labrador/nain"
+DB: master
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Nain
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181115T105813Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod

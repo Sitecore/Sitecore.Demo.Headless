@@ -1,5 +1,0 @@
-dependencies:
-  - alias: nginxingress
-    name: nginx-ingress
-    version: 1.15.1
-    repository: https://kubernetes-charts.storage.googleapis.com/

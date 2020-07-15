@@ -2,7 +2,7 @@
 ID: "5b05b011-9da2-4a5a-b4a8-a938e3bcfa40"
 Parent: "77abaf5b-98be-45a0-9421-0e6b76d880eb"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/kamloops/kamloops-cycling-race/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/kamloops/kamloops-cycling-race/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

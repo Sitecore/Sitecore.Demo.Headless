@@ -4,11 +4,11 @@ const fs = require('fs');
 const escapeStringRegexp = require('escape-string-regexp');
 const scProxy = require('@sitecore-jss/sitecore-jss-proxy').default;
 const ipaddr = require('ipaddr.js');
-const app = require('./dist/habitatfitness/server.bundle');
+const app = require('./dist/lighthousefitness/server.bundle');
 const config = require('./config');
 
 const server = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
 /**
  *  Custom error handling in case our app fails to render.

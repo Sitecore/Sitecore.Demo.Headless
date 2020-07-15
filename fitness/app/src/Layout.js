@@ -68,7 +68,7 @@ class Layout extends Component {
       <Fragment>
         {/* react-helmet enables setting <head> contents, like title and OG meta tags */}
         <Helmet>
-          <title>{`${t("habitat-fitness")} | ${pageTitle}`}</title>
+          <title>{`${t("lighthouse-fitness")} | ${pageTitle}`}</title>
         </Helmet>
 
         <Placeholder

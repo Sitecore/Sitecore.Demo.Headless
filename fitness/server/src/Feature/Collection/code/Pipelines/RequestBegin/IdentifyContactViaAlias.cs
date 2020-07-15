@@ -5,7 +5,7 @@ using Sitecore.Diagnostics;
 using Sitecore.LayoutService.Mvc.Routing;
 using Sitecore.Mvc.Pipelines.Request.RequestBegin;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Pipelines.RequestBegin
+namespace Sitecore.Demo.Fitness.Feature.Collection.Pipelines.RequestBegin
 {
     public class IdentifyContactViaAlias : RequestBeginProcessor
     {

@@ -5,9 +5,9 @@ using Sitecore.Analytics;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Facets;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Services
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
 {
     public class ItemScoringService: IItemScoringService
     {

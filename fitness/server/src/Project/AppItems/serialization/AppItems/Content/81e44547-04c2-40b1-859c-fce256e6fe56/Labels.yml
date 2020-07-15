@@ -2,7 +2,7 @@
 ID: "be38e2b5-dcba-42e4-ae33-349639f07d53"
 Parent: "81e44547-04c2-40b1-859c-fce256e6fe56"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/the-pas/the-pas-cycling-race/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/the-pas/the-pas-cycling-race/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

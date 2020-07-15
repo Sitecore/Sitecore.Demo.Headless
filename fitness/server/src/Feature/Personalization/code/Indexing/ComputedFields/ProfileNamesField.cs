@@ -5,7 +5,7 @@ using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.ComputedFields;
 using Sitecore.Data.Items;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Indexing.ComputedFields
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Indexing.ComputedFields
 {
     public class ProfileNamesField : IComputedIndexField
     {

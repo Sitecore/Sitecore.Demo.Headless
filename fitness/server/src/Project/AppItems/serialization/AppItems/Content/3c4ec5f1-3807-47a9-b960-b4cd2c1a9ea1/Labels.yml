@@ -2,7 +2,7 @@
 ID: "e4b1edf8-67b1-4d00-86b8-f4ed3f105a5d"
 Parent: "3c4ec5f1-3807-47a9-b960-b4cd2c1a9ea1"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/new-brunswick/bathurst/bathurst-marathon/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/new-brunswick/bathurst/bathurst-marathon/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

@@ -54,7 +54,7 @@ class Navigation extends React.Component {
       <div className="nav-container">
         <Navbar light>
           <NavbarBrand tag={Link} to={"/"}>
-            <img src={logo} alt={"habitat-fitness"} />
+            <img src={logo} alt={"lighthouse-fitness"} />
           </NavbarBrand>
           {/* <NavLink tag={Link} to={"/"} className="header-account-link">
             Login

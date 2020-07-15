@@ -2,7 +2,7 @@
 ID: "236ac84b-f6a0-47ce-bf85-c78807b486a8"
 Parent: "9c7a1e33-7bd9-4d51-9cd0-c5efb59bcdcc"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nova-scotia/antigonish/antigonish-5k-run/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nova-scotia/antigonish/antigonish-5k-run/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

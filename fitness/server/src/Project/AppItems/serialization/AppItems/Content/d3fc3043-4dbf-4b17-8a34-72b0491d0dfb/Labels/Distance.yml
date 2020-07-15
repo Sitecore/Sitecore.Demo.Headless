@@ -2,7 +2,7 @@
 ID: "a4542d00-8e51-4696-acd1-8882dd11feab"
 Parent: "8e438df4-0e1d-4883-8780-ade8c695e340"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/new-brunswick/bathurst/bathurst-10k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/new-brunswick/bathurst/bathurst-10k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

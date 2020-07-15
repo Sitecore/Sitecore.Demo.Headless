@@ -2,7 +2,7 @@
 ID: "657f64c6-77d4-4a0d-b9e1-ad5890417676"
 Parent: "d5111862-d94f-4a21-8e7d-bd4bdb4d3f8d"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nova-scotia/baddeck/baddeck-10k-run/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nova-scotia/baddeck/baddeck-10k-run/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

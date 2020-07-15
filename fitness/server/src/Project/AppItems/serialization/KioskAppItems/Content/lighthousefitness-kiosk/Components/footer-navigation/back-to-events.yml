@@ -1,0 +1,24 @@
+﻿---
+ID: "0d484407-813c-56eb-8ad2-0f17a26a982d"
+Parent: "f42ce6a0-6037-555e-b7ac-ea81e37cd1ed"
+Template: "de0cf988-e1f5-564b-86d1-e0b629b4a97d"
+Path: "/sitecore/content/lighthousefitness-kiosk/Components/footer-navigation/back-to-events"
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181227T054329Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "f559ac19-0733-5b7e-95b9-f469525f924e"
+      Hint: title
+      Value: Back to Events

@@ -2,7 +2,7 @@
 ID: "d62a2ce3-a5f7-4815-957b-8774f0c6da24"
 Parent: "3ecf99d9-55fd-45da-8ece-e653c2080c07"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/powell-river/powell-river-10k-run/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/powell-river/powell-river-10k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

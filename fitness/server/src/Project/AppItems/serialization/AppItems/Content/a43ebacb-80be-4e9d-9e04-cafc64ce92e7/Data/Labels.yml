@@ -2,7 +2,7 @@
 ID: "870bcb96-5b43-4bd6-9f8d-6625e9821618"
 Parent: "ed8e5d37-4ab9-46c8-b485-12e7215018c7"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/chilliwack/chilliwack-cycling-race/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/chilliwack/chilliwack-cycling-race/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

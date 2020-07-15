@@ -2,7 +2,7 @@
 ID: "a2422fb5-1bd1-466e-867d-7e78a3f47800"
 Parent: "f5a2888e-5440-4841-87d3-da3d064913d1"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/new-brunswick/fredericton/fredericton-cycling-race/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/new-brunswick/fredericton/fredericton-cycling-race/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

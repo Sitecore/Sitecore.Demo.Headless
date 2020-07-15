@@ -2,7 +2,7 @@
 ID: "fd83f183-20a9-4804-8335-21a90a7eb9cf"
 Parent: "85d89473-7643-45fc-aa88-7e1c759e1df3"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/alberta/fort-mcmurray/fort-mcmurray-cycling-race/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/alberta/fort-mcmurray/fort-mcmurray-cycling-race/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

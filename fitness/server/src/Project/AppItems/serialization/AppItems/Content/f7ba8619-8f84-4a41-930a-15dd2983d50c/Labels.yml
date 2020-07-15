@@ -2,7 +2,7 @@
 ID: "7f3f0f9f-c5ad-4da1-8a7a-8d73df520371"
 Parent: "f7ba8619-8f84-4a41-930a-15dd2983d50c"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/quebec/baie-comeau/baie-comeau-half-marathon/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/quebec/baie-comeau/baie-comeau-half-marathon/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

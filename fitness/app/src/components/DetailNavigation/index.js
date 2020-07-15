@@ -19,7 +19,7 @@ class DetailNavigation extends React.Component {
     return (
       <div className="direction-fixedHeader headerBar">
         <NavLink className="btn-back" to={prevousLocation}>
-          {t("habitat-fitness")}
+          {t("lighthouse-fitness")}
         </NavLink>
         <h1 className="headerBar-title">{currentPageName}</h1>
       </div>

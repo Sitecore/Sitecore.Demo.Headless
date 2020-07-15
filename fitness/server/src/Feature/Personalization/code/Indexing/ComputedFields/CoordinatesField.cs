@@ -4,7 +4,7 @@ using Sitecore.ContentSearch.ComputedFields;
 using Sitecore.ContentSearch.Data;
 using Sitecore.Data.Items;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Indexing.ComputedFields
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Indexing.ComputedFields
 {
     public class CoordinatesField : AbstractComputedIndexField
     {

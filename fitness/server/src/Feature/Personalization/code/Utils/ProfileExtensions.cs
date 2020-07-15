@@ -5,7 +5,7 @@ using Sitecore.Analytics.Data.Items;
 using Sitecore.Analytics.Tracking;
 using Sitecore.Diagnostics;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Utils
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Utils
 {
     public static class ProfileExtensions
     {

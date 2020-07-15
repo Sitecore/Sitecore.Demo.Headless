@@ -2,7 +2,7 @@
 ID: "af8f4412-7240-4e78-937a-f5ba9a057630"
 Parent: "5c90e7e2-92e8-41c1-9e86-23f33f33f614"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/windsor/windsor-2k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/windsor/windsor-2k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

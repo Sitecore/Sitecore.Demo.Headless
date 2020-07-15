@@ -2,7 +2,7 @@
 ID: "b22f378c-3169-40d2-904e-8e274155be40"
 Parent: "91bb0600-7971-4628-8dfa-5e5f19493862"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/northwest-territories/tuktoyaktuk/tuktoyaktuk-marathon/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/northwest-territories/tuktoyaktuk/tuktoyaktuk-marathon/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

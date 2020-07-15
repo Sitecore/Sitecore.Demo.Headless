@@ -2,7 +2,7 @@
 ID: "35584794-9b97-4fb9-8a12-1176dcd6674a"
 Parent: "be72b98c-f8a7-47f4-a6ec-bca3275d53fb"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/quebec/rimouski/rimouski-half-marathon/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/quebec/rimouski/rimouski-half-marathon/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

@@ -52,16 +52,16 @@ const proxyOptions = {
     }
   },
   afterMiddlewareRegistered: app => {
-    app.get("/sitecore/api/habitatfitness/events", (req, res) =>
+    app.get("/sitecore/api/lighthousefitness/events", (req, res) =>
       res.send(events)
     );
-    app.get("/sitecore/api/habitatfitness/products", (req, res) =>
+    app.get("/sitecore/api/lighthousefitness/products", (req, res) =>
       res.send(products)
     );
-    app.get("/sitecore/api/habitatfitness/events/getfavorites", (req, res) =>
+    app.get("/sitecore/api/lighthousefitness/events/getfavorites", (req, res) =>
       res.send(favoritedEvents)
     );
-    app.get("/sitecore/api/habitatfitness/events/getregistrations", (req, res) =>
+    app.get("/sitecore/api/lighthousefitness/events/getregistrations", (req, res) =>
       res.send(registeredEvents)
     );
   }

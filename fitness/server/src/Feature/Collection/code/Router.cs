@@ -1,44 +1,44 @@
 ﻿using System.Web.Mvc;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Collection
+namespace Sitecore.Demo.Fitness.Feature.Collection
 {
     public class Router : IRouter
     {
         public void MapRoutes(System.Web.Routing.RouteCollection routeCollection)
         {
-            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-sesion", "sitecore/api/habitatfitness/session/{action}", new
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-sesion", "sitecore/api/lighthousefitness/session/{action}", new
             {
-                controller = "HabitatFitnessSession",
+                controller = "LighthouseFitnessSession",
             });
 
-            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-event-favorites", "sitecore/api/habitatfitness/events/favorites/{action}", new
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-event-favorites", "sitecore/api/lighthousefitness/events/favorites/{action}", new
             {
-                controller = "HabitatFitnessEventFavorites",
+                controller = "LighthouseFitnessEventFavorites",
             });
 
-            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-event-registration", "sitecore/api/habitatfitness/events/registration/{action}", new
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-event-registration", "sitecore/api/lighthousefitness/events/registration/{action}", new
             {
-                controller = "HabitatFitnessEventRegistration",
+                controller = "LighthouseFitnessEventRegistration",
             });
 
-            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-subscriptions", "sitecore/api/habitatfitness/subscription/{action}", new
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-subscriptions", "sitecore/api/lighthousefitness/subscription/{action}", new
             {
-                controller = "HabitatFitnessSubscriptions",
+                controller = "LighthouseFitnessSubscriptions",
             });
 
-            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-demographics", "sitecore/api/habitatfitness/demographics/{action}", new
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-demographics", "sitecore/api/lighthousefitness/demographics/{action}", new
             {
-                controller = "HabitatFitnessDemographics",
+                controller = "LighthouseFitnessDemographics",
             });
 
-            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-sports", "sitecore/api/habitatfitness/sports/{action}", new
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-sports", "sitecore/api/lighthousefitness/sports/{action}", new
             {
-                controller = "HabitatFitnessSports",
+                controller = "LighthouseFitnessSports",
             });
 
-            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-identification", "sitecore/api/habitatfitness/identification/{action}", new
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-identification", "sitecore/api/lighthousefitness/identification/{action}", new
             {
-                controller = "HabitatFitnessIdentification",
+                controller = "LighthouseFitnessIdentification",
             });
         }
     }

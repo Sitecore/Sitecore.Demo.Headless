@@ -2,7 +2,7 @@
 ID: "55fc9595-710f-4dfc-8919-6ffdccc54616"
 Parent: "274d8771-3e18-43c7-ac7f-3100c96a1aae"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/alberta/fort-mcmurray/fort-mcmurray-5k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/alberta/fort-mcmurray/fort-mcmurray-5k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

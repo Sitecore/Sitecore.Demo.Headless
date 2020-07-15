@@ -14,8 +14,8 @@ class EventListItem extends PureComponent {
   render() {
     const { fields, url, label, featured, } = this.props;
     let eventUrl = url;
-    if(url.startsWith('/sitecore/content/habitatfitness/home/events')){
-      eventUrl = eventUrl.replace('/sitecore/content/habitatfitness/home/events', '/events');
+    if(url.startsWith('/sitecore/content/lighthousefitness/home/events')){
+      eventUrl = eventUrl.replace('/sitecore/content/lighthousefitness/home/events', '/events');
     }
 
     return (

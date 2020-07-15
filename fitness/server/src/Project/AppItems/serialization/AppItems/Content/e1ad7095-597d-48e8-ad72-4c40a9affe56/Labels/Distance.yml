@@ -2,7 +2,7 @@
 ID: "09f4961b-b7b1-4489-b16b-18267e6985ab"
 Parent: "f5bdd404-03c1-4a8e-aa9f-8ac3635d4dd0"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/igloolik/igloolik-half-marathon/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/igloolik/igloolik-half-marathon/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

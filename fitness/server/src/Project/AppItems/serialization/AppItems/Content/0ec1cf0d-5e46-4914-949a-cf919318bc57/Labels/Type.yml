@@ -2,7 +2,7 @@
 ID: "67ef54e4-3c2a-4f9c-b549-a8edaa70f586"
 Parent: "6c85c177-9f96-4b92-811a-237028705740"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/quebec/riviere-du-loup/riviere-du-loup-marathon/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/quebec/riviere-du-loup/riviere-du-loup-marathon/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

@@ -1,0 +1,145 @@
+# Build Sitecoredemo Docker images
+trigger:
+  branches:
+    include:
+    - develop
+schedules:
+  - cron: "0 17 * * 0"
+    displayName: Weekly Sunday build
+    branches:
+      include:
+      - master
+      - develop
+    always: true
+resources:
+- repo: self
+  clean: true
+
+variables:
+  GitVersion.SemVer: ''
+  GitVersion.PreReleaseLabel: ''
+  tag: '$(GitVersion.PreReleaseLabel)-$(GitVersion.MajorMinorPatch)'
+  additionalImageTags: ''
+
+stages:
+- stage: Docker
+  pool:
+    name: Docker
+  displayName: 'Build Docker Images'
+  jobs:
+  - job: Build_Platform
+    steps:
+    - template: version.yml
+    - task: DockerCompose@0
+      displayName: "Docker Compose Build"
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: '$(azure.subscription)'
+        azureContainerRegistry: '$(container.registry)'
+        dockerComposeFile: 'docker-compose.yml'
+        dockerComposeFileArgs: |
+          DEMO_VERSION=$(tag)
+          REGISTRY=$(REGISTRY)
+          WINDOWSSERVERCORE_VERSION=$(WINDOWSSERVERCORE_VERSION)
+          NANOSERVER_VERSION=$(NANOSERVER_VERSION)
+          SITECORE_VERSION=$(SITECORE_VERSION)
+          SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
+          SITECORE_LICENSE=$(SITECORE_LICENSE)
+          TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
+          INTERNAL_NUGET_SOURCE=$(INTERNAL_NUGET_SOURCE)
+          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+        qualifyImageNames: false
+        action: 'Build services'
+        additionalImageTags: '$(additionalImageTags)'
+        arguments: '-m 3G --pull $(no.cache)'
+        currentWorkingDirectory: '$(Build.SourcesDirectory)'
+    - task: DockerCompose@0
+      displayName: "Push Images"
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: $(azure.subscription)
+        azureContainerRegistry: $(container.registry)
+        dockerComposeFile: 'docker-compose.yml'
+        dockerComposeFileArgs: |
+          REGISTRY=$(REGISTRY)
+          DEMO_VERSION=$(tag)
+          WINDOWSSERVERCORE_VERSION=$(WINDOWSSERVERCORE_VERSION)
+          NANOSERVER_VERSION=$(NANOSERVER_VERSION)
+          SITECORE_VERSION=$(SITECORE_VERSION)
+          SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
+          SITECORE_LICENSE=$(SITECORE_LICENSE)
+          TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
+          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+        action: 'Push services'
+        additionalImageTags: '$(additionalImageTags)'
+        currentWorkingDirectory: '$(Build.SourcesDirectory)'
+      condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
+    - task: DockerCompose@0
+      displayName: "Push Images"
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: $(azure.subscription)
+        azureContainerRegistry: $(container.registry)
+        dockerComposeFile: 'docker-compose.yml'
+        dockerComposeFileArgs: |
+          REGISTRY=$(REGISTRY)
+          DEMO_VERSION=$(tag)
+          WINDOWSSERVERCORE_VERSION=$(WINDOWSSERVERCORE_VERSION)
+          NANOSERVER_VERSION=$(NANOSERVER_VERSION)
+          SITECORE_VERSION=$(SITECORE_VERSION)
+          SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
+          SITECORE_LICENSE=$(SITECORE_LICENSE)
+          TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
+          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+        action: 'Push services'
+        additionalImageTags: '$(additionalImageTags)'
+        currentWorkingDirectory: '$(Build.SourcesDirectory)'
+- stage: Docker_Linux
+  dependsOn: []
+  pool:
+    vmImage: ubuntu-latest
+  displayName: 'Build Linux Docker Images'
+  jobs:
+  - job: Build_Platform_Linux
+    steps:
+    - template: version.yml
+    - task: DockerCompose@0
+      displayName: "Docker Compose Build"
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: '$(azure.subscription)'
+        azureContainerRegistry: '$(container.registry)'
+        dockerComposeFile: 'docker-compose-linux.yml'
+        dockerComposeFileArgs: |
+          DEMO_VERSION=$(tag)
+          REGISTRY=$(REGISTRY)
+          SITECORE_VERSION=$(SITECORE_VERSION)
+          SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
+          SITECORE_LICENSE=$(SITECORE_LICENSE)
+          TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
+          INTERNAL_NUGET_SOURCE=$(INTERNAL_NUGET_SOURCE)
+          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+          OPENCALAIS_ACCESSTOKEN=$(OpenCalais.AccessToken)
+        qualifyImageNames: false
+        action: 'Build services'
+        additionalImageTags: '$(additionalImageTags)-linux'
+        arguments: '-m 3G --pull --parallel $(no.cache)'
+        currentWorkingDirectory: '$(Build.SourcesDirectory)'
+    - task: DockerCompose@0
+      displayName: "Push Images"
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: $(azure.subscription)
+        azureContainerRegistry: $(container.registry)
+        dockerComposeFile: 'docker-compose-linux.yml'
+        dockerComposeFileArgs: |
+          REGISTRY=$(REGISTRY)
+          DEMO_VERSION=$(tag)
+          SITECORE_VERSION=$(SITECORE_VERSION)
+          SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
+          SITECORE_LICENSE=$(SITECORE_LICENSE)
+          TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
+          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+        action: 'Push services'
+        additionalImageTags: '$(additionalImageTags)-linux'
+        currentWorkingDirectory: '$(Build.SourcesDirectory)' 

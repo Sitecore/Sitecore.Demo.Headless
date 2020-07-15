@@ -2,7 +2,7 @@
 ID: "4542176e-dcde-4071-b3d3-68b555663869"
 Parent: "ec92b653-c0c7-434d-91a5-825b81b3cbd1"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-10k-run/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/selkirk/selkirk-10k-run/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

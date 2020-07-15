@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Sitecore.Analytics.Tracking;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
+namespace Sitecore.Demo.Fitness.Feature.Collection.Services
 {
     /// <summary>
     /// This service allows for storage of sport event subscriptions in session

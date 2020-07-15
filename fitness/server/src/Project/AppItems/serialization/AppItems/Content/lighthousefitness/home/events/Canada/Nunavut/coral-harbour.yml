@@ -1,0 +1,22 @@
+﻿---
+ID: "e78dcdc2-bafd-4e05-9802-d266b77d7bb6"
+Parent: "dec00f19-7edc-4602-8128-08159edd4e28"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/coral-harbour"
+DB: master
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Coral Harbour
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181115T105559Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod

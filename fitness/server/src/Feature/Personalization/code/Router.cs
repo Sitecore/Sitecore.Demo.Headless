@@ -1,21 +1,21 @@
 ﻿using System.Web.Mvc;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization
+namespace Sitecore.Demo.Fitness.Feature.Personalization
 {
     public class Router : IRouter
     {
         public void MapRoutes(System.Web.Routing.RouteCollection routeCollection)
         {
-            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-events", "sitecore/api/habitatfitness/events/{action}", new
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-events", "sitecore/api/lighthousefitness/events/{action}", new
             {
                 action = "Index",
-                controller = "HabitatFitnessEvents",
+                controller = "LighthouseFitnessEvents",
             });
 
-            RouteCollectionExtensions.MapRoute(routeCollection, "habitathome-fitness-products", "sitecore/api/habitatfitness/products/{action}", new
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-products", "sitecore/api/lighthousefitness/products/{action}", new
             {
                 action = "Index",
-                controller = "HabitatFitnessProducts",
+                controller = "LighthouseFitnessProducts",
             });
         }
     }

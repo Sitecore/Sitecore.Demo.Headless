@@ -2,7 +2,7 @@
 ID: "624c5bf8-e940-4eda-8fbf-856b65cb22ec"
 Parent: "606c2341-6b2d-4be8-babc-a1483482a51b"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/kenora/kenora-2k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/kenora/kenora-2k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

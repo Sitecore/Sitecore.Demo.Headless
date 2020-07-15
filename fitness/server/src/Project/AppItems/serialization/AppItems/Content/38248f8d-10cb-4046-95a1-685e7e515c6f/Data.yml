@@ -2,7 +2,7 @@
 ID: "692f5d95-1b19-463f-8366-cad8882e37a2"
 Parent: "38248f8d-10cb-4046-95a1-685e7e515c6f"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/nanaimo/nanaimo-5k-run/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/nanaimo/nanaimo-5k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

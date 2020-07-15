@@ -1,0 +1,31 @@
+﻿---
+ID: "bd92b208-2177-4984-95da-38d783d5cb46"
+Parent: "05f059ec-82c3-40f7-9d25-94727d526154"
+Template: "f0d16eee-3a05-4e43-a082-795a32b873c0"
+Path: /sitecore/system/Settings/Rules/Definitions/Elements/Lighthouse Fitness Segmentation/Subscribed to Event
+DB: master
+SharedFields:
+- ID: "884e9630-ab42-4023-95d9-f221f3479950"
+  Hint: Code
+  Value: 
+- ID: "ab51c8b2-f0e1-4471-9aae-cc080d774923"
+  Hint: Type
+  Value: Sitecore.Demo.Fitness.Feature.Segmentation.Predicates.EventSubscriptionContains, Sitecore.Demo.Fitness.Feature.Segmentation
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 1000
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161212T131435Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
+      Hint: Text
+      Value: "where contact has subscribed to the [EventId,Tree,root=/sitecore/content/lighthousefitness/home/events&selection=/sitecore/templates/Project/lighthousefitness/event-page,specific] event"

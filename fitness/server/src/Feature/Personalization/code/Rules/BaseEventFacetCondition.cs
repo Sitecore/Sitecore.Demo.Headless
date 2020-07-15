@@ -2,11 +2,11 @@
 using Sitecore.Analytics;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
 using Sitecore.Rules;
 using Sitecore.Rules.Conditions;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Rules
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Rules
 {
     public abstract class BaseEventFacetCondition<T> : OperatorCondition<T> where T : RuleContext
     {

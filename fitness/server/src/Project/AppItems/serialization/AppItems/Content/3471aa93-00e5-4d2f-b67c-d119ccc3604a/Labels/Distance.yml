@@ -2,7 +2,7 @@
 ID: "83edbae4-f0fa-44b1-8e44-de1ef998356a"
 Parent: "ec92b653-c0c7-434d-91a5-825b81b3cbd1"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/selkirk/selkirk-10k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/selkirk/selkirk-10k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

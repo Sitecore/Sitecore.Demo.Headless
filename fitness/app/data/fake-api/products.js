@@ -27,13 +27,13 @@ module.exports = [
     }
   },
   {
-    url: "/Content/products/Habitat-Striva-Training-Markers",
+    url: "/Content/products/Lighthouse-Striva-Training-Markers",
     fields: {
       title: {
-        value: "Habitat Striva Training Markers"
+        value: "Lighthouse Striva Training Markers"
       },
       description: {
-        value: "Habitat Striva Training Markers"
+        value: "Lighthouse Striva Training Markers"
       },
       link: {
         value: {
@@ -46,7 +46,7 @@ module.exports = [
       image: {
         value: {
           src: "/assets/products/striva-training-markers.jpg",
-          alt: "Habitat Striva Training Markers",
+          alt: "Lighthouse Striva Training Markers",
           width: "790",
           height: "527"
         }

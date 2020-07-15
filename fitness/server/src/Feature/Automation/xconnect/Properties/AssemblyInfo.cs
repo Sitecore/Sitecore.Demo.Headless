@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sitecore.HabitatHome.Fitness.Feature.Automation.xConnect")]
+[assembly: AssemblyTitle("Sitecore.Demo.Fitness.Feature.Automation.xConnect")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Sitecore.HabitatHome.Fitness.Feature.Automation.xConnect")]
+[assembly: AssemblyProduct("Sitecore.Demo.Fitness.Feature.Automation.xConnect")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

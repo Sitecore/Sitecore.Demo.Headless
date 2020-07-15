@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
+using Sitecore.Demo.Fitness.Foundation.Analytics;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Facets;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Services
+namespace Sitecore.Demo.Fitness.Feature.Collection.Services
 {
     // TODO: Add/Remove have the same boilerplate
     public class StringValueListFacetService : AnalyticsServiceBase, IStringValueListFacetService

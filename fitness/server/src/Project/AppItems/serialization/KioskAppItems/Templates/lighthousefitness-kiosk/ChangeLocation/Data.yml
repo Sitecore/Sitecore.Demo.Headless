@@ -1,0 +1,23 @@
+﻿---
+ID: "e7f18ef3-f1f3-5ce0-b4d3-4abf1537dd78"
+Parent: "8e2721fe-f0e9-545e-a2d6-d2a9e0d9bd1d"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: "/sitecore/templates/Project/lighthousefitness-kiosk/ChangeLocation/Data"
+DB: master
+SharedFields:
+- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
+  Hint: __Read Only
+  Type: Checkbox
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181227T054321Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport

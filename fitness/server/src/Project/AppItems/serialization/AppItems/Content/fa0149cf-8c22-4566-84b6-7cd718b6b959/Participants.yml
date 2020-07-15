@@ -2,7 +2,7 @@
 ID: "0fe98715-611e-445e-9fb3-595a64d21a3f"
 Parent: "fa0149cf-8c22-4566-84b6-7cd718b6b959"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/quebec/salluit/salluit-2k-run/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/quebec/salluit/salluit-2k-run/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

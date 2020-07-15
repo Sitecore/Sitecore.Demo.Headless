@@ -2,7 +2,7 @@
 ID: "f228388b-f591-4cd7-bc94-4fd293409834"
 Parent: "f5bdd404-03c1-4a8e-aa9f-8ac3635d4dd0"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/igloolik/igloolik-half-marathon/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/igloolik/igloolik-half-marathon/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

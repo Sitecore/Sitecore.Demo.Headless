@@ -2,7 +2,7 @@
 ID: "b8e85d2d-6d6e-4371-a0a8-f5e5a4110161"
 Parent: "b9723214-fa20-4a6c-8203-112a99816e60"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/churchill/churchill-marathon/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/churchill/churchill-marathon/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

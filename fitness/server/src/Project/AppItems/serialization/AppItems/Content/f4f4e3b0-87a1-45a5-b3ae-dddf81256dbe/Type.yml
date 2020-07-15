@@ -2,7 +2,7 @@
 ID: "eaa6cde4-d46b-48fe-9d47-85dbd193aa7e"
 Parent: "f4f4e3b0-87a1-45a5-b3ae-dddf81256dbe"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/kenora/kenora-half-marathon/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/kenora/kenora-half-marathon/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

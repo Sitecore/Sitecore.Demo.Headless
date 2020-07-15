@@ -2,7 +2,7 @@
 ID: "c6c8a461-3a57-44b6-971c-1715a2ce29bd"
 Parent: "4c7454ef-aace-4241-ad31-66fde8eb3f5f"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/saskatchewan/weyburn/weyburn-half-marathon/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/saskatchewan/weyburn/weyburn-half-marathon/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

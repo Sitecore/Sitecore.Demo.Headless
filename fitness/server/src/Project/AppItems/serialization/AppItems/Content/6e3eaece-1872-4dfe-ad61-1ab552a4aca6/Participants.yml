@@ -2,7 +2,7 @@
 ID: "4b933ae0-fe1a-4f42-92a5-19b830b57027"
 Parent: "6e3eaece-1872-4dfe-ad61-1ab552a4aca6"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/london/london-cycling-race/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/london/london-cycling-race/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

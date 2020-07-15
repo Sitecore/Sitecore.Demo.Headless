@@ -50,10 +50,10 @@ const proxyOptions = {
     }
   },
   afterMiddlewareRegistered: app => {
-    app.get("/sitecore/api/habitatfitness/events", (req, res) =>
+    app.get("/sitecore/api/lighthousefitness/events", (req, res) =>
       res.send(getFilteredEvents(req))
     );
-    app.get("/sitecore/api/habitatfitness/products", (req, res) =>
+    app.get("/sitecore/api/lighthousefitness/products", (req, res) =>
       res.send(products)
     );
   }

@@ -1,0 +1,21 @@
+# escape=`
+ARG BASE_IMAGE
+ARG BUILD_IMAGE
+
+FROM ${BUILD_IMAGE} as build
+
+# TODO: Improve build time by building only the required CSPROJ files
+
+ARG INTERNAL_NUGET_SOURCE
+ARG SYSTEM_ACCESSTOKEN
+
+COPY /fitness/server/src /build/src
+
+COPY /fitness/server/nuget.config /fitness/server/Sitecore.Demo.Fitness.sln ./build/
+WORKDIR /build
+
+RUN MSBuild /v:minimal /p:Configuration=Debug /p:Platform='Any CPU' /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=false /p:publishUrl=C:\out /p:BuildProjectReferences=true /target:'Clean;Build' /restore "Sitecore.Demo.Fitness.sln"
+
+FROM $BASE_IMAGE as production
+
+COPY --from=build /build/temp/xConnectRoot /inetpub/wwwroot

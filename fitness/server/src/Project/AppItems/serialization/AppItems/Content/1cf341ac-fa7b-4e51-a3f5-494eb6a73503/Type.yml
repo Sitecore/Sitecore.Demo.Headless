@@ -2,7 +2,7 @@
 ID: "d5ee39b2-e446-4aab-8c34-4fe4f9888868"
 Parent: "1cf341ac-fa7b-4e51-a3f5-494eb6a73503"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/manitoba/gillam/gillam-5k-run/Data/Labels/Type"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/gillam/gillam-5k-run/Data/Labels/Type"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

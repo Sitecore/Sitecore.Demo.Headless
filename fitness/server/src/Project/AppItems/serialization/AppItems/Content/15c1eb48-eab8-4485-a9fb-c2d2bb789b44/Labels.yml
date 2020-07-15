@@ -2,7 +2,7 @@
 ID: "3a13a202-e38f-4b45-bc8f-443adc382a60"
 Parent: "15c1eb48-eab8-4485-a9fb-c2d2bb789b44"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/alberta/lethbridge/lethbridge-2k-run/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/alberta/lethbridge/lethbridge-2k-run/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

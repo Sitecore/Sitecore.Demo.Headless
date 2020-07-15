@@ -65,8 +65,8 @@ public void PrintHeader(ConsoleColor foregroundColor)
 	cakeConsole.WriteLine(@"     ");
 	cakeConsole.WriteLine(@"     ");
 	cakeConsole.WriteLine(@" --------------------  ------------------");
-	cakeConsole.WriteLine("   " + "The Habitat Home source code, tools and processes are examples of Sitecore Features.");
-	cakeConsole.WriteLine("   " + "Habitat Home is not supported by Sitecore and should be used at your own risk.");
+	cakeConsole.WriteLine("   " + "The Sitecore Demo source code, tools and processes are examples of Sitecore Features.");
+	cakeConsole.WriteLine("   " + "Sitecore Demo is not supported by Sitecore and should be used at your own risk.");
 	cakeConsole.WriteLine("     ");
 	cakeConsole.WriteLine("     ");
 	cakeConsole.ResetColor();

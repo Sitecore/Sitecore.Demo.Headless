@@ -1,7 +1,7 @@
-﻿using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model;
+﻿using Sitecore.Demo.Fitness.Foundation.Analytics.Facets;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Model;
 
-namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services
+namespace Sitecore.Demo.Fitness.Foundation.Analytics.Services
 {
     public interface ISportsService
     {

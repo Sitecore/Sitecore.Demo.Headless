@@ -3,7 +3,7 @@ import { setupCache } from "axios-cache-adapter";
 import qs from "qs";
 import config from "../temp/config";
 
-const apiStem = `/sitecore/api/habitatfitness`;
+const apiStem = `/sitecore/api/lighthousefitness`;
 
 const cache = setupCache({
   maxAge: 15 * 60 * 1000,

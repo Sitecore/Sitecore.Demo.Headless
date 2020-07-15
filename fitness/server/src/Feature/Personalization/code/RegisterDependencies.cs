@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Sitecore.DependencyInjection;
-using Sitecore.HabitatHome.Fitness.Feature.Personalization.Controllers;
-using Sitecore.HabitatHome.Fitness.Feature.Personalization.Serializers;
-using Sitecore.HabitatHome.Fitness.Feature.Personalization.Services;
+using Sitecore.Demo.Fitness.Feature.Personalization.Controllers;
+using Sitecore.Demo.Fitness.Feature.Personalization.Serializers;
+using Sitecore.Demo.Fitness.Feature.Personalization.Services;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization
+namespace Sitecore.Demo.Fitness.Feature.Personalization
 {
     public class RegisterDependencies : IServicesConfigurator
     {
@@ -16,8 +16,8 @@ namespace Sitecore.HabitatHome.Fitness.Feature.Personalization
             serviceCollection.AddTransient<IItemScoringService, ItemScoringService>();
             serviceCollection.AddTransient<IEventDataService, EventDataService>();
             serviceCollection.AddTransient<IProductDataService, ProductDataService>();
-            serviceCollection.AddTransient<HabitatFitnessEventsController>();
-            serviceCollection.AddTransient<HabitatFitnessProductsController>();
+            serviceCollection.AddTransient<LighthouseFitnessEventsController>();
+            serviceCollection.AddTransient<LighthouseFitnessProductsController>();
         }
     }
 }

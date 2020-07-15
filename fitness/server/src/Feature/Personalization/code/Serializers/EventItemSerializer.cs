@@ -12,7 +12,7 @@ using Sitecore.LayoutService.Serialization.ItemSerializers;
 using Sitecore.LayoutService.Serialization.Pipelines.GetFieldSerializer;
 using Sitecore.Links;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Serializers
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Serializers
 {
     public class EventItemSerializer : IItemSerializer
     {

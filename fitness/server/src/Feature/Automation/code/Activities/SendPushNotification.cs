@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Framework.Conditions;
-using Sitecore.HabitatHome.Fitness.Feature.Automation.Services;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Facets;
+using Sitecore.Demo.Fitness.Feature.Automation.Services;
+using Sitecore.Demo.Fitness.Foundation.Analytics;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Facets;
 using Sitecore.Xdb.MarketingAutomation.Core.Activity;
 using Sitecore.Xdb.MarketingAutomation.Core.Processing.Plan;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Automation.Activities
+namespace Sitecore.Demo.Fitness.Feature.Automation.Activities
 {
     public class SendPushNotification : IActivity
     {

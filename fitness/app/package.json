@@ -1,28 +1,28 @@
 {
-  "name": "habitatfitness",
-  "description": "Habitat demo for Sitecore JSS",
+  "name": "lighthousefitness",
+  "description": "Lighthouse demo for Sitecore JSS",
   "version": "0.0.1",
   "private": true,
   "config": {
-    "appName": "habitatfitness",
+    "appName": "lighthousefitness",
     "rootPlaceholders": [
       "hf-nav",
       "hf-body"
     ],
-    "sitecoreDistPath": "/dist/habitatfitness",
-    "sitecoreConfigPath": "/App_Config/Include/Sitecore.HabitatHome.Fitness",
+    "sitecoreDistPath": "/dist/lighthousefitness",
+    "sitecoreConfigPath": "/App_Config/Include/Sitecore.Demo.Fitness",
     "language": "en"
   },
   "author": {
     "name": "Sitecore Corporation",
-    "url": "https://github.com/Sitecore/Sitecore.HabitatHome.Omni"
+    "url": "https://github.com/Sitecore/Sitecore.Demo.Omni"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sitecore/Sitecore.HabitatHome.Omni.git"
+    "url": "git+https://github.com/Sitecore/Sitecore.Demo.Omni.git"
   },
   "bugs": {
-    "url": "https://github.com/Sitecore/Sitecore.HabitatHome.Omni/issues"
+    "url": "https://github.com/Sitecore/Sitecore.Demo.Omni/issues"
   },
   "license": "MPL-2.0",
   "dependencies": {

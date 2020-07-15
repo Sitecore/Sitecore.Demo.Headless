@@ -2,7 +2,7 @@
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 
-namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services
+namespace Sitecore.Demo.Fitness.Foundation.Analytics.Services
 {
     public interface IStringValueListFacetService
     {

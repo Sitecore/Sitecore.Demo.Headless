@@ -2,7 +2,7 @@
 ID: "bb005494-d55d-4d3f-b90c-b7cf02b60007"
 Parent: "bb9f0ba0-cc9f-4ed1-ba91-0989accaa4c3"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/newfoundland-and-labrador/channel-port-aux-basques/channel-port-aux-basques-basketball-tournament/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/newfoundland-and-labrador/channel-port-aux-basques/channel-port-aux-basques-basketball-tournament/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

@@ -18,7 +18,7 @@ const DetailNavigation = ({ t }) => (
   <div className="nav-container">
     <nav className="navbar navbar-light">
       <NavLink className="navbar-brand" to="/">
-        <img src={logo} alt="habitat-fitness" />
+        <img src={logo} alt="lighthouse-fitness" />
       </NavLink>
       <ul className="navbar-nav">
         <li className="nav-item">

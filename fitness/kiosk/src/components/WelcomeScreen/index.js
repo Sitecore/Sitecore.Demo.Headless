@@ -13,7 +13,7 @@ const WelcomeScreen = ({ context, fields }) => (
     }
   >
     <NavLink className="logo" to="/">
-      <img src={logo} alt="Habitat Fitness Kiosk" />
+      <img src={logo} alt="Lighthouse Fitness Kiosk" />
     </NavLink>
     <div className="welcomeScreen-content">
       {context.pageEditing ? (

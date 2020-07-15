@@ -2,7 +2,7 @@
 ID: "e6bea4b9-88a8-485e-be72-684ad65b32f3"
 Parent: "74fed3e0-3461-4b84-b5f5-21714e2c3e53"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/victoria/victoria-10k-run/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/victoria/victoria-10k-run/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

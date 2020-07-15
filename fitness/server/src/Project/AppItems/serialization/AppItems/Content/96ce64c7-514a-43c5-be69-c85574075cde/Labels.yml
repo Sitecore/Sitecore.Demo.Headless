@@ -2,7 +2,7 @@
 ID: "42fce2d7-12c5-435a-b114-15271a83bfd0"
 Parent: "96ce64c7-514a-43c5-be69-c85574075cde"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/chapleau/chapleau-cycling-race/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/chapleau/chapleau-cycling-race/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

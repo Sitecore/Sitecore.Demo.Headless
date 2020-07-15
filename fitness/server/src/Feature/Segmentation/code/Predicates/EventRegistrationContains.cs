@@ -1,6 +1,6 @@
-﻿using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
+﻿using Sitecore.Demo.Fitness.Foundation.Analytics;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Segmentation.Predicates
+namespace Sitecore.Demo.Fitness.Feature.Segmentation.Predicates
 {
     public class EventRegistrationContains : BaseStringListFacetPredicate
     {

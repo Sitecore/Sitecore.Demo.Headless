@@ -2,7 +2,7 @@
 ID: "a1e7f179-6bd6-445b-a1e2-29fedbffe0a2"
 Parent: "bbeaa596-267f-4e71-bba3-c2fe21c36325"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/kelowna/kelowna-cycling-race/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/kelowna/kelowna-cycling-race/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

@@ -1,0 +1,76 @@
+﻿---
+ID: "f9dfe618-153f-4a24-bc42-235473813086"
+Parent: "12676f34-9f75-534c-99cd-77a295d3b75b"
+Template: "f7cfb991-fdcd-5036-a021-29e58a67da4b"
+Path: /sitecore/content/lighthousefitness/Content/products/Lighthouse Striva Training Markers
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="8b3c8714-83ca-41f1-bbf6-ff260f732aaf"
+        name="Sports">
+        <key
+          name="Basketball"
+          value="10" />
+        <key
+          name="Bowling"
+          value="0" />
+        <key
+          name="Cycling"
+          value="10" />
+        <key
+          name="Golf"
+          value="0" />
+        <key
+          name="Kayaking"
+          value="0" />
+        <key
+          name="Rock Climbing"
+          value="0" />
+        <key
+          name="Running"
+          value="10" />
+        <key
+          name="Swimming"
+          value="0" />
+        <key
+          name="Volleyball"
+          value="10" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181127T164706Z
+    - ID: "2fa17014-b3b5-5966-8ee0-f3116c4313c2"
+      Hint: title
+      Value: Lighthouse Striva Training Markers
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
+    - ID: "45799a8f-a01c-500d-8f1e-2558501ed660"
+      Hint: link
+      Value: |
+        <link text="Experience Commerce - Training Markers" linktype="external" url="https://experiencecommerce.Demodemo.com/shop/Running%3dhabitat_master-running/HabitatStrivaTrainingMarkers%3d8042138" anchor="" target="_blank" />
+    - ID: "4d7cc259-2d5c-59d5-a4dc-974a35bf0847"
+      Hint: image
+      Value: |
+        <image mediaid="{728828DD-E633-4684-972D-8C5562BE7821}" alt="Lighthouse Striva Training Markers" height="" width="" hspace="" vspace="" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\demogod
+    - ID: "97f252de-efda-5ed7-a61c-0a2673a7c26b"
+      Hint: description
+      Value: Lighthouse Striva Training Markers

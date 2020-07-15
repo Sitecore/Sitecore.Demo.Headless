@@ -2,7 +2,7 @@
 ID: "31a99f8e-71f4-4c7f-872d-920384f056f3"
 Parent: "bd44196c-1962-476a-ab90-faab0f8c78a5"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/alberta/fort-mcmurray/fort-mcmurray-half-marathon/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/alberta/fort-mcmurray/fort-mcmurray-half-marathon/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

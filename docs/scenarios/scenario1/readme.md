@@ -107,7 +107,7 @@ The project structure should be familiar to anyone who had experience working wi
 
    - `/fake-api`
 
-     This folder contains two mocked datasets for `/sitecore/api/habitatfitness/events` and `/sitecore/api/habitatfitness/products` API mocks.
+     This folder contains two mocked datasets for `/sitecore/api/lighthousefitness/events` and `/sitecore/api/lighthousefitness/products` API mocks.
      The two APIs are providing content for the `EventList` and `ProductRecommendationList` components placed on the Home route. The design decision was made to implement these two component sources as separate APIs instead of "baking" the event and product object arrays inside the component data on mocked routes due to the requirements of:
 
      - retrieving top X events and products from potentially hundreds of content items server-side.
@@ -123,10 +123,10 @@ The project structure should be familiar to anyone who had experience working wi
      const products = require("../data/fake-api/products");
      ...
      afterMiddlewareRegistered: app => {
-         app.get("/sitecore/api/habitatfitness/events", (req, res) =>
+         app.get("/sitecore/api/lighthousefitness/events", (req, res) =>
              res.send(events)
          );
-         app.get("/sitecore/api/habitatfitness/products", (req, res) =>
+         app.get("/sitecore/api/lighthousefitness/products", (req, res) =>
              res.send(products)
          );
      }
@@ -265,7 +265,7 @@ This is the "app shell" component that contains:
 - page header using React Helmet and `t()` Higher-order component from `react-i18next` package that allows for the use of the dictionary data:
     ```xml
         <Helmet>
-          <title>{`${t("habitat-fitness")} | ${pageTitle}`}</title>
+          <title>{`${t("lighthouse-fitness")} | ${pageTitle}`}</title>
         </Helmet>
     ```
 - placeholder for navigation:
@@ -326,7 +326,7 @@ This route consists of the following components:
 
 - `EventList`
 
-  Featching data from `/sitecore/api/habitatfitness/events` endpoint (mocked in disconnected mode) and renders the list of events based on user behavior. After app integration this list will be powered by algorithmic personalization based on scoring.
+  Featching data from `/sitecore/api/lighthousefitness/events` endpoint (mocked in disconnected mode) and renders the list of events based on user behavior. After app integration this list will be powered by algorithmic personalization based on scoring.
 
   Notice that this component stores a single field that displays the title. This way the content for the component is a responsibility of a separate API while meta-data and marketing content for this component is the responsibility of the component itself:
 
@@ -336,7 +336,7 @@ This route consists of the following components:
   ```
 
 - `ProductRecommendationList`
-  Similar to `EventList` component above, this component is featching data from `/sitecore/api/habitatfitness/products` endpoint (mocked in disconnected mode) and renders the list of recommended products based on user behavior. After app integration this list will be powered by algorithmic personalization based on scoring.
+  Similar to `EventList` component above, this component is featching data from `/sitecore/api/lighthousefitness/products` endpoint (mocked in disconnected mode) and renders the list of recommended products based on user behavior. After app integration this list will be powered by algorithmic personalization based on scoring.
 
   Notice that this component stores a single field that displays the title. This way the content for the component is a responsibility of a separate API while meta-data and marketing content for this component is the responsibility of the component itself:
 
@@ -586,8 +586,8 @@ After you save the Home route file, the component is expected to be rendered.
 ## Scene 3. First app bootstrapping with Sitecore
 
 ### Pre-requisites
-1. Complete API key setup described [here].(https://github.com/Sitecore/Sitecore.HabitatHome.Omni/tree/master/fitness/app#connecting-3rd-party-api-services)
-1. Complete code-first deployment pre-requisites described [here](https://github.com/Sitecore/Sitecore.HabitatHome.Omni/tree/master/fitness/app#pre-requisites-1).
+1. Complete API key setup described [here].(https://github.com/Sitecore/Sitecore.Demo.Omni/tree/master/fitness/app#connecting-3rd-party-api-services)
+1. Complete code-first deployment pre-requisites described [here](https://github.com/Sitecore/Sitecore.Demo.Omni/tree/master/fitness/app#pre-requisites-1).
 
 ### Setup
 Complete pre-reqs and assuming scene 1-2 were complete.
@@ -598,22 +598,22 @@ Complete pre-reqs and assuming scene 1-2 were complete.
 
 1. `sitecore-import.json` file will be created under `sitecore/manifest` folder. This file describes in Sitecore Domain Language what kind of application artifacts need to be created for this application.
 
-1. Complete all the steps described [here](https://github.com/Sitecore/Sitecore.HabitatHome.Omni/tree/master/fitness/app#steps).
+1. Complete all the steps described [here](https://github.com/Sitecore/Sitecore.Demo.Omni/tree/master/fitness/app#steps).
 
     The console will show the app deployment progress that the Sitecore artifacts are created and we see what's been done in real time.
 
-1. 	Launch Sitecore CMS and notice the items created in the content tree under `/sitecore/content/habitatfitness` along with dictionary items, component items and other artifacts.
+1. 	Launch Sitecore CMS and notice the items created in the content tree under `/sitecore/content/lighthousefitness` along with dictionary items, component items and other artifacts.
 
 1. Launch the Home page in Experience Editor and notice that the Featured Event component is editable.
 
     > Since we haven’t configured the server-side, the event detail pages are expected to error out and the event list won’t be loaded on the Home screen since we haven’t deployed the real Event API.
 
 1. Launch this request in Postman or any REST API client:
-http://habitatfitness.dev.local/sitecore/api/layout/render/jss?item=/&sc_lang=en&sc_apikey=<your-api-key-here>
+http://lighthousefitness.dev.local/sitecore/api/layout/render/jss?item=/&sc_lang=en&sc_apikey=<your-api-key-here>
 
     This is the output of the "real" Layout Service API. Notice the context object is populated along with more meta-data about the route. The shape of the output is very close to what we've seen coming out from the disconnected Layout Service. Notice the data for the `EventList` and `ProductRecommendationList` components - they only have the `title` field there but not the event/product list data. It is by design as that is a job of the Event and Product API which we need to have implemented.
 
-1.	Launch `https://habitatfitness.dev.local` and demonstrate that the app is rendered by the same Sitecore instance, which is able to work as both an API endpoint and an integrated Sitecore instance rendering the application.
+1.	Launch `https://lighthousefitness.dev.local` and demonstrate that the app is rendered by the same Sitecore instance, which is able to work as both an API endpoint and an integrated Sitecore instance rendering the application.
 
 1. Notice the events aren’t loading. Open the dev console and see 404s from an non-existing service.
 Let’s get that fixed.
@@ -622,7 +622,7 @@ Let’s get that fixed.
 Now that the app is bootstrapped, let’s add missing server-side configuration and real API implementation.
 
 Deploy server components from source
-Check [this section](https://github.com/Sitecore/Sitecore.HabitatHome.Omni#1-deploy-server-side-components) in main Readme.md for details.
+Check [this section](https://github.com/Sitecore/Sitecore.Demo.Omni#1-deploy-server-side-components) in main Readme.md for details.
 
 > Use "quick deploy" target to skip deploying items to your Sitecore instance, as at this stage we only need files: `.\build.ps1 -Target Quick-Deploy`
 

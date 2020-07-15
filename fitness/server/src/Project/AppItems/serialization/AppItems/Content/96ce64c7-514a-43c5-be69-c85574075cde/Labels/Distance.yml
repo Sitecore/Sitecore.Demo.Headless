@@ -2,7 +2,7 @@
 ID: "2762d42b-12f9-4620-b055-396df3bf20d3"
 Parent: "42fce2d7-12c5-435a-b114-15271a83bfd0"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/chapleau/chapleau-cycling-race/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/chapleau/chapleau-cycling-race/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

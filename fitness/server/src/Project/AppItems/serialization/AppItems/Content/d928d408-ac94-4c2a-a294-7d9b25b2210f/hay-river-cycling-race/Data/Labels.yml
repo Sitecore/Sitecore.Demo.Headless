@@ -2,7 +2,7 @@
 ID: "bb5159ba-7047-4788-bb61-79aa828a828d"
 Parent: "0b6e316d-5d93-48b1-b8c2-fdb0d27edc34"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/northwest-territories/hay-river/hay-river-cycling-race/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/northwest-territories/hay-river/hay-river-cycling-race/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

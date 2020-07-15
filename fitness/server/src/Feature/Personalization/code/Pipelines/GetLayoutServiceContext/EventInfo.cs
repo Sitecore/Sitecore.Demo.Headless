@@ -1,11 +1,11 @@
 ﻿using System;
 using Sitecore.Diagnostics;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services;
+using Sitecore.Demo.Fitness.Foundation.Analytics;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
 using Sitecore.JavaScriptServices.Configuration;
 using Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Pipelines.GetLayoutServiceContext
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Pipelines.GetLayoutServiceContext
 {
     public class EventInfo : Sitecore.JavaScriptServices.ViewEngine.LayoutService.Pipelines.GetLayoutServiceContext.JssGetLayoutServiceContextProcessor
     {

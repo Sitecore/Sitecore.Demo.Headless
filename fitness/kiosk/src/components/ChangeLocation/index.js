@@ -124,7 +124,7 @@ class ChangeLocation extends React.Component {
     const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
     if (!apiKey) {
       console.error(
-        "GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.HabitatHome.Omni/blob/master/docs/configuration/installation.md"
+        "GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md"
       );
     }
 

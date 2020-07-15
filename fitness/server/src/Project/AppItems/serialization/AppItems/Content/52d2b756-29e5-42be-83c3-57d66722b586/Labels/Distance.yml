@@ -2,7 +2,7 @@
 ID: "8256e8e5-8876-4674-a61a-5a93ff680a1f"
 Parent: "0cba6827-d914-4705-91ef-e94a55e29f0b"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/nunavut/kimmirut/kimmirut-5k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/kimmirut/kimmirut-5k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

@@ -2,7 +2,7 @@
 using Sitecore.Data;
 using Sitecore.Data.Items;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization.Services
+namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
 {
     public interface IProductDataService
     {

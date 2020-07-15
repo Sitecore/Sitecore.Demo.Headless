@@ -1,7 +1,7 @@
 ﻿using System;
 using Sitecore.Data;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Personalization
+namespace Sitecore.Demo.Fitness.Feature.Personalization
 {
     public static class Wellknown
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Model;
 
-namespace Sitecore.HabitatHome.Fitness.Feature.Collection.Model
+namespace Sitecore.Demo.Fitness.Feature.Collection.Model
 {
     public class EventPayload : IEventPayload
     {

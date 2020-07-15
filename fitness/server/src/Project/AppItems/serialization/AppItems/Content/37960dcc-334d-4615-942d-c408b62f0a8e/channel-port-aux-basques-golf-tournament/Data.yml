@@ -2,7 +2,7 @@
 ID: "28a92c52-929e-4d2c-a7c1-79ed4d4e91aa"
 Parent: "ae041ed0-99d5-4ee3-b2f6-aa3234f44eef"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/newfoundland-and-labrador/channel-port-aux-basques/channel-port-aux-basques-golf-tournament/Data"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/newfoundland-and-labrador/channel-port-aux-basques/channel-port-aux-basques-golf-tournament/Data"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

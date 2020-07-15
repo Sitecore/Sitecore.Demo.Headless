@@ -2,7 +2,7 @@
 ID: "7730d4d1-b2c5-49d4-8253-742c5d06b39e"
 Parent: "d115473d-2b22-43c0-8dfd-f1b588301a25"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/alberta/lethbridge/lethbridge-golf-tournament/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/alberta/lethbridge/lethbridge-golf-tournament/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

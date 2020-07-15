@@ -28,7 +28,7 @@ export default function(manifest) {
       {
         name: "alignment",
         type: CommonFieldTypes.ItemLink,
-        source: "/sitecore/content/habitatfitness-kiosk/Content/alignments",
+        source: "/sitecore/content/lighthousefitness-kiosk/Content/alignments",
         displayName: "Call to Action Alignment"
       }
     ]

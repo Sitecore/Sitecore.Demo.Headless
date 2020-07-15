@@ -2,7 +2,7 @@
 ID: "2406a9ad-73d4-4701-b2b1-0a10d4576d8a"
 Parent: "6c0af119-fac7-4d2c-821d-7caa5f02a5e4"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/alberta/hinton/hinton-2k-run/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/alberta/hinton/hinton-2k-run/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"

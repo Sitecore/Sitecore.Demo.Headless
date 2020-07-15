@@ -2,7 +2,7 @@
 ID: "34d6dd96-d6da-4dd1-a9dd-aaa0b775ba6a"
 Parent: "26e34738-7a48-4019-9ce3-fcc5ae7b3782"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/new-brunswick/fredericton/fredericton-10k-run/Data/Labels/Participants"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/new-brunswick/fredericton/fredericton-10k-run/Data/Labels/Participants"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

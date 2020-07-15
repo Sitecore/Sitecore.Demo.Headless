@@ -1,0 +1,29 @@
+﻿---
+ID: "62039f44-0511-4c51-a149-059338fcdbff"
+Parent: "a8fb6b30-bcba-571b-97bf-72c61de7e736"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/Project/lighthousefitness/Branches
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {AC90A0F0-6618-485B-B03D-64D3E7500D01}
+    {85ADBF5B-E836-4932-A333-FE0F9FA1ED1E}
+    {F6B0E6F1-2451-4C72-94FD-22D7B93B592A}
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181024T203157Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

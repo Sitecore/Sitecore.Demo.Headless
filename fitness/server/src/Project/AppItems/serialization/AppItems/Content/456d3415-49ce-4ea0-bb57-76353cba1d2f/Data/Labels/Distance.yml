@@ -2,7 +2,7 @@
 ID: "b43b9a8f-715d-46df-b54e-1155a7f6bafc"
 Parent: "c62a59fd-8931-43eb-8764-f8143d3af492"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/british-columbia/victoria/victoria-5k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/victoria/victoria-5k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

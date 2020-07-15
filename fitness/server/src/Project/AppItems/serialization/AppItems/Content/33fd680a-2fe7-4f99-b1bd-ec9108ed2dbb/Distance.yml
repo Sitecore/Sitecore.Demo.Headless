@@ -2,7 +2,7 @@
 ID: "e08ad5b4-1497-4dbd-b9b2-859130c2664f"
 Parent: "33fd680a-2fe7-4f99-b1bd-ec9108ed2dbb"
 Template: "80f32942-afab-59c0-91f8-af33cbf166f9"
-Path: "/sitecore/content/habitatfitness/home/events/canada/ontario/hearst/hearst-2k-run/Data/Labels/Distance"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/hearst/hearst-2k-run/Data/Labels/Distance"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"

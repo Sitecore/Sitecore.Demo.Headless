@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Sitecore.HabitatHome.Fitness.Foundation.Analytics.Model;
+using Sitecore.Demo.Fitness.Foundation.Analytics.Model;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
 
-namespace Sitecore.HabitatHome.Fitness.Foundation.Analytics.Services
+namespace Sitecore.Demo.Fitness.Foundation.Analytics.Services
 {
     public interface IIdentificationService
     {

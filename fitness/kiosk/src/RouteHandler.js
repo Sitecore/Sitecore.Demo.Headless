@@ -231,9 +231,9 @@ function getRouteData(route, language, options = {}) {
     sc_apikey: config.sitecoreApiKey
   };
 
-  // rewriting the url if it's event page to resolve against the habitatfitness site
+  // rewriting the url if it's event page to resolve against the lighthousefitness site
   if (route.startsWith("/events/")) {
-    systemQueryParams.sc_site = "habitatfitness";
+    systemQueryParams.sc_site = "lighthousefitness";
   }
 
   const queryParams = Object.assign(currentUrlParams, systemQueryParams);

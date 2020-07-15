@@ -2,7 +2,7 @@
 ID: "de4c8372-851c-42f8-95d7-5111b7a09bf8"
 Parent: "30b678d6-127c-42c4-b6b1-850d6cf2116d"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: "/sitecore/content/habitatfitness/home/events/canada/quebec/riviere-du-loup/riviere-du-loup-golf-tournament/Data/Labels"
+Path: "/sitecore/content/lighthousefitness/home/events/canada/quebec/riviere-du-loup/riviere-du-loup-golf-tournament/Data/Labels"
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
