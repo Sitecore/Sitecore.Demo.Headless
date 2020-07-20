@@ -29,7 +29,7 @@ config.onError = (err) => {
  */
 const transformRegex = new RegExp(`(${escapeStringRegexp(config.apiHost)})`, 'g');
 config.transformSSRContent = (response, request) => {
-  return response.html.replace(transformRegex, `${request.protocol}://${request.headers.host}`);
+  return response.html.replace(transformRegex, ``);
 };
 
 /**
