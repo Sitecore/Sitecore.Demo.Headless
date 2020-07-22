@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "@sitecore-jss/sitecore-jss-react";
-import logo from "../../assets/img/logo.svg";
 import { NavLink } from "react-router-dom";
 
 const WelcomeScreen = ({ context, fields }) => (
@@ -12,9 +11,18 @@ const WelcomeScreen = ({ context, fields }) => (
         : null
     }
   >
-    <NavLink className="logo" to="/">
-      <img src={logo} alt="Lighthouse Fitness Kiosk" />
-    </NavLink>
+    <div class="logo-container">
+      <ul>
+        <li>
+          <div class="logo-holder logo">
+            <NavLink className="logo" to="/">
+              <h3> <span>LIGHT</span>HOUSE</h3>
+              <p>FITNESS</p>
+            </NavLink>
+          </div>
+        </li>
+      </ul>
+    </div>
     <div className="welcomeScreen-content">
       {context.pageEditing ? (
         <Link
@@ -43,13 +51,13 @@ const getStyleFromAlignment = alignmentItem => {
   const value = alignmentItem.fields.name.value;
   if (value === "bottom") {
     return {
-      bottom: 0,
+      bottom: 50,
       position: "absolute"
     };
   }
   if (value === "top") {
     return {
-      top: 200,
+      top: 250,
       position: "absolute"
     };
   }

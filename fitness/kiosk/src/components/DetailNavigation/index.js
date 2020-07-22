@@ -17,9 +17,18 @@ const flushSession = () => {
 const DetailNavigation = ({ t }) => (
   <div className="nav-container">
     <nav className="navbar navbar-light">
-      <NavLink className="navbar-brand" to="/">
-        <img src={logo} alt="lighthouse-fitness" />
-      </NavLink>
+      <div class="logo-container">
+        <ul>
+          <li>
+            <div class="logo-holder logo">
+              <NavLink className="navbar-brand" to="/">
+                <h3> <span>LIGHT</span>HOUSE</h3>
+                <p>FITNESS</p>
+              </NavLink>
+            </div>
+          </li>
+        </ul>
+      </div>
       <ul className="navbar-nav">
         <li className="nav-item">
           <NavLink className="nav-link" to="/events">

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { translate } from "react-i18next";
 import { flush } from "../../services/SessionService";
-import logo from "../../assets/img/logo.svg";
 
 import {
   Collapse,
@@ -53,9 +52,18 @@ class Navigation extends React.Component {
     return (
       <div className="nav-container">
         <Navbar light>
-          <NavbarBrand tag={Link} to={"/"}>
-            <img src={logo} alt={"lighthouse-fitness"} />
-          </NavbarBrand>
+          <div class="logo-container">
+            <ul>
+              <li>
+                <div class="logo-holder logo">
+                  <NavbarBrand tag={Link} to={"/"}>
+                    <h3> <span>LIGHT</span>HOUSE</h3>
+                    <p>FITNESS</p>
+                  </NavbarBrand>
+                </div>
+              </li>
+            </ul>
+          </div>
           {/* <NavLink tag={Link} to={"/"} className="header-account-link">
             Login
           </NavLink> */}

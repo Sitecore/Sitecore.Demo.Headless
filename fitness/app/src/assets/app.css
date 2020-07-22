@@ -747,30 +747,63 @@ input[type="tel"]:focus:not(:disabled) {
   /* custom navbar-toggler style */
   /* nav menu */
 }
-#root > .nav-container > nav .navbar-brand {
-  margin: 0 auto;
-  color: #fff;
-  height: 58px;
-  line-height: 58px;
+
+#root > .nav-container > nav > .logo-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#root > .nav-container > nav > .logo-container > ul {
   padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  margin-bottom: 0;
+  list-style: none;
+  display: inline-block;
+  font-family: arial, helvetica, sans-serif;
+}
+
+#root > .nav-container > nav > .logo-container > ul > li {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
+  align-items: center;
   justify-content: center;
 }
-#root > .nav-container > nav .navbar-brand img {
-  display: block;
-  max-width: 82px;
+
+#root > .nav-container > nav > .logo-container > ul .logo-holder {
+  text-align: left;
 }
+
+#root > .nav-container > nav > .logo-container > ul > li a {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 0;
+}
+
+#root > .nav-container > nav > .logo-container > ul .logo h3 {
+  color: #f7c51e;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 1.3;
+  white-space: nowrap;
+  margin: 12px 0px 0px 0px;
+}
+
+#root > .nav-container > nav > .logo-container > ul .logo h3 span {
+  background: #f7c51e;
+  color: #201f21;
+  display: inline-block;
+  line-height: 1.5;
+  padding: 0 16px;
+}
+
+#root > .nav-container > nav > .logo-container > ul .logo p {
+  font-size: 9px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  padding-left: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 12px 0;
+}
+
 #root > .nav-container > nav .header-account-link {
   position: absolute;
   top: 17px;
@@ -804,7 +837,7 @@ input[type="tel"]:focus:not(:disabled) {
   border-radius: 0;
   background: none;
   position: absolute;
-  top: 11px;
+  top: 19px;
   left: 12px;
 }
 #root > .nav-container > nav .navbar-toggler:hover .navbar-toggler-icon {
@@ -910,15 +943,18 @@ input[type="tel"]:focus:not(:disabled) {
     padding-left: 15px;
     padding-right: 15px;
   }
-  #root > .nav-container > nav .navbar-brand {
+  #root > .nav-container > nav > .logo-container {
     margin-left: 0;
     margin-right: 0;
-    height: 90px;
-    line-height: 90px;
   }
-  #root > .nav-container > nav .navbar-brand img {
-    display: block;
-    max-width: 122px;
+  #root > .nav-container > nav > .logo-container > ul {
+    margin-bottom: 1rem;
+  }
+  #root > .nav-container > nav > .logo-container > ul .logo h3 {
+    font-size: 40px;
+  }
+  #root > .nav-container > nav > .logo-container > ul .logo p {
+    font-size: 14px;
   }
   #root > .nav-container > nav .navbar-toggler,
   #root > .nav-container > nav .header-account-link {
