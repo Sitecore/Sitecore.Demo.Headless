@@ -100,9 +100,53 @@ stages:
     vmImage: ubuntu-latest
   displayName: 'Build Linux Docker Images'
   jobs:
-  - job: Build_Platform_Linux
+  - job: Build_Dacpacs
+    pool:
+      name: Docker
+    displayName: "Publish Dacpacs"
     steps:
     - template: version.yml
+    
+    - task: DockerCompose@0
+      displayName: "Docker Compose Build Dacpacs"
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: '$(azure.subscription)'
+        azureContainerRegistry: '$(container.registry)'
+        dockerComposeFile: 'docker-compose-dacpac.yml'
+        dockerComposeFileArgs: |
+          INTERNAL_NUGET_SOURCE=$(INTERNAL_NUGET_SOURCE)
+          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+          DEMO_VERSION=$(tag)
+          SITECORE_VERSION=$(SITECORE_VERSION)
+        action: 'Build services'
+        qualifyImageNames: false
+
+    - task: PowerShell@2
+      displayName: "Copy output from container to Artifacts"
+      inputs:
+        targetType: 'inline'
+        script: |
+          docker container create --name dacpac$(tag) dacpac:$(tag)
+          docker container cp dacpac$(tag):/output $(Build.ArtifactStagingDirectory)/dacpacs
+          docker container rm -f dacpac$(tag)
+    - task: PublishPipelineArtifact@1
+      displayName: "Publish Dacpac Artifacts"
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)/dacpacs'
+        artifact: 'dacpac.$(tag)'
+        publishLocation: 'pipeline'
+
+  - job: Build_Platform_Linux
+    dependsOn: Build_Dacpacs
+    steps:
+    - template: version.yml
+    - task: DownloadPipelineArtifact@2
+      displayName: "Download Dacpac Artifacts"
+      inputs:
+        buildType: 'current'
+        artifactName: 'dacpac.$(tag)'
+        targetPath: '$(Build.SourcesDirectory)/docker/images/windows/demo-sqldev/data'
     - task: DockerCompose@0
       displayName: "Docker Compose Build"
       inputs:
