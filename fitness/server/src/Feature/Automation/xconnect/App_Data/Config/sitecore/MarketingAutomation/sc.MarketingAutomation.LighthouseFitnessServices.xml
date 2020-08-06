@@ -10,8 +10,6 @@
               <LifeTime>Singleton</LifeTime>
               <Options>
                 <FirebaseMessagingApiUri>https://fcm.googleapis.com/fcm/send</FirebaseMessagingApiUri>
-                <FirebaseMessagingApiKey>INSERT-SERVER-API-KEY-HERE</FirebaseMessagingApiKey>
-                <PublicHostName>https://app.sitecoredemo.com</PublicHostName>
               </Options>
             </LighthouseFitness.EventNotificationService>
           </Services>

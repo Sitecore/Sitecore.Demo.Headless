@@ -54,53 +54,31 @@ If you have custom hostnames and/or project or website root paths, open the [`\f
 ### XP-Only - Optional - Configuring Marketing Automation Settings for Push Notifications
 
 1. [Obtain a Firebase server key](firebase.md).
-2. Open the [`\fitness\server\src\Feature\Automation\xconnect\App_Data\Config\sitecore\MarketingAutomation\sc.MarketingAutomation.LighthouseFitnessServices.xml`](///fitness/server/src/Feature/Automation/xconnect/App_Data/Config/sitecore/MarketingAutomationsc.MarketingAutomation.LighthouseFitnessServices.xml) file.
-3. Make the following changes:
-    1. Replace `INSERT-SERVER-API-KEY-HERE` by the Firebase server key:
+2. Open the [`\.env`](///.env) file.
+3. Set the `REACT_APP_FIREBASE_MESSAGING_SERVER_KEY` value as your Firebase server key:
 
-        ```xml
-        <Settings>
-          <Sitecore>
-            <XConnect>
-              <MarketingAutomation>
-                <Engine>
-                  <Services>
-                    <LighthouseFitness.EventNotificationService>
-                      <Options>
-                        <FirebaseMessagingApiKey>INSERT-SERVER-API-KEY-HERE</FirebaseMessagingApiKey>
-                      </Options>
-                    </LighthouseFitness.EventNotificationService>
-                  </Services>
-                </Engine>
-              </MarketingAutomation>
-            </XConnect>
-          </Sitecore>
-        </Settings>
-        ```
+    ```text
+    REACT_APP_FIREBASE_MESSAGING_SERVER_KEY=YOUR-SERVER-API-KEY-HERE
+    ```
 
-    2. Adjust the Fitness application hostname:
+4. Save the file.
+5. Open the [`\docker-compose.yml`](///docker-compose.yml) file.
+6. Under "services" > "automationengine" > "environment", adjust the `REACT_APP_PUBLIC_HOST_NAME` value to your Fitness application hostname:
 
-        ```xml
-        <Settings>
-          <Sitecore>
-            <XConnect>
-              <MarketingAutomation>
-                <Engine>
-                  <Services>
-                    <LighthouseFitness.EventNotificationService>
-                      <Options>
-                        <PublicHostName>https://app.sitecoredemo.com</PublicHostName>
-                      </Options>
-                    </LighthouseFitness.EventNotificationService>
-                  </Services>
-                </Engine>
-              </MarketingAutomation>
-            </XConnect>
-          </Sitecore>
-        </Settings>
-        ```
+    ```text
+    services:
+      ...
 
-        > This host name will be used as the onclick action for the push notification and as a base url to retrieve the app icon showing next to the push notification.
+      automationengine:
+        ...
+        environment:
+          ...
+          REACT_APP_PUBLIC_HOST_NAME: app.${HOSTNAME_SUFFIX}
+        ...
+    ```
+
+    > This host name will be used as the onclick action for the push notification and as a base url to retrieve the app icon showing next to the push notification.
+7. Save the file.
 
 ### Server Deployment
 

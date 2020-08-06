@@ -48,6 +48,10 @@ stages:
           TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
           INTERNAL_NUGET_SOURCE=$(INTERNAL_NUGET_SOURCE)
           SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+          REACT_APP_FIREBASE_MESSAGING_SERVER_KEY=$(REACT_APP_FIREBASE_MESSAGING_SERVER_KEY)
+          REACT_APP_FIREBASE_SENDER_ID=$(REACT_APP_FIREBASE_SENDER_ID)
+          REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=$(REACT_APP_FIREBASE_MESSAGING_PUSH_KEY)
+          REACT_APP_GOOGLE_API_KEY=$(REACT_APP_GOOGLE_API_KEY)
         qualifyImageNames: false
         action: 'Build services'
         additionalImageTags: '$(additionalImageTags)'
@@ -164,6 +168,9 @@ stages:
           INTERNAL_NUGET_SOURCE=$(INTERNAL_NUGET_SOURCE)
           SYSTEM_ACCESSTOKEN=$(System.AccessToken)
           OPENCALAIS_ACCESSTOKEN=$(OpenCalais.AccessToken)
+          REACT_APP_FIREBASE_SENDER_ID=$(REACT_APP_FIREBASE_SENDER_ID)
+          REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=$(REACT_APP_FIREBASE_MESSAGING_PUSH_KEY)
+          REACT_APP_GOOGLE_API_KEY=$(REACT_APP_GOOGLE_API_KEY)
         qualifyImageNames: false
         action: 'Build services'
         additionalImageTags: '$(additionalImageTags)-linux'

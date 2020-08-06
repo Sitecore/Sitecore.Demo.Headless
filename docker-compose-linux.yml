@@ -32,11 +32,17 @@ services:
       args:
         BUILD_IMAGE: node:10.21.0-jessie
         BASE_IMAGE: node:10.21.0-alpine
+        REACT_APP_FIREBASE_MESSAGING_PUSH_KEY: ${REACT_APP_FIREBASE_MESSAGING_PUSH_KEY}
+        REACT_APP_FIREBASE_SENDER_ID: ${REACT_APP_FIREBASE_SENDER_ID}
+        REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
     ports:
       - "44040:80"
     environment:
       SITECORE_API_HOST: http://app-cd.sitecoredemo.io
-
+    networks:
+      demo:
+        aliases:
+          - app.${HOSTNAME_SUFFIX}
   kiosk:
     image: ${REGISTRY}lighthouse-jss-kiosk:${DEMO_VERSION}-linux
     isolation: default
@@ -46,7 +52,18 @@ services:
       args:
         BUILD_IMAGE: node:10.21.0-jessie
         BASE_IMAGE: node:10.21.0-alpine
+        REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
     ports:
-      - "44040:80"
+      - "44041:80"
     environment:
       SITECORE_API_HOST: http://kiosk-cd.sitecoredemo.io
+
+    networks:
+      demo:
+        aliases:
+          - kiosk.${HOSTNAME_SUFFIX}
+
+networks:
+  demo:
+    external:
+      name: nat

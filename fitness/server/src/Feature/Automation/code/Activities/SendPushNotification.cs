@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 using Sitecore.Framework.Conditions;
 using Sitecore.Demo.Fitness.Feature.Automation.Services;
 using Sitecore.Demo.Fitness.Foundation.Analytics;
@@ -16,8 +17,11 @@ namespace Sitecore.Demo.Fitness.Feature.Automation.Activities
 
         public IEventNotificationService NotificationService { get; set; }
 
-        public SendPushNotification(IEventNotificationService notificationService)
+        protected ILogger<IActivity> Logger { get; set; }
+
+        public SendPushNotification(IEventNotificationService notificationService, ILogger<SendPushNotification> logger)
         {
+            Logger = logger;
             NotificationService = notificationService;
         }
 
@@ -43,6 +47,7 @@ namespace Sitecore.Demo.Fitness.Feature.Automation.Activities
                 }
                 catch (Exception ex)
                 {
+                    this.Logger.LogError(ex, ex.ToString());
                     return new Failure($"SendPushNotification failed with '{ex.Message}'");
                 }
             }

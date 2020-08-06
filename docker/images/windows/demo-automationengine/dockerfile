@@ -22,6 +22,8 @@ RUN Copy-Item C:\out\bin\Sitecore.Demo.Fitness.Foundation.Analytics.dll C:\build
 
 FROM $BASE_IMAGE as production
 
+COPY /docker/images/windows/demo-automationengine /worker/App_data/Config/sitecore/CoreServices
+
 COPY --from=build /build/temp/xConnectAutomationServiceRoot /worker
 
 # Copy transform files
@@ -37,3 +39,6 @@ RUN (Get-ChildItem -Path 'C:\\transforms\\App_Data\\Config\\sitecore\\MarketingA
 RUN (Get-ChildItem -Path 'C:\\transforms\\App_Data\\Config\\sitecore\\MarketingAutomation\\sc.MarketingAutomation.ContactLoader*.xdt' -Recurse ) | `
     ForEach-Object { & 'C:\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\worker\\App_Data\\Config\\sitecore\\MarketingAutomation\\sc.MarketingAutomation.ContactLoader.xml' -XdtPath $_.FullName `
     -XdtDllPath 'C:\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; };
+
+ARG REACT_APP_FIREBASE_MESSAGING_SERVER_KEY
+ENV REACT_APP_FIREBASE_MESSAGING_SERVER_KEY=${REACT_APP_FIREBASE_MESSAGING_SERVER_KEY}

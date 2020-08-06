@@ -140,6 +140,7 @@ services:
         BASE_IMAGE: ${REGISTRY}lighthouse-automationengine:${LIGHTHOUSE_VERSION}
         INTERNAL_NUGET_SOURCE: ${INTERNAL_NUGET_SOURCE}
         SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN}
+        REACT_APP_FIREBASE_MESSAGING_SERVER_KEY: ${REACT_APP_FIREBASE_MESSAGING_SERVER_KEY}
     volumes:
       - .\data\automationengine:C:\inetpub\wwwroot\App_Data\logs
     mem_limit: 500MB
@@ -149,6 +150,7 @@ services:
       SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION: Data Source=sql;Database=Sitecore.MarketingAutomation;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA: Data Source=sql;Database=Sitecore.ReferenceData;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;User ID=sa;Password=${SQL_SA_PASSWORD}
+      REACT_APP_PUBLIC_HOST_NAME: app.${HOSTNAME_SUFFIX}
     depends_on:
       sql:
         condition: service_healthy
@@ -230,6 +232,9 @@ services:
       args:
         BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-1809
         BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-1809
+        REACT_APP_FIREBASE_MESSAGING_PUSH_KEY: ${REACT_APP_FIREBASE_MESSAGING_PUSH_KEY}
+        REACT_APP_FIREBASE_SENDER_ID: ${REACT_APP_FIREBASE_SENDER_ID}
+        REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
     ports:
       - "44040:80"
     environment:
@@ -253,6 +258,7 @@ services:
       args:
         BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-1809
         BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-1809
+        REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
     ports:
       - "44041:80"
     environment:
@@ -283,7 +289,7 @@ services:
     volumes:
       - .\data\cm\src:C:\src
       - .\fitness\server\src:C:\projects\Sitecore.Demo.Omni\fitness\server\src
-      - C:\projects\Sitecore.Demo.Platform\items:c:\unicorn
+      - C:\projects\Sitecore.Demo.Platform\items:c:\items
     ports:
       - "44001:80"
     environment:

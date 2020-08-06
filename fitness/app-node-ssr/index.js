@@ -51,6 +51,9 @@ server.use(compression());
 // turn off x-powered-by http header
 server.settings['x-powered-by'] = false;
 
+// allow services static assets from the root (i.e. /firebase-messaging-sw.js)
+server.use(express.static(__dirname + '/dist/lighthousefitness'));
+
 // Serve static app assets from local /dist folder
 server.use(
   '/dist',

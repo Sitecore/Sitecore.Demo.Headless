@@ -11,19 +11,11 @@ namespace Sitecore.Demo.Fitness.Feature.Automation.Services
     public class EventNotificationServiceOptions
     {
         public string FirebaseMessagingApiUri { get; set; }
-
-        public string FirebaseMessagingApiKey { get; set; }
-
-        public string PublicHostName { get; set; }
     }
 
     public class EventNotificationService : IEventNotificationService
     {
         public string FirebaseMessagingApiUri { get; set; }
-
-        public string FirebaseMessagingApiKey { get; set; }
-
-        public string PublicHostName { get; set; }
 
         public EventNotificationService(IConfiguration configuration)
         {
@@ -42,14 +34,14 @@ namespace Sitecore.Demo.Fitness.Feature.Automation.Services
             using (var client = new WebClient())
             {
                 client.Headers.Add("Content-Type", "application/json");
-                client.Headers.Add("Authorization", $"key={FirebaseMessagingApiKey}");
+                client.Headers.Add("Authorization", $"key={Environment.GetEnvironmentVariable("REACT_APP_FIREBASE_MESSAGING_SERVER_KEY")}");
 
                 dynamic data = new JObject();
                 data.notification = new JObject();
                 data.notification.title = title.Replace("$first_name$", GetCurrentContactName(contact));
                 data.notification.body = body.Replace("$first_name$", GetCurrentContactName(contact));
-                data.notification.click_action = PublicHostName;
-                data.notification.icon = $"{PublicHostName}/favicon-32x32.png";
+                data.notification.click_action = Environment.GetEnvironmentVariable("REACT_APP_PUBLIC_HOST_NAME");
+                data.notification.icon = $"{Environment.GetEnvironmentVariable("REACT_APP_PUBLIC_HOST_NAME")}/favicon-32x32.png";
                 data.to = token;
 
                 client.UploadString(uri, data.ToString());
@@ -60,8 +52,6 @@ namespace Sitecore.Demo.Fitness.Feature.Automation.Services
         {
             Condition.Requires(options, nameof(options)).IsNotNull();
             this.FirebaseMessagingApiUri = options.FirebaseMessagingApiUri;
-            this.FirebaseMessagingApiKey = options.FirebaseMessagingApiKey;
-            this.PublicHostName = options.PublicHostName;
         }
 
         private string GetCurrentContactName(Contact contact)

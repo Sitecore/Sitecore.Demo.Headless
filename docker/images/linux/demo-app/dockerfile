@@ -18,6 +18,14 @@ COPY fitness/app/ ./
 # (for values that are baked into the server bundle)
 RUN jss setup --layoutServiceHost %layoutServiceHost% --apiKey 309ec3e9-b911-4a0b-aa8d-425045b6dcbd --nonInteractive
 
+ARG REACT_APP_FIREBASE_SENDER_ID
+ARG REACT_APP_FIREBASE_MESSAGING_PUSH_KEY
+ARG REACT_APP_GOOGLE_API_KEY
+
+ENV REACT_APP_FIREBASE_SENDER_ID=${REACT_APP_FIREBASE_SENDER_ID}
+ENV REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=${REACT_APP_FIREBASE_MESSAGING_PUSH_KEY}
+ENV REACT_APP_GOOGLE_API_KEY=${REACT_APP_GOOGLE_API_KEY}
+
 RUN npm run build
 
 # Rename all .js files to .js.base (so we can bootstrap tokens later)
@@ -37,6 +45,9 @@ COPY fitness/app-node-ssr/ ./
 COPY scripts/Docker/ ./
 
 FROM $BASE_IMAGE as production
+
+ARG REACT_APP_FIREBASE_SENDER_ID
+ENV REACT_APP_FIREBASE_SENDER_ID=${REACT_APP_FIREBASE_SENDER_ID}
 
 WORKDIR /deploy
 

@@ -18,6 +18,9 @@ COPY fitness/kiosk/ ./
 # (for values that are baked into the server bundle)
 RUN jss setup --layoutServiceHost %layoutServiceHost% --apiKey 309ec3e9-b911-4a0b-aa8d-425045b6dcbd --nonInteractive
 
+ARG REACT_APP_GOOGLE_API_KEY
+ENV REACT_APP_GOOGLE_API_KEY=${REACT_APP_GOOGLE_API_KEY}
+
 RUN npm run build
 
 # Rename all .js files to .js.base (so we can bootstrap tokens later)

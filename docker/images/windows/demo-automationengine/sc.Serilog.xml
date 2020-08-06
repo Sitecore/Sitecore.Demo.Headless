@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <Serilog>
+    <Using>
+      <FileSinkAssembly>Serilog.Sinks.File</FileSinkAssembly>
+      <RollingFileSinkAssembly>Serilog.Sinks.RollingFile</RollingFileSinkAssembly>
+    </Using>
+    <MinimumLevel>
+      <Default>Verbose</Default>
+    </MinimumLevel>
+    <WriteTo>
+      <FileSink>
+        <Name>RollingFile</Name>
+        <Args>
+          <pathFormat>App_Data\\Logs\\xconnect-log-${MachineName}-${InstanceName}-{Date}.txt</pathFormat>
+          <retainedFileCountLimit>7</retainedFileCountLimit>
+          <buffered>False</buffered>
+        </Args>
+      </FileSink>
+    </WriteTo>
+    <Properties>
+      <Application>XConnect</Application>
+    </Properties>
+  </Serilog>
+</Settings>

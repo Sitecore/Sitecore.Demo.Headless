@@ -84,7 +84,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="automation\sc.Demo.Fitness.Foundation.Analytics.xml" />
+    <Content Include="automation\sc.Lighthouse.Fitness.Foundation.Analytics.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

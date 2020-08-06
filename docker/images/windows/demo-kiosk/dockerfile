@@ -1,9 +1,6 @@
 ARG BUILD_IMAGE
 ARG BASE_IMAGE
 
-
-
-
 # Build the JSS app
 FROM $BUILD_IMAGE as kiosk
 
@@ -22,10 +19,10 @@ COPY fitness/kiosk/ ./
 # Note: layoutServiceHost must be https normally
 RUN jss setup --layoutServiceHost %layoutServiceHost% --apiKey {EBF6D5C1-EB80-4B15-91AB-DD3845797774} --nonInteractive
 
+ARG REACT_APP_GOOGLE_API_KEY
+ENV REACT_APP_GOOGLE_API_KEY=${REACT_APP_GOOGLE_API_KEY}
+
 RUN jss build
-
-
-
 
 # Build the node-SSR
 FROM $BUILD_IMAGE as ssr
