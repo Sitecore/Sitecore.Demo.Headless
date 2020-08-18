@@ -72,6 +72,7 @@
     <Content Include="App_Config\Include\Project\Project.GraphQL.config.disabled" />
     <Content Include="App_Config\Include\Project\Project.ContentHub.Serialization.config" />
     <Content Include="App_Config\Include\Project\Project.SitecoreHealthExtensions.config" />
+    <Content Include="App_Config\Include\Project\z.SmtpSettings.Omni.config" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.config.disabled" />
     <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.Counters.config.disabled" />

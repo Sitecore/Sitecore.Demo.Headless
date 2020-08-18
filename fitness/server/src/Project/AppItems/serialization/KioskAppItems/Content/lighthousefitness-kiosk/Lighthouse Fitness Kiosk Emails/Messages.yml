@@ -2,7 +2,7 @@
 ID: "799ddae4-6009-4bc4-a92a-acb5053897c3"
 Parent: "5e077689-911b-4073-bdda-31263a1d88cd"
 Template: "d8ad4b81-9269-4868-949f-37d1c28687e5"
-Path: "/sitecore/content/lighthousefitness-kiosk/Email/Messages"
+Path: "/sitecore/content/lighthousefitness-kiosk/Lighthouse Fitness Kiosk Emails/Messages"
 DB: master
 BranchID: "f8fae92a-4f10-470c-ad5c-7ed9e6b636af"
 SharedFields:

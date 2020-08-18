@@ -7,7 +7,7 @@ services:
     isolation: ${ISOLATION}
     build:
       context: .
-      dockerfile: docker\images\windows\demo-sqldev\dockerfile
+      dockerfile: .\docker\images\windows\demo-sqldev\dockerfile
       args:
         BUILD_IMAGE: ${REGISTRY}demo-build-sdk:${SITECORE_VERSION}
         BASE_IMAGE: ${REGISTRY}lighthouse-sql:${LIGHTHOUSE_VERSION}
@@ -25,20 +25,39 @@ services:
       ADMIN_PASSWORD: "b"
       ADMIN_USER_NAME: "sitecore\\superuser"
       DISABLE_DEFAULT_ADMIN: 'FALSE'
+      EXM_BASE_URL: "http://${HOSTNAME_SUFFIX}"
+      EXM_KIOSK_CD_BASE_URL: "http://kiosk-cd.${HOSTNAME_SUFFIX}"
+      EXM_APP_BASE_URL: "http://app.${HOSTNAME_SUFFIX}"
       DAM_URL: ${DAM_URL}
     networks:
       demo:
         aliases:
           - platform-sql
 
-  ps:
-    image: ${REGISTRY}lighthouse-ps:latest
+  solr:
+    image: ${REGISTRY}lighthouse-jss-solr:${DEMO_VERSION}
     isolation: ${ISOLATION}
-    # build:
-    #   context: .
-    #   dockerfile: .\docker\images\windows\demo-ps\dockerfile
-    #   args:
-    #     BASE_IMAGE: ${REGISTRY}sitecore-ps:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-solr\dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}lighthouse-solr:${LIGHTHOUSE_VERSION}
+ #   volumes:
+    #  - .\data\solr:C:\Data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
+    networks:
+      - demo
+
+  ps:
+    image: ${REGISTRY}lighthouse-jss-ps:${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-ps\dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}lighthouse-ps:${LIGHTHOUSE_VERSION}
     restart: unless-stopped
     environment:
       CONN_STRING_CORE: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
@@ -49,22 +68,6 @@ services:
         condition: service_healthy
     ports:
       - "44015:80"
-    networks:
-      - demo
-
-  solr:
-    image: ${REGISTRY}lighthouse-solr:latest
-    isolation: ${ISOLATION}
-    # build:
-    #   context: .
-    #   dockerfile: .\docker\images\windows\demo-solr\dockerfile
-    #   args:
-    #     BASE_IMAGE: ${REGISTRY}sitecore-xp-sxa-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
-    volumes:
-      - .\data\solr:C:\Data
-    mem_limit: 1GB
-    ports:
-      - "44011:8983"
     networks:
       - demo
 
@@ -97,8 +100,10 @@ services:
       SITECORE_CONNECTIONSTRINGS_COLLECTION: Data Source=sql;Database=Sitecore.Xdb.Collection.ShardMapManager;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_SOLRCORE: http://solr:8983/solr/sitecore_xdb
     depends_on:
-      - sql
-      - solr
+      sql:
+        condition: service_healthy
+      solr:
+        condition: service_started
     networks:
       - demo
 
@@ -284,6 +289,7 @@ services:
         BASE_IMAGE: ${REGISTRY}lighthouse-cm:${LIGHTHOUSE_VERSION}
         INTERNAL_NUGET_SOURCE: ${INTERNAL_NUGET_SOURCE}
         SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN}
+        OPENCALAIS_ACCESSTOKEN: ${OPENCALAIS_ACCESSTOKEN}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('C:\\src\\Web.config'); }"
     mem_limit: 4G
     volumes:
@@ -344,7 +350,8 @@ services:
           - finance-cm.${HOSTNAME_SUFFIX}
 
   smtp:
-    image: rnwood/smtp4dev:v3
+    image: maildev/maildev
+    command: ["--smtp", "25", "--web", "80"]
     isolation: ${ISOLATION}
     ports:
       - "44025:25"
@@ -352,16 +359,16 @@ services:
     networks:
       demo:
         aliases:
-          - platform-smtp
+          - omni-smtp
 
   init:
-    image: ${REGISTRY}lighthouse-init:latest
+    image: ${REGISTRY}lighthouse-jss-init:${DEMO_VERSION}
     isolation: ${ISOLATION}
-    # build:
-    #   context: .\docker\images\windows\demo-init
-    #   args:
-    #     BUILD_IMAGE: mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1809
-    #     BASE_IMAGE: mcr.microsoft.com/dotnet/core/runtime:3.1-nanoserver-1809
+    build:
+      context: .
+      dockerfile: .\docker\images\windows\demo-init\dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}lighthouse-init:${LIGHTHOUSE_VERSION}
     environment:
       ADMIN_PASSWORD: "b"
       ADMIN_USER_NAME: "sitecore\\superuser"

@@ -2,13 +2,13 @@
 ID: "5e077689-911b-4073-bdda-31263a1d88cd"
 Parent: "d21fbe00-15bd-548e-b125-520c61cb7749"
 Template: "cf9c8a2a-2794-4fea-980a-ef8426f3d6c3"
-Path: "/sitecore/content/lighthousefitness-kiosk/Email"
+Path: "/sitecore/content/lighthousefitness-kiosk/Lighthouse Fitness Kiosk Emails"
 DB: master
 BranchID: "f8fae92a-4f10-470c-ad5c-7ed9e6b636af"
 SharedFields:
 - ID: "1b963507-6176-4336-a14d-d5070c3b0286"
   Hint: Base URL
-  Value: "https://lighthousefitness-kiosk.dev.local"
+  Value: "http://kiosk.sitecoredemo.io/"
 - ID: "1ec023fb-dbb4-4a7b-837d-55f9614737b8"
   Hint: POP3 Password
   Value: •

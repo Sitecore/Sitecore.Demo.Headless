@@ -106,11 +106,29 @@ export function parseRouteUrl(url) {
 
   let result = null;
 
+  // BEGIN DEMO CUSTOMIZATION
+  // Problem:
+  //   When the nodejs SSR proxy gets a request with a query string like "http://app.sitecoredemo.io/?email=someValue",
+  //   it requests the layout service like this by default "/sitecore/api/layout/render/jss?item=%2F%3Femail%3DsomeValue&sc_apikey=...&email=someValue".
+  //   The layout service returns a 404. The query string arguments must be removed from the "item" query string argument in the layout service call.
+  // Solution:
+  //   Implementing workaround #1 from https://github.com/Sitecore/jss/issues/140
+  // To Remove When: We upgrade to Sitecore JSS 15.0.
+
+  // parse the `url` value provided by the SSR proxy
+  const parsedUrl = new URL(url, 'http://anyvalue.jss');
+  // END DEMO CUSTOMIZATION
+
   // use react-router-dom to find the route matching the incoming URL
   // then return its match params
   // we are using .some() as a way to loop with a short circuit (so that we stop evaluating route patterns after the first match)
   routePatterns.some((pattern) => {
-    const match = matchPath(url, { path: pattern });
+    // BEGIN DEMO CUSTOMIZATION
+    // Original line:
+    //   const match = matchPath(url, { path: pattern });
+    const match = matchPath(parsedUrl.pathname, { path: pattern });
+    // END DEMO CUSTOMIZATION
+
     if (match && match.params) {
       result = match.params;
       return true;

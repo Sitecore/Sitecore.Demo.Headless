@@ -27,5 +27,13 @@ ENV USER_PASSWORD="b"
 ENV ADMIN_PASSWORD="b"
 ENV ADMIN_USER_NAME="sitecore\superuser"
 ENV DISABLE_DEFAULT_ADMIN=FALSE
+ENV EXM_BASE_URL=http://cd
+ENV EXM_KIOSK_CD_BASE_URL=http://kiosk-cd
+ENV EXM_APP_BASE_URL=http://app
 RUN Remove-Item install -Recurse -Force
 COPY --from=data /output/ /install/
+
+COPY /docker/images/windows/demo-sqldev/sql /sql
+
+COPY /docker/images/windows/demo-sqldev/Demo-Boot-Override-Omni.ps1  /
+CMD C:/Demo-Boot-Override-Omni.ps1 -InstallPath $env:INSTALL_PATH -DataPath $env:DATA_PATH -SqlHostname $env:SQL_HOSTNAME;

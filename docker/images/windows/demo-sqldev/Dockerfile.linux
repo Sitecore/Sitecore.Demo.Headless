@@ -35,5 +35,15 @@ ENV USER_PASSWORD="b"
 ENV ADMIN_PASSWORD="b"
 ENV ADMIN_USER_NAME="sitecore\superuser"
 ENV DISABLE_DEFAULT_ADMIN=FALSE
+ENV EXM_BASE_URL=http://cd
+ENV EXM_KIOSK_CD_BASE_URL=http://kiosk-cd
+ENV EXM_APP_BASE_URL=http://app
+ENV BOOT_OVERRIDE_SCRIPTS="Demo-Boot-Platform.ps1;Demo-Boot-Omni.ps1"
 
 COPY --from=builder ["/install/*", "/clean/"]
+
+# start-up scripts for demo
+COPY /docker/images/windows/demo-sqldev/sql /sql
+COPY /docker/images/windows/demo-sqldev/Demo-Boot-Omni.ps1 /opt
+
+RUN chmod +x /opt/Demo-Boot-Omni.ps1

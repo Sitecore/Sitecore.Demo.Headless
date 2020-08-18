@@ -22,6 +22,40 @@ services:
       ADMIN_PASSWORD: "b"
       ADMIN_USER_NAME: "sitecore\\superuser"
       DISABLE_DEFAULT_ADMIN: 'FALSE'
+      EXM_BASE_URL: "http://${HOSTNAME_SUFFIX}"
+      EXM_KIOSK_CD_BASE_URL: "http://kiosk-cd.${HOSTNAME_SUFFIX}"
+      EXM_APP_BASE_URL: "http://app.${HOSTNAME_SUFFIX}"
+      BOOT_OVERRIDE_SCRIPTS: "Demo-Boot-Platform.ps1;Demo-Boot-Omni.ps1"
+
+  init:
+    image: ${REGISTRY}lighthouse-jss-init:${DEMO_VERSION}-linux
+    isolation: default
+    build:
+      context: .
+      dockerfile: ./docker/images/windows/demo-init/dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}lighthouse-init:${LIGHTHOUSE_VERSION}-linux
+    environment:
+      ADMIN_PASSWORD: "b"
+      ADMIN_USER_NAME: "sitecore\\superuser"
+      HOST_CD: "cd"
+      HOST_CM: "cm"
+      HOST_PS: "ps"
+      MARKETING_DEFINITIONS_APIKEY: ${MARKETING_DEFINITIONS_APIKEY}
+
+  solr:
+    image: ${REGISTRY}lighthouse-jss-solr:${DEMO_VERSION}-linux
+    isolation: default
+    build:
+      context: .
+      dockerfile: ./docker/images/windows/demo-solr/dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}lighthouse-solr:${LIGHTHOUSE_VERSION}-linux
+    volumes:
+      - ./data/solr:/data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
 
   app:
     image: ${REGISTRY}lighthouse-jss-app:${DEMO_VERSION}-linux
@@ -38,11 +72,12 @@ services:
     ports:
       - "44040:80"
     environment:
-      SITECORE_API_HOST: http://app-cd.sitecoredemo.io
+      SITECORE_API_HOST: http://app-cd.${HOSTNAME_SUFFIX}
     networks:
       demo:
         aliases:
           - app.${HOSTNAME_SUFFIX}
+
   kiosk:
     image: ${REGISTRY}lighthouse-jss-kiosk:${DEMO_VERSION}-linux
     isolation: default
@@ -56,8 +91,7 @@ services:
     ports:
       - "44041:80"
     environment:
-      SITECORE_API_HOST: http://kiosk-cd.sitecoredemo.io
-
+      SITECORE_API_HOST: http://kiosk-cd.${HOSTNAME_SUFFIX}
     networks:
       demo:
         aliases:
