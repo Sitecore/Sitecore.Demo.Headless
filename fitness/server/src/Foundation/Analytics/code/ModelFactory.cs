@@ -11,7 +11,7 @@ namespace Sitecore.Demo.Fitness.Foundation.Analytics
 
         public static XdbModel CreateModel()
         {
-            var builder = new XdbModelBuilder("Sitecore.Demo.Fitness.Foundation.Analytics", new XdbModelVersion(9, 3));
+            var builder = new XdbModelBuilder("Sitecore.Demo.Fitness.Foundation.Analytics", new XdbModelVersion(1, 0));
 
             //Reference Sitecore's model
             builder.ReferenceModel(CollectionModel.Model);

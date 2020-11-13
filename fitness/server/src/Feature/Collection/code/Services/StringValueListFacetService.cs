@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using Sitecore.Annotations;
 using Sitecore.Diagnostics;
 using Sitecore.Demo.Fitness.Foundation.Analytics;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Facets;
@@ -127,7 +127,7 @@ namespace Sitecore.Demo.Fitness.Feature.Collection.Services
         protected override void SetContactFacets(Dictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contactId)
         {
             var keys = new List<string>() { FacetIDs.FavoriteEvents, FacetIDs.RegisteredEvents, FacetIDs.Subscriptions, FacetIDs.SubscriptionTokens };
-            var contact = client.Get<Contact>(contactId, new ContactExpandOptions(keys.ToArray()));
+            var contact = client.Get<Contact>(contactId, new ContactExecutionOptions(new ContactExpandOptions(keys.ToArray())));
 
             foreach (var facetKey in keys)
             {

@@ -1,5 +1,5 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import {
   addToFavorites,
   removeFromFavorites
@@ -60,4 +60,4 @@ class EventFavoriteButton extends React.Component {
   }
 }
 
-export default translate()(EventFavoriteButton);
+export default withTranslation()(EventFavoriteButton);

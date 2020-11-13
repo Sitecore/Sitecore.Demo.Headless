@@ -1,0 +1,6 @@
+# escape=`
+ARG BASE_IMAGE
+
+FROM $BASE_IMAGE as production
+
+COPY /fitness/server/src/Foundation/Analytics/xconnect/xmodels/* /service/App_Data/Models

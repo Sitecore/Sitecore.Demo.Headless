@@ -7,7 +7,7 @@ import {
 } from "@sitecore-jss/sitecore-jss-react";
 import dayjs from "dayjs";
 import { NavLink } from "react-router-dom";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import EventLabels from "../EventLabels";
 
 const EventListItem = ({
@@ -85,4 +85,4 @@ EventListItem.defaultProps = {
   showMetatags: true
 };
 
-export default translate()(EventListItem);
+export default withTranslation()(EventListItem);

@@ -8,7 +8,7 @@ The setup/installation documentation is available in the [docs](docs/README.md) 
 
 ## Version Support
 
-Sitecore 9.0 and newer.
+Sitecore 10.0.
 
 ## Demo Parts
 
@@ -30,8 +30,8 @@ A website meant to be displayed on a tablet in a physical sport shop. It allows 
 
 The sources for the app are located under `\fitness\kiosk`.
 
-### App-Node-SSR
+### App-Node-SSR and Kiosk-Node-SSR
 
-A project to demonstrate a way to server-side render an app with node.js / Express outside of a Sitecore instance.
+Projects to demonstrate a way to server-side render the apps with node.js / Express outside of a Sitecore instance.
 
-The sources for the app are located under `\fitness\app-node-ssr`.
+The sources for the apps are located under `\fitness\app-node-ssr` and `\fitness\kiosk-node-ssr`.

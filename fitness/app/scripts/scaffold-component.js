@@ -16,19 +16,17 @@ const chalk = require('chalk');
 const componentName = process.argv[2];
 
 if (!componentName) {
-  throw 'Component name was not passed. Usage: jss scaffold <componentName>';
+  throw 'Component name was not passed. Usage: jss scaffold <ComponentName>';
 }
 
 if (!/^[A-Z][A-Za-z0-9-]+$/.test(componentName)) {
   throw 'Component name should start with an uppercase letter and contain only letters and numbers.';
 }
 
-const componentManifestDefinitionsPath = 'src/components';
+const componentManifestDefinitionsPath = 'sitecore/definitions/components';
 const componentRootPath = 'src/components';
 
 let manifestOutputPath = null;
-
-const componentOutputPath = scaffoldComponent();
 
 if (fs.existsSync(componentManifestDefinitionsPath)) {
   manifestOutputPath = scaffoldManifest();
@@ -37,6 +35,8 @@ if (fs.existsSync(componentManifestDefinitionsPath)) {
     `Not scaffolding manifest because ${componentManifestDefinitionsPath} did not exist. This is normal for Sitecore-first workflow.`
   );
 }
+
+const componentOutputPath = scaffoldComponent();
 
 console.log();
 console.log(chalk.green(`Component ${componentName} has been scaffolded.`));
@@ -128,7 +128,6 @@ export default function(manifest) {
 
   const outputFilePath = path.join(
     componentManifestDefinitionsPath,
-    componentName,
     `${componentName}.sitecore.js`
   );
 

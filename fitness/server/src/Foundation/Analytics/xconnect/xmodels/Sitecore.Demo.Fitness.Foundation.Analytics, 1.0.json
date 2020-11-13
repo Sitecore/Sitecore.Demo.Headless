@@ -1,0 +1,82 @@
+{
+  "Name": "Sitecore.Demo.Fitness.Foundation.Analytics",
+  "Version": "1.0",
+  "References": [
+    {
+      "Name": "XConnect",
+      "Version": "1.0"
+    },
+    {
+      "Name": "Sitecore.XConnect.Collection.Model",
+      "Version": "10.0"
+    }
+  ],
+  "Types": {
+    "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.StringValueListFacet": {
+      "Type": "Facet",
+      "BaseType": "Sitecore.XConnect.Facet",
+      "ClrType": "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.StringValueListFacet, Sitecore.Demo.Fitness.Foundation.Analytics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Properties": {
+        "Values": {
+          "Type": [
+            "String"
+          ]
+        }
+      }
+    },
+    "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.SportsFacet": {
+      "Type": "Facet",
+      "BaseType": "Sitecore.XConnect.Facet",
+      "ClrType": "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.SportsFacet, Sitecore.Demo.Fitness.Foundation.Analytics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Properties": {
+        "Ratings": {
+          "Type": {
+            "String": "Int32"
+          }
+        }
+      }
+    },
+    "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.DemographicsFacet": {
+      "Type": "Facet",
+      "BaseType": "Sitecore.XConnect.Facet",
+      "ClrType": "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.DemographicsFacet, Sitecore.Demo.Fitness.Foundation.Analytics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Properties": {
+        "AgeGroup": {
+          "Type": "String"
+        }
+      }
+    }
+  },
+  "Facets": [
+    {
+      "Target": "Contact",
+      "Name": "FavoriteEvents",
+      "Type": "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.StringValueListFacet"
+    },
+    {
+      "Target": "Contact",
+      "Name": "RegisteredEvents",
+      "Type": "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.StringValueListFacet"
+    },
+    {
+      "Target": "Contact",
+      "Name": "Subscriptions",
+      "Type": "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.StringValueListFacet"
+    },
+    {
+      "Target": "Contact",
+      "Name": "SubscriptionTokens",
+      "Type": "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.StringValueListFacet"
+    },
+    {
+      "Target": "Contact",
+      "Name": "Sports",
+      "Type": "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.SportsFacet"
+    },
+    {
+      "Target": "Contact",
+      "Name": "Demographics",
+      "Type": "Sitecore.Demo.Fitness.Foundation.Analytics.Facets.DemographicsFacet"
+    }
+  ]
+}

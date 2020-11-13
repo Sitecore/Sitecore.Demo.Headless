@@ -5,7 +5,7 @@ import SportOption from "../SportOption";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import ContinueButton from "../ContinueButton";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import {
   setSportsFacets,
   setSportsProfile
@@ -142,4 +142,4 @@ class SportsPickerStep extends Component {
   }
 }
 
-export default withRouter(translate()(SportsPickerStep));
+export default withRouter(withTranslation()(SportsPickerStep));

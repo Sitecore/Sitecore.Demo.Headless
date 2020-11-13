@@ -25,15 +25,7 @@ for filename in $source/*.dacpac; do
     [ -e "$filename" ] || continue
 
     fileBaseName=$(basename $filename .dacpac)
-    databaseName="Sitecore.${fileBaseName}"
-
-	if [ "$fileBaseName" = "security" ]; then
-    	databaseName="Sitecore.Core"
-	fi
-
-	if [ "$fileBaseName" = "z.descendants" ]; then
-    	databaseName="Sitecore.Master"
-	fi
+    databaseName="${fileBaseName}"
 
     echo "### Installing '$fileBaseName' '$databaseName' from '$filename'..."
 

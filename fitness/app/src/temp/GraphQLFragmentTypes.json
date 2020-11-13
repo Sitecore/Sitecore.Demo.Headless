@@ -1,0 +1,81 @@
+{
+  "__schema": {
+    "types": [
+      {
+        "kind": "INTERFACE",
+        "name": "ItemField",
+        "possibleTypes": [
+          {
+            "name": "ReferenceField"
+          },
+          {
+            "name": "NumberField"
+          },
+          {
+            "name": "MultilistField"
+          },
+          {
+            "name": "LinkField"
+          },
+          {
+            "name": "TextField"
+          },
+          {
+            "name": "IntegerField"
+          },
+          {
+            "name": "ImageField"
+          },
+          {
+            "name": "FileField"
+          },
+          {
+            "name": "DateField"
+          },
+          {
+            "name": "CheckboxField"
+          },
+          {
+            "name": "NameValueListField"
+          },
+          {
+            "name": "LookupField"
+          },
+          {
+            "name": "LayoutField"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "Item",
+        "possibleTypes": [
+          {
+            "name": "UnknownItem"
+          },
+          {
+            "name": "C__StandardTemplate"
+          },
+          {
+            "name": "ExampleCustomRouteType"
+          },
+          {
+            "name": "C__AppRoute"
+          }
+        ]
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "AppRoute",
+        "possibleTypes": [
+          {
+            "name": "ExampleCustomRouteType"
+          },
+          {
+            "name": "C__AppRoute"
+          }
+        ]
+      }
+    ]
+  }
+}

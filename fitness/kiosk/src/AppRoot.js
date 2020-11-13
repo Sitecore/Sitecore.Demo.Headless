@@ -1,8 +1,7 @@
 import React from "react";
-import { SitecoreContext } from "@sitecore-jss/sitecore-jss-react";
+import { SitecoreContext, SitecoreContextFactory } from "@sitecore-jss/sitecore-jss-react";
 import { Route, Switch } from "react-router-dom";
 import componentFactory from "./temp/componentFactory";
-import SitecoreContextFactory from "./lib/SitecoreContextFactory";
 import RouteHandler from "./RouteHandler";
 
 // This is the main JSX entry point of the app invoked by the renderer (server or client rendering).
@@ -19,23 +18,55 @@ export const routePatterns = [
 // wrap the app with:
 // SitecoreContext: provides component resolution and context services via withSitecoreContext
 // Router: provides a basic routing setup that will resolve Sitecore item routes and allow for language URL prefixes.
-const AppRoot = ({ path, Router }) => {
-  const routeRenderFunction = props => <RouteHandler route={props} />;
-  return (
-    <SitecoreContext
-      componentFactory={componentFactory}
-      contextFactory={SitecoreContextFactory}
-    >
-      <Router location={path} context={{}}>
-        <Switch>
-          <Route key="/null" path="/null" component={null} />
+class AppRoot extends React.Component {
+  state = {
+    ssrRenderComplete: false,
+    contextFactory: new SitecoreContextFactory()
+  }
+
+  setSsrRenderComplete = ssrRenderComplete => {
+    this.setState({
+      ssrRenderComplete
+    })
+  }
+
+  render() {
+    const { path, Router, graphQLClient, ssrState } = this.props;
+
+    if (ssrState && ssrState.sitecore && ssrState.sitecore.route) {
+      // set the initial sitecore context data if we got SSR initial state
+      this.state.contextFactory.setSitecoreContext({
+        route: ssrState.sitecore.route,
+        itemId: ssrState.sitecore.route.itemId,
+        ...ssrState.sitecore.context,
+      });
+    }
+
+    const routeRenderFunction = (props) =>
+      <RouteHandler
+        route={props}
+        ssrState={this.state.ssrRenderComplete ? null : ssrState}
+        contextFactory={this.state.contextFactory}
+        setSsrRenderComplete={this.setSsrRenderComplete}
+        ssrRenderComplete={this.state.ssrRenderComplete}
+      />;
+
+    return (
+      <SitecoreContext
+        componentFactory={componentFactory}
+        contextFactory={this.state.contextFactory}
+      >
+        <Router location={path} context={{}}>
+          <Switch>
+            <Route key="/null" path="/null" component={null} />
             {routePatterns.map((routePattern) => (
               <Route key={routePattern} path={routePattern} render={routeRenderFunction} />
             ))}
-        </Switch>
-      </Router>
-    </SitecoreContext>
-  );
-};
+          </Switch>
+        </Router>
+      </SitecoreContext>
+    );
+  }
+}
 
 export default AppRoot;

@@ -4,6 +4,7 @@ steps:
     runtime: 'core'
     configFilePath: 'GitVersion.yml'
     updateAssemblyInfo: true
+    versionSpec: "5.3.7"
 - task: PowerShell@2
   displayName: 'Set correct image tag'
   inputs:
@@ -17,10 +18,11 @@ steps:
     script: 'echo "##vso[task.setvariable variable=tag]$(GitVersion.PreReleaseLabel)"'
   condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
 - task: PowerShell@2
-  displayName: 'Set default value for additionalImageTags'
+  displayName: 'Set additional image tag for PR'
   inputs:
     targetType: 'inline'
     script: 'echo "##vso[task.setvariable variable=additionalImageTags]$(GitVersion.PreReleaseLabel)"'
+  condition: and(succeeded(), eq(variables['Build.Reason'], 'PullRequest'))
 - task: PowerShell@2
   displayName: 'Set :latest tag'
   inputs:

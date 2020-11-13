@@ -32,7 +32,7 @@ Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
 
     Write-Host "### Attaching '$databaseName'..."
 
-    Invoke-Sqlcmd -Querytimeout 0 -Query $sqlcmd
+    Invoke-Sqlcmd -Query $sqlcmd
 }
 
 # do modules
@@ -47,7 +47,7 @@ Get-ChildItem -Path $ModulePath -Include "core.dacpac", "master.dacpac", "securi
     {
         $databaseName = "$DatabasePrefix`." + "core"
     }
-	
+
 	# Apply z.descendants.dacpac to the Master database
     if ($_.BaseName -eq "z.descendants")
     {
@@ -57,7 +57,7 @@ Get-ChildItem -Path $ModulePath -Include "core.dacpac", "master.dacpac", "securi
     # Install
 	Write-Host "Installing $dacpacPath on $databaseName"
     & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q
-} 
+}
 
 # detach DB
 Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
@@ -65,7 +65,7 @@ Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
 
     Write-Host "### Detach: $databaseName"
 
-    Invoke-Sqlcmd -Querytimeout 0 -Query "EXEC MASTER.dbo.sp_detach_db @dbname = N'$databaseName', @keepfulltextindexfile = N'false'"
+    Invoke-Sqlcmd -Query "EXEC MASTER.dbo.sp_detach_db @dbname = N'$databaseName', @keepfulltextindexfile = N'false'"
 }
 
 $server = New-Object Microsoft.SqlServer.Management.Smo.Server($env:COMPUTERNAME)

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { RichText, DateField } from "@sitecore-jss/sitecore-jss-react";
 import dayjs from "dayjs";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import EventDetail from "../EventDetail";
 import RegistrationPrompt from "../RegistrationPrompt";
 import { register } from "../../services/EventService";
@@ -86,4 +86,4 @@ class EventDetailLoggedIn extends React.Component {
   }
 }
 
-export default translate()(withRouter(EventDetailLoggedIn));
+export default withTranslation()(withRouter(EventDetailLoggedIn));

@@ -1,7 +1,8 @@
 import i18n from 'i18next';
 import fetchBackend from 'i18next-fetch-backend';
-import { reactI18nextModule } from 'react-i18next';
+import { initReactI18next } from 'react-i18next';
 import config from './temp/config';
+import { getHostname } from './util';
 
 /**
  * Initializes the i18next library to provide a translation dictionary to the app.
@@ -27,21 +28,28 @@ export default function i18nInit(language, dictionary) {
     if (dictionary) {
       // if we got dictionary passed, that means we're in a SSR context with a server-provided dictionary
       // so we do not want a backend, because we already know all possible keys
-      options.resources = {};
-      options.resources[language] = {
-        translation: dictionary,
-      };
 
-      i18n.use(reactI18nextModule).init(options, (error) => {
-        if (error) reject(error);
-        resolve();
-      });
+      if (!i18n.isInitialized) {
+        i18n.use(initReactI18next).init(options, (error) => {
+          if (error) reject(error);
+
+          i18n.addResourceBundle(language, 'translation', dictionary, true, true);
+
+          resolve();
+        });
+      } else {
+        i18n.changeLanguage(language).then(() => {
+          i18n.addResourceBundle(language, 'translation', dictionary, true, true);
+
+          resolve();
+        });
+      }
     } else {
       // We're running client-side, so we get translation data from the Sitecore dictionary API using fetch backend
       // For higher performance (but less simplicity), consider adding the i18n chained backend to a local cache option like the local storage backend.
 
-      // eslint-disable-next-line prettier/prettier
-      const dictionaryServicePath = `${config.sitecoreApiHost}/sitecore/api/jss/dictionary/${config.jssAppName}/{{lng}}?sc_apikey=${config.sitecoreApiKey}`;
+      // eslint-disable-next-line
+      const dictionaryServicePath = `${getHostname()}/sitecore/api/jss/dictionary/${config.jssAppName}/{{lng}}?sc_apikey=${config.sitecoreApiKey}`;
 
       options.backend = {
         loadPath: dictionaryServicePath,
@@ -56,7 +64,7 @@ export default function i18nInit(language, dictionary) {
 
       i18n
         .use(fetchBackend)
-        .use(reactI18nextModule)
+        .use(initReactI18next)
         .init(options, (error) => {
           if (error) reject(error);
 

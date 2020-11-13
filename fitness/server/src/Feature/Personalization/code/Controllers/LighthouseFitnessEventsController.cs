@@ -4,6 +4,7 @@ using System.Net;
 using System.Web.Mvc;
 using Newtonsoft.Json.Linq;
 using Sitecore.Analytics;
+using Sitecore.Annotations;
 using Sitecore.Diagnostics;
 using Sitecore.Demo.Fitness.Feature.Personalization.Services;
 using Sitecore.Demo.Fitness.Feature.Personalization.Utils;
@@ -50,7 +51,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
                 }
 
                 var allItems = dataService.GetAll(Context.Database, profileNames, take, skip, lat, lng, out int totalSearchResults);
-  
+
                 if (personalize)
                 {
                     var scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);

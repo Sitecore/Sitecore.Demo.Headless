@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
 class ContinueButton extends Component {
   constructor(props) {
@@ -40,4 +40,4 @@ ContinueButton.defaultProps = {
   className: "btn btn-primary"
 };
 
-export default translate()(ContinueButton);
+export default withTranslation()(ContinueButton);

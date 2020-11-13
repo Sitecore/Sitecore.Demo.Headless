@@ -7,6 +7,7 @@ using Sitecore.Analytics.Patterns;
 using Sitecore.Analytics.Tracking;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
+using Sitecore.Marketing.Definitions.Profiles;
 
 namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
 {

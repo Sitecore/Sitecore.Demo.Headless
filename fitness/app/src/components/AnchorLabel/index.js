@@ -1,5 +1,5 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
 const AnchorText = ({ t }) => {
   return (
@@ -9,4 +9,4 @@ const AnchorText = ({ t }) => {
   );
 };
 
-export default translate()(AnchorText);
+export default withTranslation()(AnchorText);

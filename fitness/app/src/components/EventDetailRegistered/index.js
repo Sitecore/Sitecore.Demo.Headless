@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { RichText } from "@sitecore-jss/sitecore-jss-react";
 import dayjs from "dayjs";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import EventDetail from "../EventDetail";
 import EventSubscribeButton from "../EventSubscribeButton";
 
@@ -51,4 +51,4 @@ const EventDetailRegistered = props => {
   );
 };
 
-export default translate()(EventDetailRegistered);
+export default withTranslation()(EventDetailRegistered);

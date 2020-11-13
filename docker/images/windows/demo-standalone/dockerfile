@@ -2,10 +2,63 @@
 ARG BASE_IMAGE
 ARG BUILD_IMAGE
 
-FROM ${BUILD_IMAGE} as build
+# Create a nodejs build image
+FROM ${BUILD_IMAGE} as npm
 
-ARG INTERNAL_NUGET_SOURCE
-ARG SYSTEM_ACCESSTOKEN
+RUN curl.exe -o node.zip https://nodejs.org/dist/v15.0.1/node-v15.0.1-win-x64.zip; `
+    mkdir 'C:\\Program Files\\node'; `
+    tar.exe -xf node.zip -C 'C:\\Program Files\\node' --strip-components=1; `
+    Remove-Item node.zip
+
+RUN setx PATH $($env:PATH + ';C:\\Program Files\\node;') /M
+
+# JSS CLI
+RUN npm install --global @sitecore-jss/sitecore-jss-cli
+
+
+
+# Build the JSS app
+FROM npm as app
+
+WORKDIR /app
+
+# Just the package.json first to improve layer cache
+COPY fitness/app/package*.json ./
+
+RUN npm install
+
+COPY fitness/app/ ./
+
+# setup to use static values we'll later replace with env vars
+# (for values that are baked into the server bundle)
+RUN jss setup --layoutServiceHost %layoutServiceHost% --apiKey {EBF6D5C1-EB80-4B15-91AB-DD3845797774} --nonInteractive
+
+RUN jss build
+
+
+
+# Build the JSS kiosk
+FROM npm as kiosk
+
+WORKDIR /kiosk
+
+# Just the package.json first to improve layer cache
+COPY fitness/kiosk/package*.json ./
+
+RUN npm install
+
+COPY fitness/kiosk/ ./
+
+# setup to use static values we'll later replace with env vars
+# (for values that are baked into the server bundle)
+RUN jss setup --layoutServiceHost %layoutServiceHost% --apiKey {EBF6D5C1-EB80-4B15-91AB-DD3845797774} --nonInteractive
+
+RUN jss build
+
+
+
+# Build the .Net solution
+FROM ${BUILD_IMAGE} as build
 
 COPY /fitness/server/src /build/src
 
@@ -14,7 +67,17 @@ WORKDIR /build
 
 RUN MSBuild /v:minimal /p:Configuration=Debug /p:Platform='Any CPU' /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=false /p:publishUrl=C:\out /p:BuildProjectReferences=true /target:'Clean;Build' /restore "Sitecore.Demo.Fitness.sln"
 
+
+
+# Assemble the final image
 FROM $BASE_IMAGE as production
+
+COPY --from=app ["/Program Files/node", "/Program Files/node/"]
+RUN setx PATH $($env:PATH + ';C:\\Program Files\\node;') /M
+
+COPY --from=app /app/build /inetpub/wwwroot/dist/lighthousefitness
+COPY --from=kiosk /kiosk/build /inetpub/wwwroot/dist/lighthousefitness-kiosk
+COPY scripts/Docker/ReplaceCMTokens.ps1 scripts/Docker/JssProductionEntrypoint.ps1 scripts/Docker/JssDevelopmentEntrypoint.ps1 /tools/entrypoints/iis/
 
 # Clear transforms folder from base image
 RUN  Remove-Item -Path C:\inetpub\wwwroot\transforms\* -Recurse
@@ -39,3 +102,7 @@ RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\transforms\\web*.xdt' -Recurse )
 RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\transforms\\App_Config\\Layers*.xdt' -Recurse ) | `
     ForEach-Object { & 'C:\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\inetpub\\wwwroot\\App_Config\\layers.config' -XdtPath $_.FullName `
     -XdtDllPath 'C:\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; };
+
+ENV PROXY_API_HOST=https://cm
+
+ENTRYPOINT [ "powershell.exe", "C:\\tools\\entrypoints\\iis\\JssProductionEntrypoint.ps1" ]

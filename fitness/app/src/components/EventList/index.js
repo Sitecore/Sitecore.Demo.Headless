@@ -1,5 +1,5 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import EventListItem from "../EventListItem";
 import { getAll } from "../../services/EventService";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
@@ -88,7 +88,7 @@ class EventList extends React.Component {
   }
 
   render() {
-    const { events, loading, total, skip, take } = this.state;
+    const { events, loading, total, take } = this.state;
     const { fields, params, width, height, t } = this.props;
 
     const showLoadMore = parseBooleanValue(params.showLoadMore);
@@ -156,4 +156,4 @@ const mapSizesToProps = function(sizes) {
   };
 };
 
-export default withSizes(mapSizesToProps)(translate()(EventList));
+export default withSizes(mapSizesToProps)(withTranslation()(EventList));

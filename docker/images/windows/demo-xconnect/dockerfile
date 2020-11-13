@@ -6,9 +6,6 @@ FROM ${BUILD_IMAGE} as build
 
 # TODO: Improve build time by building only the required CSPROJ files
 
-ARG INTERNAL_NUGET_SOURCE
-ARG SYSTEM_ACCESSTOKEN
-
 COPY /fitness/server/src /build/src
 
 COPY /fitness/server/nuget.config /fitness/server/Sitecore.Demo.Fitness.sln ./build/
@@ -16,7 +13,6 @@ WORKDIR /build
 
 RUN MSBuild /v:minimal /p:Configuration=Debug /p:Platform='Any CPU' /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=false /p:publishUrl=C:\out /p:BuildProjectReferences=true /target:'Clean;Build' /restore "Sitecore.Demo.Fitness.sln"
 
-RUN New-Item -ItemType directory -Path C:\build\temp\xConnectRoot\bin
 RUN Copy-Item C:\out\bin\Sitecore.Demo.* C:\build\temp\xConnectRoot\bin
 RUN Copy-Item C:\out\App_Data\* C:\build\temp\xConnectRoot\App_Data -Recurse -Verbose
 
@@ -33,6 +29,3 @@ RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\App_Data\\Config\\sitecore\\Mark
 RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\App_Data\\Config\\sitecore\\MarketingAutomation\\sc.MarketingAutomation.ContactLoader.*.xdt' -Recurse ) | `
     ForEach-Object { & 'C:\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\inetpub\\wwwroot\\App_Data\\Config\\sitecore\\MarketingAutomation\\sc.MarketingAutomation.ContactLoader.xml' -XdtPath $_.FullName `
     -XdtDllPath 'C:\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; };
-	
-ARG REACT_APP_FIREBASE_MESSAGING_SERVER_KEY
-ENV REACT_APP_FIREBASE_MESSAGING_SERVER_KEY=${REACT_APP_FIREBASE_MESSAGING_SERVER_KEY}

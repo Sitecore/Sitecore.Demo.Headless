@@ -1,6 +1,6 @@
 import { trackingApi } from "@sitecore-jss/sitecore-jss-tracking";
 import config from "../temp/config";
-import { dataFetcher } from "./../utils/dataFetcher";
+import { dataFetcher } from "./../dataFetcher";
 
 const trackingApiOptions = {
   host: config.sitecoreApiHost,

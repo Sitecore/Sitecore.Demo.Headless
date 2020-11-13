@@ -2,7 +2,7 @@ import React from "react";
 import { RichText, DateField } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
 import dayjs from "dayjs";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import EventDetail from "../EventDetail";
 import EventFavoriteButton from "../EventFavoriteButton";
 
@@ -36,4 +36,4 @@ const EventDetailAnonymous = (props) => {
   );
 };
 
-export default translate()(EventDetailAnonymous);
+export default withTranslation()(EventDetailAnonymous);

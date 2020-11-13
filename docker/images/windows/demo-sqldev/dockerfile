@@ -1,39 +1,42 @@
 # escape=`
+
 ARG BASE_IMAGE
 ARG BUILD_IMAGE
 
-FROM $BUILD_IMAGE as build
+FROM ${BUILD_IMAGE} as build
 
-RUN Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force; `
-    Install-Module -Name Sitecore.Courier -Repository PSGallery -Force -Confirm:$False  -RequiredVersion 1.4.3; `
-    Import-Module Sitecore.Courier -Force -Verbose;
+# Install latest PackageProvider (required for Sitecore.Courier)
+RUN Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+
+COPY scripts/Packaging/ /packaging
 
 COPY /fitness/server/src /src
 
-RUN New-CourierPackage -Target (Resolve-Path /src) -Output /output -SerializationProvider "Rainbow" -IncludeFiles $false -EnsureRevision $true -DacPac $true -Verbose
+RUN .\packaging\generate-update-package.ps1 -target (Resolve-Path /src) -output /output
 
 FROM $BASE_IMAGE as data
 
-COPY --from=build /output/ ${INSTALL_MODULE_PATH}
-COPY /docker/images/windows/demo-sqldev/data/ ${INSTALL_MODULE_PATH}
-COPY /docker/images/windows/demo-sqldev/Install-Databases.ps1 ${INSTALL_MODULE_PATH}
+COPY --from=build /output/ /output/
 
-RUN & (Join-Path $env:INSTALL_MODULE_PATH "\\Install-Databases.ps1") -InstallPath $env:INSTALL_PATH -DataPath $env:DATA_PATH -ModulePath $env:INSTALL_MODULE_PATH -DatabasePrefix Sitecore;
-RUN Copy-Item -Path $env:INSTALL_PATH -Destination "c:\\output" -Recurse -Force
+COPY docker/images/windows/demo-sqldev/data/ /output
 
-FROM $BASE_IMAGE as production
+RUN C:\DeployDatabases.ps1 -ResourcesDirectory "/output/data"; `
+    C:\DeployDatabases.ps1 -ResourcesDirectory "/output/descendants"
+
+RUN Remove-Item "/output" -Recurse
+
+FROM data as production
 
 ENV USER_PASSWORD="b"
-ENV ADMIN_PASSWORD="b"
 ENV ADMIN_USER_NAME="sitecore\superuser"
+ENV SITECORE_ADMIN_PASSWORD="b"
 ENV DISABLE_DEFAULT_ADMIN=FALSE
 ENV EXM_BASE_URL=http://cd
+ENV SQL_SERVER="mssql"
 ENV EXM_KIOSK_CD_BASE_URL=http://kiosk-cd
 ENV EXM_APP_BASE_URL=http://app
-RUN Remove-Item install -Recurse -Force
-COPY --from=data /output/ /install/
+ENV START_OVERRIDE_SCRIPTS="start-override-platform-windows.ps1;start-override-omni-windows.ps1"
 
 COPY /docker/images/windows/demo-sqldev/sql /sql
 
-COPY /docker/images/windows/demo-sqldev/Demo-Boot-Override-Omni.ps1  /
-CMD C:/Demo-Boot-Override-Omni.ps1 -InstallPath $env:INSTALL_PATH -DataPath $env:DATA_PATH -SqlHostname $env:SQL_HOSTNAME;
+COPY /docker/images/windows/demo-sqldev/start-override-omni-windows.ps1 /

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { setIdentification } from "../../services/IdentificationService";
 import Consent from "../Consent";
 import ContinueButton from "../ContinueButton";
@@ -80,4 +80,4 @@ class SaveAsAccountStep extends Component {
   }
 }
 
-export default translate()(SaveAsAccountStep);
+export default withTranslation()(SaveAsAccountStep);

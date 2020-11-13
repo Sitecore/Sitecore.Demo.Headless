@@ -1,5 +1,5 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { subscribe, unsubscribe } from "../../services/SubscriptionService";
 import {
   trackEventSubscribe,
@@ -55,4 +55,4 @@ class EventSubscribeButton extends React.Component {
   }
 }
 
-export default translate()(EventSubscribeButton);
+export default withTranslation()(EventSubscribeButton);

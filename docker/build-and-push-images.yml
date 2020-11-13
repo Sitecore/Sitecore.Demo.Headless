@@ -17,18 +17,42 @@ resources:
 
 variables:
   GitVersion.SemVer: ''
+  SITECORE_VERSION: '10.0.0'
+  NANOSERVER_VERSION: '1809'
   GitVersion.PreReleaseLabel: ''
-  tag: '$(GitVersion.PreReleaseLabel)-$(GitVersion.MajorMinorPatch)'
+  tag: '$(GitVersion.SemVer)'
   additionalImageTags: ''
 
 stages:
-- stage: Docker
-  pool:
-    name: Docker
-  displayName: 'Build Docker Images'
+- stage: Docker_Windows
+  displayName: "Build Windows Images"
   jobs:
-  - job: Build_Platform
+  - job: Build_Omni
+    timeoutInMinutes: 120
+    strategy:
+      matrix:
+        windows2004:
+          poolName: 'docker-2004-agents'
+          osVersion: '2004'
+        ltsc2019:
+          poolName: 'docker-ltsc2019-agents'
+          osVersion: 'ltsc2019'
+    displayName: 'Build Windows Docker Images'
+    pool:
+      name: $(poolName)
     steps:
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '2.1.x'
+        installationPath: 'c:/program files/dotnet'
+        performMultiLevelLookup: true
+    - task: PowerShell@2
+      displayName: "Prepare .env file"
+      inputs:
+        targetType: 'inline'
+        script: |
+          ./init-ci.ps1 -DemoTeamRegistry $(REGISTRY)
     - template: version.yml
     - task: DockerCompose@0
       displayName: "Docker Compose Build"
@@ -37,25 +61,23 @@ stages:
         azureSubscription: '$(azure.subscription)'
         azureContainerRegistry: '$(container.registry)'
         dockerComposeFile: 'docker-compose.yml'
+        additionalDockerComposeFiles: 'docker-compose.override.yml'
         dockerComposeFileArgs: |
           DEMO_VERSION=$(tag)
           REGISTRY=$(REGISTRY)
-          WINDOWSSERVERCORE_VERSION=$(WINDOWSSERVERCORE_VERSION)
+          WINDOWSSERVERCORE_VERSION=$(osVersion)
           NANOSERVER_VERSION=$(NANOSERVER_VERSION)
           SITECORE_VERSION=$(SITECORE_VERSION)
           SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
           SITECORE_LICENSE=$(SITECORE_LICENSE)
           TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
           INTERNAL_NUGET_SOURCE=$(INTERNAL_NUGET_SOURCE)
-          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
-          REACT_APP_FIREBASE_MESSAGING_SERVER_KEY=$(REACT_APP_FIREBASE_MESSAGING_SERVER_KEY)
-          REACT_APP_FIREBASE_SENDER_ID=$(REACT_APP_FIREBASE_SENDER_ID)
-          REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=$(REACT_APP_FIREBASE_MESSAGING_PUSH_KEY)
-          REACT_APP_GOOGLE_API_KEY=$(REACT_APP_GOOGLE_API_KEY)
+          SYSTEM_ACCESSTOKEN=$(INTERNAL_NUGET_TOKEN)
+          SITECORE_ID_CERTIFICATE=$(sitecore.id.certificate)
         qualifyImageNames: false
         action: 'Build services'
-        additionalImageTags: '$(additionalImageTags)'
-        arguments: '-m 3G --pull $(no.cache)'
+        additionalImageTags: '$(SITECORE_VERSION)-$(osVersion)-$(additionalImageTags)'
+        arguments: '-m 4G --pull $(no.cache)'
         currentWorkingDirectory: '$(Build.SourcesDirectory)'
     - task: DockerCompose@0
       displayName: "Push Images"
@@ -64,68 +86,51 @@ stages:
         azureSubscription: $(azure.subscription)
         azureContainerRegistry: $(container.registry)
         dockerComposeFile: 'docker-compose.yml'
+        additionalDockerComposeFiles: 'docker-compose.override.yml'
         dockerComposeFileArgs: |
           REGISTRY=$(REGISTRY)
           DEMO_VERSION=$(tag)
-          WINDOWSSERVERCORE_VERSION=$(WINDOWSSERVERCORE_VERSION)
+          WINDOWSSERVERCORE_VERSION=$(osVersion)
           NANOSERVER_VERSION=$(NANOSERVER_VERSION)
           SITECORE_VERSION=$(SITECORE_VERSION)
           SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
           SITECORE_LICENSE=$(SITECORE_LICENSE)
           TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
-          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+          SITECORE_ID_CERTIFICATE=$(sitecore.id.certificate)
         action: 'Push services'
-        additionalImageTags: '$(additionalImageTags)'
-        currentWorkingDirectory: '$(Build.SourcesDirectory)'
-      condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
-    - task: DockerCompose@0
-      displayName: "Push Images"
-      inputs:
-        containerregistrytype: 'Azure Container Registry'
-        azureSubscription: $(azure.subscription)
-        azureContainerRegistry: $(container.registry)
-        dockerComposeFile: 'docker-compose.yml'
-        dockerComposeFileArgs: |
-          REGISTRY=$(REGISTRY)
-          DEMO_VERSION=$(tag)
-          WINDOWSSERVERCORE_VERSION=$(WINDOWSSERVERCORE_VERSION)
-          NANOSERVER_VERSION=$(NANOSERVER_VERSION)
-          SITECORE_VERSION=$(SITECORE_VERSION)
-          SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
-          SITECORE_LICENSE=$(SITECORE_LICENSE)
-          TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
-          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
-        action: 'Push services'
-        additionalImageTags: '$(additionalImageTags)'
+        additionalImageTags: '$(SITECORE_VERSION)-$(osVersion)-$(additionalImageTags)'
         currentWorkingDirectory: '$(Build.SourcesDirectory)'
 - stage: Docker_Linux
   dependsOn: []
-  pool:
-    vmImage: ubuntu-latest
-  displayName: 'Build Linux Docker Images'
+  displayName: 'Build Linux Images'
   jobs:
   - job: Build_Dacpacs
     pool:
-      name: Docker
+      name: docker-ltsc2019-agents
     displayName: "Publish Dacpacs"
     steps:
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '2.1.x'
+        installationPath: 'c:/program files/dotnet'
+        performMultiLevelLookup: true
     - template: version.yml
-    
     - task: DockerCompose@0
       displayName: "Docker Compose Build Dacpacs"
       inputs:
         containerregistrytype: 'Azure Container Registry'
         azureSubscription: '$(azure.subscription)'
         azureContainerRegistry: '$(container.registry)'
-        dockerComposeFile: 'docker-compose-dacpac.yml'
+        dockerComposeFile: 'docker/docker-compose-dacpac.yml'
         dockerComposeFileArgs: |
           INTERNAL_NUGET_SOURCE=$(INTERNAL_NUGET_SOURCE)
-          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+          SYSTEM_ACCESSTOKEN=$(INTERNAL_NUGET_TOKEN)
           DEMO_VERSION=$(tag)
           SITECORE_VERSION=$(SITECORE_VERSION)
         action: 'Build services'
         qualifyImageNames: false
-
+        arguments: '-m 2G --pull --parallel $(no.cache)'
     - task: PowerShell@2
       displayName: "Copy output from container to Artifacts"
       inputs:
@@ -140,10 +145,16 @@ stages:
         targetPath: '$(Build.ArtifactStagingDirectory)/dacpacs'
         artifact: 'dacpac.$(tag)'
         publishLocation: 'pipeline'
-
-  - job: Build_Platform_Linux
+  - job: Build_Linux_Images
+    displayName: "Build Linux Images"
     dependsOn: Build_Dacpacs
+    pool:
+      name: docker-linux-agents
     steps:
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '2.1.x'
     - template: version.yml
     - task: DownloadPipelineArtifact@2
       displayName: "Download Dacpac Artifacts"
@@ -151,13 +162,20 @@ stages:
         buildType: 'current'
         artifactName: 'dacpac.$(tag)'
         targetPath: '$(Build.SourcesDirectory)/docker/images/windows/demo-sqldev/data'
+    - task: PowerShell@2
+      displayName: "Prepare .env file"
+      inputs:
+        targetType: 'inline'
+        script: './init-ci.ps1 -DemoTeamRegistry $(REGISTRY)'
+        pwsh: true
+      
     - task: DockerCompose@0
       displayName: "Docker Compose Build"
       inputs:
         containerregistrytype: 'Azure Container Registry'
         azureSubscription: '$(azure.subscription)'
         azureContainerRegistry: '$(container.registry)'
-        dockerComposeFile: 'docker-compose-linux.yml'
+        dockerComposeFile: 'docker/docker-compose-linux.yml'
         dockerComposeFileArgs: |
           DEMO_VERSION=$(tag)
           REGISTRY=$(REGISTRY)
@@ -166,15 +184,13 @@ stages:
           SITECORE_LICENSE=$(SITECORE_LICENSE)
           TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
           INTERNAL_NUGET_SOURCE=$(INTERNAL_NUGET_SOURCE)
-          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+          SYSTEM_ACCESSTOKEN=$(INTERNAL_NUGET_TOKEN)
           OPENCALAIS_ACCESSTOKEN=$(OpenCalais.AccessToken)
-          REACT_APP_FIREBASE_SENDER_ID=$(REACT_APP_FIREBASE_SENDER_ID)
-          REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=$(REACT_APP_FIREBASE_MESSAGING_PUSH_KEY)
-          REACT_APP_GOOGLE_API_KEY=$(REACT_APP_GOOGLE_API_KEY)
+          HOSTNAME_SUFFIX=
         qualifyImageNames: false
         action: 'Build services'
-        additionalImageTags: '$(additionalImageTags)-linux'
-        arguments: '-m 3G --pull --parallel $(no.cache)'
+        additionalImageTags: '$(SITECORE_VERSION)-linux-$(additionalImageTags)'
+        arguments: '$(no.cache)'
         currentWorkingDirectory: '$(Build.SourcesDirectory)'
     - task: DockerCompose@0
       displayName: "Push Images"
@@ -182,7 +198,7 @@ stages:
         containerregistrytype: 'Azure Container Registry'
         azureSubscription: $(azure.subscription)
         azureContainerRegistry: $(container.registry)
-        dockerComposeFile: 'docker-compose-linux.yml'
+        dockerComposeFile: 'docker/docker-compose-linux.yml'
         dockerComposeFileArgs: |
           REGISTRY=$(REGISTRY)
           DEMO_VERSION=$(tag)
@@ -190,7 +206,7 @@ stages:
           SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
           SITECORE_LICENSE=$(SITECORE_LICENSE)
           TELERIK_ENCRYPTION_KEY=$(TELERIK_ENCRYPTION_KEY)
-          SYSTEM_ACCESSTOKEN=$(System.AccessToken)
+          HOSTNAME_SUFFIX=
         action: 'Push services'
-        additionalImageTags: '$(additionalImageTags)-linux'
-        currentWorkingDirectory: '$(Build.SourcesDirectory)' 
+        additionalImageTags: '$(SITECORE_VERSION)-linux-$(additionalImageTags)'
+        currentWorkingDirectory: '$(Build.SourcesDirectory)'

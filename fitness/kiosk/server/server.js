@@ -6,7 +6,6 @@ import Helmet from 'react-helmet';
 import config from '../src/temp/config';
 import i18ninit from '../src/i18n';
 import AppRoot, { routePatterns } from '../src/AppRoot';
-import { setServerSideRenderingState } from '../src/RouteHandler';
 import indexTemplate from '../build/index.html';
 
 /** Asserts that a string replace actually replaced something */
@@ -32,15 +31,16 @@ export function renderView(callback, path, data, viewBag) {
   try {
     const state = parseServerData(data, viewBag);
 
-    setServerSideRenderingState(state);
-
     /*
       App Rendering
     */
     initializei18n(state)
       .then(() =>
         ReactDOMServer.renderToString(
-          <AppRoot path={path} Router={StaticRouter} />
+          <AppRoot path={path}
+            Router={StaticRouter}
+            ssrState={state}
+          />
         )
       )
       .then((renderedAppHtml) => {

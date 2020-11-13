@@ -14,7 +14,7 @@ const api = axios.create({
   adapter: cache.adapter
 });
 
-export async function clearCache(){
+export async function clearCache() {
   await cache.store.clear();
   console.log("memory cache cleared");
 }

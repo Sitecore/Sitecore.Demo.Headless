@@ -16,13 +16,13 @@ RUN npm install
 
 COPY fitness/kiosk/ ./
 
-# Note: layoutServiceHost must be https normally
+# setup to use static values we'll later replace with env vars
+# (for values that are baked into the server bundle)
 RUN jss setup --layoutServiceHost %layoutServiceHost% --apiKey {EBF6D5C1-EB80-4B15-91AB-DD3845797774} --nonInteractive
 
-ARG REACT_APP_GOOGLE_API_KEY
-ENV REACT_APP_GOOGLE_API_KEY=${REACT_APP_GOOGLE_API_KEY}
-
 RUN jss build
+
+
 
 # Build the node-SSR
 FROM $BUILD_IMAGE as ssr
@@ -40,6 +40,7 @@ COPY scripts/Docker/ ./
 
 
 
+# Assemble the final image
 FROM $BASE_IMAGE as production
 
 ENV NPM_CONFIG_LOGLEVEL info
@@ -58,6 +59,7 @@ COPY --from=kiosk /kiosk/build ./dist/lighthousefitness-kiosk
 ENV SITECORE_APP_NAME=lighthousefitness-kiosk
 ENV SITECORE_JSS_SERVER_BUNDLE=./dist/${SITECORE_APP_NAME}/server.bundle.js
 ENV SITECORE_API_HOST=http://kiosk-cd
+ENV PROXY_API_HOST=https://kiosk
 ENV SITECORE_API_KEY={EBF6D5C1-EB80-4B15-91AB-DD3845797774}
 ENV SITECORE_ENABLE_DEBUG=true
 ENV PORT=80

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
 const RegistrationSuccessStep = ({ fields, t }) => (
   <Fragment>
@@ -18,4 +18,4 @@ const RegistrationSuccessStep = ({ fields, t }) => (
   </Fragment>
 );
 
-export default translate()(RegistrationSuccessStep);
+export default withTranslation()(RegistrationSuccessStep);

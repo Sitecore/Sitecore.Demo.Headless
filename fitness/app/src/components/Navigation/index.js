@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { flush } from "../../services/SessionService";
 
 import {
@@ -52,10 +52,10 @@ class Navigation extends React.Component {
     return (
       <div className="nav-container">
         <Navbar light>
-          <div class="logo-container">
+          <div className="logo-container">
             <ul>
               <li>
-                <div class="logo-holder logo">
+                <div className="logo-holder logo">
                   <NavbarBrand tag={Link} to={"/"}>
                     <h3> <span>LIGHT</span>HOUSE</h3>
                     <p>FITNESS</p>
@@ -133,4 +133,4 @@ class Navigation extends React.Component {
   }
 }
 
-export default withRouter(translate()(Navigation));
+export default withRouter(withTranslation()(Navigation));

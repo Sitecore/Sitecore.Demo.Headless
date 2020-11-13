@@ -1,7 +1,7 @@
 import React from "react";
-import { RichText } from "@sitecore-jss/sitecore-jss-react";
+import { RichText, withSitecoreContext } from "@sitecore-jss/sitecore-jss-react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { canUseDOM } from "../../utils";
 
@@ -19,7 +19,7 @@ class PersonalizePrompt extends React.Component {
   }
 
   componentDidMount() {
-    const pageEditing = this.props.context.pageEditing === true;
+    const pageEditing = this.props.sitecoreContext.pageEditing === true;
     this.setState({ pageEditing });
 
     if (pageEditing) {
@@ -86,4 +86,4 @@ class PersonalizePrompt extends React.Component {
   }
 }
 
-export default translate()(PersonalizePrompt);
+export default withSitecoreContext()(withTranslation()(PersonalizePrompt));

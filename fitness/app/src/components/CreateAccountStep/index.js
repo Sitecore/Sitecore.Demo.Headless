@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import {
   setDemographicsFacet,
   setDemographicsProfile
@@ -101,4 +101,4 @@ class CreateAccountStep extends React.Component {
   }
 }
 
-export default withRouter(translate()(CreateAccountStep));
+export default withRouter(withTranslation()(CreateAccountStep));

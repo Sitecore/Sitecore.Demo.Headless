@@ -30,8 +30,10 @@ const config = {
     "/dist",
     "/assets",
     "/sitecore/api",
+    "/sitecore/images",
     "/api",
-    "/-/jssmedia"
+    "/-/jssmedia",
+    "/layouts"
   ],
   /**
    * Writes verbose request info to stdout for debugging.

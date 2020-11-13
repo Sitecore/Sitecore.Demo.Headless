@@ -9,42 +9,6 @@ SharedFields:
   Hint: Type
   Value: Sitecore.Demo.Fitness.Feature.Personalization.Rules.SportsSkillCondition,Sitecore.Demo.Fitness.Feature.Personalization
 Languages:
-- Language: da
-  Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
-    Hint: __Display name
-    Value: "Kontakts engagement-værdi"
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
-      Hint: __Created
-      Value: 20171219T155402Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\admin
-    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
-      Hint: Text
-      Value: "hvor antallet af kontaktens aktuelle engagement-værdipoint [OperatorId,Operator,,compares to] [ContactEngagementValue,Integer,,number]"
-- Language: "de-DE"
-  Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
-    Hint: __Display name
-    Value: Kontakt Engagementwert
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
-      Hint: __Created
-      Value: 20171219T155838Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\admin
-    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
-      Hint: Text
-      Value: "die die Anzahl der derzeitigen Engagementwertpunkte des Kontakts [OperatorId,Operator,,entspricht] [ContactEngagementValue,Integer,,number]"
 - Language: en
   Versions:
   - Version: 1
@@ -59,21 +23,3 @@ Languages:
     - ID: "af321234-4eb9-4ef5-9197-65903351939c"
       Hint: Text
       Value: "where contact's [SportProfileKeyId,Tree,root=/sitecore/system/Marketing Control Panel/Profiles/Sports&selection=		/sitecore/templates/System/Analytics/Profile Key,sport] skill level [OperatorId,Operator,,compares to] [SkillLevel,Integer,,number]"
-- Language: "ja-JP"
-  Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
-    Hint: __Display name
-    Value: コンタクトのエンゲージメント バリュー
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
-      Hint: __Created
-      Value: 20171219T160256Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\admin
-    - ID: "af321234-4eb9-4ef5-9197-65903351939c"
-      Hint: Text
-      Value: "条件： コンタクトの現行のエンゲージメント バリュー ポイントの数が [ContactEngagementValue,Integer,,数] [OperatorId,Operator,,と比較する] 場合"

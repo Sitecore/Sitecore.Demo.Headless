@@ -1,21 +1,28 @@
 const path = require('path');
 const env = require('@babel/preset-env');
 const reactApp = require('babel-preset-react-app');
+const webpack = require('webpack');
 // Webpack build configuration to build the SSR bundle.
 // Invoked by build:server.
 
 module.exports = {
+  name: 'server-config',
   mode: 'production',
   entry: path.resolve(__dirname, './server.js'),
   target: 'node',
   output: {
     path: path.resolve(__dirname, '../build'),
-    filename: '../build/server.bundle.js',
+    filename: 'server.bundle.js',
     libraryTarget: 'this',
   },
   optimization: {
     minimize: false,
   },
+  // BEGIN DEMO CUSTOMIZATION - To use Firebase in the server build
+  resolve: {
+    mainFields: [ 'main', 'module', 'browser' ]
+  },
+  // END DEMO CUSTOMIZATION
   module: {
     rules: [
       {
@@ -55,4 +62,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    // prevents the following warning during build:
+    // > WARNING in ./node_modules/encoding/lib/iconv-loader.js
+    // > Critical dependency: the request of a dependency is an expression
+    new webpack.NormalModuleReplacementPlugin(/\/iconv-loader$/, () => {}),
+  ],
 };

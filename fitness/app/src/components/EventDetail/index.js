@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text } from "@sitecore-jss/sitecore-jss-react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import EventMap from "../EventMap";
 import EventLabels from "../EventLabels";
 import withScrollToTop from "../../hoc/withScrollToTop";
@@ -50,4 +50,4 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
   );
 };
 
-export default withScrollToTop(translate()(EventDetail));
+export default withScrollToTop(withTranslation()(EventDetail));

@@ -1,5 +1,5 @@
 import React from "react";
-import uuidv1 from "uuid/v1";
+import { v1 as uuidv1 } from "uuid";
 import { PropTypes } from "prop-types";
 
 const Icon = ({ size, path }) => {

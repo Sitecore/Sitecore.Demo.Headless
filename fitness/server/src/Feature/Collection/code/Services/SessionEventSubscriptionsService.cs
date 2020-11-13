@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Sitecore.Analytics.Tracking;
+using Sitecore.Annotations;
 using Sitecore.Diagnostics;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
 

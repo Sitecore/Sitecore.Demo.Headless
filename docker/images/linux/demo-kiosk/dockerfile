@@ -1,6 +1,7 @@
 ARG BUILD_IMAGE
 ARG BASE_IMAGE
 
+# Build the JSS app
 FROM $BUILD_IMAGE as build
 
 RUN npm install -g @sitecore-jss/sitecore-jss-cli
@@ -16,16 +17,16 @@ COPY fitness/kiosk/ ./
 
 # setup to use static values we'll later replace with env vars
 # (for values that are baked into the server bundle)
-RUN jss setup --layoutServiceHost %layoutServiceHost% --apiKey 309ec3e9-b911-4a0b-aa8d-425045b6dcbd --nonInteractive
-
-ARG REACT_APP_GOOGLE_API_KEY
-ENV REACT_APP_GOOGLE_API_KEY=${REACT_APP_GOOGLE_API_KEY}
+RUN jss setup --layoutServiceHost %layoutServiceHost% --apiKey {EBF6D5C1-EB80-4B15-91AB-DD3845797774} --nonInteractive
 
 RUN npm run build
 
 # Rename all .js files to .js.base (so we can bootstrap tokens later)
 RUN find /kiosk/build -name '*.js' | xargs -I % mv % %.base
 
+
+
+# Build the node-SSR
 FROM $BUILD_IMAGE as ssr
 
 WORKDIR /ssr
@@ -39,6 +40,9 @@ COPY fitness/kiosk-node-ssr/ ./
 
 COPY scripts/Docker/ ./
 
+
+
+# Assemble the final image
 FROM $BASE_IMAGE as production
 
 WORKDIR /deploy
@@ -52,6 +56,7 @@ RUN ["chmod", "+x", "./bootstrap.sh"]
 ENV SITECORE_APP_NAME=lighthousefitness-kiosk
 ENV SITECORE_JSS_SERVER_BUNDLE=./dist/${SITECORE_APP_NAME}/server.bundle.js
 ENV SITECORE_API_HOST=http://kiosk-cd
+ENV PROXY_API_HOST=https://kiosk
 ENV SITECORE_API_KEY={EBF6D5C1-EB80-4B15-91AB-DD3845797774}
 ENV SITECORE_ENABLE_DEBUG=true
 ENV PORT=80

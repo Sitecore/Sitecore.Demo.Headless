@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net;
 using System.Web.Mvc;
+using Sitecore.Annotations;
 using Sitecore.Diagnostics;
 using Sitecore.Demo.Fitness.Feature.Collection.Model;
-using Sitecore.Demo.Fitness.Feature.Collection.Services;
 using Sitecore.Demo.Fitness.Foundation.Analytics;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Filters;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Services;

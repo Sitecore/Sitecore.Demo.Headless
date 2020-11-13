@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Placeholder } from "@sitecore-jss/sitecore-jss-react";
+import { Placeholder, VisitorIdentification } from "@sitecore-jss/sitecore-jss-react";
 import Helmet from "react-helmet";
 import { translate } from "react-i18next";
 
@@ -23,6 +23,15 @@ class Layout extends Component {
         <Helmet>
           <title>{`${t("lighthouse-fitness")} | ${pageTitle}`}</title>
         </Helmet>
+
+        {/*
+          VisitorIdentification is necessary for Sitecore Analytics to determine if the visitor is a robot.
+          If Sitecore XP (with xConnect/xDB) is used, this is required or else analytics will not be collected for the JSS app.
+          For XM (CMS-only) apps, this should be removed.
+
+          VI detection only runs once for a given analytics ID, so this is not a recurring operation once cookies are established.
+        */}
+        <VisitorIdentification />
 
         <Placeholder
           name="hf-nav"

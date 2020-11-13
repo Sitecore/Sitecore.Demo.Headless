@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
 import ContinueButton from "../ContinueButton/";
 import { NavLink } from "react-router-dom";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import {
   setDemographicsFacet,
   setDemographicsProfile
@@ -85,4 +85,4 @@ class PersonalDataStep extends Component {
   }
 }
 
-export default translate()(PersonalDataStep);
+export default withTranslation()(PersonalDataStep);

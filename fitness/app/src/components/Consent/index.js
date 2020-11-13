@@ -1,5 +1,5 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
 const Consent = ({t}) => {
   return (
@@ -9,4 +9,4 @@ const Consent = ({t}) => {
   );
 };
 
-export default translate()(Consent);
+export default withTranslation()(Consent);

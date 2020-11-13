@@ -19,10 +19,8 @@ placeholders:
                 - id: firstname-input
                 - id: lastname-input
                 - id: email-input
-                - componentName: FieldGroup
-                  placeholders:
-                    hf-createaccount-form-group:
-                    - id: gender-selector
-                    - id: age-group-selector
+              hf-createaccount-form-group:
+              - id: gender-selector
+              - id: age-group-selector
           - id: sports-picker
           - id: registration-success

@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Sitecore.Demo.Fitness.Foundation.Analytics.Deploy</RootNamespace>
     <AssemblyName>Sitecore.Demo.Fitness.Foundation.Analytics.Deploy</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -54,7 +54,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Interactive.Async" Version="3.1.1" />
+    <PackageReference Include="System.Interactive.Async" Version="3.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -75,7 +75,7 @@
     <None Include="deploy.props">
       <SubType>Designer</SubType>
     </None>
-    <None Include="xmodels\Sitecore.Demo.Fitness.Foundation.Analytics, 9.3.json" />
+    <None Include="xmodels\Sitecore.Demo.Fitness.Foundation.Analytics, 1.0.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\code\Sitecore.Demo.Fitness.Foundation.Analytics.csproj">

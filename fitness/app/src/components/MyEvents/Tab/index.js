@@ -1,5 +1,5 @@
 import React from "react";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
 const Tab = ({ active, index, name, t, onTabChange }) => {
   return (
@@ -16,4 +16,4 @@ const Tab = ({ active, index, name, t, onTabChange }) => {
   );
 };
 
-export default translate()(Tab);
+export default withTranslation()(Tab);

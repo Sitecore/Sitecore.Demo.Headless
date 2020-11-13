@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { withLastLocation } from "react-router-last-location";
 
 class DetailNavigation extends React.Component {
@@ -27,4 +27,4 @@ class DetailNavigation extends React.Component {
   }
 }
 
-export default translate()(withLastLocation(DetailNavigation));
+export default withTranslation()(withLastLocation(DetailNavigation));

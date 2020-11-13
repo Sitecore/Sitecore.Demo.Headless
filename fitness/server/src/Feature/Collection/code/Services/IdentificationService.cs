@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using Sitecore.Analytics;
+using Sitecore.Analytics.Tracking.Identification;
+using Sitecore.Annotations;
 using Sitecore.Diagnostics;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Model;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
@@ -11,6 +12,13 @@ namespace Sitecore.Demo.Fitness.Feature.Collection.Services
 {
     public class IdentificationService : AnalyticsServiceBase, IIdentificationService
     {
+        private readonly IContactIdentificationManager contactIdentificationManager;
+
+        public IdentificationService(IContactIdentificationManager contactIdentificationManager)
+        {
+            this.contactIdentificationManager = contactIdentificationManager;
+        }
+
         public void UpdateFacet([NotNull]IIdentificationPayload data)
         {
             var trackerContact = ContactExtensions.GetCurrentTrackerContact();
@@ -21,7 +29,7 @@ namespace Sitecore.Demo.Fitness.Feature.Collection.Services
             UpdateName(data, facets);
             UpdateEmail(data, facets);
 
-            Tracker.Current.Session.IdentifyAs(Context.Site.Domain.Name, data.Email);
+            IdentificationResult result = contactIdentificationManager.IdentifyAs(new KnownContactIdentifier(Context.Site.Domain.Name, data.Email));
 
             trackerContact.UpdateXConnectFacets(facets);
             UpdateXConnectContact(facets);
@@ -66,7 +74,7 @@ namespace Sitecore.Demo.Fitness.Feature.Collection.Services
         protected override void SetContactFacets(Dictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contactId)
         {
             var contact = client.Get<Contact>(contactId,
-                new ContactExpandOptions(PersonalInformation.DefaultFacetKey, EmailAddressList.DefaultFacetKey));
+                new ContactExecutionOptions(new ContactExpandOptions(PersonalInformation.DefaultFacetKey, EmailAddressList.DefaultFacetKey)));
 
             var personalFacet = GetFacetOrDefault(facets, PersonalInformation.DefaultFacetKey, contact, client);
             if (personalFacet is PersonalInformation personal)

@@ -1,0 +1,106 @@
+version: '2.4'
+
+services:
+
+  sql:
+    image: ${REGISTRY}demo/lighthouse-jss-mssql:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    isolation: default
+    build:
+      context: ../
+      dockerfile: ./docker/images/windows/demo-sqldev/Dockerfile.linux
+      args:
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-mssql:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
+    volumes:
+      - .\data\sql:/var/opt/mssql/data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
+    environment:
+      SA_PASSWORD: ${SQL_SA_PASSWORD}
+      ACCEPT_EULA: "Y"
+      USER_PASSWORD: "b"
+      ADMIN_PASSWORD: "b"
+      ADMIN_USER_NAME: "sitecore\\superuser"
+      DISABLE_DEFAULT_ADMIN: 'FALSE'
+      EXM_BASE_URL: "https://${CD_HOST}"
+      EXM_KIOSK_CD_BASE_URL: "https://${KIOSK_CD_HOST}"
+      EXM_APP_BASE_URL: "https://${APP_HOST}"
+      BOOT_OVERRIDE_SCRIPTS: "Demo-Boot-Platform-Linux.ps1;Demo-Boot-Omni-Linux.ps1"
+  init:
+    healthcheck:
+      test: ["CMD", "powershell", "ps"]
+    image: ${REGISTRY}demo/lighthouse-jss-init:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    build:
+      context: ./images/windows/demo-init
+      dockerfile: Dockerfile.linux
+      args:
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-init:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
+    environment:
+      ADMIN_PASSWORD: ${SITECORE_ADMIN_PASSWORD}
+      ADMIN_USER_NAME: "superuser"
+      HOST_CD: "http://cd"
+      HOST_CM: "http://cm"
+      HOST_PS: "http://ps"
+      HOST_ID: "http://id"
+      MARKETING_DEFINITIONS_APIKEY: ${MARKETING_DEFINITIONS_APIKEY}
+  solr:
+    image: ${REGISTRY}demo/lighthouse-jss-solr:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    isolation: default
+    build:
+      context: ./images/linux/demo-xp-solr
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-solr:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
+    volumes:
+      - ./data/solr:/data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
+  app:
+    image: ${REGISTRY}demo/lighthouse-jss-app:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    isolation: default
+    build:
+      context: ../
+      dockerfile: ./docker/images/linux/demo-app/dockerfile
+      args:
+        BUILD_IMAGE: node:10.21.0-jessie
+        BASE_IMAGE: node:10.21.0-alpine
+    ports:
+      - "44040:80"
+    environment:
+      SITECORE_API_HOST: http://${APP_CD_HOST}
+      PROXY_API_HOST: https://${APP_HOST}
+      REACT_APP_FIREBASE_MESSAGING_PUSH_KEY: ${REACT_APP_FIREBASE_MESSAGING_PUSH_KEY}
+      REACT_APP_FIREBASE_SENDER_ID: ${REACT_APP_FIREBASE_SENDER_ID}
+      REACT_APP_FIREBASE_PROJECT_ID: ${REACT_APP_FIREBASE_PROJECT_ID}
+      REACT_APP_FIREBASE_API_KEY: ${REACT_APP_FIREBASE_API_KEY}
+      REACT_APP_FIREBASE_APP_ID: ${REACT_APP_FIREBASE_APP_ID}
+      REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
+    networks:
+      demo:
+        aliases:
+          - app.${HOSTNAME_SUFFIX}
+  kiosk:
+    image: ${REGISTRY}demo/lighthouse-jss-kiosk:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    isolation: default
+    build:
+      context: ../
+      dockerfile: ./docker/images/linux/demo-kiosk/dockerfile
+      args:
+        BUILD_IMAGE: node:10.21.0-jessie
+        BASE_IMAGE: node:10.21.0-alpine
+    ports:
+      - "44041:80"
+    environment:
+      SITECORE_API_HOST: http://${KIOSK_CD_HOST}
+      PROXY_API_HOST: https://${KIOSK_HOST}
+      REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
+    networks:
+      demo:
+        aliases:
+          - kiosk.${HOSTNAME_SUFFIX}
+
+networks:
+  demo:
+    external:
+      name: nat

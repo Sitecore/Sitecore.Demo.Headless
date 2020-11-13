@@ -1,29 +1,39 @@
-import React, { Component, Fragment } from "react";
-import { Placeholder } from "@sitecore-jss/sitecore-jss-react";
-import Helmet from "react-helmet";
-import { initializeFirebase } from "./services/SubscriptionService";
-import { translate } from "react-i18next";
+import React from 'react';
+import { Placeholder, VisitorIdentification } from '@sitecore-jss/sitecore-jss-react';
+import { withTranslation } from 'react-i18next';
+import Helmet from 'react-helmet';
 
-import { ToastContainer, toast } from "react-toastify";
+import { initializeFirebase } from './services/SubscriptionService';
+import { ToastContainer, toast } from 'react-toastify';
 
-import "bootstrap/dist/css/bootstrap.css";
-import "react-toastify/dist/ReactToastify.min.css";
-import "./assets/app.css";
+// Using bootstrap is completely optional. It's used here to provide a clean layout for samples,
+// without needing extra CSS in the sample app. Remove it in package.json as well if it's removed here.
+import 'bootstrap/dist/css/bootstrap.css';
+import 'react-toastify/dist/ReactToastify.min.css';
+import './assets/app.css';
+
+/*
+  APP LAYOUT
+  This is where the app's HTML structure and root placeholders should be defined.
+
+  All routes share this root layout by default (this could be customized in RouteHandler),
+  but components added to inner placeholders are route-specific.
+*/
 
 // remove double quotes
 const unquote = str => str.replace(/['"]+/g, "");
 
 const ToastBody = ({ title, body, ctaText, click_action }) => (
-  <Fragment>
+  <React.Fragment>
     <h5 dangerouslySetInnerHTML={{ __html: unquote(title) }} />
     <p dangerouslySetInnerHTML={{ __html: unquote(body) }} />
     <a className="btn btn-primary" href={click_action}>
       {ctaText}
     </a>
-  </Fragment>
+  </React.Fragment>
 );
 
-class Layout extends Component {
+class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.onMessageReceived = this.onMessageReceived.bind(this);
@@ -65,11 +75,20 @@ class Layout extends Component {
       "Page";
 
     return (
-      <Fragment>
+      <React.Fragment>
         {/* react-helmet enables setting <head> contents, like title and OG meta tags */}
         <Helmet>
           <title>{`${t("lighthouse-fitness")} | ${pageTitle}`}</title>
         </Helmet>
+
+        {/*
+          VisitorIdentification is necessary for Sitecore Analytics to determine if the visitor is a robot.
+          If Sitecore XP (with xConnect/xDB) is used, this is required or else analytics will not be collected for the JSS app.
+          For XM (CMS-only) apps, this should be removed.
+
+          VI detection only runs once for a given analytics ID, so this is not a recurring operation once cookies are established.
+        */}
+        <VisitorIdentification />
 
         <Placeholder
           name="hf-nav"
@@ -88,9 +107,9 @@ class Layout extends Component {
             context={context}
           />
         </main>
-      </Fragment>
+      </React.Fragment>
     );
   }
 }
 
-export default translate()(Layout);
+export default withTranslation()(Layout);

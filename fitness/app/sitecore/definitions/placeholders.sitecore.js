@@ -26,5 +26,7 @@ export default function addPlaceholdersToManifest(manifest) {
   manifest.addPlaceholder(
     { name: 'hf-createaccount-form-group', displayName: 'Create Account Form Group' },
   );
-  manifest.addPlaceholder({ name: " hf-home", displayName: "Home" });
+  manifest.addPlaceholder(
+    { name: 'hf-home', displayName: 'Home' }
+  );
 }

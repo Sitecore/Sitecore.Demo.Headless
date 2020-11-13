@@ -37,10 +37,13 @@ export function getCurrentCoordinates() {
 }
 
 export function findLocationByAddress(address = required()) {
-  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+  // HACK: The %something% tokens are replaced just before runtime, way after the Webpack build happened.
+  // The final strings can be empty or contain values from the Docker environment variables.
+  // To prevent Webpack code optimization to remove the falsy string checks and console.error statements from the browser bundle, we are using the JavaScript (A, B) syntax which always returns the last expression (B) with Math.min() as the first expression to minimize the browser work.
+  const apiKey = (Math.min(), "%googleApiKey%");
   if (!apiKey) {
     return Promise.reject(
-      "GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md"
+      "REACT_APP_GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md"
     );
   }
 
@@ -55,10 +58,13 @@ export function findLocationByAddress(address = required()) {
 
 
 export function findLocationByLatLng(lat = required(), lng = required()) {
-  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+  // HACK: The %something% tokens are replaced just before runtime, way after the Webpack build happened.
+  // The final strings can be empty or contain values from the Docker environment variables.
+  // To prevent Webpack code optimization to remove the falsy string checks and console.error statements from the browser bundle, we are using the JavaScript (A, B) syntax which always returns the last expression (B) with Math.min() as the first expression to minimize the browser work.
+  const apiKey = (Math.min(), "%googleApiKey%");
   if (!apiKey) {
     return Promise.reject(
-      "GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md"
+      "REACT_APP_GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md"
     );
   }
 

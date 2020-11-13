@@ -4,6 +4,7 @@ import { Manifest, RouteDefinition, CommonFieldTypes } from '@sitecore-jss/sitec
 import { mergeFs, MergeFsResult } from '@sitecore-jss/sitecore-jss-dev-tools';
 
 /* eslint-enable no-unused-vars */
+/* eslint-disable no-console */
 
 /**
  * Collects the disconnected routes defined in data/routes into the manifest.
@@ -31,6 +32,7 @@ export default function addRoutesToManifest(manifest) {
         type: CommonFieldTypes.SingleLineText,
       },
     ],
+    insertOptions: ['App Route'],
   });
 
   return mergeFs('./data/routes') // relative to process invocation (i.e. your package.json)

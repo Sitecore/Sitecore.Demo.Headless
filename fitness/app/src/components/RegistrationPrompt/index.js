@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { translate } from "react-i18next";
+import { withTranslation } from "react-i18next";
 
 class RegistrationPrompt extends React.Component {
   render() {
@@ -35,4 +35,4 @@ class RegistrationPrompt extends React.Component {
   }
 }
 
-export default translate()(RegistrationPrompt);
+export default withTranslation()(RegistrationPrompt);

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Newtonsoft.Json.Linq;
+using Sitecore.Annotations;
 using Sitecore.Diagnostics;
 using Sitecore.Demo.Fitness.Feature.Personalization.Services;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Filters;
@@ -44,7 +45,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
             {
                 Log.Error("Unable to retrieve events", ex, this);
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
-            }  
+            }
         }
     }
 }

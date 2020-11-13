@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Sitecore.Analytics;
+using Sitecore.Annotations;
 using Sitecore.Diagnostics;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Facets;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Model;
@@ -75,7 +76,7 @@ namespace Sitecore.Demo.Fitness.Feature.Collection.Services
 
         protected override void SetContactFacets(Dictionary<string, Facet> facets, XConnectClient client, IEntityReference<Contact> contactId)
         {
-            var contact = client.Get<Contact>(contactId, new ContactExpandOptions(SportsFacet.DefaultKey));
+            var contact = client.Get<Contact>(contactId, new ContactExecutionOptions(new ContactExpandOptions(SportsFacet.DefaultKey)));
             var sportsFacet = GetFacetOrDefault(facets, SportsFacet.DefaultKey, contact, client);
             if (sportsFacet is SportsFacet sports)
             {

@@ -64,10 +64,6 @@
 
   <runtime>
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-      <!-- Removing OOTB binding redirect for System.Buffers - Causing deployment errors-->
-      <dependentAssembly xdt:Transform="Remove" xdt:Locator="Condition(./_defaultNamespace:assemblyIdentity/@name='System.Buffers')" >
-      </dependentAssembly>
-
       <!-- Application Insights -->
       <dependentAssembly xdt:Transform="InsertIfMissing" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='Microsoft.AI.Agent.Intercept')">
         <assemblyIdentity name="Microsoft.AI.Agent.Intercept" publicKeyToken="31bf3856ad364e35" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
