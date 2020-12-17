@@ -23,6 +23,10 @@ SharedFields:
 - ID: "af0fe26a-a78b-491d-885c-03d95bc17342"
   Hint: State
   Value: Active
+- ID: "e2d1d8a4-24aa-4536-a420-7eadd8719cf6"
+  Hint: Service Message
+  Type: Checkbox
+  Value: 1
 Languages:
 - Language: en
   Fields:

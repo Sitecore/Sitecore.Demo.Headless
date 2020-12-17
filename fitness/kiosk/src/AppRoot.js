@@ -31,7 +31,7 @@ class AppRoot extends React.Component {
   }
 
   render() {
-    const { path, Router, graphQLClient, ssrState } = this.props;
+    const { path, Router, ssrState } = this.props;
 
     if (ssrState && ssrState.sitecore && ssrState.sitecore.route) {
       // set the initial sitecore context data if we got SSR initial state

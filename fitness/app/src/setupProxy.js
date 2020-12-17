@@ -16,10 +16,14 @@ module.exports = (app) => {
     // when in connected mode we want to proxy Sitecore paths
     // off to Sitecore
 
-    app.use(proxy('/sitecore', { target: config.sitecoreApiHost }));
-    // media items
-    app.use(proxy('/-', { target: config.sitecoreApiHost }));
     // visitor identification
-    app.use(proxy('/layouts', { target: config.sitecoreApiHost }));
+    app.use(proxy(
+      '/layouts',
+      {
+        target: config.sitecoreApiHost,
+        secure: false,
+        changeOrigin: true
+      }
+    ));
   }
 };

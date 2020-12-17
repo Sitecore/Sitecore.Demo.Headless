@@ -133,10 +133,6 @@ These sites are running in Sitecore JSS integrated mode.
 4. Browse to [http://127.0.0.1:44026/](http://127.0.0.1:44026/)
    1. You should see the SMTP container catch-all mailbox for all emails sent by EXM.
 
-### Running the apps in Connected Mode
-
-Since the switch to Docker containers, the demo was not tested in connected mode. This will be tried and documented later.
-
 ### Stopping the demo
 
 If you want to stop the demo without losing your changes:
@@ -211,6 +207,56 @@ After you have made some changes to the `Sitecore.Demo.Fitness` server solution 
      * The `--memory` argument is optional.
 4. Restart the containers from the newly built images:
    * `docker-compose up -d`
+
+## Running the JSS apps in connected mode
+
+The JSS applications included in this repository can also be run in [connected mode](https://jss.sitecore.com/docs/fundamentals/application-modes#connected-developer-mode) where the JSS app is run in a development server but the data comes from your Sitecore instance.
+
+You can run only one JSS application in connected mode at a time. Ensure you stop one before starting the other.
+
+**NOTE:** The Google Maps and Firebase features will not work in connected mode and you will see errors in the browser console related to them. This is because the API keys are not injected in the JSS compiled bundle before it is run by your browser.
+
+### Connected mode prerequisites
+
+You have a running and functionnal demo on Docker.
+
+### Running Lighthouse Fitness in connected mode
+
+1. Open an elevated (as administrator) PowerShell session.
+2. Navigate to your repository clone folder in the `\fitness\app` folder:
+   * `cd C:\Projects\Sitecore.Demo.Omni\fitness\app`
+3. Run `npm install`
+4. Start the JSS application in connected mode:
+   1. `jss start:connected`
+5. The first time you start the JSS app in connected mode, it will ask "This command requires a Sitecore connection. Would you like to configure the connection? [y/n]:". Type `y`.
+   1. `jss setup` will then run. Enter the following values to the questions:
+      1. Is your Sitecore instance on this machine or accessible via network share?: Type `n`.
+      2. Sitecore hostname: Enter `https://app-cd.lighthouse.localhost`
+      3. Sitecore import service URL: Enter `https://cm.lighthouse.localhost/sitecore/api/jss/import`
+      4. Sitecore API Key (ID of API key item): Enter `{EBF6D5C1-EB80-4B15-91AB-DD3845797774}`
+      5. Please enter your deployment secret: Press enter to generate a new secret.
+   2. Do not execute any of the proposed next steps.
+   3. At the question "Is the config deployed?", type `y`.
+6. A browser will open to `http://localhost:3000` and you will be able to use the JSS application in connected mode.
+
+### Running Lighthouse Fitness Kiosk in connected mode
+
+1. Open an elevated (as administrator) PowerShell session.
+2. Navigate to your repository clone folder in the `\fitness\kiosk` folder:
+   * `cd C:\Projects\Sitecore.Demo.Omni\fitness\kiosk`
+3. Run `npm install`
+4. Start the JSS application in connected mode:
+   1. `jss start:connected`
+5. The first time you start the JSS app in connected mode, it will ask "This command requires a Sitecore connection. Would you like to configure the connection? [y/n]:". Type `y`.
+   1. `jss setup` will then run. Enter the following values to the questions:
+      1. Is your Sitecore instance on this machine or accessible via network share?: Type `n`.
+      2. Sitecore hostname: Enter `https://kiosk-cd.lighthouse.localhost`
+      3. Sitecore import service URL: Enter `https://cm.lighthouse.localhost/sitecore/api/jss/import`
+      4. Sitecore API Key (ID of API key item): Enter `{EBF6D5C1-EB80-4B15-91AB-DD3845797774}`
+      5. Please enter your deployment secret: Press enter to generate a new secret.
+   2. Do not execute any of the proposed next steps.
+   3. At the question "Is the config deployed?", type `y`.
+6. A browser will open to `http://localhost:3000` and you will be able to use the JSS application in connected mode.
 
 ## Development tips and tricks
 

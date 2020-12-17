@@ -1,7 +1,6 @@
 import React from "react";
 import { translate } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/img/logo.svg";
 import { flush } from "../../services/SessionService";
 
 const flushSession = () => {
@@ -17,10 +16,10 @@ const flushSession = () => {
 const DetailNavigation = ({ t }) => (
   <div className="nav-container">
     <nav className="navbar navbar-light">
-      <div class="logo-container">
+      <div className="logo-container">
         <ul>
           <li>
-            <div class="logo-holder logo">
+            <div className="logo-holder logo">
               <NavLink className="navbar-brand" to="/">
                 <h3> <span>LIGHT</span>HOUSE</h3>
                 <p>FITNESS</p>
