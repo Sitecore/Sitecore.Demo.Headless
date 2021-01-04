@@ -75,6 +75,7 @@
     <Content Include="ApplicationInsights.config" />
     <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.config.disabled" />
     <Content Include="App_Config\Include\Sitecore\Azure\Sitecore.Cloud.ApplicationInsights.Counters.config.disabled" />
+    <Content Include="App_Config\Include\z.Project.Overrides\Sitecore.Demo.Headless.Website.config" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
@@ -119,6 +120,7 @@
       <Version>4.4.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
