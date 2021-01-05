@@ -69,11 +69,11 @@ function Add-FitnessProfilesToLifestyleSiteProfiles() {
 	Write-Verbose "$(Get-Date -Format $timeFormat): Add-FitnessProfilesToLifestyleSiteProfiles - Invoke AppendToSharedFieldValue.sql"
 }
 
-Write-Host "$(Get-Date -Format $timeFormat): Starting demo team Omni boot override."
+Write-Host "$(Get-Date -Format $timeFormat): Starting demo team Headless boot override."
 
 Edit-ExmRootItemBaseUrlFieldValue
 Edit-FitnessAppBaseUrlInEmailBody
 Add-EmailRootToExmRootItems
 Add-FitnessProfilesToLifestyleSiteProfiles
 
-Write-Host "$(Get-Date -Format $timeFormat): Demo team Omni boot override complete."
+Write-Host "$(Get-Date -Format $timeFormat): Demo team Headless boot override complete."

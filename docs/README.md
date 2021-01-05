@@ -1,4 +1,4 @@
-# Sitecore.Demo.Omni Documentation
+# Sitecore.Demo.Headless Documentation
 
 ## Installation
 

@@ -27,7 +27,7 @@ stages:
 - stage: Docker_Windows
   displayName: "Build Windows Images"
   jobs:
-  - job: Build_Omni
+  - job: Build_Headless
     timeoutInMinutes: 120
     strategy:
       matrix:

@@ -43,7 +43,7 @@ export function findLocationByAddress(address = required()) {
   const apiKey = (Math.min(), "%googleApiKey%");
   if (!apiKey) {
     return Promise.reject(
-      "REACT_APP_GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md"
+      "REACT_APP_GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Headless/blob/master/docs/configuration/installation.md"
     );
   }
 
@@ -64,7 +64,7 @@ export function findLocationByLatLng(lat = required(), lng = required()) {
   const apiKey = (Math.min(), "%googleApiKey%");
   if (!apiKey) {
     return Promise.reject(
-      "REACT_APP_GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md"
+      "REACT_APP_GOOGLE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Headless/blob/master/docs/configuration/installation.md"
     );
   }
 

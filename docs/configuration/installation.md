@@ -1,13 +1,13 @@
 # Connected and Integrated Modes Installation
 
-This procedure is intended to deploy the complete Sitecore Omni demo on a Sitecore instance to work in the [integrated mode](https://jss.sitecore.com/docs/fundamentals/application-modes#integrated-mode) or [connected mode](https://jss.sitecore.com/docs/fundamentals/application-modes#connected-developer-mode). The content items for the apps are synchronized via Unicorn. For the simplified [disconnected mode](https://jss.sitecore.com/docs/fundamentals/application-modes#disconnected-developer-mode) scenario, follow the [disconnected mode setup](disconnected.md) documentation.
+This procedure is intended to deploy the complete Sitecore Headless demo on a Sitecore instance to work in the [integrated mode](https://jss.sitecore.com/docs/fundamentals/application-modes#integrated-mode) or [connected mode](https://jss.sitecore.com/docs/fundamentals/application-modes#connected-developer-mode). The content items for the apps are synchronized via Unicorn. For the simplified [disconnected mode](https://jss.sitecore.com/docs/fundamentals/application-modes#disconnected-developer-mode) scenario, follow the [disconnected mode setup](disconnected.md) documentation.
 
 ## Clone this repository
 
-Clone the Sitecore.Demo.Omni repository locally - defaults are configured for **`C:\Projects\Sitecore.Demo.Omni`**.
+Clone the Sitecore.Demo.Headless repository locally - defaults are configured for **`C:\Projects\Sitecore.Demo.Headless`**.
 
-* **https**: `git clone https://github.com/Sitecore/Sitecore.Demo.Omni.git`
-* **ssh**: `git clone git@github.com:Sitecore/Sitecore.Demo.Omni.git`
+* **https**: `git clone https://github.com/Sitecore/Sitecore.Demo.Headless.git`
+* **ssh**: `git clone git@github.com:Sitecore/Sitecore.Demo.Headless.git`
 
 > In this repository, the 'master' branch is generally targeting the most recent release of Sitecore and support for older Sitecore version can be found in branches named like 'release/9.1'.
 
@@ -45,7 +45,7 @@ Clone the Sitecore.Demo.Omni repository locally - defaults are configured for **
 
 1. Open an elevated (as administrator) PowerShell session.
 2. Navigate to your repository clone folder:
-   * `cd C:\Projects\Sitecore.Demo.Omni`
+   * `cd C:\Projects\Sitecore.Demo.Headless`
 3. Create certificates and initialize the environment file:
    * `.\init.ps1 -InitEnv -LicenseXmlPath C:\license\license.xml -AdminPassword b`
    * You can change the admin password and the license.xml file path to match your needs.
@@ -88,7 +88,7 @@ The published demo images have no Google Maps nor Firebase API keys. To enable G
 
 1. Open an elevated (as administrator) PowerShell session.
 2. Navigate to your repository clone folder:
-   * `cd C:\Projects\Sitecore.Demo.Omni`
+   * `cd C:\Projects\Sitecore.Demo.Headless`
 3. Pull the latest demo Docker images:
    * `docker-compose pull`
 
@@ -96,7 +96,7 @@ The published demo images have no Google Maps nor Firebase API keys. To enable G
 
 1. Open an elevated (as administrator) PowerShell session.
 2. Navigate to your repository clone folder:
-   * `cd C:\Projects\Sitecore.Demo.Omni`
+   * `cd C:\Projects\Sitecore.Demo.Headless`
 3. Stop the IIS service:
    * `iisreset /stop`
    * This is required each time you want to use the demo as the Traefik container is using the same port (443) as IIS.
@@ -153,7 +153,7 @@ If you want to reset all of your changes and get a fresh intsance:
 
 1. Open an elevated (as administrator) PowerShell session.
 2. Navigate to your repository clone folder:
-   * `cd C:\Projects\Sitecore.Demo.Omni`
+   * `cd C:\Projects\Sitecore.Demo.Headless`
 3. Build your Docker images:
    * `docker-compose build --memory 8G --pull`
    * This command will:
@@ -174,7 +174,7 @@ After you have made some changes to the JSS applications JavaScript code:
 
 1. Open an elevated (as administrator) PowerShell session.
 2. Navigate to your repository clone folder:
-   * `cd C:\Projects\Sitecore.Demo.Omni`
+   * `cd C:\Projects\Sitecore.Demo.Headless`
 3. Build your Docker images:
    * `docker-compose build --memory 8G cm app kiosk`
    * This command will build the cm, app, and kiosk demo images.
@@ -194,7 +194,7 @@ After you have made some changes to the `Sitecore.Demo.Fitness` server solution 
 
 1. Open an elevated (as administrator) PowerShell session.
 2. Navigate to your repository clone folder:
-   * `cd C:\Projects\Sitecore.Demo.Omni`
+   * `cd C:\Projects\Sitecore.Demo.Headless`
 3. Build your Docker images:
    * `docker-compose build --memory 8G cm cd`
    * This command will build the cm, and cd demo images.
@@ -224,7 +224,7 @@ You have a running and functionnal demo on Docker.
 
 1. Open an elevated (as administrator) PowerShell session.
 2. Navigate to your repository clone folder in the `\fitness\app` folder:
-   * `cd C:\Projects\Sitecore.Demo.Omni\fitness\app`
+   * `cd C:\Projects\Sitecore.Demo.Headless\fitness\app`
 3. Run `npm install`
 4. Start the JSS application in connected mode:
    1. `jss start:connected`
@@ -243,7 +243,7 @@ You have a running and functionnal demo on Docker.
 
 1. Open an elevated (as administrator) PowerShell session.
 2. Navigate to your repository clone folder in the `\fitness\kiosk` folder:
-   * `cd C:\Projects\Sitecore.Demo.Omni\fitness\kiosk`
+   * `cd C:\Projects\Sitecore.Demo.Headless\fitness\kiosk`
 3. Run `npm install`
 4. Start the JSS application in connected mode:
    1. `jss start:connected`

@@ -173,7 +173,7 @@ services:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - C:\projects\Sitecore.Demo.Platform\items:c:\items # Platform items
       - .\data\cm\src:C:\src
-      - .\fitness\server\src:C:\projects\Sitecore.Demo.Omni\fitness\server\src # Omni items
+      - .\fitness\server\src:C:\projects\Sitecore.Demo.Headless\fitness\server\src # Headless items
       - .\data\cm\logs:C:\inetpub\wwwroot\App_Data\logs
     depends_on:
       ps:
