@@ -387,6 +387,50 @@ services:
     networks:
       - demo
 
+  authoringhost:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/healthz/live"]
+    image: ${REGISTRY}demo/lighthouse-jss-authoringhost:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: docker\images\windows\demo-authoringhost
+      args:
+        BASE_IMAGE: ${REGISTRY}community/sitecore-custom-horizon-authoringhost:10.0.1-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\license.xml
+      Sitecore_FederatedUI__HostBaseUrl: http://authoringhost
+      Sitecore_ApiGateway__SitecoreHost: https://${CM_HOST}
+      Sitecore_Proxy__DataServiceEndpoint: https://${CM_HOST}
+      Sitecore_ApiGateway__InternalSitecoreHost: http://cm
+      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__RequireHttpsMetadata: 'false'
+      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__Authority: https://${ID_HOST}
+      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__CallbackAuthority: https://${SH_HOST}
+      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__InternalAuthority: http://id
+      Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__Authority: https://${ID_HOST}
+      Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__InternalAuthority: http://id
+      Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__RequireHttpsMetadata: 'false'
+      Sitecore_Plugins__Filters__ContentHub: +ContentHub
+      Sitecore_ContentHubDam__PlatformUrl: http://cm
+      Sitecore_Sitecore__Logging__Serilog__MinimumLevel__Default: Debug
+    depends_on:
+      id:
+        condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.force-STS-Header.headers.forceSTSHeader=true"
+      - "traefik.http.middlewares.force-STS-Header.headers.stsSeconds=31536000"
+      - "traefik.http.routers.sh-secure.entrypoints=websecure"
+      - "traefik.http.routers.sh-secure.rule=Host(`${SH_HOST}`)"
+      - "traefik.http.routers.sh-secure.tls=true"
+      - "traefik.http.routers.sh-secure.middlewares=force-STS-Header"
+      - "traefik.http.services.sh.loadbalancer.server.port=80"
+    networks:
+      demo:
+        aliases:
+          - ${SH_HOST}
+
 networks:
   demo:
     external:
