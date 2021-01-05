@@ -53,7 +53,7 @@
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect.Segmentation.Predicates.Model">
-      <Version>10.0.0</Version>
+      <Version>10.0.*-*</Version>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
