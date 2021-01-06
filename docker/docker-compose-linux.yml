@@ -32,7 +32,6 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-init:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     build:
       context: ./images/demo-init
-      dockerfile: Dockerfile.linux
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-init:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
     environment:
