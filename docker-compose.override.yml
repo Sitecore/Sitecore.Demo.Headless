@@ -55,7 +55,7 @@ services:
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xp0-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
-        ASSETS_IMAGE: ${REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
+        ASSETS_IMAGE: ${REGISTRY}community/modules/custom-sitecore-docker-tools-assets:10.0.0-${NANOSERVER_VERSION}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - .\data\xdbautomationworker\src:C:\src
