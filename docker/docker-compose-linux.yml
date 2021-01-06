@@ -7,7 +7,7 @@ services:
     isolation: default
     build:
       context: ../
-      dockerfile: ./docker/images/windows/demo-sqldev/Dockerfile.linux
+      dockerfile: ./docker/images/demo-sqldev/Dockerfile.linux
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-mssql:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
     volumes:
@@ -31,7 +31,7 @@ services:
       test: ["CMD", "powershell", "ps"]
     image: ${REGISTRY}demo/lighthouse-jss-init:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     build:
-      context: ./images/windows/demo-init
+      context: ./images/demo-init
       dockerfile: Dockerfile.linux
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-init:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
@@ -47,7 +47,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-solr:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default
     build:
-      context: ./images/windows/demo-solr
+      context: ./images/demo-solr
       dockerfile: Dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-solr:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
@@ -61,7 +61,7 @@ services:
     isolation: default
     build:
       context: ../
-      dockerfile: ./docker/images/windows/demo-app/dockerfile.linux
+      dockerfile: ./docker/images/demo-app/dockerfile.linux
       args:
         BUILD_IMAGE: node:10.21.0-jessie
         BASE_IMAGE: node:10.21.0-alpine
@@ -85,7 +85,7 @@ services:
     isolation: default
     build:
       context: ../
-      dockerfile: ./docker/images/windows/demo-kiosk/dockerfile.linux
+      dockerfile: ./docker/images/demo-kiosk/dockerfile.linux
       args:
         BUILD_IMAGE: node:10.21.0-jessie
         BASE_IMAGE: node:10.21.0-alpine

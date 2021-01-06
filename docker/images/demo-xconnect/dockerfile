@@ -18,7 +18,7 @@ RUN Copy-Item C:\out\App_Data\* C:\build\temp\xConnectRoot\App_Data -Recurse -Ve
 
 FROM $BASE_IMAGE as production
 
-COPY /docker/images/windows/demo-xconnect /inetpub/wwwroot/App_data/Config/sitecore/CoreServices
+COPY /docker/images/demo-xconnect /inetpub/wwwroot/App_data/Config/sitecore/CoreServices
 
 COPY --from=build /build/temp/xConnectRoot /inetpub/wwwroot
 

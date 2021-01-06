@@ -17,7 +17,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-id\dockerfile
+      dockerfile: .\docker\images\demo-id\dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     healthcheck:
@@ -34,7 +34,7 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-xdbsearchworker\dockerfile
+      dockerfile: .\docker\images\demo-xdbsearchworker\dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     volumes:
@@ -51,7 +51,7 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-xdbautomationworker\dockerfile
+      dockerfile: .\docker\images\demo-xdbautomationworker\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xp0-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
@@ -73,7 +73,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-mssql:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-sqldev\dockerfile
+      dockerfile: .\docker\images\demo-sqldev\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-mssql:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
@@ -100,7 +100,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-solr:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-solr\dockerfile
+      dockerfile: .\docker\images\demo-solr\dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-solr:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     mem_limit: 1GB
@@ -118,7 +118,7 @@ services:
     isolation: ${ISOLATION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-ps\dockerfile
+      dockerfile: .\docker\images\demo-ps\dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     restart: unless-stopped
@@ -141,7 +141,7 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\JssDevelopmentEntrypoint.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('C:\\src\\Web.config'); }"
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-standalone\dockerfile
+      dockerfile: .\docker\images\demo-standalone\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
@@ -189,7 +189,7 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-cd\dockerfile
+      dockerfile: .\docker\images\demo-cd\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cd:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
@@ -270,7 +270,7 @@ services:
     isolation: ${ISOLATION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-app\dockerfile
+      dockerfile: .\docker\images\demo-app\dockerfile
       args:
         BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-${NANOSERVER_VERSION}
         BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-${NANOSERVER_VERSION}
@@ -305,7 +305,7 @@ services:
     isolation: ${ISOLATION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-kiosk\dockerfile
+      dockerfile: .\docker\images\demo-kiosk\dockerfile
       args:
         BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-${NANOSERVER_VERSION}
         BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-${NANOSERVER_VERSION}
@@ -342,7 +342,7 @@ services:
       SITECORE_LICENSE_LOCATION: c:\license\
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-xconnect\dockerfile
+      dockerfile: .\docker\images\demo-xconnect\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
@@ -365,7 +365,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     isolation: ${ISOLATION}
     build:
-      context: .\docker\images\windows\demo-init
+      context: .\docker\images\demo-init
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     environment:
@@ -393,7 +393,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-authoringhost:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     isolation: ${ISOLATION}
     build:
-      context: docker\images\windows\demo-authoringhost
+      context: docker\images\demo-authoringhost
       args:
         BASE_IMAGE: ${REGISTRY}community/sitecore-custom-horizon-authoringhost:10.0.1-${WINDOWSSERVERCORE_VERSION}
     volumes:

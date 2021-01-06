@@ -161,7 +161,7 @@ stages:
       inputs:
         buildType: 'current'
         artifactName: 'dacpac.$(tag)'
-        targetPath: '$(Build.SourcesDirectory)/docker/images/windows/demo-sqldev/data'
+        targetPath: '$(Build.SourcesDirectory)/docker/images/demo-sqldev/data'
     - task: PowerShell@2
       displayName: "Prepare .env file"
       inputs:
