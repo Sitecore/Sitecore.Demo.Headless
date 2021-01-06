@@ -4,7 +4,7 @@ steps:
     runtime: 'core'
     configFilePath: 'GitVersion.yml'
     updateAssemblyInfo: true
-    versionSpec: "5.3.7"
+    versionSpec: '5.x'
 - task: PowerShell@2
   displayName: 'Set correct image tag'
   inputs:
