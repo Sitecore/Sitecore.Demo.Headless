@@ -63,6 +63,7 @@ stages:
         dockerComposeFile: 'docker-compose.yml'
         additionalDockerComposeFiles: 'docker-compose.override.yml'
         dockerComposeFileArgs: |
+          ISOLATION=process
           DEMO_VERSION=$(tag)
           REGISTRY=$(REGISTRY)
           WINDOWSSERVERCORE_VERSION=$(osVersion)
