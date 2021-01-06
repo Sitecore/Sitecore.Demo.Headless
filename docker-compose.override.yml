@@ -395,7 +395,7 @@ services:
     build:
       context: docker\images\demo-authoringhost
       args:
-        BASE_IMAGE: ${REGISTRY}community/sitecore-custom-horizon-authoringhost:10.0.1-${WINDOWSSERVERCORE_VERSION}
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-authoringhost:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
     environment:
