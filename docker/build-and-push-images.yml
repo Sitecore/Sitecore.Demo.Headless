@@ -18,7 +18,6 @@ resources:
 variables:
   GitVersion.SemVer: ''
   SITECORE_VERSION: '10.0.1'
-  NANOSERVER_VERSION: '1809'
   GitVersion.PreReleaseLabel: ''
   tag: '$(GitVersion.SemVer)'
   additionalImageTags: ''
@@ -34,9 +33,11 @@ stages:
         windows2004:
           poolName: 'docker-2004-agents'
           osVersion: '2004'
+          nanoserverVersion: '2004'
         ltsc2019:
           poolName: 'docker-ltsc2019-agents'
           osVersion: 'ltsc2019'
+          nanoserverVersion: '1809'
     displayName: 'Build Windows Docker Images'
     pool:
       name: $(poolName)
@@ -67,7 +68,7 @@ stages:
           DEMO_VERSION=$(tag)
           REGISTRY=$(REGISTRY)
           WINDOWSSERVERCORE_VERSION=$(osVersion)
-          NANOSERVER_VERSION=$(NANOSERVER_VERSION)
+          NANOSERVER_VERSION=$(nanoserverVersion)
           SITECORE_VERSION=$(SITECORE_VERSION)
           SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
           SITECORE_LICENSE=$(SITECORE_LICENSE)
@@ -92,7 +93,7 @@ stages:
           REGISTRY=$(REGISTRY)
           DEMO_VERSION=$(tag)
           WINDOWSSERVERCORE_VERSION=$(osVersion)
-          NANOSERVER_VERSION=$(NANOSERVER_VERSION)
+          NANOSERVER_VERSION=$(nanoserverVersion)
           SITECORE_VERSION=$(SITECORE_VERSION)
           SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
           SITECORE_LICENSE=$(SITECORE_LICENSE)
