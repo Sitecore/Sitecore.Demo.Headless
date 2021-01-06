@@ -272,7 +272,7 @@ services:
       context: .
       dockerfile: .\docker\images\demo-app\dockerfile
       args:
-        BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-${NANOSERVER_VERSION}
+        BUILD_IMAGE: jflsitecore/nodejs-win:10.19.0-${NANOSERVER_VERSION}
         BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-${NANOSERVER_VERSION}
     ports:
       - "44040:80"
@@ -307,7 +307,7 @@ services:
       context: .
       dockerfile: .\docker\images\demo-kiosk\dockerfile
       args:
-        BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-${NANOSERVER_VERSION}
+        BUILD_IMAGE: jflsitecore/nodejs-win:10.19.0-${NANOSERVER_VERSION}
         BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-${NANOSERVER_VERSION}
     ports:
       - "44041:80"
