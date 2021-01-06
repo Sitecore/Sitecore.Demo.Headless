@@ -35,8 +35,8 @@ ENV EXM_BASE_URL=http://cd
 ENV SQL_SERVER="mssql"
 ENV EXM_KIOSK_CD_BASE_URL=http://kiosk-cd
 ENV EXM_APP_BASE_URL=http://app
-ENV START_OVERRIDE_SCRIPTS="start-override-platform-windows.ps1;start-override-omni-windows.ps1"
+ENV START_OVERRIDE_SCRIPTS="start-override-platform-windows.ps1;start-override-headless-windows.ps1"
 
 COPY /docker/images/windows/demo-sqldev/sql /sql
 
-COPY /docker/images/windows/demo-sqldev/start-override-omni-windows.ps1 /
+COPY /docker/images/windows/demo-sqldev/start-override-headless-windows.ps1 /

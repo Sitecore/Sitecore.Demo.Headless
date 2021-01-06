@@ -1,5 +1,3 @@
-# This file is obsolete and should be removed after dropping 10.0.0 support in deployments
-
 [CmdletBinding()]
 param(
 	[Parameter(Mandatory = $false)]

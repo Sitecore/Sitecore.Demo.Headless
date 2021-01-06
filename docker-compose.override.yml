@@ -85,7 +85,7 @@ services:
       EXM_KIOSK_CD_BASE_URL: "https://${KIOSK_CD_HOST}"
       EXM_APP_BASE_URL: "https://${APP_HOST}"
       DAM_URL: ${DAM_URL}
-      START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1;start-override-omni-windows.ps1"
+      START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1;start-override-headless-windows.ps1"
     mem_limit: 2GB
     volumes:
       - type: bind

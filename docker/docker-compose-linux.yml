@@ -25,7 +25,7 @@ services:
       EXM_BASE_URL: "https://${CD_HOST}"
       EXM_KIOSK_CD_BASE_URL: "https://${KIOSK_CD_HOST}"
       EXM_APP_BASE_URL: "https://${APP_HOST}"
-      BOOT_OVERRIDE_SCRIPTS: "Demo-Boot-Platform-Linux.ps1;Demo-Boot-Omni-Linux.ps1"
+      BOOT_OVERRIDE_SCRIPTS: "Demo-Boot-Platform-Linux.ps1;Demo-Boot-Headless-Linux.ps1"
   init:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
