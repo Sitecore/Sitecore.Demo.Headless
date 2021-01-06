@@ -78,7 +78,7 @@ stages:
         qualifyImageNames: false
         action: 'Build services'
         additionalImageTags: '$(SITECORE_VERSION)-$(osVersion)-$(additionalImageTags)'
-        arguments: '-m 4G --pull $(no.cache)'
+        arguments: '--pull --parallel $(no.cache)'
         currentWorkingDirectory: '$(Build.SourcesDirectory)'
     - task: DockerCompose@0
       displayName: "Push Images"
@@ -131,7 +131,7 @@ stages:
           SITECORE_VERSION=$(SITECORE_VERSION)
         action: 'Build services'
         qualifyImageNames: false
-        arguments: '-m 2G --pull --parallel $(no.cache)'
+        arguments: '--pull --parallel $(no.cache)'
     - task: PowerShell@2
       displayName: "Copy output from container to Artifacts"
       inputs:
