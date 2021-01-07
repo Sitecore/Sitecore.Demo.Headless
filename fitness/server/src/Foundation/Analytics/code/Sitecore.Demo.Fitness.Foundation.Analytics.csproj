@@ -54,16 +54,24 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Sitecore.Analytics">
-      <Version>10.0.0</Version>
+      <Version>10.0.*-*</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect">
-      <Version>10.0.0</Version>
+      <Version>10.0.*-*</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect.Collection.Model">
-      <Version>10.0.0</Version>
+      <Version>10.0.*-*</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Sitecore.XConnect.Search">
-      <Version>10.0.0</Version>
+      <Version>10.0.*-*</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="System.Interactive.Async" Version="3.2.0" />
     <PackageReference Include="System.Interactive.Async.Providers" Version="3.2.0" />

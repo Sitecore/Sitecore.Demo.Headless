@@ -25,7 +25,7 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 
 COPY --from=assets ["C:\\tools\\", "C:\\tools\\"]
 
-COPY /docker/images/windows/demo-xdbautomationworker /service/App_data/Config/sitecore/CoreServices
+COPY /docker/images/demo-xdbautomationworker /service/App_data/Config/sitecore/CoreServices
 
 COPY --from=build /build/temp/xConnectAutomationServiceRoot /service
 

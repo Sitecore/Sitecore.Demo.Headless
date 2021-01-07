@@ -17,8 +17,7 @@ resources:
 
 variables:
   GitVersion.SemVer: ''
-  SITECORE_VERSION: '10.0.0'
-  NANOSERVER_VERSION: '1809'
+  SITECORE_VERSION: '10.0.1'
   GitVersion.PreReleaseLabel: ''
   tag: '$(GitVersion.SemVer)'
   additionalImageTags: ''
@@ -27,16 +26,18 @@ stages:
 - stage: Docker_Windows
   displayName: "Build Windows Images"
   jobs:
-  - job: Build_Omni
+  - job: Build_Headless
     timeoutInMinutes: 120
     strategy:
       matrix:
         windows2004:
           poolName: 'docker-2004-agents'
           osVersion: '2004'
+          nanoserverVersion: '2004'
         ltsc2019:
           poolName: 'docker-ltsc2019-agents'
           osVersion: 'ltsc2019'
+          nanoserverVersion: '1809'
     displayName: 'Build Windows Docker Images'
     pool:
       name: $(poolName)
@@ -45,6 +46,12 @@ stages:
       inputs:
         packageType: 'sdk'
         version: '2.1.x'
+        installationPath: 'c:/program files/dotnet'
+        performMultiLevelLookup: true
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '3.1.x'
         installationPath: 'c:/program files/dotnet'
         performMultiLevelLookup: true
     - task: PowerShell@2
@@ -63,10 +70,11 @@ stages:
         dockerComposeFile: 'docker-compose.yml'
         additionalDockerComposeFiles: 'docker-compose.override.yml'
         dockerComposeFileArgs: |
+          ISOLATION=process
           DEMO_VERSION=$(tag)
           REGISTRY=$(REGISTRY)
           WINDOWSSERVERCORE_VERSION=$(osVersion)
-          NANOSERVER_VERSION=$(NANOSERVER_VERSION)
+          NANOSERVER_VERSION=$(nanoserverVersion)
           SITECORE_VERSION=$(SITECORE_VERSION)
           SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
           SITECORE_LICENSE=$(SITECORE_LICENSE)
@@ -77,7 +85,7 @@ stages:
         qualifyImageNames: false
         action: 'Build services'
         additionalImageTags: '$(SITECORE_VERSION)-$(osVersion)-$(additionalImageTags)'
-        arguments: '-m 4G --pull $(no.cache)'
+        arguments: '--pull --parallel $(no.cache)'
         currentWorkingDirectory: '$(Build.SourcesDirectory)'
     - task: DockerCompose@0
       displayName: "Push Images"
@@ -91,7 +99,7 @@ stages:
           REGISTRY=$(REGISTRY)
           DEMO_VERSION=$(tag)
           WINDOWSSERVERCORE_VERSION=$(osVersion)
-          NANOSERVER_VERSION=$(NANOSERVER_VERSION)
+          NANOSERVER_VERSION=$(nanoserverVersion)
           SITECORE_VERSION=$(SITECORE_VERSION)
           SQL_SA_PASSWORD=$(SQL_SA_PASSWORD}
           SITECORE_LICENSE=$(SITECORE_LICENSE)
@@ -112,7 +120,7 @@ stages:
     - task: UseDotNet@2
       inputs:
         packageType: 'sdk'
-        version: '2.1.x'
+        version: '3.1.x'
         installationPath: 'c:/program files/dotnet'
         performMultiLevelLookup: true
     - template: version.yml
@@ -130,7 +138,7 @@ stages:
           SITECORE_VERSION=$(SITECORE_VERSION)
         action: 'Build services'
         qualifyImageNames: false
-        arguments: '-m 2G --pull --parallel $(no.cache)'
+        arguments: '--pull --parallel $(no.cache)'
     - task: PowerShell@2
       displayName: "Copy output from container to Artifacts"
       inputs:
@@ -154,14 +162,14 @@ stages:
     - task: UseDotNet@2
       inputs:
         packageType: 'sdk'
-        version: '2.1.x'
+        version: '3.1.x'
     - template: version.yml
     - task: DownloadPipelineArtifact@2
       displayName: "Download Dacpac Artifacts"
       inputs:
         buildType: 'current'
         artifactName: 'dacpac.$(tag)'
-        targetPath: '$(Build.SourcesDirectory)/docker/images/windows/demo-sqldev/data'
+        targetPath: '$(Build.SourcesDirectory)/docker/images/demo-sqldev/data'
     - task: PowerShell@2
       displayName: "Prepare .env file"
       inputs:

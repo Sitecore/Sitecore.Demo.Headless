@@ -7,7 +7,7 @@ services:
     isolation: default
     build:
       context: ../
-      dockerfile: ./docker/images/windows/demo-sqldev/Dockerfile.linux
+      dockerfile: ./docker/images/demo-sqldev/Dockerfile.linux
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-mssql:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
     volumes:
@@ -25,14 +25,13 @@ services:
       EXM_BASE_URL: "https://${CD_HOST}"
       EXM_KIOSK_CD_BASE_URL: "https://${KIOSK_CD_HOST}"
       EXM_APP_BASE_URL: "https://${APP_HOST}"
-      BOOT_OVERRIDE_SCRIPTS: "Demo-Boot-Platform-Linux.ps1;Demo-Boot-Omni-Linux.ps1"
+      BOOT_OVERRIDE_SCRIPTS: "Demo-Boot-Platform-Linux.ps1;Demo-Boot-Headless-Linux.ps1"
   init:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
     image: ${REGISTRY}demo/lighthouse-jss-init:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     build:
-      context: ./images/windows/demo-init
-      dockerfile: Dockerfile.linux
+      context: ./images/demo-init
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-init:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
     environment:
@@ -47,7 +46,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-solr:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default
     build:
-      context: ./images/linux/demo-xp-solr
+      context: ./images/demo-solr
       dockerfile: Dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-solr:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
@@ -61,7 +60,7 @@ services:
     isolation: default
     build:
       context: ../
-      dockerfile: ./docker/images/linux/demo-app/dockerfile
+      dockerfile: ./docker/images/demo-app/dockerfile.linux
       args:
         BUILD_IMAGE: node:10.21.0-jessie
         BASE_IMAGE: node:10.21.0-alpine
@@ -85,7 +84,7 @@ services:
     isolation: default
     build:
       context: ../
-      dockerfile: ./docker/images/linux/demo-kiosk/dockerfile
+      dockerfile: ./docker/images/demo-kiosk/dockerfile.linux
       args:
         BUILD_IMAGE: node:10.21.0-jessie
         BASE_IMAGE: node:10.21.0-alpine

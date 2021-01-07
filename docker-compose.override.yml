@@ -17,7 +17,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-id\dockerfile
+      dockerfile: .\docker\images\demo-id\dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     healthcheck:
@@ -34,7 +34,7 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-xdbsearchworker\dockerfile
+      dockerfile: .\docker\images\demo-xdbsearchworker\dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     volumes:
@@ -51,11 +51,11 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-xdbautomationworker\dockerfile
+      dockerfile: .\docker\images\demo-xdbautomationworker\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xp0-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
-        ASSETS_IMAGE: ${SITECORE_DOCKER_REGISTRY}tools/sitecore-docker-tools-assets:10.0.0-${NANOSERVER_VERSION}
+        ASSETS_IMAGE: ${REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${SITECORE_VERSION}-${NANOSERVER_VERSION}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - .\data\xdbautomationworker\src:C:\src
@@ -73,7 +73,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-mssql:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-sqldev\dockerfile
+      dockerfile: .\docker\images\demo-sqldev\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-mssql:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
@@ -85,7 +85,7 @@ services:
       EXM_KIOSK_CD_BASE_URL: "https://${KIOSK_CD_HOST}"
       EXM_APP_BASE_URL: "https://${APP_HOST}"
       DAM_URL: ${DAM_URL}
-      START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1;start-override-omni-windows.ps1"
+      START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1;start-override-headless-windows.ps1"
     mem_limit: 2GB
     volumes:
       - type: bind
@@ -100,7 +100,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-solr:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-solr\dockerfile
+      dockerfile: .\docker\images\demo-solr\dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-solr:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     mem_limit: 1GB
@@ -118,7 +118,7 @@ services:
     isolation: ${ISOLATION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-ps\dockerfile
+      dockerfile: .\docker\images\demo-ps\dockerfile
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     restart: unless-stopped
@@ -141,7 +141,7 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\JssDevelopmentEntrypoint.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('C:\\src\\Web.config'); }"
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-standalone\dockerfile
+      dockerfile: .\docker\images\demo-standalone\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
@@ -173,7 +173,7 @@ services:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - C:\projects\Sitecore.Demo.Platform\items:c:\items # Platform items
       - .\data\cm\src:C:\src
-      - .\fitness\server\src:C:\projects\Sitecore.Demo.Omni\fitness\server\src # Omni items
+      - .\fitness\server\src:C:\projects\Sitecore.Demo.Headless\fitness\server\src # Headless items
       - .\data\cm\logs:C:\inetpub\wwwroot\App_Data\logs
     depends_on:
       ps:
@@ -189,7 +189,7 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-cd\dockerfile
+      dockerfile: .\docker\images\demo-cd\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cd:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
@@ -270,9 +270,9 @@ services:
     isolation: ${ISOLATION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-app\dockerfile
+      dockerfile: .\docker\images\demo-app\dockerfile
       args:
-        BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-${NANOSERVER_VERSION}
+        BUILD_IMAGE: jflsitecore/nodejs-win:10.19.0-${NANOSERVER_VERSION}
         BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-${NANOSERVER_VERSION}
     ports:
       - "44040:80"
@@ -305,9 +305,9 @@ services:
     isolation: ${ISOLATION}
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-kiosk\dockerfile
+      dockerfile: .\docker\images\demo-kiosk\dockerfile
       args:
-        BUILD_IMAGE: stefanscherer/node-windows:10.15.3-nanoserver-${NANOSERVER_VERSION}
+        BUILD_IMAGE: jflsitecore/nodejs-win:10.19.0-${NANOSERVER_VERSION}
         BASE_IMAGE: mcr.microsoft.com/powershell:nanoserver-${NANOSERVER_VERSION}
     ports:
       - "44041:80"
@@ -342,7 +342,7 @@ services:
       SITECORE_LICENSE_LOCATION: c:\license\
     build:
       context: .
-      dockerfile: .\docker\images\windows\demo-xconnect\dockerfile
+      dockerfile: .\docker\images\demo-xconnect\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
@@ -365,7 +365,7 @@ services:
     image: ${REGISTRY}demo/lighthouse-jss-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     isolation: ${ISOLATION}
     build:
-      context: .\docker\images\windows\demo-init
+      context: .\docker\images\demo-init
       args:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     environment:
@@ -386,6 +386,50 @@ services:
         condition: service_started
     networks:
       - demo
+
+  authoringhost:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/healthz/live"]
+    image: ${REGISTRY}demo/lighthouse-jss-authoringhost:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    isolation: ${ISOLATION}
+    build:
+      context: docker\images\demo-authoringhost
+      args:
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-authoringhost:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\license.xml
+      Sitecore_FederatedUI__HostBaseUrl: http://authoringhost
+      Sitecore_ApiGateway__SitecoreHost: https://${CM_HOST}
+      Sitecore_Proxy__DataServiceEndpoint: https://${CM_HOST}
+      Sitecore_ApiGateway__InternalSitecoreHost: http://cm
+      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__RequireHttpsMetadata: 'false'
+      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__Authority: https://${ID_HOST}
+      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__CallbackAuthority: https://${SH_HOST}
+      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__InternalAuthority: http://id
+      Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__Authority: https://${ID_HOST}
+      Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__InternalAuthority: http://id
+      Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__RequireHttpsMetadata: 'false'
+      Sitecore_Plugins__Filters__ContentHub: +ContentHub
+      Sitecore_ContentHubDam__PlatformUrl: http://cm
+      Sitecore_Sitecore__Logging__Serilog__MinimumLevel__Default: Debug
+    depends_on:
+      id:
+        condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.force-STS-Header.headers.forceSTSHeader=true"
+      - "traefik.http.middlewares.force-STS-Header.headers.stsSeconds=31536000"
+      - "traefik.http.routers.sh-secure.entrypoints=websecure"
+      - "traefik.http.routers.sh-secure.rule=Host(`${SH_HOST}`)"
+      - "traefik.http.routers.sh-secure.tls=true"
+      - "traefik.http.routers.sh-secure.middlewares=force-STS-Header"
+      - "traefik.http.services.sh.loadbalancer.server.port=80"
+    networks:
+      demo:
+        aliases:
+          - ${SH_HOST}
 
 networks:
   demo:

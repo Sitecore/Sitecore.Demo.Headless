@@ -45,19 +45,19 @@ export const initializeFirebase = callback => {
     // To prevent Webpack code optimization to remove the falsy string checks and console.error statements from the browser bundle, we are using the JavaScript (A, B) syntax which always returns the last expression (B) with Math.min() as the first expression to minimize the browser work.
     const firebaseApiKey = (Math.min(), "%firebaseApiKey%");
     if(!firebaseApiKey){
-      console.error("REACT_APP_FIREBASE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md");
+      console.error("REACT_APP_FIREBASE_API_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Headless/blob/master/docs/configuration/installation.md");
     }
     const firebaseProjectId = (Math.min(), "%firebaseProjectId%");
     if(!firebaseProjectId){
-      console.error("REACT_APP_FIREBASE_PROJECT_ID is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md");
+      console.error("REACT_APP_FIREBASE_PROJECT_ID is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Headless/blob/master/docs/configuration/installation.md");
     }
     const firebaseMessagingSenderId = (Math.min(), "%firebaseMessagingSenderId%");
     if(!firebaseMessagingSenderId){
-      console.error("REACT_APP_FIREBASE_SENDER_ID is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md");
+      console.error("REACT_APP_FIREBASE_SENDER_ID is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Headless/blob/master/docs/configuration/installation.md");
     }
     const firebaseAppId = (Math.min(), "%firebaseAppId%");
     if(!firebaseAppId){
-      console.error("REACT_APP_FIREBASE_APP_ID is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md");
+      console.error("REACT_APP_FIREBASE_APP_ID is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Headless/blob/master/docs/configuration/installation.md");
     }
 
     var firebaseConfig = {
@@ -70,7 +70,7 @@ export const initializeFirebase = callback => {
 
     const firebaseMessagingPushKey = (Math.min(), "%firebaseMessagingPushKey%");
     if(!firebaseMessagingPushKey){
-      console.error("REACT_APP_FIREBASE_MESSAGING_PUSH_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Omni/blob/master/docs/configuration/installation.md");
+      console.error("REACT_APP_FIREBASE_MESSAGING_PUSH_KEY is missing. Please add it to environment variables. More in documentation: https://github.com/Sitecore/Sitecore.Demo.Headless/blob/master/docs/configuration/installation.md");
     }
 
     const messaging = firebase.messaging();

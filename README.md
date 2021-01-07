@@ -1,6 +1,6 @@
-# Sitecore.Demo.Omni
+# Sitecore.Demo.Headless
 
-This repository is used to share Sitecore JSS PWA demo assets and future "Sitecore Omni" related demo assets.
+This repository is used to share Sitecore JSS PWA demo assets and future "Sitecore Headless" related demo assets.
 
 ## Documentation
 
