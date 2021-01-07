@@ -32,7 +32,7 @@
   },
   "license": "MPL-2.0",
   "dependencies": {
-    "@sitecore-jss/sitecore-jss-react": "^15.0.0",
+    "@sitecore-jss/sitecore-jss-react": "^15.0.1",
     "@sitecore-jss/sitecore-jss-tracking": "^15.0.0",
     "apollo-cache-inmemory": "~1.6.3",
     "apollo-client": "~2.6.4",
