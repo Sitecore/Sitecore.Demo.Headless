@@ -101,6 +101,7 @@ Add-HostsEntry "cd.lighthouse.localhost"
 Add-HostsEntry "app-cd.lighthouse.localhost"
 Add-HostsEntry "kiosk-cd.lighthouse.localhost"
 Add-HostsEntry "id.lighthouse.localhost"
+Add-HostsEntry "sh.lighthouse.localhost"
 Add-HostsEntry "app.lighthouse.localhost"
 Add-HostsEntry "kiosk.lighthouse.localhost"
 Add-HostsEntry "www.lighthouse.localhost"
@@ -130,6 +131,9 @@ if ($InitEnv) {
 
     # ID_HOST
     Set-DockerComposeEnvFileVariable "ID_HOST" -Value "id.lighthouse.localhost"
+    
+    # SH_HOST
+    Set-DockerComposeEnvFileVariable "SH_HOST" -Value "sh.lighthouse.localhost"
 
     # APP_HOST
     Set-DockerComposeEnvFileVariable "APP_HOST" -Value "app.lighthouse.localhost"

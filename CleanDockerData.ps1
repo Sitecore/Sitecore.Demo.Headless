@@ -11,14 +11,18 @@ Param(
         ".\data\xconnect\src",
         ".\data\xdbautomationworker\logs",
         ".\data\xdbautomationworker\src",
-        ".\data\xdbsearchworker\logs",
-        ".\data\xdbsearchworker\src"
+        ".\data\indexworker\logs",
+        ".\data\indexworker\src"
     )
 )
 
 foreach ($folder in $Folders)
 {
-    Get-ChildItem -Path (Resolve-Path $folder) -Recurse | Remove-Item -force -recurse -Exclude ".gitignore", ".gitkeep", "*.pem", "certs_config.yaml"
+    if (Test-Path -Path $folder) {
+        Get-ChildItem -Path (Resolve-Path $folder) -Recurse | Remove-Item -force -recurse -Exclude ".gitignore", ".gitkeep", "*.pem", "certs_config.yaml"
+    } else {
+        Write-Host "The folder '$folder' does not exist and will not be cleaned." -ForegroundColor Yellow
+    }
 }
 
 Get-ChildItem .\data -Recurse | Remove-Item -Force -Recurse -Exclude ".gitignore", ".gitkeep", "*.pem", "certs_config.yaml"

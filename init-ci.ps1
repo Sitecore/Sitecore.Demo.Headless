@@ -1,15 +1,31 @@
 Param (
   [Parameter(
     HelpMessage = "Lighthouse demo base image version used in image tagging.")]
-  [string]$LighthouseVersion = "latest",
-
+  [string]$LighthouseVersion = "latest"
+  ,
   [Parameter(
     HelpMessage = "Demo version used in image tagging.")]
-  [string]$DemoVersion = "latest",
-
+  [string]$DemoVersion = "1001.1"
+  ,
   [Parameter(
     HelpMessage = "Internal ACR use by the demo team")]
   [string]$DemoTeamRegistry = ""
+  ,
+  [Parameter(
+    HelpMessage = "Internal Sitecore ACR")]
+  [string]$SitecoreRegistry = "scr.sitecore.com/"
+  ,
+  [Parameter(
+    HelpMessage = "Process Isolation to use when building images")]
+  [string]$IsolationMode = "hyperv"
+  ,
+  [Parameter(
+    HelpMessage = "Windows image version")]
+  [string]$WindowsVersion = "ltsc2019"
+  ,
+  [Parameter(
+    HelpMessage = "Sitecore version")]
+  [string]$SitecoreVersion = "10.0.1"
 )
 
 $ErrorActionPreference = "Stop";
@@ -62,9 +78,16 @@ if ([string]::IsNullOrEmpty($DemoTeamRegistry)) {
     throw
   }
 }
+$NanoserverVersion = $(if ($WindowsVersion -eq "ltsc2019") { "1809" } else { $WindowsVersion })
 
+Set-DockerComposeEnvFileVariable "SITECORE_DOCKER_REGISTRY" -Value $SitecoreRegistry
 Set-DockerComposeEnvFileVariable "REGISTRY" -Value $DemoTeamRegistry
 Set-DockerComposeEnvFileVariable "DEMO_VERSION" -Value $DemoVersion
+Set-DockerComposeEnvFileVariable "SMTP_CONTAINERS_COUNT" -Value 0
+Set-DockerComposeEnvFileVariable "ISOLATION" -Value $IsolationMode
+Set-DockerComposeEnvFileVariable "WINDOWSSERVERCORE_VERSION" -Value $WindowsVersion
+Set-DockerComposeEnvFileVariable "NANOSERVER_VERSION" -Value $NanoserverVersion
+Set-DockerComposeEnvFileVariable "SITECORE_VERSION" -Value $SitecoreVersion
 Set-DockerComposeEnvFileVariable "LIGHTHOUSE_VERSION" -Value $LighthouseVersion
 
 Write-Host "Done!" -ForegroundColor Green

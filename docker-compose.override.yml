@@ -3,67 +3,11 @@ version: "2.4"
 services:
 
   traefik:
-    healthcheck:
-      test: ["CMD", "powershell", "ps"]
     volumes:
       - ./data/traefik:C:/etc/traefik
     depends_on:
       cd:
         condition: service_healthy
-    networks:
-      - demo
-
-  id:
-    image: ${REGISTRY}demo/lighthouse-jss-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    build:
-      context: .
-      dockerfile: .\docker\images\demo-id\dockerfile
-      args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-    healthcheck:
-      test: ["CMD", "powershell", "ps"]
-    volumes:
-      - ${HOST_LICENSE_FOLDER}:c:\license
-    environment:
-      SITECORE_LICENSE_LOCATION: c:\license\license.xml
-    networks:
-      - demo
-
-  xdbsearchworker:
-    image: ${REGISTRY}demo/lighthouse-xp0-jss-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
-    build:
-      context: .
-      dockerfile: .\docker\images\demo-xdbsearchworker\dockerfile
-      args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-    volumes:
-      - ${HOST_LICENSE_FOLDER}:c:\license
-      - .\data\xdbsearchworker\src:C:\src
-      - .\data\xdbsearchworker\logs:C:\service\App_Data\Logs
-    environment:
-      SITECORE_LICENSE_LOCATION: c:\license\
-    networks:
-      - demo
-
-  xdbautomationworker:
-    image: ${REGISTRY}demo/lighthouse-xp0-jss-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
-    build:
-      context: .
-      dockerfile: .\docker\images\demo-xdbautomationworker\dockerfile
-      args:
-        BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xp0-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
-        ASSETS_IMAGE: ${REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${SITECORE_VERSION}-${NANOSERVER_VERSION}
-    volumes:
-      - ${HOST_LICENSE_FOLDER}:c:\license
-      - .\data\xdbautomationworker\src:C:\src
-      - .\data\xdbautomationworker:C:\service\App_Data\Logs
-    environment:
-      SITECORE_LICENSE_LOCATION: c:\license\
-      REACT_APP_FIREBASE_MESSAGING_SERVER_KEY: ${REACT_APP_FIREBASE_MESSAGING_SERVER_KEY}
-      REACT_APP_PUBLIC_HOST_NAME: //${APP_HOST}
     networks:
       - demo
 
@@ -82,10 +26,10 @@ services:
       ADMIN_USER_NAME: "sitecore\\superuser"
       DISABLE_DEFAULT_ADMIN: 'FALSE'
       EXM_BASE_URL: "https://${CD_HOST}"
+      START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1;start-override-headless-windows.ps1"
+      COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
       EXM_KIOSK_CD_BASE_URL: "https://${KIOSK_CD_HOST}"
       EXM_APP_BASE_URL: "https://${APP_HOST}"
-      DAM_URL: ${DAM_URL}
-      START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1;start-override-headless-windows.ps1"
     mem_limit: 2GB
     volumes:
       - type: bind
@@ -111,6 +55,139 @@ services:
     networks:
       - demo
 
+  id:
+    image: ${REGISTRY}demo/lighthouse-jss-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    build:
+      context: .
+      dockerfile: .\docker\images\demo-id\dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\license.xml
+      Sitecore_Sitecore__IdentityServer__Clients__DefaultClient__AllowedCorsOrigins__AllowedCorsOriginsGroup2: https://${SH_HOST}|http://${SH_HOST}
+    networks:
+      - demo
+
+  cm:
+    image: ${REGISTRY}demo/lighthouse-xp0-jss-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\JssDevelopmentEntrypoint.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('C:\\src\\Web.config'); }"
+    build:
+      context: .
+      dockerfile: .\docker\images\demo-standalone\dockerfile
+      args:
+        BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+        HOTFIX_IMAGE: ${REGISTRY}demo/base/lighthouse-hotfixes:${SITECORE_VERSION}-${NANOSERVER_VERSION}
+    mem_limit: 4G
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\license.xml
+      SITECORE_APPSETTINGS_SXAXM:DEFINE: sxaxconnect
+      SITECORE_APPSETTINGS_ENV:DEFINE: Docker
+      SITECORE_APPSETTINGS_UNICORN:DEFINE: Enabled
+      SITECORE_APPSETTINGS_PUBLISHINGSERVICE:DEFINE: Enabled
+      SOLR_CORE_PREFIX_NAME: sitecore
+      SITECORE_APPSETTINGS_INTEGRATIONS:DEFINE: None
+      SITECORE_APPSETTINGS_CONTENTHUB:DEFINE: Enabled
+      SITECORE_CONNECTIONSTRINGS_CMP.ContentHub: ${CMP_CONTENTHUB}
+      SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathIn: ${CMP_SERVICEBUSENTITYPATHIN}
+      SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusSubscription: ${CMP_SERVICEBUSSUBSCRIPTION}
+      SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathOut: ${CMP_SERVICEBUSENTITYPATHOUT}
+      SITECORE_CONNECTIONSTRINGS_SFMC: ${SFMC_CONNECTIONSTRING}
+      SITECORE_CONNECTIONSTRINGS_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
+      EXM_RENDERER_URL: http://cm
+      Sitecore_Horizon_ClientHost: https://${SH_HOST}
+      HOST_CD: http://cd
+      COVEO_SERVER_URL: ${COVEO_SERVER_URL}
+      PROXY_API_HOST: https://${CM_HOST}
+      REACT_APP_FIREBASE_MESSAGING_PUSH_KEY: ${REACT_APP_FIREBASE_MESSAGING_PUSH_KEY}
+      REACT_APP_FIREBASE_SENDER_ID: ${REACT_APP_FIREBASE_SENDER_ID}
+      REACT_APP_FIREBASE_PROJECT_ID: ${REACT_APP_FIREBASE_PROJECT_ID}
+      REACT_APP_FIREBASE_API_KEY: ${REACT_APP_FIREBASE_API_KEY}
+      REACT_APP_FIREBASE_APP_ID: ${REACT_APP_FIREBASE_APP_ID}
+      REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+      - C:\projects\Sitecore.Demo.Platform\items:c:\items # Platform items
+      - .\data\cm\src:C:\src
+      - .\data\cm\backup:c:\backup
+      - .\fitness\server\src:C:\projects\Sitecore.Demo.Headless\fitness\server\src # Headless items
+      - .\data\cm\logs:C:\inetpub\wwwroot\App_Data\logs
+    depends_on:
+      ps:
+        condition: service_healthy
+      id:
+        condition: service_healthy
+      xconnect:
+        condition: service_healthy
+    networks:
+      demo:
+        aliases:
+          - "${CM_HOST}"
+
+  xconnect:
+    image: ${REGISTRY}demo/lighthouse-xp0-jss-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    # TODO: Do we need a specific xConnect entrypoint like in 9.3?
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"
+    build:
+      context: .
+      dockerfile: .\docker\images\demo-xconnect\dockerfile
+      args:
+        BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+      - .\data\xconnect\src:C:\src
+      - .\data\xconnect\logs:C:\inetpub\wwwroot\App_Data\logs
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\
+    depends_on:
+      mssql:
+        condition: service_healthy
+      solr:
+        condition: service_healthy
+    networks:
+      - demo
+
+  xdbsearchworker:
+    image: ${REGISTRY}demo/lighthouse-xp0-jss-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
+    build:
+      context: .
+      dockerfile: .\docker\images\demo-xdbsearchworker\dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+      - .\data\indexworker\src:C:\src
+      - .\data\indexworker\logs:C:\service\App_Data\Logs
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\
+    networks:
+      - demo
+
+  xdbautomationworker:
+    image: ${REGISTRY}demo/lighthouse-xp0-jss-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
+    build:
+      context: .
+      dockerfile: .\docker\images\demo-xdbautomationworker\dockerfile
+      args:
+        BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+        ASSETS_IMAGE: ${REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${SITECORE_VERSION}-${NANOSERVER_VERSION}
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+      - .\data\xdbautomationworker\src:C:\src
+      - .\data\xdbautomationworker:C:\service\App_Data\Logs
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\
+      REACT_APP_FIREBASE_MESSAGING_SERVER_KEY: ${REACT_APP_FIREBASE_MESSAGING_SERVER_KEY}
+      REACT_APP_PUBLIC_HOST_NAME: //${APP_HOST}
+    networks:
+      - demo
+
   ps:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
@@ -133,55 +210,6 @@ services:
       - "44015:80"
     networks:
       - demo
-
-  cm:
-    healthcheck:
-      test: ["CMD", "powershell", "ps"]
-    image: ${REGISTRY}demo/lighthouse-xp0-jss-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\JssDevelopmentEntrypoint.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('C:\\src\\Web.config'); }"
-    build:
-      context: .
-      dockerfile: .\docker\images\demo-standalone\dockerfile
-      args:
-        BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-        HOTFIX_IMAGE: ${REGISTRY}demo/base/lighthouse-hotfixes:${SITECORE_VERSION}-${NANOSERVER_VERSION}
-    mem_limit: 4G
-    environment:
-      SITECORE_LICENSE_LOCATION: c:\license\license.xml
-      SITECORE_APPSETTINGS_SXAXM:DEFINE: sxaxconnect
-      SITECORE_APPSETTINGS_ENV:DEFINE: Docker
-      SITECORE_APPSETTINGS_UNICORN:DEFINE: Enabled
-      SITECORE_APPSETTINGS_PUBLISHINGSERVICE:DEFINE: Enabled
-      SITECORE_APPSETTINGS_INTEGRATIONS:DEFINE: None
-      SITECORE_APPSETTINGS_CONTENTHUB:DEFINE: Enabled
-      SITECORE_CONNECTIONSTRINGS_CMP.ContentHub: ${CMP_CONTENTHUB}
-      SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathIn: ${CMP_SERVICEBUSENTITYPATHIN}
-      SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusSubscription: ${CMP_SERVICEBUSSUBSCRIPTION}
-      SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathOut: ${CMP_SERVICEBUSENTITYPATHOUT}
-      SITECORE_CONNECTIONSTRINGS_SFMC: ${SFMC_CONNECTIONSTRING}
-      SITECORE_CONNECTIONSTRINGS_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
-      EXM_RENDERER_URL: http://cm
-      PROXY_API_HOST: https://${CM_HOST}
-      REACT_APP_FIREBASE_MESSAGING_PUSH_KEY: ${REACT_APP_FIREBASE_MESSAGING_PUSH_KEY}
-      REACT_APP_FIREBASE_SENDER_ID: ${REACT_APP_FIREBASE_SENDER_ID}
-      REACT_APP_FIREBASE_PROJECT_ID: ${REACT_APP_FIREBASE_PROJECT_ID}
-      REACT_APP_FIREBASE_API_KEY: ${REACT_APP_FIREBASE_API_KEY}
-      REACT_APP_FIREBASE_APP_ID: ${REACT_APP_FIREBASE_APP_ID}
-      REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
-    volumes:
-      - ${HOST_LICENSE_FOLDER}:c:\license
-      - C:\projects\Sitecore.Demo.Platform\items:c:\items # Platform items
-      - .\data\cm\src:C:\src
-      - .\fitness\server\src:C:\projects\Sitecore.Demo.Headless\fitness\server\src # Headless items
-      - .\data\cm\logs:C:\inetpub\wwwroot\App_Data\logs
-    depends_on:
-      ps:
-        condition: service_started
-    networks:
-      demo:
-        aliases:
-          - "${CM_HOST}"
 
   cd:
     isolation: ${ISOLATION}
@@ -213,19 +241,21 @@ services:
       Sitecore_ConnectionStrings_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
       Sitecore_License: ${SITECORE_LICENSE}
       EXM_RENDERER_URL: http://cm
+      COVEO_SERVER_URL: ${COVEO_SERVER_URL}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - .\data\cd\src:C:\src
+      - .\data\cd\backup:c:\backup
       - .\data\cd\logs:C:\inetpub\wwwroot\App_Data\logs
     depends_on:
       mssql:
-        condition: service_started
+        condition: service_healthy
       ps:
-        condition: service_started
+        condition: service_healthy
       solr:
-        condition: service_started
+        condition: service_healthy
       xconnect:
-        condition: service_started
+        condition: service_healthy
     healthcheck:
       test: ["CMD", "powershell", "ps"]
     labels:
@@ -287,9 +317,9 @@ services:
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
     depends_on:
       cm:
-        condition: service_started
+        condition: service_healthy
       cd:
-        condition: service_started
+        condition: service_healthy
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.app-secure.entrypoints=websecure"
@@ -317,9 +347,9 @@ services:
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
     depends_on:
       cm:
-        condition: service_started
+        condition: service_healthy
       cd:
-        condition: service_started
+        condition: service_healthy
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.kiosk-secure.entrypoints=websecure"
@@ -330,25 +360,6 @@ services:
         aliases:
           - .${KIOSK_HOST}
 
-  xconnect:
-    image: ${REGISTRY}demo/lighthouse-xp0-jss-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    # TODO: Do we need a specific xConnect entrypoint like in 9.3?
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"
-    volumes:
-      - ${HOST_LICENSE_FOLDER}:c:\license
-      - .\data\xconnect\src:C:\src
-      - .\data\xconnect\logs:C:\inetpub\wwwroot\App_Data\logs
-    environment:
-      SITECORE_LICENSE_LOCATION: c:\license\
-    build:
-      context: .
-      dockerfile: .\docker\images\demo-xconnect\dockerfile
-      args:
-        BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-    networks:
-      - demo
-
   smtp:
     image: maildev/maildev
     command: ["--smtp", "25", "--web", "80"]
@@ -358,6 +369,7 @@ services:
       - "44026:80"
     networks:
       - demo
+    scale: ${SMTP_CONTAINERS_COUNT}
 
   init:
     healthcheck:
@@ -377,13 +389,20 @@ services:
       HOST_ID: "http://id"
       MARKETING_DEFINITIONS_APIKEY: ${MARKETING_DEFINITIONS_APIKEY}
       SKIP_WARMUP_CD: ${SKIP_WARMUP_CD}
+      DAM_URL: ${DAM_URL}
+      INIT_CONTEXT: Data Source=mssql;Initial Catalog=platform_init_ready;User ID=sa;Password=${SQL_SA_PASSWORD}
+      COVEO_ORGANIZATION_ID: ${COVEO_ORGANIZATION_ID}
+      COVEO_API_KEY: ${COVEO_API_KEY}
+      COVEO_SEARCH_API_KEY: ${COVEO_SEARCH_API_KEY}
+      COVEO_FARM_NAME: ${COVEO_FARM_NAME}
+      COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
     depends_on:
       mssql:
         condition: service_healthy
       ps:
-        condition: service_started
+        condition: service_healthy
       cm:
-        condition: service_started
+        condition: service_healthy
     networks:
       - demo
 
