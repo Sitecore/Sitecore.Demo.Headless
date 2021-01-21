@@ -105,15 +105,16 @@ Languages:
               s:par=""
               s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0">
               <rls>
-                <ruleset>
+                <ruleset
+                  s:pet="false">
                   <rule
                     uid="{6D9B6A1A-CC5F-40CA-AA42-4FBD92DBE501}"
                     s:name="Boston Marathon Campaign">
                     <conditions>
                       <condition
-                        uid="6559EEE3166146A0856590D0922D798B"
-                        s:id="{D379525C-4DE6-4738-89ED-60CC0B8F91E5}"
-                        s:CampaignId="{C0D46075-D0B2-49AD-8660-92B5E525D639}" />
+                        uid="ACDDDD16AE0B4D52957DC0A2DC410EDC"
+                        s:id="{0290AA90-B948-4C8C-B576-F3C17F9DE389}"
+                        s:CampaignsList="{C0D46075-D0B2-49AD-8660-92B5E525D639}" />
                     </conditions>
                     <actions>
                       <action

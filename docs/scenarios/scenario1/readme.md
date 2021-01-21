@@ -586,8 +586,8 @@ After you save the Home route file, the component is expected to be rendered.
 ## Scene 3. First app bootstrapping with Sitecore
 
 ### Pre-requisites
-1. Complete API key setup described [here].(https://github.com/Sitecore/Sitecore.Demo.Omni/tree/master/fitness/app#connecting-3rd-party-api-services)
-1. Complete code-first deployment pre-requisites described [here](https://github.com/Sitecore/Sitecore.Demo.Omni/tree/master/fitness/app#pre-requisites-1).
+1. Complete API key setup described [here].(https://github.com/Sitecore/Sitecore.Demo.Headless/tree/master/fitness/app#connecting-3rd-party-api-services)
+1. Complete code-first deployment pre-requisites described [here](https://github.com/Sitecore/Sitecore.Demo.Headless/tree/master/fitness/app#pre-requisites-1).
 
 ### Setup
 Complete pre-reqs and assuming scene 1-2 were complete.
@@ -598,7 +598,7 @@ Complete pre-reqs and assuming scene 1-2 were complete.
 
 1. `sitecore-import.json` file will be created under `sitecore/manifest` folder. This file describes in Sitecore Domain Language what kind of application artifacts need to be created for this application.
 
-1. Complete all the steps described [here](https://github.com/Sitecore/Sitecore.Demo.Omni/tree/master/fitness/app#steps).
+1. Complete all the steps described [here](https://github.com/Sitecore/Sitecore.Demo.Headless/tree/master/fitness/app#steps).
 
     The console will show the app deployment progress that the Sitecore artifacts are created and we see what's been done in real time.
 
@@ -622,7 +622,7 @@ Let’s get that fixed.
 Now that the app is bootstrapped, let’s add missing server-side configuration and real API implementation.
 
 Deploy server components from source
-Check [this section](https://github.com/Sitecore/Sitecore.Demo.Omni#1-deploy-server-side-components) in main Readme.md for details.
+Check [this section](https://github.com/Sitecore/Sitecore.Demo.Headless#1-deploy-server-side-components) in main Readme.md for details.
 
 > Use "quick deploy" target to skip deploying items to your Sitecore instance, as at this stage we only need files: `.\build.ps1 -Target Quick-Deploy`
 

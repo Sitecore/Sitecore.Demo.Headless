@@ -15,14 +15,14 @@
   },
   "author": {
     "name": "Sitecore Corporation",
-    "url": "https://github.com/Sitecore/Sitecore.Demo.Omni"
+    "url": "https://github.com/Sitecore/Sitecore.Demo.Headless"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sitecore/Sitecore.Demo.Omni.git"
+    "url": "git+https://github.com/Sitecore/Sitecore.Demo.Headless.git"
   },
   "bugs": {
-    "url": "https://github.com/Sitecore/Sitecore.Demo.Omni/issues"
+    "url": "https://github.com/Sitecore/Sitecore.Demo.Headless/issues"
   },
   "license": "MPL-2.0",
   "dependencies": {

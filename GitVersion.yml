@@ -1,42 +1,56 @@
 assembly-versioning-scheme: MajorMinorPatch
-mode: ContinuousDeployment
+mode: mainline
 continuous-delivery-fallback-tag: ''
 tag-prefix: '[vV]'
-next-version: 1000.0.0
+next-version: 1001.1.0
 major-version-bump-message: '\+semver:\s?(dotnotuse)'
 minor-version-bump-message: '\+semver:\s?(breaking|major)'
 patch-version-bump-message: '\+semver:\s?(feature|minor)'
 no-bump-message: '\+semver:\s?(none|skip)'
 branches:
   develop:
-    mode: ContinuousDeployment
     tag: beta
     increment: Patch
     prevent-increment-of-merged-branch-version: false
     is-mainline: true
-  master:
-    mode: ContinuousDeployment
+  integration:
+    regex: ^integration
+    tag: alpha
+    increment: Inherit
+    is-mainline: false
+    source-branches:
+    - develop
+  main:
     tag: ''
     increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    regex: ^master$
+    regex: ^main$
     source-branches:
     - develop
     tracks-release-branches: false
     is-release-branch: false
     is-mainline: true
+  upgrade:
+    tag: vnext
+    regex: ^upgrade.*
+    tag-number-pattern: '[/-](?<number>\d+)[-/]'
+    source-branches:
+    - develop
+    is-mainline: true
   feature:
-    mode: ContinuousDeployment
     tag: ft
     tag-number-pattern: '[/-](?<number>\d+)[-/]'
+    increment: Inherit
+    source-branches:
+    - develop
+    is-mainline: false
   pull-request:
-    mode: ContinuousDeployment
     tag: pull
     tag-number-pattern: '[/-](?<number>\d+)[-/]'
   release:
-    mode: ContinuousDeployment
-    tag: rc
+    tag: ''
     is-release-branch: true
     increment: Inherit
+    is-mainline: true
 merge-message-formats: {}
