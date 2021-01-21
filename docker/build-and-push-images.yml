@@ -38,6 +38,10 @@ stages:
           poolName: 'docker-ltsc2019-agents'
           osVersion: 'ltsc2019'
           nanoserverVersion: '1809'
+        # 20H2:
+        #   poolName: 'docker-20H2-agents'
+        #   osVersion: '20H2'
+        #   nanoserverVersion: '20H2'
     displayName: 'Build Windows Docker Images'
     pool:
       name: $(poolName)
@@ -170,7 +174,7 @@ stages:
         targetType: 'inline'
         script: './init-ci.ps1 -DemoTeamRegistry $(REGISTRY)'
         pwsh: true
-      
+
     - task: DockerCompose@0
       displayName: "Docker Compose Build"
       inputs:

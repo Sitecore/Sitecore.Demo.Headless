@@ -79,7 +79,7 @@ services:
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-        HOTFIX_IMAGE: ${REGISTRY}demo/base/lighthouse-hotfixes:${SITECORE_VERSION}-${NANOSERVER_VERSION}
+        HOTFIX_IMAGE: ${REGISTRY}demo/base/lighthouse-hotfixes:${SITECORE_VERSION}-${NANOSERVER_VERSION}-1001.1.0
     mem_limit: 4G
     environment:
       SITECORE_LICENSE_LOCATION: c:\license\license.xml
