@@ -5,7 +5,7 @@ Param (
   ,
   [Parameter(
     HelpMessage = "Demo version used in image tagging.")]
-  [string]$DemoVersion = "1001.1"
+  [string]$DemoVersion = "latest"
   ,
   [Parameter(
     HelpMessage = "Internal ACR use by the demo team")]
@@ -25,7 +25,7 @@ Param (
   ,
   [Parameter(
     HelpMessage = "Sitecore version")]
-  [string]$SitecoreVersion = "10.0.1"
+  [string]$SitecoreVersion = "10.1.0"
 )
 
 $ErrorActionPreference = "Stop";
@@ -46,14 +46,13 @@ if (-not $SitecoreGallery) {
   Register-PSRepository -Name SitecoreGallery -SourceLocation https://sitecore.myget.org/F/sc-powershell/api/v2 -InstallationPolicy Trusted -Verbose
   $SitecoreGallery = Get-PSRepository -Name SitecoreGallery
 }
-else
-{
+else {
   Write-Host "Updating Sitecore PowerShell Gallery url..." -ForegroundColor Yellow
   Set-PSRepository -Name $SitecoreGallery.Name -Source "https://sitecore.myget.org/F/sc-powershell/api/v2"
 }
 
 #Install and Import SitecoreDockerTools
-$dockerToolsVersion = "10.0.5"
+$dockerToolsVersion = "10.1.4"
 Remove-Module SitecoreDockerTools -ErrorAction SilentlyContinue
 if (-not (Get-InstalledModule -Name SitecoreDockerTools -RequiredVersion $dockerToolsVersion -ErrorAction SilentlyContinue)) {
   Write-Host "Installing SitecoreDockerTools..." -ForegroundColor Green

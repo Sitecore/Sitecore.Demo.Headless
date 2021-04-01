@@ -20,14 +20,8 @@ namespace Sitecore.Demo.Fitness.Feature.Collection
             //return new IdentifiedContactReference("xDB.Tracker", deviceId);
 
             var deviceId = Tracker.Current.Session.Device.DeviceId;
-            var deviceProfile = client.Get(new DeviceProfileReference(deviceId), new ExpandOptions());
+            var deviceProfile = client.Get(new DeviceProfileReference(deviceId), new DeviceProfileExecutionOptions(new DeviceProfileExpandOptions()));
             return deviceProfile?.LastKnownContact;
-        }
-
-        public static Contact GetContactFromTrackerId(this XConnectClient client, Guid contactId, ExpandOptions contactExpandOptions)
-        {
-            var id = new IdentifiedContactReference("xDB.Tracker", contactId.ToString("N"));
-            return client.GetContactAsync(id, contactExpandOptions).ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
         public static async Task<XConnectClient> Create()

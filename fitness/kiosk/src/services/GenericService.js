@@ -1,5 +1,6 @@
 import axios from "axios";
 import { setupCache } from "axios-cache-adapter";
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import qs from "qs";
 import config from "../temp/config";
 

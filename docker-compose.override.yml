@@ -1,7 +1,6 @@
-version: "2.4"
+version: "3.7"
 
 services:
-
   traefik:
     volumes:
       - ./data/traefik:C:/etc/traefik
@@ -24,7 +23,7 @@ services:
     environment:
       USER_PASSWORD: ${SITECORE_ADMIN_PASSWORD}
       ADMIN_USER_NAME: "sitecore\\superuser"
-      DISABLE_DEFAULT_ADMIN: 'FALSE'
+      DISABLE_DEFAULT_ADMIN: "FALSE"
       EXM_BASE_URL: "https://${CD_HOST}"
       START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1;start-override-headless-windows.ps1"
       COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
@@ -33,7 +32,7 @@ services:
     mem_limit: 2GB
     volumes:
       - type: bind
-        source: .\data\sql
+        source: .\data\mssql-data
         target: c:\data
     networks:
       - demo
@@ -41,17 +40,15 @@ services:
   solr:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
-    image: ${REGISTRY}demo/lighthouse-jss-solr:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    build:
-      context: .
-      dockerfile: .\docker\images\demo-solr\dockerfile
-      args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-solr:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-    mem_limit: 1GB
     volumes:
       - type: bind
-        source: .\data\solr
+        source: .\data\solr-data
         target: c:\data
+    networks:
+      - demo
+
+  solr-init:
+    image: ${REGISTRY}demo/base/lighthouse-xp0-modules-base-solr-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${BASE_MODULE_VERSION}
     networks:
       - demo
 
@@ -79,7 +76,6 @@ services:
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-        HOTFIX_IMAGE: ${REGISTRY}demo/base/lighthouse-hotfixes:${SITECORE_VERSION}-${NANOSERVER_VERSION}-1001.1.0
     mem_limit: 4G
     environment:
       SITECORE_LICENSE_LOCATION: c:\license\license.xml
@@ -94,12 +90,20 @@ services:
       SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathIn: ${CMP_SERVICEBUSENTITYPATHIN}
       SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusSubscription: ${CMP_SERVICEBUSSUBSCRIPTION}
       SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathOut: ${CMP_SERVICEBUSENTITYPATHOUT}
+      SITECORE_CONNECTIONSTRINGS_DAM.ContentHub: ${DAM_URL}
+      SITECORE_CONNECTIONSTRINGS_DAM.SearchPage: ${DAM_URL}/en-us/sitecore-dam-connect/approved-assets
       SITECORE_CONNECTIONSTRINGS_SFMC: ${SFMC_CONNECTIONSTRING}
+      SITECORE_CONNECTIONSTRINGS_SFDC: ${SFDC_CONNECTIONSTRING}
       SITECORE_CONNECTIONSTRINGS_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
       EXM_RENDERER_URL: http://cm
       Sitecore_Horizon_ClientHost: https://${SH_HOST}
       HOST_CD: http://cd
+      Sitecore_Publishing_Service_Url: http://ps:5000/
       COVEO_SERVER_URL: ${COVEO_SERVER_URL}
+      DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
+      SitecoreAITenantID: ${SITECORE_AI_TENANT_ID}
+      SitecoreAIConfigServiceURL: ${SITECORE_AI_CONFIG_SERVICE_URL}
+      SitecoreAIConfigServiceJWT: ${SITECORE_AI_CONFIG_SERVICE_JWT}
       PROXY_API_HOST: https://${CM_HOST}
       REACT_APP_FIREBASE_MESSAGING_PUSH_KEY: ${REACT_APP_FIREBASE_MESSAGING_PUSH_KEY}
       REACT_APP_FIREBASE_SENDER_ID: ${REACT_APP_FIREBASE_SENDER_ID}
@@ -190,9 +194,10 @@ services:
 
   ps:
     healthcheck:
-      test: ["CMD", "powershell", "ps"]
+      test: ["CMD", "curl", "-f", "http://localhost:5000/healthz/live"]
+      timeout: 300s
     image: ${REGISTRY}demo/lighthouse-jss-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    isolation: ${ISOLATION}
+    isolation: ${TRAEFIK_ISOLATION}
     build:
       context: .
       dockerfile: .\docker\images\demo-ps\dockerfile
@@ -200,16 +205,32 @@ services:
         BASE_IMAGE: ${REGISTRY}demo/lighthouse-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
     restart: unless-stopped
     environment:
-      CONN_STRING_CORE: Data Source=mssql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
-      CONN_STRING_MASTER: Data Source=mssql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
-      CONN_STRING_WEB: Data Source=mssql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
+      ASPNETCORE_URLS: "http://*:5000"
+      SITECORE_Sitecore:Publishing:ConnectionStrings:Core: Data Source=mssql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
+      SITECORE_Sitecore:Publishing:ConnectionStrings:Master: Data Source=mssql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
+      SITECORE_Sitecore:Publishing:ConnectionStrings:Web: Data Source=mssql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
     depends_on:
-      mssql:
-        condition: service_healthy
+      - mssql
+      - ps-init
     ports:
-      - "44015:80"
+      - "44015:5000"
     networks:
       - demo
+
+  ps-init:
+      image: ${REGISTRY}demo/lighthouse-jss-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+      isolation: ${TRAEFIK_ISOLATION}
+      environment:
+        ASPNETCORE_URLS: "http://*:5000"
+        SITECORE_Sitecore:Publishing:ConnectionStrings:Core: Data Source=mssql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
+        SITECORE_Sitecore:Publishing:ConnectionStrings:Master: Data Source=mssql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
+        SITECORE_Sitecore:Publishing:ConnectionStrings:Web: Data Source=mssql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
+      command: schema upgrade --force
+      depends_on:
+        mssql:
+          condition: service_healthy
+      networks:
+        - demo
 
   cd:
     isolation: ${ISOLATION}
@@ -227,6 +248,7 @@ services:
       SITECORE_APPSETTINGS_ENV:DEFINE: Docker
       SITECORE_APPSETTINGS_UNICORN:DEFINE: Disabled
       SITECORE_APPSETTINGS_PUBLISHINGSERVICE:DEFINE: Disabled
+      SOLR_CORE_PREFIX_NAME: sitecore
       SITECORE_APPSETTINGS_INTEGRATIONS:DEFINE: None
       Sitecore_ConnectionStrings_Security: Data Source=mssql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
       Sitecore_ConnectionStrings_Web: Data Source=mssql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
@@ -239,9 +261,13 @@ services:
       Sitecore_ConnectionStrings_Xdb.MarketingAutomation.Reporting.Client: http://xconnect
       Sitecore_ConnectionStrings_Xdb.ReferenceData.Client: http://xconnect
       Sitecore_ConnectionStrings_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
-      Sitecore_License: ${SITECORE_LICENSE}
+      SitecoreAITenantID: ${SITECORE_AI_TENANT_ID}
+      SitecoreAIConfigServiceURL: ${SITECORE_AI_CONFIG_SERVICE_URL}
+      SitecoreAIConfigServiceJWT: ${SITECORE_AI_CONFIG_SERVICE_JWT}
+
       EXM_RENDERER_URL: http://cm
       COVEO_SERVER_URL: ${COVEO_SERVER_URL}
+      DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - .\data\cd\src:C:\src
@@ -385,13 +411,14 @@ services:
       ADMIN_USER_NAME: "superuser"
       HOST_CD: "http://cd"
       HOST_CM: "http://cm"
-      HOST_PS: "http://ps"
+      HOST_PS: "http://ps:5000"
       HOST_ID: "http://id"
       MARKETING_DEFINITIONS_APIKEY: ${MARKETING_DEFINITIONS_APIKEY}
       SKIP_WARMUP_CD: ${SKIP_WARMUP_CD}
       DAM_URL: ${DAM_URL}
       INIT_CONTEXT: Data Source=mssql;Initial Catalog=platform_init_ready;User ID=sa;Password=${SQL_SA_PASSWORD}
       COVEO_ORGANIZATION_ID: ${COVEO_ORGANIZATION_ID}
+      COVEO_REGION: ${COVEO_REGION}
       COVEO_API_KEY: ${COVEO_API_KEY}
       COVEO_SEARCH_API_KEY: ${COVEO_SEARCH_API_KEY}
       COVEO_FARM_NAME: ${COVEO_FARM_NAME}
@@ -420,22 +447,23 @@ services:
     environment:
       SITECORE_LICENSE_LOCATION: c:\license\license.xml
       Sitecore_FederatedUI__HostBaseUrl: http://authoringhost
-      Sitecore_ApiGateway__SitecoreHost: https://${CM_HOST}
-      Sitecore_Proxy__DataServiceEndpoint: https://${CM_HOST}
-      Sitecore_ApiGateway__InternalSitecoreHost: http://cm
-      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__RequireHttpsMetadata: 'false'
+      Sitecore_SitecorePlatform__ContentManagementUrl: https://${CM_HOST}
+      Sitecore_SitecorePlatform__ContentManagementInternalUrl: http://cm
+      Sitecore_Sitecore__Authentication__OpenIdConnectOptions__RequireHttpsMetadata: "false"
       Sitecore_Sitecore__Authentication__OpenIdConnectOptions__Authority: https://${ID_HOST}
       Sitecore_Sitecore__Authentication__OpenIdConnectOptions__CallbackAuthority: https://${SH_HOST}
       Sitecore_Sitecore__Authentication__OpenIdConnectOptions__InternalAuthority: http://id
       Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__Authority: https://${ID_HOST}
       Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__InternalAuthority: http://id
-      Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__RequireHttpsMetadata: 'false'
+      Sitecore_Sitecore__Authentication__BearerAuthenticationOptions__RequireHttpsMetadata: "false"
+      Sitecore_Plugins__Filters__ExperienceAccelerator: +SXA
       Sitecore_Plugins__Filters__ContentHub: +ContentHub
-      Sitecore_ContentHubDam__PlatformUrl: http://cm
       Sitecore_Sitecore__Logging__Serilog__MinimumLevel__Default: Debug
     depends_on:
       id:
         condition: service_healthy
+      cm:
+        condition: service_started
     labels:
       - "traefik.enable=true"
       - "traefik.http.middlewares.force-STS-Header.headers.forceSTSHeader=true"

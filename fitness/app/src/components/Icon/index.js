@@ -1,6 +1,7 @@
 import React from "react";
 import { v1 as uuidv1 } from "uuid";
-import { PropTypes } from "prop-types";
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import PropTypes from "prop-types";
 
 const Icon = ({ size, path }) => {
   const id = uuidv1();

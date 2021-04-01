@@ -1,6 +1,8 @@
 import { post } from "./GenericService";
+/* eslint-disable import/no-extraneous-dependencies */
 import { firebase } from "@firebase/app";
 import "@firebase/messaging";
+/* eslint-enable import/no-extraneous-dependencies */
 
 export async function subscribe(eventId) {
   const token = await getMessagingToken();

@@ -1,17 +1,20 @@
 ﻿---
-ID: "e7758b78-6bc6-440c-b230-36c6ce89f3da"
-Parent: "94af4503-78cc-4b54-a207-42835afc8439"
+ID: "116962e2-9209-47e1-9bdb-10656d3cbf6d"
+Parent: "cf2b4509-b1dc-463a-9b42-5c9afdf4025a"
 Template: "e43e2773-7a50-4145-a266-312024f27382"
-Path: /sitecore/system/Modules/CMP/Config/Blog Post/Title
+Path: /sitecore/system/Modules/CMP/Config/Fitness Event/Event Type
 DB: master
 BranchID: "70eb42ee-92b2-4246-bc65-aa920bb7f322"
 SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 700
 - ID: "da990633-7884-44a2-8638-94389c5cbfec"
   Hint: CMP Field Name
-  Value: Blog_Title
+  Value: 82a7d_EventType
 - ID: "db99415a-fe86-4a2d-9583-db92894cb80a"
   Hint: Sitecore Field Name
-  Value: Title
+  Value: "{0672BACC-7420-493A-9CB3-878B103D5251}"
 - ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
   Hint: __Originator
   Value: "{4C94598B-EB37-400C-88C3-BEB971888C9A}"
@@ -22,4 +25,4 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20190614T161316Z
+      Value: 20190614T180551Z

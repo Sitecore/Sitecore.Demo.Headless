@@ -22,11 +22,6 @@
 
     <!-- Enable/Disable Unicorn functionality -->
     <add key="unicorn:define" value="Off" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
-
-    <!-- Application Insights -->
-    <add key="storeSitecoreCountersInApplicationInsights:define" value="false" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
-    <add key="useApplicationInsights:define" value="false" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
-    <!-- /Application Insights -->
   </appSettings>
 
   <location>
@@ -40,59 +35,9 @@
   </location>
 
   <system.webServer>
-    <modules>
-      <!-- Application Insights -->
-      <remove name="ApplicationInsightsWebTracking" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
-      <add name="TelemetryCorrelationHttpModule" type="Microsoft.AspNet.TelemetryCorrelation.TelemetryCorrelationHttpModule, Microsoft.AspNet.TelemetryCorrelation" preCondition="integratedMode,managedHandler" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
-      <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" preCondition="managedHandler" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
-      <!-- /Application Insights -->
-    </modules>
     <handlers>
       <add verb="*" path="sitecorejss_media.ashx" type="Sitecore.JavaScriptServices.Media.MediaRequestHandler, Sitecore.JavaScriptServices.Media" name="Sitecore.JavaScriptServices.Media.MediaRequestHandler" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
     </handlers>
   </system.webServer>
-
-  <system.diagnostics xdt:Transform="InsertIfMissing">
-    <trace autoflush="true" indentsize="0">
-      <listeners>
-        <!-- Application Insights -->
-        <add name="myAppInsightsListener" type="Microsoft.ApplicationInsights.TraceListener.ApplicationInsightsTraceListener, Microsoft.ApplicationInsights.TraceListener" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
-        <!-- /Application Insights -->
-      </listeners>
-    </trace>
-  </system.diagnostics>
-
-  <runtime>
-    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
-      <!-- Application Insights -->
-      <dependentAssembly xdt:Transform="InsertIfMissing" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='Microsoft.AI.Agent.Intercept')">
-        <assemblyIdentity name="Microsoft.AI.Agent.Intercept" publicKeyToken="31bf3856ad364e35" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
-        <bindingRedirect oldVersion="0.0.0.0-2.4.0.0" newVersion="2.4.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />
-      </dependentAssembly>
-      <dependentAssembly xdt:Transform="Replace" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='Microsoft.AI.Agent.Intercept')">
-        <assemblyIdentity name="Microsoft.AI.Agent.Intercept" publicKeyToken="31bf3856ad364e35" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
-        <bindingRedirect oldVersion="0.0.0.0-2.4.0.0" newVersion="2.4.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />
-      </dependentAssembly>
-
-      <dependentAssembly xdt:Transform="InsertIfMissing" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='Microsoft.ApplicationInsights')">
-        <assemblyIdentity name="Microsoft.ApplicationInsights" publicKeyToken="31bf3856ad364e35" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
-        <bindingRedirect oldVersion="0.0.0.0-2.5.1.0" newVersion="2.5.1.0" xmlns="urn:schemas-microsoft-com:asm.v1" />
-      </dependentAssembly>
-      <dependentAssembly xdt:Transform="Replace" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='Microsoft.ApplicationInsights')">
-        <assemblyIdentity name="Microsoft.ApplicationInsights" publicKeyToken="31bf3856ad364e35" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
-        <bindingRedirect oldVersion="0.0.0.0-2.5.1.0" newVersion="2.5.1.0" xmlns="urn:schemas-microsoft-com:asm.v1" />
-      </dependentAssembly>
-
-      <dependentAssembly xdt:Transform="InsertIfMissing" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='System.Diagnostics.DiagnosticSource')">
-        <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
-        <bindingRedirect oldVersion="0.0.0.0-4.0.2.1" newVersion="4.0.2.1" xmlns="urn:schemas-microsoft-com:asm.v1" />
-      </dependentAssembly>
-      <dependentAssembly xdt:Transform="Replace" xdt:Locator="Condition(asmv1:assemblyIdentity/@name='System.Diagnostics.DiagnosticSource')">
-        <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
-        <bindingRedirect oldVersion="0.0.0.0-4.0.2.1" newVersion="4.0.2.1" xmlns="urn:schemas-microsoft-com:asm.v1" />
-      </dependentAssembly>
-      <!-- /Application Insights -->
-    </assemblyBinding>
-  </runtime>
 
 </configuration>
