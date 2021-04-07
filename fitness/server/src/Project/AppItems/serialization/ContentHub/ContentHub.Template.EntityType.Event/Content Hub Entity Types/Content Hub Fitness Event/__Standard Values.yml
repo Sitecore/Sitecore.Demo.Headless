@@ -2,7 +2,7 @@
 ID: "6b6c21af-07ef-4205-93b8-f305300885a4"
 Parent: "388a8591-1c69-4060-ae16-02e47861c045"
 Template: "388a8591-1c69-4060-ae16-02e47861c045"
-Path: /sitecore/templates/Content Hub Entity Types/Content Hub Fitness Event/__Standard Values
+Path: /sitecore/templates/Project/Content Hub Entity Types/Content Hub Fitness Event/__Standard Values
 DB: master
 SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
