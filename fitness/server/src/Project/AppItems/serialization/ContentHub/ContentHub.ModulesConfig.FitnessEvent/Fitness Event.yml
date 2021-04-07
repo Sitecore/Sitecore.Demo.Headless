@@ -8,7 +8,7 @@ BranchID: "875e0f89-f23b-476b-9bf9-e991a107f693"
 SharedFields:
 - ID: "3f883dcb-c341-4929-9216-d07f4f1b00be"
   Hint: Bucket
-  Value: "{D363BFF2-A830-429E-A876-7E5AF27CF3C1}"
+  Value: "{DEEB4737-CF04-5EC9-82A1-40C214E25813}"
 - ID: "9e009c2f-ad3c-4108-aa48-15689c1d4e1b"
   Hint: EntityTypeSchema
   Value: M.ContentType.Fitnessevent
