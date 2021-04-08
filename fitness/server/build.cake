@@ -203,7 +203,7 @@ Task("Modify-Kiosk-Variable").Does(() => {
 Task("Modify-ContentHub-Variable").Does(() => {
 	var webConfigFile = File($"{configuration.WebsiteRoot}/Web.config");
 	var appSetting = "configuration/appSettings/add[@key='contenthub:define']/@value";
-	var appSettingValue = configuration.ContentHub ? "On" : "Off";
+	var appSettingValue = configuration.ContentHub ? "Enabled" : "Disabled";
 	XmlPoke(webConfigFile, appSetting, appSettingValue);
 });
 

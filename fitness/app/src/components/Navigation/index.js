@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { withRouter } from "react-router";
 import { withTranslation } from "react-i18next";
 import { flush } from "../../services/SessionService";

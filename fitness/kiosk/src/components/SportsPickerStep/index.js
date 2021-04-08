@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { withRouter } from "react-router";
 import { Text } from "@sitecore-jss/sitecore-jss-react";
 import SportOption from "../SportOption";

@@ -25,29 +25,30 @@ export const routePatterns = [
 // LastLocationProvider: TODO
 class AppRoot extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      ssrRenderComplete: false
-    }
+      ssrRenderComplete: false,
+    };
 
     if (props.ssrState) {
-      this.sitecoreContext = props.ssrState.sitecore && props.ssrState.sitecore.route
-        ? {
-            route: props.ssrState.sitecore.route,
-            itemId: props.ssrState.sitecore.route.itemId,
-            ...props.ssrState.sitecore.context,
-          }
-        : props.ssrState.sitecore.context
+      this.sitecoreContext =
+        props.ssrState.sitecore && props.ssrState.sitecore.route
+          ? {
+              route: props.ssrState.sitecore.route,
+              itemId: props.ssrState.sitecore.route.itemId,
+              ...props.ssrState.sitecore.context,
+            }
+          : props.ssrState.sitecore.context;
     } else {
       this.sitecoreContext = null;
     }
   }
 
-  setSsrRenderComplete = ssrRenderComplete =>
+  setSsrRenderComplete = (ssrRenderComplete) =>
     this.setState({
-      ssrRenderComplete
-    })
+      ssrRenderComplete,
+    });
 
   componentDidMount() {
     this.setSsrRenderComplete(true);
@@ -64,10 +65,12 @@ class AppRoot extends React.Component {
               <Switch>
                 <Route key="/null" path="/null" component={null} />
                 {routePatterns.map((routePattern) => (
-                  <Route 
+                  <Route
                     key={routePattern}
                     path={routePattern}
-                    render={(props) => <RouteHandler route={props} ssrRenderComplete={this.state.ssrRenderComplete} />}
+                    render={(props) => (
+                      <RouteHandler route={props} ssrRenderComplete={this.state.ssrRenderComplete} />
+                    )}
                   />
                 ))}
               </Switch>

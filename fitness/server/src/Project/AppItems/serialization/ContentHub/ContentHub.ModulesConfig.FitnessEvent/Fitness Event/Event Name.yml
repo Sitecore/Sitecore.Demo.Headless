@@ -1,0 +1,25 @@
+﻿---
+ID: "0b58891f-dd71-4255-8ccb-24b494851bc5"
+Parent: "cf2b4509-b1dc-463a-9b42-5c9afdf4025a"
+Template: "e43e2773-7a50-4145-a266-312024f27382"
+Path: /sitecore/system/Modules/CMP/Config/Fitness Event/Event Name
+DB: master
+BranchID: "70eb42ee-92b2-4246-bc65-aa920bb7f322"
+SharedFields:
+- ID: "da990633-7884-44a2-8638-94389c5cbfec"
+  Hint: CMP Field Name
+  Value: 82a7d_EventName
+- ID: "db99415a-fe86-4a2d-9583-db92894cb80a"
+  Hint: Sitecore Field Name
+  Value: "{1AB79054-D1DD-59C2-BD3F-BB1CD4F1CE92}"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{4C94598B-EB37-400C-88C3-BEB971888C9A}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190614T174144Z

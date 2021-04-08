@@ -33,7 +33,7 @@ class PersonalizationWizard extends Component {
 
   getStepNames(placeholder) {
     return placeholder.filter(e => e.type !== "code").map((element, i) => {
-      return <Text field={element.props.fields.stepName} />;
+      return <Text field={element.props.fields.stepName} key={i} />;
     });
   }
 

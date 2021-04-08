@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import PropTypes from "prop-types";
 import { withTranslation } from "react-i18next";
 

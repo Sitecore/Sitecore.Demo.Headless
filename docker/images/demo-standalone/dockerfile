@@ -1,9 +1,6 @@
 # escape=`
 ARG BASE_IMAGE
 ARG BUILD_IMAGE
-ARG HOTFIX_IMAGE
-
-FROM $HOTFIX_IMAGE as hotfixes
 
 # Create a nodejs build image
 FROM ${BUILD_IMAGE} as npm
@@ -86,7 +83,6 @@ COPY scripts/Docker/ReplaceCMTokens.ps1 scripts/Docker/JssProductionEntrypoint.p
 RUN  Remove-Item -Path C:\inetpub\wwwroot\transforms\* -Recurse
 
 COPY --from=build /out/ /inetpub/wwwroot/
-COPY --from=hotfixes /cm/ /inetpub/wwwroot/
 
 # Copy the fitness app config
 COPY /fitness/app/sitecore/config/*.config /inetpub/wwwroot/App_Config/Include/Sitecore.Demo.Fitness/

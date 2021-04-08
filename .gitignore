@@ -13,3 +13,4 @@ launch.json
 **/.vscode
 .vs/*
 /data/
+/fitness/app/.eslintcache

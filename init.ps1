@@ -52,9 +52,8 @@ else
   Set-PSRepository -Name $SitecoreGallery.Name -Source "https://sitecore.myget.org/F/sc-powershell/api/v2"
 }
 
-
 #Install and Import SitecoreDockerTools
-$dockerToolsVersion = "10.0.5"
+$dockerToolsVersion = "10.1.4"
 Remove-Module SitecoreDockerTools -ErrorAction SilentlyContinue
 if (-not (Get-InstalledModule -Name SitecoreDockerTools -RequiredVersion $dockerToolsVersion -ErrorAction SilentlyContinue)) {
     Write-Host "Installing SitecoreDockerTools..." -ForegroundColor Green
@@ -126,18 +125,18 @@ if ($InitEnv) {
 	# CD_HOST
 	Set-DockerComposeEnvFileVariable "CD_HOST" -Value "cd.lighthouse.localhost"
 
-	# APP_CD_HOST
-	Set-DockerComposeEnvFileVariable "APP_CD_HOST" -Value "app-cd.lighthouse.localhost"
+    # APP_CD_HOST
+    Set-DockerComposeEnvFileVariable "APP_CD_HOST" -Value "app-cd.lighthouse.localhost"
 
-	# KIOSK_CD_HOST
-	Set-DockerComposeEnvFileVariable "KIOSK_CD_HOST" -Value "kiosk-cd.lighthouse.localhost"
+    # KIOSK_CD_HOST
+    Set-DockerComposeEnvFileVariable "KIOSK_CD_HOST" -Value "kiosk-cd.lighthouse.localhost"
 
     # CM_HOST
     Set-DockerComposeEnvFileVariable "CM_HOST" -Value "cm.lighthouse.localhost"
 
     # ID_HOST
     Set-DockerComposeEnvFileVariable "ID_HOST" -Value "id.lighthouse.localhost"
-    
+
     # SH_HOST
     Set-DockerComposeEnvFileVariable "SH_HOST" -Value "sh.lighthouse.localhost"
 
@@ -175,6 +174,9 @@ if ($InitEnv) {
 
     # SITECORE_SERVICES_TOKEN_SECURITYKEY = random 32 chars
     Set-DockerComposeEnvFileVariable "SITECORE_SERVICES_TOKEN_SECURITYKEY" -Value (Get-SitecoreRandomString 32 -DisallowSpecial)
+
+    # MEDIA_REQUEST_PROTECTION_SHARED_SECRET = random 64 chars
+    Set-DockerComposeEnvFileVariable "MEDIA_REQUEST_PROTECTION_SHARED_SECRET" -Value (Get-SitecoreRandomString 64 -DisallowSpecial)
 }
 
 Write-Host "Done!" -ForegroundColor Green

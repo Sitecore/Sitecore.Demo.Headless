@@ -6,6 +6,7 @@ import EventDetail from "../EventDetail";
 import RegistrationPrompt from "../RegistrationPrompt";
 import { register } from "../../services/EventService";
 import EventFavoriteButton from "../EventFavoriteButton";
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { withRouter } from "react-router";
 
 class EventDetailLoggedIn extends React.Component {
