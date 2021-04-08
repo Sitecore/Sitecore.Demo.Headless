@@ -110,6 +110,20 @@ export default class RouteHandler extends React.Component {
           ...routeData.sitecore.context
         });
         this.setState({ routeData, notFound: false });
+
+        // TODO: Move this code to a BoxeverService.js file to centralize ID, channel, language, currency, page, and pos.
+        // Boxever view page tracking
+        var viewEvent = {
+          "browser_id": window.Boxever.getID(),
+          "channel": "WEB",
+          "language": "EN",
+          "currency": "CAD",
+          "pos": "fitness-kiosk.com",
+          "page": window.location.pathname + window.location.search,
+          "type": "VIEW"
+        };
+        // TODO: Ensure Boxever calls are only made when "window" is available so they do not execute on SSR or SSG.
+        window.Boxever.eventCreate(viewEvent, function (data) { }, 'json');
       } else {
         this.setState({ routeData, notFound: true });
       }

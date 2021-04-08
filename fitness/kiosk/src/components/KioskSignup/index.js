@@ -35,13 +35,15 @@ class KioskSignup extends React.Component {
 
   onCreateClick() {
     const { firstname, lastname, email } = this.state;
-    setIdentification(firstname, lastname, email)
-      .then(response => this.setState({ signedUp: true }))
-      .then(() => trackCompleteRegistration())
-      .catch(err => {
-        this.setState({ error: true });
-        console.log(err);
-      });
+    // TODO: Try to revert to promise using .then instead of sequencial code.
+    try {
+      setIdentification(firstname, lastname, email);
+      this.setState({ signedUp: true });
+      trackCompleteRegistration(email);
+    } catch (err) {
+      this.setState({ error: true });
+      console.log(err);
+    }
   }
 
   render() {

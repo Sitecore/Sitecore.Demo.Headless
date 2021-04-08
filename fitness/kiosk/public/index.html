@@ -29,6 +29,19 @@
     </noscript>
     <div id="root"></div>
 
+    <script>
+      // Boxever scripts
+      var _boxever_settings = {
+        client_key: "fouatnr2j122o9z5u403ur7g24mxcros", // TODO: Make this an environment variable with a token
+        target: `https://api.boxever.com/v1.2`,
+        cookie_domain: ".fitness-kiosk.sitecoredemo.com/", // TODO: Switch to a token to be replaced by an environment variable for Docker environments
+        web_flow_target: "https://d35vb5cccm4xzp.cloudfront.net", // TODO: Not sure if this is static or tenant dependant. Investigate.
+        pointOfSale: "fitness-kiosk.com" // TODO: Make this an environment variable with a token
+      };
+    </script>
+    <!-- TODO: Not sure if this is URL domain is static or tenant dependant. Investigate. -->
+    <script type="text/javascript" src="https://d1mj578wat5n4o.cloudfront.net/boxever-1.4.1.js"></script>
+
     <script type="application/json" id="__JSS_STATE__">null</script>
 
     <!--
