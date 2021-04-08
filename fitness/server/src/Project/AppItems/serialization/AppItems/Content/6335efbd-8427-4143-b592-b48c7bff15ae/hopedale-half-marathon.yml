@@ -1,7 +1,7 @@
 ﻿---
 ID: "740228a5-9f80-451e-b458-7c256d4451e9"
 Parent: "6335efbd-8427-4143-b592-b48c7bff15ae"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/newfoundland-and-labrador/hopedale/hopedale-half-marathon"
 DB: master
 SharedFields:
@@ -59,7 +59,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20210522T000000
+      Value: 20220222T000000
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Hopedale Half Marathon

@@ -1,6 +1,6 @@
 ﻿---
-ID: "5faecdfa-f3af-48d6-8dc7-5c0517ff3e28"
-Parent: "f81880f7-447b-4429-bcb7-d6ed684c5aaa"
+ID: "2406a9ad-73d4-4701-b2b1-0a10d4576d8a"
+Parent: "6c0af119-fac7-4d2c-821d-7caa5f02a5e4"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/alberta/hinton/hinton-2k-run/Data/Labels"
 DB: master
@@ -31,7 +31,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T205818Z
+      Value: 20181114T205821Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 

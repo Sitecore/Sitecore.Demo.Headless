@@ -1,7 +1,7 @@
 ﻿---
 ID: "8ece0de5-9e08-41f6-98a4-f2ab8bba33dc"
 Parent: "3c532ceb-0abf-4c04-911a-c14566bff032"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/ontario/kenora/kenora-2k-run"
 DB: master
 SharedFields:
@@ -59,7 +59,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20211102T000000
+      Value: 20220802T000000
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Kenora 2K Run

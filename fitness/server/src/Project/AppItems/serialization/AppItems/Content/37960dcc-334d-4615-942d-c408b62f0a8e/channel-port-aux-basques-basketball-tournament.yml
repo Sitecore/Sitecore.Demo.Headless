@@ -1,7 +1,7 @@
 ﻿---
 ID: "efcd8569-1fac-408e-9751-af6c69393c52"
 Parent: "37960dcc-334d-4615-942d-c408b62f0a8e"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/newfoundland-and-labrador/channel-port-aux-basques/channel-port-aux-basques-basketball-tournament"
 DB: master
 SharedFields:
@@ -65,7 +65,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20210103T000000
+      Value: 20211003T000000
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: "Channel-Port aux Basques Basketball Tournament"

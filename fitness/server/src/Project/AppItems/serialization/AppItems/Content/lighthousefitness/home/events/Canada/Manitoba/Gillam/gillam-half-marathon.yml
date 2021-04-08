@@ -1,7 +1,7 @@
 ﻿---
 ID: "c565829c-0070-446b-8738-0eee9b25f5fb"
 Parent: "c9b10528-b7d6-4030-a1bc-7634a0895c90"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/gillam/gillam-half-marathon"
 DB: master
 SharedFields:
@@ -59,7 +59,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20210810T000000
+      Value: 20220510T000000
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Gillam Half Marathon
