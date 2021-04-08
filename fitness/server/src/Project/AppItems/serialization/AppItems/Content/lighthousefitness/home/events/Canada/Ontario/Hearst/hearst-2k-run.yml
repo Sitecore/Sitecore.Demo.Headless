@@ -8,6 +8,9 @@ SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: iS6yl1AgyEKEupNDKANwSA
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
@@ -59,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20210715T000000
+      Value: 20210715T040000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Hearst 2K Run
@@ -91,7 +94,7 @@ Languages:
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: The Hearst 2K Run is the only Gold Label 2K Run event in Canada and one of only four  Gold Label 2K Runs in the world. The Hearst 2K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the 2K Run Championships.
+      Value: <p>The Hearst 2K Run is the only Gold Label 2K Run event in Canada and one of only four &nbsp;Gold Label 2K Runs in the world. The Hearst 2K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the Region. The race is also home to the 2K Run Championships.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. The Hearst 2K Run is the only Gold Label 2K Run event in Canada and one of only four  Gold Label 2K Runs in the world. The Hearst 2K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the 2K Run Championships.
@@ -102,3 +105,12 @@ Languages:
       Hint: image
       Value: |
         <image alt="running03-800x410" mediaid="{CAB63A2E-91D6-45C1-B462-2EEF671D838C}" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 150
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 2K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

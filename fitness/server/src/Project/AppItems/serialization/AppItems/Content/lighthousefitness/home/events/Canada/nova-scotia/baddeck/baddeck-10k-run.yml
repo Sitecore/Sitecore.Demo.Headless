@@ -8,6 +8,9 @@ SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: qvj32TLPD0GxAKsp6UAPgw
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
@@ -59,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20210815T000000
+      Value: 20210815T040000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Baddeck 10K Run
@@ -74,7 +77,7 @@ Languages:
       Value: Baddeck 10K Run
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 46.1000
+      Value: 46.1
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
@@ -91,14 +94,23 @@ Languages:
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: "The Baddeck 10K Run is Canada's largest and fastest 10K Run. One of two Gold Label 10K Run events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Baddeck 10K Run is one of Canada's largest Qualifiers."
+      Value: "<p>The Baddeck 10K Run is Canada's largest and fastest 10K Run. One of two Gold Label 10K Run events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Baddeck 10K Run is one of Canada's largest Qualifiers.</p>"
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: "Long Description. The Baddeck 10K Run is Canada's largest and fastest 10K Run. One of two Gold Label 10K Run events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Baddeck 10K Run is one of Canada's largest Qualifiers."
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-60.7540"
+      Value: "-60.754"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
         <image alt="running01-800x410" mediaid="{2EC059D5-6FA8-4C21-8D32-A24540B9B1F9}" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 100
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 10K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running
