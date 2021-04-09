@@ -8,6 +8,9 @@ SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: "0F3z-zzDqkyDLQQbDhl3fA"
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
