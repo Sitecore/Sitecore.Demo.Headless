@@ -1,0 +1,51 @@
+﻿---
+ID: "7e081a40-c9c7-4daf-b731-5402e4ec47d9"
+Parent: "804a3d02-913c-4b20-a0b3-1ae7b6f4c83a"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
+Path: /sitecore/content/lighthousefitness/home/events/canada/alberta/Calgary/Calgary Spring Rock Climbing
+DB: master
+SharedFields:
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: xA1BeW660EyD8nQJAPvjgg
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
+      Hint: date
+      Value: 20210409T220613Z
+    - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
+      Hint: name
+      Value: Calgary Spring Rock Climbing
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210409T220613Z
+    - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
+      Hint: pageTitle
+      Value: Calgary Spring Rock Climbing
+    - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
+      Hint: latitude
+      Value: 51.045
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        default\Anonymous
+    - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
+      Hint: description
+      Value: |
+        <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh arcu, egestas a urna eu, semper blandit augue. Etiam viverra aliquet rhoncus. Fusce vitae eleifend lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus pulvinar quis lacus vitae tempor. Aenean eleifend varius ante, et dapibus mi maximus eu. Proin commodo gravida nibh in consequat. Fusce non arcu eget mauris congue imperdiet. Morbi vulputate ipsum a elit consectetur malesuada.</p>
+    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
+      Hint: longDescription
+      Value: |
+        <p style="text-align:justify;">Nullam fringilla sem ex, commodo dictum neque egestas nec. Fusce ultrices porttitor sapien ac imperdiet. Quisque pharetra, quam non facilisis hendrerit, purus eros consequat nulla, eu mollis ex lorem in enim. Proin metus elit, mollis fringilla dui in, feugiat varius augue. Pellentesque vel magna vel nisl scelerisque pretium eget a augue. Mauris maximus efficitur massa, at imperdiet mi rutrum eu. Quisque tincidunt ultricies lacus. Nullam non consequat nunc. Nam sollicitudin lacus rhoncus, mattis risus eu, pellentesque tortor. Phasellus a malesuada nisl. Sed leo dui, hendrerit sit amet tortor vel, vulputate volutpat velit. Donec at tincidunt elit. Aliquam et tincidunt elit. Fusce gravida varius tortor at commodo. Integer hendrerit venenatis mauris, nec suscipit arcu posuere quis.</p>
+    - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
+      Hint: longitude
+      Value: "-114.057"
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 130
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 20K
