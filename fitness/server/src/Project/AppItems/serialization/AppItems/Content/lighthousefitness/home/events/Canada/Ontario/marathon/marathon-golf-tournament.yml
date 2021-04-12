@@ -107,7 +107,7 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="golf" mediaid="{978F9236-8F42-4295-A591-49FD12C930EC}" />
+        <image alt="golf-original06.jpg" mediaid="" stylelabs-content-id="33208" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33208/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/7844e00b5a6d43fd82a8569781f2a35b?v=c6db24a4" stylelabs-content-type="Image" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 48

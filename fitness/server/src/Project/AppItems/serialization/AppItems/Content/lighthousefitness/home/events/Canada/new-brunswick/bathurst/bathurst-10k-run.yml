@@ -62,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20221103T000000
+      Value: 20221103T040000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Bathurst 10K Run
@@ -104,4 +104,4 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running09-800x410" mediaid="{BD5B1D1C-2105-497C-97C4-83231B34255A}" />
+        <image alt="running_lighthouse_fitness_5.jpg" mediaid="" stylelabs-content-id="29686" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29686/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/8e54267da9664059befea5a3428ac8fd?v=a58866c5" stylelabs-content-type="Image" height="410" width="800" />

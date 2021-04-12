@@ -62,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20221212T000000
+      Value: 20221212T050000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Fredericton 10K Run
@@ -104,4 +104,4 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running06-800x410" mediaid="{E677FCBB-45F1-4A47-A17C-FF5F81E97D37}" />
+        <image alt="running-original06.jpg" mediaid="" stylelabs-content-id="35666" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/35666/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/876b110fb2464351bbbf785df27ffaa3?v=d4d50a18" stylelabs-content-type="Image" height="410" width="800" />

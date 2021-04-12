@@ -107,7 +107,7 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="basketball" mediaid="{4F7550D2-BC2C-4553-BF5F-00551BF82A7B}" />
+        <image alt="basketball-original07.jpg" mediaid="" stylelabs-content-id="33510" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33510/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/b9cb9f12663641d895e0a8d6178b2b88?v=41b0f6b7" stylelabs-content-type="Image" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 30

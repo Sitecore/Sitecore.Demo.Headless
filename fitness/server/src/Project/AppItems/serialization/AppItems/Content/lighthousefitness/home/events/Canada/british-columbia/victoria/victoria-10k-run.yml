@@ -62,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20211012T000000
+      Value: 20211012T040000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Victoria 10K Run
@@ -104,4 +104,4 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running08-800x410" mediaid="{EE8A3FB5-55E9-4F8A-AB8F-E91226B74947}" />
+        <image alt="running-original08.jpg" mediaid="" stylelabs-content-id="33076" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33076/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/f49b533edf7046dcb1cc695ffc0cc92a?v=89ca2e18" stylelabs-content-type="Image" height="410" width="800" />

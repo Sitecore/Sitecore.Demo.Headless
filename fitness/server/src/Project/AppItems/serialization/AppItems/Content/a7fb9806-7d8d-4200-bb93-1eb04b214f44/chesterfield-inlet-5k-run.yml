@@ -104,7 +104,7 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running08-800x410" mediaid="{EE8A3FB5-55E9-4F8A-AB8F-E91226B74947}" />
+        <image alt="running-original08.jpg" mediaid="" stylelabs-content-id="33076" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33076/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/f49b533edf7046dcb1cc695ffc0cc92a?v=8d151dff" stylelabs-content-type="Image" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 70

@@ -62,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20211104T000000
+      Value: 20211104T040000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Churchill Marathon
@@ -104,4 +104,4 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running03-800x410" mediaid="{CAB63A2E-91D6-45C1-B462-2EEF671D838C}" />
+        <image alt="running_lighthouse_fitness_3.jpg" mediaid="" stylelabs-content-id="29677" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29677/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/a4762ecedc75415f8f6b5ba3ea47e00c?v=e85f1acf" stylelabs-content-type="Image" height="410" width="800" />

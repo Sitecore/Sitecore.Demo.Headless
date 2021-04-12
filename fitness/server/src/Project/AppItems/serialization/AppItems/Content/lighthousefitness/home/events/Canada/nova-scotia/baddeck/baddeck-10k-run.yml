@@ -104,7 +104,7 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running01-800x410" mediaid="{2EC059D5-6FA8-4C21-8D32-A24540B9B1F9}" />
+        <image alt="running_lighthouse_fitness_1.jpg" mediaid="" stylelabs-content-id="29674" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29674/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/4c7b4580098442b8971c2039c702e8b2?v=7d49b1d9" stylelabs-content-type="Image" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 100

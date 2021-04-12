@@ -68,7 +68,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20220130T040000
+      Value: 20220130T090000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Banff Golf Tournament
@@ -107,4 +107,4 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="golf" mediaid="{B1244BB8-A4EC-451A-A2BF-C3F535DFA4D0}" />
+        <image alt="golf_lighthouse_fitness_2.jpg" mediaid="" stylelabs-content-id="29659" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29659/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/a3e01646c8ba4135b14cbdb2ce8d4f1a?v=3f842134" stylelabs-content-type="Image" height="410" width="800" />

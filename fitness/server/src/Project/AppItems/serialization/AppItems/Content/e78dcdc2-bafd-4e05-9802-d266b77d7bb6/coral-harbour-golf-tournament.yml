@@ -107,7 +107,7 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="golf" mediaid="{43D957C4-587B-4865-99F2-87CEE71E25AF}" />
+        <image alt="golf_lighthouse_fitness_4.jpg" mediaid="" stylelabs-content-id="29665" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29665/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/14daf02ed28745d99268a102510e7b3f?v=51b0c668" stylelabs-content-type="Image" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 52

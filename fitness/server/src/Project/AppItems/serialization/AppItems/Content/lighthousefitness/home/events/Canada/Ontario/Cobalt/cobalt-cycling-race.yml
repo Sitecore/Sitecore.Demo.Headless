@@ -103,7 +103,7 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="cycling" mediaid="{2D68C915-4484-4866-B611-1EBD57C814FF}" />
+        <image alt="cycling_lighthouse_fitness_4.jpg" mediaid="" stylelabs-content-id="29653" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29653/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/08ca72c8ed7740f085de7329be5b1acf?v=b02d9b9b" stylelabs-content-type="Image" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 100

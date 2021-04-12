@@ -107,7 +107,7 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="basketball" mediaid="{4E1BD941-BD93-49A8-B171-F6E7499D4853}" />
+        <image alt="basketball_lighthouse_fitness_2.jpg" mediaid="" stylelabs-content-id="29695" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29695/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/7511c26c1f4149da8da737951f46eb24?v=05a9897a" stylelabs-content-type="Image" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 15

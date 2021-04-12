@@ -103,7 +103,7 @@ Languages:
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="cycling" mediaid="{745358F9-B88B-47B2-85B4-C24BB397F1BD}" />
+        <image alt="cycling-original3.jpg" mediaid="" stylelabs-content-id="33374" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33374/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/6e36a712b91f4186a43f0fa1f425f785?v=bcc374b5" stylelabs-content-type="Image" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 30
