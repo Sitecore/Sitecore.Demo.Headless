@@ -15,7 +15,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20210409T220613Z
+      Value: 20220806T140000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Calgary Spring Rock Climbing
@@ -43,9 +43,16 @@ Languages:
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-114.057"
+    - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
+      Hint: image
+      Value: |
+        <image stylelabs-content-id="29668" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29668/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/b88afa5a9a8e41e5a9c65b1b209936d3?v=9d25f890" mediaid="" stylelabs-content-type="Image" alt="rockclimbing_lighthouse_fitness_1.jpg" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 130
     - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
       Hint: length
       Value: 20K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Rock Climbing
