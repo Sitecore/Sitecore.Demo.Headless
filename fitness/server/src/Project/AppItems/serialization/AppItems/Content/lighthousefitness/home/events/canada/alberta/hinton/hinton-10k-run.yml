@@ -24,13 +24,17 @@ Languages:
       Hint: name
       Value: Hinton 10K Run
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
-      Value: "20210412T164125:637538424854947098Z"
+      Hint: __Created
+      Value: 20210412T164125Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Hinton 10K Run
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
       Value: 53.4
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
       Value: <p>The Hinton 10K Run is the only Gold Label 10K Run event in Canada and one of only four Gold Label 10K Runs in the world. The Hinton 10K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the Region. The race is also home to the 10K Run Championships.</p>
