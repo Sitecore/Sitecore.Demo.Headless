@@ -13,7 +13,7 @@ services:
   mssql:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
-    image: ${REGISTRY}demo/lighthouse-jss-mssql:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-mssql:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
       context: .
       dockerfile: .\docker\images\demo-sqldev\dockerfile
@@ -53,7 +53,7 @@ services:
       - demo
 
   id:
-    image: ${REGISTRY}demo/lighthouse-jss-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
       context: .
       dockerfile: .\docker\images\demo-id\dockerfile
@@ -68,7 +68,7 @@ services:
       - demo
 
   cm:
-    image: ${REGISTRY}demo/lighthouse-xp0-jss-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-xp0-headless-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\JssDevelopmentEntrypoint.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('C:\\src\\Web.config'); }"
     build:
       context: .
@@ -131,7 +131,7 @@ services:
           - "${CM_HOST}"
 
   xconnect:
-    image: ${REGISTRY}demo/lighthouse-xp0-jss-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-xp0-headless-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     # TODO: Do we need a specific xConnect entrypoint like in 9.3?
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"
     build:
@@ -155,7 +155,7 @@ services:
       - demo
 
   xdbsearchworker:
-    image: ${REGISTRY}demo/lighthouse-xp0-jss-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-xp0-headless-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
     build:
       context: .
@@ -172,7 +172,7 @@ services:
       - demo
 
   xdbautomationworker:
-    image: ${REGISTRY}demo/lighthouse-xp0-jss-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-xp0-headless-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
     build:
       context: .
@@ -196,7 +196,7 @@ services:
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000/healthz/live"]
       timeout: 300s
-    image: ${REGISTRY}demo/lighthouse-jss-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     isolation: ${TRAEFIK_ISOLATION}
     build:
       context: .
@@ -218,23 +218,23 @@ services:
       - demo
 
   ps-init:
-      image: ${REGISTRY}demo/lighthouse-jss-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-      isolation: ${TRAEFIK_ISOLATION}
-      environment:
-        ASPNETCORE_URLS: "http://*:5000"
-        SITECORE_Sitecore:Publishing:ConnectionStrings:Core: Data Source=mssql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
-        SITECORE_Sitecore:Publishing:ConnectionStrings:Master: Data Source=mssql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
-        SITECORE_Sitecore:Publishing:ConnectionStrings:Web: Data Source=mssql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
-      command: schema upgrade --force
-      depends_on:
-        mssql:
-          condition: service_healthy
-      networks:
-        - demo
+    image: ${REGISTRY}demo/lighthouse-headless-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    isolation: ${TRAEFIK_ISOLATION}
+    environment:
+      ASPNETCORE_URLS: "http://*:5000"
+      SITECORE_Sitecore:Publishing:ConnectionStrings:Core: Data Source=mssql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
+      SITECORE_Sitecore:Publishing:ConnectionStrings:Master: Data Source=mssql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
+      SITECORE_Sitecore:Publishing:ConnectionStrings:Web: Data Source=mssql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
+    command: schema upgrade --force
+    depends_on:
+      mssql:
+        condition: service_healthy
+    networks:
+      - demo
 
   cd:
     isolation: ${ISOLATION}
-    image: ${REGISTRY}demo/lighthouse-xp0-jss-cd:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-xp0-headless-cd:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"
     build:
       context: .
@@ -322,7 +322,7 @@ services:
           - "${KIOSK_CD_HOST}"
 
   app:
-    image: ${REGISTRY}demo/lighthouse-jss-app:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-app:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     isolation: ${ISOLATION}
     build:
       context: .
@@ -357,7 +357,7 @@ services:
           - ${APP_HOST}
 
   kiosk:
-    image: ${REGISTRY}demo/lighthouse-jss-kiosk:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-kiosk:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     isolation: ${ISOLATION}
     build:
       context: .
@@ -400,7 +400,7 @@ services:
   init:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
-    image: ${REGISTRY}demo/lighthouse-jss-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     isolation: ${ISOLATION}
     build:
       context: .\docker\images\demo-init
@@ -436,7 +436,7 @@ services:
   authoringhost:
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/healthz/live"]
-    image: ${REGISTRY}demo/lighthouse-jss-authoringhost:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-authoringhost:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     isolation: ${ISOLATION}
     build:
       context: docker\images\demo-authoringhost

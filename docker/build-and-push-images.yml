@@ -2,13 +2,14 @@
 trigger:
   branches:
     include:
-    - develop
+      - develop
+      - upgrade/*
 schedules:
   - cron: "0 17 * * 0"
     displayName: Weekly Sunday build
     branches:
       include:
-      - master
+      - main
       - develop
     always: true
 resources:
@@ -16,11 +17,11 @@ resources:
   clean: true
 
 variables:
-  GitVersion.SemVer: ''
-  SITECORE_VERSION: '10.1.0'
-  GitVersion.PreReleaseLabel: ''
-  tag: '$(GitVersion.SemVer)'
-  additionalImageTags: ''
+  GitVersion.SemVer: ""
+  SITECORE_VERSION: "10.1.0"
+  GitVersion.PreReleaseLabel: ""
+  tag: "$(GitVersion.SemVer)"
+  additionalImageTags: ""
 
 stages:
 - stage: Docker_Windows
@@ -237,8 +238,8 @@ stages:
           inputs:
             targetType: "inline"
             script: |
-              Invoke-RestMethod -Uri "$(DEV_PORTAL)/api/UpdateDefinition?demoType=headless-xp0-vnext&sitecoreVersion=$(SITECORE_VERSION)&channel=nightly" -Method POST -Body "{ apiKey: '$(DEV_PORTAL_API_KEY)', tag: '$(GitVersion.SemVer)' }" -ContentType "application/json"
-              Invoke-RestMethod -Uri "$(PROD_PORTAL)/api/UpdateDefinition?demoType=headless-xp0-vnext&sitecoreVersion=$(SITECORE_VERSION)&channel=nightly" -Method POST -Body "{ apiKey: '$(PROD_PORTAL_API_KEY)', tag: '$(GitVersion.SemVer)' }" -ContentType "application/json"
+              Invoke-RestMethod -Uri "$(DEV_PORTAL)/api/UpdateDefinition?demoType=headless-bx-oc-vnext&sitecoreVersion=$(SITECORE_VERSION)&channel=nightly" -Method POST -Body "{ apiKey: '$(DEV_PORTAL_API_KEY)', tag: '$(GitVersion.SemVer)' }" -ContentType "application/json"
+              Invoke-RestMethod -Uri "$(PROD_PORTAL)/api/UpdateDefinition?demoType=headless-bx-oc-vnext&sitecoreVersion=$(SITECORE_VERSION)&channel=nightly" -Method POST -Body "{ apiKey: '$(PROD_PORTAL_API_KEY)', tag: '$(GitVersion.SemVer)' }" -ContentType "application/json"
 
 - stage: Update_DEV_Portal_Databases_Stable
   displayName: "Update 'stable' version in the DEV portal database"
@@ -261,7 +262,7 @@ stages:
           inputs:
             targetType: "inline"
             script: |
-              Invoke-RestMethod -Uri "$(DEV_PORTAL)/api/UpdateDefinition?demoType=headless-xp0-vnext&sitecoreVersion=$(SITECORE_VERSION)&channel=stable" -Method POST -Body "{ apiKey: '$(DEV_PORTAL_API_KEY)', tag: '$(GitVersion.SemVer)' }" -ContentType "application/json"
+              Invoke-RestMethod -Uri "$(DEV_PORTAL)/api/UpdateDefinition?demoType=headless-bx-oc-vnext&sitecoreVersion=$(SITECORE_VERSION)&channel=stable" -Method POST -Body "{ apiKey: '$(DEV_PORTAL_API_KEY)', tag: '$(GitVersion.SemVer)' }" -ContentType "application/json"
 
 - stage: Update_PROD_Portal_Database_Stable
   displayName: "Update 'stable' version in the PROD portal database"
@@ -284,7 +285,7 @@ stages:
           inputs:
             targetType: "inline"
             script: |
-              Invoke-RestMethod -Uri "$(PROD_PORTAL)/api/UpdateDefinition?demoType=headless-xp0-vnext&sitecoreVersion=$(SITECORE_VERSION)&channel=stable" -Method POST -Body "{ apiKey: '$(PROD_PORTAL_API_KEY)', tag: '$(GitVersion.SemVer)' }" -ContentType "application/json"
+              Invoke-RestMethod -Uri "$(PROD_PORTAL)/api/UpdateDefinition?demoType=headless-bx-oc-vnext&sitecoreVersion=$(SITECORE_VERSION)&channel=stable" -Method POST -Body "{ apiKey: '$(PROD_PORTAL_API_KEY)', tag: '$(GitVersion.SemVer)' }" -ContentType "application/json"
     - deployment: Update_Production_Database_Deployment
       displayName: "Update Production Database Deployment"
       environment: Production Portal Database
@@ -319,6 +320,7 @@ stages:
             branchToUse: "main"
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
+            # TODO: Change demoHeadless groupName for the new headless + BX + OC demo
             buildParameters: "namespace: demo, groupName: demoHeadless, tag: $(GitVersion.SemVer)"
             authenticationMethod: "Personal Access Token"
             password: "$(System.AccessToken)"
