@@ -81,20 +81,13 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {85B8A313-D1A2-442A-87F6-DAB82988215E}
-        {7F751697-7D3C-4ED3-905F-4D45166CF8EB}
-        {A6FC96D4-504E-46EF-A161-E9F6A2F8434E}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: Experience Deer Lake's diversity and beauty with a 5K Run that touches all aspects of its culture, and finishes with one hella awesome party.
+      Value: <p>Experience Deer Lake's diversity and beauty with a 5K Run that touches all aspects of its culture, and finishes with one hella awesome party.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. Experience Deer Lake's diversity and beauty with a 5K Run that touches all aspects of its culture, and finishes with one hella awesome party.
@@ -105,3 +98,12 @@ Languages:
       Hint: image
       Value: |
         <image alt="running-original05.jpg" mediaid="" stylelabs-content-id="33062" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33062/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/6912e66004c045c09b0261ce8eee6f23?v=417b0a2e" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 150
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

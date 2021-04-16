@@ -81,27 +81,29 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {CDAC73B6-EE89-4A68-B398-60CAD391CCCE}
-        {45076AB1-09CB-4FF2-B0BA-206E33305B5E}
-        {275A4C9C-E479-4248-B0D6-A45BE64A05AF}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: This is the race event of the year for Lethbridge. Challenge yourself to a 5K Run and join others with the same goals.
+      Value: <p>This is the race event of the year for Lethbridge. Challenge yourself to a 5K Run and join others with the same goals.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. This is the race event of the year for Lethbridge. Challenge yourself to a 5K Run and join others with the same goals.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-112.8333"
+      Value: "-112.833"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
         <image alt="running-original05.jpg" mediaid="" stylelabs-content-id="33062" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33062/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/6912e66004c045c09b0261ce8eee6f23?v=d1ef779c" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 90
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

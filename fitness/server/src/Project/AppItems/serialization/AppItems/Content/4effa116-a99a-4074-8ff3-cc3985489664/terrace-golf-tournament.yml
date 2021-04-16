@@ -83,21 +83,17 @@ Languages:
       Value: Terrace Golf Tournament
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 54.5000
+      Value: 54.5
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: "{EA3F3883-9973-454F-A182-139E60AD1D8F}"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: For a golfer, there is no better experience than a fabulous golf course in a spectacular setting. Truly, this is what Terrace Country Club has to offer. From rolling, open land to holes cut out of the forest, this amazing design, ranked as 'Best in State' provides the beauty and challenge every golfer demands. Six choices of tees and impeccable course conditions enable golfers of all skill levels to equally enjoy the course.
+      Value: <p>For a golfer, there is no better experience than a fabulous golf course in a spectacular setting. Truly, this is what Terrace Country Club has to offer. From rolling, open land to holes cut out of the forest, this amazing design, ranked as 'Best in State' provides the beauty and challenge every golfer demands. Six choices of tees and impeccable course conditions enable golfers of all skill levels to equally enjoy the course.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. For a golfer, there is no better experience than a fabulous golf course in a spectacular setting. Truly, this is what Terrace Country Club has to offer. From rolling, open land to holes cut out of the forest, this amazing design, ranked as 'Best in State' provides the beauty and challenge every golfer demands. Six choices of tees and impeccable course conditions enable golfers of all skill levels to equally enjoy the course.
@@ -108,3 +104,12 @@ Languages:
       Hint: image
       Value: |
         <image alt="golf_lighthouse_fitness_3.jpg" mediaid="" stylelabs-content-id="29662" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29662/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/29544a8fc65c452894399ce791b3844c?v=b83def20" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 25
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 18
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Golf

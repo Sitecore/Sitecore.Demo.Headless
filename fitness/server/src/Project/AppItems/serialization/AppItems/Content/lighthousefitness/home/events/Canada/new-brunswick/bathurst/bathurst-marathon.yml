@@ -77,31 +77,33 @@ Languages:
       Value: Bathurst Marathon
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 47.6000
+      Value: 47.6
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {50E5FD9F-036C-42E7-B31E-0E0A3748E6A3}
-        {40E65D51-8617-42A0-B915-D467B9BE79AA}
-        {0E469770-7454-4DE4-A3C5-5CB1D084E8AE}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: "The Bathurst Marathon is Canada's largest and fastest Marathon. One of two Gold Label Marathon events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Bathurst Marathon is one of Canada's largest Qualifiers."
+      Value: "<p>The Bathurst 10K Run is Canada's largest and fastest 10K Run. One of two Gold Label 10K Run events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Bathurst 10K Run is one of Canada's largest Qualifiers.</p>"
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: "Long Description. The Bathurst Marathon is Canada's largest and fastest Marathon. One of two Gold Label Marathon events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Bathurst Marathon is one of Canada's largest Qualifiers."
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-65.6500"
+      Value: "-65.65"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
         <image alt="running_lighthouse_fitness_4.jpg" mediaid="" stylelabs-content-id="29683" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29683/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/4a175de9e7d844a8a599c7c907c20597?v=0a4e5a15" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 250
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 10K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running, Swimming

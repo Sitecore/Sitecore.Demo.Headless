@@ -77,24 +77,17 @@ Languages:
       Value: Nanaimo Half Marathon
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 49.1460
+      Value: 49.146
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {D4E1C5D8-BE15-4D22-AF98-67907B3D32D3}
-        {15EE2531-8C56-4231-B6BA-5EBC52489A17}
-        {F506DB5A-0B13-4158-A425-9622B993D22F}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: The Nanaimo Half Marathon is the only Gold Label Half Marathon event in Canada and one of only four  Gold Label Half Marathons in the world. The Nanaimo Half Marathon attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the Half Marathon Championships.
+      Value: <p>The Nanaimo Half Marathon is the only Gold Label Half Marathon event in Canada and one of only four Gold Label Half Marathons in the world. The Nanaimo Half Marathon attracts one of the world's best fields of pro runners as well as thousands of participants from across the Region. The race is also home to the Half Marathon Championships.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. The Nanaimo Half Marathon is the only Gold Label Half Marathon event in Canada and one of only four  Gold Label Half Marathons in the world. The Nanaimo Half Marathon attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the Half Marathon Championships.
@@ -105,3 +98,12 @@ Languages:
       Hint: image
       Value: |
         <image alt="running-original06.jpg" mediaid="" stylelabs-content-id="35666" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/35666/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/876b110fb2464351bbbf785df27ffaa3?v=54764897" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 135
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5k
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running, Cycling, Swimming

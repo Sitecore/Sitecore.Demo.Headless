@@ -81,20 +81,13 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {14B0ADF4-C096-4CDA-B89B-EE6CB9621893}
-        {A216823C-7F87-4997-B4A9-8C8F9F0D5BAB}
-        {629C6902-7D50-43A2-8E84-EDFCA26A0EAF}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: "The Steinbach Half Marathon is Canada's largest and fastest Half Marathon. One of two Gold Label Half Marathon events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Steinbach Half Marathon is one of Canada's largest Qualifiers."
+      Value: <p>The Steinbach 5K Run is the only Gold Label 5K Run event in Canada and one of only four Gold Label 5K Runs in the world. The Steinbach 5K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the Region. The race is also home to the 5K Run Championships.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: "Long Description. The Steinbach Half Marathon is Canada's largest and fastest Half Marathon. One of two Gold Label Half Marathon events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Steinbach Half Marathon is one of Canada's largest Qualifiers."
@@ -105,3 +98,12 @@ Languages:
       Hint: image
       Value: |
         <image alt="running_lighthouse_fitness_5.jpg" mediaid="" stylelabs-content-id="29686" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29686/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/8e54267da9664059befea5a3428ac8fd?v=ad8bf505" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 99
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

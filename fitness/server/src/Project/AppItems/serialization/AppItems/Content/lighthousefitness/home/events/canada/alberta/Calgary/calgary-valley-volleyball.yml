@@ -42,7 +42,7 @@ Languages:
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
       Value: |
-        <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh arcu, egestas a urna eu, semper blandit augue. Etiam viverra aliquet rhoncus. Fusce vitae eleifend lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus pulvinar quis lacus vitae tempor. Aenean eleifend varius ante, et dapibus mi maximus eu. Proin commodo gravida nibh in consequat. Fusce non arcu eget mauris congue imperdiet. Morbi vulputate ipsum a elit consectetur malesuada.</p>
+        <p style="text-align:justify;">The game of volleyball goes back as far as 1895, when it was invented in America as a hybrid of tennis and basketball. Join as a team or an individual and spend the day in the sand courts.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: |
@@ -57,9 +57,6 @@ Languages:
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
       Value: 130
-    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
-      Hint: length
-      Value: 20K
     - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
       Hint: sportType
       Value: Volleyball

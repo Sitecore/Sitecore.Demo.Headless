@@ -77,31 +77,33 @@ Languages:
       Value: Churchill Marathon
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 58.7660
+      Value: 58.766
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {DC2ADC0A-CF15-4569-AEB4-6E8871C2037A}
-        {BAB4280A-6DAF-4D8A-9599-33AA5A7E7C51}
-        {E6C30551-C0A2-4268-AF8D-63C034770259}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: The Churchill Marathon is the only Gold Label Marathon event in Canada and one of only four  Gold Label Marathons in the world. The Churchill Marathon attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the Marathon Championships.
+      Value: <p>Experience Churchill's diversity and beauty with a 10K Run that touches all aspects of its culture, and finishes with one hella awesome party.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. The Churchill Marathon is the only Gold Label Marathon event in Canada and one of only four  Gold Label Marathons in the world. The Churchill Marathon attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the Marathon Championships.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-94.1660"
+      Value: "-94.166"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
         <image alt="running_lighthouse_fitness_3.jpg" mediaid="" stylelabs-content-id="29677" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29677/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/a4762ecedc75415f8f6b5ba3ea47e00c?v=e85f1acf" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 100
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 10K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running, Cycling, Swimming

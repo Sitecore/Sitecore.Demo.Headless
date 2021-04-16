@@ -77,31 +77,33 @@ Languages:
       Value: Gillam 5K Run
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 56.3500
+      Value: 56.35
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {31D06128-03E7-47CB-987A-9A025CA2DDC9}
-        {0031DC17-FB2F-4696-9D5F-AF78E29C816F}
-        {D5EE39B2-E446-4AAB-8C34-4FE4F9888868}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: The Gillam 5K Run is the only Gold Label 5K Run event in Canada and one of only four  Gold Label 5K Runs in the world. The Gillam 5K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the 5K Run Championships.
+      Value: <p>The Gillam 5K Run is the only Gold Label 5K Run event in Canada and one of only four Gold Label 5K Runs in the world. The Gillam 5K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the Region. The race is also home to the 5K Run Championships.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. The Gillam 5K Run is the only Gold Label 5K Run event in Canada and one of only four  Gold Label 5K Runs in the world. The Gillam 5K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the  Region. The race is also home to the 5K Run Championships.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-94.7000"
+      Value: "-94.7"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
         <image alt="running-original11.jpg" mediaid="" stylelabs-content-id="33039" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33039/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/e77905a22f8d48e48c82191a62e777ca?v=92c35054" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 100
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

@@ -77,24 +77,17 @@ Languages:
       Value: Fredericton 2K Run
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 45.9500
+      Value: 45.95
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {65800812-47CF-4367-BEDF-69242217E512}
-        {0EAE3847-2840-428B-BDBC-D48FA6F6892B}
-        {CB1B3972-C015-42A3-B145-20B0D240E849}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: Starting and finishing in Fredericton, you will be rewarded with stunning views. Join the 2K Run and visit the beauty of Fredericton
+      Value: <p>This is the race event of the year for Fredericton. Challenge yourself to a 10K Run and join others with the same goals.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. Starting and finishing in Fredericton, you will be rewarded with stunning views. Join the 2K Run and visit the beauty of Fredericton
@@ -105,3 +98,12 @@ Languages:
       Hint: image
       Value: |
         <image alt="running-original08.jpg" mediaid="" stylelabs-content-id="33076" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33076/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/f49b533edf7046dcb1cc695ffc0cc92a?v=09d64ac2" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 150
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 2K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

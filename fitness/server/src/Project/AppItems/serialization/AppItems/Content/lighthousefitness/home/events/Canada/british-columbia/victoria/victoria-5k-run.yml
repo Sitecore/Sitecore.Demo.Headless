@@ -81,27 +81,29 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {B43B9A8F-715D-46DF-B54E-1155A7F6BAFC}
-        {66F8DC1A-23E1-41E5-B06B-778C311DB321}
-        {89C6D1E0-1F2D-46AC-9E4D-A65C7C7C38BB}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: This is the race event of the year for Victoria. Challenge yourself to a 5K Run and join others with the same goals.
+      Value: <p>The Victoria 5K Run is the only Gold Label 10K Run event in Canada and one of only four Gold Label 10K Runs in the world. The Victoria 5K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the Region. The race is also home to the 10K Run Championships.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. This is the race event of the year for Victoria. Challenge yourself to a 5K Run and join others with the same goals.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-123.3500"
+      Value: "-123.35"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
         <image alt="running_lighthouse_fitness_5.jpg" mediaid="" stylelabs-content-id="29686" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29686/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/8e54267da9664059befea5a3428ac8fd?v=d0c5f3d6" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 150
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

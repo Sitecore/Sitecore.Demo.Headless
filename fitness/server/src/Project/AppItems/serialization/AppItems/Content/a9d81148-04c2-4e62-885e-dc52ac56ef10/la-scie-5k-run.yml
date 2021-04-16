@@ -77,31 +77,33 @@ Languages:
       Value: La Scie 5K Run
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 49.9670
+      Value: 49.967
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {14079F74-AF16-45FE-A9D6-9C3B10201BCE}
-        {A90D4E9C-8682-4DFF-9E8E-7FFEB4D28863}
-        {7101D18D-38EB-4832-B429-6C95835B9374}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: Experience La Scie's diversity and beauty with a 5K Run that touches all aspects of its culture, and finishes with one hella awesome party.
+      Value: <p>Experience La Scie's diversity and beauty with a 5K Run that touches all aspects of its culture, and finishes with one hella awesome party.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. Experience La Scie's diversity and beauty with a 5K Run that touches all aspects of its culture, and finishes with one hella awesome party.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-55.5830"
+      Value: "-55.583"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
         <image alt="running_lighthouse_fitness_3.jpg" mediaid="" stylelabs-content-id="29677" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29677/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/a4762ecedc75415f8f6b5ba3ea47e00c?v=8ae07c52" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 150
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

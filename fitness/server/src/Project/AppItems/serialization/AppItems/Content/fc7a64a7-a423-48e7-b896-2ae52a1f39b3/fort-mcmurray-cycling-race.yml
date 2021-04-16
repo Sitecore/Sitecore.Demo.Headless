@@ -81,19 +81,13 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {FD83F183-20A9-4804-8335-21A90A7EB9CF}
-        {3464BFE5-56BC-44F5-8BBD-B0B9DAB22113}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: Fort McMurray Road Race. To get to the start, go up RT 38 and turn left on West Creek road, follow for 1/2 mile to start/finish area. Course goes out West Creek 5 miles, left turn on Back West Creek, then another immediate right puts you back on West Creek. Finish is at the Rail Road Crossing sign.
+      Value: <p>Fort McMurray Road Race. To get to the start, go up RT 38 and turn left on West Creek road, follow for 1/2 mile to start/finish area. Course goes out West Creek 5 miles, left turn on Back West Creek, then another immediate right puts you back on West Creek. Finish is at the Rail Road Crossing sign.</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: Long Description. Fort McMurray Road Race. To get to the start, go up RT 38 and turn left on West Creek road, follow for 1/2 mile to start/finish area. Course goes out West Creek 5 miles, left turn on Back West Creek, then another immediate right puts you back on West Creek. Finish is at the Rail Road Crossing sign.
@@ -104,3 +98,12 @@ Languages:
       Hint: image
       Value: |
         <image alt="cycling_lighthouse_fitness_4.jpg" mediaid="" stylelabs-content-id="29653" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29653/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/08ca72c8ed7740f085de7329be5b1acf?v=e501d0f2" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 55
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5 Miles
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Cycling

@@ -42,7 +42,7 @@ Languages:
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
       Value: |
-        <p style="text-align:justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh arcu, egestas a urna eu, semper blandit augue. Etiam viverra aliquet rhoncus. Fusce vitae eleifend lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus pulvinar quis lacus vitae tempor. Aenean eleifend varius ante, et dapibus mi maximus eu. Proin commodo gravida nibh in consequat. Fusce non arcu eget mauris congue imperdiet. Morbi vulputate ipsum a elit consectetur malesuada.</p>
+        <p style="text-align:justify;">Bowling can be enjoyed by people of all ages and is a family friendly way to get active. Come join the bowling community in Calgary and learn from some of the best bowlers in the country. Don't forget to bring your own bowling ball or shoes if you have them!</p>
     - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
       Hint: longDescription
       Value: |
@@ -56,10 +56,10 @@ Languages:
         <image stylelabs-content-id="29860" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29860/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/ef11757f9d4d411487f0fdcb4efea4eb?v=b0cbdd2b" mediaid="" stylelabs-content-type="Image" alt="Lighthouse Fitness Bowling" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
-      Value: 130
+      Value: 50
     - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
       Hint: length
-      Value: 20K
+      Value: 
     - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
       Hint: sportType
       Value: Bowling
