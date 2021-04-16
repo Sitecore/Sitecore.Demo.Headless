@@ -2,10 +2,14 @@
 ID: "804a3d02-913c-4b20-a0b3-1ae7b6f4c83a"
 Parent: "a89960a9-11f8-4dd9-8308-72af6f03beb6"
 Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
-Path: /sitecore/content/lighthousefitness/home/events/canada/alberta/Calgary
+Path: /sitecore/content/lighthousefitness/home/events/canada/alberta/calgary
 DB: master
 Languages:
 - Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Calgary
   Versions:
   - Version: 1
     Fields:
