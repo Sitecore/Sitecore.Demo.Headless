@@ -81,13 +81,6 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {3485FD76-DFA4-4E0D-98EB-403ACC2CBBFF}
-        {34D6DD96-D6DA-4DD1-A9DD-AAA0B775BA6A}
-        {F4188988-9606-4CD7-BADC-48EFAA6E26F7}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
