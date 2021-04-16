@@ -88,9 +88,6 @@ Languages:
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
       Value: <p>This is the race event of the year for Fredericton. Challenge yourself to a 10K Run and join others with the same goals.</p>
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: Long Description. This is the race event of the year for Fredericton. Challenge yourself to a 10K Run and join others with the same goals.
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-66.6333"

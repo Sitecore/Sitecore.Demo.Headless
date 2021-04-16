@@ -43,10 +43,6 @@ Languages:
       Hint: description
       Value: |
         <p style="text-align:justify;">The Introduction to Kayaking race is designed as a short program emphasizing safety, enjoyment and skill acquisition for entry level individuals wanting to learn more about this fun sport. All necessary equipment will be provided by the event organizers so you can focus on learning and having fun.</p>
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: |
-        <p style="text-align:justify;">Nullam fringilla sem ex, commodo dictum neque egestas nec. Fusce ultrices porttitor sapien ac imperdiet. Quisque pharetra, quam non facilisis hendrerit, purus eros consequat nulla, eu mollis ex lorem in enim. Proin metus elit, mollis fringilla dui in, feugiat varius augue. Pellentesque vel magna vel nisl scelerisque pretium eget a augue. Mauris maximus efficitur massa, at imperdiet mi rutrum eu. Quisque tincidunt ultricies lacus. Nullam non consequat nunc. Nam sollicitudin lacus rhoncus, mattis risus eu, pellentesque tortor. Phasellus a malesuada nisl. Sed leo dui, hendrerit sit amet tortor vel, vulputate volutpat velit. Donec at tincidunt elit. Aliquam et tincidunt elit. Fusce gravida varius tortor at commodo. Integer hendrerit venenatis mauris, nec suscipit arcu posuere quis.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-114.057"
