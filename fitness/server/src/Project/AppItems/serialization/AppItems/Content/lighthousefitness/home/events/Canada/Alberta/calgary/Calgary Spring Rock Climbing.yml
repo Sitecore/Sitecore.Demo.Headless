@@ -1,8 +1,8 @@
 ﻿---
-ID: "7e081a40-c9c7-4daf-b731-5402e4ec47d9"
-Parent: "804a3d02-913c-4b20-a0b3-1ae7b6f4c83a"
+ID: "46f73521-5d1b-47d5-a684-f34c433ff2db"
+Parent: "0f0bdf0e-106b-424b-8fb6-fe02a053345a"
 Template: "388a8591-1c69-4060-ae16-02e47861c045"
-Path: "/sitecore/content/lighthousefitness/home/events/canada/alberta/calgary/calgary-spring-rock-climbing"
+Path: /sitecore/content/lighthousefitness/home/events/canada/alberta/calgary/Calgary Spring Rock Climbing
 DB: master
 SharedFields:
 - ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
@@ -10,52 +10,44 @@ SharedFields:
   Value: xA1BeW660EyD8nQJAPvjgg
 Languages:
 - Language: en
-  Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
-    Hint: __Display name
-    Value: Calgary Spring Rock Climbing
   Versions:
   - Version: 1
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20220806T140000Z
+      Value: 20210419T170247Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Calgary Spring Rock Climbing
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20210409T220613Z
+      Value: 20210419T170247Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Calgary Spring Rock Climbing
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
       Value: 51.045
-    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
-      Hint: __Workflow state
-      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         default\Anonymous
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: |
-        <p style="text-align:justify;">Enjoy a breathtaking view while climbing some intermediate to challenging rock walls in Calgary. Learn from local experts who will be volunteering to help promote this exciting and growing sport.</p>
+      Value: <p>Enjoy a breathtaking view while climbing some intermediate to challenging rock walls in Calgary. Learn from local experts who will be volunteering to help promote this exciting and growing sport.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-114.057"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image stylelabs-content-id="29668" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29668/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/b88afa5a9a8e41e5a9c65b1b209936d3?v=9d25f890" mediaid="" stylelabs-content-type="Image" alt="rockclimbing_lighthouse_fitness_1.jpg" height="410" width="800" />
+        <image stylelabs-content-id="29668" thumbnailsrc="https://sitecoredemoteamdevbackup.stylelabs.io/api/gateway/29668/thumbnail" src="https://sitecoredemoteamdevbackup.stylelabs.io/api/public/content/b88afa5a9a8e41e5a9c65b1b209936d3?v=02ba6bc5" mediaid="" stylelabs-content-type="Image" alt="rockclimbing_lighthouse_fitness_1.jpg" height="410" width="800" />
     - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
       Hint: numberOfParticipants
-      Value: 130
+      Value: 25
     - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
       Hint: length
-      Value: 20K
+      Value: 500M
     - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
       Hint: sportType
       Value: Rock Climbing
