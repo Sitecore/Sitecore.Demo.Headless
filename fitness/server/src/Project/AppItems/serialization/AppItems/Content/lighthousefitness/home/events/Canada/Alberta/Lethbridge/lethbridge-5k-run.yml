@@ -90,7 +90,7 @@ Languages:
       Value: <p>This is the race event of the year for Lethbridge. Challenge yourself to a 5K Run and join others with the same goals.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-112.833"
+      Value: "-112.8333"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
