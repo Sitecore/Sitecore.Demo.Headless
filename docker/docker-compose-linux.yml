@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: ${REGISTRY}demo/lighthouse-jss-mssql:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-mssql:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default
     build:
       context: ../
@@ -30,7 +30,7 @@ services:
   init:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
-    image: ${REGISTRY}demo/lighthouse-jss-init:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-init:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     build:
       context: ./images/demo-init
       args:
@@ -49,7 +49,7 @@ services:
       COVEO_FARM_NAME: ${COVEO_FARM_NAME}
       COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
   solr:
-    image: ${REGISTRY}demo/lighthouse-jss-solr:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-solr:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default
     build:
       context: ./images/demo-solr
@@ -62,7 +62,7 @@ services:
     ports:
       - "44011:8983"
   app:
-    image: ${REGISTRY}demo/lighthouse-jss-app:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-app:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default
     build:
       context: ../
@@ -86,7 +86,7 @@ services:
         aliases:
           - app.${HOSTNAME_SUFFIX}
   kiosk:
-    image: ${REGISTRY}demo/lighthouse-jss-kiosk:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-kiosk:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default
     build:
       context: ../
