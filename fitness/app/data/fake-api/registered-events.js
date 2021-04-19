@@ -34,59 +34,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        length: {
+          value: "13mi"
+        },
+        numberOfParticpants: {
+          value: "3"
+        },
+        sportType: {
+          value: "running"
+        },
       }
     },
     {
@@ -104,10 +60,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -122,59 +74,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        length: {
+          value: "21.1mi"
+        },
+        numberOfParticpants: {
+          value: "300"
+        },
+        sportType: {
+          value: "running"
+        },
       }
     }
   ]

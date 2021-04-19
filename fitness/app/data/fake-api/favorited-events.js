@@ -15,10 +15,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -33,59 +29,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        length: {
+          value: "13mi"
+        },
+        numberOfParticpants: {
+          value: "3"
+        },
+        sportType: {
+          value: "running"
+        },
       }
     }
   ]
