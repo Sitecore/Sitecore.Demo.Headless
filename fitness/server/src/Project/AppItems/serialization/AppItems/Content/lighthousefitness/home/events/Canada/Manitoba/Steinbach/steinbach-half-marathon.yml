@@ -87,7 +87,7 @@ Languages:
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: <p>The Steinbach 5K Run is the only Gold Label 5K Run event in Canada and one of only four Gold Label 5K Runs in the world. The Steinbach 5K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the Region. The race is also home to the 5K Run Championships.</p>
+      Value: "<p>The Steinbach Half Marathon is Canada's largest and fastest Half Marathon. One of two Gold Label Half Marathon events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Steinbach Half Marathon is one of Canada's largest Qualifiers.</p>"
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-96.6833"
