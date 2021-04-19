@@ -2,7 +2,7 @@ import React from "react";
 import { Image, Text } from "@sitecore-jss/sitecore-jss-react";
 import { withTranslation } from "react-i18next";
 import EventMap from "../EventMap";
-import EventLabels from "../EventLabels";
+import EventLabel from "../EventLabel";
 import withScrollToTop from "../../hoc/withScrollToTop";
 
 const EventDetail = ({ context, t, fields, routeData, date, cta, icon, description }) => {
@@ -31,10 +31,21 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
             {date}
             {cta}
           </div>
-          <div className="eventDetail-image-overlay-metas">
-            <EventLabels
-              labels={routeFields.labels}
-              className="eventDetail-image-overlay-meta eventDetail-image-overlay-meta_type"
+          <div className="row eventDetail-image-overlay-metas">
+            <EventLabel
+              fieldName="length"
+              fieldValue={routeFields.length}
+              className="col events-item-meta events-item-meta_type"
+            />
+            <EventLabel
+              fieldName="sportType"
+              fieldValue={routeFields.sportType}
+              className="col events-item-meta events-item-meta_type"
+            />
+            <EventLabel
+              fieldName="numberOfParticipants"
+              fieldValue={routeFields.numberOfParticipants}
+              className="col events-item-meta events-item-meta_type"
             />
           </div>
           <div className="eventDetail-image-overlay-badges">

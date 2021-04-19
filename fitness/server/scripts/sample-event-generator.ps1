@@ -191,23 +191,23 @@ foreach ($city in $cities) {
         ### Update the Labels, Get the Id of the label data elements and update the item
         
         
-        (Get-Item ("{0}/Data/Labels/Participants" -f $newItem.Paths.Path) ).Value = ("{0}" -f $randomParticipants)
-        $participantsLabelId = (Get-Item ("{0}/Data/Labels/Participants" -f $newItem.Paths.Path) ).Id.Guid
+        (Get-Item ("{0}/Data/NumberOfParticipants" -f $newItem.Paths.Path) ).Value = ("{0}" -f $randomParticipants)
+        $participantsLabelId = (Get-Item ("{0}/Data/NumberOfParticipants" -f $newItem.Paths.Path) ).Id.Guid
         
     
         switch ($sport) {
             "running" {
               
-                (Get-Item ("{0}/Data/Labels/Type" -f $newItem.Paths.Path) ).Value = ("{0}" -f $randomType)
-                (Get-Item ("{0}/Data/Labels/Distance" -f $newItem.Paths.Path) ).Value = ("{0}km" -f $randomDistance)
-                $typeLabelId = (Get-Item ("{0}/Data/Labels/Type" -f $newItem.Paths.Path)).Id.Guid
-                $distanceLabelId = (Get-Item ("{0}/Data/Labels/Distance" -f $newItem.Paths.Path)).Id.Guid
+                (Get-Item ("{0}/Data/SportType" -f $newItem.Paths.Path) ).Value = ("{0}" -f $randomType)
+                (Get-Item ("{0}/Data/Length" -f $newItem.Paths.Path) ).Value = ("{0}km" -f $randomDistance)
+                $typeLabelId = (Get-Item ("{0}/Data/SportType" -f $newItem.Paths.Path)).Id.Guid
+                $distanceLabelId = (Get-Item ("{0}/Data/Length" -f $newItem.Paths.Path)).Id.Guid
                 (Get-ItemField -Item $newItem -ReturnType Field -Name labels).Value = ("{0}|{1}|{2}" -f $distanceLabelId.ToString("B").ToUpper(), $participantsLabelId.ToString("B").ToUpper(), $typeLabelId.ToString("B").ToUpper())
                 break
             }
             "cycling" {
-                $distanceLabelId = (Get-Item ("{0}/Data/Labels/Distance" -f $newItem.Paths.Path)).Id.Guid
-                (Get-Item ("{0}/Data/Labels/Distance" -f $newItem.Paths.Path) ).Value = ("{0}km" -f $randomDistance)
+                $distanceLabelId = (Get-Item ("{0}/Data/Length" -f $newItem.Paths.Path)).Id.Guid
+                (Get-Item ("{0}/Data/Length" -f $newItem.Paths.Path) ).Value = ("{0}km" -f $randomDistance)
                 (Get-ItemField -Item $newItem -ReturnType Field -Name labels).Value = ("{0}|{1}" -f $distanceLabelId.ToString("B").ToUpper(), $participantsLabelId.ToString("B").ToUpper())
                 break
             }

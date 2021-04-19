@@ -15,10 +15,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -33,59 +29,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "13mi"
+        }
       }
     },
     {
@@ -120,59 +72,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "running"
+        },
+        numberOfParticipants: {
+          value: "3"
+        },
+        length: {
+          value: "13mi"
+        }
       }
     },
     {
@@ -207,59 +115,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "13mi"
+        }
       }
     },
     {
@@ -294,59 +158,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "13mi"
+        }
       }
     },
     {
@@ -381,59 +201,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "13mi"
+        }
       }
     },
     {
@@ -468,59 +244,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "13mi"
+        }
       }
     },
     {
@@ -555,59 +287,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "golfing"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "18 holes"
+        }
       }
     },
     {
@@ -642,59 +330,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "golfing"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "18 holes"
+        }
       }
     },
     {
@@ -729,59 +373,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "golfing"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "18 holes"
+        }
       }
     },
     {
@@ -815,59 +415,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "golfing"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "18 holes"
+        }
       }
     },
     {
@@ -901,59 +457,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "running"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "13mi"
+        }
       }
     },
     {
@@ -987,59 +499,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "running"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "13mi"
+        }
       }
     }
   ]
