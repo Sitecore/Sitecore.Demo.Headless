@@ -107,6 +107,44 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
             }
         }
 
+        [HttpGet]
+        [ActionName("getlocateguestdataextensions")]
+        [CancelCurrentPage]
+        public ActionResult GetLocateGuestDataExtensions([NotNull] string guestRef, [NotNull] string dataExtensionName)
+        {
+            try
+            {
+                return Content(
+                    GetRequest($"/v2/guests/{guestRef}/ext{dataExtensionName}"),
+                    "application/json"
+                    );
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to retrieve guests", ex, this);
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [ActionName("getretrieveguestdataextension")]
+        [CancelCurrentPage]
+        public ActionResult GetRetrieveGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [NotNull] string dataExtensionRef)
+        {
+            try
+            {
+                return Content(
+                    GetRequest($"/v2/guests/{guestRef}/ext{dataExtensionName}/{dataExtensionRef}"),
+                    "application/json"
+                    );
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to retrieve guests", ex, this);
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
         [HttpPost]
         [ActionName("createguestdataextension")]
         [CancelCurrentPage]
