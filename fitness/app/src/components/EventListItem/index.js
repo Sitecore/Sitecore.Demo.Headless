@@ -8,7 +8,7 @@ import {
 import dayjs from "dayjs";
 import { NavLink } from "react-router-dom";
 import { withTranslation } from "react-i18next";
-import EventLabels from "../EventLabels";
+import EventLabel from "../EventLabel";
 
 const EventListItem = ({
   fields,
@@ -45,8 +45,19 @@ const EventListItem = ({
                     className="events-item-meta events-item-meta_recommended"
                   />
                 )}
-                <EventLabels
-                  labels={fields.labels}
+                <EventLabel
+                  fieldName="length"
+                  fieldValue={fields.length}
+                  className="events-item-meta events-item-meta_type"
+                />
+                <EventLabel
+                  fieldName="sportType"
+                  fieldValue={fields.sportType}
+                  className="events-item-meta events-item-meta_type"
+                />
+                <EventLabel
+                  fieldName="numberOfParticipants"
+                  fieldValue={fields.numberOfParticipants}
                   className="events-item-meta events-item-meta_type"
                 />
               </div>

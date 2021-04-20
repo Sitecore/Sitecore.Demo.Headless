@@ -1,0 +1,25 @@
+﻿---
+ID: "6b6c21af-07ef-4205-93b8-f305300885a4"
+Parent: "388a8591-1c69-4060-ae16-02e47861c045"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
+Path: /sitecore/templates/Project/Content Hub Entity Types/Content Hub Fitness Event/__Standard Values
+DB: master
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: 
+- ID: "c9283d9e-7c29-4419-9c28-5a5c8ff53e84"
+  Hint: __Bucketable
+  Type: Checkbox
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190614T161122Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"

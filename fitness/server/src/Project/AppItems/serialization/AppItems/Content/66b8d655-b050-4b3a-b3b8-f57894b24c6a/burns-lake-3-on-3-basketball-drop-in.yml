@@ -1,7 +1,7 @@
 ﻿---
 ID: "47dab064-4c98-4044-874c-e8c4a43ad407"
 Parent: "66b8d655-b050-4b3a-b3b8-f57894b24c6a"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/burns-lake/burns-lake-3-on-3-basketball-drop-in"
 DB: master
 SharedFields:
@@ -11,6 +11,9 @@ SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: "vAkewlyZGUWBShWefnmw-Q"
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: 
@@ -65,7 +68,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20220605T000000
+      Value: 20230305T050000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: "Burns Lake 3 on 3 Basketball drop-in"
@@ -80,28 +83,30 @@ Languages:
       Value: "Burns Lake 3 on 3 Basketball drop-in"
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 54.2170
+      Value: 54.217
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: "{716187A4-1511-4874-90E3-C0CE42AAA720}"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: "3x3 is vital in the development and growth of the sport of basketball in Canada. Join us in Burns Lake at 3 on 3 Basketball drop-in and sharpen your skills."
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: "Long Description. 3x3 is vital in the development and growth of the sport of basketball in Canada. Join us in Burns Lake at 3 on 3 Basketball drop-in and sharpen your skills."
+      Value: "<p>3x3 is vital in the development and growth of the sport of basketball in Canada. Join us in Burns Lake at 3 on 3 Basketball drop-in and sharpen your skills.</p>"
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-125.7666"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="basketball" mediaid="{840A8A50-5C1A-4779-B7DE-9D760F511A19}" />
+        <image alt="basketball-original06.jpg" mediaid="" stylelabs-content-id="33505" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33505/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/43f8f03f71da48a388e6e25a3f21cefd?v=095b2183" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 6
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 3 hours
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Basketball

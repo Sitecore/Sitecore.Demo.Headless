@@ -15,10 +15,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -33,59 +29,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "21.1K"
+        }
       }
     },
     {
@@ -102,10 +54,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -120,59 +68,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Running"
+        },
+        numberOfParticipants: {
+          value: "3"
+        },
+        length: {
+          value: "42.2K"
+        }
       }
     },
     {
@@ -189,10 +93,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -207,59 +107,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "21.1K"
+        }
       }
     },
     {
@@ -276,10 +132,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -294,59 +146,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "42.2K"
+        }
       }
     },
     {
@@ -363,10 +171,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -381,59 +185,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "21.1K"
+        }
       }
     },
     {
@@ -450,10 +210,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -468,59 +224,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Running"
+        },
+        numberOfParticipants: {
+          value: "250"
+        },
+        length: {
+          value: "42.2K"
+        }
       }
     },
     {
@@ -537,10 +249,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -555,59 +263,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Golf"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "18 holes"
+        }
       }
     },
     {
@@ -624,10 +288,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -642,59 +302,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Golf"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "18 holes"
+        }
       }
     },
     {
@@ -711,10 +327,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -729,59 +341,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Golf"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "18 holes"
+        }
       }
     },
     {
@@ -797,10 +365,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -815,59 +379,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Golf"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "18 holes"
+        }
       }
     },
     {
@@ -883,10 +403,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -901,59 +417,15 @@ module.exports = {
             src: "/assets/events/tiburon-half-marathon.jpg"
           }
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Running"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "21.1K"
+        }
       }
     },
     {
@@ -969,10 +441,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -987,59 +455,15 @@ module.exports = {
         longitude: {
           value: "-122.277422"
         },
-        labels: [
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "3"
-                },
-                name: {
-                  value: "Participants"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/person.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "road"
-                },
-                name: {
-                  value: "Type"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/road.svg"
-                  }
-                }
-              }
-            }
-          },
-          {
-            fields: {
-              fields: {
-                value: {
-                  value: "13mi"
-                },
-                name: {
-                  value: "Distance"
-                },
-                image: {
-                  value: {
-                    src: "/assets/icons/map.svg"
-                  }
-                }
-              }
-            }
-          }
-        ]
+        sportType: {
+          value: "Running"
+        },
+        numberOfParticipants: {
+          value: "20"
+        },
+        length: {
+          value: "42.2K"
+        }
       }
     }
   ]

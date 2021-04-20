@@ -1,13 +1,16 @@
 ﻿---
 ID: "3efe2d9f-592c-437d-8fff-fa80dcde5b80"
 Parent: "a817facf-7bfd-47b9-a6fb-752ffb0da27c"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/new-brunswick/fredericton/fredericton-10k-run"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: gsByhXEnfEWNIIYKu6IqHA
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
@@ -59,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20220312T000000
+      Value: 20221212T050000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Fredericton 10K Run
@@ -74,31 +77,30 @@ Languages:
       Value: Fredericton 10K Run
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 45.9500
+      Value: 45.95
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {3485FD76-DFA4-4E0D-98EB-403ACC2CBBFF}
-        {34D6DD96-D6DA-4DD1-A9DD-AAA0B775BA6A}
-        {F4188988-9606-4CD7-BADC-48EFAA6E26F7}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: This is the race event of the year for Fredericton. Challenge yourself to a 10K Run and join others with the same goals.
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: Long Description. This is the race event of the year for Fredericton. Challenge yourself to a 10K Run and join others with the same goals.
+      Value: <p>This is the race event of the year for Fredericton. Challenge yourself to a 10K Run and join others with the same goals.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-66.6333"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running06-800x410" mediaid="{E677FCBB-45F1-4A47-A17C-FF5F81E97D37}" />
+        <image alt="running-original06.jpg" mediaid="" stylelabs-content-id="35666" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/35666/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/876b110fb2464351bbbf785df27ffaa3?v=d4d50a18" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 150
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 10K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

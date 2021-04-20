@@ -1,13 +1,16 @@
 ﻿---
 ID: "1dfcd0d3-4750-4cc6-aa94-aaea700c7642"
 Parent: "ad1a4ffc-314a-4e4f-8e4c-d9ede8c7fa4b"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/kimmirut/kimmirut-5k-run"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: fw1kD_GZSEGesMYjR9enaQ
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
@@ -59,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20200929T000000
+      Value: 20210629T040000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Kimmirut 5K Run
@@ -74,31 +77,30 @@ Languages:
       Value: Kimmirut 5K Run
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 62.8500
+      Value: 62.85
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {8256E8E5-8876-4674-A61A-5A93FF680A1F}
-        {E676C531-2101-4591-9CAD-6CCF78B2F838}
-        {C6A8DACC-9120-43F7-B6C7-D3E1BAD34352}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: The Kimmirut 5K Run takes participants past Kimmirut's historic buildings for a 5 tour of some of Kimmirut's biggest landmarks.
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: Long Description. The Kimmirut 5K Run takes participants past Kimmirut's historic buildings for a 5 tour of some of Kimmirut's biggest landmarks.
+      Value: <p>The Kimmirut 5K Run takes participants past Kimmirut's historic buildings for a 5 tour of some of Kimmirut's biggest landmarks.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-69.8833"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running11-800x410" mediaid="{AADAE825-7603-4C36-9EA4-D84DD1F364B7}" />
+        <image alt="running-original11.jpg" mediaid="" stylelabs-content-id="33039" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33039/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/e77905a22f8d48e48c82191a62e777ca?v=1fc0a8b4" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 50
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running
