@@ -30,13 +30,13 @@ module.exports = {
           }
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
         numberOfParticipants: {
           value: "250"
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         }
       }
     },
@@ -54,10 +54,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -73,13 +69,13 @@ module.exports = {
           value: "-122.277422"
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
         numberOfParticipants: {
           value: "3"
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         }
       }
     },
@@ -97,10 +93,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -116,13 +108,13 @@ module.exports = {
           }
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
         numberOfParticipants: {
           value: "250"
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         }
       }
     },
@@ -140,10 +132,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -159,13 +147,13 @@ module.exports = {
           value: "-122.277422"
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
         numberOfParticipants: {
           value: "250"
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         }
       }
     },
@@ -183,10 +171,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -202,13 +186,13 @@ module.exports = {
           }
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
         numberOfParticipants: {
           value: "250"
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         }
       }
     },
@@ -226,10 +210,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -245,13 +225,13 @@ module.exports = {
           value: "-122.277422"
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
         numberOfParticipants: {
           value: "250"
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         }
       }
     },
@@ -269,10 +249,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -288,7 +264,7 @@ module.exports = {
           }
         },
         sportType: {
-          value: "golfing"
+          value: "Golf"
         },
         numberOfParticipants: {
           value: "20"
@@ -312,10 +288,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -331,7 +303,7 @@ module.exports = {
           value: "-122.277422"
         },
         sportType: {
-          value: "golfing"
+          value: "Golf"
         },
         numberOfParticipants: {
           value: "20"
@@ -355,10 +327,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -374,7 +342,7 @@ module.exports = {
           }
         },
         sportType: {
-          value: "golfing"
+          value: "Golf"
         },
         numberOfParticipants: {
           value: "20"
@@ -397,10 +365,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -416,7 +380,7 @@ module.exports = {
           value: "-122.277422"
         },
         sportType: {
-          value: "golfing"
+          value: "Golf"
         },
         numberOfParticipants: {
           value: "20"
@@ -439,10 +403,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -458,13 +418,13 @@ module.exports = {
           }
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
         numberOfParticipants: {
           value: "20"
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         }
       }
     },
@@ -481,10 +441,6 @@ module.exports = {
           value:
             "Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
         },
-        longDescription: {
-          value:
-            "Long description. Experience Oakland's diversity and beauty with a race that touches all aspects of Oaktown, and finishes with one hella awesome party."
-        },
         date: {
           value: "2019-10-30T00:00:00Z"
         },
@@ -500,13 +456,13 @@ module.exports = {
           value: "-122.277422"
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
         numberOfParticipants: {
           value: "20"
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         }
       }
     }
