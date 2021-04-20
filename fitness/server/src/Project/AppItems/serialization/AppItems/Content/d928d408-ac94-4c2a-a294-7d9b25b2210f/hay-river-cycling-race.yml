@@ -100,7 +100,7 @@ Languages:
       Value: 100
     - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
       Hint: length
-      Value: 5K
+      Value: 20K
     - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
       Hint: sportType
       Value: Cycling

@@ -77,7 +77,7 @@ Languages:
       Value: Hopedale 5K Run
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 55.4500
+      Value: 55.45
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
@@ -87,7 +87,7 @@ Languages:
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: Experience Hopedale's diversity and beauty with a 5K Run that touches all aspects of its culture, and finishes with one hella awesome party.
+      Value: <p>Experience Hopedale's diversity and beauty with a 5K Run that touches all aspects of its culture, and finishes with one hella awesome party.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-60.2167"
@@ -95,3 +95,12 @@ Languages:
       Hint: image
       Value: |
         <image alt="running-original06.jpg" mediaid="" stylelabs-content-id="35666" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/35666/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/876b110fb2464351bbbf785df27ffaa3?v=991c8100" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 150
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

@@ -9,11 +9,12 @@ import { translate } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import dayjs from "dayjs";
 import EventMap from "../EventMap";
-import EventLabels from "../EventLabels";
+import EventLabel from "../EventLabel";
 
 const EventDetail = ({ t, routeData }) => {
   const routeFields = routeData.fields;
   const eventName = routeData.name.value;
+  console.log(routeFields);
   return (
     <div className="eventDetail">
       <div className="eventDetail-image-container">
@@ -44,10 +45,21 @@ const EventDetail = ({ t, routeData }) => {
               {t("register")}
             </NavLink>
           </div>
-          <div className="eventDetail-image-overlay-metas">
-            <EventLabels
-              labels={routeFields.labels}
-              className="eventDetail-image-overlay-meta eventDetail-image-overlay-meta_type"
+          <div className="row eventDetail-image-overlay-metas">
+            <EventLabel
+              fieldName="length"
+              fieldValue={routeFields.length}
+              className="col events-item-meta events-item-meta_type"
+            />
+            <EventLabel
+              fieldName="sportType"
+              fieldValue={routeFields.sportType}
+              className="col events-item-meta events-item-meta_type"
+            />
+            <EventLabel
+              fieldName="numberOfParticipants"
+              fieldValue={routeFields.numberOfParticipants}
+              className="col events-item-meta events-item-meta_type"
             />
           </div>
         </div>

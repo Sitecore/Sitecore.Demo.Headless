@@ -87,7 +87,7 @@ Languages:
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: <p>The Gillam 5K Run is the only Gold Label 5K Run event in Canada and one of only four Gold Label 5K Runs in the world. The Gillam 5K Run attracts one of the world's best fields of pro runners as well as thousands of participants from across the Region. The race is also home to the 5K Run Championships.</p>
+      Value: <p>The Gillam Half Marathon takes participants past Gillam's historic buildings for a 21 tour of some of Gillam's biggest landmarks.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-94.7"
@@ -100,7 +100,7 @@ Languages:
       Value: 100
     - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
       Hint: length
-      Value: 5K
+      Value: 21.1K
     - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
       Hint: sportType
-      Value: Running, Cycling, Swimming
+      Value: Running

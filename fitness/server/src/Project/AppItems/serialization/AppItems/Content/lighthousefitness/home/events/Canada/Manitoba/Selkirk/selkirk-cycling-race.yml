@@ -87,7 +87,7 @@ Languages:
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: <p>Experience Selkirk's diversity and beauty with a 10K Run that touches all aspects of its culture, and finishes with one hella awesome party.</p>
+      Value: <p>Selkirk Road Race. To get to the start, go up RT 38 and turn left on West Creek road, follow for 1/2 mile to start/finish area. Course goes out West Creek 5 miles, left turn on Back West Creek, then another immediate right puts you back on West Creek. Finish is at the Rail Road Crossing sign.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-96.8833"
@@ -100,7 +100,7 @@ Languages:
       Value: 6
     - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
       Hint: length
-      Value: 10
+      Value: 20K
     - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
       Hint: sportType
       Value: Cycling
