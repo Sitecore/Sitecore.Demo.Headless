@@ -53,6 +53,27 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
             return result;
         }
 
+        public string PostRequest(string apiUrlSegments)
+        {
+            Stream req = Request.InputStream;
+            req.Seek(0, SeekOrigin.Begin);
+            string json = new StreamReader(req).ReadToEnd();
+            var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = httpClient.PostAsync($"{url}{apiUrlSegments}", stringContent).Result;
+            return response.Content.ReadAsStringAsync().Result;
+        }
+
+        public string DeleteRequest(string apiUrlSegments)
+        {
+            HttpResponseMessage response = httpClient.DeleteAsync($"{url}{apiUrlSegments}").Result;
+            string result = string.Empty;
+            using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result))
+            {
+                result = stream.ReadToEnd();
+            }
+            return result;
+        }
+
         [HttpGet]
         [ActionName("Index")]
         [CancelCurrentPage]
@@ -155,50 +176,33 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         {
             try
             {
-                Stream req = Request.InputStream;
-                req.Seek(0, System.IO.SeekOrigin.Begin);
-                string json = new StreamReader(req).ReadToEnd();
-
-			 //var input = JsonConvert.DeserializeObject<dynamic>(json);
-
-			 //var jsonStream = new StreamReader(HttpContext.Request.InputStream).ReadToEnd();
-			 //var jsonString = JsonConvert.ToString(jsonStream);
-
-			 //var json = HttpContext.Request.InputStream.ToString();
-			 //var json = JsonConvert.ToString(HttpContext.Request.InputStream.ToString());
-			 //json = json.Replace("\"", "\\\"");
-			 //json = "{\"key\": \"email\",\"format\": \"HTML\",\"acceptedTermsAndConditions\": true,\"shortDescription\": \"The email preferences for this guest\",\"longDescription\": \"The email preferences for this guest\"}";
-			 var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-			 var response = httpClient.PostAsync($"{url}/v2/guests/{guestRef}/ext{dataExtensionName}", stringContent).Result;
-			 var content = response.Content.ReadAsStringAsync().Result;
-
-			 //var converter = new ExpandoObjectConverter();
-			 //var exObj = JsonConvert.DeserializeObject<ExpandoObject>(jsonBody.ToString(), converter);
-
-
-			 return Content(
-                    content,
+                return Content(
+                    PostRequest($"/v2/guests/{guestRef}/ext{dataExtensionName}"),
                     "application/json"
                     );
-
-
-                //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-                //httpClient.DefaultRequestHeaders.ExpectContinue = false;
-                //HttpResponseMessage response = httpClient.PostAsync($"{url}/{guestRef}/ext{dataExtensionName}", stringContent).Result;
-                //string result = string.Empty;
-                //using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result))
-                //{
-                //    result = stream.ReadToEnd();
-                //}
-
-                //return Content(
-                //    result,
-                //    "application/json"
-                //    );
             }
             catch (Exception ex)
             {
                 Log.Error("Unable to create guest data extension", ex, this);
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [ActionName("deleteguestdataextension")]
+        [CancelCurrentPage]
+        public ActionResult DeleteGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [NotNull] string dataExtensionRef)
+        {
+            try
+            {
+                return Content(
+                    DeleteRequest($"/v2/guests/{guestRef}/ext{dataExtensionName}/{dataExtensionRef}"),
+                    "application/json"
+                    );
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to delete guest data extension", ex, this);
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
