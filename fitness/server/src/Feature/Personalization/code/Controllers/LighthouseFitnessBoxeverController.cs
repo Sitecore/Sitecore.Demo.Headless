@@ -17,6 +17,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Dynamic;
 
 namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
 {
@@ -148,22 +151,47 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         [HttpPost]
         [ActionName("createguestdataextension")]
         [CancelCurrentPage]
-        public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [System.Web.Http.FromBody] string json)
+        public ActionResult CreateGuestDataExtension([System.Web.Http.FromBody] dynamic jsonBody, [NotNull] string guestRef, [NotNull] string dataExtensionName)
         {
             try
             {
-                var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-                HttpResponseMessage response = httpClient.PostAsync($"{url}/{guestRef}/ext{dataExtensionName}", stringContent).Result;
-                string result = string.Empty;
-                using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result))
-                {
-                    result = stream.ReadToEnd();
-                }
+                var data = JsonConvert.DeserializeObject<dynamic>(jsonBody.ToString());
 
+
+                //var jsonStream = new StreamReader(HttpContext.Request.InputStream).ReadToEnd();
+                //var jsonString = JsonConvert.ToString(jsonStream);
+
+                //var json = HttpContext.Request.InputStream.ToString();
+                //var json = JsonConvert.ToString(HttpContext.Request.InputStream.ToString());
+                //json = json.Replace("\"", "\\\"");
+                //json = "{\"key\": \"email\",\"format\": \"HTML\",\"acceptedTermsAndConditions\": true,\"shortDescription\": \"The email preferences for this guest\",\"longDescription\": \"The email preferences for this guest\"}";
+                //var stringContent = new StringContent(JsonConvert.SerializeObject(jsonString), Encoding.UTF8, "application/json");
+                //var response = httpClient.PostAsync($"{url}/v2/guests/{guestRef}/ext{dataExtensionName}", stringContent).Result;
+                //var content = response.Content.ReadAsStringAsync().Result;
+
+                //var converter = new ExpandoObjectConverter();
+                //var exObj = JsonConvert.DeserializeObject<ExpandoObject>(jsonBody.ToString(), converter);
+
+                
                 return Content(
-                    result,
+                    data.ToString(),
                     "application/json"
                     );
+
+
+                //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+                //httpClient.DefaultRequestHeaders.ExpectContinue = false;
+                //HttpResponseMessage response = httpClient.PostAsync($"{url}/{guestRef}/ext{dataExtensionName}", stringContent).Result;
+                //string result = string.Empty;
+                //using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result))
+                //{
+                //    result = stream.ReadToEnd();
+                //}
+
+                //return Content(
+                //    result,
+                //    "application/json"
+                //    );
             }
             catch (Exception ex)
             {
