@@ -129,6 +129,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\LighthouseFitnessBoxeverController.cs" />
     <Compile Include="Controllers\LighthouseFitnessProductsController.cs" />
     <Compile Include="Controllers\LighthouseFitnessEventsController.cs" />
     <Compile Include="Indexing\ComputedFields\CoordinatesField.cs" />

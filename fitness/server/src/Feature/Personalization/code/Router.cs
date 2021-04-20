@@ -17,6 +17,12 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization
                 action = "Index",
                 controller = "LighthouseFitnessProducts",
             });
+
+            RouteCollectionExtensions.MapRoute(routeCollection, "lighthouse-fitness-boxever", "sitecore/api/lighthousefitness/boxever/{action}", new
+            {
+                action = "Index",
+                controller = "LighthouseFitnessBoxever",
+            });
         }
     }
 
