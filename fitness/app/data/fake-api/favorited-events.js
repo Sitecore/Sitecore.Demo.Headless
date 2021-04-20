@@ -30,7 +30,7 @@ module.exports = {
           }
         },
         length: {
-          value: "42.2K"
+          value: "21.1K"
         },
         numberOfParticpants: {
           value: "3"

@@ -11,9 +11,9 @@ fields:
   longitude: -122.277422
   image:
     src: /assets/events/oakland_marathon.jpg
-  sportType: running
+  sportType: Running
   numberOfParticipants: 250
-  length: 13Km
+  length: 42.2K
 placeholders:
   hf-nav:
     - componentName: DetailNavigation

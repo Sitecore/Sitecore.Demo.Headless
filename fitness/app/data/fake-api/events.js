@@ -36,7 +36,7 @@ module.exports = {
           value: "250"
         },
         length: {
-          value: "42.2K"
+          value: "21.1K"
         }
       }
     },
@@ -114,7 +114,7 @@ module.exports = {
           value: "250"
         },
         length: {
-          value: "42.2K"
+          value: "21.1K"
         }
       }
     },
@@ -192,7 +192,7 @@ module.exports = {
           value: "250"
         },
         length: {
-          value: "42.2K"
+          value: "21.1K"
         }
       }
     },
@@ -424,7 +424,7 @@ module.exports = {
           value: "20"
         },
         length: {
-          value: "42.2K"
+          value: "21.1K"
         }
       }
     },

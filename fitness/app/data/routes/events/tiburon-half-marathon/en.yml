@@ -11,9 +11,9 @@ fields:
   longitude: -122.455438
   image:
     src: /assets/events/tiburon-half-marathon.jpg
-  sportType: running
+  sportType: Running
   numberOfParticipants: 150
-  length: 21.1Km
+  length: 21.1K
 placeholders:
   hf-nav:
   - componentName: DetailNavigation
