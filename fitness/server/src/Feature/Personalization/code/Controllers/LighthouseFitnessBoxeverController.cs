@@ -80,7 +80,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
             try
             {
                 return Content(
-                    GetRequest($"/v2/guests/{guestRef}?expand={dataExtensionName}"), 
+                    GetRequest($"/v2/guests/{guestRef}?expand=ext{dataExtensionName}"), 
                     "application/json"
                     );
             }
@@ -151,30 +151,33 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         [HttpPost]
         [ActionName("createguestdataextension")]
         [CancelCurrentPage]
-        public ActionResult CreateGuestDataExtension([System.Web.Http.FromBody] dynamic jsonBody, [NotNull] string guestRef, [NotNull] string dataExtensionName)
+        public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName)
         {
             try
             {
-                var data = JsonConvert.DeserializeObject<dynamic>(jsonBody.ToString());
+                Stream req = Request.InputStream;
+                req.Seek(0, System.IO.SeekOrigin.Begin);
+                string json = new StreamReader(req).ReadToEnd();
+
+			 //var input = JsonConvert.DeserializeObject<dynamic>(json);
+
+			 //var jsonStream = new StreamReader(HttpContext.Request.InputStream).ReadToEnd();
+			 //var jsonString = JsonConvert.ToString(jsonStream);
+
+			 //var json = HttpContext.Request.InputStream.ToString();
+			 //var json = JsonConvert.ToString(HttpContext.Request.InputStream.ToString());
+			 //json = json.Replace("\"", "\\\"");
+			 //json = "{\"key\": \"email\",\"format\": \"HTML\",\"acceptedTermsAndConditions\": true,\"shortDescription\": \"The email preferences for this guest\",\"longDescription\": \"The email preferences for this guest\"}";
+			 var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+			 var response = httpClient.PostAsync($"{url}/v2/guests/{guestRef}/ext{dataExtensionName}", stringContent).Result;
+			 var content = response.Content.ReadAsStringAsync().Result;
+
+			 //var converter = new ExpandoObjectConverter();
+			 //var exObj = JsonConvert.DeserializeObject<ExpandoObject>(jsonBody.ToString(), converter);
 
 
-                //var jsonStream = new StreamReader(HttpContext.Request.InputStream).ReadToEnd();
-                //var jsonString = JsonConvert.ToString(jsonStream);
-
-                //var json = HttpContext.Request.InputStream.ToString();
-                //var json = JsonConvert.ToString(HttpContext.Request.InputStream.ToString());
-                //json = json.Replace("\"", "\\\"");
-                //json = "{\"key\": \"email\",\"format\": \"HTML\",\"acceptedTermsAndConditions\": true,\"shortDescription\": \"The email preferences for this guest\",\"longDescription\": \"The email preferences for this guest\"}";
-                //var stringContent = new StringContent(JsonConvert.SerializeObject(jsonString), Encoding.UTF8, "application/json");
-                //var response = httpClient.PostAsync($"{url}/v2/guests/{guestRef}/ext{dataExtensionName}", stringContent).Result;
-                //var content = response.Content.ReadAsStringAsync().Result;
-
-                //var converter = new ExpandoObjectConverter();
-                //var exObj = JsonConvert.DeserializeObject<ExpandoObject>(jsonBody.ToString(), converter);
-
-                
-                return Content(
-                    data.ToString(),
+			 return Content(
+                    content,
                     "application/json"
                     );
 
