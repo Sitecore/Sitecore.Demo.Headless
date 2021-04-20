@@ -16,10 +16,6 @@ module.exports = {
           value:
             "Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
         },
-        longDescription: {
-          value:
-            "Long description. Starting and finishing in Tiburon and traversing the Strawberry Peninsula, you will be rewarded with stunning views of the San Francisco Bay, Bay Bridge, Golden Gate Bridge and Angel Island."
-        },
         latitude: {
           value: "37.873221"
         },
@@ -35,13 +31,13 @@ module.exports = {
           }
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         },
         numberOfParticpants: {
           value: "3"
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
       }
     },
@@ -75,13 +71,13 @@ module.exports = {
           value: "-122.277422"
         },
         length: {
-          value: "21.1mi"
+          value: "42.2K"
         },
         numberOfParticpants: {
           value: "300"
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
       }
     }

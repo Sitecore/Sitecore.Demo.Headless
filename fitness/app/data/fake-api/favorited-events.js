@@ -30,13 +30,13 @@ module.exports = {
           }
         },
         length: {
-          value: "13mi"
+          value: "42.2K"
         },
         numberOfParticpants: {
           value: "3"
         },
         sportType: {
-          value: "running"
+          value: "Running"
         },
       }
     }
