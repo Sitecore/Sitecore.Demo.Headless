@@ -792,7 +792,7 @@ a[target="_blank"]:after {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 21.2963vw 0 8.33333vw 0;
+  padding: 2vw 0 2vw 0;
   position: absolute;
   left: 0;
   right: 0;
@@ -1502,6 +1502,7 @@ a[target="_blank"]:after {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
+  margin: 0px;
 }
 
 .eventDetail-image-overlay-meta {
@@ -1567,7 +1568,6 @@ a[target="_blank"]:after {
 }
 
 .eventDetail-map {
-  float: right;
   width: 32.77778vw;
   height: 24.25926vw;
   margin: 0 0 2.77778vw 2.77778vw;

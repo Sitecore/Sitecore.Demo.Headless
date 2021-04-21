@@ -30,12 +30,17 @@ class SaveAsAccountStep extends Component {
 
   onCreateClick() {
     const { firstname, lastname, email } = this.state;
+    const eventId = this.props.itemId;
+    const eventName = this.props.fields.name.value;
+    const eventDate = this.props.fields.date.value;
+    const eventUrlPath = window.location.pathname;
+    const sportType = this.props.fields.sportType.value;
 
-    setIdentification(firstname, lastname, email).catch(err => {
+    setIdentification(firstname, lastname, email)
+    .then(() => trackCompleteRegistration(eventId, eventName, eventDate, eventUrlPath, sportType))
+    .catch(err => {
       console.log(err);
     });
-
-    trackCompleteRegistration();
   }
 
   isValid() {

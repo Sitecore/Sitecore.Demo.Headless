@@ -5,6 +5,17 @@ import { ApolloProvider } from 'react-apollo';
 import componentFactory from './temp/componentFactory';
 import RouteHandler from './RouteHandler';
 import { LastLocationProvider } from 'react-router-last-location';
+import OcProvider from './ordercloud/redux/ocProvider'
+import ProductDetail from './components/ProductDetail'
+import config from './temp/config';
+import CategoryDetail from './components/CategoryDetail'
+
+const ocConfig = {
+  clientId: config.ocBuyerClientId,
+  baseApiUrl: config.ocBaseApiUrl,
+  scope: ['Shopper'],
+  allowAnonymous: Boolean("true")
+};
 
 // This is the main JSX entry point of the app invoked by the renderer (server or client rendering).
 // By default the app's normal rendering is delegated to <RouteHandler> that handles the loading of JSS route data.
@@ -16,6 +27,9 @@ export const routePatterns = [
   '/:lang([a-z]{2})/:sitecoreRoute*',
   '/:sitecoreRoute*',
 ];
+
+
+const renderProductDetail = (props) => <ProductDetail productId={props.match.params.productid} />
 
 // wrap the app with:
 // ApolloProvider: provides an instance of Apollo GraphQL client to the app to make Connected GraphQL queries.
@@ -60,22 +74,26 @@ class AppRoot extends React.Component {
     return (
       <ApolloProvider client={graphQLClient}>
         <SitecoreContext componentFactory={componentFactory} context={this.sitecoreContext}>
-          <Router location={path} context={{}}>
-            <LastLocationProvider>
-              <Switch>
-                <Route key="/null" path="/null" component={null} />
-                {routePatterns.map((routePattern) => (
-                  <Route
-                    key={routePattern}
-                    path={routePattern}
-                    render={(props) => (
-                      <RouteHandler route={props} ssrRenderComplete={this.state.ssrRenderComplete} />
-                    )}
-                  />
-                ))}
-              </Switch>
-            </LastLocationProvider>
-          </Router>
+          <OcProvider config={ocConfig}>
+            <Router location={path} context={{}}>
+              <LastLocationProvider>
+                <Switch>
+                  <Route path="/null" component={null} />
+                  <Route path="/products/:productid" render={renderProductDetail} />
+                  <Route path="/shop/:categoryid" render={props => <CategoryDetail categoryId={props.match.params.categoryid}></CategoryDetail>} />
+                  {routePatterns.map((routePattern) => (
+                    <Route
+                      key={routePattern}
+                      path={routePattern}
+                      render={(props) => (
+                        <RouteHandler route={props} ssrRenderComplete={this.state.ssrRenderComplete} />
+                      )}
+                    />
+                  ))}
+                </Switch>
+              </LastLocationProvider>
+            </Router>
+          </OcProvider>
         </SitecoreContext>
       </ApolloProvider>
     );

@@ -1,14 +1,10 @@
-import { post } from "./GenericService";
 import { required } from "../utils";
+import { identifyVisitor } from "./BoxeverService";
 
 export function setIdentification(
   firstname = required(),
   lastname = required(),
   email = required()
 ) {
-  return post("/identification/facet", {
-    Email: email,
-    FirstName: firstname,
-    LastName: lastname
-  });
+  return identifyVisitor(firstname, lastname, email);
 }

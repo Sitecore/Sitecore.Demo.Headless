@@ -14,3 +14,24 @@ module.exports.isDisconnected = isDisconnected;
  */
 module.exports.getHostname = () =>
   isDisconnected() ? window.location.origin : config.sitecoreApiHost;
+
+/**
+ * Get a query string key value
+ * @returns {string} query string key value
+ */
+module.exports.getQueryStringValue = function(queryStringKey) {
+  if (window !== undefined && window.location.search) {
+    var queryString = window.location.search;
+    if (queryString) {
+      var queryStringSubstringToLookFor = queryStringKey + "=";
+      var keyIndex = queryString.indexOf(queryStringSubstringToLookFor);
+      if (keyIndex !== -1) {
+        var startIndexOfSubstring = keyIndex + queryStringSubstringToLookFor.length;
+        var startOfNextKey = queryString.indexOf("&", keyIndex);
+        return decodeURI(startOfNextKey === -1 ? queryString.substr(startIndexOfSubstring) : queryString.substr(startIndexOfSubstring, startOfNextKey - startIndexOfSubstring));
+      }
+    }
+  }
+
+  return "";
+}

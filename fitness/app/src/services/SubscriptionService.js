@@ -1,4 +1,3 @@
-import { post } from "./GenericService";
 /* eslint-disable import/no-extraneous-dependencies */
 import { firebase } from "@firebase/app";
 import "@firebase/messaging";
@@ -24,7 +23,12 @@ function executeAction(eventAction, payload) {
   if (!payload) {
     throw new Error("missing payload");
   }
-  return post(`/subscription/${eventAction}`, payload);
+  // return post(`/subscription/${eventAction}`, payload);
+  return new Promise((resolve, reject) => {
+    // TODO: Implement with Boxever in the client by removing the comment above and completing this promise code.
+    // Or in the backend by removing this promise, uncommenting, the above code, and modifying the associated controller.
+    resolve("data");
+  });
 }
 
 const getMessagingToken = async () => {

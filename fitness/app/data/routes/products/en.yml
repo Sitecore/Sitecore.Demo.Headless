@@ -1,0 +1,10 @@
+id: products-page
+name: products
+displayName: Products
+fields:
+  pageTitle: Products
+placeholders:
+  hf-nav:
+    - componentName: DetailNavigation
+  hf-body:
+    - componentName: OcProductListContainer

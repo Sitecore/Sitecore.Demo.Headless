@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{"IActivityDataService":{"__symbolic":"interface"},"ACTIVITY_DATA_SERVICE":{"__symbolic":"new","expression":{"__symbolic":"reference","module":"@angular/core","name":"InjectionToken","line":7,"character":41},"arguments":["ActivityDataService"]}}}]

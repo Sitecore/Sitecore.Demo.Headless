@@ -25,10 +25,8 @@ services:
       ADMIN_USER_NAME: "sitecore\\superuser"
       DISABLE_DEFAULT_ADMIN: "FALSE"
       EXM_BASE_URL: "https://${CD_HOST}"
-      START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1;start-override-headless-windows.ps1"
+      START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1"
       COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
-      EXM_KIOSK_CD_BASE_URL: "https://${KIOSK_CD_HOST}"
-      EXM_APP_BASE_URL: "https://${APP_HOST}"
     mem_limit: 2GB
     volumes:
       - type: bind
@@ -111,6 +109,8 @@ services:
       REACT_APP_FIREBASE_API_KEY: ${REACT_APP_FIREBASE_API_KEY}
       REACT_APP_FIREBASE_APP_ID: ${REACT_APP_FIREBASE_APP_ID}
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
+      OC_BUYER_CLIENT_ID: ${OC_BUYER_CLIENT_ID}
+      OC_BASE_API_URL: ${OC_BASE_API_URL}
       BOXEVER_APIURL: ${BOXEVER_APIURL}
       BOXEVER_CLIENTKEY: ${BOXEVER_CLIENTKEY}
       BOXEVER_APITOKEN: ${BOXEVER_APITOKEN}
@@ -346,6 +346,8 @@ services:
       REACT_APP_FIREBASE_API_KEY: ${REACT_APP_FIREBASE_API_KEY}
       REACT_APP_FIREBASE_APP_ID: ${REACT_APP_FIREBASE_APP_ID}
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
+      OC_BUYER_CLIENT_ID: ${OC_BUYER_CLIENT_ID}
+      OC_BASE_API_URL: ${OC_BASE_API_URL}
     depends_on:
       cm:
         condition: service_healthy

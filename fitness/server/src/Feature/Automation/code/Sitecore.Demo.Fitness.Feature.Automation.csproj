@@ -77,9 +77,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Feature\Feature.Automation.Serialization.config" />
-    <Content Include="App_Config\Include\Feature\Feature.Automation.config" />
-    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\LighthouseFitness\plugin.js" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -97,13 +94,6 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\LighthouseFitness\codegen\src\activity\activity-activity.d.ts" />
-    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\LighthouseFitness\codegen\src\activity\activity-editor.component.d.ts" />
-    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\LighthouseFitness\codegen\src\activity\activity-module.d.ts" />
-    <Content Include="sitecore\shell\client\Applications\MarketingAutomation\plugins\LighthouseFitness\codegen\src\activity\activity-plugin.d.ts" />
-  </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

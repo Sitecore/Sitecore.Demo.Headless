@@ -1,5 +1,5 @@
-import { post } from "./GenericService";
+import { forgetCurrentGuest } from "./BoxeverService";
 
 export function flush() {
-  return post("/session/flush");
+  return forgetCurrentGuest();
 }

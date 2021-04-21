@@ -9,6 +9,8 @@ import GraphQLClientFactory from './lib/GraphQLClientFactory';
 import config from './temp/config';
 import i18ninit from './i18n';
 import registerServiceWorker from './registerServiceWorker';
+import { getQueryStringValue } from "./util"
+import { identifyByEmail } from "./services/BoxeverService"
 
 /* eslint-disable no-underscore-dangle */
 
@@ -53,6 +55,12 @@ const initialGraphQLState =
   __JSS_STATE__ && __JSS_STATE__.APOLLO_STATE ? __JSS_STATE__.APOLLO_STATE : null;
 
 const graphQLClient = GraphQLClientFactory(config.graphQLEndpoint, false, initialGraphQLState);
+
+// Identify the user from an email address from the query string to handle clicks on email links
+var email = getQueryStringValue("email");
+if (email) {
+  identifyByEmail(email);
+}
 
 /*
   App Rendering

@@ -7,7 +7,7 @@ import {
 import {
   trackEventFavorite,
   trackEventUnfavorite
-} from "../../services/TrackingService";
+} from "../../services/BoxeverService";
 
 class EventFavoriteButton extends React.Component {
   state = {

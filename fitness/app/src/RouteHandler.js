@@ -12,6 +12,7 @@ import config from './temp/config';
 import Layout from './Layout';
 import NotFound from './NotFound';
 import Loading from './components/Loading';
+import { logViewEvent } from "./services/BoxeverService";
 
 /* eslint-disable no-console */
 
@@ -102,6 +103,8 @@ class RouteHandler extends React.Component {
           ...routeData.sitecore.context,
         });
         this.setState({ notFound: false });
+
+        logViewEvent(routeData);
       } else {
         this.setState({ notFound: true }, () => {
           const context = routeData && routeData.sitecore ? routeData.sitecore.context : null;

@@ -139,20 +139,11 @@
     <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Router.cs" />
-    <Compile Include="Rules\AgeGroupCondition.cs" />
-    <Compile Include="Rules\BaseEventFacetCondition.cs" />
-    <Compile Include="Rules\IsContactRegisteredForEvent.cs" />
-    <Compile Include="Rules\IsContactKnownCondition.cs" />
-    <Compile Include="Rules\GenderCondition.cs" />
-    <Compile Include="Rules\IsContactSubscribedToEvent.cs" />
-    <Compile Include="Rules\IsContactFavoritedEvent.cs" />
     <Compile Include="Services\IEventDataService.cs" />
     <Compile Include="Services\IItemScoringService.cs" />
     <Compile Include="Services\IProductDataService.cs" />
     <Compile Include="Services\ItemScoringService.cs" />
     <Compile Include="Utils\ProfileExtensions.cs" />
-    <Compile Include="Rules\SportsCondition.cs" />
-    <Compile Include="Rules\SportsSkillCondition.cs" />
     <Compile Include="Services\ProductDataService.cs" />
     <Compile Include="Services\EventDataService.cs" />
     <Compile Include="Services\DistanceCalculator.cs" />
@@ -164,7 +155,6 @@
     <Content Include="App_Config\Include\Feature\Feature.Personalization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Feature\Feature.Personalization.Serialization.config" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

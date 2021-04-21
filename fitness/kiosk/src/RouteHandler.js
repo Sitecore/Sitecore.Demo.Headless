@@ -11,6 +11,7 @@ import Layout from "./Layout";
 import NotFound from "./NotFound";
 import { getUrlParams, canUseDOM } from "./utils";
 import Loading from "./components/Loading";
+import { logViewEvent } from "./services/BoxeverService";
 
 // Dynamic route handler for Sitecore items.
 // Because JSS app routes are defined in Sitecore, traditional static React routing isn't enough -
@@ -110,6 +111,8 @@ export default class RouteHandler extends React.Component {
           ...routeData.sitecore.context
         });
         this.setState({ routeData, notFound: false });
+
+        logViewEvent(routeData);
       } else {
         this.setState({ routeData, notFound: true });
       }

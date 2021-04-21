@@ -27,16 +27,4 @@ RUN Remove-Item "/output" -Recurse
 
 FROM data as production
 
-ENV USER_PASSWORD="b"
-ENV ADMIN_USER_NAME="sitecore\superuser"
-ENV SITECORE_ADMIN_PASSWORD="b"
-ENV DISABLE_DEFAULT_ADMIN=FALSE
-ENV EXM_BASE_URL=http://cd
-ENV SQL_SERVER="mssql"
-ENV EXM_KIOSK_CD_BASE_URL=http://kiosk-cd
-ENV EXM_APP_BASE_URL=http://app
-ENV START_OVERRIDE_SCRIPTS="start-override-platform-windows.ps1;start-override-headless-windows.ps1"
-
 COPY /docker/images/demo-sqldev/sql /sql
-
-COPY /docker/images/demo-sqldev/start-override-headless-windows.ps1 /
