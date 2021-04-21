@@ -40,8 +40,8 @@ class ProductItemLoader extends React.Component {
               height={184}
               width={width}
               speed={2}
-              primaryColor={"#333"}
-              secondaryColor={"#999"}
+              primarycolor={"#333"}
+              secondarycolor={"#999"}
             >
               <rect x="0" y="0" rx="5" ry="5" width={width} height="184" />
             </ContentLoader>
@@ -51,8 +51,8 @@ class ProductItemLoader extends React.Component {
               height={223}
               width={width}
               speed={2}
-              primaryColor={"#333"}
-              secondaryColor={"#999"}
+              primarycolor={"#333"}
+              secondarycolor={"#999"}
               style={{ width: "100%" }}
             >
               <rect x="0" y="0" rx="5" ry="5" width={width} height="60" />

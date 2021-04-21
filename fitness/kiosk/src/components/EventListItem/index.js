@@ -45,17 +45,17 @@ class EventListItem extends PureComponent {
                   <EventLabel
                     fieldName="length"
                     fieldValue={fields.length}
-                    className="events-item-meta events-item-meta_type"
+                    className="events-item-meta events-item-meta_type text-center"
                   />
                   <EventLabel
                     fieldName="sportType"
                     fieldValue={fields.sportType}
-                    className="events-item-meta events-item-meta_type"
+                    className="events-item-meta events-item-meta_type text-center"
                   />
                   <EventLabel
                     fieldName="numberOfParticipants"
                     fieldValue={fields.numberOfParticipants}
-                    className="events-item-meta events-item-meta_type"
+                    className="events-item-meta events-item-meta_type text-center"
                   />
                 </div>
               </div>

@@ -12,7 +12,7 @@ const getListImage = (p) => {
   return `${getMasterImageUrl(p)}&t=w400`
 }
 
-const EventDetail = ({ context, t, fields, routeData, date, cta, icon, description }) => {
+const EventDetail = ({ routeData, date, cta, icon, description }) => {
   const routeFields = routeData.fields;
   const eventName = routeData.name.value;
 
@@ -43,17 +43,17 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
             <EventLabel
               fieldName="length"
               fieldValue={routeFields.length}
-              className="col events-item-meta events-item-meta_type"
+              className="col events-item-meta events-item-meta_type text-center"
             />
             <EventLabel
               fieldName="sportType"
               fieldValue={routeFields.sportType}
-              className="col events-item-meta events-item-meta_type"
+              className="col events-item-meta events-item-meta_type text-center"
             />
             <EventLabel
               fieldName="numberOfParticipants"
               fieldValue={routeFields.numberOfParticipants}
-              className="col events-item-meta events-item-meta_type"
+              className="col events-item-meta events-item-meta_type text-center"
             />
           </div>
           <div className="eventDetail-image-overlay-badges">

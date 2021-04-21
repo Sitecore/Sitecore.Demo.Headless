@@ -1,6 +1,5 @@
-import { post } from "./GenericService";
+import { forgetCurrentGuest } from "./BoxeverService";
 
 export function flush() {
-  // TODO: Is flushing the ASP.Net session still needed with Boxever?
-  return post("/session/flush");
+  return forgetCurrentGuest();
 }

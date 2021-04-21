@@ -6,15 +6,15 @@ import {
   DateField
 } from "@sitecore-jss/sitecore-jss-react";
 import { translate } from "react-i18next";
-import { NavLink } from "react-router-dom";
 import dayjs from "dayjs";
 import EventMap from "../EventMap";
 import EventLabel from "../EventLabel";
+import KioskSignup from "../KioskSignup";
 
 const EventDetail = ({ t, routeData }) => {
   const routeFields = routeData.fields;
   const eventName = routeData.name.value;
-  console.log(routeFields);
+
   return (
     <div className="eventDetail">
       <div className="eventDetail-image-container">
@@ -41,25 +41,23 @@ const EventDetail = ({ t, routeData }) => {
               className="eventDetail-date"
               render={date => dayjs(date).format("MMM D YYYY")}
             />
-            <NavLink to={"/register"} className="btn btn-primary">
-              {t("register")}
-            </NavLink>
+            <a href="#Register" className="btn btn-primary">{t("register")}</a>
           </div>
           <div className="row eventDetail-image-overlay-metas">
             <EventLabel
               fieldName="length"
               fieldValue={routeFields.length}
-              className="col events-item-meta events-item-meta_type"
+              className="col events-item-meta events-item-meta_type text-center"
             />
             <EventLabel
               fieldName="sportType"
               fieldValue={routeFields.sportType}
-              className="col events-item-meta events-item-meta_type"
+              className="col events-item-meta events-item-meta_type text-center"
             />
             <EventLabel
               fieldName="numberOfParticipants"
               fieldValue={routeFields.numberOfParticipants}
-              className="col events-item-meta events-item-meta_type"
+              className="col events-item-meta events-item-meta_type text-center"
             />
           </div>
         </div>
@@ -69,6 +67,8 @@ const EventDetail = ({ t, routeData }) => {
           <RichText field={routeFields.description} tag="p" />
         </div>
         <EventMap {...routeFields} eventName={eventName} />
+        <a id="Register"></a>
+        <KioskSignup {...routeData} />
       </div>
     </div>
   );

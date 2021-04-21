@@ -1,8 +1,11 @@
-export function trackCompleteRegistration() {
-  return trackGoal("Complete Registration");
+import { trackRegistration } from "./BoxeverService";
+
+export function trackCompleteRegistration(eventId, eventName, eventDate, eventUrlPath, sportType) {
+  return trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType);
 }
 
 export function trackCompleteFavoriteSports() {
+  // TODO: Convert this to a Boxever custom event
   return trackGoal("Complete Favorite Sports");
 }
 

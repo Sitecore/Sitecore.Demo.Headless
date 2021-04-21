@@ -67,14 +67,6 @@ Languages:
               s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}"
               s:par="take=3&amp;showInGrid&amp;showTitle=1&amp;showEventDescription=1&amp;personalize=1&amp;showLoadMore"
               s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0" />
-            <r
-              uid="{B5156FA2-8867-5EB2-89B7-8D9ECAFD090A}"
-              p:after="*[1=2]"
-              s:rname="ProductRecommendationList"
-              s:ds="{7A4991FA-0B3C-5BF0-A534-408EB750B2B9}"
-              s:id="{9E75D093-FB12-5018-96A0-0D76F6A96ECC}"
-              s:par=""
-              s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0" />
           </d>
         </r>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"

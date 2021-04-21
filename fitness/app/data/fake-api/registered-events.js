@@ -33,7 +33,7 @@ module.exports = {
         length: {
           value: "21.1K"
         },
-        numberOfParticpants: {
+        numberOfParticipants: {
           value: "3"
         },
         sportType: {
@@ -73,7 +73,7 @@ module.exports = {
         length: {
           value: "42.2K"
         },
-        numberOfParticpants: {
+        numberOfParticipants: {
           value: "300"
         },
         sportType: {

@@ -1707,6 +1707,7 @@ a[target="_blank"]:after {
   -ms-flex-align: center;
   align-items: center;
   padding: 0 18px;
+  margin: 0px;
 }
 
 .eventDetail-image-overlay-metas .col {
@@ -2970,7 +2971,7 @@ a.product-link:hover {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 21.2963vw 0 8.33333vw 0;
+  padding: 2vw 0 2vw 0;
   position: absolute;
   left: 0;
   right: 0;

@@ -1,21 +1,16 @@
+import { trackRegistration } from "./BoxeverService";
+
 export function trackEventSubscribe(eventId) {
   return trackGoal("Subscribe to Event");
 }
 
-export function trackEventUnsubscription(eventId) {
+// push api
+export function trackEventUnsubscription() {
   return trackGoal("Unsubscribe to Event");
 }
 
-export function trackEventFavorite(eventId) {
-  return trackGoal("Favorite Event");
-}
-
-export function trackEventUnfavorite(eventId) {
-  return trackGoal("Unfavorite Event");
-}
-
-export function trackCompleteRegistration() {
-  return trackGoal("Complete Registration");
+export function trackCompleteRegistration(eventId, eventName, eventDate, eventUrlPath, sportType) {
+  return trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType);
 }
 
 export function trackCompleteFavoriteSports() {

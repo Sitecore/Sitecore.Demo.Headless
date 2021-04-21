@@ -3,7 +3,6 @@ import {
   Manifest,
   SitecoreIcon
 } from "@sitecore-jss/sitecore-jss-manifest";
-import { RichText } from "@sitecore-jss/sitecore-jss-react";
 
 /**
  * Adds the EventList component to the disconnected manifest.
@@ -30,12 +29,6 @@ export default function(manifest) {
         required: true
       },
       {
-        name: "longDescription",
-        type: CommonFieldTypes.RichText,
-        displayName: "Long Event Description",
-        required: true
-      },
-      {
         name: "image",
         type: CommonFieldTypes.Image,
         displayName: "Event Image",
@@ -59,10 +52,19 @@ export default function(manifest) {
         displayName: "Event Longitude"
       },
       {
-        name: "labels",
-        type: "multilist",
-        source: "query:./*[@@templatename='event-label']",
-        displayName: "Event Labels"
+        name: "length",
+        type: CommonFieldTypes.SingleLineText,
+        displayName: "Event Length"
+      },
+      {
+        name: "numberOfParticipants",
+        type: CommonFieldTypes.Number,
+        displayName: "Event Number of Participants"
+      },
+      {
+        name: "sportType",
+        type: CommonFieldTypes.SingleLineText,
+        displayName: "Event Sport Type"
       }
     ]
   });
