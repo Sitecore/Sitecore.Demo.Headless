@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Server.HttpSys;
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Http;
 
-namespace Boxever.Controllers
+namespace Sitecore.Integrations.Boxever.Controllers
 {
     [ApiController]
     [Route("[controller]")]
