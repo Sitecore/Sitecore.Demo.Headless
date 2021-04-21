@@ -133,6 +133,7 @@
     <Compile Include="Controllers\LighthouseFitnessProductsController.cs" />
     <Compile Include="Controllers\LighthouseFitnessEventsController.cs" />
     <Compile Include="Indexing\ComputedFields\CoordinatesField.cs" />
+    <Compile Include="Indexing\ComputedFields\SportTypeField.cs" />
     <Compile Include="Indexing\ComputedFields\ProfileNamesField.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\EventInfo.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />
