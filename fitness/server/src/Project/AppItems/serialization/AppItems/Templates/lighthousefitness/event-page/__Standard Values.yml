@@ -52,69 +52,7 @@ SharedFields:
           ds="{EC3095BB-03BB-5D57-B8FD-1E6D815AB30D}"
           id="{0EFCB51C-7B5E-5FAC-A8B2-79EB2F8ECBDA}"
           par=""
-          ph="/hf-body">
-          <rls>
-            <ruleset>
-              <rule
-                uid="{61D6D7A3-C6B5-4C93-8296-2C62A40B797C}"
-                name="already registered">
-                <conditions>
-                  <condition
-                    uid="B7E65F251F384D228BD6EB0813D0C270"
-                    id="{CCF198D3-05B2-4955-A4A5-A1A489215324}" />
-                </conditions>
-                <actions>
-                  <action
-                    uid="85ACD090D08F4BB98579F427EEEA3DCC"
-                    id="{7B578B65-BD2F-4C7C-9A24-DAE3E98B4F23}"
-                    RenderingItem="{90192F3F-F9FB-58B7-95D2-D7D37D2A18D4}" />
-                  <action
-                    uid="9B4F84B0255D49BEBA71FFC20D1C2E93"
-                    id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
-                    DataSource="{B9BDBCC2-2623-5B0B-B203-2CCF17F0D879}" />
-                </actions>
-              </rule>
-              <rule
-                uid="{86FEC4D8-A1C7-4130-BD09-49F077B53D43}"
-                name="current contact is known">
-                <conditions>
-                  <condition
-                    uid="8798425A52BA4B8E9458E15CD5D042A2"
-                    id="{94E2EE80-7A87-421F-B2F2-64E3C9FC0CEC}" />
-                </conditions>
-                <actions>
-                  <action
-                    uid="AC0E1C57F3294F1B88E487386A39E5B3"
-                    id="{7B578B65-BD2F-4C7C-9A24-DAE3E98B4F23}"
-                    RenderingItem="{230B5E44-1877-519D-9D18-388EF800E321}" />
-                  <action
-                    uid="E5F8FCFFBF454B919AAD23CF97A44061"
-                    id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
-                    DataSource="{7F5A525C-9F0A-5945-9E6B-182CAAA00929}" />
-                </actions>
-              </rule>
-              <rule
-                uid="{00000000-0000-0000-0000-000000000000}"
-                name="Default">
-                <conditions>
-                  <condition
-                    uid="E3537A56291F414E9131AB2568E8CC49"
-                    id="{4888ABBB-F17D-4485-B14B-842413F88732}" />
-                </conditions>
-                <actions>
-                  <action
-                    uid="E6A05A3DE30C429280C7C67741DBBE00"
-                    id="{7B578B65-BD2F-4C7C-9A24-DAE3E98B4F23}"
-                    RenderingItem="{0EFCB51C-7B5E-5FAC-A8B2-79EB2F8ECBDA}" />
-                  <action
-                    uid="452154BF54DC4740A24544563C83BFE3"
-                    id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
-                    DataSource="{EC3095BB-03BB-5D57-B8FD-1E6D815AB30D}" />
-                </actions>
-              </rule>
-            </ruleset>
-          </rls>
-        </r>
+          ph="/hf-body" />
       </d>
     </r>
 Languages:

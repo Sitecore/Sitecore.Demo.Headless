@@ -65,7 +65,6 @@
     <Content Include="App_Config\Include\Project\Project.AppItems.Serialization.config" />
     <Content Include="App_Config\Include\Project\Project.Unicorn.DevSettings.config" />
     <Content Include="App_Config\Include\Project\Project.Common.Serialization.config" />
-    <Content Include="App_Config\Include\Project\Project.MarketingDefinitions.Serialization.config" />
     <Content Include="App_Config\Include\Project\Project.GraphQL.config.disabled" />
     <Content Include="App_Config\Include\Project\Project.ContentHub.Serialization.config" />
     <Content Include="App_Config\Include\z.Project.Overrides\Sitecore.Demo.Headless.Website.config" />

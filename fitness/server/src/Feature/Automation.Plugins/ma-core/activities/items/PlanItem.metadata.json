@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{"PlanItem":{"__symbolic":"class","extends":{"__symbolic":"reference","module":"./ItemBase","name":"ItemBase","line":2,"character":30},"members":{"initParams":[{"__symbolic":"method"}],"initChildren":[{"__symbolic":"method"}],"computeChildrenOffsets":[{"__symbolic":"method"}]}}}}]

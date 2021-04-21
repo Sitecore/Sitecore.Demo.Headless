@@ -76,9 +76,7 @@ public void PublishProjects(string rootFolder, string publishRoot)
 {
 	Information("Publishing " + rootFolder + " to " + publishRoot);
 
-	Func<IFileSystemInfo, bool> excludedProjects = fileSystemInfo => !fileSystemInfo.Path.FullPath.Contains("Fitness.Automation.Plugins");
-
-	var projects = GetFiles($"{rootFolder}\\**\\code\\*.csproj", excludedProjects);
+	var projects = GetFiles($"{rootFolder}\\**\\code\\*.csproj");
 
 	foreach (var project in projects) {
 		Information("Publishing " + project + " to " + publishRoot);
@@ -96,7 +94,7 @@ public void PublishProjects(string rootFolder, string publishRoot)
 
 public FilePathCollection GetTransformFiles(string rootFolder)
 {
-	Func<IFileSystemInfo, bool> exclude_obj_bin_folder =fileSystemInfo => !fileSystemInfo.Path.FullPath.Contains("/obj/") || !fileSystemInfo.Path.FullPath.Contains("/bin/");
+	Func<IFileSystemInfo, bool> exclude_obj_bin_folder = fileSystemInfo => !fileSystemInfo.Path.FullPath.Contains("/obj/") || !fileSystemInfo.Path.FullPath.Contains("/bin/");
 
 	Information($"Collecting transforms from: {rootFolder}");
 	var xdtFiles = GetFiles($"{rootFolder}\\**\\*.xdt", exclude_obj_bin_folder);

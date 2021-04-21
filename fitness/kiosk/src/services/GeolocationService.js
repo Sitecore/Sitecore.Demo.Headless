@@ -16,7 +16,7 @@ export function getLongitude() {
 export function updateGeoLocation(locationData) {
   if(canUseDOM){
     const {lat, lng, location} = locationData;
-    localStorage.setItem("lat", lat); 
+    localStorage.setItem("lat", lat);
     localStorage.setItem("lng", lng);
     localStorage.setItem("location", location);
   }

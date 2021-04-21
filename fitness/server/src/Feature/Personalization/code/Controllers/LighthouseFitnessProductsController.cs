@@ -37,8 +37,8 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
             try
             {
                 var allItems = dataService.GetAll(Context.Database);
-                var scroredItems = itemScoringService.ScoreItems(allItems, Context.Database);
-                var items = new JArray(scroredItems.Take(take).Select(i => JObject.Parse(itemSerializer.Serialize(i))));
+                var scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);
+                var items = new JArray(scoredItems.Take(take).Select(i => JObject.Parse(itemSerializer.Serialize(i))));
                 return Content(items.ToString(), "application/json");
             }
             catch (Exception ex)

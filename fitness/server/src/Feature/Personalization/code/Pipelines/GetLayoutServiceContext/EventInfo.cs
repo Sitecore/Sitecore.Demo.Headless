@@ -20,7 +20,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Pipelines.GetLayoutServi
         {
             if (facetService == null)
             {
-                Log.Fatal("GetLayoutServiceContext.EventInfo processor terimates. Must have an instance of IStringValueListFacetService resolved", this);
+                Log.Fatal("GetLayoutServiceContext.EventInfo processor terminates. Must have an instance of IStringValueListFacetService resolved", this);
                 return;
             }
 
@@ -49,7 +49,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Pipelines.GetLayoutServi
                 catch (Exception ex)
                 {
                     args.ContextData.Add("event", new { });
-                    Log.Error("GetLayoutServiceContext.EventInfo processor terimates.", ex, this);
+                    Log.Error("GetLayoutServiceContext.EventInfo processor terminates.", ex, this);
                 }
             }
         }

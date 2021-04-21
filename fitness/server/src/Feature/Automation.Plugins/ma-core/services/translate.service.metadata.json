@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{"TRANSLATE_SERVICE":{"__symbolic":"new","expression":{"__symbolic":"reference","module":"@angular/core","name":"InjectionToken","line":3,"character":37},"arguments":["TranslateService"]}}}]
