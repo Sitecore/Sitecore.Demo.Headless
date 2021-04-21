@@ -1,17 +1,17 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.HttpSys;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.IO;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Server.HttpSys;
 using System.Diagnostics.CodeAnalysis;
-using Microsoft.AspNetCore.Http;
 
 namespace Sitecore.Integrations.Boxever.Controllers
 {
@@ -31,9 +31,9 @@ namespace Sitecore.Integrations.Boxever.Controllers
         {
             this.configuration = configuration;
 
-            apiUrl = "https://api-eu-west-1-production.boxever.com"; // config.GetValue<string>("BOXEVER_APIURL");
-            clientKey = "fouatnr2j122o9z5u403ur7g24mxcros";// config.GetValue<string>("BOXEVER_CLIENTKEY");
-            apiToken = "z0a7iqgifq70d9kcs8wbs0jf80fthftg";// config.GetValue<string>("BOXEVER_APITOKEN");
+            apiUrl = Environment.GetEnvironmentVariable("BOXEVER_APIURL"); 
+            clientKey = Environment.GetEnvironmentVariable("BOXEVER_CLIENTKEY"); 
+            apiToken = Environment.GetEnvironmentVariable("BOXEVER_APITOKEN");
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 AuthenticationSchemes.Basic.ToString(),
                 System.Convert.ToBase64String(Encoding.ASCII.GetBytes($"{clientKey}:{apiToken}"))
@@ -42,7 +42,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
 
         private string GetRequest(string apiUrlSegments)
         {
-            HttpResponseMessage response = httpClient.GetAsync($"{apiUrl}{apiUrlSegments}").Result;
+            HttpResponseMessage response = httpClient.GetAsync($"{apiUrl}{apiVersion}{apiUrlSegments}").Result;
             string result = string.Empty;
             using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result))
             {
@@ -194,12 +194,12 @@ namespace Sitecore.Integrations.Boxever.Controllers
                 var dataExtensionJson = dynJson.FirstOrDefault(i => i.Key == $"ext{dataExtensionName}");
 
                 if (dataExtensionJson.Equals(new KeyValuePair<string, JToken>()))
-                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+                    return StatusCode(StatusCodes.Status404NotFound);
 
                 var keyList = dataExtensionJson.Value["items"]?.Children();
 
                 if (keyList == null)
-                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+                    return StatusCode(StatusCodes.Status404NotFound);
 
                 var keyRefList = new List<string>();
                 foreach (var key in keyList)
@@ -209,19 +209,18 @@ namespace Sitecore.Integrations.Boxever.Controllers
                 }
                 
                 if (keyRefList == null || keyRefList.Count < 1)
-                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+                    return StatusCode(StatusCodes.Status404NotFound);
 
                 foreach (var keyRef in keyRefList)
                 {
                     DeleteGuestDataExtension(guestRef, dataExtensionName, keyRef);
                 }
 
-                return new HttpStatusCodeResult(HttpStatusCode.OK);
+                return StatusCode(StatusCodes.Status200OK);
             }
             catch (Exception ex)
             {
-                Log.Error("Unable to delete all keys for guest data extension", ex, this);
-                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -235,29 +234,28 @@ namespace Sitecore.Integrations.Boxever.Controllers
                 var dataExtensionJson = dynJson.FirstOrDefault(i => i.Key == $"ext{dataExtensionName}");
 
                 if (dataExtensionJson.Equals(new KeyValuePair<string, JToken>()))
-                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+                    return StatusCode(StatusCodes.Status404NotFound);
 
                 var keyList = dataExtensionJson.Value["items"]?.Children();
 
                 if (keyList == null)
-                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+                    return StatusCode(StatusCodes.Status404NotFound);
 
                 var key = keyList.Value.FirstOrDefault(i => i.Value<string>("key").ToLower() == keyName.ToLower());
 
                 if (key == null)
-                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+                    return StatusCode(StatusCodes.Status404NotFound);
 
                 var keyRef = key.Value<string>("ref");
 
                 if (String.IsNullOrWhiteSpace(keyRef))
-                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+                    return StatusCode(StatusCodes.Status404NotFound);
 
                 return DeleteGuestDataExtension(guestRef, dataExtensionName, keyRef);
             }
             catch (Exception ex)
             {
-                Log.Error("Unable to delete key for guest data extension", ex, this);
-                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
     }

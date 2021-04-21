@@ -1,5 +1,7 @@
- #syntax=docker/dockerfile:1
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
+ARG BUILD_IMAGE
+ARG BASE_IMAGE
+
+FROM ${BUILD_IMAGE} AS build-env
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
@@ -11,7 +13,7 @@ COPY src/ ./
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:5.0
+FROM ${BASE_IMAGE}
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "Boxever.dll"]
+ENTRYPOINT ["dotnet", "Sitecore.Integrations.Boxever.dll"]
