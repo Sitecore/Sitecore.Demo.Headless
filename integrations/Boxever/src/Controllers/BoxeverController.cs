@@ -22,13 +22,15 @@ namespace Sitecore.Integrations.Boxever.Controllers
         private string apiUrl = "";
         private string clientKey = "";
         private string apiToken = "";
+        private string apiVersion = "/v2";
         private HttpClient httpClient = new HttpClient();
-        private readonly IConfiguration config;
+        IConfiguration configuration;
 
 
         public BoxeverController(IConfiguration configuration)
         {
-            config = configuration;
+            this.configuration = configuration;
+
             apiUrl = "https://api-eu-west-1-production.boxever.com"; // config.GetValue<string>("BOXEVER_APIURL");
             clientKey = "fouatnr2j122o9z5u403ur7g24mxcros";// config.GetValue<string>("BOXEVER_CLIENTKEY");
             apiToken = "z0a7iqgifq70d9kcs8wbs0jf80fthftg";// config.GetValue<string>("BOXEVER_APITOKEN");
@@ -55,7 +57,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
             req.Seek(0, SeekOrigin.Begin);
             string json = new StreamReader(req).ReadToEnd();
             var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = httpClient.PostAsync($"{apiUrl}{apiUrlSegments}", stringContent).Result;
+            var response = httpClient.PostAsync($"{apiUrl}{apiVersion}{apiUrlSegments}", stringContent).Result;
             return response.Content.ReadAsStringAsync().Result;
         }
 
@@ -76,7 +78,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
             try
             {
                 return Content(
-                    GetRequest($"/v2/guests/{guestRef}"),
+                    GetRequest($"/guests/{guestRef}"),
                     "application/json"
                     );
             }
@@ -92,7 +94,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
             try
             {
                 return Content(
-                    GetRequest($"/v2/guests/{guestRef}?expand=ext{dataExtensionName}"),
+                    GetRequest($"/guests/{guestRef}?expand=ext{dataExtensionName}"),
                     "application/json"
                     );
             }
@@ -108,13 +110,13 @@ namespace Sitecore.Integrations.Boxever.Controllers
             try
             {
                 return Content(
-                    GetRequest("/v2/guests"),
+                    GetRequest("/guests"),
                     "application/json"
                     );
             }
             catch (Exception ex)
             {
-                return  StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -124,7 +126,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
             try
             {
                 return Content(
-                    GetRequest($"/v2/guests/{guestRef}/ext{dataExtensionName}"),
+                    GetRequest($"/guests/{guestRef}/ext{dataExtensionName}"),
                     "application/json"
                     );
             }
@@ -140,7 +142,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
             try
             {
                 return Content(
-                    GetRequest($"/v2/guests/{guestRef}/ext{dataExtensionName}/{dataExtensionRef}"),
+                    GetRequest($"/guests/{guestRef}/ext{dataExtensionName}/{dataExtensionRef}"),
                     "application/json"
                     );
             }
@@ -156,7 +158,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
             try
             {
                 return Content(
-                    PostRequest($"/v2/guests/{guestRef}/ext{dataExtensionName}"),
+                    PostRequest($"/guests/{guestRef}/ext{dataExtensionName}"),
                     "application/json"
                     );
             }
@@ -172,7 +174,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
             try
             {
                 return Content(
-                    DeleteRequest($"/v2/guests/{guestRef}/ext{dataExtensionName}/{dataExtensionRef}"),
+                    DeleteRequest($"/guests/{guestRef}/ext{dataExtensionName}/{dataExtensionRef}"),
                     "application/json"
                     );
             }
