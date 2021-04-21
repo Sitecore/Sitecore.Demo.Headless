@@ -97,7 +97,6 @@ a:hover {
 }
 
 .event-icon {
-  width: 1.11111vw;
   height: auto;
   background-image: none;
   background-size: 1.11111vw auto;
@@ -106,6 +105,8 @@ a:hover {
   margin: 0 0.23148vw;
   border: 0;
   display: inline-block;
+  margin-top: 10px;
+  padding-right: 5px;
 }
 
 .btn {

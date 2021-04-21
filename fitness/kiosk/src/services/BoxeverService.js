@@ -55,6 +55,16 @@ export function logViewEvent(
   return sendEventCreate(viewEvent);
 }
 
+export function logFilterEvent(
+  selectedSports = required()
+) {
+  var filterEvent = createBaseEvent();
+  filterEvent.type = "FILTER_SPORT";
+  filterEvent.filteredsports=selectedSports;
+
+  return sendEventCreate(filterEvent);
+}
+
 // Boxever identification
 export function identifyVisitor(
   firstname = required(),
