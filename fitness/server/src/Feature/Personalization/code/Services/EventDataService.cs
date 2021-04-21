@@ -24,8 +24,8 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
         [IndexField("longitude")]
         public float Longitude { get; set; }
 
-        [IndexField("sporttype")]
-        public string SportType { get; set; }
+        [IndexField("_profilenames")]
+        public string ProfileNames { get; set; }
 
         [IndexField("coordinates")]
         public Coordinate EventLocation { get; set; }
@@ -36,7 +36,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
     /// </summary>
     public class EventDataService : IEventDataService
     {
-        public IEnumerable<Item> GetAll([NotNull]Database database, string[] sportTypes, int take, int skip, double latitude, double longitude, out int totalSearchResults)
+        public IEnumerable<Item> GetAll([NotNull]Database database, string[] profileNames, int take, int skip, double latitude, double longitude, out int totalSearchResults)
         {
             using (var context = GetIndex(database).CreateSearchContext(SearchSecurityOptions.DisableSecurityCheck))
             {
@@ -53,10 +53,10 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
                 dateQuery = dateQuery.And(i => i.Date > DateTime.UtcNow);
 
                 var profileNamesQuery = PredicateBuilder.True<EventSearchResultItem>();
-                foreach (var sportType in sportTypes)
+                foreach (var profileName in profileNames)
                 {
-                    var profileNameValue = sportType.ToLowerInvariant();
-                    profileNamesQuery = profileNamesQuery.Or(item => item.SportType.Contains(profileNameValue));
+                    var profileNameValue = profileName.ToLowerInvariant();
+                    profileNamesQuery = profileNamesQuery.Or(item => item.ProfileNames.Equals(profileNameValue));
                 }
 
                 // joining the queries

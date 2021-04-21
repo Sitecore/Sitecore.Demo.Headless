@@ -38,29 +38,29 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         [HttpGet]
         [ActionName("Index")]
         [CancelCurrentPage]
-        public ActionResult Get(int take = -1, int skip = -1, float lat = 0, float lng = 0, string sportTypes = "", bool personalize = true)
+        public ActionResult Get(int take = -1, int skip = -1, float lat = 0, float lng = 0, string profiles = "", bool personalize = true)
         {
             try
             {
                 // fetching profile names from the action parameter
-                var sports = string.IsNullOrWhiteSpace(sportTypes) ? new string[0] : sportTypes.Split(',');
+                var profileNames = string.IsNullOrWhiteSpace(profiles) ? new string[0] : profiles.Split('|');
                 // or loading from the tracker if not specified
-                if (personalize && !sports.Any())
+                if (personalize && !profileNames.Any())
                 {
-                    //sports = #### Get Sports from Boxever Guest Data Extensions;
+                    profileNames = Tracker.Current.GetPopulatedProfilesFromTracker();
                 }
 
-                var allItems = dataService.GetAll(Context.Database, sports, take, skip, lat, lng, out int totalSearchResults);
+                var allItems = dataService.GetAll(Context.Database, profileNames, take, skip, lat, lng, out int totalSearchResults);
 
-                //if (personalize)
-                //{
-                //    var scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);
-                //    // return scored items only if anything was returned
-                //    if (scoredItems.Any())
-                //    {
-                //        allItems = scoredItems;
-                //    }
-                //}
+                if (personalize)
+                {
+                    var scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);
+                    // return scored items only if anything was returned
+                    if (scoredItems.Any())
+                    {
+                        allItems = scoredItems;
+                    }
+                }
 
                 var events = new JArray(allItems.Select(i => JObject.Parse(itemSerializer.Serialize(i))));
                 var results = new JObject
@@ -81,7 +81,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         [HttpGet]
         [ActionName("getregistrations")]
         [CancelCurrentPage]
-        public ActionResult GetRegistrations([NotNull] string guestRef)
+        public ActionResult GetRegistrations()
         {
             try
             {
@@ -116,7 +116,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         [HttpGet]
         [ActionName("getfavorites")]
         [CancelCurrentPage]
-        public ActionResult GetFavorites([NotNull] string guestRef)
+        public ActionResult GetFavorites()
         {
             try
             {
