@@ -1,25 +1,15 @@
 ﻿using System;
-using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using Newtonsoft.Json.Linq;
-using Sitecore.Analytics;
 using Sitecore.Annotations;
 using Sitecore.Diagnostics;
-using Sitecore.Demo.Fitness.Feature.Personalization.Services;
-using Sitecore.Demo.Fitness.Feature.Personalization.Utils;
-using Sitecore.Demo.Fitness.Foundation.Analytics;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Filters;
-using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
 using Sitecore.LayoutService.Mvc.Security;
-using Sitecore.LayoutService.Serialization.ItemSerializers;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System.Dynamic;
+using Sitecore.Configuration;
 
 namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
 {
@@ -29,22 +19,22 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
     [SuppressFormsAuthenticationRedirect]
     public class LighthouseFitnessBoxeverController : Controller
     {
-        private string url = @"https://api-eu-west-1-production.boxever.com";
-        private string userName = @"fouatnr2j122o9z5u403ur7g24mxcros";
-        private string password = @"z0a7iqgifq70d9kcs8wbs0jf80fthftg";
+        private string apiUrl = Settings.GetSetting("Boxever.ApiUrl", string.Empty);
+        private string clientKey = Settings.GetSetting("Boxever.ClientKey", string.Empty);
+        private string apiToken = Settings.GetSetting("Boxever.ApiToken", string.Empty);
         private HttpClient httpClient = new HttpClient();
 
         public LighthouseFitnessBoxeverController()
         {
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 AuthenticationSchemes.Basic.ToString(),
-                System.Convert.ToBase64String(Encoding.ASCII.GetBytes($"{userName}:{password}"))
+                System.Convert.ToBase64String(Encoding.ASCII.GetBytes($"{clientKey}:{apiToken}"))
                 );
         }
 
         public string GetRequest(string apiUrlSegments)
         {
-            HttpResponseMessage response = httpClient.GetAsync($"{url}{apiUrlSegments}").Result;
+            HttpResponseMessage response = httpClient.GetAsync($"{apiUrl}{apiUrlSegments}").Result;
             string result = string.Empty;
             using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result))
             {
@@ -59,13 +49,13 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
             req.Seek(0, SeekOrigin.Begin);
             string json = new StreamReader(req).ReadToEnd();
             var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = httpClient.PostAsync($"{url}{apiUrlSegments}", stringContent).Result;
+            var response = httpClient.PostAsync($"{apiUrl}{apiUrlSegments}", stringContent).Result;
             return response.Content.ReadAsStringAsync().Result;
         }
 
         public string DeleteRequest(string apiUrlSegments)
         {
-            HttpResponseMessage response = httpClient.DeleteAsync($"{url}{apiUrlSegments}").Result;
+            HttpResponseMessage response = httpClient.DeleteAsync($"{apiUrl}{apiUrlSegments}").Result;
             string result = string.Empty;
             using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result))
             {
