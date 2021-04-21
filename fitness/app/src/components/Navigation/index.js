@@ -77,6 +77,16 @@ class Navigation extends React.Component {
               <NavItem>
                 <NavLink
                   tag={Link}
+                  to={"/shop"}
+                  onClick={() => this.nav("/shop")}
+                  className="nav-link"
+                >
+                  Shop
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  tag={Link}
                   to={"/events"}
                   onClick={() => this.nav("/events")}
                   className="nav-link"

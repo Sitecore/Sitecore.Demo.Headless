@@ -4,10 +4,18 @@ import { withTranslation } from "react-i18next";
 import EventMap from "../EventMap";
 import EventLabel from "../EventLabel";
 import withScrollToTop from "../../hoc/withScrollToTop";
+import OcProductList from "../../ordercloud/components/OcProductList";
+import {getMasterImageUrl} from "../ProductDetail";
+import { Link } from "react-router-dom";
+
+const getListImage = (p) => {
+  return `${getMasterImageUrl(p)}&t=w400`
+}
 
 const EventDetail = ({ context, t, fields, routeData, date, cta, icon, description }) => {
   const routeFields = routeData.fields;
   const eventName = routeData.name.value;
+
   return (
     <div className="eventDetail">
       <div className="eventDetail-image-container">
@@ -31,7 +39,7 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
             {date}
             {cta}
           </div>
-          <div className="row eventDetail-image-overlay-metas">
+          <div className="eventDetail-image-overlay-metas">
             <EventLabel
               fieldName="length"
               fieldValue={routeFields.length}
@@ -56,6 +64,10 @@ const EventDetail = ({ context, t, fields, routeData, date, cta, icon, descripti
       <div className="eventDetail-content">
         <div className="eventDetail-description">{description}</div>
         <EventMap {...routeFields} eventName={eventName} />
+      </div>
+      <div className="eventDetail-products">
+        <OcProductList options={{pageSize:4, categoryID: routeFields.sportType.value}} columns={{xs:2}} imgSrcMap={getListImage} hrefMap={p => `/products/${p.ID}`}/>
+        <Link className="btn btn-secondary" to={`/shop/${routeFields.sportType.value}`}>{`Shop All ${routeFields.sportType.value} Products`}</Link>
       </div>
     </div>
   );
