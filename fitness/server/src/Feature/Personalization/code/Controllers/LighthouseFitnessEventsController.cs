@@ -1,18 +1,19 @@
-﻿using System;
-using System.Linq;
-using System.Net;
-using System.Web.Mvc;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Sitecore.Analytics;
 using Sitecore.Annotations;
-using Sitecore.Diagnostics;
 using Sitecore.Demo.Fitness.Feature.Personalization.Services;
 using Sitecore.Demo.Fitness.Feature.Personalization.Utils;
-using Sitecore.Demo.Fitness.Foundation.Analytics;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Filters;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
+using Sitecore.Diagnostics;
 using Sitecore.LayoutService.Mvc.Security;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
+using System;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Web.Mvc;
 
 namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
 {
@@ -85,26 +86,21 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         {
             try
             {
-                var eventIds = facetService.GetFacetValues(FacetIDs.RegisteredEvents);
-                var subscriptions = facetService.GetFacetValues(FacetIDs.Subscriptions);
-                var eventItems = eventIds.Select(id => dataService.GetById(Context.Database, Guid.Parse(id))).ToList();
+                var client = new HttpClient { BaseAddress = new Uri("https://localhost:44375") };
 
-                var events = new JArray();
-                foreach (var eventItem in eventItems)
+                client.BaseAddress = new Uri("https://localhost:44375/Boxever/getguestdataextensionexpanded");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"/Boxever/getguestdataextensionexpanded?guestRef=89fd8576-ecfa-44c0-94e1-b58c4026babd&dataExtensionName=RegisteredEvents"))
                 {
-                    var eventData = JObject.Parse(itemSerializer.Serialize(eventItem));
-                    var eventId = eventItem.ID.Guid.ToString("D");
-                    eventData.Add("active", subscriptions.Contains(eventId));
-                    events.Add(eventData);
+                    using (var response = client.SendAsync(request))
+                    {
+                        var responseContent = response.Result.ToString();
+                        return new HttpStatusCodeResult(HttpStatusCode.OK);
+
+                    }
                 }
-
-                var results = new JObject
-                {
-                    { "events", events },
-                    { "total", eventItems.Count }
-                };
-
-                return Content(results.ToString(), "application/json");
             }
             catch (Exception ex)
             {
@@ -120,16 +116,21 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         {
             try
             {
-                var eventIds = facetService.GetFacetValues(FacetIDs.FavoriteEvents);
-                var eventItems = eventIds.Select(id => dataService.GetById(Context.Database, Guid.Parse(id))).ToList();
-                var events = new JArray(eventItems.Select(i => JObject.Parse(itemSerializer.Serialize(i))));
-                var results = new JObject
-                {
-                    { "events", events },
-                    { "total", eventItems.Count }
-                };
+                var client = new HttpClient {BaseAddress = new Uri("https://localhost:44375")};
 
-                return Content(results.ToString(), "application/json");
+                client.BaseAddress = new Uri("https://localhost:44375/Boxever/getguestdataextensionexpanded");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"/Boxever/getguestdataextensionexpanded?guestRef=89fd8576-ecfa-44c0-94e1-b58c4026babd&dataExtensionName=FavoritedEvents"))
+                {
+                    using (var response = client.SendAsync(request))
+                    {
+                        var responseContent = response.Result.ToString();
+                        return new HttpStatusCodeResult(HttpStatusCode.OK);
+
+                    }
+                }
             }
             catch (Exception ex)
             {
