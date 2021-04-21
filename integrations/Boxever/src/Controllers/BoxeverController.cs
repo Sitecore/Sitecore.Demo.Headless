@@ -183,5 +183,82 @@ namespace Sitecore.Integrations.Boxever.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
+        [HttpDelete("deleteallkeysforguestdataextension")]
+        public ActionResult DeleteAllKeysForGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName)
+        {
+            try
+            {
+                var requestResult = GetGuestDataExtensionExpanded(guestRef, dataExtensionName);
+                var dynJson = JsonConvert.DeserializeObject<Dictionary<string, JToken>>(((ContentResult)requestResult).Content);
+                var dataExtensionJson = dynJson.FirstOrDefault(i => i.Key == $"ext{dataExtensionName}");
+
+                if (dataExtensionJson.Equals(new KeyValuePair<string, JToken>()))
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+                var keyList = dataExtensionJson.Value["items"]?.Children();
+
+                if (keyList == null)
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+                var keyRefList = new List<string>();
+                foreach (var key in keyList)
+                {
+                    var keyRef = key.Value<string>("ref");
+                    keyRefList.Add(keyRef);
+                }
+                
+                if (keyRefList == null || keyRefList.Count < 1)
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+                foreach (var keyRef in keyRefList)
+                {
+                    DeleteGuestDataExtension(guestRef, dataExtensionName, keyRef);
+                }
+
+                return new HttpStatusCodeResult(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to delete all keys for guest data extension", ex, this);
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpDelete("deletekeyforguestdataextension")]
+        public ActionResult DeleteKeyForGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [NotNull] string keyName)
+        {
+            try
+            {
+                var requestResult = GetGuestDataExtensionExpanded(guestRef, dataExtensionName);
+                var dynJson = JsonConvert.DeserializeObject<Dictionary<string, JToken>>(((ContentResult)requestResult).Content);
+                var dataExtensionJson = dynJson.FirstOrDefault(i => i.Key == $"ext{dataExtensionName}");
+
+                if (dataExtensionJson.Equals(new KeyValuePair<string, JToken>()))
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+                var keyList = dataExtensionJson.Value["items"]?.Children();
+
+                if (keyList == null)
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+                var key = keyList.Value.FirstOrDefault(i => i.Value<string>("key").ToLower() == keyName.ToLower());
+
+                if (key == null)
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+                var keyRef = key.Value<string>("ref");
+
+                if (String.IsNullOrWhiteSpace(keyRef))
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+                return DeleteGuestDataExtension(guestRef, dataExtensionName, keyRef);
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Unable to delete key for guest data extension", ex, this);
+                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
     }
 }
