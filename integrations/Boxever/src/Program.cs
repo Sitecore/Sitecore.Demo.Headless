@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Boxever
+namespace Sitecore.Integrations.Boxever
 {
     public class Program
     {

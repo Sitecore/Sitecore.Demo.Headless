@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace Boxever
+namespace Sitecore.Integrations.Boxever
 {
     public class Startup
     {
