@@ -484,7 +484,27 @@ services:
       demo:
         aliases:
           - ${SH_HOST}
-
+  boxever:
+    image: ${REGISTRY}demo/lighthouse-boxever-proxy:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    build:
+      context: docker/images/demo-boxever
+    environment:
+      BOXEVER_APIURL: ${BOXEVER_APIURL}
+      BOXEVER_CLIENTKEY: ${BOXEVER_CLIENTKEY}
+      BOXEVER_APITOKEN: ${BOXEVER_APITOKEN}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.force-STS-Header.headers.forceSTSHeader=true"
+      - "traefik.http.middlewares.force-STS-Header.headers.stsSeconds=31536000"
+      - "traefik.http.routers.boxever-secure.entrypoints=websecure"
+      - "traefik.http.routers.boxever-secure.rule=Host(`${BOXEVER_HOST}`)"
+      - "traefik.http.routers.boxever-secure.tls=true"
+      - "traefik.http.routers.boxever-secure.middlewares=force-STS-Header"
+      - "traefik.http.services.boxever.loadbalancer.server.port=80"
+    networks:
+      demo:
+        aliases:
+          - ${BOXEVER_HOST}
 networks:
   demo:
     external:

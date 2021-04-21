@@ -102,7 +102,10 @@ services:
       demo:
         aliases:
           - kiosk.${HOSTNAME_SUFFIX}
-
+  boxever:
+    image: ${REGISTRY}demo/lighthouse-boxever-proxy:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    build:
+      context: ./images/demo-boxever
 networks:
   demo:
     external:
