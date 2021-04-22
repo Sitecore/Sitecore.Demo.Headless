@@ -51,19 +51,16 @@ namespace Sitecore.Integrations.Boxever.Controllers
             return result;
         }
 
-        private string PostRequest(string apiUrlSegments, dynamic body)
+        private string PostRequest(string apiUrlSegments, string json)
         {
-            //Stream req = body.ToString();
-            //req.Seek(0, SeekOrigin.Begin);
-            //string json = new StreamReader(req).ReadToEnd();
-            var stringContent = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
+            var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
             var response = httpClient.PostAsync($"{apiUrl}{apiVersion}{apiUrlSegments}", stringContent).Result;
             return response.Content.ReadAsStringAsync().Result;
         }
 
         private string DeleteRequest(string apiUrlSegments)
         {
-            HttpResponseMessage response = httpClient.DeleteAsync($"{apiUrl}{apiUrlSegments}").Result;
+            HttpResponseMessage response = httpClient.DeleteAsync($"{apiUrl}{apiVersion}{apiUrlSegments}").Result;
             string result = string.Empty;
             using (StreamReader stream = new StreamReader(response.Content.ReadAsStreamAsync().Result))
             {
@@ -120,6 +117,22 @@ namespace Sitecore.Integrations.Boxever.Controllers
             }
         }
 
+        [HttpGet("getguestByRef")]
+        public ActionResult GetGuestByRef([NotNull] string guestRef)
+        {
+            try
+            {
+                return Content(
+                    GetRequest($"/guests/{guestRef}"),
+                    "application/json"
+                );
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
         [HttpGet("getlocateguestdataextensions")]
         public ActionResult GetLocateGuestDataExtensions([NotNull] string guestRef, [NotNull] string dataExtensionName)
         {
@@ -154,7 +167,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
 
         [HttpPost("createguestdataextension")]
         [Consumes("application/json")]
-        public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [FromBody]dynamic body)
+        public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [FromBody]string body)
         {
             try
             {

@@ -1,4 +1,5 @@
 import { required } from "../utils";
+import { boxeverGet } from "./GenericService";
 
 function createBaseEvent() {
   return {
@@ -186,4 +187,14 @@ export function getGuestRef() {
   getGuestRefRequest.friendlyId = "getguestref";
 
   return callFlows(getGuestRefRequest);
+}
+
+export function getProfile(){
+  getGuestRef().then(response => {
+    return boxeverGet(
+      "/GetGuestByRef?guestRef="+ response.guestRef
+    );
+  }).catch(e => {
+    console.log(e);
+  });
 }

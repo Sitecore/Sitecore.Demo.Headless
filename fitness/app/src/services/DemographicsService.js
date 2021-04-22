@@ -4,7 +4,6 @@ import { getGuestRef } from "./BoxeverService";
 
 export function sendDemographicsToBoxever(age = required(), gender = required()) {
   getGuestRef().then(response => {
-    console.log(response);
     return boxeverPost(
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=CustomGuestData",
       {
