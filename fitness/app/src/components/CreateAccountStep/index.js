@@ -4,8 +4,7 @@ import { withRouter } from "react-router";
 import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
 import { withTranslation } from "react-i18next";
 import {
-  setDemographicsFacet,
-  setDemographicsProfile
+  sendDemographicsToBoxever
 } from "../../services/DemographicsService";
 import { setIdentification } from "../../services/IdentificationService";
 
@@ -47,15 +46,8 @@ class CreateAccountStep extends React.Component {
         console.log(err);
       });
 
-    setDemographicsFacet(age, gender)
-      .catch(err => {
-        console.log(err);
-      });
+    sendDemographicsToBoxever(age, gender);
 
-    setDemographicsProfile(age, gender)
-      .catch(err => {
-        console.log(err);
-      });
   }
 
   render() {

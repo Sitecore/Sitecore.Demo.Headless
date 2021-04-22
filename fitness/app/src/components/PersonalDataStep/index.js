@@ -3,10 +3,7 @@ import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
 import ContinueButton from "../ContinueButton/";
 import { NavLink } from "react-router-dom";
 import { withTranslation } from "react-i18next";
-import {
-  setDemographicsFacet,
-  setDemographicsProfile
-} from "../../services/DemographicsService";
+import { sendDemographicsToBoxever } from "../../services/DemographicsService";
 import { trackCompleteDemographics } from "../../services/TrackingService";
 
 class PersonalDataStep extends Component {
@@ -31,15 +28,9 @@ class PersonalDataStep extends Component {
 
   handleContinueClick(event) {
     const { age, gender } = this.state;
-    setDemographicsFacet(age, gender)
-      .catch(err => {
-        console.log(err);
-      });
+    sendDemographicsToBoxever(age, gender);
 
-    setDemographicsProfile(age, gender)
-      .catch(err => {
-        console.log(err);
-      });
+    sendDemographicsToBoxever(age, gender);
 
     trackCompleteDemographics();
   }

@@ -39,6 +39,23 @@ export function post(action, payload) {
   return axios(options);
 }
 
+export function boxeverPost(action, payload) {
+  const url = `${config.boxeverApiHost}/Boxever${action}&sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
+
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    data: payload,
+    withCredentials: false,
+    url
+  };
+
+  return axios(options);
+}
+
+
 export function get(action, payload, useCache = false) {
   const url = `${config.sitecoreApiHost}${apiStem}${action}?sc_apikey=${
     config.sitecoreApiKey

@@ -19,6 +19,7 @@ module.exports = function generateConfig(configOverrides) {
   const defaultConfig = {
     sitecoreApiKey: 'no-api-key-set',
     sitecoreApiHost: '',
+    boxeverApiHost:'https://localhost:44375', //TODO: Update to real url
     jssAppName: 'Unknown',
   };
 

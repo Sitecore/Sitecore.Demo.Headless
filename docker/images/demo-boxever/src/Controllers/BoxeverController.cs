@@ -51,12 +51,12 @@ namespace Sitecore.Integrations.Boxever.Controllers
             return result;
         }
 
-        private string PostRequest(string apiUrlSegments)
+        private string PostRequest(string apiUrlSegments, dynamic body)
         {
-            Stream req = Request.Body;
-            req.Seek(0, SeekOrigin.Begin);
-            string json = new StreamReader(req).ReadToEnd();
-            var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+            //Stream req = body.ToString();
+            //req.Seek(0, SeekOrigin.Begin);
+            //string json = new StreamReader(req).ReadToEnd();
+            var stringContent = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
             var response = httpClient.PostAsync($"{apiUrl}{apiVersion}{apiUrlSegments}", stringContent).Result;
             return response.Content.ReadAsStringAsync().Result;
         }
@@ -153,12 +153,13 @@ namespace Sitecore.Integrations.Boxever.Controllers
         }
 
         [HttpPost("createguestdataextension")]
-        public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName)
+        [Consumes("application/json")]
+        public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [FromBody]dynamic body)
         {
             try
             {
                 return Content(
-                    PostRequest($"/guests/{guestRef}/ext{dataExtensionName}"),
+                    PostRequest($"/guests/{guestRef}/ext{dataExtensionName}", body),
                     "application/json"
                     );
             }

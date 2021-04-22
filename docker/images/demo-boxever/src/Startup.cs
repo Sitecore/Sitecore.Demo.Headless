@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Sitecore.Integrations.Boxever.src;
 
 namespace Sitecore.Integrations.Boxever
 {
@@ -26,12 +27,18 @@ namespace Sitecore.Integrations.Boxever
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Boxever", Version = "v1" });
             });
+            services
+                .AddMvc(options =>
+                {
+                    options.InputFormatters.Insert(0, new RawJsonBodyInputFormatter());
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,8 +47,11 @@ namespace Sitecore.Integrations.Boxever
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-              
             }
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()); 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
