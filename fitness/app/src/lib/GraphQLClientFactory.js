@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /* eslint-disable import/first */
 
 import 'cross-fetch/polyfill';

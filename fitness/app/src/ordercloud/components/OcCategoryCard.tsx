@@ -13,7 +13,7 @@ const OcCategoryCard: FunctionComponent<OcProductCardProps> = ({ category, imgSr
   return (
       <a className="category-card card bg-dark mb-4" href={href}>
         <div className="card-img-top">
-          <img src={imageSource} />
+          <img src={imageSource} alt=""/>
         </div>
         <div className="card-body">
           <h2 className="card-title text-truncate w-100" title={category.Name}>{category.Name}</h2>

@@ -15,7 +15,7 @@ const OcProductCard: FunctionComponent<OcProductCardProps> = ({ product, imgSrcM
   return (
       <a className="product-card card bg-dark mb-4" href={href}>
         <div className="card-img-top">
-          <img src={imageSource} />
+          <img src={imageSource} alt=""/>
         </div>
         <div className="product-card-price">{price}</div>
         <div className="card-body">

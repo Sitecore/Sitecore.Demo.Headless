@@ -26,7 +26,7 @@ const CategoryDetail: FunctionComponent<{categoryId:string}> = ({categoryId}) =>
         <div className="category-product-list">
           <div className="category-product-list-banner">
             <div>
-              <img src={categoryBannerUrl}/>
+              <img src={categoryBannerUrl} alt={category.Name} />
             </div>
             <h1>{category && category.Name}</h1>
           </div>

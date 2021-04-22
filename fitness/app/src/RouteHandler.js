@@ -12,7 +12,7 @@ import config from './temp/config';
 import Layout from './Layout';
 import NotFound from './NotFound';
 import Loading from './components/Loading';
-import { logViewEvent } from "./services/BoxeverService";
+import { logViewEvent,getGuestRef } from "./services/BoxeverService";
 
 /* eslint-disable no-console */
 
@@ -29,6 +29,7 @@ class RouteHandler extends React.Component {
     this.state = {
       notFound: true,
       defaultLanguage: config.defaultLanguage,
+      guestRef:""
     };
 
     const routeData = this.extractRouteData();
@@ -67,6 +68,12 @@ class RouteHandler extends React.Component {
     if (!routeData || this.props.ssrRenderComplete) {
       this.updateRouteData();
     }
+
+    getGuestRef()
+    .then(response => this.setState({guestRef:response}))
+    .catch(e => {
+      console.log(e);
+    });
   }
 
   extractRouteData = () => {
