@@ -20,16 +20,45 @@ function sendEventCreate(event) {
     try {
       window.Boxever.eventCreate(
         event,
-        function (data) {
-          if (data && data.status === "OK") {
-            resolve();
+        function (response) {
+          if (!response) {
+            reject("No response provided.");
           }
-          reject();
+          if (response.status !== "OK") {
+            reject("Response status: " + response.status);
+          }
+          resolve(response);
         },
         'json'
       );
-    } catch {
-      reject();
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
+
+function callFlows(request) {
+  if (window === undefined) {
+    return new Promise(function (resolve) { resolve(); });
+  }
+
+  return new Promise(function (resolve, reject) {
+    try {
+      window.Boxever.callFlows(
+        request,
+        function (response) {
+          if (!response) {
+            reject("No response provided.");
+          }
+          if (response.status !== "OK") {
+            reject("Response status: " + response.status);
+          }
+          resolve(response);
+        },
+        'json'
+      );
+    } catch (err) {
+      reject(err);
     }
   });
 }
@@ -134,4 +163,22 @@ export function forgetCurrentGuest() {
     window.Boxever.reset();
     resolve();
   });
+}
+
+// Boxever get personalized events
+export function getPersonalizedEvents(getAllEventsUrl, getAllEventsPayload) {
+  if (window === undefined) {
+    return new Promise(function (resolve) { resolve(); });
+  }
+
+  var personalizedEventsRequest = createBaseEvent();
+
+  personalizedEventsRequest.clientKey = window._boxever_settings.client_key;
+  personalizedEventsRequest.friendlyId = "getpersonalizedevents";
+  personalizedEventsRequest.params = {
+    url: getAllEventsUrl,
+    payload: getAllEventsPayload
+  };
+
+  return callFlows(personalizedEventsRequest);
 }
