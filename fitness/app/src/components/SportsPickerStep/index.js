@@ -8,8 +8,7 @@ import "rc-slider/assets/index.css";
 import ContinueButton from "../ContinueButton";
 import { withTranslation } from "react-i18next";
 import {
-  setSportsFacets,
-  setSportsProfile
+  setSportsFacets
 } from "../../services/SportsService";
 import { trackCompleteFavoriteSports } from "../../services/TrackingService";
 
@@ -37,15 +36,7 @@ class SportsPickerStep extends Component {
   }
 
   handleContinueClick(event) {
-    setSportsFacets(this.state.selectedSports)
-      .catch(err => {
-        console.log(err);
-      });
-
-    setSportsProfile(this.state.selectedSports)
-      .catch(err => {
-        console.log(err);
-      });
+    setSportsFacets(this.state.selectedSports);
 
     trackCompleteFavoriteSports();
   }
