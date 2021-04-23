@@ -19,7 +19,7 @@ module.exports = function generateConfig(configOverrides) {
   const defaultConfig = {
     sitecoreApiKey: 'no-api-key-set',
     sitecoreApiHost: '',
-    boxeverApiHost:'https://localhost:44375', //TODO: Update to real url
+    boxeverApiHost:'',
     jssAppName: 'Unknown',
   };
 
@@ -81,6 +81,7 @@ function transformOcConfig() {
   try {
     // eslint-disable-next-line global-require
     config = require('../occonfig.json');
+    config = require('../bxconfig.json');
   } catch (e) {
     return {};
   }
@@ -89,7 +90,8 @@ function transformOcConfig() {
 
   return {
     ocBuyerClientId: process.env.OC_BUYER_CLIENT_ID || config.ocBuyerClientId,
-    ocBaseApiUrl: process.env.OC_BASE_API_URL || config.ocBaseApiUrl
+    ocBaseApiUrl: process.env.OC_BASE_API_URL || config.ocBaseApiUrl,
+    boxeverApiHost: process.env.BOXEVER_PROXY_URL || config.boxeverApiHost
   };
 }
 // END DEMO CUSTOMIZATION
