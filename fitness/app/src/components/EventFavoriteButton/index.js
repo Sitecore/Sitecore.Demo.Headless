@@ -25,20 +25,18 @@ class EventFavoriteButton extends React.Component {
   onFavoriteClick() {
     // optimistic UI update
     this.setState({ favorited: !this.state.favorited });
-    const eventId = this.props.routeData.itemId;
-    const operation = this.state.favorited
-      ? removeFromFavorites(eventId)
-      : addToFavorites(eventId);
 
-    operation
-      .catch(err => {
-        this.setState({ favorited: false });
-        console.log(err);
-      });
+    const eventId = this.props.routeData.itemId;
+    const eventName = this.props.routeData.name;
+    if(this.state.favorited){
+      removeFromFavorites(eventId, eventName)
+    }else{
+      addToFavorites(eventId, eventName)
+    }
 
     const trackingPromise = this.state.favorited
-      ? trackEventUnfavorite(eventId)
-      : trackEventFavorite(eventId);
+      ? trackEventUnfavorite(eventId, eventName)
+      : trackEventFavorite(eventId, eventName);
 
     trackingPromise
       .catch(err => {

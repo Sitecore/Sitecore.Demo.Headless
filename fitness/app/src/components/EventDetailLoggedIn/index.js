@@ -28,8 +28,9 @@ class EventDetailLoggedIn extends React.Component {
 
   onRegister() {
     const eventId = this.props.routeData.itemId;
+    const eventName = this.props.routeData.name;
 
-    register(eventId)
+    register(eventId, eventName)
       .then(response => {
         this.toggle();
         // refreshing the current route

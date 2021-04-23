@@ -23,15 +23,13 @@ class EventSubscribeButton extends React.Component {
     // optimistic UI update
     this.setState({ subscribed: !this.state.subscribed });
     const eventId = this.props.routeData.itemId;
-    const operation = this.state.subscribed
-      ? unsubscribe(eventId)
-      : subscribe(eventId);
+    const eventName = this.props.routeData.name;
 
-    operation
-      .catch(err => {
-        this.setState({ subscribed: false });
-        console.log(err);
-      });
+    if( this.state.subscribed){
+      unsubscribe(eventId,eventName);
+    } else {
+      subscribe(eventId,eventName);
+    }
 
     const trackingPromise = this.state.subscribed
       ? trackEventUnsubscription(eventId)

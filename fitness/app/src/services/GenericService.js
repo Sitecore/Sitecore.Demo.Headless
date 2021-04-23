@@ -39,6 +39,21 @@ export function post(action, payload) {
   return axios(options);
 }
 
+export function get(action, payload, useCache = false) {
+  const url = `${config.sitecoreApiHost}${apiStem}${action}?sc_apikey=${
+    config.sitecoreApiKey
+  }`;
+
+  const options = {
+    method: "GET",
+    params: payload,
+    withCredentials: true,
+    url
+  };
+
+  return useCache ? api(options) : axios(options);
+}
+
 export function boxeverPost(action, payload) {
   const url = `${config.boxeverApiHost}/Boxever${action}&sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
 
@@ -55,22 +70,6 @@ export function boxeverPost(action, payload) {
   return axios(options);
 }
 
-
-export function get(action, payload, useCache = false) {
-  const url = `${config.sitecoreApiHost}${apiStem}${action}?sc_apikey=${
-    config.sitecoreApiKey
-  }`;
-
-  const options = {
-    method: "GET",
-    params: payload,
-    withCredentials: true,
-    url
-  };
-
-  return useCache ? api(options) : axios(options);
-}
-
 export function boxeverGet(action, payload, useCache = false) {
   const url = `${config.boxeverApiHost}/Boxever${action}?sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
 
@@ -82,4 +81,42 @@ export function boxeverGet(action, payload, useCache = false) {
   };
 
   return useCache ? api(options) : axios(options);
+}
+
+export function boxeverDelete(action, payload, useCache = false) {
+  const url = `${config.boxeverApiHost}/Boxever${action}&sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json"
+    },
+    data: payload,
+    withCredentials: false,
+    url
+  };
+
+  return axios(options);
+}
+
+export function boxeverCallout(method, action, payload) {
+  const url = `${config.boxeverApiHost}/Boxever${action}&sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
+
+  const options = {
+    method: method,
+    headers: {
+      "content-type": "application/json"
+    },
+    data: payload,
+    withCredentials: false,
+    url
+  };
+
+  if(method.toLowerCase() === "get"){
+    options.params = payload;
+  } else {
+    options.data = payload;
+  }
+
+  return axios(options);
 }
