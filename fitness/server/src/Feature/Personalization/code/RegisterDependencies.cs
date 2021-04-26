@@ -18,7 +18,6 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization
             serviceCollection.AddTransient<IProductDataService, ProductDataService>();
             serviceCollection.AddTransient<LighthouseFitnessEventsController>();
             serviceCollection.AddTransient<LighthouseFitnessProductsController>();
-            serviceCollection.AddTransient<LighthouseFitnessBoxeverController>();
         }
     }
 }
