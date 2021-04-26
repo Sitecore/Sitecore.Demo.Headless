@@ -31,7 +31,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
         {
             this.configuration = configuration;
 
-            apiUrl = Environment.GetEnvironmentVariable("BOXEVER_PROXY_URL"); 
+            apiUrl = Environment.GetEnvironmentVariable("BOXEVER_APIURL"); 
             clientKey = Environment.GetEnvironmentVariable("BOXEVER_CLIENTKEY"); 
             apiToken = Environment.GetEnvironmentVariable("BOXEVER_APITOKEN");
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
