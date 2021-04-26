@@ -4,7 +4,7 @@ import { getGuestRef } from "./BoxeverService";
 
 export function setSportsFacets(sportRatings = required()) {
   getGuestRef().then(response => {
-    sportRatings.key="SportRating";
+    sportRatings.key="SportPreference";
     console.log(sportRatings);
     return boxeverPost(
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=SportRating",
