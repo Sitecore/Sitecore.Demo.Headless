@@ -111,7 +111,7 @@ services:
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
       OC_BUYER_CLIENT_ID: ${OC_BUYER_CLIENT_ID}
       OC_BASE_API_URL: ${OC_BASE_API_URL}
-      BOXEVER_PROXY_URL: ${BOXEVER_PROXY_URL}
+      BOXEVER_PROXY_URL: ${BOXEVER_APIURL}
       BOXEVER_CLIENTKEY: ${BOXEVER_CLIENTKEY}
       BOXEVER_APITOKEN: ${BOXEVER_APITOKEN}
     volumes:
@@ -270,7 +270,7 @@ services:
       EXM_RENDERER_URL: http://cm
       COVEO_SERVER_URL: ${COVEO_SERVER_URL}
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
-      BOXEVER_PROXY_URL: ${BOXEVER_PROXY_URL}
+      BOXEVER_PROXY_URL: ${BOXEVER_APIURL}
       BOXEVER_CLIENTKEY: ${BOXEVER_CLIENTKEY}
       BOXEVER_APITOKEN: ${BOXEVER_APITOKEN}
     volumes:
@@ -489,7 +489,7 @@ services:
     build:
       context: docker/images/demo-boxever
     environment:
-      BOXEVER_PROXY_URL: ${BOXEVER_PROXY_URL}
+      BOXEVER_PROXY_URL: ${BOXEVER_APIURL}
       BOXEVER_CLIENTKEY: ${BOXEVER_CLIENTKEY}
       BOXEVER_APITOKEN: ${BOXEVER_APITOKEN}
     labels:
@@ -497,14 +497,14 @@ services:
       - "traefik.http.middlewares.force-STS-Header.headers.forceSTSHeader=true"
       - "traefik.http.middlewares.force-STS-Header.headers.stsSeconds=31536000"
       - "traefik.http.routers.boxever-secure.entrypoints=websecure"
-      - "traefik.http.routers.boxever-secure.rule=Host(`${BOXEVER_HOST}`)"
+      - "traefik.http.routers.boxever-secure.rule=Host(`${BOXEVER_PROXY_URL}`)"
       - "traefik.http.routers.boxever-secure.tls=true"
       - "traefik.http.routers.boxever-secure.middlewares=force-STS-Header"
       - "traefik.http.services.boxever.loadbalancer.server.port=80"
     networks:
       demo:
         aliases:
-          - ${BOXEVER_HOST}
+          - ${BOXEVER_PROXY_URL}
 networks:
   demo:
     external:
