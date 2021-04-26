@@ -3,16 +3,18 @@ import { required } from "../utils";
 import { getGuestRef } from "./BoxeverService";
 
 export function setSportsFacets(sportRatings = required()) {
-  getGuestRef().then(response => {
-    sportRatings.key="SportPreference";
-    console.log(sportRatings);
-    return boxeverPost(
-      "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=SportRating",
-      sportRatings
-    );
-  }).catch(e => {
-    console.log(e);
-  });
+  for(var k in sportRatings) {
+    var payload = {"key":k, "Skill Level":sportRatings[k]};
+    // eslint-disable-next-line no-loop-func
+    getGuestRef().then(response => {
+      return boxeverPost(
+        "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=SportPreference",
+        payload
+      );
+    }).catch(e => {
+      console.log(e);
+    });
+ }
 }
 
 
