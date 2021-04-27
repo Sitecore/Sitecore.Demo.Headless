@@ -26,6 +26,11 @@ namespace Sitecore.Integrations.Boxever
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Boxever", Version = "v1" });
             });
+            services
+                .AddMvc(options =>
+                {
+                    options.InputFormatters.Insert(0, new RawJsonBodyInputFormatter());
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

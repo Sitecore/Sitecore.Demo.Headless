@@ -19,20 +19,16 @@ namespace Sitecore.Integrations.Boxever.Controllers
     [Route("[controller]")]
     public class BoxeverController : Controller
     {
-        private string apiUrl = "";
-        private string clientKey = "";
-        private string apiToken = "";
-        private string apiVersion = "/v2";
+        private readonly string apiUrl = "";
+        private readonly string clientKey = "";
+        private readonly string apiToken = "";
+        private readonly string apiVersion = "/v2";
         private HttpClient httpClient = new HttpClient();
-        IConfiguration configuration;
 
-
-        public BoxeverController(IConfiguration configuration)
+        public BoxeverController()
         {
-            this.configuration = configuration;
-
-            apiUrl = Environment.GetEnvironmentVariable("BOXEVER_APIURL"); 
-            clientKey = Environment.GetEnvironmentVariable("BOXEVER_CLIENTKEY"); 
+            apiUrl = Environment.GetEnvironmentVariable("BOXEVER_APIURL");
+            clientKey = Environment.GetEnvironmentVariable("BOXEVER_CLIENTKEY");
             apiToken = Environment.GetEnvironmentVariable("BOXEVER_APITOKEN");
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(
                 AuthenticationSchemes.Basic.ToString(),
@@ -165,9 +161,55 @@ namespace Sitecore.Integrations.Boxever.Controllers
             }
         }
 
+        [HttpPost("getEventsByState")]
+        [Consumes("application/json")]
+        public ActionResult GetEventsByState([NotNull] string guestRef, [NotNull] string state)
+        {
+            try
+            {
+                string dataExtensionName = (state.ToLower().Equals("favorite")) ? "FavoriteEvents" : "RegisteredEvents";
+                var requestResult = GetGuestDataExtensionExpanded(guestRef, dataExtensionName);
+
+                var dynJson = JsonConvert.DeserializeObject<Dictionary<string, JToken>>(((ContentResult)requestResult).Content);
+                var dataExtensionJson = dynJson.FirstOrDefault(i => i.Key == $"ext{dataExtensionName}");
+
+                if (dataExtensionJson.Equals(new KeyValuePair<string, JToken>()))
+                    return StatusCode(StatusCodes.Status404NotFound);
+
+                var keyList = dataExtensionJson.Value["items"]?.Children();
+
+                if (keyList == null)
+                    return StatusCode(StatusCodes.Status404NotFound);
+
+                var keyRefList = new List<string>();
+                foreach (var key in keyList)
+                {
+                    var keyRef = key.Value<string>("key");
+                    keyRefList.Add(keyRef);
+                }
+
+                if (keyRefList == null || keyRefList.Count < 1)
+                    return StatusCode(StatusCodes.Status404NotFound);
+
+                foreach (var keyRef in keyRefList)
+                {
+                    //do stuff here and then return
+                }
+
+                return StatusCode(StatusCodes.Status200OK, JsonConvert.SerializeObject(keyRefList));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+
+
+
+        }
+
         [HttpPost("createguestdataextension")]
         [Consumes("application/json")]
-        public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [FromBody]string body)
+        public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [FromBody] string body)
         {
             try
             {
@@ -221,7 +263,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
                     var keyRef = key.Value<string>("ref");
                     keyRefList.Add(keyRef);
                 }
-                
+
                 if (keyRefList == null || keyRefList.Count < 1)
                     return StatusCode(StatusCodes.Status404NotFound);
 
