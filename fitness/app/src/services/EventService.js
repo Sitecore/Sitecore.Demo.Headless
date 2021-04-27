@@ -28,7 +28,7 @@ export function removeFromFavorites(eventId, eventName) {
   });
 }
 
-export function register(eventId, eventName) {
+export function register(eventName, eventId, sportType, eventDate) {
   getGuestRef().then(response => {
     return boxeverPost(
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents",
