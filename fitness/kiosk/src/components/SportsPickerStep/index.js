@@ -9,8 +9,7 @@ import ContinueButton from "../ContinueButton";
 import PersonalizationResultsButton from "../PersonalizationResultsButton";
 import { translate } from "react-i18next";
 import {
-  setSportsFacets,
-  setSportsProfile
+  setSportsFacets
 } from "../../services/SportsService";
 import { trackCompleteFavoriteSports } from "../../services/TrackingService";
 
@@ -41,10 +40,6 @@ class SportsPickerStep extends Component {
 
   sendUpdatedSportsPreferences(sports) {
     setSportsFacets(sports).catch(err => {
-      console.log(err);
-    });
-
-    setSportsProfile(sports).catch(err => {
       console.log(err);
     });
   }

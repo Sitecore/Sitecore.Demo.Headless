@@ -1,4 +1,4 @@
-import { get,boxeverPost,boxeverDelete,boxeverCallout } from "./GenericService";
+import { get,boxeverPost,boxeverDelete } from "./GenericService";
 import { getGuestRef } from "./BoxeverService";
 
 export function addToFavorites(eventId, eventName) {

@@ -83,19 +83,6 @@ export function boxeverGet(action, payload, useCache = false) {
   return useCache ? api(options) : axios(options);
 }
 
-export function fetchFromBoxever(action, payload) {
-  const url = `${config.boxeverApiHost}/Boxever${action}?sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
-
-  const options = {
-    method: "GET",
-    params: payload,
-    withCredentials: false,
-    url
-  };
-
-  return fetch(url,options);
-}
-
 export function boxeverDelete(action, payload, useCache = false) {
   const url = `${config.boxeverApiHost}/Boxever${action}&sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
 
@@ -112,6 +99,7 @@ export function boxeverDelete(action, payload, useCache = false) {
   return axios(options);
 }
 
+//TODO: to be refactored
 export function boxeverCallout(method, action, payload) {
   const url = `${config.boxeverApiHost}/Boxever${action}&sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
 

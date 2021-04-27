@@ -16,4 +16,3 @@ export function sendDemographicsToBoxever(age = required(), gender = required())
     console.log(e);
   });
 }
-

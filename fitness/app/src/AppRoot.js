@@ -10,7 +10,7 @@ import ProductDetail from './components/ProductDetail'
 import config from './temp/config';
 import CategoryDetail from './components/CategoryDetail'
 
-import { fetchFromBoxever } from "./services/GenericService";
+import { boxeverGet } from "./services/GenericService";
 import { getGuestRef } from "./services/BoxeverService";
 
 const ocConfig = {
@@ -77,7 +77,7 @@ class AppRoot extends React.Component {
       this.setState({ user });
     } else {
       getGuestRef().then(response => {
-        var resp = fetchFromBoxever(
+        var resp = boxeverGet(
           "/getguestByRef?guestRef="+ response.guestRef
         );
         var userName = {"name":resp.firstname + " " + resp.lastname};
