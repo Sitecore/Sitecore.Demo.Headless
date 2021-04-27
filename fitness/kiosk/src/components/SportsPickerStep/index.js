@@ -39,9 +39,7 @@ class SportsPickerStep extends Component {
   }
 
   sendUpdatedSportsPreferences(sports) {
-    setSportsFacets(sports).catch(err => {
-      console.log(err);
-    });
+    setSportsFacets(sports);
   }
 
   updateSelectedSports(key, value) {
