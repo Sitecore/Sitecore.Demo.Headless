@@ -1,4 +1,4 @@
-import { clearCache,boxeverPost } from "./GenericService";
+import { boxeverPost } from "./GenericService";
 import { required } from "../utils";
 import { getGuestRef } from "./BoxeverService";
 
