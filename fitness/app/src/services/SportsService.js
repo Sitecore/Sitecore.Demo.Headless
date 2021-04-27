@@ -1,20 +1,30 @@
-import { boxeverPost } from "./GenericService";
+import { boxeverPost,boxeverDelete } from "./GenericService";
 import { required } from "../utils";
 import { getGuestRef } from "./BoxeverService";
 
 export function setSportsFacets(sportRatings = required()) {
-  for(var k in sportRatings) {
-    var payload = {"key":k, "Skill Level":sportRatings[k]};
-    // eslint-disable-next-line no-loop-func
-    getGuestRef().then(response => {
-      return boxeverPost(
-        "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=SportPreference",
+  var guestRef;
+  getGuestRef()
+  .then(response => {
+    guestRef =response.guestRef;
+    return boxeverDelete(
+      "/deleteallkeysforguestdataextension?guestRef="+ guestRef + "&dataExtensionName=SportPreference",
+      {}
+    );
+  })
+  .then(DeleteResponse => {
+    var createSportPreferencePromises = [];
+    for(var k in sportRatings) {
+      var payload = {"key":k, "Skill Level":sportRatings[k]};
+      createSportPreferencePromises.push(boxeverPost(
+        "/createguestdataextension?guestRef="+ guestRef + "&dataExtensionName=SportPreference",
         payload
-      );
-    }).catch(e => {
-      console.log(e);
-    });
- }
+      ));
+    }
+    return Promise.all(createSportPreferencePromises);
+  })
+  .catch(e => {
+    console.log(e);
+  });
 }
-
 
