@@ -12,7 +12,6 @@ import {
   setSportsFacets
 } from "../../services/SportsService";
 
-//TODO: implement PersonalizationResultsButton onclick trackCompleteFavoriteSports function if needed
 class SportsPickerStep extends Component {
   state = {
     selectedSports: {},
@@ -23,6 +22,7 @@ class SportsPickerStep extends Component {
     super(props);
     this.onCardClick = this.onCardClick.bind(this);
     this.onSliderChange = this.onSliderChange.bind(this);
+    this.trackCompleteFavoriteSports = this.trackCompleteFavoriteSports.bind(this);
   }
 
   onCardClick(key, remove) {
@@ -34,12 +34,10 @@ class SportsPickerStep extends Component {
       this.setState({ selectedItemKey: key });
       selectedSports = this.updateSelectedSports(key, undefined);
     }
-
-    this.sendUpdatedSportsPreferences(selectedSports);
   }
 
-  sendUpdatedSportsPreferences(sports) {
-    setSportsFacets(sports);
+  trackCompleteFavoriteSports(event){
+    setSportsFacets(this.state.selectedSports);
   }
 
   updateSelectedSports(key, value) {
@@ -54,8 +52,7 @@ class SportsPickerStep extends Component {
   }
 
   onSliderChange(value) {
-    const updatedSports = this.updateSelectedSports(this.state.selectedItemKey, value);
-    this.sendUpdatedSportsPreferences(updatedSports);
+    this.updateSelectedSports(this.state.selectedItemKey, value);
   }
 
   render() {
@@ -130,7 +127,7 @@ class SportsPickerStep extends Component {
               disabled={!canContinue}
             />
           ) : (
-            <PersonalizationResultsButton/>
+            <PersonalizationResultsButton onClick={this.trackCompleteFavoriteSports}/>
           )}
         </div>
       </Fragment>

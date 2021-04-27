@@ -234,12 +234,12 @@ namespace Sitecore.Integrations.Boxever.Controllers
                 var dataExtensionJson = dynJson.FirstOrDefault(i => i.Key == $"ext{dataExtensionName}");
 
                 if (dataExtensionJson.Equals(new KeyValuePair<string, JToken>()))
-                    return StatusCode(StatusCodes.Status404NotFound);
+                    return StatusCode(StatusCodes.Status204NoContent);
 
                 var keyList = dataExtensionJson.Value["items"]?.Children();
 
                 if (keyList == null)
-                    return StatusCode(StatusCodes.Status404NotFound);
+                    return StatusCode(StatusCodes.Status204NoContent);
 
                 var keyRefList = new List<string>();
                 foreach (var key in keyList)
@@ -249,7 +249,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
                 }
 
                 if (keyRefList == null || keyRefList.Count < 1)
-                    return StatusCode(StatusCodes.Status404NotFound);
+                    return StatusCode(StatusCodes.Status204NoContent);
 
                 foreach (var keyRef in keyRefList)
                 {
