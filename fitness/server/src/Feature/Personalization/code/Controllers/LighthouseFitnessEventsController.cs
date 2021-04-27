@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using Sitecore.Analytics;
 using Sitecore.Annotations;
+using Sitecore.Data.Items;
 using Sitecore.Demo.Fitness.Feature.Personalization.Services;
 using Sitecore.Demo.Fitness.Feature.Personalization.Utils;
 using Sitecore.Demo.Fitness.Foundation.Analytics.Filters;
@@ -9,6 +10,7 @@ using Sitecore.Diagnostics;
 using Sitecore.LayoutService.Mvc.Security;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -80,61 +82,44 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         }
 
         [HttpGet]
-        [ActionName("getregistrations")]
+        [ActionName("geteventsbyid")]
         [CancelCurrentPage]
-        public ActionResult GetRegistrations()
+        public ActionResult GetEventsById([NotNull] string eventIds)
         {
             try
             {
-                var client = new HttpClient { BaseAddress = new Uri("https://localhost:44375") };
+                List<string> eventIdList = eventIds?.Split(',').Select(i => i?.Trim())?.ToList();
 
-                client.BaseAddress = new Uri("https://localhost:44375/Boxever/getguestdataextensionexpanded");
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                if (eventIdList == null || !eventIdList.Any())
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Unable to retrieve events by ID - No event ID in request");
 
-                using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"/Boxever/getguestdataextensionexpanded?guestRef=89fd8576-ecfa-44c0-94e1-b58c4026babd&dataExtensionName=RegisteredEvents"))
+                var itemList = new List<Item>();
+                foreach (var eventId in eventIdList)
                 {
-                    using (var response = client.SendAsync(request))
+                    bool isValidGuid = Guid.TryParse(eventId, out Guid eventGuid);
+                    if (isValidGuid)
                     {
-                        var responseContent = response.Result.ToString();
-                        return new HttpStatusCodeResult(HttpStatusCode.OK);
-
+                        var eventItem = dataService.GetById(Context.Database, eventGuid);
+                        if (eventItem != null)
+                            itemList.Add(eventItem);
                     }
                 }
+                
+                if (!itemList.Any())
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Unable to retrieve events by ID");
+
+                var events = new JArray(itemList.Select(i => JObject.Parse(itemSerializer.Serialize(i))));
+                var results = new JObject
+                {
+                    { "events", events },
+                    { "total", itemList.Count }
+                };
+
+                return Content(results.ToString(), "application/json");
             }
             catch (Exception ex)
             {
-                Log.Error("Unable to retrieve events", ex, this);
-                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
-            }
-        }
-
-        [HttpGet]
-        [ActionName("getfavorites")]
-        [CancelCurrentPage]
-        public ActionResult GetFavorites()
-        {
-            try
-            {
-                var client = new HttpClient {BaseAddress = new Uri("https://localhost:44375")};
-
-                client.BaseAddress = new Uri("https://localhost:44375/Boxever/getguestdataextensionexpanded");
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"/Boxever/getguestdataextensionexpanded?guestRef=89fd8576-ecfa-44c0-94e1-b58c4026babd&dataExtensionName=FavoritedEvents"))
-                {
-                    using (var response = client.SendAsync(request))
-                    {
-                        var responseContent = response.Result.ToString();
-                        return new HttpStatusCodeResult(HttpStatusCode.OK);
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error("Unable to retrieve events", ex, this);
+                Log.Error("Unable to retrieve events by ID", ex, this);
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
