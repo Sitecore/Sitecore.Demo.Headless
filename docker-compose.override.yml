@@ -481,6 +481,7 @@ services:
       demo:
         aliases:
           - ${SH_HOST}
+
   boxever:
     image: ${REGISTRY}demo/lighthouse-boxever-proxy:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
@@ -503,6 +504,7 @@ services:
       demo:
         aliases:
           - ${BOXEVER_PROXY_URL}
+
 networks:
   demo:
     external:
