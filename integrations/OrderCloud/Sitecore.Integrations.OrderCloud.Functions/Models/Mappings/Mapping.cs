@@ -27,6 +27,8 @@ namespace Sitecore.Integrations.OrderCloud.Functions.Models.Mappings
 
         public string To { get; set; }
 
+        public string Where { get; set; }
+
         [DefaultValue(MappingType.Unknown)]
         public MappingType Type { get; set; }
 
