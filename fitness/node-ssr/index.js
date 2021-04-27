@@ -15,15 +15,16 @@ server.use(compression());
 // turn off x-powered-by http header
 server.settings['x-powered-by'] = false;
 
+// BEGIN DEMO CUSTOMIZATION - Allow services static assets from the root (i.e. /firebase-messaging-sw.js)
+server.use(express.static(__dirname + '/dist/' + config.appName));
+// END DEMO CUSTOMIZATION
+
 // Serve static app assets from local /dist folder
 server.use(
   '/dist',
   express.static('dist', {
     fallthrough: false, // force 404 for unknown assets under /dist
-  }),
-  // BEGIN DEMO CUSTOMIZATION - Allow services static assets from the root (i.e. /firebase-messaging-sw.js)
-  express.static(__dirname + '/dist/' + config.appName)
-  // END DEMO CUSTOMIZATION
+  })
 );
 
 /**

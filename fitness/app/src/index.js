@@ -8,7 +8,6 @@ import AppRoot from './AppRoot';
 import GraphQLClientFactory from './lib/GraphQLClientFactory';
 import config from './temp/config';
 import i18ninit from './i18n';
-import registerServiceWorker from './registerServiceWorker';
 import { getQueryStringValue } from "./util"
 import { identifyByEmail } from "./services/BoxeverService"
 
@@ -80,6 +79,4 @@ i18ninit(initLanguage).then(() => {
     />,
     rootElement
   );
-
-  registerServiceWorker();
 });
