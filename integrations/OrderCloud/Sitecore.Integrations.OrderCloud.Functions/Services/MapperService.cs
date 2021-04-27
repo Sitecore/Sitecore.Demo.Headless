@@ -6,6 +6,9 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
 
 using Newtonsoft.Json.Linq;
@@ -193,28 +196,31 @@ namespace Sitecore.Integrations.OrderCloud.Functions.Services
                     foreach (IEntity item in iterator.Current.Items)
                     {
                         object target = null;
-                        switch (mapping.TargetType)
+                        if (!await IsFiltered(item, mapping.Where))
                         {
-                            case MappingTargetType.Product:
-                                target = GetRelationTarget(result.Product, item, mapping, context);
-                                break;
-                            case MappingTargetType.Category:
-                                Category category = GetCategory(result, item, context);
-                                target = GetRelationTarget(category, item, mapping, context);
-                                break;
-                            case MappingTargetType.Catalog:
-                                Catalog catalog = GetCatalog(result, item, context);
-                                target = GetRelationTarget(catalog, item, mapping, context);
-                                break;
-                            case MappingTargetType.PriceSchedule:
-                                PriceSchedule schedule = GetPriceSchedule(result, item, context);
-                                target = GetRelationTarget(schedule, item, mapping, context);
-                                break;
-                            default:
-                                _log.LogError($"MapperService: Invalid target mapping type {mapping.TargetType} for relation mapping entity {item.Id}");
-                                break;
+                            switch (mapping.TargetType)
+                            {
+                                case MappingTargetType.Product:
+                                    target = GetRelationTarget(result.Product, item, mapping, context);
+                                    break;
+                                case MappingTargetType.Category:
+                                    Category category = GetCategory(result, item, context);
+                                    target = GetRelationTarget(category, item, mapping, context);
+                                    break;
+                                case MappingTargetType.Catalog:
+                                    Catalog catalog = GetCatalog(result, item, context);
+                                    target = GetRelationTarget(catalog, item, mapping, context);
+                                    break;
+                                case MappingTargetType.PriceSchedule:
+                                    PriceSchedule schedule = GetPriceSchedule(result, item, context);
+                                    target = GetRelationTarget(schedule, item, mapping, context);
+                                    break;
+                                default:
+                                    _log.LogError($"MapperService: Invalid target mapping type {mapping.TargetType} for relation mapping entity {item.Id}");
+                                    break;
+                            }
                         }
-
+                        
                         if (target != null)
                         {
                             MapContext subContext = new MapContext
@@ -236,6 +242,84 @@ namespace Sitecore.Integrations.OrderCloud.Functions.Services
 
                 await Task.WhenAll(subMappingTasks);
             }
+        }
+
+        private async Task<bool> IsFiltered(IEntity item, string filter)
+        {
+            bool result = false;
+            if (!string.IsNullOrWhiteSpace(filter))
+            {
+                SyntaxTree tree = CSharpSyntaxTree.ParseText(filter);
+                if (tree.TryGetRoot(out SyntaxNode root))
+                {
+                    BinaryExpressionSyntax mainBinaryExpression =
+                        root.DescendantNodes().OfType<BinaryExpressionSyntax>().FirstOrDefault();
+                    if (mainBinaryExpression != null)
+                    {
+                        List<Diagnostic> diagnostics = mainBinaryExpression.GetDiagnostics().ToList();
+                        if (diagnostics.Count == 0)
+                        {
+                            result = !await ProcessBinaryExpression(item, mainBinaryExpression);
+                        }
+                        else
+                        {
+                            _log.LogWarning($"MapperService: Syntax error(s) in '{filter}': {Environment.NewLine}{diagnostics.Select(d => d.GetMessage() + Environment.NewLine)}");
+                        }
+                    }
+                    else
+                    {
+                        _log.LogWarning($"MapperService: No binary expression found in {filter}.");
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private async Task<bool> ProcessBinaryExpression(IEntity item, BinaryExpressionSyntax expression)
+        {
+            // NOTE [ILs] We're not here to support all possible filters that can be compiled so some combinations aren't here
+            bool result = true;
+            if (expression.Left is BinaryExpressionSyntax leftExpression && expression.Right is BinaryExpressionSyntax rightExpression)
+            {
+                bool left = await ProcessBinaryExpression(item, leftExpression);
+                bool right = await ProcessBinaryExpression(item, rightExpression);
+                switch (expression.OperatorToken.Kind())
+                {
+                    case SyntaxKind.BarBarToken:
+                        result = left || right;
+                        break;
+                    case SyntaxKind.AmpersandAmpersandToken:
+                        result = left && right;
+                        break;
+                    default:
+                        _log.LogWarning("MapperService: Only supporting && and || between binary expressions.");
+                        break;
+                }
+            }
+            else if (expression.Left is IdentifierNameSyntax leftIdentifier && expression.Right is LiteralExpressionSyntax rightLiteral)
+            {
+                object leftValue = await item.GetPropertyValueAsync(leftIdentifier.Identifier.Text);
+                object rightValue = rightLiteral.Token.Value;
+                switch (expression.OperatorToken.Kind())
+                {
+                    case SyntaxKind.EqualsEqualsToken:
+                        result = Equals(leftValue, rightValue);
+                        break;
+                    case SyntaxKind.ExclamationEqualsToken:
+                        result = !Equals(leftValue, rightValue);
+                        break;
+                    default:
+                        _log.LogWarning("MapperService: Only supporting equals or not equals between identifiers and literals.");
+                        break;
+                }
+            }
+            else
+            {
+                _log.LogWarning($"MapperService: Unsupported filter syntax in filter '{expression.ToFullString()}'. This doesn't mean it's C# invalid, it means the mapper doesn't know how to handle this.");
+            }
+
+            return result;
         }
 
         private async Task<IEntityIterator> GetRelationEntities(IEntity entity, Mapping mapping)

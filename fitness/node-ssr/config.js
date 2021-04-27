@@ -12,6 +12,10 @@ const dictionaryCache = new NodeCache({ stdTTL: 60 });
  */
 let appName = process.env.SITECORE_JSS_APP_NAME;
 
+// BEGIN DEMO CUSTOMIZATION - Our Docker files and Helm charts are using SITECORE_APP_NAME
+appName = appName || process.env.SITECORE_APP_NAME;
+// END DEMO CUSTOMIZATION
+
 /**
  * The server.bundle.js file from your pre-built JSS app
  */
@@ -29,6 +33,9 @@ appName = appName || serverBundle.appName;
  * @type {ProxyConfig}
  */
 const config = {
+  // BEGIN DEMO CUSTOMIZATION - Add appName for index.js
+  appName,
+  // END DEMO CUSTOMIZATION
   /**
    * The require'd server.bundle.js file from your pre-built JSS app
    */
@@ -99,17 +106,25 @@ const config = {
     // BEGIN DEMO CUSTOMIZATION - For demo ONLY, allows self-signed SSL certs
     secure: false,
     // END DEMO CUSTOMIZATION
-		headers: {
-			"accept-encoding": "gzip, deflate"
-		}
-	},
-	/**
-	 * Custom headers handling.
-	 * You can remove different headers from proxy response.
-	*/
-	setHeaders: (req, serverRes, proxyRes) => {
-		delete proxyRes.headers['content-security-policy'];
-	},
+    headers: {
+      "accept-encoding": "gzip, deflate"
+    },
+
+    // BEGIN DEMO CUSTOMIZATION - Kiosk event pages should be loaded from the main app Sitecore site
+    onProxyReq: (proxyReq, req, res) => {
+      if (proxyReq.path.includes('%2Fevents%2F') && !proxyReq.path.includes('sc_site')) {
+        proxyReq.path = proxyReq.path + '&sc_site=lighthousefitness'
+      }
+    }
+    // END DEMO CUSTOMIZATION
+  },
+  /**
+   * Custom headers handling.
+   * You can remove different headers from proxy response.
+  */
+  setHeaders: (req, serverRes, proxyRes) => {
+    delete proxyRes.headers['content-security-policy'];
+  },
   /**
    * Custom error handling in case our app fails to render.
    * Return null to pass through server response, or { content, statusCode }
@@ -158,15 +173,15 @@ const config = {
         },
       }
     )
-      .then((result) => result.json())
-      .then((json) => {
-        const viewBag = {
-          dictionary: json && json.phrases,
-        };
+    .then((result) => result.json())
+    .then((json) => {
+      const viewBag = {
+        dictionary: json && json.phrases,
+      };
 
-        dictionaryCache.set(cacheKey, viewBag);
-        return viewBag;
-      });
+      dictionaryCache.set(cacheKey, viewBag);
+      return viewBag;
+    });
   },
 };
 

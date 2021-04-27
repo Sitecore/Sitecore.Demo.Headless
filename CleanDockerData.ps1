@@ -6,7 +6,7 @@ Param(
         ".\data\cm\logs",
         ".\data\cm\src",
         ".\data\solr-data",
-        ".\data\mssql-data"
+        ".\data\mssql-data",
         ".\data\xconnect\logs",
         ".\data\xconnect\src",
         ".\data\xdbautomationworker\logs",
