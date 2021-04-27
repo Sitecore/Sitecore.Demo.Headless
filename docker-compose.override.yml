@@ -483,6 +483,7 @@ services:
     build:
       context: docker/images/demo-boxever
     environment:
+      ASPNETCORE_URLS: "http://*:5000"
       BOXEVER_APIURL: ${BOXEVER_APIURL}
       BOXEVER_CLIENTKEY: ${BOXEVER_CLIENTKEY}
       BOXEVER_APITOKEN: ${BOXEVER_APITOKEN}
@@ -494,7 +495,7 @@ services:
       - "traefik.http.routers.boxever-secure.rule=Host(`${BOXEVER_PROXY_URL}`)"
       - "traefik.http.routers.boxever-secure.tls=true"
       - "traefik.http.routers.boxever-secure.middlewares=force-STS-Header"
-      - "traefik.http.services.boxever.loadbalancer.server.port=80"
+      - "traefik.http.services.boxever.loadbalancer.server.port=5000"
     networks:
       demo:
         aliases:

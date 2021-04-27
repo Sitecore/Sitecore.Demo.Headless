@@ -97,22 +97,6 @@ namespace Sitecore.Integrations.Boxever.Controllers
             }
         }
 
-        [HttpGet("getguests")]
-        public ActionResult GetGuests()
-        {
-            try
-            {
-                return Content(
-                    GetRequest("/guests"),
-                    "application/json"
-                    );
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-        }
-
         [HttpGet("getguestByRef")]
         public ActionResult GetGuestByRef([NotNull] string guestRef)
         {
