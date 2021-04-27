@@ -4,7 +4,7 @@ import { translate } from "react-i18next";
 import { setIdentification } from "../../services/IdentificationService";
 import { NavLink } from "react-router-dom";
 import { trackRegistration } from "../../services/BoxeverService";
-import { setRegisteredEventsFacets } from "../../services/RegisterService";
+import { setRegisteredEventsFacets } from "../../services/EventService";
 import { flush } from "../../services/SessionService";
 
 const flushSession = () => {

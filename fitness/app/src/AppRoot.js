@@ -28,8 +28,6 @@ export const routePatterns = [
   '/:sitecoreRoute*',
 ];
 
-
-
 const renderProductDetail = (props) => <ProductDetail productId={props.match.params.productid} />
 
 // wrap the app with:

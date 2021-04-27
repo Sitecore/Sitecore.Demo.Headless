@@ -34,14 +34,16 @@ export function register(eventId, eventName) {
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents",
       {
         "key":eventName + " / " + eventId,
-        "eventId":eventId
+        "Event Name":eventName,
+        "Event Id":eventId,
+        "Event Date":eventDate,
+        "Sport Type":sportType
       }
     );
   }).catch(e => {
     console.log(e);
   });
 }
-
 
 export function unregister(eventId, eventName) {
   getGuestRef().then(response => {

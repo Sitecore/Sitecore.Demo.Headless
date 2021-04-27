@@ -12,7 +12,7 @@ export function setSportsFacets(sportRatings = required()) {
       {}
     );
   })
-  .then(DeleteResponse => {
+  .then(() => {
     var createSportPreferencePromises = [];
     for(var k in sportRatings) {
       var payload = {"key":k, "Skill Level":sportRatings[k]};

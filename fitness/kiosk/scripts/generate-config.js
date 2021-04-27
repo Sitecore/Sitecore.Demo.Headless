@@ -64,7 +64,7 @@ function transformScJssConfig() {
   };
 }
 
-// BEGIN DEMO CUSTOMIZATION - For OrderCloud integration
+// BEGIN DEMO CUSTOMIZATION - For Boxever integration
 function transformBxConfig() {
   let config;
   try {
@@ -80,6 +80,7 @@ function transformBxConfig() {
     boxeverApiHost: process.env.BOXEVER_PROXY_URL || config.boxeverApiHost
   };
 }
+// END DEMO CUSTOMIZATION
 
 function transformPackageConfig() {
   if (!packageConfig.config) return {};

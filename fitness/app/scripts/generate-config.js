@@ -75,7 +75,7 @@ function transformScJssConfig() {
   };
 }
 
-// BEGIN DEMO CUSTOMIZATION - For OrderCloud integration
+// BEGIN DEMO CUSTOMIZATION - For OrderCloud & Boxever integration
 function transformOcConfig() {
   let config;
   try {

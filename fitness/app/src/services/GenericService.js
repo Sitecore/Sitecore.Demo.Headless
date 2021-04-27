@@ -70,7 +70,7 @@ export function boxeverPost(action, payload) {
   return axios(options);
 }
 
-export function boxeverGet(action, payload, useCache = false) {
+export function boxeverGet(action, payload) {
   const url = `https://${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
@@ -80,10 +80,10 @@ export function boxeverGet(action, payload, useCache = false) {
     url
   };
 
-  return useCache ? api(options) : axios(options);
+  return axios(options);
 }
 
-export function boxeverDelete(action, payload, useCache = false) {
+export function boxeverDelete(action, payload) {
   const url = `https://${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
@@ -95,29 +95,6 @@ export function boxeverDelete(action, payload, useCache = false) {
     withCredentials: false,
     url
   };
-
-  return axios(options);
-}
-
-//TODO: to be refactored
-export function boxeverCallout(method, action, payload) {
-  const url = `https://${config.boxeverApiHost}/Boxever${action}`;
-
-  const options = {
-    method: method,
-    headers: {
-      "content-type": "application/json"
-    },
-    data: payload,
-    withCredentials: false,
-    url
-  };
-
-  if(method.toLowerCase() === "get"){
-    options.params = payload;
-  } else {
-    options.data = payload;
-  }
 
   return axios(options);
 }

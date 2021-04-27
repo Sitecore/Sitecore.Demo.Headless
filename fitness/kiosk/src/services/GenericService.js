@@ -69,7 +69,7 @@ export function boxeverPost(action, payload) {
   return axios(options);
 }
 
-export function boxeverGet(action, payload, useCache = false) {
+export function boxeverGet(action, payload) {
   const url = `https://${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
@@ -79,10 +79,10 @@ export function boxeverGet(action, payload, useCache = false) {
     url
   };
 
-  return useCache ? api(options) : axios(options);
+  return axios(options);
 }
 
-export function boxeverDelete(action, payload, useCache = false) {
+export function boxeverDelete(action, payload) {
   const url = `https://${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
