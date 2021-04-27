@@ -1,5 +1,4 @@
 import { required } from "../utils";
-import { boxeverGet } from "./GenericService";
 
 function createBaseEvent() {
   return {
@@ -189,12 +188,20 @@ export function getGuestRef() {
   return callFlows(getGuestRefRequest);
 }
 
-export function getProfile(){
-  getGuestRef().then(response => {
-    return boxeverGet(
-      "/GetGuestByRef?guestRef="+ response.guestRef
-    );
-  }).catch(e => {
-    console.log(e);
-  });
+// Boxever get personalized events
+export function getPersonalizedEvents(getAllEventsUrl, getAllEventsPayload) {
+  if (window === undefined) {
+    return new Promise(function (resolve) { resolve(); });
+  }
+
+  var personalizedEventsRequest = createBaseEvent();
+
+  personalizedEventsRequest.clientKey = window._boxever_settings.client_key;
+  personalizedEventsRequest.friendlyId = "getpersonalizedevents";
+  personalizedEventsRequest.params = {
+    url: getAllEventsUrl,
+    payload: getAllEventsPayload
+  };
+
+  return callFlows(personalizedEventsRequest);
 }

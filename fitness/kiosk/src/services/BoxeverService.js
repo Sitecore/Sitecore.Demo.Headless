@@ -3,6 +3,7 @@ import { required } from "../utils";
 function createBaseEvent() {
   return {
     "browser_id": window.Boxever.getID(),
+    "browserId": window.Boxever.getID(),
     "channel": "WEB",
     "language": "EN",
     "currency": "CAD",
@@ -49,9 +50,6 @@ function callFlows(request) {
         function (response) {
           if (!response) {
             reject("No response provided.");
-          }
-          if (response.status !== "OK") {
-            reject("Response status: " + response.status);
           }
           resolve(response);
         },
@@ -163,6 +161,19 @@ export function forgetCurrentGuest() {
     window.Boxever.reset();
     resolve();
   });
+}
+
+// Boxever get Guest Ref
+export function getGuestRef() {
+  if (window === undefined) {
+    return new Promise(function (resolve) { resolve(); });
+  }
+  var getGuestRefRequest = createBaseEvent();
+
+  getGuestRefRequest.clientKey = window._boxever_settings.client_key;
+  getGuestRefRequest.friendlyId = "getguestref";
+
+  return callFlows(getGuestRefRequest);
 }
 
 // Boxever get personalized events
