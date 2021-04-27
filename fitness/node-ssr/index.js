@@ -5,7 +5,9 @@ const config = require('./config');
 const cacheMiddleware = require('./cacheMiddleware');
 
 const server = express();
+// BEGIN DEMO CUSTOMIZATION - Change default port from 3000 to 80
 const port = process.env.PORT || 80;
+// END DEMO CUSTOMIZATION
 
 // enable gzip compression for appropriate file types
 server.use(compression());
@@ -13,15 +15,15 @@ server.use(compression());
 // turn off x-powered-by http header
 server.settings['x-powered-by'] = false;
 
-// allow services static assets from the root (i.e. /firebase-messaging-sw.js)
-server.use(express.static(__dirname + '/dist/lighthousefitness'));
-
 // Serve static app assets from local /dist folder
 server.use(
   '/dist',
   express.static('dist', {
     fallthrough: false, // force 404 for unknown assets under /dist
-  })
+  }),
+  // BEGIN DEMO CUSTOMIZATION - Allow services static assets from the root (i.e. /firebase-messaging-sw.js)
+  express.static(__dirname + '/dist/' + config.appName)
+  // END DEMO CUSTOMIZATION
 );
 
 /**

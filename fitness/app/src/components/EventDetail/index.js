@@ -62,8 +62,8 @@ const EventDetail = ({ routeData, date, cta, icon, description }) => {
         </div>
       </div>
       <div className="eventDetail-content">
-        <div className="eventDetail-description">{description}</div>
-        <EventMap {...routeFields} eventName={eventName} />
+      <Text field={routeFields.description} tag="div" encode={false} className="eventDetail-description" />
+      <EventMap {...routeFields} eventName={eventName} />
       </div>
       <div className="eventDetail-products">
         <OcProductList options={{pageSize:4, categoryID: routeFields.sportType.value}} columns={{xs:2}} imgSrcMap={getListImage} hrefMap={p => `/products/${p.ID}`}/>

@@ -32,11 +32,11 @@ FROM $BUILD_IMAGE as ssr
 WORKDIR /ssr
 
 # Just the package.json first to improve layer cache
-COPY fitness/app-node-ssr/package*.json ./
+COPY fitness/node-ssr/package*.json ./
 
 RUN npm install
 
-COPY fitness/app-node-ssr/ ./
+COPY fitness/node-ssr/ ./
 
 COPY scripts/Docker/ ./
 

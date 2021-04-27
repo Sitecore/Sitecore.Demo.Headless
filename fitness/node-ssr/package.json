@@ -1,7 +1,7 @@
 {
 	"name": "lighthousefitness-ssr",
 	"version": "16.0.0",
-	"description": "Node server-side-rendering proxy for running the Lighthouse Fitness JSS app under Node hosting",
+	"description": "Node server-side-rendering proxy for running the Lighthouse Fitness JSS apps under Node hosting",
 	"main": "dist/index.js",
 	"scripts": {
 		"start": "node index.js",
