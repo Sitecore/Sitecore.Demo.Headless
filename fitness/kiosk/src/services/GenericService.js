@@ -53,7 +53,6 @@ export function get(action, payload, useCache = false) {
   return useCache ? api(options) : axios(options);
 }
 
-
 export function boxeverPost(action, payload) {
   const url = `https://${config.boxeverApiHost}/Boxever${action}`;
 
