@@ -7,10 +7,7 @@ import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import ContinueButton from "../ContinueButton";
 import { withTranslation } from "react-i18next";
-import {
-  setSportsFacets
-} from "../../services/SportsService";
-import { trackCompleteFavoriteSports } from "../../services/TrackingService";
+import { setSportsFacets } from "../../services/SportsService";
 
 class SportsPickerStep extends Component {
   state = {
@@ -37,8 +34,6 @@ class SportsPickerStep extends Component {
 
   handleContinueClick(event) {
     setSportsFacets(this.state.selectedSports);
-
-    trackCompleteFavoriteSports();
   }
 
   updateSelectedSports(key, value) {

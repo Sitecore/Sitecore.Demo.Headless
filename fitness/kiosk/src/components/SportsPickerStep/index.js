@@ -11,8 +11,8 @@ import { translate } from "react-i18next";
 import {
   setSportsFacets
 } from "../../services/SportsService";
-import { trackCompleteFavoriteSports } from "../../services/TrackingService";
 
+//TODO: implement PersonalizationResultsButton onclick trackCompleteFavoriteSports function if needed
 class SportsPickerStep extends Component {
   state = {
     selectedSports: {},
@@ -132,7 +132,7 @@ class SportsPickerStep extends Component {
               disabled={!canContinue}
             />
           ) : (
-            <PersonalizationResultsButton onClick={() => trackCompleteFavoriteSports()} />
+            <PersonalizationResultsButton/>
           )}
         </div>
       </Fragment>

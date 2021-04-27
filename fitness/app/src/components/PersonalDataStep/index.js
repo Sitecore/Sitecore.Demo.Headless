@@ -4,7 +4,6 @@ import ContinueButton from "../ContinueButton/";
 import { NavLink } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import { sendDemographicsToBoxever } from "../../services/DemographicsService";
-import { trackCompleteDemographics } from "../../services/TrackingService";
 
 class PersonalDataStep extends Component {
   state = {
@@ -31,8 +30,6 @@ class PersonalDataStep extends Component {
     sendDemographicsToBoxever(age, gender);
 
     sendDemographicsToBoxever(age, gender);
-
-    trackCompleteDemographics();
   }
 
   render() {

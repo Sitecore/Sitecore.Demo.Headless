@@ -10,9 +10,6 @@ import ProductDetail from './components/ProductDetail'
 import config from './temp/config';
 import CategoryDetail from './components/CategoryDetail'
 
-import { boxeverGet } from "./services/GenericService";
-import { getGuestRef } from "./services/BoxeverService";
-
 const ocConfig = {
   clientId: config.ocBuyerClientId,
   baseApiUrl: config.ocBaseApiUrl,
@@ -70,31 +67,6 @@ class AppRoot extends React.Component {
 
   componentDidMount() {
     this.setSsrRenderComplete(true);
-
-    let user = localStorage.getItem("user");
-    if (user) {
-      user = JSON.parse(user);
-      this.setState({ user });
-    } else {
-      getGuestRef().then(response => {
-        var resp = boxeverGet(
-          "/getguestByRef?guestRef="+ response.guestRef
-        );
-        var userName = {"name":resp.firstname + " " + resp.lastname};
-        this.setState({ userName });
-      }).catch(e => {
-        console.log(e);
-      });
-
-
-
-      fetch("https://jsonplaceholder.typicode.com/users")
-        .then(res => res.json())
-        .then(users => {
-          this.setState({ users });
-          localStorage.setItem("users", JSON.stringify(users));
-        });
-    }
   }
 
   render() {

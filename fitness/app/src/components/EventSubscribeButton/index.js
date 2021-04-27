@@ -1,10 +1,7 @@
 import React from "react";
 import { withTranslation } from "react-i18next";
 import { subscribe, unsubscribe } from "../../services/SubscriptionService";
-import {
-  trackEventSubscribe,
-  trackEventUnsubscription
-} from "../../services/TrackingService";
+
 
 class EventSubscribeButton extends React.Component {
   state = {
@@ -31,14 +28,8 @@ class EventSubscribeButton extends React.Component {
       subscribe(eventId,eventName);
     }
 
-    const trackingPromise = this.state.subscribed
-      ? trackEventUnsubscription(eventId)
-      : trackEventSubscribe(eventId);
-
-    trackingPromise
-      .catch(err => {
-        console.log(err);
-      });
+    // Subscription action removed
+    //const trackingPromise = this.state.subscribed ? trackEventUnsubscription(eventId) : trackEventSubscribe(eventId);
   }
 
   render() {

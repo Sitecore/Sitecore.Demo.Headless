@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { withTranslation } from "react-i18next";
 import { flush } from "../../services/SessionService";
+import Profile from "../../components/Profile";
 
 import {
   Collapse,
@@ -65,9 +66,7 @@ class Navigation extends React.Component {
               </li>
             </ul>
           </div>
-          {/* <NavLink tag={Link} to={"/"} className="header-account-link">
-            Login
-          </NavLink> */}
+
           <NavbarToggler
             onClick={this.toggle}
             className={this.state.isOpen ? "active" : ""}
