@@ -55,7 +55,7 @@ export function get(action, payload, useCache = false) {
 }
 
 export function boxeverPost(action, payload) {
-  const url = `${config.boxeverApiHost}/Boxever${action}&sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
+  const url = `https://${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
     method: "POST",
@@ -71,7 +71,7 @@ export function boxeverPost(action, payload) {
 }
 
 export function boxeverGet(action, payload, useCache = false) {
-  const url = `${config.boxeverApiHost}/Boxever${action}?sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
+  const url = `https://${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
     method: "GET",
@@ -84,7 +84,7 @@ export function boxeverGet(action, payload, useCache = false) {
 }
 
 export function boxeverDelete(action, payload, useCache = false) {
-  const url = `${config.boxeverApiHost}/Boxever${action}&sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
+  const url = `https://${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
     method: "DELETE",
@@ -101,7 +101,7 @@ export function boxeverDelete(action, payload, useCache = false) {
 
 //TODO: to be refactored
 export function boxeverCallout(method, action, payload) {
-  const url = `${config.boxeverApiHost}/Boxever${action}&sc_apikey={EBF6D5C1-EB80-4B15-91AB-DD3845797774}`;
+  const url = `https://${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
     method: method,

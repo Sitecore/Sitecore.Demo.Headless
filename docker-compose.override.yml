@@ -111,6 +111,7 @@ services:
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
       OC_BUYER_CLIENT_ID: ${OC_BUYER_CLIENT_ID}
       OC_BASE_API_URL: ${OC_BASE_API_URL}
+      BOXEVER_PROXY_URL: ${BOXEVER_PROXY_URL}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - C:\projects\Sitecore.Demo.Platform\items:c:\items # Platform items
@@ -342,6 +343,7 @@ services:
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
       OC_BUYER_CLIENT_ID: ${OC_BUYER_CLIENT_ID}
       OC_BASE_API_URL: ${OC_BASE_API_URL}
+      BOXEVER_PROXY_URL: ${BOXEVER_PROXY_URL}
     depends_on:
       cm:
         condition: service_healthy
@@ -372,6 +374,7 @@ services:
       SITECORE_API_HOST: http://${KIOSK_CD_HOST}
       PROXY_API_HOST: https://${KIOSK_HOST}
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
+      BOXEVER_PROXY_URL: ${BOXEVER_PROXY_URL}
     depends_on:
       cm:
         condition: service_healthy
