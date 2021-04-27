@@ -55,7 +55,7 @@ export function get(action, payload, useCache = false) {
 }
 
 export function boxeverPost(action, payload) {
-  const url = `https://${config.boxeverApiHost}/Boxever${action}`;
+  const url = `${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
     method: "POST",
@@ -71,7 +71,7 @@ export function boxeverPost(action, payload) {
 }
 
 export function boxeverGet(action, payload) {
-  const url = `https://${config.boxeverApiHost}/Boxever${action}`;
+  const url = `${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
     method: "GET",
@@ -84,7 +84,7 @@ export function boxeverGet(action, payload) {
 }
 
 export function boxeverDelete(action, payload) {
-  const url = `https://${config.boxeverApiHost}/Boxever${action}`;
+  const url = `${config.boxeverApiHost}/Boxever${action}`;
 
   const options = {
     method: "DELETE",
