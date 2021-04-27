@@ -144,53 +144,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-
-        [HttpPost("getEventsByState")]
-        [Consumes("application/json")]
-        public ActionResult GetEventsByState([NotNull] string guestRef, [NotNull] string state)
-        {
-            try
-            {
-                string dataExtensionName = (state.ToLower().Equals("favorite")) ? "FavoriteEvents" : "RegisteredEvents";
-                var requestResult = GetGuestDataExtensionExpanded(guestRef, dataExtensionName);
-
-                var dynJson = JsonConvert.DeserializeObject<Dictionary<string, JToken>>(((ContentResult)requestResult).Content);
-                var dataExtensionJson = dynJson.FirstOrDefault(i => i.Key == $"ext{dataExtensionName}");
-
-                if (dataExtensionJson.Equals(new KeyValuePair<string, JToken>()))
-                    return StatusCode(StatusCodes.Status404NotFound);
-
-                var keyList = dataExtensionJson.Value["items"]?.Children();
-
-                if (keyList == null)
-                    return StatusCode(StatusCodes.Status404NotFound);
-
-                var keyRefList = new List<string>();
-                foreach (var key in keyList)
-                {
-                    var keyRef = key.Value<string>("key");
-                    keyRefList.Add(keyRef);
-                }
-
-                if (keyRefList == null || keyRefList.Count < 1)
-                    return StatusCode(StatusCodes.Status404NotFound);
-
-                foreach (var keyRef in keyRefList)
-                {
-                    //do stuff here and then return
-                }
-
-                return StatusCode(StatusCodes.Status200OK, JsonConvert.SerializeObject(keyRefList));
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
-            }
-
-
-
-        }
-
+ 
         [HttpPost("createguestdataextension")]
         [Consumes("application/json")]
         public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [FromBody] string body)

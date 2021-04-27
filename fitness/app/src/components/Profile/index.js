@@ -8,25 +8,6 @@ class Profile extends React.Component {
     this.state = { userName:"",guestRef:"" }
   }
 
-/*  componentDidUpdate() {
-    getGuestRef()
-    .then(response => {
-      return boxeverGet(
-        "/getguestByRef?guestRef="+ response.guestRef
-      );
-    })
-    .then(boxeverResponse => {
-      var username = boxeverResponse.data.firstname + " " + boxeverResponse.data.lastname;
-      //, "guestref":boxeverResponse.data.ref};
-      console.log(boxeverResponse.data.firstName + " " + boxeverResponse.data.lastName);
-      this.setState({userName:username, guestRef:boxeverResponse.data.ref});
-      localStorage.setItem("userName",username);
-    })
-    .catch(e => {
-      console.log(e);
-    });
-  }*/
-
   componentDidMount() {
     let user = localStorage.getItem("userName");
     if (user && !user.includes("undefined")) {

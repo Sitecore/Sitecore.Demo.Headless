@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { withTranslation } from "react-i18next";
 import { flush } from "../../services/SessionService";
-import Profile from "../../components/Profile";
 
 import {
   Collapse,
@@ -66,7 +65,6 @@ class Navigation extends React.Component {
               </li>
             </ul>
           </div>
-
           <NavbarToggler
             onClick={this.toggle}
             className={this.state.isOpen ? "active" : ""}
