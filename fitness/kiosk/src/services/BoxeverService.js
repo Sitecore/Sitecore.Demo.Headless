@@ -4,7 +4,7 @@ function createBaseEvent() {
   return {
     "browser_id": window.Boxever.getID(), // For eventCreate calls
     "browserId": window.Boxever.getID(), // For callFlows calls
-    "channel": "WEB",
+    "channel": "KIOSK",
     "language": "EN",
     "currency": "CAD",
     "pos": "fitness-kiosk.com",
