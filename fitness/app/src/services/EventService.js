@@ -36,7 +36,10 @@ export function register(eventName, eventId, sportType, eventDate) {
       {
         "key":eventName + " / " + eventId,
         "Event Name":eventName,
-        "Event Id":eventId
+        "Event Id":eventId,
+        "Event Date":eventDate,
+        "Sport Type":sportType
+
       }
     );
   }).catch(e => {
