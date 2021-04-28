@@ -20,13 +20,11 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
     {
         private IProductDataService dataService;
         private IItemSerializer itemSerializer;
-        private IItemScoringService itemScoringService;
 
-        public LighthouseFitnessProductsController([NotNull]IProductDataService dataService, IItemScoringService itemScoringService, IItemSerializer itemSerializer)
+        public LighthouseFitnessProductsController([NotNull]IProductDataService dataService, IItemSerializer itemSerializer)
         {
             this.dataService = dataService;
             this.itemSerializer = itemSerializer;
-            this.itemScoringService = itemScoringService;
         }
 
         [HttpGet]
@@ -37,8 +35,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
             try
             {
                 var allItems = dataService.GetAll(Context.Database);
-                var scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);
-                var items = new JArray(scoredItems.Take(take).Select(i => JObject.Parse(itemSerializer.Serialize(i))));
+                var items = new JArray(allItems.Take(take).Select(i => JObject.Parse(itemSerializer.Serialize(i))));
                 return Content(items.ToString(), "application/json");
             }
             catch (Exception ex)

@@ -139,9 +139,7 @@
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Router.cs" />
     <Compile Include="Services\IEventDataService.cs" />
-    <Compile Include="Services\IItemScoringService.cs" />
     <Compile Include="Services\IProductDataService.cs" />
-    <Compile Include="Services\ItemScoringService.cs" />
     <Compile Include="Utils\ProfileExtensions.cs" />
     <Compile Include="Services\ProductDataService.cs" />
     <Compile Include="Services\EventDataService.cs" />

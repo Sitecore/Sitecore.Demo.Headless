@@ -21,10 +21,14 @@ export async function clearCache() {
   console.log("memory cache cleared");
 }
 
-export function post(action, payload) {
-  const url = `${config.sitecoreApiHost}${apiStem}${action}?sc_apikey=${
+export function getActionUrl(action) {
+  return `${config.sitecoreApiHost}${apiStem}${action}?sc_apikey=${
     config.sitecoreApiKey
   }`;
+}
+
+export function post(action, payload) {
+  const url = getActionUrl(action);
 
   const options = {
     method: "POST",
@@ -40,9 +44,7 @@ export function post(action, payload) {
 }
 
 export function get(action, payload, useCache = false) {
-  const url = `${config.sitecoreApiHost}${apiStem}${action}?sc_apikey=${
-    config.sitecoreApiKey
-  }`;
+  const url = getActionUrl(action);
 
   const options = {
     method: "GET",

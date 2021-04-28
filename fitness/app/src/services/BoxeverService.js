@@ -2,8 +2,8 @@ import { required } from "../utils";
 
 function createBaseEvent() {
   return {
-    "browser_id": window.Boxever.getID(),
-    "browserId": window.Boxever.getID(),
+    "browser_id": window.Boxever.getID(), // For eventCreate calls
+    "browserId": window.Boxever.getID(), // For callFlows calls
     "channel": "WEB",
     "language": "EN",
     "currency": "CAD",
@@ -188,19 +188,18 @@ export function getGuestRef() {
   return callFlows(getGuestRefRequest);
 }
 
-// Boxever get personalized events
-export function getPersonalizedEvents(getAllEventsUrl, getAllEventsPayload) {
+// Boxever get personalized events FullStack Interactive Experience with Decision Model
+export function getPersonalizedEvents(eventsApiUrl, filteredSportsPayload) {
   if (window === undefined) {
     return new Promise(function (resolve) { resolve(); });
   }
 
   var personalizedEventsRequest = createBaseEvent();
-
   personalizedEventsRequest.clientKey = window._boxever_settings.client_key;
   personalizedEventsRequest.friendlyId = "getpersonalizedevents";
   personalizedEventsRequest.params = {
-    url: getAllEventsUrl,
-    payload: getAllEventsPayload
+    url: eventsApiUrl,
+    payload: filteredSportsPayload
   };
 
   return callFlows(personalizedEventsRequest);
