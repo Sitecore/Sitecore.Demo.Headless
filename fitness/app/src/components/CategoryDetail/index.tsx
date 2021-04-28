@@ -13,7 +13,6 @@ const CategoryDetail: FunctionComponent<{categoryId:string}> = ({categoryId}) =>
     return `${getMasterImageUrl(category)}&t=w800`
   }, [category])
 
-
   return (
     <>
       <div className="direction-fixedHeader headerBar">
@@ -26,14 +25,14 @@ const CategoryDetail: FunctionComponent<{categoryId:string}> = ({categoryId}) =>
         <div className="category-product-list">
           <div className="category-product-list-banner">
             <div>
-              <img src={categoryBannerUrl} alt={category.Name} />
+              <img src={categoryBannerUrl} alt={category ? category.Name : "category banner" } />
             </div>
             <h1>{category && category.Name}</h1>
           </div>
-          <OcProductList 
-            columns={{xs:2}} 
-            options={{categoryID: categoryId}} 
-            imgSrcMap={p => `${getMasterImageUrl(p)}&t=w400`} 
+          <OcProductList
+            columns={{xs:2}}
+            options={{categoryID: categoryId}}
+            imgSrcMap={p => `${getMasterImageUrl(p)}&t=w400`}
             hrefMap={p => `/products/${p.ID}`}
           />
         </div>
