@@ -1,4 +1,4 @@
-import { BuyerProduct, Category } from "ordercloud-javascript-sdk";
+import { BuyerProduct } from "ordercloud-javascript-sdk";
 import { useEffect } from "react";
 import { isEqual } from "lodash";
 import { useOcDispatch, useOcSelector } from "../redux/ocStore";
@@ -19,12 +19,11 @@ const useOcProductList = (
   );
 
   useEffect(() => {
-    let promise;
     if (
       isAuthenticated &&
       (!options || (options && !isEqual(listOptions, options)))
     ) {
-      promise = dispatch(setListOptions(listOptions));
+      dispatch(setListOptions(listOptions));
     }
 
     /**

@@ -1,5 +1,5 @@
 import { isDisconnected, isConnectedToLocalInstance } from "../util";
-import { get, getActionUrl, boxeverPost, boxeverDelete } from "./GenericService";
+import { get, getActionUrl, boxeverGet, boxeverPost, boxeverDelete } from "./GenericService";
 import { getGuestRef, getPersonalizedEvents } from "./BoxeverService";
 
 export function addToFavorites(eventId, eventName) {
@@ -36,9 +36,7 @@ export function register(eventName, eventId, sportType, eventDate) {
       {
         "key":eventName + " / " + eventId,
         "Event Name":eventName,
-        "Event Id":eventId,
-        "Event Date":eventDate,
-        "Sport Type":sportType
+        "Event Id":eventId
       }
     );
   }).catch(e => {
@@ -137,34 +135,37 @@ export function getAll(take, skip, lat, lng, profiles, personalize) {
 }
 
 export function getRegisteredEvents() {
-  // return get(`/events/getregistrations`, { take: 1000 }, false);
-  return new Promise((resolve, reject) => {
-    // TODO: Implement with Boxever in the client by removing the comment above and completing this promise code.
-    // Or in the backend by removing this promise, uncommenting, the above code, and modifying the associated controller.
-    resolve([]);
+  return getGuestRef()
+  .then(response => {
+    return boxeverGet(
+      "/getguestdataextensionexpanded?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents", {}
+    );
+  })
+  .then(data => {
+    var extData = data.data.extRegisteredEvents.items;
+    var eventIds = extData.map(x => x.EventId);
+    var events = eventIds.join(",");
+    return get(`/events/GetEventsById`, events, false);
+  })
+  .catch(e => {
+    console.log(e);
   });
 }
 
 export function getFavoritedEvents() {
-  // return get(`/events/getfavorites`, { take: 1000 }, false);
-  return new Promise((resolve, reject) => {
-    // TODO: Implement with Boxever in the client by removing the comment above and completing this promise code.
-    // Or in the backend by removing this promise, uncommenting, the above code, and modifying the associated controller.
-    resolve([]);
-  });
-}
-
-//TODO: Use this if we can
-/*function executeEventAction(eventActionType, eventAction, eventId , eventName, extensionName) {
-  getGuestRef().then(response => {
-    return boxeverCallout(eventActionType,
-      "/" + eventAction + "?guestRef="+ response.guestRef + "&dataExtensionName="+extensionName,
-      {
-        "key":eventName + " / " + eventId,
-        "eventId":eventId
-      }
+  return getGuestRef()
+  .then(response => {
+    return boxeverGet(
+      "/getguestdataextensionexpanded?guestRef="+ response.guestRef + "&dataExtensionName=FavoriteEvents", {}
     );
-  }).catch(e => {
+  })
+  .then(data => {
+    var extData = data.data.extFavoriteEvents.items;
+    var eventIds = extData.map(x => x.EventId);
+    var events = eventIds.join(",");
+    return get(`/events/GetEventsById`, events, false);
+  })
+  .catch(e => {
     console.log(e);
   });
-}*/
+}
