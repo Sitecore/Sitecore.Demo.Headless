@@ -74,7 +74,8 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
                 var itemList = new List<Item>();
                 foreach (var eventId in eventIdList)
                 {
-                    bool isValidGuid = Guid.TryParse(eventId, out Guid eventGuid);
+                    var guidId = "{"+eventId+"}";
+                    bool isValidGuid = Guid.TryParse(guidId, out Guid eventGuid);
                     if (isValidGuid)
                     {
                         var eventItem = dataService.GetById(Context.Database, eventGuid);
