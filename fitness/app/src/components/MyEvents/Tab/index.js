@@ -1,16 +1,16 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { withTranslation } from "react-i18next";
 
 const Tab = ({ active, index, name, t, onTabChange }) => {
   return (
     <li className="tabsNav-item">
-      <button
+      <a href="#"
         name={index}
         onClick={active ? null : onTabChange}
-        className={`${active ? "active " : ""}tabsNav-item-link`}
-        value={t(name)}
-      >
-      </button>
+        className={`${active ? "active " : ""}tabsNav-item-link`}>
+      {t(name)}
+      </a>
     </li>
   );
 };
