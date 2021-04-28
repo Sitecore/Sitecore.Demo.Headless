@@ -1,9 +1,8 @@
 import {
-  createAsyncThunk,
   createSlice,
   SerializedError,
 } from "@reduxjs/toolkit";
-import { BuyerProduct, Category, Me } from "ordercloud-javascript-sdk";
+import { Category, Me } from "ordercloud-javascript-sdk";
 import { createOcAsyncThunk } from "../ocReduxHelpers";
 
 interface OcCategoryDetailState {

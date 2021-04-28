@@ -111,6 +111,7 @@ services:
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
       OC_BUYER_CLIENT_ID: ${OC_BUYER_CLIENT_ID}
       OC_BASE_API_URL: ${OC_BASE_API_URL}
+      BOXEVER_PROXY_URL: ${BOXEVER_PROXY_URL}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
       - C:\projects\Sitecore.Demo.Platform\items:c:\items # Platform items
@@ -264,7 +265,6 @@ services:
       SitecoreAITenantID: ${SITECORE_AI_TENANT_ID}
       SitecoreAIConfigServiceURL: ${SITECORE_AI_CONFIG_SERVICE_URL}
       SitecoreAIConfigServiceJWT: ${SITECORE_AI_CONFIG_SERVICE_JWT}
-
       EXM_RENDERER_URL: http://cm
       COVEO_SERVER_URL: ${COVEO_SERVER_URL}
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
@@ -343,6 +343,7 @@ services:
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
       OC_BUYER_CLIENT_ID: ${OC_BUYER_CLIENT_ID}
       OC_BASE_API_URL: ${OC_BASE_API_URL}
+      BOXEVER_PROXY_URL: ${BOXEVER_PROXY_URL}
     depends_on:
       cm:
         condition: service_healthy
@@ -373,6 +374,7 @@ services:
       SITECORE_API_HOST: http://${KIOSK_CD_HOST}
       PROXY_API_HOST: https://${KIOSK_HOST}
       REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY}
+      BOXEVER_PROXY_URL: ${BOXEVER_PROXY_URL}
     depends_on:
       cm:
         condition: service_healthy
@@ -479,6 +481,29 @@ services:
       demo:
         aliases:
           - ${SH_HOST}
+
+  boxever:
+    image: ${REGISTRY}demo/lighthouse-boxever-proxy:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    build:
+      context: docker/images/demo-boxever
+    environment:
+      ASPNETCORE_URLS: "http://*:5000"
+      BOXEVER_APIURL: ${BOXEVER_APIURL}
+      BOXEVER_CLIENTKEY: ${BOXEVER_CLIENTKEY}
+      BOXEVER_APITOKEN: ${BOXEVER_APITOKEN}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.force-STS-Header.headers.forceSTSHeader=true"
+      - "traefik.http.middlewares.force-STS-Header.headers.stsSeconds=31536000"
+      - "traefik.http.routers.boxever-secure.entrypoints=websecure"
+      - "traefik.http.routers.boxever-secure.rule=Host(`${BOXEVER_PROXY_URL}`)"
+      - "traefik.http.routers.boxever-secure.tls=true"
+      - "traefik.http.routers.boxever-secure.middlewares=force-STS-Header"
+      - "traefik.http.services.boxever.loadbalancer.server.port=5000"
+    networks:
+      demo:
+        aliases:
+          - ${BOXEVER_PROXY_URL}
 
 networks:
   demo:

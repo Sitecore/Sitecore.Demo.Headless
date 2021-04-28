@@ -6,7 +6,7 @@ import {
   Me,
   Meta,
 } from "ordercloud-javascript-sdk";
-import { createOcAsyncThunk, OcThrottle } from "../ocReduxHelpers";
+import { createOcAsyncThunk } from "../ocReduxHelpers";
 
 export interface OcCategoryListOptions {
   catalogID?: string;

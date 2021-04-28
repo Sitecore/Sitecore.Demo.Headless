@@ -4,14 +4,13 @@ import { withTranslation } from "react-i18next";
 const Tab = ({ active, index, name, t, onTabChange }) => {
   return (
     <li className="tabsNav-item">
-      <a
-        href="#"
+      <button
         name={index}
         onClick={active ? null : onTabChange}
         className={`${active ? "active " : ""}tabsNav-item-link`}
+        value={t(name)}
       >
-        {t(name)}
-      </a>
+      </button>
     </li>
   );
 };

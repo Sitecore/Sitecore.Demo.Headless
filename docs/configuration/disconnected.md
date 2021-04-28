@@ -31,6 +31,16 @@ In order for Google Maps to render on the event detail screen, follow the steps 
 1. Open an elevated (run as administrator) terminal in the `\fitness\app` folder.
 2. Run `npm install`
 
+### Starting the Boxever Proxy
+
+In order to set/get guest data extensions in Boxever in disconnected mode, you can manually start the dotnet core app by running the solution.
+
+1. Open the solution in Visual Studio - The solution is located in this repo at: **/docker/images/demo-boxever/Sitecore.Integrations.Boxever.sln**
+2. Run the solution in Visual Studio by hitting F5
+3. A browser window will open where you can interact with the Boxever proxy API for testing purposes
+4. The Fitness app/kiosk is configured to use this Boxever proxy when in disconnected mode
+
+
 ### Running Fitness
 
 Run `jss start`

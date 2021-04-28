@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { translate } from "react-i18next";
 import SportOption from "../SportOption";
+import { logFilterEvent } from "../../services/BoxeverService";
 
 class SportsFilter extends React.Component {
   state = {
@@ -19,6 +20,7 @@ class SportsFilter extends React.Component {
   onApplyClick() {
     this.setState({ previousSelectedSports: this.state.selectedSports });
     this.props.onApply(this.state.selectedSports);
+    logFilterEvent(this.state.selectedSports);
   }
 
   selectionChanged() {

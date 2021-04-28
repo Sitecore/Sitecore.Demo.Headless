@@ -16,11 +16,11 @@ export const getImageUrlByType = (a:any, type:string) => {
 
 export const getMasterImageUrl = (p:BuyerProduct) => {
   if(p.xp.MasterAsset && p.xp.MasterAsset.length ){
-    return getImageUrlByType(p.xp.MasterAsset [0], 'downloadOriginal')
+    return getImageUrlByType(p.xp.MasterAsset[0], 'downloadOriginal')
   }
 
   if(p.xp.Assets && p.xp.Assets.length ){
-    return getImageUrlByType(p.xp.Assets [0], 'downloadOriginal')
+    return getImageUrlByType(p.xp.Assets[0], 'downloadOriginal')
   }
 
   return "https://via.placeholder.com/400"
@@ -88,11 +88,11 @@ const ProductDetail: FunctionComponent<ProductDetailProps> = ({ productId }) => 
             <div className="col-xs-12 col-md-6">
               <div className={`product-detail-images ${imageLoaded ? 'loaded' : ''}`}>
                 <figure className="product-detail-current-image">
-                  <img className="w-100 img-thumbnail" onLoad={handleImageLoaded} src={`${currentImageUrl}&t=w800`} />
+                  <img className="w-100 img-thumbnail" onLoad={handleImageLoaded} src={`${currentImageUrl}&t=w800`} alt="thumbnail"/>
                 </figure>
                 <div className="row row-cols-5 no-gutters product-detail-image-list">
                   {imagePreviewUrls.map((url, i) => {
-                    return <div className="col" key={url} onClick={() => setActiveAssetIndex(i)}><img className={`w-100 img-thumbnail ${i === activeAssetIndex ? 'border-warning bg-warning' : 'bg-dark'}`} src={`${url}&t=gallery`} /></div>
+                    return <div className="col" key={url} onClick={() => setActiveAssetIndex(i)}><img className={`w-100 img-thumbnail ${i === activeAssetIndex ? 'border-warning bg-warning' : 'bg-dark'}`} src={`${url}&t=gallery`} alt="thumbnail"/></div>
                   })}
                 </div>
               </div>

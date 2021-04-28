@@ -53,3 +53,48 @@ export function get(action, payload, useCache = false) {
 
   return useCache ? api(options) : axios(options);
 }
+
+export function boxeverPost(action, payload) {
+  const url = `${config.boxeverApiHost}/Boxever${action}`;
+
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    data: payload,
+    withCredentials: false,
+    url
+  };
+
+  return axios(options);
+}
+
+export function boxeverGet(action, payload) {
+  const url = `${config.boxeverApiHost}/Boxever${action}`;
+
+  const options = {
+    method: "GET",
+    params: payload,
+    withCredentials: false,
+    url
+  };
+
+  return axios(options);
+}
+
+export function boxeverDelete(action, payload) {
+  const url = `${config.boxeverApiHost}/Boxever${action}`;
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json"
+    },
+    data: payload,
+    withCredentials: false,
+    url
+  };
+
+  return axios(options);
+}

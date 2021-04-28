@@ -3,7 +3,8 @@ import Consent from "../Consent";
 import { translate } from "react-i18next";
 import { setIdentification } from "../../services/IdentificationService";
 import { NavLink } from "react-router-dom";
-import { trackCompleteRegistration } from "../../services/TrackingService";
+import { trackRegistration } from "../../services/BoxeverService";
+import { setRegisteredEventsFacets } from "../../services/EventService";
 import { flush } from "../../services/SessionService";
 
 const flushSession = () => {
@@ -53,7 +54,8 @@ class KioskSignup extends React.Component {
 
     setIdentification(firstname, lastname, email)
     .then(() => this.setState({ signedUp: true }))
-    .then(() => trackCompleteRegistration(eventId, eventName, eventDate, eventUrlPath, sportType))
+    .then(() => trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType))
+    .then(() => setRegisteredEventsFacets(eventName, eventId, sportType, eventDate))
     .catch(err => {
       this.setState({ error: true });
       console.log(err);

@@ -28,7 +28,7 @@ class RouteHandler extends React.Component {
 
     this.state = {
       notFound: true,
-      defaultLanguage: config.defaultLanguage,
+      defaultLanguage: config.defaultLanguage
     };
 
     const routeData = this.extractRouteData();

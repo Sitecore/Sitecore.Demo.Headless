@@ -19,6 +19,7 @@ module.exports = function generateConfig(configOverrides) {
   const defaultConfig = {
     sitecoreApiKey: 'no-api-key-set',
     sitecoreApiHost: '',
+    boxeverApiHost:'',
     jssAppName: 'Unknown',
   };
 
@@ -74,12 +75,13 @@ function transformScJssConfig() {
   };
 }
 
-// BEGIN DEMO CUSTOMIZATION - For OrderCloud integration
+// BEGIN DEMO CUSTOMIZATION - For OrderCloud & Boxever integration
 function transformOcConfig() {
   let config;
   try {
     // eslint-disable-next-line global-require
     config = require('../occonfig.json');
+    config = require('../bxconfig.json');
   } catch (e) {
     return {};
   }
@@ -88,7 +90,8 @@ function transformOcConfig() {
 
   return {
     ocBuyerClientId: process.env.OC_BUYER_CLIENT_ID || config.ocBuyerClientId,
-    ocBaseApiUrl: process.env.OC_BASE_API_URL || config.ocBaseApiUrl
+    ocBaseApiUrl: process.env.OC_BASE_API_URL || config.ocBaseApiUrl,
+    boxeverApiHost: process.env.BOXEVER_PROXY_URL || config.boxeverApiHost
   };
 }
 // END DEMO CUSTOMIZATION
