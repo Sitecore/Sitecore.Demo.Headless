@@ -9,12 +9,20 @@ import { flush } from "../../services/SessionService";
 
 const flushSession = () => {
   flush()
-    .then(response => {
-      console.log("session flushed");
-    })
-    .catch(err => {
-      console.error(err);
+  .then(() => {
+    this.toggle();
+
+    // refreshing the current route
+    // workaround for https://github.com/ReactTraining/react-router/issues/1982#issuecomment-172040295
+    const currentLocation = this.props.history.location.pathname;
+    this.props.history.push("/null");
+    setTimeout(() => {
+      this.props.history.push(currentLocation);
     });
+  })
+  .catch(err => {
+    console.error(err);
+  });
 };
 
 class KioskSignup extends React.Component {

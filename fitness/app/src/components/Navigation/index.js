@@ -24,6 +24,7 @@ class Navigation extends React.Component {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -32,12 +33,20 @@ class Navigation extends React.Component {
 
   flushSession() {
     flush()
-      .then(response => {
-        this.toggle();
-      })
-      .catch(err => {
-        console.error(err);
+    .then(() => {
+      this.toggle();
+
+      // refreshing the current route
+      // workaround for https://github.com/ReactTraining/react-router/issues/1982#issuecomment-172040295
+      const currentLocation = this.props.history.location.pathname;
+      this.props.history.push("/null");
+      setTimeout(() => {
+        this.props.history.push(currentLocation);
       });
+    })
+    .catch(err => {
+      console.error(err);
+    });
   }
 
   nav(url) {

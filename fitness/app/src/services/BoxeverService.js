@@ -1,3 +1,4 @@
+import { boxeverGet } from "./GenericService";
 import { required } from "../utils";
 
 function createBaseEvent() {
@@ -169,9 +170,23 @@ export function forgetCurrentGuest() {
     return new Promise(function (resolve) { resolve(); });
   }
 
-  return new Promise(function (resolve) {
-    window.Boxever.reset();
-    resolve();
+  return new Promise(function (resolve, reject) {
+    try {
+      window.Boxever.browserCreate(
+        {},
+        function (response) {
+          if (!response) {
+            reject("No response provided.");
+          }
+          // Set the browser guest ref
+          window.Boxever.browser_id = response.ref;
+          resolve();
+        },
+        'json'
+      );
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 
@@ -203,4 +218,140 @@ export function getPersonalizedEvents(eventsApiUrl, filteredSportsPayload) {
   };
 
   return callFlows(personalizedEventsRequest);
+}
+
+// ********************************
+// Get non-expanded guest profile
+// ********************************
+function getGuestProfilePromise(
+  guestRef = required()
+) {
+  return boxeverGet(`/getguestByRef?guestRef=${guestRef}`);
+}
+
+export function getGuestProfileResponse(guestRef) {
+  if (!guestRef) {
+    return getGuestRef()
+    .then(response => getGuestProfilePromise(response.guestRef));
+  } else {
+    return getGuestProfilePromise(guestRef);
+  }
+}
+
+// ********************************
+// isAnonymousGuest
+// ********************************
+export function isAnonymousGuestInGuestResponse(
+  guestResponse = required()
+) {
+  return !guestResponse ||
+    !guestResponse.data ||
+    !guestResponse.data.email;
+}
+
+export function isAnonymousGuest(guestRef) {
+  return getGuestProfileResponse(guestRef)
+  .then(guestResponse => isAnonymousGuestInGuestResponse(guestResponse));
+}
+
+// ********************************
+// isAnonymousGuest
+// ********************************
+export function getGuestFullNameInGuestResponse(
+  guestResponse = required()
+) {
+  if (!guestResponse || !guestResponse.data || !guestResponse.data.firstName || !guestResponse.data.lastName) {
+    return;
+  }
+
+  return `${guestResponse.data.firstName} ${guestResponse.data.lastName}`;
+}
+
+export function getGuestFullName(guestRef) {
+  return getGuestProfileResponse(guestRef)
+  .then(guestResponse => getGuestFullNameInGuestResponse(guestResponse));
+}
+
+// ********************************
+// Get guest profile with expanded registered events
+// ********************************
+function getRegisteredEventsPromise(
+  guestRef = required()
+) {
+  return boxeverGet(`/getguestdataextensionexpanded?guestRef=${guestRef}&dataExtensionName=RegisteredEvents`);
+}
+
+export function getRegisteredEventsResponse(guestRef) {
+  if (!guestRef) {
+    return getGuestRef()
+    .then(response => getRegisteredEventsPromise(response.guestRef));
+  } else {
+    return getRegisteredEventsPromise(guestRef);
+  }
+}
+
+// ********************************
+// isRegisteredToEvent
+// ********************************
+export function isRegisteredToEventInGuestResponse(
+  eventId = required(),
+  guestResponse = required()
+) {
+  return guestResponse &&
+    guestResponse.data &&
+    guestResponse.data.extRegisteredEvents &&
+    guestResponse.data.extRegisteredEvents.items &&
+    guestResponse.data.extRegisteredEvents.items.filter(
+      event => event["Event Id"] === eventId
+    ).length > 0;
+}
+
+export function isRegisteredToEvent(
+  eventId = required(),
+  guestRef
+) {
+  return getRegisteredEventsResponse(guestRef)
+  .then(guestResponse => isRegisteredToEventInGuestResponse(eventId, guestResponse));
+}
+
+// ********************************
+// Get guest profile with expanded favorited events
+// ********************************
+function getFavoritedEventsPromise(
+  guestRef = required()
+) {
+  return boxeverGet(`/getguestdataextensionexpanded?guestRef=${guestRef}&dataExtensionName=FavoriteEvents`);
+}
+
+export function getFavoritedEventsResponse(guestRef) {
+  if (!guestRef) {
+    return getGuestRef()
+    .then(response => getFavoritedEventsPromise(response.guestRef));
+  } else {
+    return getFavoritedEventsPromise(guestRef);
+  }
+}
+
+// ********************************
+// isEventFavorited
+// ********************************
+export function isEventFavoritedInGuestResponse(
+  eventId = required(),
+  guestResponse = required()
+) {
+  return guestResponse &&
+    guestResponse.data &&
+    guestResponse.data.extFavoriteEvents &&
+    guestResponse.data.extFavoriteEvents.items &&
+    guestResponse.data.extFavoriteEvents.items.filter(
+      event => event.eventId === eventId
+    ).length > 0;
+}
+
+export function isEventFavorited(
+  eventId = required(),
+  guestRef
+) {
+  return getFavoritedEventsResponse(guestRef)
+  .then(guestResponse => isEventFavoritedInGuestResponse(eventId, guestResponse));
 }

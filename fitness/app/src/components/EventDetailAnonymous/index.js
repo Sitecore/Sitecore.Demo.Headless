@@ -5,11 +5,11 @@ import dayjs from "dayjs";
 import { withTranslation } from "react-i18next";
 import EventDetail from "../EventDetail";
 import EventFavoriteButton from "../EventFavoriteButton";
-import { boxeverGet } from "../../services/GenericService";
-import { getGuestRef } from "../../services/BoxeverService";
+import { getGuestRef, getRegisteredEventsResponse, isAnonymousGuestInGuestResponse, isRegisteredToEventInGuestResponse, isEventFavorited } from "../../services/BoxeverService";
 import { register } from "../../services/EventService";
 import RegistrationPrompt from "../RegistrationPrompt";
 import EventSubscribeButton from "../EventSubscribeButton";
+import Loading from "../Loading";
 
 class EventDetailAnonymous extends React.Component {
   constructor(props) {
@@ -17,6 +17,7 @@ class EventDetailAnonymous extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.onRegister = this.onRegister.bind(this);
     this.state = {
+      shouldDisplayLoading: true,
       isAnonymousGuest: true,
       isRegistered: false,
       isFavorited: false,
@@ -54,26 +55,22 @@ class EventDetailAnonymous extends React.Component {
     .then(response => {
       guestRef = response.guestRef;
 
-      return boxeverGet(`/getguestdataextensionexpanded?guestRef=${guestRef}&dataExtensionName=RegisteredEvents`);
+      return getRegisteredEventsResponse(guestRef);
     })
     .then(guestResponse => {
-      console.log(guestResponse.data);
-
-      const isRegistered = guestResponse.data.extRegisteredEvents.items.filter(event => event["Event Id"] === this.props.routeData.itemId).length > 0;
-      console.log(`isRegistered: ${isRegistered}`)
+      const isAnonymousGuest = isAnonymousGuestInGuestResponse(guestResponse);
+      const isRegistered = isRegisteredToEventInGuestResponse(this.props.routeData.itemId, guestResponse);
 
       this.setState({
-        isAnonymousGuest: !guestResponse.data.email,
+        isAnonymousGuest,
         isRegistered
       });
 
-      return boxeverGet(`/getguestdataextensionexpanded?guestRef=${guestRef}&dataExtensionName=FavoriteEvents`);
-    }).then(favoritedEventsResults => {
-      const isFavorited = favoritedEventsResults.data.extFavoriteEvents.items.filter(event => event.eventId === this.props.routeData.itemId).length > 0;
-      console.log(`isFavorited: ${isFavorited}`)
-
+      return isEventFavorited(this.props.routeData.itemId, guestRef);
+    }).then(isFavorited => {
       this.setState({
-        isFavorited
+        isFavorited,
+        shouldDisplayLoading: false
       });
     })
     .catch(e => {
@@ -82,6 +79,11 @@ class EventDetailAnonymous extends React.Component {
   }
 
   render() {
+    // Don't render anything if the Boxever state is not received yet.
+    if (this.state.shouldDisplayLoading) {
+      return <Loading />;
+    }
+
     const { fields, routeData, t } = this.props;
     const routeFields = routeData.fields;
 

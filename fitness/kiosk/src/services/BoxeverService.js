@@ -157,9 +157,23 @@ export function forgetCurrentGuest() {
     return new Promise(function (resolve) { resolve(); });
   }
 
-  return new Promise(function (resolve) {
-    window.Boxever.reset();
-    resolve();
+  return new Promise(function (resolve, reject) {
+    try {
+      window.Boxever.browserCreate(
+        {},
+        function (response) {
+          if (!response) {
+            reject("No response provided.");
+          }
+          // Set the browser guest ref
+          window.Boxever.browser_id = response.ref;
+          resolve();
+        },
+        'json'
+      );
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 

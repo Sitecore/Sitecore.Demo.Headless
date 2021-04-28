@@ -80,6 +80,14 @@
   margin-right: auto;
 }
 
+.greeting {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
 /* generic styles */
 html,
 body {
@@ -1399,7 +1407,8 @@ a[target="_blank"]:after {
 
 /* events listing */
 @media screen and (min-width: 768px) {
-  .events {
+  .events,
+  .greeting {
     padding: 0 7px;
   }
 }

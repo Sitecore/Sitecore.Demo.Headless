@@ -8,7 +8,7 @@ import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore
  */
 export default function(manifest) {
   manifest.addComponent({
-    name: 'Profile',
+    name: 'Greeting',
     icon: SitecoreIcon.DocumentTag
   });
 }

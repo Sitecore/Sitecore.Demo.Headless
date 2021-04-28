@@ -52,8 +52,13 @@ Languages:
               s:par=""
               s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0" />
             <r
-              uid="{45B7B8B1-C68C-5F1B-B97F-1D09373DA10E}"
+              uid="{F7BD0C52-019B-4485-8339-86174EE54F05}"
               p:after="r[@uid='{9D6FEA4F-9878-5B56-A88B-7FC9310B6770}']"
+              s:id="{9303B42F-34E2-497E-8C10-9C721850EE28}"
+              s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0" />
+            <r
+              uid="{45B7B8B1-C68C-5F1B-B97F-1D09373DA10E}"
+              p:after="r[@uid='{F7BD0C52-019B-4485-8339-86174EE54F05}']"
               s:rname="FeaturedEvent"
               s:ds="{92A03E9E-4C72-543B-A474-75B444B0BE3B}"
               s:id="{A3948268-0B8E-5A8F-9D04-F6ABCDE04774}"
@@ -61,7 +66,7 @@ Languages:
               s:ph="/hf-body/hf-home-{14ACC01E-11B9-4570-9382-B6FEA3CBD4B4}-0" />
             <r
               uid="{BEEA8C4A-17DF-510E-9508-9983E0269659}"
-              p:after="r[@uid='{45B7B8B1-C68C-5F1B-B97F-1D09373DA10E}']"
+              p:after="*[1=2]"
               s:rname="EventList"
               s:ds="{794ECAE4-7888-5B9A-BFC1-C8AAA0A69783}"
               s:id="{18CB84F4-8830-5C2D-A6B8-C96C3F5A23DA}"
