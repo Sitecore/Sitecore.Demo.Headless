@@ -18,4 +18,4 @@ placeholders:
   hf-nav:
   - componentName: DetailNavigation
   hf-body:
-    - id: event-detail-loggedin
+    - id: event-detail-anonymous

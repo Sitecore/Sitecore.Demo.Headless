@@ -3,7 +3,7 @@ import { get, getActionUrl, boxeverPost, boxeverDelete } from "./GenericService"
 import { getGuestRef, getPersonalizedEvents } from "./BoxeverService";
 
 export function addToFavorites(eventId, eventName) {
-  getGuestRef().then(response => {
+  return getGuestRef().then(response => {
     return boxeverPost(
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=FavoriteEvents",
       {
@@ -17,7 +17,7 @@ export function addToFavorites(eventId, eventName) {
 }
 
 export function removeFromFavorites(eventId, eventName) {
-  getGuestRef().then(response => {
+  return getGuestRef().then(response => {
     return boxeverDelete(
       "/deletekeyforguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=FavoriteEvents",
       {
@@ -30,7 +30,7 @@ export function removeFromFavorites(eventId, eventName) {
 }
 
 export function register(eventName, eventId, sportType, eventDate) {
-  getGuestRef().then(response => {
+  return getGuestRef().then(response => {
     return boxeverPost(
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents",
       {
@@ -47,7 +47,7 @@ export function register(eventName, eventId, sportType, eventDate) {
 }
 
 export function unregister(eventId, eventName) {
-  getGuestRef().then(response => {
+  return getGuestRef().then(response => {
     return boxeverDelete(
       "/deletekeyforguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents",
       {
