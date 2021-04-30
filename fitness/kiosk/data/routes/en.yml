@@ -11,4 +11,4 @@ placeholders:
         href: /events
         text: Let's get started
       alignment:
-        id: top-alignment
+        id: bottom-alignment

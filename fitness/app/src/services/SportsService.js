@@ -1,4 +1,4 @@
-import { boxeverPost,boxeverDelete } from "./GenericService";
+import { boxeverPost, boxeverDelete } from "./GenericService";
 import { required } from "../utils";
 import { getGuestRef } from "./BoxeverService";
 
@@ -27,4 +27,3 @@ export function setSportsFacets(sportRatings = required()) {
     console.log(e);
   });
 }
-

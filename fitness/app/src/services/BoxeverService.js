@@ -5,10 +5,10 @@ function createBaseEvent() {
   return {
     "browser_id": window.Boxever.getID(), // For eventCreate calls
     "browserId": window.Boxever.getID(), // For callFlows calls
-    "channel": "WEB",
+    "channel": "APP",
     "language": "EN",
     "currency": "CAD",
-    "pos": "fitness-kiosk.com",
+    "pos": "lighthouse-fitness",
     "page": window.location.pathname + window.location.search,
   };
 }
@@ -81,6 +81,16 @@ export function logViewEvent(
   }
 
   return sendEventCreate(viewEvent);
+}
+
+export function logFilterEvent(
+  selectedSports = required()
+) {
+  var filterEvent = createBaseEvent();
+  filterEvent.type = "FILTER_SPORT";
+  filterEvent.filteredsports=selectedSports;
+
+  return sendEventCreate(filterEvent);
 }
 
 // Boxever identification
@@ -267,7 +277,7 @@ export function isAnonymousGuest(guestRef) {
 }
 
 // ********************************
-// isAnonymousGuest
+// getGuestFullName
 // ********************************
 export function getGuestFullNameInGuestResponse(
   guestResponse = required()
