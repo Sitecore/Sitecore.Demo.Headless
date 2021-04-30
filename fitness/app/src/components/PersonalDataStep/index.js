@@ -27,9 +27,7 @@ class PersonalDataStep extends Component {
 
   handleContinueClick(event) {
     const { age, gender } = this.state;
-    sendDemographicsToBoxever(age, gender);
-
-    sendDemographicsToBoxever(age, gender);
+    return sendDemographicsToBoxever(age, gender);
   }
 
   render() {

@@ -37,7 +37,7 @@ class SportsPickerStep extends Component {
   }
 
   trackCompleteFavoriteSports(event){
-    setSportsFacets(this.state.selectedSports);
+    return setSportsFacets(this.state.selectedSports);
   }
 
   updateSelectedSports(key, value) {

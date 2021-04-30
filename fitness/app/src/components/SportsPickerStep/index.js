@@ -33,7 +33,7 @@ class SportsPickerStep extends Component {
   }
 
   handleContinueClick(event) {
-    setSportsFacets(this.state.selectedSports);
+    return setSportsFacets(this.state.selectedSports);
   }
 
   updateSelectedSports(key, value) {

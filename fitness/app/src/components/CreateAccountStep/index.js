@@ -40,14 +40,23 @@ class CreateAccountStep extends React.Component {
 
   onContinueClick() {
     const { firstname, lastname, email, gender, age } = this.state;
+    var promises = [];
 
-    setIdentification(firstname, lastname, email)
+    promises.push(
+      setIdentification(firstname, lastname, email)
       .catch(err => {
         console.log(err);
-      });
+      })
+    );
 
-    sendDemographicsToBoxever(age, gender);
+    promises.push(
+      sendDemographicsToBoxever(age, gender)
+      .catch(err => {
+        console.log(err);
+      })
+    );
 
+    return Promise.all(promises);
   }
 
   render() {

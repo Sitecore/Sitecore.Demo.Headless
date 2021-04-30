@@ -4,7 +4,7 @@ import { getGuestRef } from "./BoxeverService";
 
 export function setSportsFacets(sportRatings = required()) {
   var guestRef;
-  getGuestRef()
+  return getGuestRef()
   .then(response => {
     guestRef =response.guestRef;
     return boxeverDelete(
