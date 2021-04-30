@@ -155,12 +155,24 @@ export function trackEventUnfavorite(
 export function identifyByEmail(
   email = required()
 ) {
-  window._boxeverq.push(function() {
-    var identifyEvent = createBaseEvent();
-    identifyEvent.type = "IDENTITY";
-    identifyEvent.email = email;
+  if (window === undefined) {
+    return new Promise(function (resolve) { resolve(); });
+  }
 
-    sendEventCreate(identifyEvent);
+  return new Promise(function (resolve, reject) {
+    try {
+      window._boxeverq.push(function() {
+        var identifyEvent = createBaseEvent();
+        identifyEvent.type = "IDENTITY";
+        identifyEvent.email = email;
+
+        sendEventCreate(identifyEvent)
+        .then(() => resolve())
+        .catch((err) => reject(err));
+      });
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 
