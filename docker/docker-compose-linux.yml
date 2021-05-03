@@ -9,7 +9,9 @@ services:
       context: ../
       dockerfile: ./docker/images/demo-sqldev/Dockerfile.linux
       args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-mssql:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
+        BASE_IMAGE: ${REGISTRY}community/sitecore-xm1-custom-spe-headless-mssql:10.1.0-linux
+        HORIZON_INTEGRATION_ASSETS: ${REGISTRY}community/modules/custom-horizon-integration-xp1-assets:2.25-linux
+        CMP_ASSETS: ${REGISTRY}community/modules/custom-cmp-xp1-assets:4.0.0-linux
     volumes:
       - .\data\sql:/var/opt/mssql/data
     mem_limit: 2GB
@@ -25,14 +27,17 @@ services:
       EXM_BASE_URL: "https://${CD_HOST}"
       BOOT_OVERRIDE_SCRIPTS: "Demo-Boot-Platform-Linux.ps1"
       COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
+
   init:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
     image: ${REGISTRY}demo/lighthouse-headless-init:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     build:
       context: ./images/demo-init
+      dockerfile: Dockerfile.linux
       args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-init:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
+        BUILD_IMAGE: mcr.microsoft.com/dotnet/sdk:3.1-alpine
+        BASE_IMAGE: mcr.microsoft.com/dotnet/runtime:3.1-alpine
     environment:
       ADMIN_PASSWORD: ${SITECORE_ADMIN_PASSWORD}
       ADMIN_USER_NAME: "superuser"
@@ -46,19 +51,7 @@ services:
       COVEO_SEARCH_API_KEY: ${COVEO_SEARCH_API_KEY}
       COVEO_FARM_NAME: ${COVEO_FARM_NAME}
       COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
-  solr:
-    image: ${REGISTRY}demo/lighthouse-headless-solr:${SITECORE_VERSION}-linux-${DEMO_VERSION}
-    isolation: default
-    build:
-      context: ./images/demo-solr
-      dockerfile: Dockerfile
-      args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-solr:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
-    volumes:
-      - ./data/solr:/data
-    mem_limit: 1GB
-    ports:
-      - "44011:8983"
+
   app:
     image: ${REGISTRY}demo/lighthouse-headless-app:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default

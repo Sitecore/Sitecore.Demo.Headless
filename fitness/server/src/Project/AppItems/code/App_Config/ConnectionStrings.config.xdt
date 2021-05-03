@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<connectionStrings configBuilders="SitecoreConnectionStringsBuilder" xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <add name="Sitecore.Services.Token.SecurityKey" connectionString="" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+  <add name="CMP.ServiceBusEntityPathIn" connectionString="" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+  <add name="CMP.ServiceBusEntityPathOut" connectionString="" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+  <add name="CMP.ServiceBusSubscription" connectionString="" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+  <add name="CMP.ContentHub" connectionString="" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+  <add name="DAM.SearchPage" connectionString="" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+  <add name="DAM.ExternalRedirectKey" connectionString="Sitecore" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+</connectionStrings>

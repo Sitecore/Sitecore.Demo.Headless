@@ -2,6 +2,23 @@
 ARG BASE_IMAGE
 ARG BUILD_IMAGE
 
+ARG TOOLS_ASSETS
+ARG CONTENTHUB_CONNECTOR_ASSETS
+ARG HEADLESS_ASSETS
+ARG SPS_ASSETS
+
+FROM ${TOOLS_ASSETS} as tools_assets
+FROM ${CONTENTHUB_CONNECTOR_ASSETS} as contenthub_connector_assets
+FROM ${HEADLESS_ASSETS} as headless_assets
+FROM ${SPS_ASSETS} as sps_assets
+
+FROM ${BASE_IMAGE} as base
+
+COPY --from=tools_assets /tools/ /tools/
+
+COPY --from=contenthub_connector_assets /module/cm/content /inetpub/wwwroot
+COPY --from=headless_assets /module/cm/content /inetpub/wwwroot
+
 FROM ${BUILD_IMAGE} as build
 
 ARG INTERNAL_NUGET_SOURCE
@@ -14,12 +31,11 @@ WORKDIR /build
 
 RUN MSBuild /v:minimal /p:Configuration=Debug /p:Platform='Any CPU' /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=false /p:publishUrl=C:\out /p:BuildProjectReferences=true /target:'Clean;Build' /restore "Sitecore.Demo.Fitness.sln"
 
-FROM $BASE_IMAGE as production
-
-# Clear transforms folder from base image
-RUN  Remove-Item -Path C:\inetpub\wwwroot\transforms\* -Recurse
+FROM base as production
 
 COPY --from=build /out/ /inetpub/wwwroot/
+
+COPY /docker/images/demo-cd/data/transforms/ /inetpub/wwwroot/transforms/
 
 # Copy the fitness app config
 COPY /fitness/app/sitecore/config/*.config /inetpub/wwwroot/App_Config/Include/Sitecore.Demo.Fitness/
@@ -31,11 +47,18 @@ COPY /fitness/kiosk/sitecore/config/*.config /inetpub/wwwroot/App_Config/Include
 # TODO: Improve the collection of the XDT files.
 COPY /fitness/server/src/Project/AppItems/code/Web.config.xdt /inetpub/wwwroot/transforms/
 COPY /fitness/server/src/Project/AppItems/code/App_Config/Layers.config.xdt /inetpub/wwwroot/transforms/App_Config/
+COPY /fitness/server/src/Project/AppItems/code/App_Config/ConnectionStrings.config.xdt /inetpub/wwwroot/transforms/App_Config/
 
 RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\transforms\\web*.xdt' -Recurse ) | `
     ForEach-Object { & 'C:\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\inetpub\\wwwroot\\web.config' -XdtPath $_.FullName `
     -XdtDllPath 'C:\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; };
 
+RUN (Get-ChildItem -Path '/inetpub/wwwroot/transforms/ConnectionStrings*.xdt' -Recurse ) | `
+    ForEach-Object { & '/tools/scripts/Invoke-XdtTransform.ps1' -Path '/inetpub/wwwroot/app_config/ConnectionStrings.config' -XdtPath $_.FullName `
+    -XdtDllPath '/tools/bin/Microsoft.Web.XmlTransform.dll'; };
+
 RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\transforms\\App_Config\\Layers*.xdt' -Recurse ) | `
     ForEach-Object { & 'C:\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\inetpub\\wwwroot\\App_Config\\layers.config' -XdtPath $_.FullName `
     -XdtDllPath 'C:\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; };
+
+RUN icacls 'C:\inetpub\wwwroot' /grant 'IIS_IUSRS:(OI)(CI)F' /t | Out-Null

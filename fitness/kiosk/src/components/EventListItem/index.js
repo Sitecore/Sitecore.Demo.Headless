@@ -10,6 +10,10 @@ import { NavLink } from "react-router-dom";
 import { translate } from "react-i18next";
 import EventLabel from "../EventLabel";
 
+import length from '../../assets/icons/length.svg';
+import sportType from '../../assets/icons/sportType.svg';
+import numberOfParticipants from '../../assets/icons/numberOfParticipants.svg';
+
 class EventListItem extends PureComponent {
   render() {
     const { fields, url, label, featured, } = this.props;
@@ -43,16 +47,19 @@ class EventListItem extends PureComponent {
                     />
                   )}
                   <EventLabel
+                    icon={length}
                     fieldName="length"
                     fieldValue={fields.length}
                     className="events-item-meta events-item-meta_type text-center"
                   />
                   <EventLabel
+                    icon={sportType}
                     fieldName="sportType"
                     fieldValue={fields.sportType}
                     className="events-item-meta events-item-meta_type text-center"
                   />
                   <EventLabel
+                    icon={numberOfParticipants}
                     fieldName="numberOfParticipants"
                     fieldValue={fields.numberOfParticipants}
                     className="events-item-meta events-item-meta_type text-center"

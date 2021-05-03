@@ -1,7 +1,5 @@
 ﻿using System;
 using Sitecore.Diagnostics;
-using Sitecore.Demo.Fitness.Foundation.Analytics;
-using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
 using Sitecore.JavaScriptServices.Configuration;
 using Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext;
 
@@ -9,21 +7,12 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Pipelines.GetLayoutServi
 {
     public class EventInfo : Sitecore.JavaScriptServices.ViewEngine.LayoutService.Pipelines.GetLayoutServiceContext.JssGetLayoutServiceContextProcessor
     {
-        private IStringValueListFacetService facetService;
-
-        public EventInfo(IConfigurationResolver configurationResolver, IStringValueListFacetService facetService) : base(configurationResolver)
+        public EventInfo(IConfigurationResolver configurationResolver) : base(configurationResolver)
         {
-            this.facetService = facetService;
         }
 
         protected override void DoProcess(GetLayoutServiceContextArgs args, AppConfiguration application)
         {
-            if (facetService == null)
-            {
-                Log.Fatal("GetLayoutServiceContext.EventInfo processor terminates. Must have an instance of IStringValueListFacetService resolved", this);
-                return;
-            }
-
             if (args.RenderedItem == null)
             {
                 return;
@@ -34,9 +23,10 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Pipelines.GetLayoutServi
                 var eventId = args.RenderedItem.ID.Guid.ToString("D");
                 try
                 {
-                    var favorited = facetService.ContainsValue(FacetIDs.FavoriteEvents, eventId);
-                    var registered = facetService.ContainsValue(FacetIDs.RegisteredEvents, eventId);
-                    var subscribed = facetService.ContainsValue(FacetIDs.Subscriptions, eventId);
+                    // TODO: Refactor
+                    var favorited = false; // facetService.ContainsValue(FacetIDs.FavoriteEvents, eventId);
+                    var registered = false; // facetService.ContainsValue(FacetIDs.RegisteredEvents, eventId);
+                    var subscribed = false; // facetService.ContainsValue(FacetIDs.Subscriptions, eventId);
 
                     args.ContextData.Add("event",
                         new

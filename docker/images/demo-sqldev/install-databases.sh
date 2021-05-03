@@ -1,10 +1,11 @@
 #!/bin/bash
 source=$1
+
 for attempt in {1..10}
 do
     echo "### Connection attempt $attempt..."
 
- 	/opt/mssql-tools/bin/sqlcmd -S . -U sa -P $SA_PASSWORD -t 120 -l 120 -Q "SELECT Name from sys.Databases" >/dev/null 2>&1
+    /opt/mssql-tools/bin/sqlcmd -S . -U sa -P $SA_PASSWORD -t 120 -l 120 -Q "SELECT Name from sys.Databases" >/dev/null 2>&1
 
     if [[ $? == 0 ]]; then
         echo "### Connected."
@@ -27,7 +28,7 @@ for filename in $source/*.dacpac; do
     fileBaseName=$(basename $filename .dacpac)
     databaseName="${fileBaseName}"
 
-    echo "### Installing '$fileBaseName' '$databaseName' from '$filename'..."
+    echo "### Installing '$databaseName' from '$filename'..."
 
-    /opt/sqlpackage/sqlpackage /a:Publish /tsn:. /tdn:$databaseName /tu:sa /tp:$SA_PASSWORD /sf:$filename /tt:120 /q
+    /opt/sqlpackage/sqlpackage /a:Publish /tsn:. /tdn:$databaseName /tu:sa /tp:$SA_PASSWORD /sf:$filename /tt:300 /q
 done

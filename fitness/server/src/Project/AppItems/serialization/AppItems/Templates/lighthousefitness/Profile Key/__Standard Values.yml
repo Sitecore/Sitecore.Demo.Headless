@@ -1,0 +1,22 @@
+﻿---
+ID: "0954e5b1-246c-4fb7-a68f-106d3b49013a"
+Parent: "44ab5107-3c73-42f0-a427-bec549f944b9"
+Template: "44ab5107-3c73-42f0-a427-bec549f944b9"
+Path: /sitecore/templates/Project/lighthousefitness/Profile Key/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Fields:
+  - ID: "2e1a9aab-f7c1-49ee-b032-28b98d3688d6"
+    Hint: Name
+    Value: $name
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20090818T190305
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

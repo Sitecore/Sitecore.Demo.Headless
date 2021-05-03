@@ -1,0 +1,42 @@
+{
+  "sitecore": [
+    {
+      "url": "/sitecore/shell"
+    },
+    {
+      "url": "/sitecore/client/Applications/Launchpad"
+    },
+    {
+      "url": "/sitecore/shell/Applications/Content%20Editor.aspx?sc_bw=1"
+    },
+    {
+      "url": "/sitecore/client/Applications/ControlPanel.aspx?sc_bw=1"
+    },
+    {
+      "url": "/sitecore/client/Applications/FormsBuilder/Pages/Forms"
+    },
+    {
+      "url": "/sitecore/shell/Applications/Workbox.aspx?sc_bw=1"
+    },
+    {
+      "url": "/?sc_horizon=editor&sc_site=LighthouseFitness"
+    },
+    {
+      "url": "/?sc_horizon=editor&sc_site=LighthouseFitness-kiosk"
+    },
+    {
+      "url": "/?sc_mode=edit&sc_itemid=%7b10083CA0-5093-4D67-99DB-2579ABB421D3%7d&sc_lang=en&sc_version=1&sc_site=LighthouseFitness"
+    },
+    {
+      "url": "/?sc_mode=edit&sc_itemid=%7b10083CA0-5093-4D67-99DB-2579ABB421D3%7d&sc_lang=en&sc_version=1&sc_site=LighthouseFitness-kiosk"
+    },
+    {
+      "url": "/sitecore/client/Applications/ExperienceEditor/Ribbon.aspx?sc_content=core&ribbonId=%7B570A52B6-6755-461A-8052-5B95EF766F74%7D&itemId=%7B82BBADAF-BD4A-5FCE-9E12-EAA858EE8E94%7D&deviceId=%7BFE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3%7D&database=master&mode=edit&url=%2F%3Fsc_mode%3Dedit%26sc_itemid%3D%257b82BBADAF-BD4A-5FCE-9E12-EAA858EE8E94%257d%26sc_version%3D1%26sc_lang%3Den%26sc_site%3Dlighthousefitness&lang=en&pageSite=LighthouseFitness"
+    }
+  ],
+  "xp": [
+    {
+      "url": "/"
+    }
+  ]
+}

@@ -68,6 +68,10 @@
     <Content Include="App_Config\Include\Project\Project.GraphQL.config.disabled" />
     <Content Include="App_Config\Include\Project\Project.ContentHub.Serialization.config" />
     <Content Include="App_Config\Include\z.Project.Overrides\Sitecore.Demo.Headless.Website.config" />
+    <Content Include="Utilities\IndexRebuild.aspx" />
+    <Content Include="Utilities\RebuildLinkDatabase.aspx" />
+    <Content Include="Utilities\Restart.aspx" />
+    <Content Include="App_Config\Include\z.Project.Overrides\Sitecore.Demo.Horizon.Patch.Delete.Hotfix.config" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
@@ -75,6 +79,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\IndexRebuild.aspx.cs">
+      <DependentUpon>IndexRebuild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities\IndexRebuild.aspx.designer.cs">
+      <DependentUpon>IndexRebuild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\RebuildLinkDatabase.aspx.cs">
+      <DependentUpon>RebuildLinkDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities\RebuildLinkDatabase.aspx.designer.cs">
+      <DependentUpon>RebuildLinkDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Restart.aspx.cs">
+      <DependentUpon>Restart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities\Restart.aspx.designer.cs">
+      <DependentUpon>Restart.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Config\Layers.config.xdt" />
@@ -89,9 +114,33 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Configuration.ConfigurationBuilders.Base">
       <Version>1.0.2</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Configuration.ConfigurationBuilders.Environment">
       <Version>1.0.2</Version>
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.ContentSearch" Version="10.1.*-*">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Kernel" Version="10.1.*-*">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Logging" Version="10.1.*-*">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Update" Version="10.1.*-*">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Zip" Version="10.1.*-*">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
@@ -141,14 +190,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\bin\$(ConfigurationName)\Sitecore.Demo.Fitness.*.dll" "$(ProjectDir)..\..\..\..\temp\xConnectRoot\bin"
-xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\xmodels\*" "$(ProjectDir)..\..\..\..\temp\xConnectRoot\App_Data\Models"
-xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\xmodels\*" "$(ProjectDir)..\..\..\..\temp\xConnectIndexerRoot\App_Data\Models"
-xcopy /y /i "$(ProjectDir)..\..\..\Foundation\Analytics\xconnect\automation\*" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot\App_Data\Config\Sitecore"
-xcopy /y /i "$(ProjectDir)..\..\..\Feature\Automation\code\bin\Sitecore.Demo.Fitness.Feature.Automation.dll" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot"
-xcopy /y /i "$(ProjectDir)..\..\..\Feature\Automation\code\bin\Sitecore.Demo.Fitness.Foundation.Analytics.dll" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot"
-xcopy /y /i "$(ProjectDir)..\..\..\Feature\Automation\xconnect\App_Data\Config\Sitecore\MarketingAutomation\*.xml" "$(ProjectDir)..\..\..\..\temp\xConnectAutomationServiceRoot\App_Data\Config\Sitecore\MarketingAutomation"
-</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

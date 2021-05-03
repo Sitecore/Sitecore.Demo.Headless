@@ -28,11 +28,18 @@
     <system.webServer>
       <httpProtocol>
         <customHeaders>
+          <add name="X-Robots-Tag" xdt:Transform="Insert" value="noindex"/>
+          <add name="X-Demo-Version" xdt:Transform="Insert" value="{version}"/>
           <add xdt:Transform="SetAttributes" xdt:Locator="Match(name)" name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net https://*.stylelabs.io https://*.stylelabs.cloud https://*.stylelabsdemo.com https://*.stylelabsqa.com https://*.stylelabsdev.com https://*.googleapis.com http://*.sitecoredemo.io http://*.sitecoredemo.com https://sandboxapi.ordercloud.io https://*.boxever.com https://*.cloudfront.net; img-src 'self' data: https://*.stylelabs.io https://*.stylelabs.cloud https://*.stylelabsdemo.com https://*.stylelabsqa.com https://*.stylelabsdev.com https://*.gstatic.com https://*.googleapis.com http://*.sitecoredemo.io http://*.sitecoredemo.com; style-src 'self' 'unsafe-inline' https://*.googleapis.com https://*.typekit.net http://*.sitecoredemo.io http://*.sitecoredemo.com; font-src 'self' 'unsafe-inline' https://*.gstatic.com https://*.typekit.net http://*.sitecoredemo.io http://*.sitecoredemo.com;" />
         </customHeaders>
       </httpProtocol>
     </system.webServer>
   </location>
+
+  <system.web>
+    <!-- Change the hash algorithm for password encryption - https://doc.sitecore.com/developers/91/platform-administration-and-architecture/en/change-the-hash-algorithm-for-password-encryption.html -->
+    <membership xdt:Transform="SetAttributes" xdt:Locator="Match(defaultProvider)" defaultProvider="sitecore" hashAlgorithmType="SHA512"/>
+  </system.web>
 
   <system.webServer>
     <handlers>
