@@ -1,61 +1,107 @@
 import { boxeverGet } from "./GenericService";
 import { required } from "../utils";
 
-function createBaseEvent() {
-  return {
-    "browser_id": window.Boxever.getID(), // For eventCreate calls
-    "browserId": window.Boxever.getID(), // For callFlows calls
-    "channel": "APP",
-    "language": "EN",
-    "currency": "CAD",
-    "pos": "lighthouse-fitness",
-    "page": window.location.pathname + window.location.search,
-  };
+function getConfigWithCurrentPage(config) {
+  return Object.assign(
+    {
+      "page": window.location.pathname + window.location.search,
+    },
+    config
+  );
 }
 
-function sendEventCreate(event) {
+function createEventPayload(eventConfig) {
+  return Object.assign(
+    {
+      "browser_id": window.Boxever.getID(), // For eventCreate calls
+      "browserId": window.Boxever.getID(), // For callFlows calls
+      "channel": "APP",
+      "language": "EN",
+      "currency": "CAD",
+      "pos": "lighthouse-fitness",
+    },
+    eventConfig
+  );
+}
+
+function createFlowPayload(flowConfig) {
+  return Object.assign(
+    createEventPayload(flowConfig),
+    {
+      clientKey: window._boxever_settings.client_key
+    }
+  );
+}
+
+function delayUntilBrowserIdIsAvailable(functionToDelay) {
+  if (window.Boxever.getID() === "anonymous") {
+    const timeToWaitInMilliseconds = 100;
+    console.log(`Boxever browserId is not yet available. Waiting ${timeToWaitInMilliseconds}ms before retrying.`);
+    window.setTimeout(delayUntilBrowserIdIsAvailable, timeToWaitInMilliseconds, functionToDelay);
+  } else {
+    functionToDelay();
+  }
+}
+
+function sendEventCreate(eventConfig) {
   if (window === undefined) {
     return new Promise(function (resolve) { resolve(); });
   }
 
+  // Set the page now as the location might have already changed when createEventPayload will be executed.
+  const eventWithCurrentPage = getConfigWithCurrentPage(eventConfig);
+
   return new Promise(function (resolve, reject) {
     try {
-      window.Boxever.eventCreate(
-        event,
-        function (response) {
-          if (!response) {
-            reject("No response provided.");
-          }
-          if (response.status !== "OK") {
-            reject("Response status: " + response.status);
-          }
-          resolve(response);
-        },
-        'json'
-      );
+      window._boxeverq.push(function() {
+        delayUntilBrowserIdIsAvailable(function() {
+          window.Boxever.eventCreate(
+            // Set the browserId on the event just before sending it to ensure it is up to date.
+            createEventPayload(eventWithCurrentPage),
+            function (response) {
+              if (!response) {
+                reject("No response provided.");
+              }
+              if (response.status !== "OK") {
+                reject("Response status: " + response.status);
+              }
+              resolve(response);
+            },
+            'json'
+          );
+        });
+      });
     } catch (err) {
       reject(err);
     }
   });
 }
 
-function callFlows(request) {
+function callFlows(flowConfig) {
   if (window === undefined) {
     return new Promise(function (resolve) { resolve(); });
   }
 
+  // Set the page now as the location might have already changed when createFlowPayload will be executed.
+  const eventWithCurrentPage = getConfigWithCurrentPage(flowConfig);
+
   return new Promise(function (resolve, reject) {
     try {
-      window.Boxever.callFlows(
-        request,
-        function (response) {
-          if (!response) {
-            reject("No response provided.");
-          }
-          resolve(response);
-        },
-        'json'
-      );
+      window._boxeverq.push(function() {
+        delayUntilBrowserIdIsAvailable(function() {
+          window.Boxever.callFlows(
+            // Set the browserId on the flow just before sending it to ensure it is up to date.
+            createFlowPayload(eventWithCurrentPage),
+            function (response) {
+              if (!response) {
+                reject("No response provided.");
+              }
+              resolve(response);
+            },
+            'json'
+          );
+        });
+      });
     } catch (err) {
       reject(err);
     }
@@ -66,31 +112,35 @@ function callFlows(request) {
 export function logViewEvent(
   routeData = required()
 ) {
-  var viewEvent = createBaseEvent();
-  viewEvent.type = "VIEW";
-  viewEvent.sitecoreTemplateName = routeData.sitecore.route.templateName;
-
+  var eventConfig = {
+    type: "VIEW",
+    sitecoreTemplateName: routeData.sitecore.route.templateName
+  };
   if (routeData.sitecore.route.templateName === "event-page") {
-    viewEvent.event_name = routeData.sitecore.route.displayName;
-    viewEvent.event_date = routeData.sitecore.route.fields["date"].value;
-    viewEvent.event_lat = routeData.sitecore.route.fields["latitude"].value;
-    viewEvent.event_long = routeData.sitecore.route.fields["longitude"].value;
-    viewEvent.event_participants = routeData.sitecore.route.fields["numberOfParticipants"].value;
-    viewEvent.event_length = routeData.sitecore.route.fields["length"].value;
-    viewEvent.event_sportType = routeData.sitecore.route.fields["sportType"].value;
+    eventConfig = Object.assign(
+      eventConfig,
+      {
+        event_name: routeData.sitecore.route.displayName,
+        event_date: routeData.sitecore.route.fields["date"].value,
+        event_lat: routeData.sitecore.route.fields["latitude"].value,
+        event_long: routeData.sitecore.route.fields["longitude"].value,
+        event_participants: routeData.sitecore.route.fields["numberOfParticipants"].value,
+        event_length: routeData.sitecore.route.fields["length"].value,
+        event_sportType: routeData.sitecore.route.fields["sportType"].value
+      }
+    );
   }
 
-  return sendEventCreate(viewEvent);
+  return sendEventCreate(eventConfig);
 }
 
 export function logFilterEvent(
   selectedSports = required()
 ) {
-  var filterEvent = createBaseEvent();
-  filterEvent.type = "FILTER_SPORT";
-  filterEvent.filteredsports=selectedSports;
-
-  return sendEventCreate(filterEvent);
+  return sendEventCreate({
+    type: "FILTER_SPORT",
+    filteredSports: selectedSports
+  });
 }
 
 // Boxever identification
@@ -99,23 +149,21 @@ export function identifyVisitor(
   lastname = required(),
   email = required()
 ) {
-  var identifyEvent = createBaseEvent();
-  identifyEvent.type = "IDENTITY";
-  identifyEvent.firstname = firstname;
-  identifyEvent.lastname = lastname;
-  identifyEvent.email = email;
-
-  return sendEventCreate(identifyEvent);
+  return sendEventCreate({
+    type: "IDENTITY",
+    firstname: firstname,
+    lastname: lastname,
+    email: email
+  });
 }
 
 // Boxever custom set app settings event
 export function setAppSettings() {
-  var appSettingsEvent = createBaseEvent();
-  appSettingsEvent.type = "SET_APP_SETTINGS";
-  // Returns either https://app.lighthouse.localhost, https://instance-name-app.sitecoredemo.com, or http://localhost:3000
-  appSettingsEvent.appBaseUrl = window.location.origin.replace("kiosk.", "app.");
-
-  return sendEventCreate(appSettingsEvent);
+  return sendEventCreate({
+    type: "SET_APP_SETTINGS",
+    // Returns either https://app.lighthouse.localhost, https://instance-name-app.sitecoredemo.com, or http://localhost:3000
+    appBaseUrl: window.location.origin.replace("kiosk.", "app.")
+  });
 }
 
 // Boxever custom complete registration event
@@ -126,17 +174,15 @@ export function trackRegistration(
   eventUrlPath = required(),
   sportType = required()
 ) {
-  return setAppSettings().then(() => {
-    var registrationEvent = createBaseEvent();
-    registrationEvent.type = "COMPLETE_REGISTRATION";
-    registrationEvent.event_id = eventId;
-    registrationEvent.event_name = eventName;
-    registrationEvent.event_date = eventDate;
-    registrationEvent.event_urlPath = eventUrlPath;
-    registrationEvent.event_sportType = sportType;
-
-    return sendEventCreate(registrationEvent);
-  });
+  return setAppSettings()
+  .then(() => sendEventCreate({
+    type: "COMPLETE_REGISTRATION",
+    event_id: eventId,
+    event_name: eventName,
+    event_date: eventDate,
+    event_urlPath: eventUrlPath,
+    event_sportType: sportType
+  }));
 }
 
 // Boxever custom favorited event
@@ -146,14 +192,13 @@ export function trackEventFavorite(
   eventDate = required(),
   sportType = required()
 ) {
-  var favoriteEvent = createBaseEvent();
-  favoriteEvent.type = "EVENT_FAVORITED";
-  favoriteEvent.event_id = eventId;
-  favoriteEvent.event_name = eventName;
-  favoriteEvent.event_date = eventDate;
-  favoriteEvent.event_sportType = sportType;
-
-  return sendEventCreate(favoriteEvent);
+  return sendEventCreate({
+    type: "EVENT_FAVORITED",
+    event_id: eventId,
+    event_name: eventName,
+    event_date: eventDate,
+    event_sportType: sportType
+  });
 }
 
 // Boxever custom unfavorite event
@@ -163,38 +208,22 @@ export function trackEventUnfavorite(
   eventDate = required(),
   sportType = required()
 ) {
-  var unfavoriteEvent = createBaseEvent();
-  unfavoriteEvent.type = "EVENT_UNFAVORITED";
-  unfavoriteEvent.event_id = eventId;
-  unfavoriteEvent.event_name = eventName;
-  unfavoriteEvent.event_date = eventDate;
-  unfavoriteEvent.event_sportType = sportType;
-
-  return sendEventCreate(unfavoriteEvent);
+  return sendEventCreate({
+    type: "EVENT_UNFAVORITED",
+    event_id: eventId,
+    event_name: eventName,
+    event_date: eventDate,
+    event_sportType: sportType
+  });
 }
 
 // Boxever identification from an email address
 export function identifyByEmail(
   email = required()
 ) {
-  if (window === undefined) {
-    return new Promise(function (resolve) { resolve(); });
-  }
-
-  return new Promise(function (resolve, reject) {
-    try {
-      window._boxeverq.push(function() {
-        var identifyEvent = createBaseEvent();
-        identifyEvent.type = "IDENTITY";
-        identifyEvent.email = email;
-
-        sendEventCreate(identifyEvent)
-        .then(() => resolve())
-        .catch((err) => reject(err));
-      });
-    } catch (err) {
-      reject(err);
-    }
+  return sendEventCreate({
+    type: "IDENTITY",
+    email: email
   });
 }
 
@@ -206,18 +235,20 @@ export function forgetCurrentGuest() {
 
   return new Promise(function (resolve, reject) {
     try {
-      window.Boxever.browserCreate(
-        {},
-        function (response) {
-          if (!response) {
-            reject("No response provided.");
-          }
-          // Set the browser guest ref
-          window.Boxever.browser_id = response.ref;
-          resolve();
-        },
-        'json'
-      );
+      window._boxeverq.push(function() {
+        window.Boxever.browserCreate(
+          {},
+          function (response) {
+            if (!response) {
+              reject("No response provided.");
+            }
+            // Set the browser guest ref
+            window.Boxever.browser_id = response.ref;
+            resolve();
+          },
+          'json'
+        );
+      });
     } catch (err) {
       reject(err);
     }
@@ -226,32 +257,20 @@ export function forgetCurrentGuest() {
 
 // Boxever get Guest Ref
 export function getGuestRef() {
-  if (window === undefined) {
-    return new Promise(function (resolve) { resolve(); });
-  }
-  var getGuestRefRequest = createBaseEvent();
-
-  getGuestRefRequest.clientKey = window._boxever_settings.client_key;
-  getGuestRefRequest.friendlyId = "getguestref";
-
-  return callFlows(getGuestRefRequest);
+  return callFlows({
+    friendlyId: "getguestref"
+  });
 }
 
 // Boxever get personalized events FullStack Interactive Experience with Decision Model
 export function getPersonalizedEvents(eventsApiUrl, filteredSportsPayload) {
-  if (window === undefined) {
-    return new Promise(function (resolve) { resolve(); });
-  }
-
-  var personalizedEventsRequest = createBaseEvent();
-  personalizedEventsRequest.clientKey = window._boxever_settings.client_key;
-  personalizedEventsRequest.friendlyId = "getpersonalizedevents";
-  personalizedEventsRequest.params = {
-    url: eventsApiUrl,
-    payload: filteredSportsPayload
-  };
-
-  return callFlows(personalizedEventsRequest);
+  return callFlows({
+    friendlyId: "getpersonalizedevents",
+    params: {
+      url: eventsApiUrl,
+      payload: filteredSportsPayload
+    }
+  });
 }
 
 // ********************************
@@ -302,26 +321,6 @@ export function getGuestFullNameInGuestResponse(
 }
 
 export function getGuestFullName(guestRef) {
-  return getGuestProfileResponse(guestRef)
-  .then(guestResponse => getGuestFullNameInGuestResponse(guestResponse));
-}
-
-export function getGuestNameAndEmail(
-  guestResponse = required()
-) {
-  if (!guestResponse || !guestResponse.data || !guestResponse.data.firstName || !guestResponse.data.lastName || !guestResponse.data.email) {
-    return;
-  }
-
-  var data = guestResponse?.data;
-  return {
-    "firstName": data.firstName,
-    "lastName":data.lastName,
-    "email": data.email
-  };
-}
-
-export function getGuestIdentity(guestRef) {
   return getGuestProfileResponse(guestRef)
   .then(guestResponse => getGuestFullNameInGuestResponse(guestResponse));
 }
