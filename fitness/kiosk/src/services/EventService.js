@@ -74,7 +74,7 @@ export function getAll(take, skip, lat, lng, profiles) {
   });
 }
 
-export function setRegisteredEventsFacets(eventName, eventId, sportType, eventDate) {
+export function setRegisteredEventsFacets(eventId, eventName, eventDate, sportType) {
   var payload = {
     "key": eventName + " / " + eventId,
     "eventName": eventName,

@@ -28,15 +28,18 @@ class EventFavoriteButton extends React.Component {
 
     const eventId = this.props.routeData.itemId;
     const eventName = this.props.routeData.name;
+    const eventDate = this.props.routeData.fields.date.value;
+    const sportType = this.props.routeData.fields.sportType.value;
+
     if(this.state.favorited){
       removeFromFavorites(eventId, eventName)
     }else{
-      addToFavorites(eventId, eventName)
+      addToFavorites(eventId, eventName, eventDate, sportType)
     }
 
     const trackingPromise = this.state.favorited
-      ? trackEventUnfavorite(eventId, eventName)
-      : trackEventFavorite(eventId, eventName);
+      ? trackEventUnfavorite(eventId, eventName, eventDate, sportType)
+      : trackEventFavorite(eventId, eventName, eventDate, sportType);
 
     trackingPromise
       .catch(err => {

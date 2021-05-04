@@ -2,13 +2,16 @@ import { isDisconnected, isConnectedToLocalInstance } from "../util";
 import { get, getActionUrl, boxeverGet, boxeverPost, boxeverDelete } from "./GenericService";
 import { getGuestRef, getPersonalizedEvents } from "./BoxeverService";
 
-export function addToFavorites(eventId, eventName) {
+export function addToFavorites(eventId, eventName, eventDate, sportType) {
   return getGuestRef().then(response => {
     return boxeverPost(
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=FavoritedEvents",
       {
         "key": eventName + " / " + eventId,
-        "eventId": eventId
+        "eventName": eventName,
+        "eventId": eventId,
+        "eventDate": eventDate,
+        "sportType": sportType
       }
     );
   }).catch(e => {
@@ -29,7 +32,7 @@ export function removeFromFavorites(eventId, eventName) {
   });
 }
 
-export function register(eventName, eventId, sportType, eventDate) {
+export function register(eventId, eventName, eventDate, sportType) {
   return getGuestRef().then(response => {
     return boxeverPost(
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents",
@@ -39,7 +42,6 @@ export function register(eventName, eventId, sportType, eventDate) {
         "eventId": eventId,
         "eventDate": eventDate,
         "sportType": sportType
-
       }
     );
   }).catch(e => {

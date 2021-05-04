@@ -141,22 +141,34 @@ export function trackRegistration(
 
 // Boxever custom favorited event
 export function trackEventFavorite(
-  eventId = required()
+  eventId = required(),
+  eventName = required(),
+  eventDate = required(),
+  sportType = required()
 ) {
   var favoriteEvent = createBaseEvent();
   favoriteEvent.type = "EVENT_FAVORITED";
   favoriteEvent.event_id = eventId;
+  favoriteEvent.event_name = eventName;
+  favoriteEvent.event_date = eventDate;
+  favoriteEvent.event_sportType = sportType;
 
   return sendEventCreate(favoriteEvent);
 }
 
 // Boxever custom unfavorite event
 export function trackEventUnfavorite(
-  eventId = required()
+  eventId = required(),
+  eventName = required(),
+  eventDate = required(),
+  sportType = required()
 ) {
   var unfavoriteEvent = createBaseEvent();
   unfavoriteEvent.type = "EVENT_UNFAVORITED";
   unfavoriteEvent.event_id = eventId;
+  unfavoriteEvent.event_name = eventName;
+  unfavoriteEvent.event_date = eventDate;
+  unfavoriteEvent.event_sportType = sportType;
 
   return sendEventCreate(unfavoriteEvent);
 }

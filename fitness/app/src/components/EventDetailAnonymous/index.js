@@ -36,7 +36,7 @@ class EventDetailAnonymous extends React.Component {
     const eventDate = this.props.routeData.fields.date.value;
     const sportType = this.props.routeData.fields.sportType.value;
 
-    register(eventName, eventId, sportType, eventDate)
+    register(eventId, eventName, eventDate, sportType)
     .then(() => {
       this.setState({
         promptOpen: !this.state.promptOpen,

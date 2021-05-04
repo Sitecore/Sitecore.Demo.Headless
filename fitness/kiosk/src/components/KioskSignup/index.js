@@ -63,7 +63,7 @@ class KioskSignup extends React.Component {
     setIdentification(firstname, lastname, email)
     .then(() => this.setState({ signedUp: true }))
     .then(() => trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType))
-    .then(() => setRegisteredEventsFacets(eventName, eventId, sportType, eventDate))
+    .then(() => setRegisteredEventsFacets(eventId, eventName, eventDate, sportType))
     .catch(err => {
       this.setState({ error: true });
       console.log(err);
