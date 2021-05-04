@@ -324,7 +324,7 @@ export function isRegisteredToEventInGuestResponse(
     guestResponse.data.extRegisteredEvents &&
     guestResponse.data.extRegisteredEvents.items &&
     guestResponse.data.extRegisteredEvents.items.filter(
-      event => event["Event Id"] === eventId
+      event => event.eventId === eventId
     ).length > 0;
 }
 
@@ -342,7 +342,7 @@ export function isRegisteredToEvent(
 function getFavoritedEventsPromise(
   guestRef = required()
 ) {
-  return boxeverGet(`/getguestdataextensionexpanded?guestRef=${guestRef}&dataExtensionName=FavoriteEvents`);
+  return boxeverGet(`/getguestdataextensionexpanded?guestRef=${guestRef}&dataExtensionName=FavoritedEvents`);
 }
 
 export function getFavoritedEventsResponse(guestRef) {
@@ -363,9 +363,9 @@ export function isEventFavoritedInGuestResponse(
 ) {
   return guestResponse &&
     guestResponse.data &&
-    guestResponse.data.extFavoriteEvents &&
-    guestResponse.data.extFavoriteEvents.items &&
-    guestResponse.data.extFavoriteEvents.items.filter(
+    guestResponse.data.extFavoritedEvents &&
+    guestResponse.data.extFavoritedEvents.items &&
+    guestResponse.data.extFavoritedEvents.items.filter(
       event => event.eventId === eventId
     ).length > 0;
 }

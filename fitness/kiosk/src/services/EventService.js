@@ -77,10 +77,10 @@ export function getAll(take, skip, lat, lng, profiles) {
 export function setRegisteredEventsFacets(eventName, eventId, sportType, eventDate) {
   var payload = {
     "key": eventName + " / " + eventId,
-    "Event Name": eventName,
-    "Event Id": eventId,
-    "Event Date": eventDate,
-    "Sport Type": sportType
+    "eventName": eventName,
+    "eventId": eventId,
+    "eventDate": eventDate,
+    "sportType": sportType
   };
 
   // eslint-disable-next-line no-loop-func

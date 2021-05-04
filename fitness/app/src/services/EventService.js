@@ -5,10 +5,10 @@ import { getGuestRef, getPersonalizedEvents } from "./BoxeverService";
 export function addToFavorites(eventId, eventName) {
   return getGuestRef().then(response => {
     return boxeverPost(
-      "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=FavoriteEvents",
+      "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=FavoritedEvents",
       {
-        "key":eventName + " / " + eventId,
-        "eventId":eventId
+        "key": eventName + " / " + eventId,
+        "eventId": eventId
       }
     );
   }).catch(e => {
@@ -19,9 +19,9 @@ export function addToFavorites(eventId, eventName) {
 export function removeFromFavorites(eventId, eventName) {
   return getGuestRef().then(response => {
     return boxeverDelete(
-      "/deletekeyforguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=FavoriteEvents",
+      "/deletekeyforguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=FavoritedEvents",
       {
-        "key":eventName + " / " + eventId
+        "key": eventName + " / " + eventId
       }
     );
   }).catch(e => {
@@ -34,11 +34,11 @@ export function register(eventName, eventId, sportType, eventDate) {
     return boxeverPost(
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents",
       {
-        "key":eventName + " / " + eventId,
-        "Event Name":eventName,
-        "Event Id":eventId,
-        "Event Date":eventDate,
-        "Sport Type":sportType
+        "key": eventName + " / " + eventId,
+        "eventName": eventName,
+        "eventId": eventId,
+        "eventDate": eventDate,
+        "sportType": sportType
 
       }
     );
@@ -137,18 +137,40 @@ export function getAll(take, skip, lat, lng, profiles, personalize) {
   });
 }
 
+function getEventsFromSitecore(boxeverEvents) {
+  const noEventsResponse = {
+    data: {
+      events: []
+    }
+  };
+
+  if(!boxeverEvents) {
+    return noEventsResponse;
+  }
+
+  // Filter out undefined values is needed because of older development values
+  const eventIds = boxeverEvents.map(event => event.eventId).filter(eventId => typeof eventId !== 'undefined').join(",");
+  if (!eventIds) {
+    return noEventsResponse;
+  }
+
+  return get(`/events/GetEventsById`, { eventIds }, false);
+}
+
 export function getRegisteredEvents() {
+  if (isDisconnected()) {
+    console.log("Getting registered events from fake data as we are running in disconnected mode.");
+
+    return get(`/events/getregistrations`, {}, false);
+  }
+
   return getGuestRef()
-  .then(response => {
-    return boxeverGet(
-      "/getguestdataextensionexpanded?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents", {}
-    );
-  })
+  .then(response => boxeverGet(
+    "/getguestdataextensionexpanded?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents", {}
+  ))
   .then(data => {
-    var extData = data.data.extRegisteredEvents.items;
-    var eventIds = extData.map(x => x.EventId);
-    var events = eventIds.join(",");
-    return get(`/events/GetEventsById`, events, false);
+    const boxeverEvents = data.data?.extRegisteredEvents?.items;
+    return getEventsFromSitecore(boxeverEvents);
   })
   .catch(e => {
     console.log(e);
@@ -156,17 +178,19 @@ export function getRegisteredEvents() {
 }
 
 export function getFavoritedEvents() {
+  if (isDisconnected()) {
+    console.log("Getting favorited events from fake data as we are running in disconnected mode.");
+
+    return get(`/events/getfavorites`, {}, false);
+  }
+
   return getGuestRef()
-  .then(response => {
-    return boxeverGet(
-      "/getguestdataextensionexpanded?guestRef="+ response.guestRef + "&dataExtensionName=FavoriteEvents", {}
-    );
-  })
+  .then(response => boxeverGet(
+    "/getguestdataextensionexpanded?guestRef="+ response.guestRef + "&dataExtensionName=FavoritedEvents", {}
+  ))
   .then(data => {
-    var extData = data.data.extFavoriteEvents.items;
-    var eventIds = extData.map(x => x.EventId);
-    var events = eventIds.join(",");
-    return get(`/events/GetEventsById`, events, false);
+    var boxeverEvents = data.data?.extFavoritedEvents?.items;
+    return getEventsFromSitecore(boxeverEvents);
   })
   .catch(e => {
     console.log(e);
