@@ -262,6 +262,13 @@ export function getGuestRef() {
   });
 }
 
+// Boxever get Session Count
+export function getSessionCount() {
+  return callFlows({
+    friendlyId: "getsessioncount"
+  });
+}
+
 // Boxever get personalized events FullStack Interactive Experience with Decision Model
 export function getPersonalizedEvents(eventsApiUrl, filteredSportsPayload) {
   return callFlows({
