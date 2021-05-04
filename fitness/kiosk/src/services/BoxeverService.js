@@ -294,6 +294,26 @@ export function getGuestFullName(guestRef) {
   .then(guestResponse => getGuestFullNameInGuestResponse(guestResponse));
 }
 
+export function getGuestNameAndEmail(
+  guestResponse = required()
+) {
+  if (!guestResponse || !guestResponse.data || !guestResponse.data.firstName || !guestResponse.data.lastName || !guestResponse.data.email) {
+    return;
+  }
+
+  var data = guestResponse.data;
+  return {
+    "firstName": data.firstName,
+    "lastName":data.lastName,
+    "email": data.email
+  };
+}
+
+export function getGuestIdentity(guestRef) {
+  return getGuestProfileResponse(guestRef)
+  .then(guestResponse => getGuestFullNameInGuestResponse(guestResponse));
+}
+
 // ********************************
 // Get guest profile with expanded registered events
 // ********************************

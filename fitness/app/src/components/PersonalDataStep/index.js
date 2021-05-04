@@ -31,6 +31,7 @@ class PersonalDataStep extends Component {
   }
 
   render() {
+
     const { fields, rendering, t } = this.props;
     const canContinue = this.state.age && this.state.gender;
 
