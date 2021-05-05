@@ -24,8 +24,8 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
         [IndexField("longitude")]
         public float Longitude { get; set; }
 
-        [IndexField("_profilenames")]
-        public string ProfileNames { get; set; }
+        [IndexField("sporttype")]
+        public string SportType { get; set; }
 
         [IndexField("coordinates")]
         public Coordinate EventLocation { get; set; }
@@ -36,7 +36,7 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
     /// </summary>
     public class EventDataService : IEventDataService
     {
-        public IEnumerable<Item> GetAll([NotNull]Database database, string[] profileNames, int take, int skip, double latitude, double longitude, out int totalSearchResults)
+        public IEnumerable<Item> GetAll([NotNull]Database database, string[] sportTypes, int take, int skip, double latitude, double longitude, out int totalSearchResults)
         {
             using (var context = GetIndex(database).CreateSearchContext(SearchSecurityOptions.DisableSecurityCheck))
             {
@@ -52,25 +52,25 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Services
                 var dateQuery = PredicateBuilder.True<EventSearchResultItem>();
                 dateQuery = dateQuery.And(i => i.Date > DateTime.UtcNow);
 
-                var profileNamesQuery = PredicateBuilder.True<EventSearchResultItem>();
-                foreach (var profileName in profileNames)
+                var sportTypeQuery = PredicateBuilder.True<EventSearchResultItem>();
+                foreach (var sportType in sportTypes)
                 {
-                    var profileNameValue = profileName.ToLowerInvariant();
-                    profileNamesQuery = profileNamesQuery.Or(item => item.ProfileNames.Equals(profileNameValue));
+                    var sportTypeValue = sportType.ToLowerInvariant();
+                    sportTypeQuery = sportTypeQuery.Or(item => item.SportType.Equals(sportTypeValue, StringComparison.OrdinalIgnoreCase));
                 }
 
                 // joining the queries
                 query = query.And(templateQuery);
                 query = query.And(parentQuery);
                 query = query.And(dateQuery);
-                query = query.And(profileNamesQuery);
+                query = query.And(sportTypeQuery);
 
                 // building IQueryable
                 var queryable = context.GetQueryable<EventSearchResultItem>()
                                             .Where(query);
 
                 // TODO: consider nullable
-                if (latitude !=0 && longitude != 0)
+                if (latitude != 0 && longitude != 0)
                 {
                     queryable = queryable.OrderByDistance(s => s.EventLocation, new Coordinate(latitude, longitude));
                 }

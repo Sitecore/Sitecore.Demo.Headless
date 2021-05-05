@@ -35,14 +35,17 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         [HttpGet]
         [ActionName("Index")]
         [CancelCurrentPage]
+        // Before switching this demo from XP to Boxever, the sport type was set as a profile card on the event items.
+        // This is why the parameter of this controller action is still named "profiles". It is used as is by other
+        // code and should not be renamed unless renaming it where it is used as well.
         public ActionResult Get(int take = -1, int skip = -1, float lat = 0, float lng = 0, string profiles = "")
         {
             try
             {
-                // fetching profile names from the action parameter
-                var profileNames = string.IsNullOrWhiteSpace(profiles) ? new string[0] : profiles.Split('|');
+                // fetching sport types from the action parameter.
+                var sportTypes = string.IsNullOrWhiteSpace(profiles) ? new string[0] : profiles.Split('|');
 
-                var allItems = dataService.GetAll(Context.Database, profileNames, take, skip, lat, lng, out int totalSearchResults);
+                var allItems = dataService.GetAll(Context.Database, sportTypes, take, skip, lat, lng, out int totalSearchResults);
                 var events = new JArray(allItems.Select(i => JObject.Parse(itemSerializer.Serialize(i))));
                 var results = new JObject
                 {
