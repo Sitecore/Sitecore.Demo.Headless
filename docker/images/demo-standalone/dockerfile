@@ -102,11 +102,6 @@ COPY --from=app /app/build /inetpub/wwwroot/dist/lighthousefitness
 COPY --from=kiosk /kiosk/build /inetpub/wwwroot/dist/lighthousefitness-kiosk
 COPY scripts/Docker/ReplaceCMTokens.ps1 scripts/Docker/JssProductionEntrypoint.ps1 scripts/Docker/JssDevelopmentEntrypoint.ps1 /tools/entrypoints/iis/
 
-# Clear transforms folder from base image
-#RUN  Remove-Item -Path C:\inetpub\wwwroot\transforms\* -Recurse
-
-COPY /docker/images/demo-standalone/data/transforms/ /inetpub/wwwroot/transforms/
-
 COPY --from=build /out/ /inetpub/wwwroot/
 
 # Copy the fitness app config

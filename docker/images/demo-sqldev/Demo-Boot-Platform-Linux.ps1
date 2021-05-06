@@ -78,26 +78,4 @@ $command = Join-Path $sql_scripts "ResetDemoUsers.sql"
 Invoke-Sqlcmd -InputFile $command -Variable $paramsUser -HostName $SqlHostname -Username sa -Password $env:SA_PASSWORD
 Write-Verbose "$(Get-Date -Format $timeFormat): Invoke ResetDemoUsers.sql"
 
-# set base URL for EXM root items - instance specific URL
-
-# /sitecore/content/Demo SXA Sites/LighthouseLifestyle/LighthouseLifestyle Emails
-$itemParamExmRoot = ("ItemId='E0A6E451-FA94-4557-B101-4B1AD9E9BD93'")
-
-# /sitecore/templates/System/Email/Manager Root/Message Generation/Base URL
-$fieldParamExmRoot = ("FieldId='1B963507-6176-4336-A14D-D5070C3B0286'")
-$valueParamExmRoot = ("Value='" + $env:EXM_BASE_URL + "'")
-$paramsExmRoot = $itemParamExmRoot, $fieldParamExmRoot, $valueParamExmRoot
-
-$command = Join-Path $sql_scripts "SetSharedFieldValue.sql"
-Invoke-Sqlcmd -InputFile $command -Variable $paramsExmRoot -HostName $SqlHostname -Username sa -Password $env:SA_PASSWORD
-Write-Verbose "$(Get-Date -Format $timeFormat): Invoke SetSharedFieldValue.sql"
-
-# /sitecore/content/Demo SXA Sites/LighthouseFinancial/zLighthouseFinancial Emails
-$itemParamExmRootFinancial = ("ItemId='422A7377-107D-43BC-99DE-C6F14C3FBF0E'")
-$paramsExmRootFinancial = $itemParamExmRootFinancial, $fieldParamExmRoot, $valueParamExmRoot
-
-$command = Join-Path $sql_scripts "SetSharedFieldValue.sql"
-Invoke-Sqlcmd -InputFile $command -Variable $paramsExmRootFinancial -HostName $SqlHostname -Username sa -Password $env:SA_PASSWORD
-Write-Verbose "$(Get-Date -Format $timeFormat): Invoke SetSharedFieldValue.sql"
-
-Write-Host "$(Get-Date -Format $timeFormat): Demo team Platform boot override complete."
+Write-Host "$(Get-Date -Format $timeFormat): Demo team Headless boot override complete."

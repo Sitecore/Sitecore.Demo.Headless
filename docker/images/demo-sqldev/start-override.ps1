@@ -115,27 +115,7 @@ if (-not $ready) {
 	Invoke-Sqlcmd -InputFile "C:\sql\ResetDemoUsers.sql" -Variable $paramsUser
 	Write-Host "$(Get-Date -Format $timeFormat): Invoke ResetDemoUsers.sql"
 
-	# set base URL for EXM root items - instance specific URL
-	Write-Host "$(Get-Date -Format $timeFormat): Set EXM URLs"
-	# /sitecore/content/Demo SXA Sites/LighthouseLifestyle/LighthouseLifestyle Emails
-	$itemParamExmRoot = ("ItemId='E0A6E451-FA94-4557-B101-4B1AD9E9BD93'")
-
-	# /sitecore/templates/System/Email/Manager Root/Message Generation/Base URL
-	$fieldParamExmRoot = ("FieldId='1B963507-6176-4336-A14D-D5070C3B0286'")
-	$valueParamExmRoot = ("Value='" + $env:EXM_BASE_URL + "'")
-	$paramsExmRoot = $itemParamExmRoot, $fieldParamExmRoot, $valueParamExmRoot
-
-	Invoke-Sqlcmd -InputFile "C:\sql\SetSharedFieldValue.sql" -Variable $paramsExmRoot
-	Write-Host "$(Get-Date -Format $timeFormat): Invoke SetSharedFieldValue.sql"
-
-	# /sitecore/content/Demo SXA Sites/LighthouseFinancial/zLighthouseFinancial Emails
-	$itemParamExmRootFinancial = ("ItemId='422A7377-107D-43BC-99DE-C6F14C3FBF0E'")
-	$paramsExmRootFinancial = $itemParamExmRootFinancial, $fieldParamExmRoot, $valueParamExmRoot
-
-	Invoke-Sqlcmd -InputFile "C:\sql\SetSharedFieldValue.sql" -Variable $paramsExmRootFinancial
-	Write-Host "$(Get-Date -Format $timeFormat): Invoke SetSharedFieldValue.sql"
-
-	Write-Host "$(Get-Date -Format $timeFormat): Demo team Platform boot override complete."
+	Write-Host "$(Get-Date -Format $timeFormat): Demo team Headless boot override complete."
 }
 
 # set datafolder
