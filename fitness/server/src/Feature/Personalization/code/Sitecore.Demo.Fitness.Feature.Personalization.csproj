@@ -118,7 +118,6 @@
     <Compile Include="Controllers\LighthouseFitnessProductsController.cs" />
     <Compile Include="Controllers\LighthouseFitnessEventsController.cs" />
     <Compile Include="Indexing\ComputedFields\CoordinatesField.cs" />
-    <Compile Include="Pipelines\GetLayoutServiceContext\EventInfo.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />
     <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
     <Compile Include="RegisterDependencies.cs" />
