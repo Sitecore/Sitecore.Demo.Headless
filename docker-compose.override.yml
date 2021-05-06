@@ -69,7 +69,7 @@ services:
       dockerfile: .\docker\images\demo-id\dockerfile
       args:
         BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
-        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}tools/sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
+        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
     environment:
@@ -86,7 +86,7 @@ services:
       dockerfile: .\docker\images\demo-standalone\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}tools/sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
+        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
         CONTENTHUB_CONNECTOR_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-chub-xm1-assets:4.0.0-${NANOSERVER_VERSION}
         HEADLESS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-headless-services-xm1-assets:16.0.0-${NANOSERVER_VERSION}
         HORIZON_INTEGRATION_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/horizon-integration-xm1-assets:2.26-${NANOSERVER_VERSION}
@@ -159,7 +159,7 @@ services:
       dockerfile: .\docker\images\demo-ps\dockerfile
       args:
         BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-sps:5.0.0-ltsc2019
-        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}tools/sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
+        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
     restart: unless-stopped
     environment:
       ASPNETCORE_URLS: "http://*:5000"
@@ -199,7 +199,7 @@ services:
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
         BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xm1-cd:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
-        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}tools/sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
+        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
         CONTENTHUB_CONNECTOR_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-chub-xm1-assets:4.0.0-${NANOSERVER_VERSION}
         HEADLESS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-headless-services-xm1-assets:16.0.0-${NANOSERVER_VERSION}
         HORIZON_INTEGRATION_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/horizon-integration-xm1-assets:2.26-${NANOSERVER_VERSION}
