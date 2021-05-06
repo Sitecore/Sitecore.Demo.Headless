@@ -349,17 +349,6 @@ services:
         aliases:
           - .${KIOSK_HOST}
 
-  smtp:
-    image: maildev/maildev
-    command: ["--smtp", "25", "--web", "80"]
-    isolation: ${ISOLATION}
-    ports:
-      - "44025:25"
-      - "44026:80"
-    networks:
-      - demo
-    scale: ${SMTP_CONTAINERS_COUNT}
-
   init:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
