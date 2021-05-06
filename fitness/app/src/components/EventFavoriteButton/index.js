@@ -11,10 +11,7 @@ import {
 
 class EventFavoriteButton extends React.Component {
   state = {
-    favorited:
-      this.props.context &&
-      this.props.context.event &&
-      this.props.context.event.favorited
+    favorited: this.props.routeData.isFavorited
   };
 
   constructor(props) {
@@ -24,7 +21,7 @@ class EventFavoriteButton extends React.Component {
 
   onFavoriteClick() {
     // optimistic UI update
-    this.setState({ favorited: !this.state.favorited });
+    this.setState({ favorited: this.state.favorited });
 
     const eventId = this.props.routeData.itemId;
     const eventName = this.props.routeData.name;
@@ -47,9 +44,16 @@ class EventFavoriteButton extends React.Component {
       });
   }
 
+  componentDidMount() {
+    this.setState(
+      {
+        favorited: this.props.routeData.isFavorited
+      }
+    )
+  }
+
   render() {
     const { favorited } = this.state;
-
     return (
       <div
         className={`event-action event-action-favorite${

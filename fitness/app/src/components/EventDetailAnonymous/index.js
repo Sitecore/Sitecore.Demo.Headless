@@ -72,6 +72,7 @@ class EventDetailAnonymous extends React.Component {
         isFavorited,
         shouldDisplayLoading: false
       });
+      this.props.routeData.isFavorited = isFavorited;
     })
     .catch(e => {
       console.log(e);

@@ -2,7 +2,6 @@ import React from "react";
 import { withTranslation } from "react-i18next";
 import { subscribe, unsubscribe } from "../../services/SubscriptionService";
 
-
 class EventSubscribeButton extends React.Component {
   state = {
     subscribed:
@@ -27,19 +26,11 @@ class EventSubscribeButton extends React.Component {
     } else {
       subscribe(eventId,eventName);
     }
-
-    // Subscription action removed
-    //const trackingPromise = this.state.subscribed ? trackEventUnsubscription(eventId) : trackEventSubscribe(eventId);
   }
 
   render() {
-    const { subscribed } = this.state;
-    const suffix = subscribed ? "-active" : "";
     return (
-      <div
-        className={`event-action event-action-subscribe${suffix}`}
-        onClick={this.onSubscribeClick}
-      />
+      <></>
     );
   }
 }
