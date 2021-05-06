@@ -7,7 +7,7 @@ param(
 	[string]$scripts = "/opt"
 )
 
-Write-Host "$(Get-Date -Format $timeFormat): Starting demo team Platform boot override."
+Write-Host "$(Get-Date -Format $timeFormat): Starting demo team Headless boot override."
 
 function CreateAdminUser
 {

@@ -47,7 +47,7 @@ $ready = Invoke-Sqlcmd -Query "select name from sys.databases where name = 'plat
 if (-not $ready) {
 	Invoke-Sqlcmd -Query "create database platform_init_ready"
 
-	Write-Host "$(Get-Date -Format $timeFormat): Starting demo team Platform boot override."
+	Write-Host "$(Get-Date -Format $timeFormat): Starting demo team Headless boot override."
 
 	function CreateAdminUser
 	{
