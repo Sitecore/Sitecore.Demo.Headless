@@ -1,5 +1,19 @@
 # escape=`
-# Keep this dockerfile even if it does nothing useful. It serves to build Headless pull requests images of all Platform containers to easily test Headless pull requests using the democli.
 ARG BASE_IMAGE
 
+ARG TOOLS_ASSETS
+
+FROM ${TOOLS_ASSETS} as tools
+
 FROM $BASE_IMAGE as production
+
+COPY --from=tools /tools/ /tools/
+
+COPY /docker/images/demo-id/ /Identity/
+
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+#perform transform
+RUN (Get-Item -Path 'C:\\Identity\\transforms\\identityserver.xml.xdt' ) | `
+    ForEach-Object { & 'C:\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\Identity\\sitecore\\Sitecore.Plugin.IdentityServer\\Config\\identityserver.xml' -XdtPath $_.FullName `
+    -XdtDllPath 'C:\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; };

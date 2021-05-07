@@ -13,6 +13,10 @@ import KioskSignup from "../KioskSignup";
 import Loading from "../Loading";
 import { isRegisteredToEvent } from "../../services/BoxeverService";
 
+import length from '../../assets/icons/length.svg';
+import sportType from '../../assets/icons/sportType.svg';
+import numberOfParticipants from '../../assets/icons/numberOfParticipants.svg';
+
 class EventDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -86,16 +90,19 @@ class EventDetail extends React.Component {
             </div>
             <div className="row eventDetail-image-overlay-metas">
               <EventLabel
+                icon={length}
                 fieldName="length"
                 fieldValue={routeFields.length}
                 className="col events-item-meta events-item-meta_type text-center"
               />
               <EventLabel
+                icon={sportType}
                 fieldName="sportType"
                 fieldValue={routeFields.sportType}
                 className="col events-item-meta events-item-meta_type text-center"
               />
               <EventLabel
+                icon={numberOfParticipants}
                 fieldName="numberOfParticipants"
                 fieldValue={routeFields.numberOfParticipants}
                 className="col events-item-meta events-item-meta_type text-center"

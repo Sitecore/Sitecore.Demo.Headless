@@ -1,7 +1,7 @@
 USE [Sitecore.Master]
 
 UPDATE [VersionedFields]
-SET 
+SET
   Value = REPLACE(Value, $(Token), $(Replacement))
-WHERE 
+WHERE
   FieldId = $(FieldId) AND ItemId = $(ItemId)

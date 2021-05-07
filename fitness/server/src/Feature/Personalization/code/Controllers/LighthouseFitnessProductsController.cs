@@ -6,7 +6,6 @@ using Newtonsoft.Json.Linq;
 using Sitecore.Annotations;
 using Sitecore.Diagnostics;
 using Sitecore.Demo.Fitness.Feature.Personalization.Services;
-using Sitecore.Demo.Fitness.Foundation.Analytics.Filters;
 using Sitecore.LayoutService.Mvc.Security;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
 
@@ -29,7 +28,6 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
 
         [HttpGet]
         [ActionName("Index")]
-        [CancelCurrentPage]
         public ActionResult Get(int take = 4)
         {
             try

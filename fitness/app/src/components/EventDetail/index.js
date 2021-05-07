@@ -8,6 +8,10 @@ import OcProductList from "../../ordercloud/components/OcProductList";
 import {getMasterImageUrl} from "../ProductDetail";
 import { Link } from "react-router-dom";
 
+import length from '../../assets/icons/length.svg';
+import sportType from '../../assets/icons/sportType.svg';
+import numberOfParticipants from '../../assets/icons/numberOfParticipants.svg';
+
 const getListImage = (p) => {
   return `${getMasterImageUrl(p)}&t=w400`
 }
@@ -41,16 +45,19 @@ const EventDetail = ({ routeData, date, cta, icon, description }) => {
           </div>
           <div className="eventDetail-image-overlay-metas">
             <EventLabel
+              icon={length}
               fieldName="length"
               fieldValue={routeFields.length}
               className="col events-item-meta events-item-meta_type text-center"
             />
             <EventLabel
+              icon={sportType}
               fieldName="sportType"
               fieldValue={routeFields.sportType}
               className="col events-item-meta events-item-meta_type text-center"
             />
             <EventLabel
+              icon={numberOfParticipants}
               fieldName="numberOfParticipants"
               fieldValue={routeFields.numberOfParticipants}
               className="col events-item-meta events-item-meta_type text-center"

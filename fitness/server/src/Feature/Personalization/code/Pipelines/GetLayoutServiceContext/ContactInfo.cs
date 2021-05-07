@@ -1,5 +1,4 @@
-﻿using Sitecore.Analytics;
-using Sitecore.JavaScriptServices.Configuration;
+﻿using Sitecore.JavaScriptServices.Configuration;
 using Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext;
 
 namespace Sitecore.Demo.Fitness.Feature.Personalization.Pipelines.GetLayoutServiceContext
@@ -12,23 +11,25 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Pipelines.GetLayoutServi
 
         protected override void DoProcess(GetLayoutServiceContextArgs args, AppConfiguration application)
         {
-            var contact = GetContact();
-            if (contact != null)
-            {
-                args.ContextData.Add("contact",
-                    new
-                    {
-                        identification = contact.IdentificationLevel.ToString(),
-                        isNew = contact.IsNew,
-                        visits = contact.System.VisitCount,
-                        value = contact.System.Value,
-                    });
-            }
+            // TODO: Refactor
+
+            //var contact = GetContact();
+            //if (contact != null)
+            //{
+            //    args.ContextData.Add("contact",
+            //        new
+            //        {
+            //            identification = contact.IdentificationLevel.ToString(),
+            //            isNew = contact.IsNew,
+            //            visits = contact.System.VisitCount,
+            //            value = contact.System.Value,
+            //        });
+            //}
         }
 
-        protected Analytics.Tracking.Contact GetContact()
-        {
-            return Tracker.Current != null && Tracker.IsActive ? Tracker.Current?.Contact : null;
-        }
+        //protected Analytics.Tracking.Contact GetContact()
+        //{
+        //    return Tracker.Current != null && Tracker.IsActive ? Tracker.Current?.Contact : null;
+        //}
     }
 }

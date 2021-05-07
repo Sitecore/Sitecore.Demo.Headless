@@ -19,14 +19,18 @@ services:
       dockerfile: .\docker\images\demo-sqldev\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-mssql:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+        CONTENTHUB_CONNECTOR_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-chub-xm1-assets:4.0.0-${NANOSERVER_VERSION}
+        HEADLESS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-headless-services-xm1-assets:16.0.0-${NANOSERVER_VERSION}
+        HORIZON_INTEGRATION_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/horizon-integration-xm1-assets:2.26-${NANOSERVER_VERSION}
+        SPE_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/spe-assets:6.2-${SITECORE_ASSET_NANOSERVER_VERSION}
+        SPS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-sps-integration-xm1-assets:10.1.0-${NANOSERVER_VERSION}
+        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xm1-mssql:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
     environment:
       USER_PASSWORD: ${SITECORE_ADMIN_PASSWORD}
       ADMIN_USER_NAME: "sitecore\\superuser"
       DISABLE_DEFAULT_ADMIN: "FALSE"
       EXM_BASE_URL: "https://${CD_HOST}"
       START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1"
-      COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
     mem_limit: 2GB
     volumes:
       - type: bind
@@ -46,7 +50,14 @@ services:
       - demo
 
   solr-init:
-    image: ${REGISTRY}demo/base/lighthouse-xp0-modules-base-solr-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${BASE_MODULE_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-solr-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${BASE_MODULE_VERSION}
+    build:
+      context: .
+      dockerfile: .\docker\images\demo-solr-init\dockerfile
+      args:
+        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xm1-solr-init:10.1.0-${WINDOWSSERVERCORE_VERSION}
+        MODULE_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sxa-xp1-assets:10.1.0-1809
+        MODULE_NAME: sxa
     networks:
       - demo
 
@@ -56,7 +67,8 @@ services:
       context: .
       dockerfile: .\docker\images\demo-id\dockerfile
       args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-id:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
+        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
     environment:
@@ -66,14 +78,20 @@ services:
       - demo
 
   cm:
-    image: ${REGISTRY}demo/lighthouse-xp0-headless-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\JssDevelopmentEntrypoint.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('C:\\src\\Web.config'); }"
     build:
       context: .
       dockerfile: .\docker\images\demo-standalone\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
+        CONTENTHUB_CONNECTOR_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-chub-xm1-assets:4.0.0-${NANOSERVER_VERSION}
+        HEADLESS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-headless-services-xm1-assets:16.0.0-${NANOSERVER_VERSION}
+        HORIZON_INTEGRATION_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/horizon-integration-xm1-assets:2.26-${NANOSERVER_VERSION}
+        SPE_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/spe-assets:6.2-${SITECORE_ASSET_NANOSERVER_VERSION}
+        SPS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-sps-integration-xm1-assets:10.1.0-${NANOSERVER_VERSION}
+        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xm1-cm:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
     mem_limit: 4G
     environment:
       SITECORE_LICENSE_LOCATION: c:\license\license.xml
@@ -90,18 +108,11 @@ services:
       SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathOut: ${CMP_SERVICEBUSENTITYPATHOUT}
       SITECORE_CONNECTIONSTRINGS_DAM.ContentHub: ${DAM_URL}
       SITECORE_CONNECTIONSTRINGS_DAM.SearchPage: ${DAM_URL}/en-us/sitecore-dam-connect/approved-assets
-      SITECORE_CONNECTIONSTRINGS_SFMC: ${SFMC_CONNECTIONSTRING}
-      SITECORE_CONNECTIONSTRINGS_SFDC: ${SFDC_CONNECTIONSTRING}
       SITECORE_CONNECTIONSTRINGS_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
-      EXM_RENDERER_URL: http://cm
       Sitecore_Horizon_ClientHost: https://${SH_HOST}
       HOST_CD: http://cd
       Sitecore_Publishing_Service_Url: http://ps:5000/
-      COVEO_SERVER_URL: ${COVEO_SERVER_URL}
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
-      SitecoreAITenantID: ${SITECORE_AI_TENANT_ID}
-      SitecoreAIConfigServiceURL: ${SITECORE_AI_CONFIG_SERVICE_URL}
-      SitecoreAIConfigServiceJWT: ${SITECORE_AI_CONFIG_SERVICE_JWT}
       PROXY_API_HOST: https://${CM_HOST}
       REACT_APP_FIREBASE_MESSAGING_PUSH_KEY: ${REACT_APP_FIREBASE_MESSAGING_PUSH_KEY}
       REACT_APP_FIREBASE_SENDER_ID: ${REACT_APP_FIREBASE_SENDER_ID}
@@ -124,74 +135,10 @@ services:
         condition: service_healthy
       id:
         condition: service_healthy
-      xconnect:
-        condition: service_healthy
     networks:
       demo:
         aliases:
           - "${CM_HOST}"
-
-  xconnect:
-    image: ${REGISTRY}demo/lighthouse-xp0-headless-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    # TODO: Do we need a specific xConnect entrypoint like in 9.3?
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"
-    build:
-      context: .
-      dockerfile: .\docker\images\demo-xconnect\dockerfile
-      args:
-        BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xconnect:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-    volumes:
-      - ${HOST_LICENSE_FOLDER}:c:\license
-      - .\data\xconnect\src:C:\src
-      - .\data\xconnect\logs:C:\inetpub\wwwroot\App_Data\logs
-    environment:
-      SITECORE_LICENSE_LOCATION: c:\license\
-    depends_on:
-      mssql:
-        condition: service_healthy
-      solr:
-        condition: service_healthy
-    networks:
-      - demo
-
-  xdbsearchworker:
-    image: ${REGISTRY}demo/lighthouse-xp0-headless-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
-    build:
-      context: .
-      dockerfile: .\docker\images\demo-xdbsearchworker\dockerfile
-      args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xdbsearchworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-    volumes:
-      - ${HOST_LICENSE_FOLDER}:c:\license
-      - .\data\indexworker\src:C:\src
-      - .\data\indexworker\logs:C:\service\App_Data\Logs
-    environment:
-      SITECORE_LICENSE_LOCATION: c:\license\
-    networks:
-      - demo
-
-  xdbautomationworker:
-    image: ${REGISTRY}demo/lighthouse-xp0-headless-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\service'; }"
-    build:
-      context: .
-      dockerfile: .\docker\images\demo-xdbautomationworker\dockerfile
-      args:
-        BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-xdbautomationworker:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
-        ASSETS_IMAGE: ${REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${SITECORE_VERSION}-${NANOSERVER_VERSION}
-    volumes:
-      - ${HOST_LICENSE_FOLDER}:c:\license
-      - .\data\xdbautomationworker\src:C:\src
-      - .\data\xdbautomationworker:C:\service\App_Data\Logs
-    environment:
-      SITECORE_LICENSE_LOCATION: c:\license\
-      REACT_APP_FIREBASE_MESSAGING_SERVER_KEY: ${REACT_APP_FIREBASE_MESSAGING_SERVER_KEY}
-      REACT_APP_PUBLIC_HOST_NAME: //${APP_HOST}
-    networks:
-      - demo
 
   ps:
     healthcheck:
@@ -203,7 +150,8 @@ services:
       context: .
       dockerfile: .\docker\images\demo-ps\dockerfile
       args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-sps:5.0.0-ltsc2019
+        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
     restart: unless-stopped
     environment:
       ASPNETCORE_URLS: "http://*:5000"
@@ -235,14 +183,19 @@ services:
 
   cd:
     isolation: ${ISOLATION}
-    image: ${REGISTRY}demo/lighthouse-xp0-headless-cd:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-cd:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"
     build:
       context: .
       dockerfile: .\docker\images\demo-cd\dockerfile
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-xp0-cd:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xm1-cd:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
+        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
+        CONTENTHUB_CONNECTOR_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-chub-xm1-assets:4.0.0-${NANOSERVER_VERSION}
+        HEADLESS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-headless-services-xm1-assets:16.0.0-${NANOSERVER_VERSION}
+        HORIZON_INTEGRATION_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/horizon-integration-xm1-assets:2.26-${NANOSERVER_VERSION}
+        SPS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-sps-integration-xm1-assets:10.1.0-${NANOSERVER_VERSION}
     environment:
       SITECORE_LICENSE_LOCATION: c:\license\license.xml
       SITECORE_APPSETTINGS_SXAXM:DEFINE: sxaxconnect
@@ -262,11 +215,6 @@ services:
       Sitecore_ConnectionStrings_Xdb.MarketingAutomation.Reporting.Client: http://xconnect
       Sitecore_ConnectionStrings_Xdb.ReferenceData.Client: http://xconnect
       Sitecore_ConnectionStrings_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
-      SitecoreAITenantID: ${SITECORE_AI_TENANT_ID}
-      SitecoreAIConfigServiceURL: ${SITECORE_AI_CONFIG_SERVICE_URL}
-      SitecoreAIConfigServiceJWT: ${SITECORE_AI_CONFIG_SERVICE_JWT}
-      EXM_RENDERER_URL: http://cm
-      COVEO_SERVER_URL: ${COVEO_SERVER_URL}
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
@@ -279,8 +227,6 @@ services:
       ps:
         condition: service_healthy
       solr:
-        condition: service_healthy
-      xconnect:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "powershell", "ps"]
@@ -390,17 +336,6 @@ services:
         aliases:
           - .${KIOSK_HOST}
 
-  smtp:
-    image: maildev/maildev
-    command: ["--smtp", "25", "--web", "80"]
-    isolation: ${ISOLATION}
-    ports:
-      - "44025:25"
-      - "44026:80"
-    networks:
-      - demo
-    scale: ${SMTP_CONTAINERS_COUNT}
-
   init:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
@@ -409,7 +344,8 @@ services:
     build:
       context: .\docker\images\demo-init
       args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+        BUILD_IMAGE: mcr.microsoft.com/dotnet/sdk:3.1-nanoserver-${NANOSERVER_VERSION}
+        BASE_IMAGE: mcr.microsoft.com/dotnet/runtime:3.1-nanoserver-${NANOSERVER_VERSION}
     environment:
       ADMIN_PASSWORD: ${SITECORE_ADMIN_PASSWORD}
       ADMIN_USER_NAME: "superuser"
@@ -417,16 +353,9 @@ services:
       HOST_CM: "http://cm"
       HOST_PS: "http://ps:5000"
       HOST_ID: "http://id"
-      MARKETING_DEFINITIONS_APIKEY: ${MARKETING_DEFINITIONS_APIKEY}
       SKIP_WARMUP_CD: ${SKIP_WARMUP_CD}
       DAM_URL: ${DAM_URL}
       INIT_CONTEXT: Data Source=mssql;Initial Catalog=platform_init_ready;User ID=sa;Password=${SQL_SA_PASSWORD}
-      COVEO_ORGANIZATION_ID: ${COVEO_ORGANIZATION_ID}
-      COVEO_REGION: ${COVEO_REGION}
-      COVEO_API_KEY: ${COVEO_API_KEY}
-      COVEO_SEARCH_API_KEY: ${COVEO_SEARCH_API_KEY}
-      COVEO_FARM_NAME: ${COVEO_FARM_NAME}
-      COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
     depends_on:
       mssql:
         condition: service_healthy
@@ -445,7 +374,7 @@ services:
     build:
       context: docker\images\demo-authoringhost
       args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-authoringhost:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${LIGHTHOUSE_VERSION}
+        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-horizon:2.26.0-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
     environment:
