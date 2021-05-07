@@ -80,12 +80,6 @@ if (-not $ready) {
 		CreateAdminUser $adminUserName $env:SITECORE_ADMIN_PASSWORD
 	}
 
-	# create new Coveo admin user if specified
-	$coveoAdminUserName = $env:COVEO_ADMIN_USER_NAME
-	if ($null -ne $coveoAdminUserName -AND $coveoAdminUserName.ToLower() -ne "admin" -AND $coveoAdminUserName.ToLower() -ne $adminUserName ) {
-		CreateAdminUser $coveoAdminUserName $env:SITECORE_ADMIN_PASSWORD
-	}
-
 	# disable admin user, if specified
 	if ($env:DISABLE_DEFAULT_ADMIN -eq $TRUE ) {
 		Invoke-Sqlcmd -InputFile "C:\sql\DisableSitecoreAdminUser.sql"

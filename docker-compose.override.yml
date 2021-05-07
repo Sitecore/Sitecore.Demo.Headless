@@ -31,7 +31,6 @@ services:
       DISABLE_DEFAULT_ADMIN: "FALSE"
       EXM_BASE_URL: "https://${CD_HOST}"
       START_OVERRIDE_SCRIPTS: "start-override-platform-windows.ps1"
-      COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
     mem_limit: 2GB
     volumes:
       - type: bind
@@ -116,7 +115,6 @@ services:
       Sitecore_Horizon_ClientHost: https://${SH_HOST}
       HOST_CD: http://cd
       Sitecore_Publishing_Service_Url: http://ps:5000/
-      COVEO_SERVER_URL: ${COVEO_SERVER_URL}
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
       SitecoreAITenantID: ${SITECORE_AI_TENANT_ID}
       SitecoreAIConfigServiceURL: ${SITECORE_AI_CONFIG_SERVICE_URL}
@@ -227,7 +225,6 @@ services:
       SitecoreAIConfigServiceURL: ${SITECORE_AI_CONFIG_SERVICE_URL}
       SitecoreAIConfigServiceJWT: ${SITECORE_AI_CONFIG_SERVICE_JWT}
       EXM_RENDERER_URL: http://cm
-      COVEO_SERVER_URL: ${COVEO_SERVER_URL}
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
@@ -366,16 +363,9 @@ services:
       HOST_CM: "http://cm"
       HOST_PS: "http://ps:5000"
       HOST_ID: "http://id"
-      MARKETING_DEFINITIONS_APIKEY: ${MARKETING_DEFINITIONS_APIKEY}
       SKIP_WARMUP_CD: ${SKIP_WARMUP_CD}
       DAM_URL: ${DAM_URL}
       INIT_CONTEXT: Data Source=mssql;Initial Catalog=platform_init_ready;User ID=sa;Password=${SQL_SA_PASSWORD}
-      COVEO_ORGANIZATION_ID: ${COVEO_ORGANIZATION_ID}
-      COVEO_REGION: ${COVEO_REGION}
-      COVEO_API_KEY: ${COVEO_API_KEY}
-      COVEO_SEARCH_API_KEY: ${COVEO_SEARCH_API_KEY}
-      COVEO_FARM_NAME: ${COVEO_FARM_NAME}
-      COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
     depends_on:
       mssql:
         condition: service_healthy
