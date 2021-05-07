@@ -108,17 +108,11 @@ services:
       SITECORE_CONNECTIONSTRINGS_CMP.ServiceBusEntityPathOut: ${CMP_SERVICEBUSENTITYPATHOUT}
       SITECORE_CONNECTIONSTRINGS_DAM.ContentHub: ${DAM_URL}
       SITECORE_CONNECTIONSTRINGS_DAM.SearchPage: ${DAM_URL}/en-us/sitecore-dam-connect/approved-assets
-      SITECORE_CONNECTIONSTRINGS_SFMC: ${SFMC_CONNECTIONSTRING}
-      SITECORE_CONNECTIONSTRINGS_SFDC: ${SFDC_CONNECTIONSTRING}
       SITECORE_CONNECTIONSTRINGS_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
-      EXM_RENDERER_URL: http://cm
       Sitecore_Horizon_ClientHost: https://${SH_HOST}
       HOST_CD: http://cd
       Sitecore_Publishing_Service_Url: http://ps:5000/
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
-      SitecoreAITenantID: ${SITECORE_AI_TENANT_ID}
-      SitecoreAIConfigServiceURL: ${SITECORE_AI_CONFIG_SERVICE_URL}
-      SitecoreAIConfigServiceJWT: ${SITECORE_AI_CONFIG_SERVICE_JWT}
       PROXY_API_HOST: https://${CM_HOST}
       REACT_APP_FIREBASE_MESSAGING_PUSH_KEY: ${REACT_APP_FIREBASE_MESSAGING_PUSH_KEY}
       REACT_APP_FIREBASE_SENDER_ID: ${REACT_APP_FIREBASE_SENDER_ID}
@@ -221,10 +215,6 @@ services:
       Sitecore_ConnectionStrings_Xdb.MarketingAutomation.Reporting.Client: http://xconnect
       Sitecore_ConnectionStrings_Xdb.ReferenceData.Client: http://xconnect
       Sitecore_ConnectionStrings_Sitecore.Services.Token.SecurityKey: key=${SITECORE_SERVICES_TOKEN_SECURITYKEY}
-      SitecoreAITenantID: ${SITECORE_AI_TENANT_ID}
-      SitecoreAIConfigServiceURL: ${SITECORE_AI_CONFIG_SERVICE_URL}
-      SitecoreAIConfigServiceJWT: ${SITECORE_AI_CONFIG_SERVICE_JWT}
-      EXM_RENDERER_URL: http://cm
       DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES: ${DEPENDENCY_INJECTION_IGNORED_ASSEMBLIES}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
