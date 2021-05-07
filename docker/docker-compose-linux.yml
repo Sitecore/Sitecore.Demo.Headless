@@ -9,7 +9,7 @@ services:
       context: ../
       dockerfile: ./docker/images/demo-sqldev/Dockerfile.linux
       args:
-        BASE_IMAGE: ${REGISTRY}community/sitecore-xm1-custom-spe-headless-mssql:10.1.0-linux
+        BASE_IMAGE: ${REGISTRY}community/sitecore-xm1-custom-spe-headless-sps-mssql:10.1.0-linux
         HORIZON_INTEGRATION_ASSETS: ${REGISTRY}community/modules/custom-horizon-integration-xp1-assets:2.25-linux
         CMP_ASSETS: ${REGISTRY}community/modules/custom-cmp-xp1-assets:4.0.0-linux
     volumes:
