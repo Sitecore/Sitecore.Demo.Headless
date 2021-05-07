@@ -29,8 +29,13 @@ class EventSubscribeButton extends React.Component {
   }
 
   render() {
+    const { subscribed } = this.state;
+    const suffix = subscribed ? "-active" : "";
     return (
-      <></>
+      <div
+        className={`event-action event-action-subscribe${suffix}`}
+        onClick={this.onSubscribeClick}
+      />
     );
   }
 }

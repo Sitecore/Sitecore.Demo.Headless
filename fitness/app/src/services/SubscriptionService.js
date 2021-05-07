@@ -24,14 +24,9 @@ export async function subscribe(eventId, eventName) {
 }
 
 export function unsubscribe(eventId, eventName) {
-  getGuestRef().then(response => {
-    return boxeverDelete(
-      "/deletekeyforguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=SubscribedEvents",
-      {
-        "key":eventName + " / " + eventId
-      }
-    );
-  }).catch(e => {
+  getGuestRef().then(response => boxeverDelete(
+    `/deletekeyforguestdataextension?guestRef=${response.guestRef}&dataExtensionName=SubscribedEvents&key=${eventName} / ${eventId}`
+  )).catch(e => {
     console.log(e);
   });
 }

@@ -72,7 +72,6 @@ class EventDetailAnonymous extends React.Component {
         isFavorited,
         shouldDisplayLoading: false
       });
-      this.props.routeData.isFavorited = isFavorited;
     })
     .catch(e => {
       console.log(e);
@@ -148,16 +147,10 @@ class EventDetailAnonymous extends React.Component {
       );
     }
 
-    var icon;
-    if (!this.state.isRegistered) {
-      icon = (
-        <EventFavoriteButton {...this.props} />
-      );
-    } else {
-      icon = (
-        <EventSubscribeButton {...this.props} />
-      );
-    }
+    var icon= (
+      <EventFavoriteButton {...this.props} isFavorited={this.state.isFavorited} />
+    );
+    // TODO: Bring back the EventSubscribeButton button when the user is already registered
 
     return (
       <>
