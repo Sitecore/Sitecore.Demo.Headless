@@ -50,7 +50,7 @@ services:
       - demo
 
   solr-init:
-    image: ${REGISTRY}demo/lighthouse-headless-solr-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${BASE_MODULE_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-solr-init:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     build:
       context: .
       dockerfile: .\docker\images\demo-solr-init\dockerfile
