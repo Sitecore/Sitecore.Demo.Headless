@@ -51,3 +51,8 @@ steps:
     targetType: 'inline'
     script: 'echo "##vso[task.setvariable variable=additionalImageTags]stable"'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+- task: PowerShell@2
+  displayName: 'Update version transform'
+  inputs:
+    targetType: 'inline'
+    script: '(Get-Content .\fitness\server\src\Project\AppItems\code\Web.config.xdt).replace(''{version}'', ''$(GitVersion.InformationalVersion)'') | Set-Content .\fitness\server\src\Project\AppItems\code\Web.config.xdt -Verbose'
