@@ -144,7 +144,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
- 
+
         [HttpPost("createguestdataextension")]
         [Consumes("application/json")]
         public ActionResult CreateGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [FromBody] string body)
@@ -219,7 +219,7 @@ namespace Sitecore.Integrations.Boxever.Controllers
         }
 
         [HttpDelete("deletekeyforguestdataextension")]
-        public ActionResult DeleteKeyForGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [NotNull] string keyName)
+        public ActionResult DeleteKeyForGuestDataExtension([NotNull] string guestRef, [NotNull] string dataExtensionName, [NotNull] string key)
         {
             try
             {
@@ -235,12 +235,12 @@ namespace Sitecore.Integrations.Boxever.Controllers
                 if (keyList == null)
                     return StatusCode(StatusCodes.Status404NotFound);
 
-                var key = keyList.Value.FirstOrDefault(i => i.Value<string>("key").ToLower() == keyName.ToLower());
+                var foundKey = keyList.Value.FirstOrDefault(i => i.Value<string>("key").ToLower() == key.ToLower());
 
-                if (key == null)
+                if (foundKey == null)
                     return StatusCode(StatusCodes.Status404NotFound);
 
-                var keyRef = key.Value<string>("ref");
+                var keyRef = foundKey.Value<string>("ref");
 
                 if (String.IsNullOrWhiteSpace(keyRef))
                     return StatusCode(StatusCodes.Status404NotFound);

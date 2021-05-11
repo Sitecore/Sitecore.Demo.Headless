@@ -20,14 +20,9 @@ export function addToFavorites(eventId, eventName, eventDate, sportType) {
 }
 
 export function removeFromFavorites(eventId, eventName) {
-  return getGuestRef().then(response => {
-    return boxeverDelete(
-      "/deletekeyforguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=FavoritedEvents",
-      {
-        "key": eventName + " / " + eventId
-      }
-    );
-  }).catch(e => {
+  return getGuestRef().then(response => boxeverDelete(
+    `/deletekeyforguestdataextension?guestRef=${response.guestRef}&dataExtensionName=FavoritedEvents&key=${eventName} / ${eventId}`
+  )).catch(e => {
     console.log(e);
   });
 }
@@ -50,14 +45,9 @@ export function register(eventId, eventName, eventDate, sportType) {
 }
 
 export function unregister(eventId, eventName) {
-  return getGuestRef().then(response => {
-    return boxeverDelete(
-      "/deletekeyforguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents",
-      {
-        "key":eventName + " / " + eventId
-      }
-    );
-  }).catch(e => {
+  return getGuestRef().then(response => boxeverDelete(
+    `/deletekeyforguestdataextension?guestRef=${response.guestRef}&dataExtensionName=RegisteredEvents&key=${eventName} / ${eventId}`
+  )).catch(e => {
     console.log(e);
   });
 }
