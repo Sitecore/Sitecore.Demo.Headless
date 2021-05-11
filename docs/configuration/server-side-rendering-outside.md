@@ -20,13 +20,13 @@ You can use this as a starting point to unlock deployment of your JSS apps to an
 
 ## Setup
 
-1. Navigate to the `\fitness\app-node-ssr` folder.
+1. Navigate to the `\fitness\node-ssr` folder.
 2. Open `config.js` and specify connection settings to your Sitecore CD instance. `config.js` is heavily commented for your perusal.
 3. Open `index.js` and alter the `const app = require('./dist/AdvancedApp/server.bundle');` to instead require your app's `server.bundle` file.
 
 ## Build & Run
 
-1. Open a terminal in the `\fitness\app-node-ssr` folder.
+1. Open a terminal in the `\fitness\node-ssr` folder.
 2. Run `npm install`
 3. Run `npm run start`
 

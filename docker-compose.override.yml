@@ -169,6 +169,12 @@ services:
   ps-init:
     image: ${REGISTRY}demo/lighthouse-headless-ps:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}-${DEMO_VERSION}
     isolation: ${TRAEFIK_ISOLATION}
+    build:
+      context: .
+      dockerfile: .\docker\images\demo-ps\dockerfile
+      args:
+        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-sps:5.0.0-ltsc2019
+        TOOLS_ASSETS: ${SITECORE_DOCKER_REGISTRY}community/modules/custom-sitecore-docker-tools-assets:${TOOLS_VERSION}-${NANOSERVER_VERSION}
     environment:
       ASPNETCORE_URLS: "http://*:5000"
       SITECORE_Sitecore:Publishing:ConnectionStrings:Core: Data Source=mssql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD};MultipleActiveResultSets=True
