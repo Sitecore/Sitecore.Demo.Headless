@@ -46,22 +46,18 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc">
       <Version>5.2.4</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.5" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Sitecore.Analytics">
-      <Version>10.1.*-*</Version>
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="Sitecore.Analytics.Model">
-      <Version>10.1.*-*</Version>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="Sitecore.Analytics.XConnect">
-      <Version>10.1.*-*</Version>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2">
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
@@ -105,16 +101,6 @@
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="Sitecore.XConnect">
-      <Version>10.1.*-*</Version>
-      <PrivateAssets>all</PrivateAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-    <PackageReference Include="Sitecore.XConnect.Collection.Model">
-      <Version>10.1.*-*</Version>
-      <PrivateAssets>all</PrivateAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -132,29 +118,14 @@
     <Compile Include="Controllers\LighthouseFitnessProductsController.cs" />
     <Compile Include="Controllers\LighthouseFitnessEventsController.cs" />
     <Compile Include="Indexing\ComputedFields\CoordinatesField.cs" />
-    <Compile Include="Indexing\ComputedFields\ProfileNamesField.cs" />
-    <Compile Include="Pipelines\GetLayoutServiceContext\EventInfo.cs" />
     <Compile Include="Pipelines\GetLayoutServiceContext\ContactInfo.cs" />
     <Compile Include="Pipelines\Initialize\RouteInitializer.cs" />
     <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Router.cs" />
-    <Compile Include="Rules\AgeGroupCondition.cs" />
-    <Compile Include="Rules\BaseEventFacetCondition.cs" />
-    <Compile Include="Rules\IsContactRegisteredForEvent.cs" />
-    <Compile Include="Rules\IsContactKnownCondition.cs" />
-    <Compile Include="Rules\GenderCondition.cs" />
-    <Compile Include="Rules\IsContactSubscribedToEvent.cs" />
-    <Compile Include="Rules\IsContactFavoritedEvent.cs" />
     <Compile Include="Services\IEventDataService.cs" />
-    <Compile Include="Services\IItemScoringService.cs" />
     <Compile Include="Services\IProductDataService.cs" />
-    <Compile Include="Services\ItemScoringService.cs" />
-    <Compile Include="Utils\ProfileExtensions.cs" />
-    <Compile Include="Rules\SportsCondition.cs" />
-    <Compile Include="Rules\SportsSkillCondition.cs" />
     <Compile Include="Services\ProductDataService.cs" />
     <Compile Include="Services\EventDataService.cs" />
-    <Compile Include="Services\DistanceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serializers\EventItemSerializer.cs" />
     <Compile Include="Wellknown.cs" />
@@ -163,7 +134,6 @@
     <Content Include="App_Config\Include\Feature\Feature.Personalization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Feature\Feature.Personalization.Serialization.config" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -171,12 +141,6 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Foundation\Analytics\code\Sitecore.Demo.Fitness.Foundation.Analytics.csproj">
-      <Project>{8b8ef537-2e63-4cc5-93b0-7dfa3f784ec1}</Project>
-      <Name>Sitecore.Demo.Fitness.Foundation.Analytics</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

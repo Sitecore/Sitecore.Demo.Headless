@@ -1,0 +1,38 @@
+﻿---
+ID: "eb6bdfdc-44ec-449c-854b-823f5af4be97"
+Parent: "8c968867-c22a-4669-ad4c-a52d21bfe9bf"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Project/lighthousefitness/Profile/Data/Decay
+DB: master
+SharedFields:
+- ID: "074f44ca-359a-4c13-b3aa-4a6be2a675b1"
+  Hint: Validation
+  Value: "^[1-9]?[0-9]{1}$|^100$"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Number
+- ID: "b118496a-0f78-4a27-b55f-0a6c4b0b0fe1"
+  Hint: Default value
+  Value: 0
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+- ID: "be351a73-fcb0-4213-93fa-c302d8ab4f51"
+  Hint: Shared
+  Type: Checkbox
+  Value: 1
+Languages:
+- Language: en
+  Fields:
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+    Hint: Title
+    Value: Decay rate (%)
+  - ID: "b12e4906-b96b-495e-b343-cd2e92dc6347"
+    Hint: ValidationText
+    Value: The value entered in the Decay field is invalid. Valid values are between 0 and 100.
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20150518T084027Z

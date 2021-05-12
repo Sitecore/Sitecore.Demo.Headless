@@ -61,16 +61,25 @@ class MyEvents extends React.Component {
     fetchingFunc()
       .then(response => {
         if (response && response.data && response.data.events) {
-          this.setState({ events: response.data.events });
-          this.setState({ error: false });
+          this.setState({
+            events: response.data.events,
+            error: false,
+            loading: false
+          });
         } else {
           console.warn("unable to fetch any events");
+          this.setState({
+            events: [],
+            loading: false
+          });
         }
-        this.setState({ loading: false });
       })
       .catch(error => {
-        this.setState({ error: true });
         console.error(error);
+        this.setState({
+          error: true,
+          events: []
+        });
       });
   }
 

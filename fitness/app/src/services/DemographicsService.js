@@ -1,16 +1,19 @@
-import { post } from "./GenericService";
+import { boxeverPost } from "./GenericService";
 import { required } from "../utils";
+import { getGuestRef } from "./BoxeverService";
 
-export function setDemographicsFacet(age = required(), gender = required()) {
-  return post("/demographics/facet", {
-    AgeGroup: age,
-    Gender: gender
-  });
-}
-
-export function setDemographicsProfile(age = required(), gender = required()) {
-  return post("/demographics/profile", {
-    AgeGroup: age,
-    Gender: gender
+export function sendDemographicsToBoxever(age = required(), gender = required()) {
+  return getGuestRef()
+  .then(response => {
+    return boxeverPost(
+      "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=CustomGuestData",
+      {
+        "key":"Demographics",
+        "Age": age,
+        "Gender": gender
+      }
+    );
+  }).catch(e => {
+    console.log(e);
   });
 }

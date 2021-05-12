@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const packageConfig = require('../package.json');
+// BEGIN DEMO CUSTOMIZATION - For OrderCloud integration
+require('dotenv').config()
+// END DEMO CUSTOMIZATION
 
 /* eslint-disable no-console */
 
@@ -16,12 +19,17 @@ module.exports = function generateConfig(configOverrides) {
   const defaultConfig = {
     sitecoreApiKey: 'no-api-key-set',
     sitecoreApiHost: '',
+    boxeverApiHost:'',
     jssAppName: 'Unknown',
   };
 
   // require + combine config sources
   const scjssConfig = transformScJssConfig();
   const packageJson = transformPackageConfig();
+  // BEGIN DEMO CUSTOMIZATION - For OrderCloud & Boxever integration
+  const ocConfig = transformOcConfig();
+  const bxConfig = transformBxConfig();
+  // END DEMO CUSTOMIZATION
 
   // optional:
   // do any other dynamic config source (e.g. environment-specific config files)
@@ -29,7 +37,9 @@ module.exports = function generateConfig(configOverrides) {
   // package.json config can override the calculated config,
   // scjssconfig.json overrides it,
   // and finally config passed in the configOverrides param wins.
-  const config = Object.assign(defaultConfig, scjssConfig, packageJson, configOverrides);
+  // BEGIN DEMO CUSTOMIZATION - For OrderCloud & Boxever integration
+  const config = Object.assign(defaultConfig, scjssConfig, packageJson, ocConfig, bxConfig, configOverrides);
+  // END DEMO CUSTOMIZATION
 
   // The GraphQL endpoint is an example of making a _computed_ config setting
   // based on other config settings.
@@ -65,6 +75,41 @@ function transformScJssConfig() {
     sitecoreApiHost: config.sitecore.layoutServiceHost,
   };
 }
+
+// BEGIN DEMO CUSTOMIZATION - For OrderCloud & Boxever integration
+function transformOcConfig() {
+  let config;
+  try {
+    // eslint-disable-next-line global-require
+    config = require('../occonfig.json');
+  } catch (e) {
+    return {};
+  }
+
+  if (!config) return {};
+
+  return {
+    ocBuyerClientId: process.env.OC_BUYER_CLIENT_ID || config.ocBuyerClientId,
+    ocBaseApiUrl: process.env.OC_BASE_API_URL || config.ocBaseApiUrl
+  };
+}
+
+function transformBxConfig() {
+  let config;
+  try {
+    // eslint-disable-next-line global-require
+    config = require('../bxconfig.json');
+  } catch (e) {
+    return {};
+  }
+
+  if (!config) return {};
+
+  return {
+    boxeverApiHost: process.env.BOXEVER_PROXY_URL || config.boxeverApiHost
+  };
+}
+// END DEMO CUSTOMIZATION
 
 function transformPackageConfig() {
   if (!packageConfig.config) return {};

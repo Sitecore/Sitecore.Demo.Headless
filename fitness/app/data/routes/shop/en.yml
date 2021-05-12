@@ -1,0 +1,12 @@
+id: shop-page
+name: shop
+displayName: Shop
+fields:
+  pageTitle: Shop
+placeholders:
+  hf-nav:
+    - componentName: DetailNavigation
+  hf-body:
+    - componentName: CategoryList
+      fields:
+        title: Shop

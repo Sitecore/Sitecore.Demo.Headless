@@ -3,13 +3,15 @@ version: '2.4'
 services:
 
   sql:
-    image: ${REGISTRY}demo/lighthouse-jss-mssql:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-mssql:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default
     build:
       context: ../
       dockerfile: ./docker/images/demo-sqldev/Dockerfile.linux
       args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-mssql:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
+        BASE_IMAGE: ${REGISTRY}community/sitecore-xm1-custom-spe-headless-sps-mssql:10.1.0-linux
+        HORIZON_INTEGRATION_ASSETS: ${REGISTRY}community/modules/custom-horizon-integration-xp1-assets:2.25-linux
+        CMP_ASSETS: ${REGISTRY}community/modules/custom-cmp-xp1-assets:4.0.0-linux
     volumes:
       - .\data\sql:/var/opt/mssql/data
     mem_limit: 2GB
@@ -23,18 +25,18 @@ services:
       ADMIN_USER_NAME: "sitecore\\superuser"
       DISABLE_DEFAULT_ADMIN: 'FALSE'
       EXM_BASE_URL: "https://${CD_HOST}"
-      BOOT_OVERRIDE_SCRIPTS: "Demo-Boot-Platform-Linux.ps1;Demo-Boot-Headless-Linux.ps1"
-      COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
-      EXM_KIOSK_CD_BASE_URL: "https://${KIOSK_CD_HOST}"
-      EXM_APP_BASE_URL: "https://${APP_HOST}"
+      BOOT_OVERRIDE_SCRIPTS: "Demo-Boot-Platform-Linux.ps1"
+
   init:
     healthcheck:
       test: ["CMD", "powershell", "ps"]
-    image: ${REGISTRY}demo/lighthouse-jss-init:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-init:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     build:
       context: ./images/demo-init
+      dockerfile: Dockerfile.linux
       args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-init:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
+        BUILD_IMAGE: mcr.microsoft.com/dotnet/sdk:3.1-alpine
+        BASE_IMAGE: mcr.microsoft.com/dotnet/runtime:3.1-alpine
     environment:
       ADMIN_PASSWORD: ${SITECORE_ADMIN_PASSWORD}
       ADMIN_USER_NAME: "superuser"
@@ -42,27 +44,9 @@ services:
       HOST_CM: "http://cm"
       HOST_PS: "http://ps:5000"
       HOST_ID: "http://id"
-      MARKETING_DEFINITIONS_APIKEY: ${MARKETING_DEFINITIONS_APIKEY}
-      COVEO_ORGANIZATION_ID: ${COVEO_ORGANIZATION_ID}
-      COVEO_API_KEY: ${COVEO_API_KEY}
-      COVEO_SEARCH_API_KEY: ${COVEO_SEARCH_API_KEY}
-      COVEO_FARM_NAME: ${COVEO_FARM_NAME}
-      COVEO_ADMIN_USER_NAME: ${COVEO_ADMIN_USER_NAME}
-  solr:
-    image: ${REGISTRY}demo/lighthouse-jss-solr:${SITECORE_VERSION}-linux-${DEMO_VERSION}
-    isolation: default
-    build:
-      context: ./images/demo-solr
-      dockerfile: Dockerfile
-      args:
-        BASE_IMAGE: ${REGISTRY}demo/lighthouse-solr:${SITECORE_VERSION}-linux-${LIGHTHOUSE_VERSION}
-    volumes:
-      - ./data/solr:/data
-    mem_limit: 1GB
-    ports:
-      - "44011:8983"
+
   app:
-    image: ${REGISTRY}demo/lighthouse-jss-app:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-app:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default
     build:
       context: ../
@@ -86,7 +70,7 @@ services:
         aliases:
           - app.${HOSTNAME_SUFFIX}
   kiosk:
-    image: ${REGISTRY}demo/lighthouse-jss-kiosk:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    image: ${REGISTRY}demo/lighthouse-headless-kiosk:${SITECORE_VERSION}-linux-${DEMO_VERSION}
     isolation: default
     build:
       context: ../
@@ -104,7 +88,10 @@ services:
       demo:
         aliases:
           - kiosk.${HOSTNAME_SUFFIX}
-
+  boxever:
+    image: ${REGISTRY}demo/lighthouse-boxever-proxy:${SITECORE_VERSION}-linux-${DEMO_VERSION}
+    build:
+      context: ./images/demo-boxever
 networks:
   demo:
     external:

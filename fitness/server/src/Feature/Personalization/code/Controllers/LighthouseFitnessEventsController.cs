@@ -1,16 +1,13 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Newtonsoft.Json.Linq;
-using Sitecore.Analytics;
 using Sitecore.Annotations;
-using Sitecore.Diagnostics;
+using Sitecore.Data.Items;
 using Sitecore.Demo.Fitness.Feature.Personalization.Services;
-using Sitecore.Demo.Fitness.Feature.Personalization.Utils;
-using Sitecore.Demo.Fitness.Foundation.Analytics;
-using Sitecore.Demo.Fitness.Foundation.Analytics.Filters;
-using Sitecore.Demo.Fitness.Foundation.Analytics.Services;
+using Sitecore.Diagnostics;
 using Sitecore.LayoutService.Mvc.Security;
 using Sitecore.LayoutService.Serialization.ItemSerializers;
 
@@ -24,44 +21,26 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
     {
         private IEventDataService dataService;
         private IItemSerializer itemSerializer;
-        private IItemScoringService itemScoringService;
-        private IStringValueListFacetService facetService;
 
-        public LighthouseFitnessEventsController([NotNull]IEventDataService dataService, [NotNull]IItemScoringService itemScoringService, [NotNull]IItemSerializer itemSerializer, [NotNull]IStringValueListFacetService facetService)
+        public LighthouseFitnessEventsController([NotNull]IEventDataService dataService, [NotNull]IItemSerializer itemSerializer)
         {
             this.dataService = dataService;
             this.itemSerializer = itemSerializer;
-            this.itemScoringService = itemScoringService;
-            this.facetService = facetService;
         }
 
         [HttpGet]
         [ActionName("Index")]
-        [CancelCurrentPage]
-        public ActionResult Get(int take = -1, int skip = -1, float lat = 0, float lng = 0, string profiles = "", bool personalize = true)
+        // Before switching this demo from XP to Boxever, the sport type was set as a profile card on the event items.
+        // This is why the parameter of this controller action is still named "profiles". It is used as is by other
+        // code and should not be renamed unless renaming it where it is used as well.
+        public ActionResult Get(int take = -1, int skip = -1, float lat = 0, float lng = 0, string profiles = "")
         {
             try
             {
-                // fetching profile names from the action parameter
-                var profileNames = string.IsNullOrWhiteSpace(profiles) ? new string[0] : profiles.Split('|');
-                // or loading from the tracker if not specified
-                if (personalize && !profileNames.Any())
-                {
-                    profileNames = Tracker.Current.GetPopulatedProfilesFromTracker();
-                }
+                // fetching sport types from the action parameter.
+                var sportTypes = string.IsNullOrWhiteSpace(profiles) ? new string[0] : profiles.Split('|');
 
-                var allItems = dataService.GetAll(Context.Database, profileNames, take, skip, lat, lng, out int totalSearchResults);
-
-                if (personalize)
-                {
-                    var scoredItems = itemScoringService.ScoreItems(allItems, Context.Database);
-                    // return scored items only if anything was returned
-                    if (scoredItems.Any())
-                    {
-                        allItems = scoredItems;
-                    }
-                }
-
+                var allItems = dataService.GetAll(Context.Database, sportTypes, take, skip, lat, lng, out int totalSearchResults);
                 var events = new JArray(allItems.Select(i => JObject.Parse(itemSerializer.Serialize(i))));
                 var results = new JObject
                 {
@@ -79,61 +58,44 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization.Controllers
         }
 
         [HttpGet]
-        [ActionName("getregistrations")]
-        [CancelCurrentPage]
-        public ActionResult GetRegistrations()
+        [ActionName("geteventsbyid")]
+        public ActionResult GetEventsById([NotNull] string eventIds)
         {
             try
             {
-                var eventIds = facetService.GetFacetValues(FacetIDs.RegisteredEvents);
-                var subscriptions = facetService.GetFacetValues(FacetIDs.Subscriptions);
-                var eventItems = eventIds.Select(id => dataService.GetById(Context.Database, Guid.Parse(id))).ToList();
+                List<string> eventIdList = eventIds?.Split(',').Select(i => i?.Trim())?.ToList();
 
-                var events = new JArray();
-                foreach (var eventItem in eventItems)
+                if (eventIdList == null || !eventIdList.Any())
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Unable to retrieve events by ID - No event ID in request");
+
+                var itemList = new List<Item>();
+                foreach (var eventId in eventIdList)
                 {
-                    var eventData = JObject.Parse(itemSerializer.Serialize(eventItem));
-                    var eventId = eventItem.ID.Guid.ToString("D");
-                    eventData.Add("active", subscriptions.Contains(eventId));
-                    events.Add(eventData);
+                    var guidId = "{"+eventId+"}";
+                    bool isValidGuid = Guid.TryParse(guidId, out Guid eventGuid);
+                    if (isValidGuid)
+                    {
+                        var eventItem = dataService.GetById(Context.Database, eventGuid);
+                        if (eventItem != null)
+                            itemList.Add(eventItem);
+                    }
                 }
 
+                if (!itemList.Any())
+                    return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Unable to retrieve events by ID");
+
+                var events = new JArray(itemList.Select(i => JObject.Parse(itemSerializer.Serialize(i))));
                 var results = new JObject
                 {
                     { "events", events },
-                    { "total", eventItems.Count }
+                    { "total", itemList.Count }
                 };
 
                 return Content(results.ToString(), "application/json");
             }
             catch (Exception ex)
             {
-                Log.Error("Unable to retrieve events", ex, this);
-                return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
-            }
-        }
-
-        [HttpGet]
-        [ActionName("getfavorites")]
-        [CancelCurrentPage]
-        public ActionResult GetFavorites()
-        {
-            try
-            {
-                var eventIds = facetService.GetFacetValues(FacetIDs.FavoriteEvents);
-                var eventItems = eventIds.Select(id => dataService.GetById(Context.Database, Guid.Parse(id))).ToList();
-                var events = new JArray(eventItems.Select(i => JObject.Parse(itemSerializer.Serialize(i))));
-                var results = new JObject
-                {
-                    { "events", events },
-                    { "total", eventItems.Count }
-                };
-
-                return Content(results.ToString(), "application/json");
-            }
-            catch (Exception ex)
-            {
-                Log.Error("Unable to retrieve events", ex, this);
+                Log.Error("Unable to retrieve events by ID", ex, this);
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError, ex.Message);
             }
         }

@@ -1,0 +1,198 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://sitecore.com/ch-oc.mapping.schema.json",
+    "title": "CH-OC Mapping",
+    "description": "A mapping between Content Hub and Order Cloud to be processed by the Azure Function integration.",
+    "type": "object",
+    "properties": {
+      "from": {
+        "description": "The CH entity being mapped.",
+        "type": "string"
+      },
+      "to": {
+        "description": "The OC entity being mapped to.",
+        "type": "string"
+      },
+      "targetType": {
+        "description": "The type name of the OC entity being mapped to.",
+        "type": "string",
+        "enum": [
+          "Product",
+          "Catalog",
+          "Category",
+          "PriceSchedule"
+        ]
+      },
+      "propertyMappings": {
+        "description": "Array of property mappings.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/propertyMapping"
+        }
+      },
+      "relationMappings": {
+        "description": "Array of relation mappings.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/relationMapping"
+        }
+      },
+      "extensionDataMappings": {
+        "description": "Array of extension data mappings.",
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/extensionDataMapping"
+        }
+      }
+    },
+    "additionalProperties": false,
+    "definitions": {
+      "propertyMapping": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "description": "The CH entity property to be mapped.",
+            "type": "string"
+          },
+          "to": {
+            "description": "The OC entity property being mapped to.",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of the property.",
+            "type": "string",
+            "enum": [
+              "string",
+              "int",
+              "bool",
+              "double",
+              "decimal",
+              "float",
+              "long"
+            ]
+          },
+          "targetType": {
+            "description": "The target type in OC.",
+            "type": "string",
+            "enum": [
+              "Product",
+              "Category",
+              "Catalog",
+              "PriceSchedule"
+            ]
+          },
+          "value": {
+            "description": "A static value to map into the property.",
+            "type": "string"
+          },
+          "culture": {
+            "description": "Certain fields in CH are culture sensitive and require culture information.",
+            "type": "string"
+          },
+          "facet": {
+            "description": "True if this should be a product facet in OC, false if not.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "to",
+          "type"
+        ],
+        "additionalProperties": false
+      },
+      "relationMapping": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "description": "The CH entity relation to be mapped.",
+            "type": "string"
+          },
+          "to": {
+            "description": "The OC entity property being mapped to.",
+            "type": "string"
+          },
+          "where": {
+            "description": "A C# binary expression which can be used to filter the CH entities being mapped from this relation.",
+            "type": "string"
+          },
+          "targetType": {
+            "description": "The target type in OC.",
+            "type": "string",
+            "enum": [
+              "Product",
+              "Category",
+              "Catalog",
+              "PriceSchedule"
+            ]
+          },
+          "relationType": {
+            "description": "The relation type in CH. Determines how to query the related entities.",
+            "type": "string",
+            "enum": [
+              "Children",
+              "Parent"
+            ]
+          },
+          "propertyMappings": {
+            "description": "Array of property mappings.",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/propertyMapping"
+            }
+          },
+          "relationMappings": {
+            "description": "Array of relation mappings.",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/relationMapping"
+            }
+          },
+          "extensionDataMappings": {
+            "description": "Array of extension data mappings.",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/extensionDataMapping"
+            }
+          }
+        },
+        "required": [
+          "from",
+          "targetType",
+          "relationType"
+        ],
+        "additionalProperties": false
+      },
+      "extensionDataMapping": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "description": "The CH extension data to be mapped.",
+            "type": "string"
+          },
+          "to": {
+            "description": "The OC entity property being mapped to.",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of the property.",
+            "type": "string",
+            "enum": [
+              "string",
+              "int",
+              "bool",
+              "double",
+              "decimal",
+              "float",
+              "long"
+            ]
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "type"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }

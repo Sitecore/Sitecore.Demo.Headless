@@ -1,0 +1,39 @@
+{
+	"name": "lighthousefitness-ssr",
+	"version": "16.0.0",
+	"description": "Node server-side-rendering proxy for running the Lighthouse Fitness JSS apps under Node hosting",
+	"main": "dist/index.js",
+	"scripts": {
+		"start": "node index.js",
+		"docker": "pwsh -NoProfile -ExecutionPolicy Unrestricted -File ./ReplaceTokens.ps1 && node index.js",
+		"dockerlinux": "./bootstrap.sh && node index.js"
+	},
+	"engines": {
+		"node": ">=8.1",
+		"npm": ">=5.6.0",
+		"yarn": "yarn is not supported, please use npm"
+	},
+	"author": {
+		"name": "Sitecore Corporation",
+		"url": "https://www.sitecore.com/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Sitecore/Sitecore.Demo.Headless.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Sitecore/Sitecore.Demo.Headless/issues"
+	},
+	"homepage": "https://github.com/Sitecore/Sitecore.Demo.Headless",
+	"license": "Apache-2.0",
+	"dependencies": {
+		"@sitecore-jss/sitecore-jss-proxy": "^16.0.0",
+		"agentkeepalive": "^4.1.3",
+		"compression": "~1.7.3",
+		"express": "~4.16.4",
+		"memory-cache": "^0.2.0",
+		"node-cache": "~4.2.0",
+		"node-fetch": "^2.6.1"
+	},
+	"private": true
+}

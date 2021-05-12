@@ -5,13 +5,15 @@ import { withTranslation } from "react-i18next";
 import { setIdentification } from "../../services/IdentificationService";
 import Consent from "../Consent";
 import ContinueButton from "../ContinueButton";
-import { trackCompleteRegistration } from "../../services/TrackingService";
+import { getGuestRef, getRegisteredEventsResponse, isAnonymousGuestInGuestResponse } from "../../services/BoxeverService";
+import Loading from "../Loading";
 
 class SaveAsAccountStep extends Component {
   state = {
     firstname: "",
     lastname: "",
-    email: ""
+    email: "",
+    shouldDisplayLoading: true
   };
 
   constructor(props) {
@@ -31,18 +33,42 @@ class SaveAsAccountStep extends Component {
   onCreateClick() {
     const { firstname, lastname, email } = this.state;
 
-    setIdentification(firstname, lastname, email).catch(err => {
+    return setIdentification(firstname, lastname, email)
+    .catch(err => {
       console.log(err);
     });
-
-    trackCompleteRegistration();
   }
 
   isValid() {
     return this.state.email;
   }
 
+  componentDidMount() {
+    getGuestRef()
+    .then(response => {
+      return getRegisteredEventsResponse(response.guestRef);
+    })
+    .then(guestResponse => {
+      const isAnonymousGuest = isAnonymousGuestInGuestResponse(guestResponse);
+      if(!isAnonymousGuest){
+        this.props.currentContext.next();
+        return;
+      }
+      this.setState({
+        shouldDisplayLoading: false
+      });
+    })
+    .catch(e => {
+      console.log(e);
+    });
+  }
+
   render() {
+     // Don't render anything if the Boxever state is not received yet.
+     if (this.state.shouldDisplayLoading) {
+      return <Loading />;
+    }
+
     const { fields, rendering, t } = this.props;
     return (
       <form className="wizardStep wizardStep_SaveAsAccountStep">

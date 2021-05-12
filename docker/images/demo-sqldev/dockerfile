@@ -3,6 +3,30 @@
 ARG BASE_IMAGE
 ARG BUILD_IMAGE
 
+ARG CONTENTHUB_CONNECTOR_ASSETS
+ARG HEADLESS_ASSETS
+ARG HORIZON_INTEGRATION_ASSETS
+ARG SPE_ASSETS
+ARG SPS_ASSETS
+
+FROM ${CONTENTHUB_CONNECTOR_ASSETS} as contenthub_connector_assets
+FROM ${HEADLESS_ASSETS} as headless_assets
+FROM ${HORIZON_INTEGRATION_ASSETS} as horizon_integration_assets
+FROM ${SPE_ASSETS} as spe_assets
+FROM ${SPS_ASSETS} as sps_assets
+
+FROM ${BASE_IMAGE} as base
+
+
+COPY --from=contenthub_connector_assets /module/db /module_data/contenthub_connector_assets
+COPY --from=headless_assets /module/db /module_data/headless_assets
+COPY --from=horizon_integration_assets /module/db /module_data/horizon_integration_assets
+COPY --from=spe_assets /module/db /module_data/spe_assets
+COPY --from=sps_assets /module/db /module_data/sps_assets
+
+RUN $modules = @('contenthub_connector_assets', 'headless_assets','horizon_integration_assets','spe_assets','sps_assets'); `
+    foreach($module in $modules) { C:\DeployDatabases.ps1 -ResourcesDirectory /module_data/$module; Remove-Item -Path /module_data/$module -Recurse -Force; }
+
 FROM ${BUILD_IMAGE} as build
 
 # Install latest PackageProvider (required for Sitecore.Courier)
@@ -14,7 +38,7 @@ COPY /fitness/server/src /src
 
 RUN .\packaging\generate-update-package.ps1 -target (Resolve-Path /src) -output /output
 
-FROM $BASE_IMAGE as data
+FROM base as data
 
 COPY --from=build /output/ /output/
 
@@ -27,16 +51,8 @@ RUN Remove-Item "/output" -Recurse
 
 FROM data as production
 
-ENV USER_PASSWORD="b"
-ENV ADMIN_USER_NAME="sitecore\superuser"
-ENV SITECORE_ADMIN_PASSWORD="b"
-ENV DISABLE_DEFAULT_ADMIN=FALSE
-ENV EXM_BASE_URL=http://cd
-ENV SQL_SERVER="mssql"
-ENV EXM_KIOSK_CD_BASE_URL=http://kiosk-cd
-ENV EXM_APP_BASE_URL=http://app
-ENV START_OVERRIDE_SCRIPTS="start-override-platform-windows.ps1;start-override-headless-windows.ps1"
-
 COPY /docker/images/demo-sqldev/sql /sql
 
-COPY /docker/images/demo-sqldev/start-override-headless-windows.ps1 /
+COPY /docker/images/demo-sqldev/HashPassword.ps1 /docker/images/demo-sqldev/start-override.ps1 /
+
+CMD ./start-override -sa_password $env:sa_password -ACCEPT_EULA $env:ACCEPT_EULA -attach_dbs \"$env:attach_dbs\" -Verbose

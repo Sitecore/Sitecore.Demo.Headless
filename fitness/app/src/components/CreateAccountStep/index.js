@@ -3,14 +3,12 @@ import React from "react";
 import { withRouter } from "react-router";
 import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
 import { withTranslation } from "react-i18next";
-import {
-  setDemographicsFacet,
-  setDemographicsProfile
-} from "../../services/DemographicsService";
+import { sendDemographicsToBoxever } from "../../services/DemographicsService";
 import { setIdentification } from "../../services/IdentificationService";
-
+import { getGuestRef, getRegisteredEventsResponse, isAnonymousGuestInGuestResponse } from "../../services/BoxeverService";
 import ContinueButton from "../ContinueButton";
 import Consent from "../Consent";
+import Loading from "../Loading";
 
 class CreateAccountStep extends React.Component {
   state = {
@@ -18,7 +16,8 @@ class CreateAccountStep extends React.Component {
     age: "",
     firstname: "",
     lastname: "",
-    email: ""
+    email: "",
+    shouldDisplayLoading: true
   };
 
   constructor(props) {
@@ -41,24 +40,51 @@ class CreateAccountStep extends React.Component {
 
   onContinueClick() {
     const { firstname, lastname, email, gender, age } = this.state;
+    var promises = [];
 
-    setIdentification(firstname, lastname, email)
+    promises.push(
+      setIdentification(firstname, lastname, email)
       .catch(err => {
         console.log(err);
-      });
+      })
+    );
 
-    setDemographicsFacet(age, gender)
+    promises.push(
+      sendDemographicsToBoxever(age, gender)
       .catch(err => {
         console.log(err);
-      });
+      })
+    );
 
-    setDemographicsProfile(age, gender)
-      .catch(err => {
-        console.log(err);
+    return Promise.all(promises);
+  }
+
+  componentDidMount() {
+    getGuestRef()
+    .then(response => {
+      return getRegisteredEventsResponse(response.guestRef);
+    })
+    .then(guestResponse => {
+      const isAnonymousGuest = isAnonymousGuestInGuestResponse(guestResponse);
+      if(!isAnonymousGuest){
+        this.props.currentContext.next();
+        return;
+      }
+      this.setState({
+        shouldDisplayLoading: false
       });
+    })
+    .catch(e => {
+      console.log(e);
+    });
   }
 
   render() {
+    // Don't render anything if the Boxever state is not received yet.
+    if (this.state.shouldDisplayLoading) {
+      return <Loading />;
+    }
+
     const { fields, rendering } = this.props;
     return (
       <span className="createAccount">

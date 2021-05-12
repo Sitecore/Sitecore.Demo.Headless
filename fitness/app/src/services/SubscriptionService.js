@@ -1,30 +1,34 @@
-import { post } from "./GenericService";
 /* eslint-disable import/no-extraneous-dependencies */
 import { firebase } from "@firebase/app";
 import "@firebase/messaging";
 /* eslint-enable import/no-extraneous-dependencies */
+import { boxeverPost,boxeverDelete } from "./GenericService";
+import { getGuestRef } from "./BoxeverService";
 
-export async function subscribe(eventId) {
-  const token = await getMessagingToken();
+export async function subscribe(eventId, eventName) {
+  //TODO: Not tested yet
+  const token = getMessagingToken();
   if (token) {
-    return executeAction("subscribe", {
-      EventId: eventId,
-      Token: token
+    getGuestRef().then(response => {
+      return boxeverPost(
+        "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=SubscribedEvents",
+        {
+          "key":eventName + " / " + eventId,
+          "eventId":eventId
+        }
+      );
+    }).catch(e => {
+      console.log(e);
     });
   }
-
-  throw new Error("no token was resolved")
 }
 
-export function unsubscribe(eventId) {
-  return executeAction("unsubscribe", { EventId: eventId });
-}
-
-function executeAction(eventAction, payload) {
-  if (!payload) {
-    throw new Error("missing payload");
-  }
-  return post(`/subscription/${eventAction}`, payload);
+export function unsubscribe(eventId, eventName) {
+  getGuestRef().then(response => boxeverDelete(
+    `/deletekeyforguestdataextension?guestRef=${response.guestRef}&dataExtensionName=SubscribedEvents&key=${eventName} / ${eventId}`
+  )).catch(e => {
+    console.log(e);
+  });
 }
 
 const getMessagingToken = async () => {

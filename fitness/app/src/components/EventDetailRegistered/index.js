@@ -24,7 +24,7 @@ const EventDetailRegistered = props => {
     </Fragment>
   );
 
-  const description = <RichText field={routeFields.longDescription} tag="p" />;
+  const description = <RichText field={routeFields.description} tag="p" />;
 
   const lat = parseFloat(routeFields.latitude.value);
   const lng = parseFloat(routeFields.longitude.value);

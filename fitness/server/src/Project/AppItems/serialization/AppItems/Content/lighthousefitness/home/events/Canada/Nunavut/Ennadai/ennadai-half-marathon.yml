@@ -1,13 +1,16 @@
 ﻿---
 ID: "8f8622a5-c46c-43ed-bfd0-ca08d302a877"
 Parent: "8f3688d4-f38c-4781-a446-bcdb8a587705"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/ennadai/ennadai-half-marathon"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: "AQxyko1gPkObPJz6a-EuSQ"
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
@@ -59,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20201208T000000
+      Value: 20210908T040000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Ennadai Half Marathon
@@ -78,27 +81,26 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {A02C08BC-A6A7-4C47-8798-B36F27A05CCE}
-        {4B135A8D-E4FC-4741-9A5F-15E9029EA5E4}
-        {A30549A9-070F-4756-9A5D-98125066BC82}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: "The Ennadai Half Marathon is Canada's largest and fastest Half Marathon. One of two Gold Label Half Marathon events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Ennadai Half Marathon is one of Canada's largest Qualifiers."
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: "Long Description. The Ennadai Half Marathon is Canada's largest and fastest Half Marathon. One of two Gold Label Half Marathon events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Ennadai Half Marathon is one of Canada's largest Qualifiers."
+      Value: "<p>The Ennadai Half Marathon is Canada's largest and fastest Half Marathon. One of two Gold Label Half Marathon events in Canada, the race attracts thousands of participants, including a world-class contingent of pro athletes every year. The Ennadai Half Marathon is one of Canada's largest Qualifiers.</p>"
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-100.8833"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running07-800x410" mediaid="{F1BBE6C0-8F0E-48B4-8AE4-A3C187B3C9BB}" />
+        <image alt="running_lighthouse_fitness_4.jpg" mediaid="" stylelabs-content-id="29683" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29683/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/4a175de9e7d844a8a599c7c907c20597?v=6e852055" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 100
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 21.1K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

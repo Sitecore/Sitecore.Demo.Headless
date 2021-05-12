@@ -20,10 +20,14 @@ export async function clearCache() {
   console.log("memory cache cleared");
 }
 
-export function post(action, payload) {
-  const url = `${config.sitecoreApiHost}${apiStem}${action}?sc_apikey=${
+export function getActionUrl(action) {
+  return `${config.sitecoreApiHost}${apiStem}${action}?sc_apikey=${
     config.sitecoreApiKey
   }`;
+}
+
+export function post(action, payload) {
+  const url = getActionUrl(action);
 
   const options = {
     method: "POST",
@@ -39,9 +43,7 @@ export function post(action, payload) {
 }
 
 export function get(action, payload, useCache = false) {
-  const url = `${config.sitecoreApiHost}${apiStem}${action}?sc_apikey=${
-    config.sitecoreApiKey
-  }`;
+  const url = getActionUrl(action);
 
   const options = {
     method: "GET",
@@ -51,4 +53,49 @@ export function get(action, payload, useCache = false) {
   };
 
   return useCache ? api(options) : axios(options);
+}
+
+export function boxeverPost(action, payload) {
+  const url = `${config.boxeverApiHost}/Boxever${action}`;
+
+  const options = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    data: payload,
+    withCredentials: false,
+    url
+  };
+
+  return axios(options);
+}
+
+export function boxeverGet(action, payload) {
+  const url = `${config.boxeverApiHost}/Boxever${action}`;
+
+  const options = {
+    method: "GET",
+    params: payload,
+    withCredentials: false,
+    url
+  };
+
+  return axios(options);
+}
+
+export function boxeverDelete(action, payload) {
+  const url = `${config.boxeverApiHost}/Boxever${action}`;
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json"
+    },
+    data: payload,
+    withCredentials: false,
+    url
+  };
+
+  return axios(options);
 }

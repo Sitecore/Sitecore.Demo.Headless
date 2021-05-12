@@ -1,0 +1,4 @@
+{
+    "ocBuyerClientId": "%OC_BUYER_CLIENT_ID%",
+    "ocBaseApiUrl": "%OC_BASE_API_URL%"
+}

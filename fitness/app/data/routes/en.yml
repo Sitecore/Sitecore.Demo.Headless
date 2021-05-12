@@ -12,6 +12,7 @@ placeholders:
           fields:
             headerText: Personalize your experience!
             bodyText: explore events and gear based on your favorite sports and fitness level
+        - componentName: Greeting
         - componentName: FeaturedEvent
           fields:
             event:
@@ -27,6 +28,3 @@ placeholders:
             showEventDescription: "1"
             personalize: "1"
             showLoadMore: "0"
-        - componentName: ProductRecommendationList
-          fields:
-            title: Gear just for you

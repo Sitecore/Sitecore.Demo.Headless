@@ -27,7 +27,6 @@
   "license": "MPL-2.0",
   "dependencies": {
     "@sitecore-jss/sitecore-jss-react": "^11.0.1",
-    "@sitecore-jss/sitecore-jss-tracking": "^11.0.1",
     "axios": "^0.18.0",
     "axios-cache-adapter": "^2.1.1",
     "bootstrap": "^4.1.3",

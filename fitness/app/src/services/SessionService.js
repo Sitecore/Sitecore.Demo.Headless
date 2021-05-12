@@ -1,5 +1,8 @@
-import { post } from "./GenericService";
+import { forgetCurrentGuest } from "./BoxeverService";
+
+export const personalizePromptLocalStorageKey = "personalizeprompt-should-open";
 
 export function flush() {
-  return post("/session/flush");
+  localStorage.removeItem(personalizePromptLocalStorageKey)
+  return forgetCurrentGuest();
 }

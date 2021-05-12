@@ -9,7 +9,7 @@ Clone the Sitecore.Demo.Headless repository locally - defaults are configured fo
 * **https**: `git clone https://github.com/Sitecore/Sitecore.Demo.Headless.git`
 * **ssh**: `git clone git@github.com:Sitecore/Sitecore.Demo.Headless.git`
 
-> In this repository, the 'master' branch is generally targeting the most recent release of Sitecore and support for older Sitecore version can be found in branches named like 'release/9.1'.
+> In this repository, the 'main' branch is generally targeting the most recent release of Sitecore and support for older Sitecore version can be found in branches named like 'release/9.1'.
 
 ## Pre-requisites
 
@@ -24,22 +24,7 @@ Clone the Sitecore.Demo.Headless repository locally - defaults are configured fo
 
 1. Ensure you are running Windows containers:
    1. From the Docker Desktop taskbar icon contextual menu (right click), you can toggle which daemon (Linux or Windows) the Docker CLI talks to. Select "Switch to Windows containers..." to use Windows containers.
-2. Ensure the Windows Docker engine experimental features are enabled (to allow the Linux smtp container to run at the same time as the Windows containers):
-   1. From the Docker Desktop taskbar icon contextual menu (right click), choose "Settings".
-   2. In the left tab group, navigate to the "Docker Engine" tab.
-   3. In the JSON block, locate the `"experimental"` key.
-      1. If you do not have an `"experimental"` key, add it after the existing ones. Ensure you add a comma (`,`) after the previous key/value pair.
-   4. Ensure the value of the `"experimental"` key is set to `true`.
-   5. At the end, the JSON block should have at least:
-
-      ```json
-      {
-        "experimental": true
-      }
-      ```
-
-   6. Optionally, you may want to also set DNS servers in the Docker engine configuration. See the [Issue downloading nodejs](#Issue%20downloading%20nodejs) known issue for details and inscruptions.
-   7. Click the "Apply & Restart" button to restart your Windows Docker engine.
+2. Optionally, you may want set DNS servers in the Docker engine configuration. See the [Issue downloading nodejs](#Issue%20downloading%20nodejs) known issue for details and instructions.
 
 ## Preparing your environment
 
@@ -49,48 +34,52 @@ Clone the Sitecore.Demo.Headless repository locally - defaults are configured fo
 3. Create certificates and initialize the environment file:
    * `.\init.ps1 -InitEnv -LicenseXmlPath C:\license\license.xml -AdminPassword b`
    * You can change the admin password and the license.xml file path to match your needs.
+4. Pull the demo Docker images:
+   * `docker-compose pull`
+   * This will pull all of the necessary images to spin up your Sitecore environment. It will take quite some time if this is the first time you execute it.
 
-### Optional - Configuring Push Notifications and Google Maps
+### Boxever
 
-The published demo images have no Google Maps nor Firebase API keys. To enable Google Maps and Firebase, you must configure your `.env` file, and build your own demo images.
+#### Boxever organization setup
+
+First, you must set and get some settings values in your Boxever organization.
+
+[Setup your Boxever Organization](boxever.md).
+
+#### Apps setup
+
+1. Using the client key obtained above, update the `_boxever_settings` object `client_key` property value in the following files:
+   * `\fitness\app\public\index.html`
+   * `\fitness\kiosk\public\index.html`
+2. Rebuild the CM, app, and kiosk Docker images by following the instructions of the [Front-end JSS applications](#front-end-jss-applications) section.
+3. Come back to this point after rebuilding the Docker images.
+
+#### Boxever proxy setup
 
 1. Edit the [`\.env`](///.env) file at the root of the repository.
-2. [Obtain the Firebase keys and IDs](firebase.md).
-3. In the `.env` file, paste the following Firebase values as the according environment variable values:
-   * Server Key: `REACT_APP_FIREBASE_MESSAGING_SERVER_KEY`
-   * Sender ID: `REACT_APP_FIREBASE_SENDER_ID`
-   * Key pair: `REACT_APP_FIREBASE_MESSAGING_PUSH_KEY`
-   * Project ID: `REACT_APP_FIREBASE_PROJECT_ID`
-   * Web API Key: `REACT_APP_FIREBASE_API_KEY`
-   * App ID: `REACT_APP_FIREBASE_APP_ID`
-   > Please take extra care about these API keys, make sure to put appopriate security restrictions and do not commit those to source control.
+2. Configure the following variables:
+   * `BOXEVER_APIURL`: https://api-eu-west-1-production.boxever.com
+   * `BOXEVER_CLIENTKEY`: The "Client Key" you noted in the previous section.
+   * `BOXEVER_APITOKEN`: The "API Token" you noted in the previous section.
 
-   ```text
-   # Example
-   REACT_APP_FIREBASE_MESSAGING_SERVER_KEY=...
-   REACT_APP_FIREBASE_SENDER_ID=123456789012
-   REACT_APP_FIREBASE_MESSAGING_PUSH_KEY=...
-   REACT_APP_FIREBASE_PROJECT_ID=habitatfitness-...
-   REACT_APP_FIREBASE_API_KEY=...
-   REACT_APP_FIREBASE_APP_ID=1:123456789012:web:...
-   ```
+### Optional - Connecting the apps to OrderCloud
 
-4. [Obtain a Google Maps API Key](google-maps.md).
-5. In the `.env` file, paste the "API key" as the value of the `REACT_APP_GOOGLE_API_KEY` entry.
-6. Save the file.
-7. Build your own demo images. See [Building the demo](#Building%20the%20demo).
-   1. Come back to this point in the documentation after having built your demo images.
-8. Skip pulling the Docker images and directly [start the demo containers](#Starting%20the%20demo%20containers).
+1. Create your account at [https://portal.ordercloud.io/register](https://portal.ordercloud.io/register)
+2. Follow the instructions [here](https://github.com/ordercloud-api/headstart/tree/development#seeding-ordercloud-data) to seed the environment.
+3. Edit the [`\.env`](///.env) file at the root of the repository:
+   * Set `OC_BUYER_CLIENT_ID` to the Buyer App ID
+   * Set `OC_BASE_API_URL` to https://sandboxapi.ordercloud.io
+
+### Optional - Configuring Google Maps
+
+The published demo images have no Google Maps API keys. To enable Google Maps, you must configure your `.env` file, and build your own demo images.
+
+1. Edit the [`\.env`](///.env) file at the root of the repository.
+2. [Obtain a Google Maps API Key](google-maps.md).
+3. In the `.env` file, paste the "API key" as the value of the `REACT_APP_GOOGLE_API_KEY` entry.
+4. Save the file.
 
 ## Running the demo
-
-### Pulling the Docker images
-
-1. Open an elevated (as administrator) PowerShell session.
-2. Navigate to your repository clone folder:
-   * `cd C:\Projects\Sitecore.Demo.Headless`
-3. Pull the latest demo Docker images:
-   * `docker-compose pull`
 
 ### Starting the demo containers
 
@@ -102,17 +91,14 @@ The published demo images have no Google Maps nor Firebase API keys. To enable G
    * This is required each time you want to use the demo as the Traefik container is using the same port (443) as IIS.
 4. Start the demo containers:
    * `docker-compose up -d`
-   * This will pull all of the necessary images to spin up your Sitecore environment. It will take quite some time if this is the first time you execute it.
-   * After pulling the images, the Sitecore instance will be up and available within minutes, but not fully working until the init container jobs are completed. The init container runs scripts that:
+   * This will spin up your Sitecore environment.
+   * The Sitecore instance will be up and available within minutes, but not fully working until the init container jobs are completed. The init container runs scripts that:
      * Publish the master database to the web database using Sitecore Publishing Service.
+     * Rebuild the link database.
+     * Rebuild Sitecore indexes.
      * Warmup CM and CD pages for a fast first load.
-     * Deploy Sitecore marketing definitions.
-     * Rebuild Sitecore and SXA indices.
-     * Generate analytics data using Sitecore Experience Generator.
    * Loading the Sitecore instance before the completion of the init container may cause:
-     * Marketing Automation plans may not work as Sitecore marketing definitions are not deployed.
-     * Some Content Editor features and other admin pages relying on search indices may not work.
-     * The search page and search based components may not work on the CD.
+     * Some Content Editor features and other admin pages relying on search indexes may not work.
 5. Check the progress of the initialization by viewing the init container's logs:
    * `docker-compose logs -f init`
 6. Wait about 30 minutes until the init container logs can read `No jobs are running. Monitoring stopped.`.
@@ -124,14 +110,13 @@ These sites are running in Sitecore JSS integrated mode.
 
 1. Browse to [https://app.lighthouse.localhost](https://app.lighthouse.localhost)
    1. You should see the Lighthouse Fitness JSS progressive web application (PWA) and be able to browse events.
-   2. If you see only one event, ensure that all the "init" container jobs are completed by checking its logs. It is likely that the indices rebuild is not done yet.
+   2. If you see only one event, ensure that all the "init" container jobs are completed by checking its logs. It is likely that the indexes rebuild is not done yet.
 2. Browse to [https://kiosk.lighthouse.localhost](https://kiosk.lighthouse.localhost)
    1. You should see the Lighthouse Fitness Kiosk JSS site and be able to browse events. This site is meant to be running on a tablet in a store for customers to register to events and receive an email to continue their journey in the first site.
-   2. If do not see any event, ensure that all the "init" container jobs are completed by checking its logs. It is likely that the indices rebuild is not done yet.
+      1. It is better viewed when the iPad emulation form factor is enabled in the browser development tools.
+   2. If do not see any event, ensure that all the "init" container jobs are completed by checking its logs. It is likely that the indexes rebuild is not done yet.
 3. Browse to [https://cm.lighthouse.localhost/sitecore](https://cm.lighthouse.localhost/sitecore)
-   1. You should be able to login with the "admin" user and the password provided while running the `init.ps1` script.
-4. Browse to [http://127.0.0.1:44026/](http://127.0.0.1:44026/)
-   1. You should see the SMTP container catch-all mailbox for all emails sent by EXM.
+   1. You should be able to login with the "superuser" user and the password provided while running the `init.ps1` script.
 
 ### Stopping the demo
 
@@ -276,15 +261,7 @@ The JSS apps are setup to source content from the `web` database out of the box 
       database="web" />
 ```
 
-If desired, this can be changed to `master` to avoid publishing when modifying the items when developing. However, you must rebuild the marketing master indexes once:
-
-1. From the Launchpad, open the "Control Panel".
-2. Under Indexing, open the "Indexing manager".
-3. Select the following indexes:
-    * `sitecore_marketingdefinitions_master`
-    * `sitecore_marketing_asset_index_master`
-4. Hit the "Rebuild" button.
-5. When it is done, close the "Indexing Manager".
+After doing this change, you must rebuild the CM and CD Docker images and run the new images in your containers. The instructions are the same as the [Back-end server solution](#back-end-server-solution) development cycle.
 
 ## Troubleshooting deployment
 

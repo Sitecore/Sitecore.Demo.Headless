@@ -5,6 +5,11 @@ Get-ChildItem C:\inetpub\wwwroot\dist *.js -recurse -verbose |
         Write-Host "Updating " $_.FullName
         $c = ($_ | Get-Content)
 
+        $c = $c -replace '%OC_BUYER_CLIENT_ID%', $env:OC_BUYER_CLIENT_ID
+        $c = $c -replace '%OC_BASE_API_URL%', $env:OC_BASE_API_URL
+
+        $c = $c -replace '%BOXEVER_PROXY_URL%', $env:BOXEVER_PROXY_URL
+
         $c = $c -replace '%layoutServiceHost%', $env:PROXY_API_HOST
 
         $c = $c -replace '%firebaseMessagingSenderId%', $env:REACT_APP_FIREBASE_SENDER_ID

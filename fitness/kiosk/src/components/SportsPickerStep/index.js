@@ -9,10 +9,8 @@ import ContinueButton from "../ContinueButton";
 import PersonalizationResultsButton from "../PersonalizationResultsButton";
 import { translate } from "react-i18next";
 import {
-  setSportsFacets,
-  setSportsProfile
+  setSportsFacets
 } from "../../services/SportsService";
-import { trackCompleteFavoriteSports } from "../../services/TrackingService";
 
 class SportsPickerStep extends Component {
   state = {
@@ -24,6 +22,7 @@ class SportsPickerStep extends Component {
     super(props);
     this.onCardClick = this.onCardClick.bind(this);
     this.onSliderChange = this.onSliderChange.bind(this);
+    this.trackCompleteFavoriteSports = this.trackCompleteFavoriteSports.bind(this);
   }
 
   onCardClick(key, remove) {
@@ -35,18 +34,10 @@ class SportsPickerStep extends Component {
       this.setState({ selectedItemKey: key });
       selectedSports = this.updateSelectedSports(key, undefined);
     }
-
-    this.sendUpdatedSportsPreferences(selectedSports);
   }
 
-  sendUpdatedSportsPreferences(sports) {
-    setSportsFacets(sports).catch(err => {
-      console.log(err);
-    });
-
-    setSportsProfile(sports).catch(err => {
-      console.log(err);
-    });
+  trackCompleteFavoriteSports(event){
+    return setSportsFacets(this.state.selectedSports);
   }
 
   updateSelectedSports(key, value) {
@@ -61,8 +52,7 @@ class SportsPickerStep extends Component {
   }
 
   onSliderChange(value) {
-    const updatedSports = this.updateSelectedSports(this.state.selectedItemKey, value);
-    this.sendUpdatedSportsPreferences(updatedSports);
+    this.updateSelectedSports(this.state.selectedItemKey, value);
   }
 
   render() {
@@ -137,7 +127,7 @@ class SportsPickerStep extends Component {
               disabled={!canContinue}
             />
           ) : (
-            <PersonalizationResultsButton onClick={() => trackCompleteFavoriteSports()} />
+            <PersonalizationResultsButton onClick={this.trackCompleteFavoriteSports}/>
           )}
         </div>
       </Fragment>

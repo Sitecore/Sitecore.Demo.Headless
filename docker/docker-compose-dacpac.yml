@@ -10,5 +10,11 @@ services:
       target: build
       args:
         BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+        BASE_IMAGE: ${SITECORE_DOCKER_REGISTRY}sxp/sitecore-xm1-mssql:${SITECORE_VERSION}-${WINDOWSSERVERCORE_VERSION}
+        CONTENTHUB_CONNECTOR_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-chub-xm1-assets:4.0.0-${SITECORE_ASSET_NANOSERVER_VERSION}
+        HEADLESS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-headless-services-xm1-assets:16.0.0-${SITECORE_ASSET_NANOSERVER_VERSION}
+        HORIZON_INTEGRATION_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/horizon-integration-xm1-assets:2.26-${SITECORE_ASSET_NANOSERVER_VERSION}
+        SPE_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/spe-assets:6.2-${SITECORE_ASSET_NANOSERVER_VERSION}
+        SPS_ASSETS: ${SITECORE_DOCKER_REGISTRY}sxp/modules/sitecore-sps-integration-xm1-assets:10.1.0-${SITECORE_ASSET_NANOSERVER_VERSION}
         INTERNAL_NUGET_SOURCE: ${INTERNAL_NUGET_SOURCE}
         SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN}

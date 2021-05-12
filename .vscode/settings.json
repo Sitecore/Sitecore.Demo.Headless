@@ -1,0 +1,10 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "default-mapping.json"
+            ],
+            "url": "./integrations/OrderCloud/ch-oc-mapping-schema.json"
+        }
+    ]
+}

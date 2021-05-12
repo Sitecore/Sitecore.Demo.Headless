@@ -1,10 +1,29 @@
 import React, { Fragment } from "react";
 import Consent from "../Consent";
 import { translate } from "react-i18next";
-import { Text } from "@sitecore-jss/sitecore-jss-react";
 import { setIdentification } from "../../services/IdentificationService";
 import { NavLink } from "react-router-dom";
-import { trackCompleteRegistration } from "../../services/TrackingService";
+import { trackRegistration } from "../../services/BoxeverService";
+import { setRegisteredEventsFacets } from "../../services/EventService";
+import { flush } from "../../services/SessionService";
+
+const flushSession = () => {
+  flush()
+  .then(() => {
+    this.toggle();
+
+    // refreshing the current route
+    // workaround for https://github.com/ReactTraining/react-router/issues/1982#issuecomment-172040295
+    const currentLocation = this.props.history.location.pathname;
+    this.props.history.push("/null");
+    setTimeout(() => {
+      this.props.history.push(currentLocation);
+    });
+  })
+  .catch(err => {
+    console.error(err);
+  });
+};
 
 class KioskSignup extends React.Component {
   state = {
@@ -35,23 +54,30 @@ class KioskSignup extends React.Component {
 
   onCreateClick() {
     const { firstname, lastname, email } = this.state;
+    const eventId = this.props.itemId;
+    const eventName = this.props.fields.name.value;
+    const eventDate = this.props.fields.date.value;
+    const eventUrlPath = window.location.pathname;
+    const sportType = this.props.fields.sportType.value;
+
     setIdentification(firstname, lastname, email)
-      .then(response => this.setState({ signedUp: true }))
-      .then(() => trackCompleteRegistration())
-      .catch(err => {
-        this.setState({ error: true });
-        console.log(err);
-      });
+    .then(() => this.setState({ signedUp: true }))
+    .then(() => trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType))
+    .then(() => setRegisteredEventsFacets(eventId, eventName, eventDate, sportType))
+    .catch(err => {
+      this.setState({ error: true });
+      console.log(err);
+    });
   }
 
   render() {
-    const { t, fields } = this.props;
+    const { t } = this.props;
     const { firstname, lastname, email, signedUp, error } = this.state;
 
     const form = (
       <form className="form createAccount-form">
         <div className="form-body">
-          <Text field={fields.title} tag="h2" className="form-title" />
+          <h2 className="form-title">{t("register")}</h2>
           <fieldset className="fieldset">
             <div className="field">
               <input
@@ -109,8 +135,12 @@ class KioskSignup extends React.Component {
         </div>
         <div className="form-footer">
           <div className="form-actions">
-            <NavLink to={"/"} className="btn btn-primary">
-              {t("home")}
+            <NavLink
+              to={"/"}
+              className="btn btn-primary"
+              onClick={() => flushSession()}
+            >
+              {t("End Session")}
             </NavLink>
           </div>
         </div>
@@ -126,8 +156,12 @@ class KioskSignup extends React.Component {
           </div>
           <div className="form-footer">
             <div className="form-actions">
-              <NavLink to={"/"} className="btn btn-primary">
-                {t("home")}
+              <NavLink
+                to={"/"}
+                className="btn btn-primary"
+                onClick={() => flushSession()}
+              >
+                {t("End Session")}
               </NavLink>
             </div>
           </div>

@@ -1,13 +1,16 @@
 ﻿---
 ID: "a43ebacb-80be-4e9d-9e04-cafc64ce92e7"
 Parent: "6f164a83-32a9-4c7c-ab18-e74a926e1fa2"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/chilliwack/chilliwack-cycling-race"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: T6VJUCF59U2wdYkh6kbz9g
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
@@ -59,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20220321T000000
+      Value: 20221221T050000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Chilliwack Cycling Race
@@ -78,26 +81,26 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {24052B31-C665-4ED0-864E-3A3635C10387}
-        {5B0A597E-6185-4433-B04C-B8C641C315CC}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: "The race in Chilliwack starts at the old railway station and heads north on West Creek Road. Take a left onto Upper Fairfield Drive and continue straight until taking a right on Honeypot Rd. Follow Honeypot north to a 4-way intersection and take a right. Follow 76 Rd back to West Creek road and take that back to the start. The finishing line is at the Railway Crossing sign about a hundred yards south of the starting area."
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: "Long Description. The race in Chilliwack starts at the old railway station and heads north on West Creek Road. Take a left onto Upper Fairfield Drive and continue straight until taking a right on Honeypot Rd. Follow Honeypot north to a 4-way intersection and take a right. Follow 76 Rd back to West Creek road and take that back to the start. The finishing line is at the Railway Crossing sign about a hundred yards south of the starting area."
+      Value: "<p>The race in Chilliwack starts at the old railway station and heads north on West Creek Road. Take a left onto Upper Fairfield Drive and continue straight until taking a right on Honeypot Rd. Follow Honeypot north to a 4-way intersection and take a right. Follow 76 Rd back to West Creek road and take that back to the start. The finishing line is at the Railway Crossing sign about a hundred yards south of the starting area.</p>"
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-121.9500"
+      Value: "-121.95"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="cycling" mediaid="{2D68C915-4484-4866-B611-1EBD57C814FF}" />
+        <image alt="cycling_lighthouse_fitness_4.jpg" mediaid="" stylelabs-content-id="29653" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/29653/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/08ca72c8ed7740f085de7329be5b1acf?v=bbc45d4e" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 30
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 20K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Cycling

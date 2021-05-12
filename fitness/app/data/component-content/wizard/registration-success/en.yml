@@ -1,5 +1,5 @@
 id: registration-success
 componentName: RegistrationSuccessStep
 fields:
-  title: Thank you for registering.
+  title: Thank you.
   stepName: Finish

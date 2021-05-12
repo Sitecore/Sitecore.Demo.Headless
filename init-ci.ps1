@@ -1,9 +1,5 @@
 Param (
   [Parameter(
-    HelpMessage = "Lighthouse demo base image version used in image tagging.")]
-  [string]$LighthouseVersion = "latest"
-  ,
-  [Parameter(
     HelpMessage = "Demo version used in image tagging.")]
   [string]$DemoVersion = "latest"
   ,
@@ -94,6 +90,5 @@ Set-DockerComposeEnvFileVariable "ISOLATION" -Value $IsolationMode
 Set-DockerComposeEnvFileVariable "WINDOWSSERVERCORE_VERSION" -Value $WindowsVersion
 Set-DockerComposeEnvFileVariable "NANOSERVER_VERSION" -Value $NanoserverVersion
 Set-DockerComposeEnvFileVariable "SITECORE_VERSION" -Value $SitecoreVersion
-Set-DockerComposeEnvFileVariable "LIGHTHOUSE_VERSION" -Value $LighthouseVersion
 
 Write-Host "Done!" -ForegroundColor Green

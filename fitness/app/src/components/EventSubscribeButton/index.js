@@ -1,10 +1,6 @@
 import React from "react";
 import { withTranslation } from "react-i18next";
 import { subscribe, unsubscribe } from "../../services/SubscriptionService";
-import {
-  trackEventSubscribe,
-  trackEventUnsubscription
-} from "../../services/TrackingService";
 
 class EventSubscribeButton extends React.Component {
   state = {
@@ -23,24 +19,13 @@ class EventSubscribeButton extends React.Component {
     // optimistic UI update
     this.setState({ subscribed: !this.state.subscribed });
     const eventId = this.props.routeData.itemId;
-    const operation = this.state.subscribed
-      ? unsubscribe(eventId)
-      : subscribe(eventId);
+    const eventName = this.props.routeData.name;
 
-    operation
-      .catch(err => {
-        this.setState({ subscribed: false });
-        console.log(err);
-      });
-
-    const trackingPromise = this.state.subscribed
-      ? trackEventUnsubscription(eventId)
-      : trackEventSubscribe(eventId);
-
-    trackingPromise
-      .catch(err => {
-        console.log(err);
-      });
+    if( this.state.subscribed){
+      unsubscribe(eventId,eventName);
+    } else {
+      subscribe(eventId,eventName);
+    }
   }
 
   render() {

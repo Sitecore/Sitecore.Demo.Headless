@@ -15,7 +15,7 @@ const disconnected = process.argv.some((arg) => arg === '--disconnected');
   that the app can import and use.
 */
 const port = process.env.PORT || 3000;
-const configOverride = disconnected ? { sitecoreApiHost: `http://localhost:${port}` } : null;
+const configOverride = disconnected ? { sitecoreApiHost: `http://localhost:${port}`, boxeverApiHost: `https://localhost:44375` } : null;
 
 configGenerator(configOverride);
 

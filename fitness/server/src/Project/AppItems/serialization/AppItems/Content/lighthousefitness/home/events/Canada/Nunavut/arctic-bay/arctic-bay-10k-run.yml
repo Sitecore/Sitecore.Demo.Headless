@@ -1,13 +1,16 @@
 ﻿---
 ID: "a5464585-1777-4716-9911-4a455fab1eab"
 Parent: "64a0cc18-a80a-48a1-a573-ab477f06f67a"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/nunavut/arctic-bay/arctic-bay-10k-run"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: ph4E58wQjEWYCxe0rcmxRw
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
@@ -59,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20220223T000000
+      Value: 20221123T050000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Arctic Bay 10K Run
@@ -78,27 +81,26 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {CA34B37E-1EFB-4B1D-93C6-E97F55D05FAC}
-        {899B1CCA-27E8-4AA4-A314-88EAFF767637}
-        {B416B2E5-2A04-4D06-8347-98DC28A5C486}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: The Arctic Bay 10K Run takes participants past Arctic Bay's historic buildings for a 10 tour of some of Arctic Bay's biggest landmarks.
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: Long Description. The Arctic Bay 10K Run takes participants past Arctic Bay's historic buildings for a 10 tour of some of Arctic Bay's biggest landmarks.
+      Value: <p>The Arctic Bay 10K Run takes participants past Arctic Bay's historic buildings for a 10 tour of some of Arctic Bay's biggest landmarks.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-85.1666"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running08-800x410" mediaid="{EE8A3FB5-55E9-4F8A-AB8F-E91226B74947}" />
+        <image alt="running-original08.jpg" mediaid="" stylelabs-content-id="33076" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33076/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/f49b533edf7046dcb1cc695ffc0cc92a?v=d91f16cf" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 50
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 10K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

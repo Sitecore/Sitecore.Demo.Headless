@@ -13,7 +13,6 @@ namespace Sitecore.Demo.Fitness.Feature.Personalization
         {
             serviceCollection.AddTransient<IRouter, Router>();
             serviceCollection.AddTransient<IItemSerializer, EventItemSerializer>();
-            serviceCollection.AddTransient<IItemScoringService, ItemScoringService>();
             serviceCollection.AddTransient<IEventDataService, EventDataService>();
             serviceCollection.AddTransient<IProductDataService, ProductDataService>();
             serviceCollection.AddTransient<LighthouseFitnessEventsController>();

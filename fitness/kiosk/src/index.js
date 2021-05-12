@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import AppRoot from "./AppRoot";
 import i18ninit from "./i18n";
-import registerServiceWorker from "./registerServiceWorker";
 
 let renderFunction = ReactDOM.render;
 
@@ -47,6 +46,4 @@ i18ninit().then(() => {
     />,
     rootElement
   );
-
-  registerServiceWorker();
 });

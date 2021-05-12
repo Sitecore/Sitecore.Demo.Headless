@@ -57,6 +57,9 @@ const proxyOptions = {
     app.get("/sitecore/api/lighthousefitness/events/getfavorites", (req, res) =>
       res.send(favoritedEvents)
     );
+    app.get("/sitecore/api/lighthousefitness/events/GetEventsById", (req, res) =>
+      res.send(favoritedEvents)
+    );
     app.get("/sitecore/api/lighthousefitness/events/getregistrations", (req, res) =>
       res.send(registeredEvents)
     );

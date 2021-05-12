@@ -1,13 +1,16 @@
 ﻿---
 ID: "f8909f45-3866-4919-a74b-36dfa60deef1"
 Parent: "3fe2f40b-0cfa-4379-8c8f-a40eb137b9ea"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/british-columbia/powell-river/powell-river-marathon"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: "a8n_xWWq00-QJi5hSoAkXg"
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
@@ -59,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20210512T000000
+      Value: 20220212T050000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Powell River Marathon
@@ -78,27 +81,26 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {1A6CE4DE-7452-4321-AC87-FA065E860A53}
-        {C1A259B9-AE91-493C-9593-35F9DD90D5DD}
-        {0637AD42-B117-4FC6-BBBB-495637E3A87D}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: Experience Powell River's diversity and beauty with a Marathon that touches all aspects of its culture, and finishes with one hella awesome party.
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: Long Description. Experience Powell River's diversity and beauty with a Marathon that touches all aspects of its culture, and finishes with one hella awesome party.
+      Value: <p>Experience Powell River's diversity and beauty with a Marathon that touches all aspects of its culture, and finishes with one hella awesome party.</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-124.5500"
+      Value: "-124.55"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running05-800x410" mediaid="{98F0730A-295E-4FD5-A14A-4339D9BE707F}" />
+        <image alt="running-original05.jpg" mediaid="" stylelabs-content-id="33062" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33062/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/6912e66004c045c09b0261ce8eee6f23?v=d1958859" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 350
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 42.2K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

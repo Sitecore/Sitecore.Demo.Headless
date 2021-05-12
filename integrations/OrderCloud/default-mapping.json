@@ -1,0 +1,325 @@
+{
+  "from": "M.PCM.Product",
+  "to": "Product",
+  "targetType": "Product",
+  "propertyMappings": [
+    {
+      "from": "ProductName",
+      "to": "Name",
+      "type": "string"
+    },
+    {
+      "from": "ProductLongDescription",
+      "to": "Description",
+      "type": "string",
+      "culture": "en-US"
+    },
+    {
+      "to": "Active",
+      "type": "bool",
+      "value": "true"
+    },
+    {
+      "to": "QuantityMultiplier",
+      "type": "int",
+      "value": "1"
+    },
+    {
+      "from": "ProductNumber",
+      "to": "xp.Number",
+      "type": "string"
+    },
+    {
+      "from": "ProductFlavor",
+      "to": "xp.Flavor",
+      "type": "string",
+      "facet": true
+    },
+    {
+      "from": "ProductLabel",
+      "to": "xp.Label",
+      "type": "string",
+      "culture": "en-US"
+    },
+    {
+      "from": "gtin8",
+      "to": "xp.GTIN8",
+      "type": "string"
+    },
+    {
+      "from": "gtin12",
+      "to": "xp.GTIN12",
+      "type": "string"
+    },
+    {
+      "from": "VolumeLabel",
+      "to": "xp.Packaging.VolumeLabel",
+      "type": "string",
+      "culture": "en-US"
+    },
+    {
+      "from": "PackagingLabel",
+      "to": "xp.Packaging.Label",
+      "type": "string",
+      "culture": "en-US"
+    },
+    {
+      "from": "PackagingType",
+      "to": "xp.Packaging.Type",
+      "type": "string"
+    },
+    {
+      "from": "ProductPriceDecimal",
+      "to": "PriceBreaks[0].Price",
+      "type": "decimal",
+      "targetType": "PriceSchedule"
+    },
+    {
+      "to": "PriceBreaks[0].Quantity",
+      "type": "int",
+      "targetType": "PriceSchedule",
+      "value": "1"
+    },
+    {
+      "from": "ProductNumber",
+      "to": "Name",
+      "type": "string",
+      "targetType": "PriceSchedule"
+    }
+  ],
+  "relationMappings": [
+    {
+      "from": "DemoFitnessTypeToMPCMProducts",
+      "to": "xp.SportTypes",
+      "targetType": "Product",
+      "relationType": "Parent",
+      "propertyMappings": [
+        {
+          "from": "TaxonomyLabel",
+          "to": "Name",
+          "type": "string",
+          "culture": "en-US"
+        }
+      ]
+    },
+    {
+      "from": "PCMProductToAsset",
+      "to": "",
+      "targetType": "Product",
+      "relationType": "Children",
+      "relationMappings": [
+        {
+          "from": "AssetToPublicLink",
+          "to": "xp.images",
+          "targetType": "Product",
+          "relationType": "Children",
+          "where": "Resource == \"downloadOriginal\"",
+          "propertyMappings": [
+            {
+              "from": "Resource",
+              "to": "type",
+              "type": "string"
+            }
+          ],
+          "extensionDataMappings": [
+            {
+              "from": "public_link",
+              "to": "url",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "from": "PCMProductToAsset",
+      "to": "xp.Assets",
+      "targetType": "Product",
+      "relationType": "Children",
+      "propertyMappings": [
+        {
+          "from": "Title",
+          "to": "Title",
+          "type": "string"
+        }
+      ],
+      "relationMappings": [
+        {
+          "from": "AssetToPublicLink",
+          "to": "Images",
+          "targetType": "Product",
+          "relationType": "Children",
+          "where": "Resource == \"downloadOriginal\"",
+          "propertyMappings": [
+            {
+              "from": "Resource",
+              "to": "ImageType",
+              "type": "string"
+            }
+          ],
+          "extensionDataMappings": [
+            {
+              "from": "public_link",
+              "to": "imageUrl",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "from": "PCMProductToMasterAsset",
+      "to": "xp.MasterAsset",
+      "targetType": "Product",
+      "relationType": "Children",
+      "propertyMappings": [
+        {
+          "from": "Title",
+          "to": "Title",
+          "type": "string"
+        }
+      ],
+      "relationMappings": [
+        {
+          "from": "AssetToPublicLink",
+          "to": "Images",
+          "targetType": "Product",
+          "relationType": "Children",
+          "where": "Resource == \"downloadOriginal\"",
+          "propertyMappings": [
+            {
+              "from": "Resource",
+              "to": "ImageType",
+              "type": "string"
+            }
+          ],
+          "extensionDataMappings": [
+            {
+              "from": "public_link",
+              "to": "imageUrl",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "from": "PCMCatalogToProduct",
+      "targetType": "Catalog",
+      "relationType": "Parent",
+      "propertyMappings": [
+        {
+          "from": "CatalogName",
+          "to": "Name",
+          "type": "string"
+        },
+        {
+          "from": "CatalogDescription",
+          "to": "Description",
+          "type": "string",
+          "culture": "en-US"
+        },
+        {
+          "to": "Active",
+          "type": "bool",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "from": "PCMProductFamilyToProduct",
+      "targetType": "Category",
+      "relationType": "Parent",
+      "propertyMappings": [
+        {
+          "from": "ProductFamilyName",
+          "to": "Name",
+          "type": "string"
+        },
+        {
+          "from": "ProductFamilyName",
+          "to": "ID",
+          "type": "string"
+        },
+        {
+          "from": "ProductFamilyShortDescription",
+          "to": "Description",
+          "type": "string",
+          "culture": "en-US"
+        },
+        {
+          "to": "Active",
+          "type": "bool",
+          "value": "true"
+        }
+      ],
+      "relationMappings": [
+        {
+          "from": "PCMProductFamilyToMasterAsset",
+          "to": "",
+          "targetType": "Category",
+          "relationType": "Children",
+          "relationMappings": [
+            {
+              "from": "AssetToPublicLink",
+              "to": "xp.images",
+              "targetType": "Category",
+              "relationType": "Children",
+              "where": "Resource == \"downloadOriginal\"",
+              "propertyMappings": [
+                {
+                  "from": "Resource",
+                  "to": "type",
+                  "type": "string"
+                }
+              ],
+              "extensionDataMappings": [
+                {
+                  "from": "public_link",
+                  "to": "url",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "from": "PCMProductFamilyToMasterAsset",
+          "to": "xp.MasterAsset",
+          "targetType": "Category",
+          "relationType": "Children",
+          "propertyMappings": [
+            {
+              "from": "Title",
+              "to": "Title",
+              "type": "string"
+            }
+          ],
+          "relationMappings": [
+            {
+              "from": "AssetToPublicLink",
+              "to": "Images",
+              "targetType": "Category",
+              "relationType": "Children",
+              "where": "Resource == \"downloadOriginal\"",
+              "propertyMappings": [
+                {
+                  "from": "Resource",
+                  "to": "ImageType",
+                  "type": "string"
+                }
+              ],
+              "extensionDataMappings": [
+                {
+                  "from": "public_link",
+                  "to": "imageUrl",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

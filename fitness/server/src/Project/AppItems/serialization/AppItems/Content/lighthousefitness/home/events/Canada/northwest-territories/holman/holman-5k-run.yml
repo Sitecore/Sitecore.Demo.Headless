@@ -1,13 +1,16 @@
 ﻿---
-ID: "3abe8b4f-c773-4989-b52e-4ffa7c639af3"
+ID: "a2ae49e9-b809-4007-a8e1-c3a298e4f698"
 Parent: "10a5e852-59cc-4227-b8b3-b51427f4cac3"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/northwest-territories/holman/holman-5k-run"
 DB: master
 SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: kFrpbR7mCEuGoEoaZMy4Pw
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: "{6C59AE29-D0A1-4B77-9305-0ABAB21D5FE5}"
@@ -59,7 +62,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20220102T000000
+      Value: 20211009T040000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Holman 5K Run
@@ -68,7 +71,7 @@ Languages:
       Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20181114T205756Z
+      Value: 20181114T205759Z
     - ID: "27b7f43b-2a75-57b4-a651-789409564ce2"
       Hint: pageTitle
       Value: Holman 5K Run
@@ -78,27 +81,26 @@ Languages:
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: |
-        {BCA16604-E561-48BD-B44F-E427E4C0E7D3}
-        {FED36972-9DB4-4C56-A0D8-771E326FBF26}
-        {F83053C1-EAEE-42FC-BC37-F083BFFCE4C3}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: This is the race event of the year for Holman. Challenge yourself to a 5K Run and join others with the same goals.
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: Long Description. This is the race event of the year for Holman. Challenge yourself to a 5K Run and join others with the same goals.
+      Value: <p>The Holman 5K Run course is a scenic tour through the Holman, passing notable neighborhoods and attractions</p>
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
-      Value: "-117.7500"
+      Value: "-117.75"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="running08-800x410" mediaid="{EE8A3FB5-55E9-4F8A-AB8F-E91226B74947}" />
+        <image alt="running-original11.jpg" mediaid="" stylelabs-content-id="33039" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33039/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/e77905a22f8d48e48c82191a62e777ca?v=8747a16a" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 75
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 5K
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Running

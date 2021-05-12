@@ -24,6 +24,7 @@ class Navigation extends React.Component {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -32,12 +33,20 @@ class Navigation extends React.Component {
 
   flushSession() {
     flush()
-      .then(response => {
-        this.toggle();
-      })
-      .catch(err => {
-        console.error(err);
+    .then(() => {
+      this.toggle();
+
+      // refreshing the current route
+      // workaround for https://github.com/ReactTraining/react-router/issues/1982#issuecomment-172040295
+      const currentLocation = this.props.history.location.pathname;
+      this.props.history.push("/null");
+      setTimeout(() => {
+        this.props.history.push(currentLocation);
       });
+    })
+    .catch(err => {
+      console.error(err);
+    });
   }
 
   nav(url) {
@@ -65,15 +74,22 @@ class Navigation extends React.Component {
               </li>
             </ul>
           </div>
-          {/* <NavLink tag={Link} to={"/"} className="header-account-link">
-            Login
-          </NavLink> */}
           <NavbarToggler
             onClick={this.toggle}
             className={this.state.isOpen ? "active" : ""}
           />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink
+                  tag={Link}
+                  to={"/shop"}
+                  onClick={() => this.nav("/shop")}
+                  className="nav-link"
+                >
+                  Shop
+                </NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink
                   tag={Link}

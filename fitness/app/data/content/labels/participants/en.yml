@@ -1,9 +1,0 @@
-id: participants-label
-name: Parcicipants
-displayName: Number of Participants
-template: event-label
-fields:
-  name: Distance
-  value: 500-1K
-  image:
-    src: /assets/icons/person.svg

@@ -7,28 +7,29 @@ import {
 import {
   trackEventFavorite,
   trackEventUnfavorite
-} from "../../services/TrackingService";
+} from "../../services/BoxeverService";
 
 class EventFavoriteButton extends React.Component {
-  state = {
-    favorited:
-      this.props.context &&
-      this.props.context.event &&
-      this.props.context.event.favorited
-  };
-
   constructor(props) {
     super(props);
     this.onFavoriteClick = this.onFavoriteClick.bind(this);
+    this.state = {
+      favorited: props.isFavorited
+    };
   }
 
   onFavoriteClick() {
     // optimistic UI update
     this.setState({ favorited: !this.state.favorited });
+
     const eventId = this.props.routeData.itemId;
+    const eventName = this.props.routeData.name;
+    const eventDate = this.props.routeData.fields.date.value;
+    const sportType = this.props.routeData.fields.sportType.value;
+
     const operation = this.state.favorited
-      ? removeFromFavorites(eventId)
-      : addToFavorites(eventId);
+    ? removeFromFavorites(eventId, eventName)
+    : addToFavorites(eventId, eventName, eventDate, sportType);
 
     operation
       .catch(err => {
@@ -37,8 +38,8 @@ class EventFavoriteButton extends React.Component {
       });
 
     const trackingPromise = this.state.favorited
-      ? trackEventUnfavorite(eventId)
-      : trackEventFavorite(eventId);
+      ? trackEventUnfavorite(eventId, eventName, eventDate, sportType)
+      : trackEventFavorite(eventId, eventName, eventDate, sportType);
 
     trackingPromise
       .catch(err => {
@@ -48,7 +49,6 @@ class EventFavoriteButton extends React.Component {
 
   render() {
     const { favorited } = this.state;
-
     return (
       <div
         className={`event-action event-action-favorite${

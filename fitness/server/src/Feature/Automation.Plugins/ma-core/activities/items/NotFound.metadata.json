@@ -1,1 +1,0 @@
-[{"__symbolic":"module","version":4,"metadata":{"NotFound":{"__symbolic":"class","extends":{"__symbolic":"reference","module":"./SingleItem","name":"SingleItem","line":2,"character":30},"members":{"getVisual":[{"__symbolic":"method"}]}}}}]

@@ -1,7 +1,7 @@
 ﻿---
 ID: "20f06937-b73e-47e0-9191-c2342a1a2628"
 Parent: "2e02a289-dc71-40c5-a978-558fd2736b0b"
-Template: "9f2f1e35-62ef-5618-ad2b-3c2988389f89"
+Template: "388a8591-1c69-4060-ae16-02e47861c045"
 Path: "/sitecore/content/lighthousefitness/home/events/canada/manitoba/selkirk/selkirk-golf-tournament"
 DB: master
 SharedFields:
@@ -11,6 +11,9 @@ SharedFields:
 - ID: "19b597d3-2edd-4ae2-aefe-4a94c7f10e31"
   Hint: __Source Item
   Value: 
+- ID: "9b0343a9-9f69-4e0f-a059-9215bc8fe422"
+  Hint: EntityIdentifier
+  Value: D3jovbMSakK1AZVs05iXcQ
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
   Value: 
@@ -65,7 +68,7 @@ Languages:
     Fields:
     - ID: "1a0b22b8-ac4c-59fc-bc97-2133ae8e82d9"
       Hint: date
-      Value: 20210720T000000
+      Value: 20220420T040000Z
     - ID: "1ab79054-d1dd-59c2-bd3f-bb1cd4f1ce92"
       Hint: name
       Value: Selkirk Golf Tournament
@@ -80,28 +83,30 @@ Languages:
       Value: Selkirk Golf Tournament
     - ID: "330bad8c-8319-5a15-8fd8-164b8c7021fd"
       Hint: latitude
-      Value: 50.1500
+      Value: 50.15
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
-    - ID: "56702bfc-558a-556f-9ca7-85f6491d9778"
-      Hint: labels
-      Type: multilist
-      Value: "{BDF937C3-F391-440C-8C1C-2F0309912053}"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\demogod
     - ID: "6248b2dc-f9ef-548b-9d73-084135226ad7"
       Hint: description
-      Value: "Enjoy the breathtaking view of this course in the city of Selkirk in Canada. Opening with a beautiful par-five featuring majestic pines down the right hand side, the golf course gives you a hint of what to expect."
-    - ID: "8c133b65-bc5e-50de-9553-0ecbb7d3534c"
-      Hint: longDescription
-      Value: "Long Description. Enjoy the breathtaking view of this course in the city of Selkirk in Canada. Opening with a beautiful par-five featuring majestic pines down the right hand side, the golf course gives you a hint of what to expect."
+      Value: "<p>Enjoy the breathtaking view of this course in the city of Selkirk in Canada. Opening with a beautiful par-five featuring majestic pines down the right hand side, the golf course gives you a hint of what to expect.</p>"
     - ID: "8d5d5171-6372-5791-8954-969d52f5ba8a"
       Hint: longitude
       Value: "-96.8833"
     - ID: "99784e81-863a-5d39-ae05-562ae7b586c9"
       Hint: image
       Value: |
-        <image alt="golf" mediaid="{17F4B6BB-82C1-4543-95A1-6E496D639D50}" />
+        <image alt="golf-original08.jpg" mediaid="" stylelabs-content-id="33215" thumbnailsrc="https://sitecoredemoteamdev.stylelabs.io/api/gateway/33215/thumbnail" src="https://sitecoredemoteamdev.stylelabs.io/api/public/content/11eedc38f5f8404cb6fb3e21ecd6acbc?v=248d21c4" stylelabs-content-type="Image" height="410" width="800" />
+    - ID: "bd683a5a-5441-4bdd-b7dd-fb4a91748ad9"
+      Hint: numberOfParticipants
+      Value: 6
+    - ID: "bde7b152-de3a-4459-91e3-cbdc591e5d58"
+      Hint: length
+      Value: 18
+    - ID: "d6648c57-b885-42b6-849c-843a8a40e027"
+      Hint: sportType
+      Value: Golf

@@ -10,8 +10,8 @@ class ContinueButton extends Component {
   }
 
   handleClick() {
-    this.props.onContinue();
-    this.props.currentContext.next();
+    Promise.resolve(this.props.onContinue())
+    .then(() => this.props.currentContext.next());  
   }
 
   render() {

@@ -8,7 +8,8 @@ import AppRoot from './AppRoot';
 import GraphQLClientFactory from './lib/GraphQLClientFactory';
 import config from './temp/config';
 import i18ninit from './i18n';
-import registerServiceWorker from './registerServiceWorker';
+import { getQueryStringValue } from "./util"
+import { identifyByEmail } from "./services/BoxeverService"
 
 /* eslint-disable no-underscore-dangle */
 
@@ -59,7 +60,16 @@ const graphQLClient = GraphQLClientFactory(config.graphQLEndpoint, false, initia
 */
 // initialize the dictionary, then render the app
 // note: if not making a multlingual app, the dictionary init can be removed.
-i18ninit(initLanguage).then(() => {
+i18ninit(initLanguage)
+.then(() => {
+  // Identify the user from an email address from the query string to handle clicks on email links
+  var email = getQueryStringValue("email");
+  if (email) {
+    return identifyByEmail(email);
+  }
+  return;
+})
+.then(() => {
   // HTML element to place the app into
   const rootElement = document.getElementById('root');
 
@@ -72,6 +82,4 @@ i18ninit(initLanguage).then(() => {
     />,
     rootElement
   );
-
-  registerServiceWorker();
 });

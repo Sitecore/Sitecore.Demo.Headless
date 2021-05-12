@@ -21,7 +21,7 @@ Languages:
       Value: "{C55B483C-EA7F-4E76-A066-985F7D9396CA}"
     - ID: "9efe8415-6dc7-5031-8679-56eb6c3db9b5"
       Hint: title
-      Value: Thank you for registering.
+      Value: Thank you.
     - ID: "e12d8770-1f35-56b5-8247-e53a6cebf4df"
       Hint: stepName
       Value: Finish
