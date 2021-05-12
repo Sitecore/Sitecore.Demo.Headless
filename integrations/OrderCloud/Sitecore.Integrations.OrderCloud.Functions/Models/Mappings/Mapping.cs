@@ -21,6 +21,7 @@ namespace Sitecore.Integrations.OrderCloud.Functions.Models.Mappings
             Culture = copy.Culture;
             Value = copy.Value;
             Facet = copy.Facet;
+            Where = copy.Where;
         }
 
         public string From { get; set; }
