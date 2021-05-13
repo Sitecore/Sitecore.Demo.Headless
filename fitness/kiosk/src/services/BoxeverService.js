@@ -235,20 +235,47 @@ export function forgetCurrentGuest() {
 
   return new Promise(function (resolve, reject) {
     try {
-      window._boxeverq.push(function() {
-        window.Boxever.browserCreate(
-          {},
-          function (response) {
-            if (!response) {
-              reject("No response provided.");
+      console.log("start promise");
+      // Code copied from Boxever library
+      window._boxeverq = [];
+      if (window.Boxever.storage) {
+        window.Boxever.storage.removeItem(window.Boxever.cookie_name);
+      }
+
+      window.Boxever.browserCreate(
+        {},
+        function (data) {
+          try {
+            if (!data || !data.ref) {
+              reject("No response or ref provided.");
             }
-            // Set the browser guest ref
-            window.Boxever.browser_id = response.ref;
+
+            // Code copied from Boxever library to make it into a promise
+            window._boxever.browser_id = data.ref;
+            // If ITP Version of Safari set storage with storage_ttl
+            if (window._boxever.isITPBrowser) {
+              window._boxever.storage.setItem(window._boxever.cookie_name, window._boxever.browser_id, {TTL: window._boxever.storage_ttl});
+            } else {
+              // Set the cookie expiration time to be the current time
+              // plus cookie_expires_days
+              window._boxever.storage.setItem(window._boxever.cookie_name, window._boxever.browser_id, window._boxever.cookie_expires_days);
+            }
+            // get the existing _boxeverq array
+            var _old_boxeverq = window._boxeverq;
+            // create a new _boxeverq object
+            window._boxeverq = new window.__boxeverQueue();
+            // execute all of the queued up events - apply()
+            // turns the array entries into individual arguments
+            window._boxeverq.push.apply(window._boxeverq, _old_boxeverq);
+            window._boxever.initWebFlowSDK();
             resolve();
-          },
-          'json'
-        );
-      });
+          } catch (e) {
+            window.BoxeverJERS.errors.push(e);
+            reject(e);
+          }
+        },
+        'json'
+      );
     } catch (err) {
       reject(err);
     }

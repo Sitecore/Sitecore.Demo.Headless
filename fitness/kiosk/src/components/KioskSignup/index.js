@@ -6,24 +6,8 @@ import { NavLink } from "react-router-dom";
 import { trackRegistration } from "../../services/BoxeverService";
 import { setRegisteredEventsFacets } from "../../services/EventService";
 import { flush } from "../../services/SessionService";
-
-const flushSession = () => {
-  flush()
-  .then(() => {
-    this.toggle();
-
-    // refreshing the current route
-    // workaround for https://github.com/ReactTraining/react-router/issues/1982#issuecomment-172040295
-    const currentLocation = this.props.history.location.pathname;
-    this.props.history.push("/null");
-    setTimeout(() => {
-      this.props.history.push(currentLocation);
-    });
-  })
-  .catch(err => {
-    console.error(err);
-  });
-};
+/* eslint-disable-next-line import/no-extraneous-dependencies */
+import { withRouter } from "react-router";
 
 class KioskSignup extends React.Component {
   state = {
@@ -67,6 +51,14 @@ class KioskSignup extends React.Component {
     .catch(err => {
       this.setState({ error: true });
       console.log(err);
+    });
+  }
+
+  flushSession() {
+    flush()
+    .then(() => this.props.history.push("/"))
+    .catch(err => {
+      console.error(err);
     });
   }
 
@@ -138,7 +130,7 @@ class KioskSignup extends React.Component {
             <NavLink
               to={"/"}
               className="btn btn-primary"
-              onClick={() => flushSession()}
+              onClick={() => this.flushSession()}
             >
               {t("End Session")}
             </NavLink>
@@ -159,7 +151,7 @@ class KioskSignup extends React.Component {
               <NavLink
                 to={"/"}
                 className="btn btn-primary"
-                onClick={() => flushSession()}
+                onClick={() => this.flushSession()}
               >
                 {t("End Session")}
               </NavLink>
@@ -177,4 +169,4 @@ class KioskSignup extends React.Component {
   }
 }
 
-export default translate()(KioskSignup);
+export default withRouter(translate()(KioskSignup));
