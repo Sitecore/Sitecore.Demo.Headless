@@ -43,10 +43,11 @@ class KioskSignup extends React.Component {
     const eventDate = this.props.fields.date.value;
     const eventUrlPath = window.location.pathname;
     const sportType = this.props.fields.sportType.value;
+    const imageUrl = this.props.fields.image.value.src;
 
     setIdentification(firstname, lastname, email)
     .then(() => this.setState({ signedUp: true }))
-    .then(() => trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType))
+    .then(() => trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType, imageUrl))
     .then(() => setRegisteredEventsFacets(eventId, eventName, eventDate, sportType))
     .catch(err => {
       this.setState({ error: true });
