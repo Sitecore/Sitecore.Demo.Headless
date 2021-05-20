@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { withTranslation } from "react-i18next";
 import { flush } from "../../services/SessionService";
+import { isAnonymousGuest } from "../../services/BoxeverService";
 
 import {
   Collapse,
@@ -21,7 +22,8 @@ class Navigation extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      isIdentified: false
     };
   }
 
@@ -54,10 +56,18 @@ class Navigation extends React.Component {
     this.props.history.push(url);
   }
 
+  componentDidMount() {
+    isAnonymousGuest()
+    .then(isAnonymous => {
+      this.setState({isIdentified: !isAnonymous});
+    })
+    .catch(e => {
+      console.log(e);
+    });
+  }
+
   render() {
-    const { t, context } = this.props;
-    const identification =
-      context && context.contact ? context.contact.identification : null;
+    const { t } = this.props;
 
     return (
       <div className="nav-container">
@@ -120,7 +130,7 @@ class Navigation extends React.Component {
                   {t("personalize")}
                 </NavLink>
               </NavItem>
-              {identification === "Known" ? null : (
+              { this.state.isIdentified ? null : (
                 <NavItem>
                   <NavLink
                     tag={Link}
