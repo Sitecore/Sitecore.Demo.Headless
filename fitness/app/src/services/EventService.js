@@ -27,7 +27,7 @@ export function removeFromFavorites(eventId, eventName) {
   });
 }
 
-export function register(eventId, eventName, eventDate, sportType, imageUrl) {
+export function register(eventId, eventName, eventDate, sportType) {
   return getGuestRef().then(response => {
     return boxeverPost(
       "/createguestdataextension?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents",
@@ -36,8 +36,7 @@ export function register(eventId, eventName, eventDate, sportType, imageUrl) {
         "eventName": eventName,
         "eventId": eventId,
         "eventDate": eventDate,
-        "sportType": sportType,
-        "imageUrl": imageUrl
+        "sportType": sportType
       }
     );
   }).catch(e => {

@@ -37,7 +37,7 @@ class EventDetailAnonymous extends React.Component {
     const imageUrl = this.props.routeData.fields.image.value.src;
     const eventUrlPath = window.location.pathname;
 
-    register(eventId, eventName, eventDate, sportType, imageUrl)
+    register(eventId, eventName, eventDate, sportType)
     .then(() => trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType, imageUrl))
     .then(() => {
       this.setState({
