@@ -74,13 +74,14 @@ export function getAll(take, skip, lat, lng, profiles) {
   });
 }
 
-export function setRegisteredEventsFacets(eventId, eventName, eventDate, sportType) {
+export function setRegisteredEventsFacets(eventId, eventName, eventDate, sportType, imageUrl) {
   var payload = {
     "key": eventName + " / " + eventId,
     "eventName": eventName,
     "eventId": eventId,
     "eventDate": eventDate,
-    "sportType": sportType
+    "sportType": sportType,
+    "imageUrl": imageUrl
   };
 
   // eslint-disable-next-line no-loop-func

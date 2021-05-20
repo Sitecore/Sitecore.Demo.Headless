@@ -5,10 +5,9 @@ import dayjs from "dayjs";
 import { withTranslation } from "react-i18next";
 import EventDetail from "../EventDetail";
 import EventFavoriteButton from "../EventFavoriteButton";
-import { getGuestRef, getRegisteredEventsResponse, isAnonymousGuestInGuestResponse, isRegisteredToEventInGuestResponse, isEventFavorited } from "../../services/BoxeverService";
+import { getGuestRef, getRegisteredEventsResponse, isAnonymousGuestInGuestResponse, isRegisteredToEventInGuestResponse, isEventFavorited, trackRegistration } from "../../services/BoxeverService";
 import { register } from "../../services/EventService";
 import RegistrationPrompt from "../RegistrationPrompt";
-import EventSubscribeButton from "../EventSubscribeButton";
 import Loading from "../Loading";
 
 class EventDetailAnonymous extends React.Component {
@@ -35,8 +34,11 @@ class EventDetailAnonymous extends React.Component {
     const eventName = this.props.routeData.name;
     const eventDate = this.props.routeData.fields.date.value;
     const sportType = this.props.routeData.fields.sportType.value;
+    const imageUrl = this.props.routeData.fields.image.value.src;
+    const eventUrlPath = window.location.pathname;
 
-    register(eventId, eventName, eventDate, sportType)
+    register(eventId, eventName, eventDate, sportType, imageUrl)
+    .then(() => trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType, imageUrl))
     .then(() => {
       this.setState({
         promptOpen: !this.state.promptOpen,

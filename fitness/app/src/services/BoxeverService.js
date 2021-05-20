@@ -172,7 +172,8 @@ export function trackRegistration(
   eventName = required(),
   eventDate = required(),
   eventUrlPath = required(),
-  sportType = required()
+  sportType = required(),
+  imageUrl = required()
 ) {
   return setAppSettings()
   .then(() => sendEventCreate({
@@ -181,7 +182,8 @@ export function trackRegistration(
     event_name: eventName,
     event_date: eventDate,
     event_urlPath: eventUrlPath,
-    event_sportType: sportType
+    event_sportType: sportType,
+    event_image: imageUrl
   }));
 }
 

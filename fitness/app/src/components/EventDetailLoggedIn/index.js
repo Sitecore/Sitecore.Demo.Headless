@@ -8,6 +8,7 @@ import { register } from "../../services/EventService";
 import EventFavoriteButton from "../EventFavoriteButton";
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { withRouter } from "react-router";
+import { trackRegistration } from "../../services/BoxeverService";
 
 class EventDetailLoggedIn extends React.Component {
   state = {
@@ -31,9 +32,12 @@ class EventDetailLoggedIn extends React.Component {
     const eventName = this.props.routeData.name;
     const eventDate = this.props.fields.date.value;
     const sportType = this.props.fields.sportType.value;
-    
+    const eventUrlPath = window.location.pathname;
+    const imageUrl = this.props.routeData.fields.image.value.src;
+
     register(eventName, eventId, sportType, eventDate)
-      .then(response => {
+    .then(() => trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType, imageUrl))
+    .then(response => {
         this.toggle();
         // refreshing the current route
         // workaround for https://github.com/ReactTraining/react-router/issues/1982#issuecomment-172040295
