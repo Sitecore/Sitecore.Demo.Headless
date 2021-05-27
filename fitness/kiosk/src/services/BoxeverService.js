@@ -237,7 +237,6 @@ export function forgetCurrentGuest() {
 
   return new Promise(function (resolve, reject) {
     try {
-      console.log("start promise");
       // Code copied from Boxever library
       window._boxeverq = [];
       if (window.Boxever.storage) {

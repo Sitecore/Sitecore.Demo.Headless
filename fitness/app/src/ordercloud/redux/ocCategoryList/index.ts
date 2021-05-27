@@ -71,7 +71,6 @@ const ocCategoryListSlice = createSlice({
     });
     builder.addCase(setListOptions.rejected, (state, action) => {
       state.error = action.error;
-      console.log("test");
       state.loading = false;
     });
   },

@@ -17,7 +17,6 @@ const useOcCategoryDetail = (
 
   useEffect(() => {
     let promise;
-    console.log(categoryId);
     if (categoryId && isAuthenticated) {
       promise = dispatch(setCategoryId(categoryId));
     }

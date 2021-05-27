@@ -36,7 +36,6 @@ const getMessagingToken = async () => {
     const messaging = firebase.messaging();
     await Notification.requestPermission();
     const token = await messaging.getToken();
-    console.log({ token });
     return token;
   } catch (error) {
     console.error(error);
@@ -82,7 +81,6 @@ export const initializeFirebase = callback => {
     const messaging = firebase.messaging();
     messaging.usePublicVapidKey(firebaseMessagingPushKey);
     messaging.onMessage(function(payload) {
-      console.log("Message received. ", payload);
       callback(payload);
     });
   } catch (err) {
