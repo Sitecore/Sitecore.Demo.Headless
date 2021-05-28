@@ -88,12 +88,12 @@ class EventList extends React.Component {
   }
 
   render() {
-    const { events, loading, total, take } = this.state;
+    const { events, loading, total } = this.state;
     const { fields, params, width, height, t } = this.props;
 
     const showLoadMore = parseBooleanValue(params.showLoadMore);
 
-    const canLoadMore = total > take;
+    const canLoadMore = events.length < total;
 
     let eventItems = [];
     if (loading) {

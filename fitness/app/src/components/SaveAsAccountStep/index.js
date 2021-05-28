@@ -5,7 +5,12 @@ import { withTranslation } from "react-i18next";
 import { setIdentification } from "../../services/IdentificationService";
 import Consent from "../Consent";
 import ContinueButton from "../ContinueButton";
-import { getGuestRef, getRegisteredEventsResponse, isAnonymousGuestInGuestResponse } from "../../services/BoxeverService";
+import {
+  getGuestRef,
+  getRegisteredEventsResponse,
+  isAnonymousGuestInGuestResponse,
+  isBoxeverConfigured
+} from "../../services/BoxeverService";
 import Loading from "../Loading";
 
 class SaveAsAccountStep extends Component {
@@ -13,7 +18,7 @@ class SaveAsAccountStep extends Component {
     firstname: "",
     lastname: "",
     email: "",
-    shouldDisplayLoading: true
+    shouldDisplayLoading: isBoxeverConfigured()
   };
 
   constructor(props) {
@@ -31,6 +36,10 @@ class SaveAsAccountStep extends Component {
   }
 
   onCreateClick() {
+    if (!isBoxeverConfigured()) {
+      return new Promise(function (resolve) { resolve(); });
+    }
+
     const { firstname, lastname, email } = this.state;
 
     return setIdentification(firstname, lastname, email)
@@ -44,6 +53,10 @@ class SaveAsAccountStep extends Component {
   }
 
   componentDidMount() {
+    if (!isBoxeverConfigured()) {
+      return;
+    }
+
     getGuestRef()
     .then(response => {
       return getRegisteredEventsResponse(response.guestRef);

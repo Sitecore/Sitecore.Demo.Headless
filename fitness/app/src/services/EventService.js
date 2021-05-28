@@ -1,6 +1,6 @@
 import { isDisconnected, isConnectedToLocalInstance } from "../util";
 import { get, getActionUrl, boxeverGet, boxeverPost, boxeverDelete } from "./GenericService";
-import { getGuestRef, getPersonalizedEvents } from "./BoxeverService";
+import { getGuestRef, getPersonalizedEvents, isBoxeverConfigured } from "./BoxeverService";
 
 export function addToFavorites(eventId, eventName, eventDate, sportType) {
   return getGuestRef().then(response => {
@@ -53,10 +53,9 @@ export function unregister(eventId, eventName) {
 }
 
 function paginateEvents(take, skip, eventsResponse) {
-  // TODO: Validate this skip/take logic is working as expected.
   if (skip >= eventsResponse.total) {
     eventsResponse.events = [];
-  } else if (skip + take > eventsResponse.total) {
+  } else if (take === -1 || skip + take > eventsResponse.total) {
     eventsResponse.events = eventsResponse.events.slice(skip);
   } else {
     eventsResponse.events = eventsResponse.events.slice(skip, take);
@@ -92,16 +91,19 @@ export function getAll(take, skip, lat, lng, profiles, personalize) {
   }
 
   const isConnectedSitecoreInstanceLocal = isConnectedToLocalInstance();
+  const isBoxeverDisabled = !isBoxeverConfigured();
+  const shouldNotPersonalize = !personalize;
+
   if (isConnectedSitecoreInstanceLocal) {
     // The connected mode Sitecore instance is running on Docker on a developer machine and is unreachable from the Internet.
     console.log("Getting non-personalized events from Sitecore as we are running in connected mode to a local Sitecore instance.");
-  }
-  const shouldNotPersonalize = !personalize;
-  if (shouldNotPersonalize) {
+  } else if (isBoxeverDisabled) {
+    console.log("Getting non-personalized events from Sitecore as the Boxever integration is not configured.");
+  } else if (shouldNotPersonalize) {
     console.log("Getting non-personalized events from Sitecore as the UI component is configured to get non-personalized events.");
   }
 
-  if (isConnectedSitecoreInstanceLocal || shouldNotPersonalize) {
+  if (isConnectedSitecoreInstanceLocal || isBoxeverDisabled || shouldNotPersonalize) {
     filteredSportsPayload.take = take;
     filteredSportsPayload.skip = skip;
 
@@ -156,6 +158,10 @@ export function getRegisteredEvents() {
     return get(`/events/getregistrations`, {}, false);
   }
 
+  if (!isBoxeverConfigured()) {
+    return new Promise(function (resolve) { resolve(); });
+  }
+
   return getGuestRef()
   .then(response => boxeverGet(
     "/getguestdataextensionexpanded?guestRef="+ response.guestRef + "&dataExtensionName=RegisteredEvents", {}
@@ -174,6 +180,10 @@ export function getFavoritedEvents() {
     console.log("Getting favorited events from fake data as we are running in disconnected mode.");
 
     return get(`/events/getfavorites`, {}, false);
+  }
+
+  if (!isBoxeverConfigured()) {
+    return new Promise(function (resolve) { resolve(); });
   }
 
   return getGuestRef()

@@ -74,16 +74,8 @@ Languages:
               s:par=""
               s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0" />
             <r
-              uid="{C23C04B7-C0AE-5771-BC28-89246ABBD259}"
-              p:after="r[@uid='{1298BC0B-22DC-5424-9824-62A283B7AECD}']"
-              s:rname="InputFormField"
-              s:ds="{A13BACF2-7EC0-57EC-ABF8-39847F876990}"
-              s:id="{95593F0E-7640-5488-93C1-2AB61E9BA751}"
-              s:par=""
-              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0/hf-createaccount-form-{1298BC0B-22DC-5424-9824-62A283B7AECD}-0" />
-            <r
               uid="{08202CCC-6756-5042-B58E-D365DE44F030}"
-              p:after="r[@uid='{C23C04B7-C0AE-5771-BC28-89246ABBD259}']"
+              p:after="r[@uid='{1298BC0B-22DC-5424-9824-62A283B7AECD}']"
               s:rname="InputFormField"
               s:ds="{EE6520F0-EFB3-57C3-9BE1-E75125FAC26C}"
               s:id="{95593F0E-7640-5488-93C1-2AB61E9BA751}"
@@ -98,8 +90,16 @@ Languages:
               s:par=""
               s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0/hf-createaccount-form-{1298BC0B-22DC-5424-9824-62A283B7AECD}-0" />
             <r
-              uid="{7413D681-4DC1-51F6-A962-28483A9B2D50}"
+              uid="{C23C04B7-C0AE-5771-BC28-89246ABBD259}"
               p:after="r[@uid='{5B15FFCF-ABE9-569A-9A20-8D5313CEC34D}']"
+              s:rname="InputFormField"
+              s:ds="{A13BACF2-7EC0-57EC-ABF8-39847F876990}"
+              s:id="{95593F0E-7640-5488-93C1-2AB61E9BA751}"
+              s:par=""
+              s:ph="/hf-body/hf-personalization-wizard-{D9C5338A-E893-560A-9733-EE9648B8FE3A}-0/hf-createaccount-form-{1298BC0B-22DC-5424-9824-62A283B7AECD}-0" />
+            <r
+              uid="{7413D681-4DC1-51F6-A962-28483A9B2D50}"
+              p:after="r[@uid='{C23C04B7-C0AE-5771-BC28-89246ABBD259}']"
               s:rname="RegistrationSuccessStep"
               s:ds="{7F85119E-113F-5BB9-8944-379445D629DF}"
               s:id="{9748DEFE-3AD9-55A2-BED2-FFE7458BA107}"

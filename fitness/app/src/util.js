@@ -26,7 +26,7 @@ module.exports.getHostname = () =>
  * @returns {string} query string key value
  */
 module.exports.getQueryStringValue = function(queryStringKey) {
-  if (window !== undefined && window.location.search) {
+  if (typeof window !== "undefined" && window.location.search) {
     var queryString = window.location.search;
     if (queryString) {
       var queryStringSubstringToLookFor = queryStringKey + "=";

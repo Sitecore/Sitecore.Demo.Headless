@@ -29,10 +29,10 @@ First, you must set and get some settings values in your Boxever organization.
 
 ### Apps Setup
 
-Using the client key obtained above, update the `_boxever_settings` object `client_key` property value in the following files:
+Using the client key obtained above, update the `REACT_APP_BOXEVER_CLIENT_KEY` value in the following files:
 
-* `\fitness\app\public\index.html`
-* `\fitness\kiosk\public\index.html`
+* `\fitness\app\.env`
+* `\fitness\kiosk\.env`
 
 ### Boxever Proxy
 

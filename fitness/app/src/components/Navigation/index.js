@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 import { withTranslation } from "react-i18next";
 import { flush } from "../../services/SessionService";
 import { isAnonymousGuest } from "../../services/BoxeverService";
-
+import { isOrderCloudConfigured } from "../../services/OrderCloudService";
 import {
   Collapse,
   Navbar,
@@ -69,6 +69,32 @@ class Navigation extends React.Component {
   render() {
     const { t } = this.props;
 
+    const shopNavItem = !isOrderCloudConfigured() ? null : (
+      <NavItem>
+        <NavLink
+          tag={Link}
+          to={"/shop"}
+          onClick={() => this.nav("/shop")}
+          className="nav-link"
+        >
+          Shop
+        </NavLink>
+      </NavItem>
+    );
+
+    const registerNavItem = this.state.isIdentified ? null : (
+      <NavItem>
+        <NavLink
+          tag={Link}
+          to={"/register"}
+          onClick={() => this.nav("/register")}
+          className="nav-link"
+        >
+          {t("register")}
+        </NavLink>
+      </NavItem>
+    );
+
     return (
       <div className="nav-container">
         <Navbar light>
@@ -90,16 +116,7 @@ class Navigation extends React.Component {
           />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink
-                  tag={Link}
-                  to={"/shop"}
-                  onClick={() => this.nav("/shop")}
-                  className="nav-link"
-                >
-                  Shop
-                </NavLink>
-              </NavItem>
+              {shopNavItem}
               <NavItem>
                 <NavLink
                   tag={Link}
@@ -130,18 +147,7 @@ class Navigation extends React.Component {
                   {t("personalize")}
                 </NavLink>
               </NavItem>
-              { this.state.isIdentified ? null : (
-                <NavItem>
-                  <NavLink
-                    tag={Link}
-                    to={"/register"}
-                    onClick={() => this.nav("/register")}
-                    className="nav-link"
-                  >
-                    {t("register")}
-                  </NavLink>
-                </NavItem>
-              )}
+              {registerNavItem}
               <NavItem>
                 <NavLink
                   tag={Link}

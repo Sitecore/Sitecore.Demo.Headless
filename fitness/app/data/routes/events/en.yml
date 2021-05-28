@@ -11,8 +11,9 @@ placeholders:
       fields:
         title: All events
       params:
+        take: "8"
         showInGrid: "1"
         showTitle: "0"
         showEventDescription: "0"
-        personalize: "0"
+        personalize: "1"
         showLoadMore: "1"

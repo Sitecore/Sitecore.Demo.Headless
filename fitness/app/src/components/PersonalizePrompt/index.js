@@ -4,7 +4,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { withTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { canUseDOM } from "../../utils";
-import { getSessionCount } from "../../services/BoxeverService";
+import { getSessionCount, isBoxeverConfigured } from "../../services/BoxeverService";
 import { hasSportsFacets } from "../../services/SportsService";
 import { personalizePromptLocalStorageKey } from "../../services/SessionService";
 
@@ -20,26 +20,34 @@ class PersonalizePrompt extends React.Component {
   }
 
   componentDidMount() {
+    const pageEditing = this.props.sitecoreContext.pageEditing === true;
+    if (pageEditing) {
+      this.setState({ pageEditing });
+      return;
+    }
+
+    if (!isBoxeverConfigured()) {
+      return;
+    }
+
+    if (!canUseDOM || localStorage.getItem(personalizePromptLocalStorageKey) !== null) {
+      return;
+    }
+
     var visitCount;
 
-    if (localStorage.getItem(personalizePromptLocalStorageKey) == null) {
-      getSessionCount()
-      .then(count => {
-        visitCount = parseInt(count.sessionCount);
-        return hasSportsFacets();
-      })
-      .then(hasSports => {
-        const pageEditing = this.props.sitecoreContext.pageEditing === true;
-        this.setState({ pageEditing });
-
-        if (pageEditing) {
-          this.setState({ open: false });
-        } else if (canUseDOM) {
-          const shouldOpen = !hasSports && (visitCount > 3) && localStorage.getItem(personalizePromptLocalStorageKey) !== "false";
-          this.setState({ open: shouldOpen });
-        }
-      });
-    }
+    getSessionCount()
+    .then(count => {
+      visitCount = parseInt(count.sessionCount);
+      return hasSportsFacets();
+    })
+    .then(hasSports => {
+      const shouldOpen = !hasSports && visitCount > 3;
+      this.setState({ open: shouldOpen });
+    })
+    .catch(e => {
+      console.log(e);
+    });
   }
 
   toggle() {

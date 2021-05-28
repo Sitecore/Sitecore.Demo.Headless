@@ -5,7 +5,12 @@ import { Placeholder, Text } from "@sitecore-jss/sitecore-jss-react";
 import { withTranslation } from "react-i18next";
 import { sendDemographicsToBoxever } from "../../services/DemographicsService";
 import { setIdentification } from "../../services/IdentificationService";
-import { getGuestRef, getRegisteredEventsResponse, isAnonymousGuestInGuestResponse } from "../../services/BoxeverService";
+import {
+  getGuestRef,
+  getRegisteredEventsResponse,
+  isAnonymousGuestInGuestResponse,
+  isBoxeverConfigured
+} from "../../services/BoxeverService";
 import ContinueButton from "../ContinueButton";
 import Consent from "../Consent";
 import Loading from "../Loading";
@@ -17,7 +22,7 @@ class CreateAccountStep extends React.Component {
     firstname: "",
     lastname: "",
     email: "",
-    shouldDisplayLoading: true
+    shouldDisplayLoading: isBoxeverConfigured()
   };
 
   constructor(props) {
@@ -39,6 +44,10 @@ class CreateAccountStep extends React.Component {
   }
 
   onContinueClick() {
+    if (!isBoxeverConfigured()) {
+      return new Promise(function (resolve) { resolve(); });
+    }
+
     const { firstname, lastname, email, gender, age } = this.state;
     var promises = [];
 
@@ -60,6 +69,10 @@ class CreateAccountStep extends React.Component {
   }
 
   componentDidMount() {
+    if (!isBoxeverConfigured()) {
+      return;
+    }
+
     getGuestRef()
     .then(response => {
       return getRegisteredEventsResponse(response.guestRef);

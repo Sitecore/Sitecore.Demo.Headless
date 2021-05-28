@@ -1,5 +1,5 @@
 module.exports = {
-  total: 53,
+  total: 12,
   events: [
     {
       url: "/events/tiburon-half-marathon",

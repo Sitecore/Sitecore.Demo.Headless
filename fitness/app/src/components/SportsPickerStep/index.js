@@ -8,6 +8,7 @@ import "rc-slider/assets/index.css";
 import ContinueButton from "../ContinueButton";
 import { withTranslation } from "react-i18next";
 import { setSportsFacets } from "../../services/SportsService";
+import { isBoxeverConfigured } from "../../services/BoxeverService";
 
 class SportsPickerStep extends Component {
   state = {
@@ -32,7 +33,11 @@ class SportsPickerStep extends Component {
     }
   }
 
-  handleContinueClick(event) {
+  handleContinueClick() {
+    if (!isBoxeverConfigured()) {
+      return new Promise(function (resolve) { resolve(); });
+    }
+
     return setSportsFacets(this.state.selectedSports);
   }
 

@@ -8,9 +8,8 @@ import "rc-slider/assets/index.css";
 import ContinueButton from "../ContinueButton";
 import PersonalizationResultsButton from "../PersonalizationResultsButton";
 import { translate } from "react-i18next";
-import {
-  setSportsFacets
-} from "../../services/SportsService";
+import { setSportsFacets } from "../../services/SportsService";
+import { isBoxeverConfigured } from "../../services/BoxeverService";
 
 class SportsPickerStep extends Component {
   state = {
@@ -26,17 +25,20 @@ class SportsPickerStep extends Component {
   }
 
   onCardClick(key, remove) {
-    let { selectedSports } = this.state;
     if (remove) {
       this.setState({ selectedItemKey: null });
-      selectedSports = this.updateSelectedSports(key, null);
+      this.updateSelectedSports(key, null);
     } else {
       this.setState({ selectedItemKey: key });
-      selectedSports = this.updateSelectedSports(key, undefined);
+      this.updateSelectedSports(key, undefined);
     }
   }
 
-  trackCompleteFavoriteSports(event){
+  trackCompleteFavoriteSports() {
+    if (!isBoxeverConfigured()) {
+      return new Promise(function (resolve) { resolve(); });
+    }
+
     return setSportsFacets(this.state.selectedSports);
   }
 
@@ -48,7 +50,6 @@ class SportsPickerStep extends Component {
       selectedSports[key] = value !== undefined ? value : 5;
     }
     this.setState({ selectedSports });
-    return selectedSports;
   }
 
   onSliderChange(value) {

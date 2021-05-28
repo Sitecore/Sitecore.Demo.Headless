@@ -1,12 +1,7 @@
 import React from "react";
 import { translate } from "react-i18next";
-import { NavLink } from "react-router-dom";
 
 class PersonalizationResultsButton extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleOnclick = () => {
     this.props.onClick()
     .then(() => {

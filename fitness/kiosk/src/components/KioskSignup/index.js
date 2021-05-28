@@ -3,7 +3,7 @@ import Consent from "../Consent";
 import { translate } from "react-i18next";
 import { setIdentification } from "../../services/IdentificationService";
 import { NavLink } from "react-router-dom";
-import { trackRegistration } from "../../services/BoxeverService";
+import { trackRegistration, isBoxeverConfigured } from "../../services/BoxeverService";
 import { setRegisteredEventsFacets } from "../../services/EventService";
 import { flush } from "../../services/SessionService";
 /* eslint-disable-next-line import/no-extraneous-dependencies */
@@ -37,6 +37,11 @@ class KioskSignup extends React.Component {
   }
 
   onCreateClick() {
+    if (!isBoxeverConfigured()) {
+      this.setState({ signedUp: true });
+      return;
+    }
+
     const { firstname, lastname, email } = this.state;
     const eventId = this.props.itemId;
     const eventName = this.props.fields.name.value;
@@ -64,11 +69,11 @@ class KioskSignup extends React.Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, id } = this.props;
     const { firstname, lastname, email, signedUp, error } = this.state;
 
     const form = (
-      <form className="form createAccount-form">
+      <form className="form createAccount-form" id={id}>
         <div className="form-body">
           <h2 className="form-title">{t("register")}</h2>
           <fieldset className="fieldset">
