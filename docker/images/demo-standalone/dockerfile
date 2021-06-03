@@ -22,10 +22,13 @@ FROM ${BASE_IMAGE} as base
 COPY --from=tools_assets /tools/ /tools/
 
 COPY --from=contenthub_connector_assets /module/cm/content /inetpub/wwwroot
+COPY --from=contenthub_connector_assets /module/transforms/cm/web.config.xdt /inetpub/wwwroot/transforms/web.config.chub.xdt
+COPY --from=contenthub_connector_assets /module/transforms/cm/App_Config/ConnectionStrings.config.xdt  /inetpub/wwwroot/transforms/App_Config/ConnectionStrings.config.chub.xdt
 COPY --from=headless_assets /module/cm/content /inetpub/wwwroot
 COPY --from=horizon_integration_assets /module/cm/content /inetpub/wwwroot
 COPY --from=spe_assets /module/cm/content /inetpub/wwwroot
 COPY --from=sps_assets /module/cm/content /inetpub/wwwroot
+
 
 # Create a nodejs build image
 FROM ${BUILD_IMAGE} as npm
