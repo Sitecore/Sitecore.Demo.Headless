@@ -4,14 +4,6 @@ trigger:
     include:
       - develop
       - upgrade/*
-schedules:
-  - cron: "0 17 * * 0"
-    displayName: Weekly Sunday build
-    branches:
-      include:
-      - main
-      - develop
-    always: true
 resources:
 - repo: self
   clean: true
