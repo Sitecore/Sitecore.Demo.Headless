@@ -11,7 +11,7 @@ import EventMap from "../EventMap";
 import EventLabel from "../EventLabel";
 import KioskSignup from "../KioskSignup";
 import Loading from "../Loading";
-import { isRegisteredToEvent } from "../../services/BoxeverService";
+import { isRegisteredToEvent, isBoxeverConfigured } from "../../services/BoxeverService";
 
 import length from '../../assets/icons/length.svg';
 import sportType from '../../assets/icons/sportType.svg';
@@ -22,11 +22,15 @@ class EventDetail extends React.Component {
     super(props);
     this.state = {
       isRegistered: false,
-      shouldDisplayLoading: true
+      shouldDisplayLoading: isBoxeverConfigured()
     };
   }
 
   componentDidMount() {
+    if (!isBoxeverConfigured()) {
+      return;
+    }
+
     isRegisteredToEvent(this.props.routeData.itemId)
     .then(isRegistered => {
       this.setState({
@@ -51,12 +55,7 @@ class EventDetail extends React.Component {
 
     const registerForm = this.state.isRegistered ?
       ( <></> ) :
-      (
-        <>
-          <a id="Register"></a>
-          <KioskSignup {...routeData} />
-        </>
-      );
+      ( <KioskSignup id={"RegisterForm"} {...routeData} /> );
 
     const registerButtonLabel = t(this.state.isRegistered ? "already-registered" : "register");
 
@@ -86,7 +85,7 @@ class EventDetail extends React.Component {
                 className="eventDetail-date"
                 render={date => dayjs(date).format("MMM D YYYY")}
               />
-              <a href="#Register" className="btn btn-primary">{registerButtonLabel}</a>
+              <a href="#RegisterForm" className="btn btn-primary">{registerButtonLabel}</a>
             </div>
             <div className="row eventDetail-image-overlay-metas">
               <EventLabel

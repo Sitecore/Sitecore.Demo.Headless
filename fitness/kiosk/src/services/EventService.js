@@ -1,14 +1,13 @@
 import { isDisconnected, isConnectedToLocalInstance } from "../util";
 import { get, getActionUrl, boxeverPost } from "./GenericService";
-import { getPersonalizedEvents, getGuestRef } from "./BoxeverService";
+import { getPersonalizedEvents, getGuestRef, isBoxeverConfigured } from "./BoxeverService";
 
 export const EventDisplayCount = 3;
 
 function paginateEvents(take, skip, eventsResponse) {
-  // TODO: Validate this skip/take logic is working as expected.
   if (skip >= eventsResponse.total) {
     eventsResponse.events = [];
-  } else if (skip + take > eventsResponse.total) {
+  } else if (take === -1 || skip + take > eventsResponse.total) {
     eventsResponse.events = eventsResponse.events.slice(skip);
   } else {
     eventsResponse.events = eventsResponse.events.slice(skip, take);
@@ -43,10 +42,17 @@ export function getAll(take, skip, lat, lng, profiles) {
     filteredSportsPayload.profiles = profiles.join("|");
   }
 
-  if (isConnectedToLocalInstance()) {
+  const isConnectedSitecoreInstanceLocal = isConnectedToLocalInstance();
+  const isBoxeverDisabled = !isBoxeverConfigured();
+
+  if (isConnectedSitecoreInstanceLocal) {
     // The connected mode Sitecore instance is running on Docker on a developer machine and is unreachable from the Internet.
     console.log("Getting non-personalized events from Sitecore as we are running in connected mode to a local Sitecore instance.");
+  } else if (isBoxeverDisabled) {
+    console.log("Getting non-personalized events from Sitecore as the Boxever integration is not configured.");
+  }
 
+  if (isConnectedSitecoreInstanceLocal || isBoxeverDisabled) {
     filteredSportsPayload.take = take;
     filteredSportsPayload.skip = skip;
 

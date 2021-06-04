@@ -36,11 +36,11 @@ class SportsFilter extends React.Component {
 
   onCardClick(key, remove) {
     this.setState(state => {
-      let first, selectedSports;
+      let selectedSports;
       if (remove) {
-        [first, ...selectedSports] = state.selectedSports;
+        selectedSports = state.selectedSports.filter(sport => sport !== key);
       } else {
-        selectedSports = state.selectedSports.concat(key);
+        selectedSports = state.selectedSports.concat(key).sort();
       }
       return {
         selectedSports

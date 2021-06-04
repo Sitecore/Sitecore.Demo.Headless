@@ -4,14 +4,6 @@ trigger:
     include:
       - develop
       - upgrade/*
-schedules:
-  - cron: "0 17 * * 0"
-    displayName: Weekly Sunday build
-    branches:
-      include:
-      - main
-      - develop
-    always: true
 resources:
 - repo: self
   clean: true
@@ -216,8 +208,7 @@ stages:
 - stage: Update_Portal_Databases_Nightly
   displayName: "Update 'nightly' version in portal databases"
   dependsOn:
-    - Docker_Windows
-    - Docker_Linux
+    - Release_Notes
   condition: and(succeeded('Docker_Windows'), succeeded('Docker_Linux'),eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
   jobs:
     - job: Update_Tags
@@ -240,8 +231,7 @@ stages:
 - stage: Update_DEV_Portal_Databases_Stable
   displayName: "Update 'stable' version in the DEV portal database"
   dependsOn:
-    - Docker_Windows
-    - Docker_Linux
+    - Release_Notes
   condition: and(succeeded('Docker_Windows'), succeeded('Docker_Linux'),eq(variables['Build.SourceBranch'], 'refs/heads/main'))
   jobs:
     - job: Update_Dev_Database
@@ -263,8 +253,7 @@ stages:
 - stage: Update_PROD_Portal_Database_Stable
   displayName: "Update 'stable' version in the PROD portal database"
   dependsOn:
-    - Docker_Windows
-    - Docker_Linux
+    - Release_Notes
   condition: and(succeeded('Docker_Windows'), succeeded('Docker_Linux'),eq(variables['Build.SourceBranch'], 'refs/heads/main'))
   jobs:
     - job: Update_Production_Database
@@ -325,3 +314,41 @@ stages:
             dependentOnFailedBuildCondition: false
             checkbuildsoncurrentbranch: false
             failTaskIfConditionsAreNotFulfilled: false
+
+- stage: Release_Notes
+  displayName: "Create Release Notes"
+  dependsOn:
+    - Docker_Windows
+    - Docker_Linux
+  condition: and(succeeded('Docker_Windows'), succeeded('Docker_Linux'),or( eq(variables['Build.SourceBranch'], 'refs/heads/develop'), eq(variables['Build.SourceBranch'], 'refs/heads/main')))
+  jobs:
+    - job: Generate_Release_Notes
+      pool:
+        vmImage: "windows-latest"
+      displayName: "Generate Release Notes"
+      steps:
+        - template: version.yml
+        - task: XplatGenerateReleaseNotes@3
+          inputs:
+            outputfile: "$(Build.ArtifactStagingDirectory)/releasenotes-headless-bx-oc-xm1-$(GitVersion.SemVer).md"
+            templateLocation: "File"
+            templatefile: "release-notes-template.hb"
+            dumpPayloadToConsole: true
+            dumpPayloadToFile: false
+            replaceFile: true
+            appendToFile: false
+            getParentsAndChildren: False
+            sortWi: true
+            checkStage: false
+        - task: PublishPipelineArtifact@1
+          inputs:
+            targetPath: "$(Build.ArtifactStagingDirectory)/releasenotes-headless-bx-oc-xm1-$(GitVersion.SemVer).md"
+            artifact: "Release Notes"
+            publishLocation: "pipeline"
+        - task: AzureCLI@2
+          displayName: "Upload release notes"
+          inputs:
+            azureSubscription: "$(azure.subscription)"
+            scriptType: "pscore"
+            scriptLocation: "inlineScript"
+            inlineScript: "az storage file upload --account-name dockerassets  --share-name release-notes --source $(Build.ArtifactStagingDirectory)/releasenotes-headless-bx-oc-xm1-$(GitVersion.SemVer).md"

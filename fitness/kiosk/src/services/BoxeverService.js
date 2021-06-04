@@ -1,6 +1,14 @@
 import { boxeverGet } from "./GenericService";
 import { required } from "../utils";
 
+export function isBoxeverConfigured() {
+  return !!(
+    typeof window !== "undefined" &&
+    window._boxever_settings &&
+    window._boxever_settings.client_key
+  );
+}
+
 function getConfigWithCurrentPage(config) {
   return Object.assign(
     {
@@ -33,18 +41,18 @@ function createFlowPayload(flowConfig) {
   );
 }
 
-function delayUntilBrowserIdIsAvailable(functionToDelay) {
-  if (window.Boxever.getID() === "anonymous") {
-    const timeToWaitInMilliseconds = 100;
-    console.log(`Boxever browserId is not yet available. Waiting ${timeToWaitInMilliseconds}ms before retrying.`);
-    window.setTimeout(delayUntilBrowserIdIsAvailable, timeToWaitInMilliseconds, functionToDelay);
-  } else {
+function delayUntilBoxeverIsReady(functionToDelay) {
+  if (window.Boxever && window.Boxever.getID() !== "anonymous" && window._boxeverq) {
     functionToDelay();
+  } else {
+    const timeToWaitInMilliseconds = 100;
+    console.log(`Boxever is not ready yet. Waiting ${timeToWaitInMilliseconds}ms before retrying.`);
+    window.setTimeout(delayUntilBoxeverIsReady, timeToWaitInMilliseconds, functionToDelay);
   }
 }
 
 function sendEventCreate(eventConfig) {
-  if (window === undefined) {
+  if (typeof window === "undefined" || !isBoxeverConfigured()) {
     return new Promise(function (resolve) { resolve(); });
   }
 
@@ -53,8 +61,8 @@ function sendEventCreate(eventConfig) {
 
   return new Promise(function (resolve, reject) {
     try {
-      window._boxeverq.push(function() {
-        delayUntilBrowserIdIsAvailable(function() {
+      delayUntilBoxeverIsReady(function() {
+        window._boxeverq.push(function() {
           window.Boxever.eventCreate(
             // Set the browserId on the event just before sending it to ensure it is up to date.
             createEventPayload(eventWithCurrentPage),
@@ -78,7 +86,7 @@ function sendEventCreate(eventConfig) {
 }
 
 function callFlows(flowConfig) {
-  if (window === undefined) {
+  if (typeof window === "undefined" || !isBoxeverConfigured()) {
     return new Promise(function (resolve) { resolve(); });
   }
 
@@ -87,8 +95,8 @@ function callFlows(flowConfig) {
 
   return new Promise(function (resolve, reject) {
     try {
-      window._boxeverq.push(function() {
-        delayUntilBrowserIdIsAvailable(function() {
+      delayUntilBoxeverIsReady(function() {
+        window._boxeverq.push(function() {
           window.Boxever.callFlows(
             // Set the browserId on the flow just before sending it to ensure it is up to date.
             createFlowPayload(eventWithCurrentPage),
@@ -231,13 +239,12 @@ export function identifyByEmail(
 
 // Flush Boxever local storage for current guest and starts a new anonymous visitor session
 export function forgetCurrentGuest() {
-  if (window === undefined) {
+  if (typeof window === "undefined" || !isBoxeverConfigured()) {
     return new Promise(function (resolve) { resolve(); });
   }
 
   return new Promise(function (resolve, reject) {
     try {
-      console.log("start promise");
       // Code copied from Boxever library
       window._boxeverq = [];
       if (window.Boxever.storage) {
@@ -319,6 +326,10 @@ function getGuestProfilePromise(
 }
 
 export function getGuestProfileResponse(guestRef) {
+  if (!isBoxeverConfigured()) {
+    return new Promise(function (resolve) { resolve(); });
+  }
+
   if (!guestRef) {
     return getGuestRef()
     .then(response => getGuestProfilePromise(response.guestRef));
@@ -339,8 +350,15 @@ export function isAnonymousGuestInGuestResponse(
 }
 
 export function isAnonymousGuest(guestRef) {
+  if (!isBoxeverConfigured()) {
+    return new Promise(function (resolve) { resolve(true); });
+  }
+
   return getGuestProfileResponse(guestRef)
-  .then(guestResponse => isAnonymousGuestInGuestResponse(guestResponse));
+  .then(guestResponse => isAnonymousGuestInGuestResponse(guestResponse))
+  .catch(e => {
+    console.log(e);
+  });
 }
 
 // ********************************
@@ -357,8 +375,15 @@ export function getGuestFullNameInGuestResponse(
 }
 
 export function getGuestFullName(guestRef) {
+  if (!isBoxeverConfigured()) {
+    return new Promise(function (resolve) { resolve(""); });
+  }
+
   return getGuestProfileResponse(guestRef)
-  .then(guestResponse => getGuestFullNameInGuestResponse(guestResponse));
+  .then(guestResponse => getGuestFullNameInGuestResponse(guestResponse))
+  .catch(e => {
+    console.log(e);
+  });
 }
 
 // ********************************
@@ -371,6 +396,10 @@ function getRegisteredEventsPromise(
 }
 
 export function getRegisteredEventsResponse(guestRef) {
+  if (!isBoxeverConfigured()) {
+    return new Promise(function (resolve) { resolve(); });
+  }
+
   if (!guestRef) {
     return getGuestRef()
     .then(response => getRegisteredEventsPromise(response.guestRef));
@@ -399,8 +428,15 @@ export function isRegisteredToEvent(
   eventId = required(),
   guestRef
 ) {
+  if (!isBoxeverConfigured()) {
+    return new Promise(function (resolve) { resolve(false); });
+  }
+
   return getRegisteredEventsResponse(guestRef)
-  .then(guestResponse => isRegisteredToEventInGuestResponse(eventId, guestResponse));
+  .then(guestResponse => isRegisteredToEventInGuestResponse(eventId, guestResponse))
+  .catch(e => {
+    console.log(e);
+  });
 }
 
 // ********************************
@@ -413,6 +449,10 @@ function getFavoritedEventsPromise(
 }
 
 export function getFavoritedEventsResponse(guestRef) {
+  if (!isBoxeverConfigured()) {
+    return new Promise(function (resolve) { resolve(); });
+  }
+
   if (!guestRef) {
     return getGuestRef()
     .then(response => getFavoritedEventsPromise(response.guestRef));
@@ -441,6 +481,13 @@ export function isEventFavorited(
   eventId = required(),
   guestRef
 ) {
+  if (!isBoxeverConfigured()) {
+    return new Promise(function (resolve) { resolve(false); });
+  }
+
   return getFavoritedEventsResponse(guestRef)
-  .then(guestResponse => isEventFavoritedInGuestResponse(eventId, guestResponse));
+  .then(guestResponse => isEventFavoritedInGuestResponse(eventId, guestResponse))
+  .catch(e => {
+    console.log(e);
+  });
 }

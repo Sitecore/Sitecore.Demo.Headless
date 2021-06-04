@@ -48,11 +48,11 @@ First, you must set and get some settings values in your Boxever organization.
 
 #### Apps setup
 
-1. Using the client key obtained above, update the `_boxever_settings` object `client_key` property value in the following files:
-   * `\fitness\app\public\index.html`
-   * `\fitness\kiosk\public\index.html`
-2. Rebuild the CM, app, and kiosk Docker images by following the instructions of the [Front-end JSS applications](#front-end-jss-applications) section.
-3. Come back to this point after rebuilding the Docker images.
+In order to be able to run the apps in connected mode, the Boxever client key must be set as an environment variable for each app.
+
+1. Using the client key obtained above, update the `REACT_APP_BOXEVER_CLIENT_KEY` value in the following files:
+   * `\fitness\app\.env`
+   * `\fitness\kiosk\.env`
 
 #### Boxever proxy setup
 

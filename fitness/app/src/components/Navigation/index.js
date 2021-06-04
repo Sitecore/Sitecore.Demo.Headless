@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { withTranslation } from "react-i18next";
 import { flush } from "../../services/SessionService";
-
+import { isAnonymousGuest } from "../../services/BoxeverService";
+import { isOrderCloudConfigured } from "../../services/OrderCloudService";
 import {
   Collapse,
   Navbar,
@@ -21,7 +22,8 @@ class Navigation extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      isIdentified: false
     };
   }
 
@@ -54,10 +56,44 @@ class Navigation extends React.Component {
     this.props.history.push(url);
   }
 
+  componentDidMount() {
+    isAnonymousGuest()
+    .then(isAnonymous => {
+      this.setState({isIdentified: !isAnonymous});
+    })
+    .catch(e => {
+      console.log(e);
+    });
+  }
+
   render() {
-    const { t, context } = this.props;
-    const identification =
-      context && context.contact ? context.contact.identification : null;
+    const { t } = this.props;
+
+    const shopNavItem = !isOrderCloudConfigured() ? null : (
+      <NavItem>
+        <NavLink
+          tag={Link}
+          to={"/shop"}
+          onClick={() => this.nav("/shop")}
+          className="nav-link"
+        >
+          Shop
+        </NavLink>
+      </NavItem>
+    );
+
+    const registerNavItem = this.state.isIdentified ? null : (
+      <NavItem>
+        <NavLink
+          tag={Link}
+          to={"/register"}
+          onClick={() => this.nav("/register")}
+          className="nav-link"
+        >
+          {t("register")}
+        </NavLink>
+      </NavItem>
+    );
 
     return (
       <div className="nav-container">
@@ -80,16 +116,7 @@ class Navigation extends React.Component {
           />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink
-                  tag={Link}
-                  to={"/shop"}
-                  onClick={() => this.nav("/shop")}
-                  className="nav-link"
-                >
-                  Shop
-                </NavLink>
-              </NavItem>
+              {shopNavItem}
               <NavItem>
                 <NavLink
                   tag={Link}
@@ -120,18 +147,7 @@ class Navigation extends React.Component {
                   {t("personalize")}
                 </NavLink>
               </NavItem>
-              {identification === "Known" ? null : (
-                <NavItem>
-                  <NavLink
-                    tag={Link}
-                    to={"/register"}
-                    onClick={() => this.nav("/register")}
-                    className="nav-link"
-                  >
-                    {t("register")}
-                  </NavLink>
-                </NavItem>
-              )}
+              {registerNavItem}
               <NavItem>
                 <NavLink
                   tag={Link}

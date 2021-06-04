@@ -44,7 +44,6 @@ class Layout extends React.Component {
   }
 
   onMessageReceived(payload) {
-    console.log("Layout. Message received. ", payload);
     if (!payload.notification) {
       console.warn(
         "Received empty notification body. The notification was already processed."

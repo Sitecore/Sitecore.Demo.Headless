@@ -7,6 +7,7 @@ import withScrollToTop from "../../hoc/withScrollToTop";
 import OcProductList from "../../ordercloud/components/OcProductList";
 import {getMasterImageUrl} from "../ProductDetail";
 import { Link } from "react-router-dom";
+import { isOrderCloudConfigured } from "../../services/OrderCloudService";
 
 import length from '../../assets/icons/length.svg';
 import sportType from '../../assets/icons/sportType.svg';
@@ -19,6 +20,13 @@ const getListImage = (p) => {
 const EventDetail = ({ routeData, date, cta, icon, description }) => {
   const routeFields = routeData.fields;
   const eventName = routeData.name.value;
+
+  const relatedProducts = !isOrderCloudConfigured() ? null : (
+    <div className="eventDetail-products">
+      <OcProductList options={{pageSize:4, categoryID: routeFields.sportType.value}} columns={{xs:2}} imgSrcMap={getListImage} hrefMap={p => `/products/${p.ID}`}/>
+      <Link className="btn btn-secondary" to={`/shop/${routeFields.sportType.value}`}>{`Shop All ${routeFields.sportType.value} Products`}</Link>
+    </div>
+  );
 
   return (
     <div className="eventDetail">
@@ -72,10 +80,7 @@ const EventDetail = ({ routeData, date, cta, icon, description }) => {
       <Text field={routeFields.description} tag="div" encode={false} className="eventDetail-description" />
       <EventMap {...routeFields} eventName={eventName} />
       </div>
-      <div className="eventDetail-products">
-        <OcProductList options={{pageSize:4, categoryID: routeFields.sportType.value}} columns={{xs:2}} imgSrcMap={getListImage} hrefMap={p => `/products/${p.ID}`}/>
-        <Link className="btn btn-secondary" to={`/shop/${routeFields.sportType.value}`}>{`Shop All ${routeFields.sportType.value} Products`}</Link>
-      </div>
+      {relatedProducts}
     </div>
   );
 };

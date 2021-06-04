@@ -1,12 +1,11 @@
 import { BuyerProduct } from 'ordercloud-javascript-sdk';
 import { ChangeEvent, FormEvent, FunctionComponent, useMemo, useState } from 'react'
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import useOcProductDetail from '../../ordercloud/hooks/useOcProductDetail'
 import formatPrice from '../../ordercloud/utils/formatPrice';
 
 interface ProductDetailProps {
   productId: string
-
 }
 
 export const getImageUrlByType = (a:any, type:string) => {
@@ -32,7 +31,7 @@ export const getSortedProductAssets = (p:BuyerProduct) => {
 
 const ProductDetail: FunctionComponent<ProductDetailProps> = ({ productId }) => {
   const { product } = useOcProductDetail(productId)
-  
+
   const history = useHistory()
 
   const [quantity, setQuantity] = useState(1);
@@ -43,7 +42,6 @@ const ProductDetail: FunctionComponent<ProductDetailProps> = ({ productId }) => 
     if (!product) return [] as any[];
     return getSortedProductAssets(product);
   }, [product])
-  console.log(history);
 
   const imagePreviewUrls = useMemo(() => {
     return assets.map(a => getImageUrlByType(a, 'preview'))
@@ -57,11 +55,11 @@ const ProductDetail: FunctionComponent<ProductDetailProps> = ({ productId }) => 
   const handleImageLoaded = () => {
     setImageLoaded(true)
   }
-  
+
   const handleQuantityChange = (e:ChangeEvent<HTMLInputElement>) => {
     setQuantity(Number(e.target.value));
   }
-  
+
   const calculatedPrice = useMemo(() => {
     if (product) {
       const price = (product.PriceSchedule && product.PriceSchedule.PriceBreaks[0]) ? product.PriceSchedule.PriceBreaks[0].Price : 99;
@@ -77,9 +75,12 @@ const ProductDetail: FunctionComponent<ProductDetailProps> = ({ productId }) => 
   return (
     <>
       <div className="direction-fixedHeader headerBar">
-        <NavLink className="btn-back" to={"/"}>
+        <button className="btn-back btn" style={{ padding: 0 }}
+          onClick={() => {
+            history.goBack();
+          }}>
           Lighthouse Fitness
-        </NavLink>
+        </button>
         <h1 className="headerBar-title">{product && product.Name}</h1>
       </div>
       <main>
@@ -107,7 +108,6 @@ const ProductDetail: FunctionComponent<ProductDetailProps> = ({ productId }) => 
                   </div>
                   <button className="btn btn-primary" type="submit" id="addToCart">{`${calculatedPrice} Add to Cart`}</button>
                 </form>
-
             </div>
           </div>
         )}

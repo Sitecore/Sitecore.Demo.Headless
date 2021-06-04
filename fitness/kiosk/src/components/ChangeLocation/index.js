@@ -55,7 +55,6 @@ class ChangeLocation extends React.Component {
             response.data.results.length > 0
           ) {
             const firstMatch = response.data.results[0];
-            console.log({ location: firstMatch });
 
             const location = firstMatch.formatted_address;
             const { lat, lng } = firstMatch.geometry.location;
@@ -97,7 +96,6 @@ class ChangeLocation extends React.Component {
           response.data.results.length > 0
         ) {
           const firstMatch = response.data.results[0];
-          console.log({ location: firstMatch });
           const location = firstMatch.formatted_address;
           this.setState({ location });
           this.setState({ locationSet: false });

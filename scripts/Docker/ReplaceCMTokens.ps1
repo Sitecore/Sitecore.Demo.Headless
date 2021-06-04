@@ -9,6 +9,7 @@ Get-ChildItem C:\inetpub\wwwroot\dist *.js -recurse -verbose |
         $c = $c -replace '%OC_BASE_API_URL%', $env:OC_BASE_API_URL
 
         $c = $c -replace '%BOXEVER_PROXY_URL%', $env:BOXEVER_PROXY_URL
+        $c = $c -replace '%boxeverClientKey%', $env:REACT_APP_BOXEVER_CLIENT_KEY
 
         $c = $c -replace '%layoutServiceHost%', $env:PROXY_API_HOST
 

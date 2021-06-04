@@ -38,6 +38,25 @@ i18ninit().then(() => {
   // HTML element to place the app into
   const rootElement = document.getElementById("root");
 
+  // HACK: The %something% tokens are replaced just before runtime, way after the Webpack build happened.
+  // The final strings can be empty or contain values from the Docker environment variables.
+  // To prevent Webpack code optimization to remove the falsy string checks and console.error statements from the browser bundle, we are using the JavaScript (A, B) syntax which always returns the last expression (B) with Math.min() as the first expression to minimize the browser work.
+  const boxeverClientKey = (Math.min(), `${process.env.REACT_APP_BOXEVER_CLIENT_KEY}` || "%boxeverClientKey%");
+  // Checks that the key is not empty and not the token anymore
+  const isBoxeverClientKeyConfigured = boxeverClientKey && boxeverClientKey[0] !== "%";
+
+  if (isBoxeverClientKeyConfigured) {
+    // Append the Boxever settings and JavaScript library to the page
+    const boxeverSettingsScriptElement = document.createElement("script");
+    boxeverSettingsScriptElement.innerText = `var _boxever_settings = { client_key: "${boxeverClientKey}", target: "https://api.boxever.com/v1.2", cookie_domain: ".lighthouse-fitness.sitecoredemo.com/", web_flow_target: "https://d35vb5cccm4xzp.cloudfront.net", pointOfSale: "lighthouse-fitness" };`
+    rootElement.parentElement.appendChild(boxeverSettingsScriptElement);
+
+    const boxeverLibraryScriptElement = document.createElement("script");
+    boxeverLibraryScriptElement.type = "text/javascript";
+    boxeverLibraryScriptElement.src = "https://d1mj578wat5n4o.cloudfront.net/boxever-1.4.1.js";
+    rootElement.parentElement.appendChild(boxeverLibraryScriptElement);
+  }
+
   renderFunction(
     <AppRoot
       path={window.location.pathname}

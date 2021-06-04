@@ -32,7 +32,7 @@ placeholders:
             text: Skip this
         placeholders:
           hf-createaccount-form:
-            - id: email-input
             - id: firstname-input
             - id: lastname-input
+            - id: email-input
       - id: registration-success

@@ -5,10 +5,17 @@ import dayjs from "dayjs";
 import { withTranslation } from "react-i18next";
 import EventDetail from "../EventDetail";
 import EventFavoriteButton from "../EventFavoriteButton";
-import { getGuestRef, getRegisteredEventsResponse, isAnonymousGuestInGuestResponse, isRegisteredToEventInGuestResponse, isEventFavorited } from "../../services/BoxeverService";
+import {
+  getGuestRef,
+  getRegisteredEventsResponse,
+  isAnonymousGuestInGuestResponse,
+  isRegisteredToEventInGuestResponse,
+  isEventFavorited,
+  trackRegistration,
+  isBoxeverConfigured
+} from "../../services/BoxeverService";
 import { register } from "../../services/EventService";
 import RegistrationPrompt from "../RegistrationPrompt";
-import EventSubscribeButton from "../EventSubscribeButton";
 import Loading from "../Loading";
 
 class EventDetailAnonymous extends React.Component {
@@ -17,7 +24,7 @@ class EventDetailAnonymous extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.onRegister = this.onRegister.bind(this);
     this.state = {
-      shouldDisplayLoading: true,
+      shouldDisplayLoading: isBoxeverConfigured(),
       isAnonymousGuest: true,
       isRegistered: false,
       isFavorited: false,
@@ -31,12 +38,23 @@ class EventDetailAnonymous extends React.Component {
   }
 
   onRegister() {
+    if (!isBoxeverConfigured()) {
+      this.setState({
+        promptOpen: !this.state.promptOpen,
+        isRegistered: true,
+      });
+      return;
+    }
+
     const eventId = this.props.routeData.itemId;
     const eventName = this.props.routeData.name;
     const eventDate = this.props.routeData.fields.date.value;
     const sportType = this.props.routeData.fields.sportType.value;
+    const imageUrl = this.props.routeData.fields.image.value.src;
+    const eventUrlPath = window.location.pathname;
 
     register(eventId, eventName, eventDate, sportType)
+    .then(() => trackRegistration(eventId, eventName, eventDate, eventUrlPath, sportType, imageUrl))
     .then(() => {
       this.setState({
         promptOpen: !this.state.promptOpen,
@@ -49,6 +67,10 @@ class EventDetailAnonymous extends React.Component {
   }
 
   componentDidMount() {
+    if (!isBoxeverConfigured()) {
+      return;
+    }
+
     var guestRef;
 
     getGuestRef()
@@ -67,7 +89,8 @@ class EventDetailAnonymous extends React.Component {
       });
 
       return isEventFavorited(this.props.routeData.itemId, guestRef);
-    }).then(isFavorited => {
+    })
+    .then(isFavorited => {
       this.setState({
         isFavorited,
         shouldDisplayLoading: false

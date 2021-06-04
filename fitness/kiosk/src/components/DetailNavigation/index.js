@@ -6,10 +6,6 @@ import { flush } from "../../services/SessionService";
 import { withRouter } from "react-router";
 
 class DetailNavigation extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   flushSession() {
     flush()
     .then(() => this.props.history.push("/"))
@@ -54,7 +50,7 @@ class DetailNavigation extends React.Component {
             </li>
             <li className="nav-item">
               <a
-                href="#"
+                href="#EndSession"
                 onClick={() => this.flushSession()}
                 className="nav-link nav-link__close"
               >
