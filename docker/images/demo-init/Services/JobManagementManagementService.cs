@@ -35,12 +35,12 @@ namespace Sitecore.Demo.Init.Services
 				await stateService.SetState(InstanceState.Initializing);
 
 				await new WaitForContextDatabase(initContext).Run();
+				await new UpdateDamUri(initContext).Run();
 				await new PublishItems(initContext).Run();
 				await new PopulateManagedSchema(initContext).Run();
 				await new RestartCM(initContext).Run();
 				await new RestartCD(initContext).Run();
 				await new WaitForSitecoreToStart(initContext).Run();
-                await new UpdateDamUri(initContext).Run();
 				await new RebuildLinkDatabase(initContext).Run();
 
 				await stateService.SetState(InstanceState.WarmingUp);
