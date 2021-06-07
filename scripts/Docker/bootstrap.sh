@@ -5,6 +5,7 @@ find dist/ -name '*.base' | while read filename; do
         -e "s|%OC_BUYER_CLIENT_ID%|${OC_BUYER_CLIENT_ID}|g" \
         -e "s|%OC_BASE_API_URL%|${OC_BASE_API_URL}|g" \
         -e "s|%BOXEVER_PROXY_URL%|${BOXEVER_PROXY_URL}|g" \
+        -e "s|%boxeverClientKey%|${REACT_APP_BOXEVER_CLIENT_KEY}|g" \
         -e "s|%layoutServiceHost%|$PROXY_API_HOST|g" \
         -e "s|%firebaseMessagingSenderId%|$REACT_APP_FIREBASE_SENDER_ID|g" \
         -e "s|%firebaseMessagingPushKey%|$REACT_APP_FIREBASE_MESSAGING_PUSH_KEY|g" \
