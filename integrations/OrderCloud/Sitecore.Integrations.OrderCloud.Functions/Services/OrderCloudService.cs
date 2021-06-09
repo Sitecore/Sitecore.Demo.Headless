@@ -19,6 +19,7 @@ namespace Sitecore.Integrations.OrderCloud.Functions.Services
         private readonly ILogger _log;
 
         private readonly IOrderCloudClient _client;
+        private readonly string DefaultSupplierId = "default-supplier";
 
         public OrderCloudService(IOrderCloudClient client, ILogger log)
         {
@@ -45,7 +46,7 @@ namespace Sitecore.Integrations.OrderCloud.Functions.Services
                     cc.Active = category.Active;
                     cc.ParentID = category.ParentID;
                     cc.xp = category.xp;
-                    _log.LogInformation($"Adding {category.Name} to be processed");
+                    _log.LogInformation($"Adding Category: {category.Name} to be processed");
                     categories.Add(cc);
                 }
             }
@@ -55,6 +56,8 @@ namespace Sitecore.Integrations.OrderCloud.Functions.Services
             {
                 mapResult.Product.DefaultPriceScheduleID = mapResult.PriceSchedules.Single().ID;
             }
+            mapResult.Product.DefaultSupplierID = DefaultSupplierId;
+            _log.LogInformation($"Adding product {mapResult.Product.ID}.DefaultSupplierID to Supplier {DefaultSupplierId}");
 
             Save(mapResult.Catalogs, categories, mapResult.PriceSchedules, mapResult.ProductFacets, mapResult.Product);
         }
