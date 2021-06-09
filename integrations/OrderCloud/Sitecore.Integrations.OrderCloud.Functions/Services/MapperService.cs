@@ -154,7 +154,6 @@ namespace Sitecore.Integrations.OrderCloud.Functions.Services
 
             return result;
         }
-
         private static object GetPropertyTarget(MapResult mapResult, IEntity entity, Mapping mapping, MapContext context)
         {
             object result;
