@@ -306,7 +306,7 @@ stages:
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
             # TODO: Change demoHeadless groupName for the new headless + BX + OC demo
-            buildParameters: "namespace: demo, groupName: demoHeadless, tag: $(GitVersion.SemVer)"
+            buildParameters: "namespace: demo, groupName: demoHeadlessChXmBxOc, tag: $(GitVersion.SemVer)"
             authenticationMethod: "Personal Access Token"
             password: "$(System.AccessToken)"
             enableBuildInQueueCondition: false
