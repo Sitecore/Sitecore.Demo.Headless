@@ -19,6 +19,8 @@ Clone the Sitecore.Demo.Headless repository locally - defaults are configured fo
 * The latest [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows/).
 * Sitecore JSS CLI installed globally
   * `npm install -g @sitecore-jss/sitecore-jss-cli`
+* Clone https://github.com/Sitecore/Sitecore.Demo.Platform - defaults are configured for **`C:\Projects\Sitecore.Demo.Platform`**
+  * Sitecore.Demo.Platform\items contents are used by cm
 
 ## Preparing Docker
 
