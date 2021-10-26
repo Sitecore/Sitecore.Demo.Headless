@@ -10,6 +10,11 @@ steps:
     useConfigFile: true
     configFilePath: 'GitVersion.yml'
 - task: PowerShell@2
+  displayName: 'Update ProjectBuildNumber'
+  inputs:
+    targetType: 'inline'
+    script: 'Write-Host "##vso[task.setvariable variable=ProjectBuildNumber;]$(GitVersion.SemVer)"'
+- task: PowerShell@2
   displayName: 'Set correct image tag'
   inputs:
     targetType: 'inline'
