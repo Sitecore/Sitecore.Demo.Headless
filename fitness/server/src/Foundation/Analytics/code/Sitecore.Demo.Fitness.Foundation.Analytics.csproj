@@ -52,7 +52,7 @@
     <PackageReference Include="Microsoft.AspNet.Mvc">
       <Version>5.2.4</Version>
     </PackageReference>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Sitecore.Analytics">
       <Version>10.0.*-*</Version>
       <PrivateAssets>all</PrivateAssets>
