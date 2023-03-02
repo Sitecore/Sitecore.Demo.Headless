@@ -34,9 +34,10 @@ Clone the Sitecore.Demo.Headless repository locally - defaults are configured fo
 3. Create certificates and initialize the environment file:
    * `.\init.ps1 -InitEnv -LicenseXmlPath C:\license\license.xml -AdminPassword b`
    * You can change the admin password and the license.xml file path to match your needs.
+   * **Note:** The admin username is set to "superuser" in this demo instead of the default "admin".
 4. Pull the demo Docker images:
    * `docker-compose pull`
-   * This will pull all of the necessary images to spin up your Sitecore environment. It will take quite some time if this is the first time you execute it.
+   * This will pull all of the necessary non-custom Docker images to spin up your Sitecore environment. It will take quite some time if this is the first time you execute it.
 
 ### Boxever
 
@@ -79,20 +80,36 @@ The published demo images have no Google Maps API keys. To enable Google Maps, y
 3. In the `.env` file, paste the "API key" as the value of the `REACT_APP_GOOGLE_API_KEY` entry.
 4. Save the file.
 
-## Running the demo
-
-### Starting the demo containers
+## Building the demo
 
 1. Open an elevated (as administrator) PowerShell session.
 2. Navigate to your repository clone folder:
    * `cd C:\Projects\Sitecore.Demo.Headless`
-3. Stop the IIS service:
+3. Build your Docker images:
+   * `docker-compose build --memory 8G --pull`
+   * This command will:
+     * Pull all the base images required by the dockerfiles.
+       * You can remove the `--pull` switch to skip this step.
+     * Build the demo Docker images using the memory limit passed in the `--memory` argument.
+       * Adjust the number based on your available free memory.
+       * The format is a number followed by the letter `G` for Gb.
+       * The `--memory` argument is optional.
+   * It will take quite some time if this is the first time you execute it.
+
+## Running the demo
+
+### Starting the demo containers
+
+1. Once the Docker images are built, open an elevated (as administrator) PowerShell session.
+2. Navigate to your repository clone folder:
+   * `cd C:\Projects\Sitecore.Demo.Headless`
+3. Stop the IIS service: (_if applicable_)
    * `iisreset /stop`
-   * This is required each time you want to use the demo as the Traefik container is using the same port (443) as IIS.
+   * This is required each time you want to use the demo as the Traefik container uses port (443), which is used by IIS.
 4. Start the demo containers:
    * `docker-compose up -d`
-   * This will spin up your Sitecore environment.
-   * The Sitecore instance will be up and available within minutes, but not fully working until the init container jobs are completed. The init container runs scripts that:
+   * This will start your Sitecore environment. It will take quite some time if this is the first time you execute it.
+   * After starting the containers, the Sitecore instance will be up and available within minutes, but not fully working until the init container jobs are completed. The init container runs scripts that:
      * Publish the master database to the web database using Sitecore Publishing Service.
      * Rebuild the link database.
      * Rebuild Sitecore indexes.
@@ -116,7 +133,7 @@ These sites are running in Sitecore JSS integrated mode.
       1. It is better viewed when the iPad emulation form factor is enabled in the browser development tools.
    2. If do not see any event, ensure that all the "init" container jobs are completed by checking its logs. It is likely that the indexes rebuild is not done yet.
 3. Browse to [https://cm.lighthouse.localhost/sitecore](https://cm.lighthouse.localhost/sitecore)
-   1. You should be able to login with the "superuser" user and the password provided while running the `init.ps1` script.
+   1. You should be able to login with the "**superuser**" user and the password "**b**" (or the one provided while running the `init.ps1` script).
 
 ### Stopping the demo
 
@@ -133,21 +150,6 @@ If you want to reset all of your changes and get a fresh intsance:
 1. Run `docker-compose down`
 2. Run `.\CleanDockerData.ps1`
 3. Start again with `docker-compose up -d` to have a fresh installation of Sitecore with no files/items deployed!
-
-## Building the demo
-
-1. Open an elevated (as administrator) PowerShell session.
-2. Navigate to your repository clone folder:
-   * `cd C:\Projects\Sitecore.Demo.Headless`
-3. Build your Docker images:
-   * `docker-compose build --memory 8G --pull`
-   * This command will:
-     * Pull all the base images required by the dockerfiles.
-       * You can remove the `--pull` switch to skip this step.
-     * Build the demo images using the memory limit passed in the `--memory` argument.
-       * Adjust the number based on your available free memory.
-       * The format is a number followed by the letter `G` for Gb.
-       * The `--memory` argument is optional.
 
 ## Development cycle
 
@@ -287,7 +289,7 @@ Run `az acr login --name <registryname>` (or the equivalent `docker login`) and 
 
 **Problem:**
 
-When running `.\build-images.ps1` or `docker-compose up -d`, you get an error about downloading nodejs.
+When running `docker-compose up -d`, you get an error about downloading nodejs.
 
 **Cause:**
 
